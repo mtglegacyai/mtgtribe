@@ -51,8 +51,16 @@ VIDEOS = [
     ('e7', 'altruva-explainer-7-first-72-hours', 'Your first 72 hours',
      'What may be waiting from minute one, why the $100 position matters, and what two directs in 72 hours open.', 178.4, 'ALTRUVA_E7_Your_First_72_Hours.mp4'),
 ]
-V = {v[0]: dict(code=v[0], slug=v[1], title=v[2], desc=v[3], secs=v[4], master=v[5],
+V = {v[0]: dict(code=v[0], slug=v[1], title=v[2], desc=v[3], secs=v[4], master=v[5], n=int(v[0][1:]),
+                kind=('Tutorial' if v[0][0] == 't' else 'Explainer'),
                 label=('Tutorial ' if v[0][0] == 't' else 'Explainer ') + v[0][1:]) for v in VIDEOS}
+# short, single-line titles for lists, tiles, map links and buttons (MTG, 25 Oct 2026)
+SHORT = {'t1': 'Set up SafePal', 't2': 'Fund and swap to USDT', 't3': 'Join ALTRUVA', 't4': 'Claim a prize',
+         't5': 'Claim and withdraw', 't6': 'Cash out to your bank', 't7': 'Dashboard tour',
+         'e1': 'Where every dollar goes', 'e2': 'The global leg', 'e3': 'Working levels', 'e4': 'Level matching',
+         'e5': 'Ranks and Lucky Tickets', 'e6': 'Withdraw and reinvest', 'e7': 'Your first 72 hours'}
+for _k, _v in V.items():
+    _v['short'] = SHORT.get(_k, _v['title'])
 TOTAL_MIN = round(sum(v[4] for v in VIDEOS) / 60)
 TUT = [k for k in V if k[0] == 't']
 EXP = [k for k in V if k[0] == 'e']

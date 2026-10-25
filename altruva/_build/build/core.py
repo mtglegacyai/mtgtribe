@@ -151,21 +151,21 @@ def vid(code, here, cap=True):
     src = L(f'media/{v["slug"]}.mp4', here)
     fc = ''
     if cap:
-        fc = (f'<figcaption class="vcap"><span><b>{v["label"]}</b><br>{v["title"]}</span>'
+        fc = (f'<figcaption class="vcap"><span><b>{v["title"]}</b><br>{v["label"]}, {mmss(v["secs"])}</span>'
               f'<span class="wbadge">{ic("circle-check")}Watched</span>'
               f'<button type="button" class="mark" data-mark="{code}">Mark as watched</button></figcaption>')
     return (f'<figure class="vid" data-vid="{code}"><div class="vbox">'
             f'<img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 90vw, 340px" '
             f'width="720" height="1280" loading="lazy" decoding="async" alt="">'
             f'<button type="button" class="vplay" data-src="{esc(src)}" data-code="{code}" '
-            f'aria-label="Play {v["label"]}: {esc(v["title"])} ({mmss(v["secs"])})">'
+            f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
             f'<span class="pbtn">{ic("play")}</span><span class="dur">{mmss(v["secs"])}</span></button>'
             f'</div>{fc}</figure>')
 
 
 def play_btn(code, label=None, kind='ghost', size='sm'):
     v = V[code]
-    label = label or f'Watch {v["label"]}'
+    label = label or v['short']
     return (f'<button type="button" class="btn btn-{kind} btn-{size}" data-play="{code}">{ic("circle-play")}'
             f'<span class="lbl">{label}</span></button>')
 
@@ -173,7 +173,7 @@ def play_btn(code, label=None, kind='ghost', size='sm'):
 def vlink(code, here):
     """inline text link that opens the video in the player sheet"""
     v = V[code]
-    return f'<button type="button" class="inl linkbtn" data-play="{code}">{v["label"]}: {v["title"]}</button>'
+    return f'<button type="button" class="inl linkbtn" data-play="{code}">Watch the {v["short"]} video</button>'
 
 
 def video_data(here):
@@ -181,7 +181,7 @@ def video_data(here):
     d = {}
     for k, v in V.items():
         big, small = poster(k, here)
-        d[k] = dict(t=v['title'], l=v['label'], s=L(f'media/{v["slug"]}.mp4', here), p=small, d=mmss(v['secs']))
+        d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, d=mmss(v['secs']))
     return json.dumps(d, separators=(',', ':'))
 
 

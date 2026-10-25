@@ -42,7 +42,9 @@
     var v = $('video', el); if (v) { exitFs(v); v.pause(); }
     setTimeout(function () { el.hidden = true; if (v) { v.removeAttribute('src'); v.load(); } }, 260);
     if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
-    if (Math.abs((window.scrollY || 0) - savedY) > 2) window.scrollTo(0, savedY);
+    var y = savedY;
+    if (Math.abs((window.scrollY || 0) - y) > 2) window.scrollTo(0, y);
+    setTimeout(function () { if (Math.abs((window.scrollY || 0) - y) > 2) window.scrollTo(0, y); }, 400);
     if (sheetHist && !fromPop) { sheetHist = false; try { history.back(); } catch (e) {} }
   }
   on(window, 'popstate', function () {
@@ -161,7 +163,7 @@
   function markWatched(k) {
     if (!k || watched[k]) return;
     watched[k] = 1; set('alt-watched', JSON.stringify(Object.keys(watched)));
-    paintWatched(); toast((ALTV[k] ? ALTV[k].l : 'Video') + ' marked as watched ✓');
+    paintWatched(); toast((ALTV[k] ? ALTV[k].st : 'Video') + ': watched ✓');
   }
   function track(v, k) {
     on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched(k); });
@@ -184,14 +186,17 @@
     x.type = 'button'; x.className = 'vclose'; x.setAttribute('aria-label', 'Close the video');
     x.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>';
     box.appendChild(x);
-    function restore() {
+    var startY = window.scrollY || 0;
+    function restore(back) {
       exitFs(v); v.pause();
       if (v.parentNode === box) box.replaceChild(btn, v);
       if (x.parentNode === box) box.removeChild(x);
       v.removeAttribute('src'); try { v.load(); } catch (e) {}
+      // back to exactly where they pressed play (fullscreen can move the page)
+      if (back) setTimeout(function () { if (Math.abs((window.scrollY || 0) - startY) > 2) window.scrollTo(0, startY); }, 350);
     }
-    on(x, 'click', restore);
-    on(v, 'ended', function () { setTimeout(restore, 700); });
+    on(x, 'click', function () { restore(false); });
+    on(v, 'ended', function () { exitFs(v); setTimeout(function () { restore(true); }, 600); });
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
   on(d, 'click', function (e) { var b = e.target.closest('.vplay'); if (b) startInline(b); });
@@ -201,11 +206,11 @@
     var b = e.target.closest('[data-play]'); if (!b) return;
     var k = b.getAttribute('data-play'), info = ALTV[k], pl = $('#player'); if (!info || !pl) return;
     var open = $('.sheet.on'); if (open && open !== pl) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
-    $('[data-k="title"]', pl).textContent = info.l + ': ' + info.t + ' (' + info.d + ')';
+    $('[data-k="title"]', pl).textContent = info.t + ' (' + info.d + ')';
     $('[data-mark]', pl).setAttribute('data-mark', k);
     var v = $('video', pl);
     v.poster = info.p.replace('-360.webp', '.webp'); v.src = info.s;
-    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 900); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
+    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 800); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
     paintWatched(); openSheet(pl);
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   });
@@ -220,10 +225,10 @@
       if (old) { old.pause(); }
       var big = info.p.replace('-360.webp', '.webp');
       box.innerHTML = '<img src="' + info.p + '" srcset="' + info.p + ' 360w, ' + big + ' 720w" sizes="(max-width:760px) 90vw, 340px" width="720" height="1280" alt="">' +
-        '<button type="button" class="vplay" data-src="' + info.s + '" data-code="' + k + '" aria-label="Play ' + info.l + ': ' + info.t + ' (' + info.d + ')"><span class="pbtn">' +
+        '<button type="button" class="vplay" data-src="' + info.s + '" data-code="' + k + '" aria-label="Play ' + info.t + ' (' + info.d + ')"><span class="pbtn">' +
         '<svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span><span class="dur">' + info.d + '</span></button>';
       fig.setAttribute('data-vid', k);
-      var cap = $('.vcap span', fig); if (cap) cap.innerHTML = '<b>' + info.l + '</b><br>' + info.t;
+      var cap = $('.vcap span', fig); if (cap) cap.innerHTML = '<b>' + info.t + '</b><br>' + info.l + ', ' + info.d;
       var mk = $('[data-mark]', fig); if (mk) mk.setAttribute('data-mark', k);
       var src = $('[data-pick="' + k + '"] .pt span', pl); if (desc && src) desc.textContent = src.textContent;
       paintWatched();

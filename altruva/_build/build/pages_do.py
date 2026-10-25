@@ -18,7 +18,7 @@ def p_first72(here):
 </div>"""
     return f'''{phero("timer", "Your first 72 hours",
         "You've joined. Congratulations: you took action. Now your clock has started, and the next three days matter more than any others.",
-        [("timer", "72-hour window"), ("package", "Why the $100 position"), ("circle-play", "Explainer 7, " + mmss(V["e7"]["secs"]))])}
+        [("timer", "72-hour window"), ("package", "Why the $100 position"), ("circle-play", mmss(V["e7"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">{clock}
 {checks(["Right after joining, global leg income may already be waiting: your window looks up the line too.",
          "Once your balance reaches $5, claim and withdraw to SafePal. Half goes to your wallet, half is reinvested.",
@@ -26,7 +26,7 @@ def p_first72(here):
 </div>{vid("e7", here)}</div>""")}
 {sec(f"""<div class="stack"><p class="how num">Illustration: if the 20 members ahead of you each hold $100, 1% of each is $1, so about <b>$20</b> could be waiting to claim. The real amount depends on who is in your window.</p>
 {think("Why is there money before I've done anything?", "<p>Your global leg window looks up the line as well as down. The app pays 1% of each visible member's total deposit inside your window, so the members who joined before you count from the start. It isn't a bonus or a promise: it depends entirely on who is in your window.</p>")}
-<div class="btn-row">{play_btn("t5", "Claim and withdraw: Tutorial 5")}</div></div>""", "Minute one: what may be waiting")}
+<div class="btn-row">{play_btn("t5")}</div></div>""", "Minute one: what may be waiting")}
 {sec(f"""<div class="grid3">
  {box("Twice the window", "<p>Elite opens 20 up and 20 down: 40 members. Starter opens 10 and 10: 20 members.</p>", "route")}
  {box("Two Lucky Tickets", "<p>Elite gives two. Starter gives one, and only once two directs join within three days.</p>", "ticket")}
@@ -71,11 +71,11 @@ def p_join(here):
     ("Find your way around", "<p>Tour Overview, Packages, Earnings, Network and More, so every number makes sense.</p>" + play_btn("t7")),
 ]), "Five steps", "The success check: the Packages page says you hold your package.")}
 {sec(f"""<div class="joinband"><div><h2 class="h3">Just joined? Your 72 hours start now</h2><p>What may already be waiting, why the $100 position matters, and what two directs open inside your first three days.</p></div>
-<div class="btn-row"><a class="btn btn-gold btn-sm ring" href="{A("dashboard/first-72-hours/", here)}">{ic("timer")}<span class="lbl">Your first 72 hours</span></a>{play_btn("e7", "Watch Explainer 7")}</div></div>""")}
+<div class="btn-row"><a class="btn btn-gold btn-sm ring" href="{A("dashboard/first-72-hours/", here)}">{ic("timer")}<span class="lbl">Your first 72 hours</span></a>{play_btn("e7")}</div></div>""")}
 {sec(f"""<div class="grid3">
- {box("Claim a prize", "<p>Check your Lucky Tickets and claim a prize, in full, to your wallet.</p>" + play_btn("t4", "Watch Tutorial 4"), "ticket")}
- {box("Withdraw", "<p>Claim first, then withdraw everything to SafePal.</p>" + play_btn("t5", "Watch Tutorial 5"), "wallet")}
- {box("Cash out to your bank", "<p>SafePal to an exchange, USDT to rand, rand to your bank.</p>" + play_btn("t6", "Watch Tutorial 6"), "landmark")}
+ {box("Claim a prize", "<p>Check your Lucky Tickets and claim a prize, in full, to your wallet.</p>" + play_btn("t4"), "ticket")}
+ {box("Withdraw", "<p>Claim first, then withdraw everything to SafePal.</p>" + play_btn("t5"), "wallet")}
+ {box("Cash out to your bank", "<p>SafePal to an exchange, USDT to rand, rand to your bank.</p>" + play_btn("t6"), "landmark")}
 </div>""", "After you join")}
 {sec(think("What if something on my screen looks different?", "<p>Apps update their screens from time to time. Look for the same words, and go slowly. Still stuck? Ask the person who introduced you, or ask in the MTG TRIBE. A screenshot helps, but hide your balances and never show your recovery phrase.</p>"))}
 '''
@@ -89,8 +89,8 @@ def playlist(codes, here, title):
         v = V[k]
         big, small = poster(k, here)
         items += (f'<li><button type="button" class="pitem" id="{k}" data-pick="{k}" data-vid="{k}" aria-current="{"true" if k == first else "false"}">'
-                  f'<img src="{esc(small)}" width="64" height="114" loading="lazy" alt="">'
-                  f'<span class="pt"><small>{v["label"]}</small><b>{v["title"]}</b><span>{v["desc"]}</span></span>'
+                  f'<img src="{esc(small)}" width="44" height="78" loading="lazy" alt="">'
+                  f'<span class="pt" title="{esc(v["desc"])}"><b><span class="vn">{v["n"]}</span><span class="vt">{v["short"]}</span></b></span>'
                   f'<span class="pd">{mmss(v["secs"])}{ic("circle-check", "ic ok")}</span></button></li>')
     return f'''<div class="plist" data-playlist><div class="now">{vid(first, here)}<p class="fine" data-k="desc">{V[first]["desc"]}</p></div>
 <div class="stack"><h2 class="h3">{title}</h2><ol>{items}</ol></div></div>'''
@@ -363,7 +363,7 @@ def mb(slug):
 def p_dl(here):
     def rows(codes):
         return ''.join(
-            f'<li class="dlrow"><span class="dlt"><small>{V[k]["label"]}, {mmss(V[k]["secs"])}, {mb(V[k]["slug"])}</small><b>{V[k]["title"]}</b></span>'
+            f'<li class="dlrow"><span class="dlt"><b><span class="vn">{V[k]["n"]}</span><span class="vt">{V[k]["short"]}</span></b><small>{mmss(V[k]["secs"])}, {mb(V[k]["slug"])}</small></span>'
             f'<a class="btn btn-ghost btn-sm" href="{A("media/" + V[k]["slug"] + ".mp4", here)}" download>{ic("download")}<span class="lbl">MP4</span></a></li>'
             for k in codes)
     wa_share = 'https://wa.me/?text=' + quote(SHARE_MSG)

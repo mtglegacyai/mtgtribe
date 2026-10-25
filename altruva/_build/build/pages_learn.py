@@ -14,9 +14,11 @@ def honest(title, body):
 
 # ======================================================================= WELCOME
 def p_home(here):
-    tiles = ''.join(
-        f'<button type="button" class="vtile" data-play="{k}" data-vid="{k}">{ic("circle-check")}<span>{V[k]["label"]}</span></button>'
-        for k in TUT + EXP)
+    def tiles_for(codes):
+        return ''.join(f'<button type="button" class="vtile" data-play="{k}" data-vid="{k}" title="{esc(V[k]["desc"])}">'
+                       f'<span class="vn">{V[k]["n"]}</span><span class="vt">{V[k]["short"]}</span>{ic("circle-check")}</button>' for k in codes)
+    tiles = (f'<p class="vgl">Tutorials</p><div class="vgrid">{tiles_for(TUT)}</div>'
+             f'<p class="vgl">Explainers</p><div class="vgrid">{tiles_for(EXP)}</div>')
     route = steps([
         ('Check the fit', f'<p>Start honest. Read <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> '
                           f'and <a class="inl" href="{A("dashboard/what-makes-it-different/", here)}">What makes it different</a>. Five minutes.</p>'),
@@ -38,7 +40,7 @@ def p_home(here):
 {sec(f"""<div class="panel pad prog-panel"><div class="prog">
  <div class="pring" data-ring><svg viewBox="0 0 118 118" aria-hidden="true"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#2f9ff9"/><stop offset="1" stop-color="#eebd5c"/></linearGradient></defs><circle class="bg" cx="59" cy="59" r="50"/><circle class="fg" cx="59" cy="59" r="50"/></svg>
  <div class="val"><b data-k="n">0</b><small>of {NV} watched</small></div></div>
- <div class="stack"><div><h2 class="h3">Your progress</h2><p class="fine">Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only.</p></div><div class="vgrid">{tiles}</div></div>
+ <div class="stack"><div><h2 class="h3">Your progress</h2><p class="fine">Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only.</p></div>{tiles}</div>
 </div></div>""", id="progress")}
 {sec(route, "Your route, in order", "Eight stops. Each one builds on the last, so go in order the first time.")}
 {sec(f"""<div class="grid3">
@@ -134,7 +136,7 @@ def splitbar(here):
 def p_split(here):
     return f'''{phero("chart-pie", "Where every dollar goes",
         "Every package goes into one smart contract on BNB Smart Chain. The contract shares it back to members by fixed rules, with no admin in the middle.",
-        [("coins", "100% shared by rules"), ("blocks", "BNB Smart Chain"), ("circle-play", "Explainer 1, " + mmss(V["e1"]["secs"]))])}
+        [("coins", "100% shared by rules"), ("blocks", "BNB Smart Chain"), ("circle-play", mmss(V["e1"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">Follow $100</h2>
  <p class="lead">Here's how every $100 package is shared. Tap a colour to open its page.</p>
@@ -188,7 +190,7 @@ def p_leg(here):
     seats = ''.join(f'<i data-d="{abs(i)}"{" class=you" if i == 0 else ""}></i>' for i in range(-20, 21))
     return f'''{phero("route", "The global leg, 40%",
         "Every member joins one long global line. You earn 1% each time someone inside your window deposits or reinvests.",
-        [("percent", "1% per member"), ("route", "10, 15 or 20 each way"), ("circle-play", "Explainer 2, " + mmss(V["e2"]["secs"]))])}
+        [("percent", "1% per member"), ("route", "10, 15 or 20 each way"), ("circle-play", mmss(V["e2"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">See your window</h2>
  <div class="panel pad leg" data-leg>
@@ -219,7 +221,7 @@ def p_wl(here):
                    for i, r in enumerate(WL))
     return f'''{phero("layers", "Working levels, 25%",
         "The people you introduce are your directs: level 1. Their directs are level 2, all the way down to level 9.",
-        [("percent", "10, 4, 2, 2, 2, 2, 1, 1, 1"), ("users", "Directs open levels"), ("circle-play", "Explainer 3, " + mmss(V["e3"]["secs"]))])}
+        [("percent", "10, 4, 2, 2, 2, 2, 1, 1, 1"), ("users", "Directs open levels"), ("circle-play", mmss(V["e3"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack" data-wl>
  <h2 class="h2">How many directs do you have?</h2>
  <div class="seg" role="group" aria-label="Number of directs"><button type="button" data-d="0" aria-pressed="false">0</button><button type="button" data-d="1" aria-pressed="false">1</button><button type="button" data-d="2" aria-pressed="false">2</button><button type="button" data-d="3" aria-pressed="true">3 or more</button></div>
@@ -240,7 +242,7 @@ def p_wl(here):
 def p_match(here):
     return f'''{phero("arrow-left-right", "Level matching, 25%",
         "Each day, 25% of the day's business becomes a pool. Your share depends on your smaller side.",
-        [("scale", "Smaller side counts"), ("clock", "Days close 00:00 UTC"), ("circle-play", "Explainer 4, " + mmss(V["e4"]["secs"]))])}
+        [("scale", "Smaller side counts"), ("clock", "Days close 00:00 UTC"), ("circle-play", mmss(V["e4"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">Your two sides</h2>
  <div class="panel pad sides">
@@ -273,7 +275,7 @@ def p_ranks(here):
     tier_rows.append(['<b>Total</b>', f'<b>{sum(n for n, p in TIERS)}</b>', '', f'<b>{sum(n * p for n, p in TIERS):,} USDT</b>'])
     return f'''{phero("ticket", "Ranks and Lucky Tickets",
         "The last two shares, 5% each: rank pools for qualified members, and a prize draw every time the pool reaches 5,000 USDT.",
-        [("award", "Nexus and Legacy Crown"), ("ticket", "250 winning tickets per draw"), ("circle-play", "Explainer 5, " + mmss(V["e5"]["secs"]))])}
+        [("award", "Nexus and Legacy Crown"), ("ticket", "250 winning tickets per draw"), ("circle-play", mmss(V["e5"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">Two ranks</h2>
  {table(["Rank", "Package", "To qualify (from the ALTRUVA presentation)"], [["<b>Nexus</b>", "Builder, $50", "Hold at least $50, plus 2 directs of $50 or more within 3 days"], ["<b>Legacy Crown</b>", "Elite, $100", "Hold $100, plus 2 directs of $100 or more within 3 days"]], caption="Ranks")}
@@ -294,7 +296,7 @@ def p_ranks(here):
 def p_wd(here):
     return f'''{phero("wallet", "Withdraw and reinvest",
         "Every withdrawal takes your whole balance and splits it automatically: part to your wallet, part reinvested.",
-        [("percent", "50/50 up to 5,000"), ("hand-coins", "Claim first"), ("circle-play", "Explainer 6, " + mmss(V["e6"]["secs"]))])}
+        [("percent", "50/50 up to 5,000"), ("hand-coins", "Claim first"), ("circle-play", mmss(V["e6"]["secs"]) + " video")])}
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">The split, by total deposit</h2>
  {table(["Your total deposit", "To your wallet", "Reinvested"], [["Up to 5,000 USDT", "<b>50%</b>", "50%"], ["5,001 to 49,999 USDT", "<b>60%</b>", "40%"], ["50,000 USDT and up", "<b>70%</b>", "30%"]], hl=0, caption="Withdrawal split")}

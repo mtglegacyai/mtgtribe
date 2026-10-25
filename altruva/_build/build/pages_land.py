@@ -29,7 +29,7 @@ def landing():
         station(1, 'compass', 'Start here', 'Your route and progress, an honest fit check, and what\'s different if you were let down before.',
                 'dashboard/', [('Welcome', 'dashboard/'), ('Is it right for me?', 'dashboard/is-it-right-for-me/'), ('What makes it different', 'dashboard/what-makes-it-different/')], here),
         station(2, 'chart-pie', 'See where every dollar goes', 'The 100% split in one picture: 40, 25, 25, 5 and 5.',
-                'dashboard/how-it-works/', [('The 100% split', 'dashboard/how-it-works/'), ('Explainer 1', 'play:e1')], here),
+                'dashboard/how-it-works/', [('The 100% split', 'dashboard/how-it-works/'), ('Watch the video', 'play:e1')], here),
         station(3, 'layers', 'Understand each income', 'One short page and one short video for each part of the plan.',
                 'dashboard/global-leg/', [('Global leg', 'dashboard/global-leg/'), ('Working levels', 'dashboard/working-levels/'),
                                           ('Level matching', 'dashboard/level-matching/'), ('Ranks and Lucky Tickets', 'dashboard/ranks-lucky-tickets/'),
@@ -37,14 +37,14 @@ def landing():
         station(4, 'package', 'Pick your package', 'Starter $25, Builder $50 or Elite $100, side by side, with your shopping list.',
                 'dashboard/packages/', [('Compare packages', 'dashboard/packages/')], here),
         station(5, 'rocket', 'Join step by step', 'Set up SafePal, fund it, join with the sign-up link, then tour your dashboard.',
-                'dashboard/join/', [('Tutorial 1', 'play:t1'), ('Tutorial 2', 'play:t2'), ('Tutorial 3', 'play:t3'), ('Tutorial 7', 'play:t7')], here),
+                'dashboard/join/', [(V['t1']['short'], 'play:t1'), (V['t2']['short'], 'play:t2'), (V['t3']['short'], 'play:t3'), (V['t7']['short'], 'play:t7')], here),
         station(6, 'timer', 'Use your first 72 hours', 'Just joined? Your clock has started: what may be waiting from minute one, why $100, and what two directs open.',
-                'dashboard/first-72-hours/', [('Your first 72 hours', 'dashboard/first-72-hours/'), ('Explainer 7', 'play:e7')], here),
+                'dashboard/first-72-hours/', [('Your first 72 hours', 'dashboard/first-72-hours/'), ('Watch the video', 'play:e7')], here),
         station(7, 'calculator', 'Run your numbers', 'Four calculators that work on your phone. Your numbers, no promises.',
                 'dashboard/tools/withdraw-split-calculator/', [('Withdraw split', 'dashboard/tools/withdraw-split-calculator/'), ('Working levels', 'dashboard/tools/working-level-calculator/'),
                                                               ('Matching', 'dashboard/tools/matching-calculator/'), ('USDT to rand', 'dashboard/tools/usdt-to-rand/')], here),
         station(8, 'wallet', 'Get your money out', 'Claim first, withdraw, cash out to your bank, and see how the reinvest split works.',
-                'dashboard/withdraw-reinvest/', [('Explainer 6', 'play:e6'), ('Tutorial 4', 'play:t4'), ('Tutorial 5', 'play:t5'), ('Tutorial 6', 'play:t6')], here),
+                'dashboard/withdraw-reinvest/', [(V['e6']['short'], 'play:e6'), (V['t4']['short'], 'play:t4'), (V['t5']['short'], 'play:t5'), (V['t6']['short'], 'play:t6')], here),
         station(9, 'shield-check', 'Answers and safety', 'Questions and myths, crypto words in plain English, and how to protect your wallet.',
                 'dashboard/faq/', [('FAQ', 'dashboard/faq/'), ('Glossary', 'dashboard/glossary/'), ('Safety centre', 'dashboard/safety/')], here),
         station(10, 'download', 'Downloads', 'Every video, a two-page quick guide and a share message for your team.',
@@ -75,7 +75,7 @@ def landing():
    <img class="em" src="{A('img/altruva-emblem-192.png', here)}" width="192" height="192" alt="">
    <h2>Your welcome video is on its way</h2>
    <p>A friendly tour: what ALTRUVA is, the words you'll hear, and exactly where to start in the dashboard.</p>
-   {play_btn('e1', 'Watch Explainer 1 while you wait', 'blue')}
+   {play_btn('e1', 'Watch: Where every dollar goes', 'blue')}
   </div>
  </div>
  <div class="hero-cta">

@@ -108,16 +108,16 @@ def quick_guide(pdf):
 @font-face{{font-family:M;src:url(file:///tmp/assets/fonts/Montserrat-600.ttf);font-weight:400 600}}
 @page{{size:A4;margin:0}}
 *{{box-sizing:border-box}}body{{margin:0;font:600 10.5pt/1.5 M,sans-serif;color:#cde0f0;background:#01081b;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.pg{{width:210mm;height:297mm;padding:16mm 15mm;position:relative;overflow:hidden;page-break-after:always;background:radial-gradient(120mm 90mm at 0 0,rgba(4,72,182,.45),transparent),#01081b}}
+.pg{{width:210mm;height:297mm;padding:14mm 15mm 22mm;position:relative;overflow:hidden;page-break-after:always;background:radial-gradient(120mm 90mm at 0 0,rgba(4,72,182,.45),transparent),#01081b}}
 h1{{font:800 22pt/1.1 O;color:#fff;margin:0}}h2{{font:800 12pt O;color:#eebd5c;margin:0 0 3mm;letter-spacing:.02em}}
 .top{{display:flex;gap:6mm;align-items:center;margin-bottom:8mm}}.top img{{width:22mm}}.top p{{margin:2mm 0 0;color:#93a9c9}}
-.card{{background:rgba(13,31,74,.75);border:1px solid rgba(120,170,255,.25);border-radius:4mm;padding:5mm 6mm;margin-bottom:5mm}}
+.card{{background:rgba(13,31,74,.75);border:1px solid rgba(120,170,255,.25);border-radius:4mm;padding:4.5mm 6mm;margin-bottom:4.5mm}}
 table{{width:100%;border-collapse:collapse;font-size:9.5pt}}th,td{{text-align:left;padding:2mm 2.5mm;border-bottom:1px solid rgba(120,170,255,.18)}}th{{color:#93a9c9;font-size:8.5pt}}td b{{color:#eebd5c}}
 .bar{{display:flex;height:11mm;border-radius:3mm;overflow:hidden;margin:2mm 0 3mm;font:800 9pt O;color:#04122e}}.bar span{{display:flex;align-items:center;justify-content:center}}
 .leg{{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 6mm;font-size:9.5pt}}.leg i{{display:inline-block;width:3mm;height:3mm;border-radius:1mm;margin-right:2mm}}
 ol,ul{{margin:0;padding-left:5mm}}li{{margin:1.2mm 0}}b{{color:#fff}}
 .honest{{border-color:rgba(238,189,92,.5);background:rgba(60,44,10,.45)}}
-.foot{{position:absolute;left:15mm;right:15mm;bottom:12mm;font-size:8pt;color:#6a809f;display:flex;justify-content:space-between}}
+.foot{{position:absolute;left:15mm;right:15mm;bottom:10mm;font-size:8pt;color:#6a809f;display:flex;justify-content:space-between}}
 .sig{{color:#eebd5c;font-weight:800}}.links td{{border:0;padding:1.2mm 0}}.links td:first-child{{color:#93a9c9;width:40mm}}
 </style></head><body>
 <div class="pg"><div class="top"><img src="{em}"><div><h1>ALTRUVA quick guide</h1><p>Independent guide by MTG 👑 | Your Digital Architect. mtgtribe.com/altruva</p></div></div>
@@ -150,7 +150,7 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:1.2mm 0}}b{{color:#fff}}
 <tr><td>TikTok</td><td><b>@joinmtgtribe</b></td></tr>
 <tr><td>Zoom presentations</td><td>Links are in the ALTRUVA WhatsApp groups. Ask the person who introduced you to add you.</td></tr></table></div>
 <p style="font-size:8pt;color:#93a9c9;margin:0">Independent guide, not an official ALTRUVA document. Education only: not financial advice and not a recommendation to join or not to join. MTG is an ALTRUVA member and earns as a sponsor when people join with his link.</p>
-<div class="foot"><span class="sig">Let's Get This Crypto! 💪</span><span>2 of 2</span></div></div>
+<div class="foot" style="position:static;margin-top:3mm"><span class="sig">Let's Get This Crypto! 💪</span><span>2 of 2</span></div></div>
 </body></html>'''
     src = SCR + '/quick-guide.html'
     open(src, 'w').write(html)

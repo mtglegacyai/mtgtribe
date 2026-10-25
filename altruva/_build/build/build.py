@@ -220,13 +220,16 @@ def redirect(path, to, title, og_key=None, self_url=None, desc=''):
 
 
 def root_page(path):
-    """mtgtribe.com home: MTG's placeholder text, with a proper social preview."""
+    """mtgtribe.com home: sends visitors straight to the ALTRUVA guide (MTG, 25 Oct 2026), keeps its own social preview."""
     t = 'MTG TRIBE | mtgtribe.com'
     d = 'Independent guides, videos and free calculators by MTG, Your Digital Architect. Learn first, then decide.'
     open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{t}</title><meta name="description" content="{d}"><link rel="canonical" href="{SITE}/">
+<meta http-equiv="refresh" content="0;url=/altruva/">
 {core.og_tags(t, d, SITE + '/', 'root')}
-</head><body>let's go!</body></html>''')
+<script>location.replace('/altruva/'+location.search+location.hash)</script>
+<style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}}a{{color:#eebd5c}}</style>
+</head><body><p>Taking you to the <a href="/altruva/">ALTRUVA guide</a>.</p></body></html>''')
 
 
 def notfound(path):

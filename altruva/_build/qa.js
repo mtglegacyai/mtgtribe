@@ -1,7 +1,7 @@
 // Interaction QA for the ALTRUVA guide (local prod build on :8765)
 const { chromium } = require('playwright');
 const S = process.argv[2];
-const B = 'http://localhost:8765/altruva/';
+const B = process.env.BASE || 'http://localhost:8765/altruva/';
 let fails = 0;
 function ok(cond, msg) { console.log((cond ? 'PASS ' : 'FAIL ') + msg); if (!cond) fails++; }
 async function fonts(ctx) {

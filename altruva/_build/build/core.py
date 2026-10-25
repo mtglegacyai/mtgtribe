@@ -310,8 +310,12 @@ def sidebar(key, here):
             out.append(f'<div class="sgroup" role="group" aria-label="{esc(g)}"><p class="slabel">{g}</p>')
             group = g
         cur = ' aria-current="page"' if k == key else ''
-        vid_attr = ''
-        out.append(f'<a class="snav" href="{A(p, here)}"{cur}{vid_attr}><span class="si">{ic(icon)}</span>'
+        if k in MENU_EXT:
+            out.append(f'<a class="snav ext" href="{esc(MENU_EXT[k])}" target="_blank" rel="noopener"{cur}><span class="si">{ic(icon)}</span>'
+                       f'<span class="stx"><b>{label}</b><small>{sub}</small></span>{ic("external-link", "ic xl")}'
+                       f'<span class="sr">(opens in a new tab)</span></a>')
+            continue
+        out.append(f'<a class="snav" href="{A(p, here)}"{cur}><span class="si">{ic(icon)}</span>'
                    f'<span class="stx"><b>{label}</b><small>{sub}</small></span></a>')
     out.append('</div>')
     return f'''<aside class="side" id="side" aria-label="Dashboard menu">

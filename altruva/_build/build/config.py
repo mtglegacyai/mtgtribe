@@ -13,7 +13,8 @@ WA_MTG_MSG = 'Hi MTG, I found your ALTRUVA guide on mtgtribe.com and I have a qu
 WA_NUM = '072 171 4626'
 WA_GROUP = 'https://chat.whatsapp.com/DwRWt83LQO78FFlHVbtj4E?s=cl&p=a&mlu=4&ilr=4'
 TIKTOK = 'https://www.tiktok.com/@joinmtgtribe'
-CARD_GUIDE = 'https://www.musathegiant.com/cards/bellvercards'
+CARD_GUIDE = 'https://bellveraffiliates.com/'
+MENU_EXT = {'card': CARD_GUIDE}   # menu items that open another website in a new tab
 MTG_SITE = 'https://www.musathegiant.com'
 SHARE_MSG = ("I've been learning about ALTRUVA with this free guide. Short videos and plain-English pages "
              "show how it works, how to join safely and how money comes out, before you decide anything: "

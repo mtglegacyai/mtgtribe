@@ -409,7 +409,7 @@ def p_card(here):
  {box("Its own rules", "<p>It's a separate product with its own fees and terms. MTG's full guide explains them before you decide.</p>", "file-text")}
 </div>
 <div class="btn-row" style="margin-top:22px">{btn("Open the crypto card guide", CARD_GUIDE, "gold", "credit-card", "", True, ext=True)}{wa_mtg_btn(label="Ask MTG on WhatsApp")}</div>
-<p class="fine" style="margin-top:14px">The guide lives on MusaTheGiant.com. You can also ask your ALTRUVA sponsor. Sponsors, you're welcome to connect with MTG too.</p>""")}
+<p class="fine" style="margin-top:14px">The guide is MTG's own crypto card website. You can also ask your ALTRUVA sponsor. Sponsors, you're welcome to connect with MTG too.</p>""")}
 '''
 
 
@@ -433,7 +433,7 @@ def p_disc(here):
 {sec(f"""<div class="prose discfull">
 <h2 class="h3">An independent guide</h2><p>This is not an official ALTRUVA website. It's made by MTG, an ALTRUVA member, to help people understand ALTRUVA before they decide anything.</p>
 <h2 class="h3">Education, not advice</h2><p>Nothing here is financial, legal or tax advice, and nothing here is a recommendation to join or not to join. Always do your own research.</p>
-<h2 class="h3">Affiliate links</h2><p>The Sign Up button copies MTG's ALTRUVA referral link. If you join through it, MTG becomes your sponsor and earns by the plan explained on these pages. The crypto card guide is MTG's own guide on MusaTheGiant.com and may include his referral links too.</p>
+<h2 class="h3">Affiliate links</h2><p>The Sign Up button copies MTG's ALTRUVA referral link. If you join through it, MTG becomes your sponsor and earns by the plan explained on these pages. The crypto card guide is MTG's own crypto card website and may include his referral links too.</p>
 <h2 class="h3">Risk</h2><p>Earnings come from members' deposits and are not guaranteed. You can lose the money you put in. The top package is $100. Some people open more than one account: that's their own strategy and their own risk. Only use money you can afford to lose.</p>
 <h2 class="h3">Facts and figures</h2><p>Figures were checked against the live ALTRUVA app on 24 Oct 2026. Apps change, so the app on your screen is always the final word. Examples are illustrations, not forecasts.</p>
 <h2 class="h3">Your privacy</h2><p>This site has no sign-up, no cookies and no tracking. It remembers two things on your own device only: which videos you've watched, and whether you closed the menu. Fonts load from Google Fonts, and the rand converter asks CoinGecko for the live rate.</p>

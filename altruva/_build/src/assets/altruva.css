@@ -226,6 +226,8 @@ b,strong{color:var(--text)}
 .snav[aria-current="page"] .si{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1f1300}
 .snav .tick{margin-left:auto;flex:none;width:18px;height:18px;color:var(--green);display:none}
 .snav.done .tick{display:block}
+.snav .xl{margin-left:auto;flex:none;width:14px;height:14px;color:var(--faint);transition:color .2s}
+.snav.ext:hover .xl{color:var(--gold)}
 .side-bot{position:sticky;bottom:0;margin:auto -14px 0;padding:14px;display:grid;gap:8px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(1,6,20,.9),rgba(1,6,20,.99) 30%)}
 .side-bot .btn{width:100%}
 .srow{display:grid;grid-template-columns:1fr 1fr;gap:8px}

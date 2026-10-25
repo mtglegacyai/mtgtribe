@@ -1,5 +1,5 @@
 """Shared helpers: links, icons, components and page shells."""
-import html, json, os, re, posixpath
+import hashlib, html, json, os, re, posixpath
 from config import *
 
 ICON_DIR = '/tmp/assets/x/lucide-static-1.61.0/package/icons/'
@@ -186,7 +186,30 @@ def video_data(here):
 
 
 # ---------------------------------------------------------------- head / SEO
-def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website'):
+def og_image(key):
+    """absolute URL (with a content version) of a page's social preview thumbnail"""
+    p = f'/home/claude/site/img/og-{key}.jpg'
+    if key and os.path.exists(p):
+        return SITE + BASE + f'img/og-{key}.jpg?v=' + hashlib.md5(open(p, 'rb').read()).hexdigest()[:8]
+    return SITE + BASE + 'img/og-altruva-guide.jpg'
+
+
+def og_tags(full, desc, url, key, og_type='website'):
+    from ogcfg import OG
+    img = og_image(key)
+    alt = full.split(' | ')[0] + '. ' + (OG[key][3] if key in OG else '')
+    return (f'<meta property="og:type" content="{og_type}"><meta property="og:site_name" content="{NAME}">\n'
+            f'<meta property="og:title" content="{esc(full)}"><meta property="og:description" content="{esc(desc)}">\n'
+            f'<meta property="og:url" content="{esc(url)}"><meta property="og:locale" content="en_ZA">\n'
+            f'<meta property="og:image" content="{esc(img)}"><meta property="og:image:secure_url" content="{esc(img)}">\n'
+            f'<meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n'
+            f'<meta property="og:image:alt" content="{esc(alt.strip())}">\n'
+            f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(full)}">\n'
+            f'<meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{esc(img)}">\n'
+            f'<meta name="twitter:image:alt" content="{esc(alt.strip())}"><link rel="image_src" href="{esc(img)}">')
+
+
+def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website', og_key=None):
     url = SITE + BASE + path
     full = title if NAME in title else f'{title} | {NAME}'
     css = L('assets/altruva.css', here)
@@ -203,7 +226,8 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
         ld['@graph'] += extra_ld
     fav = L('img/favicon-32.png', here)
     touch = L('img/apple-touch-icon.png', here)
-    og = SITE + BASE + 'img/og-altruva-guide.jpg'
+    og = og_image(og_key)
+    ld['@graph'][2]['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': og, 'width': 1200, 'height': 630}
     robots = 'noindex,follow' if noindex else 'index,follow,max-image-preview:large'
     return f'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -213,13 +237,7 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 <link rel="canonical" href="{esc(url)}">
 <meta name="theme-color" content="#01081b">
 <meta name="color-scheme" content="dark">
-<meta property="og:type" content="{og_type}"><meta property="og:site_name" content="{NAME}">
-<meta property="og:title" content="{esc(full)}"><meta property="og:description" content="{esc(desc)}">
-<meta property="og:url" content="{esc(url)}"><meta property="og:image" content="{og}">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="ALTRUVA Guide by MTG: see every dollar move before you move a dollar">
-<meta property="og:locale" content="en_ZA">
-<meta name="twitter:card" content="summary_large_image">
+{og_tags(full, desc, url, og_key, og_type)}
 <link rel="icon" type="image/png" sizes="32x32" href="{esc(fav)}">
 <link rel="apple-touch-icon" href="{esc(touch)}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -377,7 +395,7 @@ def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True):
 </div>
 </div>
 {overlays(here)}'''
-    hd = head(title, desc, path, here, ld)
+    hd = head(title, desc, path, here, ld, og_key=key)
     return hd, content
 
 

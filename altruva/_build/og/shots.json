@@ -1,0 +1,142 @@
+{
+ "land": [
+  "",
+  "#route .map-head",
+  null
+ ],
+ "root": [
+  "",
+  "TOP",
+  null
+ ],
+ "home": [
+  "dashboard/",
+  "#progress",
+  "watched"
+ ],
+ "fit": [
+  "dashboard/is-it-right-for-me/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "diff": [
+  "dashboard/what-makes-it-different/",
+  "main > section:nth-of-type(3)",
+  null
+ ],
+ "split": [
+  "dashboard/how-it-works/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "pkg": [
+  "dashboard/packages/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "leg": [
+  "dashboard/global-leg/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "wl": [
+  "dashboard/working-levels/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "match": [
+  "dashboard/level-matching/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "ranks": [
+  "dashboard/ranks-lucky-tickets/",
+  "main > section:nth-of-type(3)",
+  null
+ ],
+ "wd": [
+  "dashboard/withdraw-reinvest/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "first72": [
+  "dashboard/first-72-hours/",
+  "[data-clock72]",
+  "clock"
+ ],
+ "join": [
+  "dashboard/join/",
+  "main > section:nth-of-type(3)",
+  null
+ ],
+ "tut": [
+  "dashboard/tutorials/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "exp": [
+  "dashboard/explainers/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "c-wd": [
+  "dashboard/tools/withdraw-split-calculator/",
+  ".presets",
+  null
+ ],
+ "c-wl": [
+  "dashboard/tools/working-level-calculator/",
+  "[data-calc=\"wl\"] .seg",
+  null
+ ],
+ "c-m": [
+  "dashboard/tools/matching-calculator/",
+  "details.mini",
+  null
+ ],
+ "c-zar": [
+  "dashboard/tools/usdt-to-rand/",
+  "[data-in=\"amt\"]",
+  "starter"
+ ],
+ "faq": [
+  "dashboard/faq/",
+  "main > section:nth-of-type(3)",
+  null
+ ],
+ "gloss": [
+  "dashboard/glossary/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "safe": [
+  "dashboard/safety/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "dl": [
+  "dashboard/downloads/",
+  "main > section:nth-of-type(4)",
+  null
+ ],
+ "card": [
+  "dashboard/crypto-card/",
+  "main > section:nth-of-type(2)",
+  null
+ ],
+ "tribe": [
+  "dashboard/tribe/",
+  "TOP",
+  null
+ ],
+ "group": [
+  "dashboard/tribe/",
+  "TOP",
+  null
+ ],
+ "disc": [
+  "dashboard/disclaimer/",
+  "TOP",
+  null
+ ]
+}

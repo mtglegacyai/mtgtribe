@@ -103,5 +103,5 @@ def landing():
 {overlays(here)}'''
     desc = (f'The independent ALTRUVA guide by MTG: {NV} short videos and plain-English pages on how the plan pays, '
             'how to join safely with SafePal and how money comes out. Top package $100. Free to learn.')
-    hd = head('ALTRUVA Guide by MTG: plan, videos and how to join', desc, '', here)
+    hd = head('ALTRUVA Guide by MTG: plan, videos and how to join', desc, '', here, og_key='land')
     return hd, body

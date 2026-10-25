@@ -200,19 +200,33 @@ def render(mode, dst):
             f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod><priority>{"1.0" if u == "" else ("0.8" if u == "dashboard/" else "0.6")}</priority></url>\n' for u in urls) + '</urlset>\n'
         open(base + '/sitemap.xml', 'w').write(sm)
         open(dst + '/robots.txt', 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}{BASE}sitemap.xml\n')
-        redirect(dst + '/group/index.html', WA_GROUP, 'Join the MTG TRIBE on WhatsApp')
+        redirect(dst + '/group/index.html', WA_GROUP, 'Join the MTG TRIBE on WhatsApp', 'group', SITE + '/group/',
+                 'Tap to join the MTG TRIBE WhatsApp group: a community for action takers to learn, ask and grow together.')
+        root_page(dst + '/index.html')
         notfound(dst + '/404.html')
         os.makedirs(base + '/media', exist_ok=True)
         for k, v in V.items():
             shutil.copy(ROOT + '/media/' + v['slug'] + '.mp4', base + '/media/')
 
 
-def redirect(path, to, title):
+def redirect(path, to, title, og_key=None, self_url=None, desc=''):
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    og = ('\n' + core.og_tags(title, desc, self_url, og_key) + f'\n<meta name="description" content="{desc}">') if og_key else ''
+    canon = self_url if og_key else (to if to.startswith('http') else SITE + to)
     open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{title}</title>
-<meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url={to}"><link rel="canonical" href="{to if to.startswith('http') else SITE + to}">
+<meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url={to}"><link rel="canonical" href="{canon}">{og}
 <style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}}a{{color:#eebd5c}}</style>
 <script>location.replace({json.dumps(to)})</script></head><body><p>Taking you there. <a href="{to}">Tap here</a> if nothing happens.</p></body></html>''')
+
+
+def root_page(path):
+    """mtgtribe.com home: MTG's placeholder text, with a proper social preview."""
+    t = 'MTG TRIBE | mtgtribe.com'
+    d = 'Independent guides, videos and free calculators by MTG, Your Digital Architect. Learn first, then decide.'
+    open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{t}</title><meta name="description" content="{d}"><link rel="canonical" href="{SITE}/">
+{core.og_tags(t, d, SITE + '/', 'root')}
+</head><body>let's go!</body></html>''')
 
 
 def notfound(path):

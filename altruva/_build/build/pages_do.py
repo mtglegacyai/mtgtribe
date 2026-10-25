@@ -54,6 +54,19 @@ def p_first72(here):
 
 
 # ======================================================================= JOIN
+# the five join steps (also used for the HowTo structured data)
+JOIN_STEPS = [
+    ("Set up SafePal", "Install SafePal, create your wallet and write your recovery phrase on paper. Never type it into a website or send it to anyone."),
+    ("Fund your wallet", "Send BNB on BNB Smart Chain, swap most of it to USDT BEP20, and keep some BNB for fees."),
+    ("Copy the sign-up link", "Use the link of the person who introduced you, so they stay your sponsor."),
+    ("Join in SafePal Explore", "Paste the link in Explore, choose BNB Chain, pick your package, then approve and sign. Read the risk warning before you confirm."),
+    ("Find your way around", "Tour Overview, Packages, Earnings, Network and More, so every number makes sense."),
+]
+JOIN_NEEDS = ["A smartphone with the SafePal app", "USDT on BNB Smart Chain (BEP20) for your package, plus one extra dollar",
+              "At least $3 to $5 of BNB in the same wallet for network fees", "The sign-up link from the person who introduced you",
+              "A pen and paper for your recovery phrase"]
+
+
 def p_join(here):
     return f'''{phero("rocket", "Join step by step",
         "Five steps, one short video each. Pause the video, do the step, check your screen matches, then move on.",
@@ -65,11 +78,11 @@ def p_join(here):
     "The <b>sign-up link</b> from the person who introduced you. A pen and paper for your recovery phrase.",
 ])}</div>""", "What you need")}
 {sec(steps([
-    ("Set up SafePal", "<p>Install SafePal, create your wallet and write your recovery phrase on paper. Never type it into a website or send it to anyone.</p>" + play_btn("t1")),
-    ("Fund your wallet", "<p>Send BNB on BNB Smart Chain, swap most of it to USDT BEP20, and keep some BNB for fees.</p>" + play_btn("t2")),
-    ("Copy the sign-up link", f"<p>Use the link of the person who introduced you, so they stay your sponsor. If that's MTG, tap below: it copies and opens nothing.</p><div class='btn-row'>{copy_btn('signup', 'Copy MTG\'s sign-up link', size='sm')}</div>"),
-    ("Join in SafePal Explore", "<p>Paste the link in Explore, choose BNB Chain, pick your package, then approve and sign. Read the risk warning before you confirm.</p>" + play_btn("t3")),
-    ("Find your way around", "<p>Tour Overview, Packages, Earnings, Network and More, so every number makes sense.</p>" + play_btn("t7")),
+    (JOIN_STEPS[0][0], f"<p>{JOIN_STEPS[0][1]}</p>" + play_btn("t1")),
+    (JOIN_STEPS[1][0], f"<p>{JOIN_STEPS[1][1]}</p>" + play_btn("t2")),
+    (JOIN_STEPS[2][0], f"<p>{JOIN_STEPS[2][1]} If that's MTG, tap below: it copies and opens nothing.</p><div class='btn-row'>{copy_btn('signup', 'Copy MTG\'s sign-up link', size='sm')}</div>"),
+    (JOIN_STEPS[3][0], f"<p>{JOIN_STEPS[3][1]}</p>" + play_btn("t3")),
+    (JOIN_STEPS[4][0], f"<p>{JOIN_STEPS[4][1]}</p>" + play_btn("t7")),
 ]), "Five steps", "The success check: the Packages page says you hold your package.")}
 {sec(f"""<div class="joinband"><div><h2 class="h3">Just joined? Your 72 hours start now</h2><p>What may already be waiting, why the $100 position matters, and what two directs open inside your first three days.</p></div>
 <div class="btn-row"><a class="btn btn-gold btn-sm ring" href="{A("dashboard/first-72-hours/", here)}">{ic("timer")}<span class="lbl">Your first 72 hours</span></a>{play_btn("e7")}</div></div>""")}

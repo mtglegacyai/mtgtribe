@@ -4,6 +4,7 @@ SITE = 'https://mtgtribe.com'
 BASE = '/altruva/'          # prod path prefix
 NAME = 'ALTRUVA Guide by MTG'
 TODAY = '2026-10-25'
+LAUNCHED = '2026-10-25'   # the guide went live (MTG: "Put it live now", 25 Oct 2026)
 
 # exact values (claude/altruva-source-notes.md 5b and MTG, 25 Oct 2026)
 REF = 'https://altruva.io/app/packages?ref=0x2731c9Ffa7bb6d226Ba0D6a8320CaD2d5E723997'
@@ -123,3 +124,6 @@ NAV = [
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More from MTG')]
 NAVD = {n[0]: n for n in NAV + EXTRA}
+
+# IndexNow (Bing, Yahoo via Bing, Yandex, Seznam, Naver): key file served at mtgtribe.com/<key>.txt
+INDEXNOW_KEY = 'f823902c04cfbce2c98af25999c7a9ae'

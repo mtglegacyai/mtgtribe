@@ -6,7 +6,7 @@ from config import *
 from pages_learn import p_home, p_fit, p_diff, p_split, p_pkg, p_leg, p_wl, p_match, p_ranks, p_wd
 from pages_do import (p_first72, p_join, p_tut, p_exp, p_c_wd, p_c_wl, p_c_m, p_c_zar, p_faq, faq_ld, p_gloss, p_safe, p_dl,
                       p_card, p_tribe, p_disc)
-from pages_land import landing
+from pages_land import landing, WELCOME_SECS
 
 ROOT = '/home/claude/site'
 SRC, OUT = ROOT + '/src', ROOT + '/out'
@@ -41,6 +41,36 @@ PAGES = {
     'tribe': ('Join the MTG TRIBE', 'The MTG TRIBE: a WhatsApp community for action takers. Join the group, WhatsApp MTG, or follow on TikTok.', p_tribe, None),
     'disc': ('Disclaimer', 'This independent ALTRUVA guide is educational, not official and not financial advice. Affiliate links, risk and privacy explained.', p_disc, None),
 }
+
+
+from seo import SEO_DESC
+PAGES = {k: (t, SEO_DESC.get(k, d), fn, ex) for k, (t, d, fn, ex) in PAGES.items()}
+
+
+def page_ld(key, title, desc):
+    """structured data that says what a page is for: tools, glossary terms, the join steps"""
+    url = SITE + BASE + NAVD[key][1]
+    if key.startswith('c-'):
+        return [{'@type': 'WebApplication', 'name': title, 'url': url, 'description': desc,
+                 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any (runs in a web browser)',
+                 'browserRequirements': 'Requires JavaScript', 'isAccessibleForFree': True, 'inLanguage': 'en-ZA',
+                 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'},
+                 'author': {'@id': core.PERSON_ID}, 'publisher': {'@id': core.PERSON_ID}}]
+    if key == 'gloss':
+        from pages_do import GLOSS
+        tid = url + '#definedtermset'
+        return [{'@type': 'DefinedTermSet', '@id': tid, 'name': 'ALTRUVA glossary: crypto words in plain English', 'url': url,
+                 'hasDefinedTerm': [{'@type': 'DefinedTerm', 'name': t, 'description': core.plain(d + (' Like: ' + like if like else '')),
+                                     'url': url + '#' + id_, 'inDefinedTermSet': {'@id': tid}} for id_, t, icn, d, like in GLOSS]}]
+    if key == 'join':
+        from pages_do import JOIN_STEPS, JOIN_NEEDS
+        return [{'@type': 'HowTo', 'name': 'How to join ALTRUVA with SafePal, step by step', 'description': desc,
+                 'totalTime': 'PT20M', 'inLanguage': 'en-ZA',
+                 'supply': [{'@type': 'HowToSupply', 'name': n} for n in JOIN_NEEDS],
+                 'tool': [{'@type': 'HowToTool', 'name': 'SafePal wallet app'}],
+                 'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': t}
+                          for i, (n, t) in enumerate(JOIN_STEPS)]}]
+    return []
 
 
 def sh(*a):
@@ -185,21 +215,41 @@ def render(mode, dst):
         open(base + '/index.html', 'w').write(core.wrap_doc(hd, body, 'landing'))
     for key, (title, desc, fn, extra) in PAGES.items():
         here = NAVD[key][1]
-        ld = None
+        ld = []
         if extra == 'faq':
             ld = faq_ld()
         elif extra:
             ld = core.video_ld(extra, here)
+        ld = ld + page_ld(key, title, PAGES[key][1])
         hd, content = core.dash_page(key, title, desc, fn, ld)
         os.makedirs(base + '/' + here, exist_ok=True)
         open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
     if mode == 'prod':
-        # sitemap, robots, short links, case redirect
-        urls = [''] + [NAVD[k][1] for k in PAGES]
-        sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
-            f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod><priority>{"1.0" if u == "" else ("0.8" if u == "dashboard/" else "0.6")}</priority></url>\n' for u in urls) + '</urlset>\n'
+        # sitemap (with video entries), sitemap index, robots, llms.txt, IndexNow key, short links, case redirect
+        vids = {'': [('tour', 'ALTRUVA welcome tour: your map to the guide', 'A guided tour of the independent ALTRUVA guide by MTG.',
+                      'img/altruva-welcome-tour.webp', 'media/altruva-welcome-tour.mp4', WELCOME_SECS)]}
+        for key, (title, desc, fn, extra) in PAGES.items():
+            if isinstance(extra, list):
+                vids[NAVD[key][1]] = [(c, f'ALTRUVA {V[c]["label"]}: {V[c]["title"]}', V[c]['desc'], f'img/{V[c]["slug"]}.webp',
+                                       f'media/{V[c]["slug"]}.mp4', V[c]['secs']) for c in extra]
+        urls = [''] + [NAVD[k][1] for k in PAGES if k != 'disc'] + [NAVD['disc'][1]]
+
+        def vtag(c, t, d, th, m, secs):
+            return (f'<video:video><video:thumbnail_loc>{SITE}{BASE}{th}</video:thumbnail_loc><video:title>{core.esc(t)}</video:title>'
+                    f'<video:description>{core.esc(d)}</video:description><video:content_loc>{SITE}{BASE}{m}</video:content_loc>'
+                    f'<video:duration>{int(round(secs))}</video:duration><video:publication_date>{LAUNCHED}T00:00:00+02:00</video:publication_date>'
+                    f'<video:family_friendly>yes</video:family_friendly><video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video>')
+        sm = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+              'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + ''.join(
+                  f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod>' + ''.join(vtag(*x) for x in vids.get(u, [])) + '</url>\n'
+                  for u in urls) + '</urlset>\n')
         open(base + '/sitemap.xml', 'w').write(sm)
-        open(dst + '/robots.txt', 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}{BASE}sitemap.xml\n')
+        open(dst + '/sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                              f'<sitemap><loc>{SITE}{BASE}sitemap.xml</loc><lastmod>{TODAY}</lastmod></sitemap>\n</sitemapindex>\n')
+        open(dst + '/robots.txt', 'w').write(ROBOTS)
+        open(dst + f'/{INDEXNOW_KEY}.txt', 'w').write(INDEXNOW_KEY)
+        import llms
+        llms.build_llms(dst, [('land', '')] + [(k, NAVD[k][1]) for k in PAGES if k != 'disc'] + [('disc', NAVD['disc'][1])])
         redirect(dst + '/group/index.html', WA_GROUP, 'Join the MTG TRIBE on WhatsApp', 'group', SITE + '/group/',
                  'Tap to join the MTG TRIBE WhatsApp group: a community for action takers to learn, ask and grow together.')
         root_page(dst + '/index.html')
@@ -208,6 +258,43 @@ def render(mode, dst):
         for k, v in V.items():
             shutil.copy(ROOT + '/media/' + v['slug'] + '.mp4', base + '/media/')
         shutil.copy(ROOT + '/media/altruva-welcome-tour.mp4', base + '/media/')
+
+
+ROBOTS = f"""# mtgtribe.com: search engines and AI assistants are welcome to read, index and cite this independent guide.
+User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: YandexBot
+Allow: /
+
+# AI search and assistants
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Meta-WebIndexer
+User-agent: meta-externalagent
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: Amazonbot
+User-agent: CCBot
+Allow: /
+
+Sitemap: {SITE}/sitemap.xml
+Sitemap: {SITE}{BASE}sitemap.xml
+"""
 
 
 def redirect(path, to, title, og_key=None, self_url=None, desc=''):
@@ -225,10 +312,10 @@ def root_page(path):
     t = 'MTG TRIBE | mtgtribe.com'
     d = 'Independent guides, videos and free calculators by MTG, Your Digital Architect. Learn first, then decide.'
     open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{t}</title><meta name="description" content="{d}"><link rel="canonical" href="{SITE}/">
+<title>{t}</title><meta name="description" content="{d}"><link rel="canonical" href="{SITE}{BASE}">
 <meta http-equiv="refresh" content="0;url=/altruva/">
 {core.og_tags(t, d, SITE + '/', 'root')}
-<script>location.replace('/altruva/'+location.search+location.hash)</script>
+<script>location.replace('https://mtgtribe.com/altruva/'+location.search+location.hash)</script>
 <style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}}a{{color:#eebd5c}}</style>
 </head><body><p>Taking you to the <a href="/altruva/">ALTRUVA guide</a>.</p></body></html>''')
 

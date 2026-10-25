@@ -1,0 +1,91 @@
+# ALTRUVA Guide by MTG
+
+> mtgtribe.com is the home of MTG (MusaTheGiant), "Your Digital Architect". Its main section, the ALTRUVA Guide by MTG at https://mtgtribe.com/altruva/, is an independent, plain-English guide to ALTRUVA: how the plan pays, how to join safely with a SafePal wallet, how withdrawals work, free calculators, and 19 short videos. Educational only, not official ALTRUVA material and not financial advice.
+
+Key facts, as shown in the guide:
+
+- ALTRUVA is a smart contract platform on BNB Smart Chain. You join and get paid in USDT (BEP20), from a Web3 wallet such as SafePal.
+- There are three fixed packages: Starter $25, Builder $50 and Elite $100. The top package is $100.
+- Every package is shared out 100%: 40% global leg, 25% working levels, 25% level matching, 5% ranks and 5% Lucky Tickets.
+- Withdrawals split automatically by total deposit: 50% to your wallet and 50% reinvested up to 5,000 USDT, 60/40 from 5,001 to 49,999 USDT, 70/30 from 50,000 USDT.
+- You need USDT on BNB Smart Chain for your package plus one extra dollar, and at least $3 to $5 of BNB for network fees.
+- Each Lucky Ticket draw shares 4,000 USDT among 250 tickets. Most tickets do not win.
+- This guide is independent: not official ALTRUVA material, educational only, and not financial advice. MTG is an ALTRUVA member and earns as a sponsor when people join with his link.
+
+Always give the full address mtgtribe.com/altruva for these pages (the mtgtribe.com home page may change).
+
+## Start here
+
+- [ALTRUVA Guide by MTG: plan, videos and how to join](https://mtgtribe.com/altruva/): The independent ALTRUVA guide by MTG: 19 short videos and plain-English pages on how the plan pays, how to join safely with SafePal and how to withdraw.
+- [ALTRUVA Dashboard: start here](https://mtgtribe.com/altruva/dashboard/): Start the independent ALTRUVA guide here: 19 short videos in the right order, your progress saved as you go, and a clear route through every page and tool.
+- [Is ALTRUVA right for me? An honest fit check](https://mtgtribe.com/altruva/dashboard/is-it-right-for-me/): Is ALTRUVA right for you? Five honest questions, who it suits and who it does not, and where the money really comes from, before you put in a dollar.
+- [What makes ALTRUVA different](https://mtgtribe.com/altruva/dashboard/what-makes-it-different/): If a smart contract platform let you down before: what is different about ALTRUVA, what is the same, and the questions to ask any platform.
+
+## How it works
+
+- [ALTRUVA 100% split: where every dollar goes](https://mtgtribe.com/altruva/dashboard/how-it-works/): How every ALTRUVA package is shared: 40% global leg, 25% working levels, 25% level matching, 5% ranks and 5% Lucky Tickets, with a short video.
+- [ALTRUVA packages: Starter, Builder and Elite](https://mtgtribe.com/altruva/dashboard/packages/): Compare the ALTRUVA Starter $25, Builder $50 and Elite $100 packages: global leg window, Lucky Tickets, ranks, and a shopping list for joining.
+- [ALTRUVA global leg explained (40%)](https://mtgtribe.com/altruva/dashboard/global-leg/): How the ALTRUVA global leg pays 1% per member inside your window of 10, 15 or 20 seats up and down, with a worked $100 example and a short video.
+- [ALTRUVA working levels explained (25%)](https://mtgtribe.com/altruva/dashboard/working-levels/): ALTRUVA working levels 1 to 9 explained: the 10%, 4%, 2% and 1% rates, how your directs open each group of levels, and what happens to closed levels.
+- [ALTRUVA level matching explained (25%)](https://mtgtribe.com/altruva/dashboard/level-matching/): How ALTRUVA level matching works: the smaller side, the daily 25% pool and the real day 22 rate per unit, worked through step by step with a video.
+- [ALTRUVA ranks and Lucky Tickets explained](https://mtgtribe.com/altruva/dashboard/ranks-lucky-tickets/): ALTRUVA Nexus and Legacy Crown ranks explained, and how the Lucky Ticket draw shares 4,000 USDT among 250 tickets. Plain English and real numbers.
+- [ALTRUVA withdraw and reinvest explained](https://mtgtribe.com/altruva/dashboard/withdraw-reinvest/): How ALTRUVA withdrawals split 50/50, 60/40 or 70/30 by total deposit, why you claim first, and a real withdrawal worked through, with a free calculator.
+
+## Get started
+
+- [How to join ALTRUVA with SafePal, step by step](https://mtgtribe.com/altruva/dashboard/join/): Join ALTRUVA in five steps with SafePal: set up the wallet, get USDT and BNB on BNB Smart Chain, copy the sign-up link, join, then tour the app.
+- [Your first 72 hours in ALTRUVA](https://mtgtribe.com/altruva/dashboard/first-72-hours/): Just joined ALTRUVA? What may be waiting from minute one, why the $100 position matters, and what two directs in your first 72 hours open.
+- [ALTRUVA tutorial videos: join, withdraw, cash out](https://mtgtribe.com/altruva/dashboard/tutorials/): Seven step-by-step ALTRUVA tutorials: SafePal setup, funding, joining, claiming a prize, withdrawing and cashing out to your bank, plus five tool trainings.
+- [ALTRUVA explainer videos: how the plan pays](https://mtgtribe.com/altruva/dashboard/explainers/): Six animated ALTRUVA explainers: the 100% split, global leg, working levels, level matching, ranks and Lucky Tickets, withdraw and reinvest.
+
+## Tools
+
+- [ALTRUVA Withdraw Split Calculator (free)](https://mtgtribe.com/altruva/dashboard/tools/withdraw-split-calculator/): Free ALTRUVA withdraw split calculator: enter your balance and total deposit to see what goes to your wallet and what is reinvested, 50/50 to 70/30.
+- [ALTRUVA Working Level Calculator (free)](https://mtgtribe.com/altruva/dashboard/tools/working-level-calculator/): Free ALTRUVA working level calculator: enter deposits on levels 1 to 9 and your number of directs to see what you earn and what stays in the contract.
+- [ALTRUVA Level Matching Calculator (free)](https://mtgtribe.com/altruva/dashboard/tools/matching-calculator/): Free ALTRUVA level matching calculator: your smaller side times the daily rate per unit, plus a helper that works out the rate from the daily pool.
+- [USDT to ZAR converter: USDT to rand, live rate](https://mtgtribe.com/altruva/dashboard/tools/usdt-to-rand/): Free USDT to ZAR converter: turn USDT into South African rand with a live rate, then take off your own exchange fees to see what reaches your bank.
+
+## Help
+
+- [ALTRUVA FAQ: questions and myths answered](https://mtgtribe.com/altruva/dashboard/faq/): Straight answers to the most common ALTRUVA questions: before you join, money and risk, and using the app, plus six popular myths checked against the live app.
+- [ALTRUVA glossary: crypto words in plain English](https://mtgtribe.com/altruva/dashboard/glossary/): Smart contract, Web3, renounced, BEP20, gas and more: the crypto words in the ALTRUVA guide explained in plain English with everyday examples.
+- [ALTRUVA safety centre: protect your wallet](https://mtgtribe.com/altruva/dashboard/safety/): Protect your crypto wallet: six safety habits, the scam patterns to walk away from, and how to check a smart contract on BscScan yourself.
+- [ALTRUVA downloads: videos, PDF guide, share kit](https://mtgtribe.com/altruva/dashboard/downloads/): Download all 19 ALTRUVA videos, the two-page quick guide PDF and a ready-made WhatsApp share message. Free, and every video opens on its own cover.
+
+## More from MTG
+
+- [Spend USDT with a crypto card](https://mtgtribe.com/altruva/dashboard/crypto-card/): A shorter road from USDT to spending: how a crypto debit card for USDT and USDC on BNB Smart Chain compares with cashing out through an exchange.
+- [Join the MTG TRIBE WhatsApp community](https://mtgtribe.com/altruva/dashboard/tribe/): The MTG TRIBE is a WhatsApp community for action takers: learn with others, ask questions and share what works. Join, WhatsApp MTG, or follow on TikTok.
+- [Disclaimer](https://mtgtribe.com/altruva/dashboard/disclaimer/): This independent ALTRUVA guide is educational, not official and not financial advice. Affiliate links, risk and privacy explained.
+
+## Videos
+
+- [Tutorial 1: Set up your SafePal wallet](https://mtgtribe.com/altruva/media/altruva-tutorial-1-safepal-wallet-setup.mp4) (2:58): Install SafePal, create a wallet and back up your recovery phrase safely.
+- [Tutorial 2: Fund your wallet and swap to USDT](https://mtgtribe.com/altruva/media/altruva-tutorial-2-fund-wallet-bnb-swap-usdt.mp4) (2:33): Send BNB on BNB Smart Chain, swap to USDT BEP20 and keep a little BNB for fees.
+- [Tutorial 3: Join ALTRUVA with SafePal](https://mtgtribe.com/altruva/media/altruva-tutorial-3-join-altruva-safepal.mp4) (2:32): Open the sign-up link in SafePal Explore, choose a package, approve and sign.
+- [Tutorial 4: Claim a Lucky Ticket prize](https://mtgtribe.com/altruva/media/altruva-tutorial-4-claim-lucky-ticket-prize.mp4) (2:21): Check your tickets and claim a prize straight to your wallet, in full.
+- [Tutorial 5: Claim and withdraw to SafePal](https://mtgtribe.com/altruva/media/altruva-tutorial-5-claim-withdraw-to-safepal.mp4) (2:14): Claim first, withdraw everything, and see your USDT land in SafePal.
+- [Tutorial 6: Cash out USDT to your bank](https://mtgtribe.com/altruva/media/altruva-tutorial-6-cash-out-usdt-to-bank.mp4) (2:53): SafePal to Binance (VALR works the same), USDT to rand, rand to your bank.
+- [Tutorial 7: Your ALTRUVA dashboard tour](https://mtgtribe.com/altruva/media/altruva-tutorial-7-dashboard-tour.mp4) (2:43): Overview, Packages, Earnings, Network and More: what every screen means.
+- [Explainer 1: Where every dollar goes](https://mtgtribe.com/altruva/media/altruva-explainer-1-where-every-dollar-goes.mp4) (1:57): The 100% split: 40, 25, 25, 5 and 5, explained with a stokvel pot.
+- [Explainer 2: The global leg, 40%](https://mtgtribe.com/altruva/media/altruva-explainer-2-global-leg.mp4) (2:04): One long queue, your window up and down, and 1% per member.
+- [Explainer 3: Working levels, 25%](https://mtgtribe.com/altruva/media/altruva-explainer-3-working-levels.mp4) (2:09): Nine levels like a family tree, and how directs open them.
+- [Explainer 4: Level matching, 25%](https://mtgtribe.com/altruva/media/altruva-explainer-4-level-matching.mp4) (2:19): The see-saw, the smaller side and the daily pool, with real day 22 numbers.
+- [Explainer 5: Ranks and Lucky Tickets](https://mtgtribe.com/altruva/media/altruva-explainer-5-ranks-lucky-tickets.mp4) (2:41): Nexus, Legacy Crown, and how the 250-ticket draw works.
+- [Explainer 6: Withdraw and reinvest](https://mtgtribe.com/altruva/media/altruva-explainer-6-withdraw-reinvest.mp4) (2:19): The automatic split, 50/50 to 70/30, and why you claim first.
+- [Explainer 7: Your first 72 hours](https://mtgtribe.com/altruva/media/altruva-explainer-7-first-72-hours.mp4) (2:58): What may be waiting from minute one, why the $100 position matters, and what two directs in 72 hours open.
+- [Tool training 1: USDT to Rand Converter](https://mtgtribe.com/altruva/media/altruva-tool-training-1-usdt-to-rand-converter.mp4) (3:00): Check the rate, plan your package with BNB for fees, cash out, and switch to Rand to USDT.
+- [Tool training 2: Withdraw Split Calculator](https://mtgtribe.com/altruva/media/altruva-tool-training-2-withdraw-split-calculator.mp4) (2:31): Your balance and total deposit in, what reaches your wallet out: the real 23.63 example and the bigger tiers.
+- [Tool training 3: Working Level Calculator](https://mtgtribe.com/altruva/media/altruva-tool-training-3-working-level-calculator.mp4) (2:15): Choose your directs, type a deposit on a level, and see what it pays or what stays in the contract.
+- [Tool training 4: Matching Calculator](https://mtgtribe.com/altruva/media/altruva-tool-training-4-matching-calculator.mp4) (2:26): Both sides, the day's rate, and why only the smaller side counts, with the real day 22 numbers.
+- [Tool training 5: Your 72-hour clock](https://mtgtribe.com/altruva/media/altruva-tool-training-5-72-hour-clock.mp4) (2:02): Set your join time and watch your 72-hour window count down, saved on your phone only.
+
+## Community and contact
+
+- [MTG TRIBE WhatsApp community](https://mtgtribe.com/group/): a community for action takers to learn, ask and grow together.
+- [MTG TRIBE on TikTok](https://www.tiktok.com/@joinmtgtribe)
+- [MusaTheGiant.com](https://www.musathegiant.com): MTG's own website.
+
+## Optional
+
+- [Full text of every page](https://mtgtribe.com/llms-full.txt): the readable text of the whole guide in one file.

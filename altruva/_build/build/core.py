@@ -209,31 +209,63 @@ def og_tags(full, desc, url, key, og_type='website'):
             f'<meta name="twitter:image:alt" content="{esc(alt.strip())}"><link rel="image_src" href="{esc(img)}">')
 
 
+PERSON_ID = SITE + BASE + '#mtg'
+SITE_ID = SITE + BASE + '#site'
+# what each page is, for search engines and AI assistants (schema.org page types)
+PAGE_TYPE = {'tut': 'CollectionPage', 'exp': 'CollectionPage', 'dl': 'CollectionPage', 'home': 'CollectionPage'}
+ALTRUVA_THING = {'@type': 'Thing', 'name': 'ALTRUVA', 'description': 'A smart contract platform on BNB Smart Chain, joined and paid in USDT (BEP20).'}
+
+
+def plain(s):
+    """text without tags or entities, for structured data"""
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', s))).strip()
+
+
+def person_ld():
+    return {'@type': 'Person', '@id': PERSON_ID, 'name': 'MTG', 'alternateName': ['MusaTheGiant', 'Musa the Giant'],
+            'jobTitle': 'Your Digital Architect',
+            'description': 'MTG, Your Digital Architect: creator of independent, plain-English crypto education, videos and free tools, and host of the MTG TRIBE community.',
+            'url': MTG_SITE, 'sameAs': [MTG_SITE, TIKTOK],
+            'knowsAbout': ['ALTRUVA', 'Web3 wallets', 'SafePal', 'USDT on BNB Smart Chain', 'Crypto safety', 'Affiliate marketing']}
+
+
 def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website', og_key=None):
+    from seo import SEO_TITLE
     url = SITE + BASE + path
-    full = title if NAME in title else f'{title} | {NAME}'
+    full = SEO_TITLE.get(og_key) or (title if NAME in title else f'{title} | {NAME}')
     css = L('assets/altruva.css', here)
+    page = {'@type': PAGE_TYPE.get(og_key, 'WebPage'), '@id': url + '#webpage', 'url': url, 'name': full, 'description': desc,
+            'inLanguage': 'en-ZA', 'isPartOf': {'@id': SITE_ID}, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
+            'about': ALTRUVA_THING, 'isAccessibleForFree': True, 'datePublished': LAUNCHED, 'dateModified': TODAY}
     ld = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'WebSite', '@id': SITE + BASE + '#site', 'url': SITE + BASE, 'name': NAME, 'inLanguage': 'en-ZA',
-         'publisher': {'@id': SITE + BASE + '#mtg'}},
-        {'@type': 'Person', '@id': SITE + BASE + '#mtg', 'name': 'MTG', 'alternateName': 'MusaTheGiant',
-         'description': 'Your Digital Architect', 'url': MTG_SITE, 'sameAs': [TIKTOK, MTG_SITE]},
-        {'@type': 'WebPage', '@id': url, 'url': url, 'name': full, 'description': desc, 'inLanguage': 'en-ZA',
-         'isPartOf': {'@id': SITE + BASE + '#site'}, 'author': {'@id': SITE + BASE + '#mtg'},
-         'dateModified': TODAY},
+        {'@type': 'WebSite', '@id': SITE_ID, 'url': SITE + BASE, 'name': NAME, 'alternateName': ['ALTRUVA Guide', 'MTG ALTRUVA Guide'],
+         'description': 'Independent, plain-English ALTRUVA education by MTG: videos, explainers, free calculators and safety guides.',
+         'inLanguage': 'en-ZA', 'publisher': {'@id': PERSON_ID}, 'author': {'@id': PERSON_ID}},
+        person_ld(), page,
     ]}
-    if extra_ld:
-        ld['@graph'] += extra_ld
+    for x in extra_ld or []:
+        if x.get('@type') == 'BreadcrumbList':
+            x['@id'] = url + '#breadcrumb'
+            page['breadcrumb'] = {'@id': x['@id']}
+        elif x.get('@type') == 'VideoObject':
+            x['@id'] = url + '#video-' + x.pop('_code', str(len(ld['@graph'])))
+            x['isPartOf'] = {'@id': url + '#webpage'}
+            page.setdefault('video', []).append({'@id': x['@id']})
+        elif x.get('@type') in ('FAQPage', 'HowTo', 'WebApplication', 'DefinedTermSet'):
+            x.setdefault('@id', url + '#' + x['@type'].lower())
+            page.setdefault('hasPart', []).append({'@id': x['@id']})
+        ld['@graph'].append(x)
     fav = L('img/favicon-32.png', here)
     touch = L('img/apple-touch-icon.png', here)
     og = og_image(og_key)
-    ld['@graph'][2]['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': og, 'width': 1200, 'height': 630}
-    robots = 'noindex,follow' if noindex else 'index,follow,max-image-preview:large'
+    page['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': og, 'width': 1200, 'height': 630}
+    robots = 'noindex,follow' if noindex else 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
     return f'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{esc(full)}</title>
 <meta name="description" content="{esc(desc)}">
 <meta name="robots" content="{robots}">
+<meta name="author" content="MTG">
 <link rel="canonical" href="{esc(url)}">
 <meta name="theme-color" content="#01081b">
 <meta name="color-scheme" content="dark">
@@ -243,18 +275,24 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Orbitron:wght@700;800&display=swap">
 <link rel="stylesheet" href="{esc(css)}">
-<script>document.documentElement.classList.add('js');try{{if(localStorage.getItem('mtg-side')==='off'&&innerWidth>1060)document.documentElement.classList.add('side-off')}}catch(e){{}}</script>
+<script>if(location.protocol==='http:'&&location.hostname==='mtgtribe.com')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');try{{if(localStorage.getItem('mtg-side')==='off'&&innerWidth>1060)document.documentElement.classList.add('side-off')}}catch(e){{}}</script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(',', ':'))}</script>'''
+
+
+def video_obj(code, name, desc, thumb, media, dur):
+    return {'@type': 'VideoObject', '_code': code, 'name': name, 'description': desc,
+            'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': LAUNCHED + 'T00:00:00+02:00',
+            'duration': dur, 'contentUrl': SITE + BASE + media, 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
+            'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
+            'about': ALTRUVA_THING}
 
 
 def video_ld(codes, here):
     out = []
     for k in codes:
         v = V[k]
-        out.append({'@type': 'VideoObject', 'name': f'ALTRUVA {v["label"]}: {v["title"]}', 'description': v['desc'],
-                    'thumbnailUrl': SITE + BASE + f'img/{v["slug"]}.webp', 'uploadDate': '2026-10-24',
-                    'duration': iso_dur(v['secs']), 'contentUrl': SITE + BASE + f'media/{v["slug"]}.mp4',
-                    'inLanguage': 'en-ZA', 'author': {'@id': SITE + BASE + '#mtg'}})
+        out.append(video_obj(k, f'ALTRUVA {v["label"]}: {v["title"]}', v['desc'], f'img/{v["slug"]}.webp',
+                             f'media/{v["slug"]}.mp4', iso_dur(v['secs'])))
     return out
 
 

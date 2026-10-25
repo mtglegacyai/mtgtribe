@@ -207,6 +207,7 @@ def render(mode, dst):
         os.makedirs(base + '/media', exist_ok=True)
         for k, v in V.items():
             shutil.copy(ROOT + '/media/' + v['slug'] + '.mp4', base + '/media/')
+        shutil.copy(ROOT + '/media/altruva-welcome-tour.mp4', base + '/media/')
 
 
 def redirect(path, to, title, og_key=None, self_url=None, desc=''):

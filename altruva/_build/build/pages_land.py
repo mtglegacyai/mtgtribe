@@ -22,6 +22,11 @@ def station(n, icon, title, desc, main, subs, here, kind=''):
             f'<span class="go" aria-hidden="true">{ic("chevron-right")}</span></div></li>')
 
 
+WELCOME_LEN = '6:03'
+WELCOME_MIN = 6
+WELCOME_ISO = 'PT6M3S'
+
+
 def landing():
     here = ''
     import core as _c; _c._used.clear()
@@ -69,15 +74,12 @@ def landing():
  <p class="lead">The independent ALTRUVA guide by MTG. {NV} short videos and plain-English pages show how the plan pays, how to join safely and how money comes out. No promises. The full picture.</p>
  {chips(("film", f"{NV} videos, about {TOTAL_MIN} minutes"), ("package", "Top package $100"), ("info", "Independent, not official"))}
  <div class="stage ring" id="stage">
-  <canvas aria-hidden="true"></canvas>
-  <span class="soon">Coming soon</span>
-  <div class="stage-in">
-   <img class="em" src="{A('img/altruva-emblem-192.png', here)}" width="192" height="192" alt="">
-   <h2>Your welcome video is on its way</h2>
-   <p>A friendly tour: what ALTRUVA is, the words you'll hear, and exactly where to start in the dashboard.</p>
-   {play_btn('e1', 'Watch: Where every dollar goes', 'blue')}
+  <div class="vbox wide" data-vid="w1">
+   <img src="{A('img/altruva-welcome-tour-640.webp', here)}" srcset="{A('img/altruva-welcome-tour-640.webp', here)} 640w, {A('img/altruva-welcome-tour.webp', here)} 1280w" sizes="(max-width:1000px) 92vw, 960px" width="1280" height="720" decoding="async" fetchpriority="high" alt="Welcome to your map: every page, every video, every tool">
+   <button type="button" class="vplay" data-src="{L('media/altruva-welcome-tour.mp4', here)}" data-code="w1" aria-label="Play the welcome tour ({WELCOME_LEN})"><span class="pbtn">{ic('play')}</span><span class="dur">{WELCOME_LEN}</span></button>
   </div>
  </div>
+ <p class="stage-cap">{ic('map')}<span><b>Start here:</b> a {WELCOME_MIN}-minute welcome tour of the whole guide.</span></p>
  <div class="hero-cta">
   <a class="btn btn-gold btn-lg ring" href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span class="lbl">Enter the dashboard</span></a>
   <p class="sub">Free to learn. No sign-up needed to browse.</p>
@@ -103,5 +105,10 @@ def landing():
 {overlays(here)}'''
     desc = (f'The independent ALTRUVA guide by MTG: {NV} short videos and plain-English pages on how the plan pays, '
             'how to join safely with SafePal and how money comes out. Top package $100. Free to learn.')
-    hd = head('ALTRUVA Guide by MTG: plan, videos and how to join', desc, '', here, og_key='land')
+    tour = [{'@type': 'VideoObject', 'name': 'ALTRUVA welcome tour: your map to the guide',
+             'description': 'A guided tour of the independent ALTRUVA guide by MTG: what ALTRUVA is in plain English, five key words, '
+                            'how every dollar moves, where to find every page, video and tool, and where to start.',
+             'thumbnailUrl': SITE + BASE + 'img/altruva-welcome-tour.webp', 'uploadDate': TODAY, 'duration': WELCOME_ISO,
+             'contentUrl': SITE + BASE + 'media/altruva-welcome-tour.mp4', 'inLanguage': 'en-ZA', 'author': {'@id': SITE + BASE + '#mtg'}}]
+    hd = head('ALTRUVA Guide by MTG: plan, videos and how to join', desc, '', here, extra_ld=tour, og_key='land')
     return hd, body

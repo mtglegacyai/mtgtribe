@@ -163,7 +163,7 @@
   function markWatched(k) {
     if (!k || watched[k]) return;
     watched[k] = 1; set('alt-watched', JSON.stringify(Object.keys(watched)));
-    paintWatched(); toast((ALTV[k] ? ALTV[k].st : 'Video') + ': watched ✓');
+    paintWatched(); toast((ALTV[k] ? ALTV[k].st : 'Welcome tour') + ': watched ✓');
   }
   function track(v, k) {
     on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched(k); });

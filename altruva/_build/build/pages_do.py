@@ -23,6 +23,7 @@ def p_first72(here):
 {checks(["Right after joining, global leg income may already be waiting: your window looks up the line too.",
          "Once your balance reaches $5, claim and withdraw to SafePal. Half goes to your wallet, half is reinvested.",
          "Two directs on your package inside 72 hours open your rank, the Starter ticket, both matching sides and working levels 1 to 6."])}
+<div class="btn-row">{play_btn("k5", "How to use the clock")}</div>
 </div>{vid("e7", here)}</div>""")}
 {sec(f"""<div class="stack"><p class="how num">Illustration: if the 20 members ahead of you each hold $100, 1% of each is $1, so about <b>$20</b> could be waiting to claim. The real amount depends on who is in your window.</p>
 {think("Why is there money before I've done anything?", "<p>Your global leg window looks up the line as well as down. The app pays 1% of each visible member's total deposit inside your window, so the members who joined before you count from the start. It isn't a bonus or a promise: it depends entirely on who is in your window.</p>")}
@@ -60,7 +61,7 @@ def p_join(here):
 {sec(f"""<div class="panel pad">{checks([
     "A smartphone with the <b>SafePal</b> app (MetaMask or Trust Wallet work too, but the videos use SafePal).",
     "<b>USDT on BNB Smart Chain (BEP20)</b> for your package, plus one extra dollar: 26, 51 or 101 USDT.",
-    "About <b>$5 to $10 of BNB</b> in the same wallet for network fees. Each action costs a few cents.",
+    "At least <b>$3 to $5 of BNB</b> in the same wallet for network fees. Each action costs a few cents.",
     "The <b>sign-up link</b> from the person who introduced you. A pen and paper for your recovery phrase.",
 ])}</div>""", "What you need")}
 {sec(steps([
@@ -99,9 +100,10 @@ def playlist(codes, here, title):
 def p_tut(here):
     total = round(sum(V[k]['secs'] for k in TUT) / 60)
     return f'''{phero("circle-play", "Tutorial videos",
-        "Seven step-by-step trainings, recorded on a real phone. Pause after each step and try it yourself.",
-        [("film", f"7 videos, about {total} minutes"), ("smartphone", "SafePal and the ALTRUVA app"), ("eye-off", "Private details hidden")])}
+        "Seven step-by-step trainings, recorded on a real phone, plus five short trainings for this website's tools. Pause after each step and try it yourself.",
+        [("film", f"7 tutorials, about {total} minutes"), ("calculator", f"{len(TOOL)} tool trainings"), ("eye-off", "Private details hidden")])}
 {sec(playlist(TUT, here, "All tutorials, in order"))}
+{sec(playlist(TOOL, here, "Tool trainings, in order"), "Tool trainings", f"Every tap on this website's tools, in about {round(sum(V[k]['secs'] for k in TOOL) / 60)} minutes.", id="tools")}
 {sec(think("Do I really need to watch them all?", "<p>Yes, even if you think you already know ALTRUVA. Each one shows a screen you'll meet sooner or later, and knowing it before you need it saves money and stress. Then share them: we learn best when we teach others.</p>"))}
 '''
 
@@ -129,10 +131,20 @@ def presets(items):
     return f'<div class="seg presets" role="group" aria-label="Examples">{b}<button type="button" data-clear>{ic("rotate-ccw")} Clear</button></div>'
 
 
-def tool_page(icon, title, lead, chips_, form, result, notes, here):
+def tool_vid(code, here):
+    v = V[code]
+    body = (f'<div class="vwrap"><div class="stack"><p>Every tap on this page, step by step, in {mmss(v["secs"])}. '
+            f'Pause the video, try it on your phone, then carry on.</p>'
+            + checks([v['desc'], 'Real numbers on screen, so you can check your own.', 'Then try your own numbers, and teach someone else.'])
+            + f'</div>{vid(code, here)}</div>')
+    return sec(body, 'Watch the tool training', id='training')
+
+
+def tool_page(icon, title, lead, chips_, form, result, notes, here, code=None):
     return f'''{phero(icon, title, lead, chips_)}
 {sec(f'<div class="calc">{form}{result}</div>')}
-{sec(notes)}'''
+{sec(notes)}
+{tool_vid(code, here) if code else ''}'''
 
 
 def p_c_wd(here):
@@ -152,11 +164,11 @@ def p_c_wd(here):
     notes = f'''<div class="stack">{table(["Total deposit", "To wallet", "Reinvested"], [["Up to 5,000", "50%", "50%"], ["5,001 to 49,999", "60%", "40%"], ["50,000 and up", "70%", "30%"]], caption="Split tiers")}
 <p class="fine">Tiers from the live ALTRUVA app, 24 Oct 2026. Amounts are cut to 2 decimals, as the app showed in MTG's real withdrawal (23.63 to 11.81 and 11.81). Lucky Ticket prizes are never split. {vlink("e6", here)}.</p></div>'''
     return tool_page("percent", "Withdraw Split Calculator", "See what reaches your wallet and what's reinvested, before you tap Withdraw.",
-                     [("percent", "Split by total deposit"), ("smartphone", "Works on your phone")], form, result, notes, here)
+                     [("percent", "Split by total deposit"), ("smartphone", "Works on your phone")], form, result, notes, here, 'k2')
 
 
 def p_c_wl(here):
-    lv = ''.join(field(f"l{i}", f"Level {i}", "USDT", "", "0") for i in range(1, 10))
+    lv = ''.join(field(f"l{i}", f"Level {i}", "USDT", "", "0").replace('<span class="err"', f'<span class="lvpay" data-pay="{i}"></span><span class="err"', 1) for i in range(1, 10))
     form = f'''<form class="form panel pad" data-calc="wl" novalidate onsubmit="return false">
 <div class="fl"><span class="lab" id="dlab">Your directs</span><div class="seg" role="group" aria-labelledby="dlab"><button type="button" data-d="0" aria-pressed="false">0</button><button type="button" data-d="1" aria-pressed="true">1</button><button type="button" data-d="2" aria-pressed="false">2</button><button type="button" data-d="3" aria-pressed="false">3 or more</button></div><span class="hint">1 direct opens levels 1 to 3, 2 open 4 to 6, 3 open 7 to 9.</span></div>
 <p class="fine">New deposits or reinvestments on each level:</p>
@@ -172,7 +184,7 @@ def p_c_wl(here):
 </div>'''
     notes = f'<p class="fine">Rates from the live app: 10%, 4%, then 2% on levels 3 to 6 and 1% on levels 7 to 9. Working level income goes straight to your balance, no claim needed. {vlink("e3", here)}.</p>'
     return tool_page("calculator", "Working Level Calculator", "Work out what deposits on your nine levels pay you, and what stays in the contract when a level is closed.",
-                     [("layers", "Levels 1 to 9"), ("users", "Directs open levels")], form, result, notes, here)
+                     [("layers", "Levels 1 to 9"), ("users", "Directs open levels")], form, result, notes, here, 'k3')
 
 
 def p_c_m(here):
@@ -197,15 +209,16 @@ def p_c_m(here):
 </div>'''
     notes = f'<p class="fine">The rate changes every day with the whole platform\'s business, so this is an illustration, not a forecast. A day closes at 00:00 UTC (02:00 in South Africa). {vlink("e4", here)}.</p>'
     return tool_page("equal", "Matching Calculator", "Your smaller side times the day's rate. Try the real day 22 numbers, then your own.",
-                     [("scale", "Smaller side counts"), ("calendar-clock", "One day at a time")], form, result, notes, here)
+                     [("scale", "Smaller side counts"), ("calendar-clock", "One day at a time")], form, result, notes, here, 'k4')
 
 
 def p_c_zar(here):
     form = f'''<form class="form panel pad" data-calc="zar" novalidate onsubmit="return false">
 <div class="seg" role="group" aria-label="Direction"><button type="button" data-dir="u2z" aria-pressed="true">USDT to rand</button><button type="button" data-dir="z2u" aria-pressed="false">Rand to USDT</button></div>
 {field("amt", "Amount", "USDT", "", "100")}
+<div class="pkgq" data-pkgs><span class="lab" id="pklab">Buying a package? Tap one:</span><div class="seg presets" role="group" aria-labelledby="pklab"><button type="button" data-amt="28">Starter + BNB</button><button type="button" data-amt="53">Builder + BNB</button><button type="button" data-amt="105">Elite + BNB</button></div><span class="hint">Your package plus at least $3 to $5 of BNB for network fees: 25 + 3 = 28, 50 + 3 = 53, 100 + 5 = 105.</span><p class="pkres" data-out="pkres" aria-live="polite"></p></div>
 {field("zrate", "Rate", "R per USDT", "", "")}
-<p class="ratebox" data-out="status">{ic("refresh-cw")} Loading the live rate…</p>
+<p class="ratebox" data-out="status">{ic("refresh-cw")}<span>Loading the live rate…</span></p>
 <button type="button" class="btn btn-ghost btn-sm" data-refresh>{ic("refresh-cw")}<span class="lbl">Refresh the live rate</span></button>
 {field("fee", "Fees in rand (optional)", "ZAR", "Exchange and bank fees, as shown on your exchange's screen.", "0")}
 </form>'''
@@ -216,7 +229,7 @@ def p_c_zar(here):
 </div>'''
     notes = f'''<p class="fine">Live rate: CoinGecko (USDT priced in rand), when it loads. Exchanges such as Binance and VALR show their own price, and their convert and withdrawal fees change, so the exchange screen is always the final word. {vlink("t6", here)}.</p>'''
     return tool_page("banknote", "USDT to Rand Converter", "A quick rand value for your USDT, with room for the fees your exchange shows you.",
-                     [("refresh-cw", "Live rate"), ("pen-line", "Or type your own")], form, result, notes, here)
+                     [("refresh-cw", "Live rate"), ("pen-line", "Or type your own")], form, result, notes, here, 'k1')
 
 
 # ======================================================================= FAQ
@@ -225,7 +238,7 @@ FAQ = [
         ('Is this the official ALTRUVA website?', 'No. This is an independent guide made by MTG, an ALTRUVA member, to educate. The ALTRUVA app itself is at altruva.io/app.'),
         ('Does this guide cost anything?', 'No. Every page, video and calculator here is free. You don\'t need to sign up to learn.'),
         ('What\'s the most I can put in?', 'The top package is Elite at $100, and the app says there\'s nothing more to buy. Network fees are a few cents of BNB per action. Some people open more than one account: that\'s their own strategy and their own risk.'),
-        ('What do I need to start?', 'A smartphone, the SafePal wallet app, USDT on BNB Smart Chain for your package, about $5 to $10 of BNB for fees, and the sign-up link from the person who introduced you. The Join step by step page walks you through it.'),
+        ('What do I need to start?', 'A smartphone, the SafePal wallet app, USDT on BNB Smart Chain for your package, at least $3 to $5 of BNB for fees, and the sign-up link from the person who introduced you. The Join step by step page walks you through it.'),
         ('Someone else introduced me. Which link do I use?', 'Theirs. Your sponsor never changes after you join, so use the link of the person who is helping you learn.'),
     ]),
     ('Money and risk', [
@@ -239,7 +252,7 @@ FAQ = [
     ('Using the app', [
         ('What does "claim" mean?', 'Claiming moves earned income into your Withdrawable Balance. Global leg, matching and rank income need a claim. Working level income arrives in your balance by itself.'),
         ('When does a matching day close?', 'At 00:00 UTC, which is 02:00 in South Africa. One claim collects every closed day since your last claim.'),
-        ('How much are the network fees?', 'A few cents of BNB per action on BNB Smart Chain. Joining in Tutorial 3 cost about $0.07. Keep $5 to $10 of BNB so you\'re never stuck.'),
+        ('How much are the network fees?', 'A few cents of BNB per action on BNB Smart Chain. Joining in Tutorial 3 cost about $0.07. Keep at least $3 to $5 of BNB so you\'re never stuck.'),
         ('My wallet showed a red risk warning. What now?', 'Read it. Wallets warn about many contracts. Only continue if you understand and accept the risk. Tutorial 3 shows the screen.'),
     ]),
 ]
@@ -330,7 +343,7 @@ def p_safe(here):
     "<b>Never share your recovery phrase.</b> Not with MTG, not with support, not with your sponsor. Nobody genuine will ever ask for it.",
     "<b>Copy links only from the person who introduced you,</b> and check it opens altruva.io. Then reopen ALTRUVA from your wallet's history.",
     "<b>Read every wallet screen before you tap Confirm.</b> The approval should match your package.",
-    "<b>Keep $5 to $10 of BNB</b> for fees, so you're never stuck.",
+    "<b>Keep at least $3 to $5 of BNB</b> for fees, so you're never stuck.",
     "<b>Only use money you can afford to lose,</b> and withdraw regularly.",
     "<b>Hide your balances and addresses</b> before you share a screenshot.",
 ]), "Six safety habits")}
@@ -378,6 +391,7 @@ def p_dl(here):
     "Share kit", "We learn best when we teach others.")}
 {sec(f"""<div class="grid2"><div class="stack"><h3 class="h3">Tutorials</h3><ul class="dllist">{rows(TUT)}</ul></div>
 <div class="stack"><h3 class="h3">Explainers</h3><ul class="dllist">{rows(EXP)}</ul></div></div>
+<div class="grid2" style="margin-top:20px"><div class="stack"><h3 class="h3">Tool trainings</h3><ul class="dllist">{rows(TOOL)}</ul></div></div>
 <p class="fine">Sharing a video? Please share it as it is, with the risk notes kept in.</p>""", f"All {NV} videos")}
 '''
 

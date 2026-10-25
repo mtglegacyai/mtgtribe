@@ -67,6 +67,8 @@ async function type(pg, sel, v) { await pg.fill(sel, ''); await pg.type(sel, v);
   ok((await txt(pg, '[data-out="earn"]')) === '10.00 USDT', 'WL default: direct buys Elite = 10.00');
   await pg.click('text=A level 7 deposit'); ok((await txt(pg, '[data-out="earn"]')) === '1.00 USDT', 'WL level 7 with 3 directs = 1.00');
   await pg.click('text=Same, 2 directs'); ok((await txt(pg, '[data-out="earn"]')) === '0.00 USDT' && (await txt(pg, '[data-out="stay"]')) === '1.00 USDT', 'WL level 7 with 2 directs stays in contract');
+  ok((await txt(pg, '[data-pay="7"]')).startsWith('Closed'), 'closed level shows Closed under its field');
+  await pg.click('text=A level 7 deposit'); ok((await txt(pg, '[data-pay="7"]')) === '1% = 1.00', 'open level shows what it pays under its field');
 
   await pg.goto(B + 'dashboard/tools/matching-calculator/', { waitUntil: 'networkidle' });
   ok((await txt(pg, '[data-out="earn"]')) === '7.94 USDT', 'matching day 22 = 7.94 (' + await txt(pg, '[data-out="earn"]') + ')');
@@ -78,7 +80,11 @@ async function type(pg, sel, v) { await pg.fill(sel, ''); await pg.type(sel, v);
   ok((await txt(pg, '[data-out="status"]')).includes("Couldn't load"), 'rate failure is explained');
   await type(pg, '#zrate', '18.5'); ok((await txt(pg, '[data-out="main"]')) === 'R1,850.00', '100 USDT at 18.5 = R1,850.00');
   await type(pg, '#fee', '15'); ok((await txt(pg, '[data-out="net"]')) === 'R1,835.00', 'after R15 fee = R1,835.00');
-  await pg.click('[data-dir="z2u"]'); await type(pg, '#amt', '1000'); ok((await txt(pg, '[data-out="main"]')) === '54.86 USDT', 'R1000 + R15 fee needs 54.86 USDT');
+  await pg.click('[data-amt="28"]'); ok((await txt(pg, '[data-out="main"]')) === 'R518.00', 'Starter + BNB sets 28 USDT = R518.00 at 18.5');
+  ok((await txt(pg, '[data-out="pkres"]')).includes('R518.00'), 'package box shows the rand result right under the buttons');
+  await pg.click('[data-amt="105"]'); ok((await pg.inputValue('#amt')) === '105', 'Elite + BNB sets 105');
+  await pg.click('[data-dir="z2u"]'); await type(pg, '#amt', '1000');
+  ok(await pg.evaluate(() => document.querySelector('[data-pkgs]').offsetParent === null), 'package buttons hide in Rand to USDT mode'); ok((await txt(pg, '[data-out="main"]')) === '54.86 USDT', 'R1000 + R15 fee needs 54.86 USDT');
   await pg.screenshot({ path: S + '/qa-zar-390.png', fullPage: false });
 
   await pg.goto(B + 'dashboard/is-it-right-for-me/', { waitUntil: 'networkidle' });
@@ -90,7 +96,15 @@ async function type(pg, sel, v) { await pg.fill(sel, ''); await pg.type(sel, v);
   await pg.goto(B + 'dashboard/tutorials/#t3', { waitUntil: 'networkidle' });
   ok((await pg.getAttribute('.now .vid', 'data-vid')) === 't3', 'playlist opens #t3 from the link');
   await pg.click('[data-pick="t5"]'); await pg.waitForTimeout(500);
+  ok(!/^\d+$/.test(await txt(pg, '[data-k="desc"]')) && (await txt(pg, '[data-k="desc"]')).length > 20, 'playlist shows the video description, not its number');
+  ok((await pg.$$('[data-pick]')).length === 12, 'tutorials page lists 7 tutorials and 5 tool trainings');
   ok((await pg.getAttribute('.now .vid', 'data-vid')) === 't5' && !!(await pg.$('.now video')), 'playlist item plays in the main player');
+  for (const [u, k] of [['tools/usdt-to-rand/', 'k1'], ['tools/withdraw-split-calculator/', 'k2'], ['tools/working-level-calculator/', 'k3'], ['tools/matching-calculator/', 'k4']]) {
+    await pg.goto(B + 'dashboard/' + u, { waitUntil: 'domcontentloaded' });
+    ok(!!(await pg.$(`figure.vid[data-vid="${k}"]`)), `${u} shows its tool training video`);
+  }
+  await pg.goto(B + 'dashboard/first-72-hours/', { waitUntil: 'domcontentloaded' });
+  ok(!!(await pg.$('[data-play="k5"]')), '72-hour page links its clock training');
   await pg.goto(B + 'dashboard/global-leg/', { waitUntil: 'networkidle' });
   await pg.click('[data-leg] [data-w="10"]'); ok((await pg.$$eval('.seats i.on', x => x.length)) === 20, 'Starter window lights 20 seats');
   await pg.goto(B + 'dashboard/working-levels/', { waitUntil: 'networkidle' });

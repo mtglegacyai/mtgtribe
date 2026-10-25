@@ -25,14 +25,14 @@ PAGES = {
     'match': ('ALTRUVA level matching explained (25%)', 'How ALTRUVA level matching works: the smaller side, the daily 25% pool and the real day 22 rate per unit.', p_match, ['e4']),
     'ranks': ('ALTRUVA ranks and Lucky Tickets explained', 'Nexus and Legacy Crown ranks, and how the ALTRUVA Lucky Ticket draw shares 4,000 USDT among 250 tickets.', p_ranks, ['e5']),
     'wd': ('ALTRUVA withdraw and reinvest explained', 'How ALTRUVA withdrawals split 50/50, 60/40 or 70/30 by total deposit, and why you claim first.', p_wd, ['e6']),
-    'first72': ('Your first 72 hours in ALTRUVA', 'Just joined ALTRUVA? What may be waiting from minute one, why the $100 position matters, and what two directs in your first 72 hours open.', p_first72, ['e7']),
+    'first72': ('Your first 72 hours in ALTRUVA', 'Just joined ALTRUVA? What may be waiting from minute one, why the $100 position matters, and what two directs in your first 72 hours open.', p_first72, ['e7', 'k5']),
     'join': ('How to join ALTRUVA step by step with SafePal', 'Join ALTRUVA in five steps with SafePal: set up the wallet, get USDT and BNB, copy the sign-up link, join, and tour the app.', p_join, None),
-    'tut': ('ALTRUVA tutorial videos', 'Seven step-by-step ALTRUVA tutorials: SafePal setup, funding, joining, claiming a prize, withdrawing and cashing out to your bank.', p_tut, TUT),
+    'tut': ('ALTRUVA tutorial videos', 'Seven step-by-step ALTRUVA tutorials: SafePal setup, funding, joining, claiming a prize, withdrawing and cashing out to your bank, plus five tool trainings.', p_tut, TUT + TOOL),
     'exp': ('ALTRUVA explainer videos', 'Six animated ALTRUVA explainers: the 100% split, global leg, working levels, level matching, ranks and Lucky Tickets, withdraw and reinvest.', p_exp, EXP),
-    'c-wd': ('ALTRUVA Withdraw Split Calculator', 'Free ALTRUVA withdraw split calculator: see what goes to your wallet and what is reinvested, by total deposit.', p_c_wd, None),
-    'c-wl': ('ALTRUVA Working Level Calculator', 'Free ALTRUVA working level calculator for levels 1 to 9, with open and closed levels by number of directs.', p_c_wl, None),
-    'c-m': ('ALTRUVA Matching Calculator', 'Free ALTRUVA level matching calculator: smaller side times the daily rate, with a tool to work out the rate.', p_c_m, None),
-    'c-zar': ('USDT to Rand Converter', 'Convert USDT to South African rand with a live rate and your own exchange fees.', p_c_zar, None),
+    'c-wd': ('ALTRUVA Withdraw Split Calculator', 'Free ALTRUVA withdraw split calculator: see what goes to your wallet and what is reinvested, by total deposit.', p_c_wd, ['k2']),
+    'c-wl': ('ALTRUVA Working Level Calculator', 'Free ALTRUVA working level calculator for levels 1 to 9, with open and closed levels by number of directs.', p_c_wl, ['k3']),
+    'c-m': ('ALTRUVA Matching Calculator', 'Free ALTRUVA level matching calculator: smaller side times the daily rate, with a tool to work out the rate.', p_c_m, ['k4']),
+    'c-zar': ('USDT to Rand Converter', 'Convert USDT to South African rand with a live rate and your own exchange fees.', p_c_zar, ['k1']),
     'faq': ('ALTRUVA FAQ: questions and myths', 'Straight answers to the most common ALTRUVA questions, and the myths checked against the live app.', p_faq, 'faq'),
     'gloss': ('ALTRUVA glossary: crypto words in plain English', 'Smart contract, Web3, renounced, BEP20, gas and more, explained in plain English with everyday examples.', p_gloss, None),
     'safe': ('ALTRUVA safety centre', 'Protect your wallet: six safety habits, scam patterns to walk away from, and how to check a smart contract on BscScan.', p_safe, None),
@@ -131,7 +131,7 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:0.9mm 0}}b{{color:#fff}}
 <div class="foot"><span>Figures checked against the live app on 24 Oct 2026. The app is always the final word.</span><span>1 of 2</span></div></div>
 <div class="pg"><div class="card"><h2>Join and start strong</h2><ol>
 <li><b>Set up SafePal</b> and write your recovery phrase on paper. (Tutorial 1)</li>
-<li><b>Fund your wallet:</b> BNB on BNB Smart Chain, swap to USDT BEP20, keep $5 to $10 of BNB for fees. (Tutorial 2)</li>
+<li><b>Fund your wallet:</b> BNB on BNB Smart Chain, swap to USDT BEP20, keep at least $3 to $5 of BNB for fees. (Tutorial 2)</li>
 <li><b>Copy the sign-up link</b> of the person who introduced you.</li>
 <li><b>Join in SafePal Explore:</b> paste, choose BNB Chain, pick a package, approve and sign. (Tutorial 3)</li>
 <li><b>Tour your dashboard</b> so every number makes sense. (Tutorial 7)</li>
@@ -141,7 +141,7 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:0.9mm 0}}b{{color:#fff}}
 <li><b>Never share your recovery phrase.</b> Nobody genuine will ever ask for it.</li>
 <li>Copy links only from the person who introduced you, and check it opens altruva.io.</li>
 <li>Read every wallet screen before you tap Confirm.</li>
-<li>Keep $5 to $10 of BNB for fees.</li>
+<li>Keep at least $3 to $5 of BNB for fees.</li>
 <li>Only use money you can afford to lose, and withdraw regularly.</li>
 <li>Hide balances and addresses before you share a screenshot.</li></ul></div>
 <div class="card honest"><h2>The honest part</h2><p style="margin:0">Payouts come from members' packages and reinvestments. No outside revenue is named, so earnings depend on new deposits and are not guaranteed. You can lose what you put in. Learn first, start small if it fits, and judge it by what your own dashboard shows.</p></div>

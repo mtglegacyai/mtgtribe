@@ -50,20 +50,34 @@ VIDEOS = [
      'The automatic split, 50/50 to 70/30, and why you claim first.', 139.2, 'ALTRUVA_E6_Withdraw_and_Reinvest.mp4'),
     ('e7', 'altruva-explainer-7-first-72-hours', 'Your first 72 hours',
      'What may be waiting from minute one, why the $100 position matters, and what two directs in 72 hours open.', 178.4, 'ALTRUVA_E7_Your_First_72_Hours.mp4'),
+    # tool trainings: every tap on this website's tools (MTG approved the scripts, 25 Oct 2026)
+    ('k1', 'altruva-tool-training-1-usdt-to-rand-converter', 'USDT to Rand Converter',
+     'Check the rate, plan your package with BNB for fees, cash out, and switch to Rand to USDT.', 179.9, 'ALTRUVA_K1_USDT_to_Rand_Converter.mp4'),
+    ('k2', 'altruva-tool-training-2-withdraw-split-calculator', 'Withdraw Split Calculator',
+     'Your balance and total deposit in, what reaches your wallet out: the real 23.63 example and the bigger tiers.', 150.9, 'ALTRUVA_K2_Withdraw_Split_Calculator.mp4'),
+    ('k3', 'altruva-tool-training-3-working-level-calculator', 'Working Level Calculator',
+     'Choose your directs, type a deposit on a level, and see what it pays or what stays in the contract.', 135.0, 'ALTRUVA_K3_Working_Level_Calculator.mp4'),
+    ('k4', 'altruva-tool-training-4-matching-calculator', 'Matching Calculator',
+     "Both sides, the day's rate, and why only the smaller side counts, with the real day 22 numbers.", 145.8, 'ALTRUVA_K4_Matching_Calculator.mp4'),
+    ('k5', 'altruva-tool-training-5-72-hour-clock', 'Your 72-hour clock',
+     'Set your join time and watch your 72-hour window count down, saved on your phone only.', 121.9, 'ALTRUVA_K5_72_Hour_Clock.mp4'),
 ]
+KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training'}
 V = {v[0]: dict(code=v[0], slug=v[1], title=v[2], desc=v[3], secs=v[4], master=v[5], n=int(v[0][1:]),
-                kind=('Tutorial' if v[0][0] == 't' else 'Explainer'),
-                label=('Tutorial ' if v[0][0] == 't' else 'Explainer ') + v[0][1:]) for v in VIDEOS}
+                kind=KIND[v[0][0]], label=KIND[v[0][0]] + ' ' + v[0][1:]) for v in VIDEOS}
 # short, single-line titles for lists, tiles, map links and buttons (MTG, 25 Oct 2026)
 SHORT = {'t1': 'Set up SafePal', 't2': 'Fund and swap to USDT', 't3': 'Join ALTRUVA', 't4': 'Claim a prize',
          't5': 'Claim and withdraw', 't6': 'Cash out to your bank', 't7': 'Dashboard tour',
          'e1': 'Where every dollar goes', 'e2': 'The global leg', 'e3': 'Working levels', 'e4': 'Level matching',
-         'e5': 'Ranks and Lucky Tickets', 'e6': 'Withdraw and reinvest', 'e7': 'Your first 72 hours'}
+         'e5': 'Ranks and Lucky Tickets', 'e6': 'Withdraw and reinvest', 'e7': 'Your first 72 hours',
+         'k1': 'USDT to Rand Converter', 'k2': 'Withdraw Split Calculator', 'k3': 'Working Level Calculator',
+         'k4': 'Matching Calculator', 'k5': 'Your 72-hour clock'}
 for _k, _v in V.items():
     _v['short'] = SHORT.get(_k, _v['title'])
 TOTAL_MIN = round(sum(v[4] for v in VIDEOS) / 60)
 TUT = [k for k in V if k[0] == 't']
 EXP = [k for k in V if k[0] == 'e']
+TOOL = [k for k in V if k[0] == 'k']
 NV = len(VIDEOS)
 EXP_MIN = round(sum(V[k]['secs'] for k in EXP) / 60)
 WORDS_N = {6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine'}
@@ -93,7 +107,7 @@ NAV = [
     ('wd', 'dashboard/withdraw-reinvest/', 'Withdraw and reinvest', 'How money comes out', 'wallet', 'How it works'),
     ('join', 'dashboard/join/', 'Join step by step', 'Wallet, USDT, join', 'rocket', 'Get started'),
     ('first72', 'dashboard/first-72-hours/', 'Your first 72 hours', 'Build from minute one', 'timer', 'Get started'),
-    ('tut', 'dashboard/tutorials/', 'Tutorial videos', '7 step-by-step trainings', 'circle-play', 'Get started'),
+    ('tut', 'dashboard/tutorials/', 'Tutorial videos', '7 tutorials, 5 tool trainings', 'circle-play', 'Get started'),
     ('exp', 'dashboard/explainers/', 'Explainer videos', f'{len(EXP)} animated explainers', 'film', 'Get started'),
     ('c-wd', 'dashboard/tools/withdraw-split-calculator/', 'Withdraw Split Calculator', 'To wallet and reinvested', 'percent', 'Tools'),
     ('c-wl', 'dashboard/tools/working-level-calculator/', 'Working Level Calculator', 'Levels 1 to 9', 'calculator', 'Tools'),

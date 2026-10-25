@@ -230,7 +230,7 @@
       fig.setAttribute('data-vid', k);
       var cap = $('.vcap span', fig); if (cap) cap.innerHTML = '<b>' + info.t + '</b><br>' + info.l + ', ' + info.d;
       var mk = $('[data-mark]', fig); if (mk) mk.setAttribute('data-mark', k);
-      var src = $('[data-pick="' + k + '"] .pt span', pl); if (desc && src) desc.textContent = src.textContent;
+      var src = $('[data-pick="' + k + '"] .pt', pl); if (desc && src) desc.textContent = src.getAttribute('title') || '';
       paintWatched();
       if (play) {
         startInline($('.vplay', box));
@@ -444,9 +444,12 @@
       var dSel = $('.seg [aria-pressed="true"]', F), dirs = dSel ? +dSel.getAttribute('data-d') : 1, open = Math.min(9, dirs * 3);
       var earn = 0, stay = 0, list = '', any = false, bad = false;
       for (var i = 1; i <= 9; i++) {
-        var a = val(F, 'l' + i); if (a !== null && isNaN(a)) { bad = true; continue; }
+        var a = val(F, 'l' + i), pay = $('[data-pay="' + i + '"]', F);
+        if (pay) { pay.textContent = ''; pay.className = 'lvpay'; }
+        if (a !== null && isNaN(a)) { bad = true; continue; }
         if (!a) continue; any = true;
         var part = a * RATES[i - 1] / 100, o = i <= open;
+        if (pay) { pay.textContent = o ? RATES[i - 1] + '% = ' + f2(part) : 'Closed: stays in the contract'; pay.className = 'lvpay ' + (o ? 'o' : 'c'); }
         if (o) earn += part; else stay += part;
         list += '<li class="' + (o ? 'o' : 'c') + '"><span>Level ' + i + ': ' + RATES[i - 1] + '% of ' + f2(a) + '</span><b>' + f2(part) + (o ? '' : ' (closed, stays in the contract)') + '</b></li>';
       }
@@ -469,6 +472,7 @@
     zar: function (F, R) {
       var dirB = $('[data-dir][aria-pressed="true"]', F), u2z = !dirB || dirB.getAttribute('data-dir') === 'u2z';
       $('[data-in="amt"]', F).nextElementSibling.textContent = u2z ? 'USDT' : 'ZAR';
+      var pk = $('[data-pkgs]', F), pr = $('[data-out="pkres"]', F); if (pk) pk.hidden = !u2z; if (pr) pr.innerHTML = '';
       var amt = val(F, 'amt'), rate = val(F, 'zrate'), fee = val(F, 'fee') || 0;
       if (amt === null || rate === null || isNaN(amt) || isNaN(rate) || isNaN(fee) || !rate) {
         out(R, 'biglab', u2z ? 'Value in rand' : 'USDT needed'); out(R, 'main', u2z ? 'R0.00' : '0.00 USDT'); out(R, 'net', u2z ? 'R0.00' : 'R0.00');
@@ -476,6 +480,7 @@
       }
       if (u2z) {
         var g = amt * rate, n = Math.max(0, g - fee);
+        if (pr) pr.innerHTML = f2(amt) + ' USDT is about <b>R' + f2(g) + '</b> before fees.';
         out(R, 'biglab', 'Value in rand'); out(R, 'main', 'R' + f2(g)); out(R, 'netlab', 'After R' + f2(fee) + ' fees'); out(R, 'net', 'R' + f2(n));
         out(R, 'how', f2(amt) + ' USDT × R' + f2(rate, 4) + ' = R' + f2(g) + (fee ? ', minus R' + f2(fee) + ' fees = R' + f2(n) : '') + '.');
       } else {
@@ -512,6 +517,9 @@
       if (biz && all) { $('[data-in="rate"]', F).value = (0.25 * biz / all).toFixed(6); go(); toast('Rate updated ✓'); }
     });
     if (kind === 'zar') zarLive(F, go);
+    $$('[data-amt]', F).forEach(function (b) {
+      on(b, 'click', function () { $('[data-in="amt"]', F).value = b.getAttribute('data-amt'); go(); });
+    });
     var empty = $$('input', F).every(function (i) { return !i.value; }), firstP = $('[data-preset]', F);
     if (empty && firstP) firstP.click(); else go();
     if (kind === 'zar' && !$('[data-in="amt"]', F).value) { $('[data-in="amt"]', F).value = '100'; go(); }
@@ -521,7 +529,7 @@
     var st = $('[data-out="status"]', F), rateIn = $('[data-in="zrate"]', F), own = false, ic = '<svg class="ic" aria-hidden="true"><use href="#i-refresh-cw"/></svg> ';
     on(rateIn, 'input', function () { own = true; });
     function load(force) {
-      st.innerHTML = ic + 'Loading the live rate…'; st.className = 'ratebox';
+      st.innerHTML = ic + '<span>Loading the live rate…</span>'; st.className = 'ratebox';
       var ctl = window.AbortController ? new AbortController() : null, tm = setTimeout(function () { ctl && ctl.abort(); }, 8000);
       fetch('https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=zar&include_last_updated_at=true', ctl ? { signal: ctl.signal } : {})
         .then(function (r) { if (!r.ok) throw 0; return r.json(); })
@@ -532,13 +540,13 @@
           if (!own || force) { rateIn.value = r.toFixed(4); own = false; }
           var when = at ? new Date(at * 1000) : new Date(), old = at && (Date.now() / 1000 - at > 7200);
           st.className = 'ratebox ok' + (old ? ' old' : '');
-          st.innerHTML = ic + 'Live rate from CoinGecko: <b>R' + f2(r, 4) + '</b> per USDT, updated ' + when.toLocaleString([], { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + (old ? '. It may be out of date.' : '.');
+          st.innerHTML = ic + '<span>Live rate from CoinGecko: <b>R' + f2(r, 4) + '</b> per USDT, updated ' + when.toLocaleString([], { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + (old ? '. It may be out of date.' : '.') + '</span>';
           go();
         })
         .catch(function () {
           clearTimeout(tm);
           st.className = 'ratebox bad';
-          st.innerHTML = ic + "Couldn't load the live rate right now. Type the rate your exchange shows.";
+          st.innerHTML = ic + "<span>Couldn't load the live rate right now. Type the rate your exchange shows.</span>";
           go();
         });
     }

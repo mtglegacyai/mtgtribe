@@ -18,7 +18,8 @@ def p_home(here):
         return ''.join(f'<button type="button" class="vtile" data-play="{k}" data-vid="{k}" title="{esc(V[k]["desc"])}">'
                        f'<span class="vn">{V[k]["n"]}</span><span class="vt">{V[k]["short"]}</span>{ic("circle-check")}</button>' for k in codes)
     tiles = (f'<p class="vgl">Tutorials</p><div class="vgrid">{tiles_for(TUT)}</div>'
-             f'<p class="vgl">Explainers</p><div class="vgrid">{tiles_for(EXP)}</div>')
+             f'<p class="vgl">Explainers</p><div class="vgrid">{tiles_for(EXP)}</div>'
+             f'<p class="vgl">Tool trainings</p><div class="vgrid">{tiles_for(TOOL)}</div>')
     route = steps([
         ('Check the fit', f'<p>Start honest. Read <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> '
                           f'and <a class="inl" href="{A("dashboard/what-makes-it-different/", here)}">What makes it different</a>. Five minutes.</p>'),
@@ -170,7 +171,7 @@ def p_pkg(here):
         [("package", "$25, $50 or $100"), ("trending-up", "Step up, never down"), ("circle-play", "Tutorial 3 shows the screen")])}
 {sec(f"""<div class="pkgs" role="group" aria-label="Choose a package to see your shopping list">{cards}</div>
 <div class="panel pad shop" aria-live="polite"><h2 class="h3">{ic("wallet")}<span>Your shopping list for <span data-k="name">Elite</span></span></h2>
-{checks(['<b data-k="usdt">101</b> USDT on BNB Smart Chain (BEP20). One extra dollar covers small differences.', 'About $5 to $10 of BNB in the same wallet, for network fees of a few cents each.', 'The sign-up link from the person who introduced you.'])}
+{checks(['<b data-k="usdt">101</b> USDT on BNB Smart Chain (BEP20). One extra dollar covers small differences.', 'At least $3 to $5 of BNB in the same wallet, for network fees of a few cents each.', 'The sign-up link from the person who introduced you.'])}
 <div class="btn-row"><a class="btn btn-blue btn-sm" href="{A("dashboard/join/", here)}">{ic("rocket")}<span class="lbl">Join step by step</span></a>{play_btn("t2", "How to get USDT and BNB")}</div></div>""",
     "Compare the three", "Tap a package to see exactly what you need to buy it.")}
 {sec(f"""<div class="grid3">

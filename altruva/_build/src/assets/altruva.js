@@ -138,7 +138,7 @@
   function paintWatched() {
     $$('[data-vid]').forEach(function (el) { el.classList.toggle('watched', !!watched[el.getAttribute('data-vid')]); });
     var n = Object.keys(watched).filter(function (k) { return ALTV[k]; }).length;
-    $$('[data-ring]').forEach(function (r) { r.style.setProperty('--v', n / 13); var x = $('[data-k="n"]', r); if (x) x.textContent = n; });
+    $$('[data-ring]').forEach(function (r) { r.style.setProperty('--v', n / Math.max(1, Object.keys(ALTV).length)); var x = $('[data-k="n"]', r); if (x) x.textContent = n; });
     var p = $('#player'); if (p) p.classList.toggle('watched', !!watched[$('[data-mark]', p).getAttribute('data-mark')]);
   }
   function markWatched(k) {
@@ -336,6 +336,37 @@
       $$('[data-term]').forEach(function (t) { var hit = !q || t.getAttribute('data-term').indexOf(q) > -1; t.hidden = !hit; if (hit) shown++; });
       $('[data-gempty]').hidden = shown > 0;
     });
+  }
+
+  /* ------------------------------------------------------------ 72-hour clock (saved on this device only) */
+  var c72 = $('[data-clock72]');
+  if (c72) {
+    var jin = $('[data-join]', c72), left = $('[data-k="left"]', c72), stt = $('[data-k="status"]', c72), unt = $('[data-k="until"]', c72), tmr = null;
+    function pad(x) { return (x < 10 ? '0' : '') + x; }
+    function localVal(dt) { return dt.getFullYear() + '-' + pad(dt.getMonth() + 1) + '-' + pad(dt.getDate()) + 'T' + pad(dt.getHours()) + ':' + pad(dt.getMinutes()) + ':' + pad(dt.getSeconds()); }
+    function paint72() {
+      var v = jin.value, cd = $('.cd', c72);
+      if (!v) { left.textContent = '72:00:00'; stt.textContent = 'Set your join time to start your clock'; unt.textContent = 'Saved on this device only.'; cd.classList.remove('closed', 'live'); return; }
+      var start = new Date(v), end = new Date(start.getTime() + 72 * 3600 * 1000), ms = end - Date.now();
+      if (isNaN(start)) return;
+      var opts = { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' };
+      if (ms <= 0) {
+        left.textContent = '00:00:00'; stt.textContent = 'Your 72-hour window has closed';
+        unt.textContent = 'It closed ' + end.toLocaleString([], opts) + '. The global leg, working levels and matching keep working.';
+        cd.classList.add('closed'); cd.classList.remove('live'); return;
+      }
+      if (ms > 72 * 3600 * 1000) { left.textContent = '72:00:00'; stt.textContent = 'That time is in the future'; unt.textContent = 'Check the date and time you joined.'; return; }
+      var s = Math.floor(ms / 1000);
+      left.textContent = pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60);
+      stt.textContent = 'left in your 72-hour window';
+      unt.textContent = 'Your window closes ' + end.toLocaleString([], opts) + '. Saved on this device only.';
+      cd.classList.add('live'); cd.classList.remove('closed');
+    }
+    var saved = get('alt-join'); if (saved) jin.value = saved;
+    on(jin, 'input', function () { set('alt-join', jin.value); paint72(); });
+    on($('[data-now]', c72), 'click', function () { jin.value = localVal(new Date()); set('alt-join', jin.value); paint72(); toast('Your 72-hour clock has started ✓'); });
+    on($('[data-clearjoin]', c72), 'click', function () { jin.value = ''; try { localStorage.removeItem('alt-join'); } catch (e) {} paint72(); });
+    paint72(); tmr = setInterval(paint72, 1000);
   }
 
   /* ------------------------------------------------------------ calculators */

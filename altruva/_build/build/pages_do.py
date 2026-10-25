@@ -7,6 +7,51 @@ from pages_learn import phero
 MEDIA = '/home/claude/site/media/'
 
 
+# ======================================================================= FIRST 72 HOURS
+def p_first72(here):
+    clock = f"""<div class="panel pad clock72" data-clock72>
+ <h2 class="h3">{ic("timer")}<span>Your 72-hour clock</span></h2>
+ <div class="fl"><label for="jt">When did you join?</label><input id="jt" class="field" type="datetime-local" step="1" data-join></div>
+ <div class="btn-row"><button type="button" class="btn btn-ghost btn-sm" data-now>{ic("zap")}<span class="lbl">I joined just now</span></button><button type="button" class="mark" data-clearjoin>Clear</button></div>
+ <div class="cd" aria-live="polite"><b data-k="left">72:00:00</b><small data-k="status">Set your join time to start your clock</small></div>
+ <p class="fine" data-k="until">Saved on this device only.</p>
+</div>"""
+    return f'''{phero("timer", "Your first 72 hours",
+        "You've joined. Congratulations: you took action. Now your clock has started, and the next three days matter more than any others.",
+        [("timer", "72-hour window"), ("package", "Why the $100 position"), ("circle-play", "Explainer 7, " + mmss(V["e7"]["secs"]))])}
+{sec(f"""<div class="vwrap"><div class="stack">{clock}
+{checks(["Right after joining, global leg income may already be waiting: your window looks up the line too.",
+         "Once your balance reaches $5, claim and withdraw to SafePal. Half goes to your wallet, half is reinvested.",
+         "Two directs on your package inside 72 hours open your rank, the Starter ticket, both matching sides and working levels 1 to 6."])}
+</div>{vid("e7", here)}</div>""")}
+{sec(f"""<div class="stack"><p class="how num">Illustration: if the 20 members ahead of you each hold $100, 1% of each is $1, so about <b>$20</b> could be waiting to claim. The real amount depends on who is in your window.</p>
+{think("Why is there money before I've done anything?", "<p>Your global leg window looks up the line as well as down. The app pays 1% of each visible member's total deposit inside your window, so the members who joined before you count from the start. It isn't a bonus or a promise: it depends entirely on who is in your window.</p>")}
+<div class="btn-row">{play_btn("t5", "Claim and withdraw: Tutorial 5")}</div></div>""", "Minute one: what may be waiting")}
+{sec(f"""<div class="grid3">
+ {box("Twice the window", "<p>Elite opens 20 up and 20 down: 40 members. Starter opens 10 and 10: 20 members.</p>", "route")}
+ {box("Two Lucky Tickets", "<p>Elite gives two. Starter gives one, and only once two directs join within three days.</p>", "ticket")}
+ {box("The top of the ladder", "<p>Elite unlocks the Legacy Crown rank, and there is nothing more to buy.</p>", "crown")}
+</div>
+<div class="grid2 tick-grid" style="margin-top:16px"><figure class="ticket"><img src="{A("img/mtg-lucky-ticket-won.webp", here)}" width="529" height="342" loading="lazy" alt="MTG's own Lucky Ticket card showing WON 25.00 USDT in Draw 16, ticket ID hidden"></figure>
+<div class="stack"><p>My own example: Elite gave me two tickets. The first didn't win. The second won 25 USDT, paid to my wallet in full. With one ticket, there's no second chance.</p>
+<div class="honest">{ic("triangle-alert")}<div><b>Be honest with yourself:</b> most tickets don't win, so never count on a prize. A bigger package also puts more money at risk. Only use money you can afford to lose.</div></div></div></div>""",
+    "Why the $100 position", id="why-100")}
+{sec(table(["Your package", "Two directs of", "What it opens"], [["Elite, $100", "$100 or more", "<b>Legacy Crown</b> rank"], ["Builder, $50", "$50 or more", "<b>Nexus</b> rank"], ["Starter, $25", "$25 or more", "Your <b>Lucky Ticket</b>"]], caption="What two directs inside 72 hours open")
+    + '<p class="fine" style="margin-top:12px">Rank and ticket rules from the ALTRUVA presentation and the app. On any package, two directs also give you both sides for level matching and open working levels 1 to 6.</p>',
+    "What two directs in 72 hours open")}
+{sec(steps([
+    ("Hour one: check and claim", "<p>Open your dashboard, see what's waiting, and claim it. Tutorial 7 explains every screen.</p>" + play_btn("t7")),
+    ("Day one: copy your link", f"<p>Tap Network and copy your link. Share this website first, so people learn before they decide. The <a class='inl' href='{A("dashboard/downloads/", here)}'>share kit</a> has a ready message.</p>"),
+    ("Days one to three: help, never push", f"<p>Walk people through the <a class='inl' href='{A("dashboard/join/", here)}'>join guide</a> and the tutorials. They should join because they understand ALTRUVA, never because you rushed them.</p>"),
+    ("Before the clock runs out: check", "<p>Look at your directs, your tickets and your rank in the app, and keep learning in your WhatsApp group and on Zoom.</p>"),
+]), "Your 72-hour plan", "Build from minute one, one honest step at a time.")}
+{sec(f"""<div class="stack">
+{think("Do I have to introduce people?", "<p>No. It's not compulsory, and the global leg can pay you without it. But the people you introduce may thank you one day, for opening their eyes to smart contracts, Web3, and a community that learns, wins and grows together. And you'll thank yourself.</p>")}
+{think("What if I miss the 72 hours?", "<p>The presentation ties the ranks, and the Starter ticket, to the first three days. Everything else keeps working: the global leg, and working levels and matching open whenever directs join.</p>", alt=True)}
+</div>""")}
+'''
+
+
 # ======================================================================= JOIN
 def p_join(here):
     return f'''{phero("rocket", "Join step by step",
@@ -25,6 +70,8 @@ def p_join(here):
     ("Join in SafePal Explore", "<p>Paste the link in Explore, choose BNB Chain, pick your package, then approve and sign. Read the risk warning before you confirm.</p>" + play_btn("t3")),
     ("Find your way around", "<p>Tour Overview, Packages, Earnings, Network and More, so every number makes sense.</p>" + play_btn("t7")),
 ]), "Five steps", "The success check: the Packages page says you hold your package.")}
+{sec(f"""<div class="joinband"><div><h2 class="h3">Just joined? Your 72 hours start now</h2><p>What may already be waiting, why the $100 position matters, and what two directs open inside your first three days.</p></div>
+<div class="btn-row"><a class="btn btn-gold btn-sm ring" href="{A("dashboard/first-72-hours/", here)}">{ic("timer")}<span class="lbl">Your first 72 hours</span></a>{play_btn("e7", "Watch Explainer 7")}</div></div>""")}
 {sec(f"""<div class="grid3">
  {box("Claim a prize", "<p>Check your Lucky Tickets and claim a prize, in full, to your wallet.</p>" + play_btn("t4", "Watch Tutorial 4"), "ticket")}
  {box("Withdraw", "<p>Claim first, then withdraw everything to SafePal.</p>" + play_btn("t5", "Watch Tutorial 5"), "wallet")}
@@ -256,6 +303,7 @@ GLOSS = [
     ('reinvest', 'Reinvest', 'repeat', 'The part of each withdrawal that goes back in as new business: 50%, 40% or 30%.', None),
     ('global-leg', 'Global leg', 'route', 'One line of every member in joining order. You earn 1% from deposits inside your window.', None),
     ('matched', 'Matched volume', 'arrow-left-right', 'The smaller of your two sides in level matching, for one day.', None),
+    ('window72', '72-hour window', 'timer', 'The first three days after you join. The ALTRUVA presentation ties the ranks, and the Starter ticket, to two directs joining inside it.', 'A football transfer window: signings only count while it is open.'),
     ('utc', 'UTC', 'clock', 'The world\'s standard time. ALTRUVA days close at 00:00 UTC, 02:00 in South Africa.', None),
     ('kyc', 'KYC', 'scan-eye', 'Know Your Customer: the ID checks exchanges such as Binance and VALR require.', None),
     ('zar', 'ZAR', 'banknote', 'The South African rand.', None),
@@ -330,7 +378,7 @@ def p_dl(here):
     "Share kit", "We learn best when we teach others.")}
 {sec(f"""<div class="grid2"><div class="stack"><h3 class="h3">Tutorials</h3><ul class="dllist">{rows(TUT)}</ul></div>
 <div class="stack"><h3 class="h3">Explainers</h3><ul class="dllist">{rows(EXP)}</ul></div></div>
-<p class="fine">Sharing a video? Please share it as it is, with the risk notes kept in.</p>""", "All 13 videos")}
+<p class="fine">Sharing a video? Please share it as it is, with the risk notes kept in.</p>""", f"All {NV} videos")}
 '''
 
 

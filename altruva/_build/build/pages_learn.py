@@ -20,10 +20,11 @@ def p_home(here):
     route = steps([
         ('Check the fit', f'<p>Start honest. Read <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> '
                           f'and <a class="inl" href="{A("dashboard/what-makes-it-different/", here)}">What makes it different</a>. Five minutes.</p>'),
-        ('Understand the plan', f'<p>Six animated explainers, about 13 minutes in total. Start with '
+        ('Understand the plan', f'<p>{WORDS_N.get(len(EXP), len(EXP))} animated explainers, about {EXP_MIN} minutes in total. Start with '
                                 f'<a class="inl" href="{A("dashboard/how-it-works/", here)}">Where every dollar goes</a>.</p>'),
         ('Join step by step', f'<p>Tutorials 1 to 3 walk you through SafePal, USDT and joining. '
                               f'<a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
+        ('Use your first 72 hours', f'<p>Just joined? Your clock has started. <a class="inl" href="{A("dashboard/first-72-hours/", here)}">Your first 72 hours</a> shows what to do from minute one.</p>'),
         ('Know your dashboard', f'<p>Tutorial 7 shows every screen of the ALTRUVA app and what each number means.</p>'),
         ('Run your numbers', f'<p>Try the four <a class="inl" href="{A("dashboard/tools/withdraw-split-calculator/", here)}">calculators</a> '
                              f'with your own amounts.</p>'),
@@ -33,13 +34,13 @@ def p_home(here):
     ])
     return f'''{phero("compass", "Welcome. Here's your route.",
         "Take it one stop at a time. Watch every video, even if you think you already know ALTRUVA. Come back to any page as often as you like, until you get it.",
-        [("film", f"13 videos, about {TOTAL_MIN} minutes"), ("package", "Top package $100"), ("info", "Independent, not official")])}
+        [("film", f"{NV} videos, about {TOTAL_MIN} minutes"), ("package", "Top package $100"), ("info", "Independent, not official")])}
 {sec(f"""<div class="panel pad prog-panel"><div class="prog">
  <div class="pring" data-ring><svg viewBox="0 0 118 118" aria-hidden="true"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#2f9ff9"/><stop offset="1" stop-color="#eebd5c"/></linearGradient></defs><circle class="bg" cx="59" cy="59" r="50"/><circle class="fg" cx="59" cy="59" r="50"/></svg>
- <div class="val"><b data-k="n">0</b><small>of 13 watched</small></div></div>
+ <div class="val"><b data-k="n">0</b><small>of {NV} watched</small></div></div>
  <div class="stack"><div><h2 class="h3">Your progress</h2><p class="fine">Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only.</p></div><div class="vgrid">{tiles}</div></div>
 </div></div>""", id="progress")}
-{sec(route, "Your route, in order", "Seven stops. Each one builds on the last, so go in order the first time.")}
+{sec(route, "Your route, in order", "Eight stops. Each one builds on the last, so go in order the first time.")}
 {sec(f"""<div class="grid3">
  {box("The menu", "<p>Every page is in the menu, grouped in the order you'll need them. On a phone, tap <b>Menu</b> at the top.</p>", "panel-left")}
  {box("Next and Previous", "<p>The buttons at the bottom of each page walk you through everything in order. You'll never get lost.</p>", "route")}
@@ -57,7 +58,7 @@ def p_fit(here):
     qs = [
         ('afford', 'I could lose $100 without it hurting my rent, food or family.'),
         ('phone', 'I have a smartphone and can install a wallet app like SafePal.'),
-        ('watch', f'I\'ll watch all 13 videos (about {TOTAL_MIN} minutes), even the ones I think I know.'),
+        ('watch', f'I\'ll watch all {NV} videos (about {TOTAL_MIN} minutes), even the ones I think I know.'),
         ('risk', 'I understand earnings are not guaranteed and depend on new deposits.'),
         ('teach', 'I\'d only share ALTRUVA once I can explain it honestly, risks included.'),
     ]
@@ -176,7 +177,7 @@ def p_pkg(here):
  {box("Reinvest doesn't upgrade you", "<p>Reinvested money grows your total deposit, but it never changes your package or your levels.</p>", "repeat")}
 </div>""", "Ladder rules from the app")}
 {sec(f"""<div class="stack">
-{think("Which package should I choose?", "<p>That's your call. A bigger package opens a wider window on the global leg and more Lucky Tickets, and it also puts more of your money at risk. Pick an amount you could lose without stress.</p>")}
+{think("Which package should I choose?", "<p>That's your call. A bigger package opens a wider window on the global leg and more Lucky Tickets, and it also puts more of your money at risk. Pick an amount you could lose without stress. <a class='inl' href='" + A("dashboard/first-72-hours/", here) + "#why-100'>Why many choose the $100 position</a>.</p>")}
 {think("Why does the first purchase ask me to confirm twice?", "<p>The first confirmation is an approval: it lets ALTRUVA's contract use that amount of your USDT. The second buys the package. After that, your sponsor and your seat on the global leg never change.</p>", alt=True)}
 </div>""")}
 '''
@@ -276,7 +277,7 @@ def p_ranks(here):
 {sec(f"""<div class="vwrap"><div class="stack">
  <h2 class="h2">Two ranks</h2>
  {table(["Rank", "Package", "To qualify (from the ALTRUVA presentation)"], [["<b>Nexus</b>", "Builder, $50", "Hold at least $50, plus 2 directs of $50 or more within 3 days"], ["<b>Legacy Crown</b>", "Elite, $100", "Hold $100, plus 2 directs of $100 or more within 3 days"]], caption="Ranks")}
- <p class="fine">Rank pools are shared among everyone who holds that rank. You claim your share from Overview, like the global leg and matching. The split between the two pools isn't shown in the app, so we don't state it.</p>
+ <p class="fine">The 3 days start when you join: see <a class="inl" href="{A("dashboard/first-72-hours/", here)}">Your first 72 hours</a>. Rank pools are shared among everyone who holds that rank. You claim your share from Overview, like the global leg and matching. The split between the two pools isn't shown in the app, so we don't state it.</p>
 </div>{vid("e5", here)}</div>""")}
 {sec(f"""<div class="grid2 tick-grid"><div class="stack">
  {table(["Tier", "Tickets", "Prize", "Paid out"], tier_rows, caption="Lucky Ticket prize tiers per draw")}

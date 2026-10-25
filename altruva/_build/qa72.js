@@ -1,0 +1,20 @@
+const { chromium } = require('playwright');
+(async () => {
+  const b = await chromium.launch(); const pg = await (await b.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+  const errs = []; pg.on('pageerror', e => errs.push(e.message));
+  await pg.route('https://fonts.googleapis.com/**', r => r.fulfill({ contentType: 'text/css', body: '' }));
+  await pg.goto('http://localhost:8765/altruva/dashboard/first-72-hours/', { waitUntil: 'networkidle' });
+  await pg.click('[data-now]'); await pg.waitForTimeout(1500);
+  const left = await pg.textContent('[data-k="left"]'), st = await pg.textContent('[data-k="status"]');
+  console.log(/^7[12]:\d\d:\d\d$/.test(left) && st.includes('left') ? 'PASS clock runs ' + left : 'FAIL clock ' + left + ' ' + st);
+  await pg.fill('[data-join]', '2026-10-20T08:00'); await pg.dispatchEvent('[data-join]', 'input'); await pg.waitForTimeout(300);
+  console.log((await pg.textContent('[data-k="status"]')).includes('closed') ? 'PASS past window shows closed' : 'FAIL past');
+  await pg.reload({ waitUntil: 'networkidle' });
+  console.log((await pg.inputValue('[data-join]')) === '2026-10-20T08:00' ? 'PASS join time remembered' : 'FAIL remember');
+  await pg.goto('http://localhost:8765/altruva/', { waitUntil: 'networkidle' });
+  console.log((await pg.$$eval('.stn', x => x.length)) === 13 ? 'PASS landing has 13 stops' : 'FAIL stops');
+  await pg.click('.stn [data-play="e7"]'); await pg.waitForTimeout(500);
+  console.log((await pg.getAttribute('#player video', 'src')).includes('explainer-7') ? 'PASS landing plays Explainer 7' : 'FAIL e7');
+  console.log(errs.length ? 'FAIL errors ' + errs.join('|') : 'PASS no page errors');
+  await b.close();
+})();

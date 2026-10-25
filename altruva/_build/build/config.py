@@ -48,12 +48,17 @@ VIDEOS = [
      'Nexus, Legacy Crown, and how the 250-ticket draw works.', 161.1, 'ALTRUVA_E5_Ranks_and_Lucky_Tickets.mp4'),
     ('e6', 'altruva-explainer-6-withdraw-reinvest', 'Withdraw and reinvest',
      'The automatic split, 50/50 to 70/30, and why you claim first.', 139.2, 'ALTRUVA_E6_Withdraw_and_Reinvest.mp4'),
+    ('e7', 'altruva-explainer-7-first-72-hours', 'Your first 72 hours',
+     'What may be waiting from minute one, why the $100 position matters, and what two directs in 72 hours open.', 178.4, 'ALTRUVA_E7_Your_First_72_Hours.mp4'),
 ]
 V = {v[0]: dict(code=v[0], slug=v[1], title=v[2], desc=v[3], secs=v[4], master=v[5],
                 label=('Tutorial ' if v[0][0] == 't' else 'Explainer ') + v[0][1:]) for v in VIDEOS}
 TOTAL_MIN = round(sum(v[4] for v in VIDEOS) / 60)
 TUT = [k for k in V if k[0] == 't']
 EXP = [k for k in V if k[0] == 'e']
+NV = len(VIDEOS)
+EXP_MIN = round(sum(V[k]['secs'] for k in EXP) / 60)
+WORDS_N = {6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine'}
 
 
 def mmss(s):
@@ -79,8 +84,9 @@ NAV = [
     ('ranks', 'dashboard/ranks-lucky-tickets/', 'Ranks and Lucky Tickets', '5% plus 5%', 'ticket', 'How it works'),
     ('wd', 'dashboard/withdraw-reinvest/', 'Withdraw and reinvest', 'How money comes out', 'wallet', 'How it works'),
     ('join', 'dashboard/join/', 'Join step by step', 'Wallet, USDT, join', 'rocket', 'Get started'),
+    ('first72', 'dashboard/first-72-hours/', 'Your first 72 hours', 'Build from minute one', 'timer', 'Get started'),
     ('tut', 'dashboard/tutorials/', 'Tutorial videos', '7 step-by-step trainings', 'circle-play', 'Get started'),
-    ('exp', 'dashboard/explainers/', 'Explainer videos', '6 animated explainers', 'film', 'Get started'),
+    ('exp', 'dashboard/explainers/', 'Explainer videos', f'{len(EXP)} animated explainers', 'film', 'Get started'),
     ('c-wd', 'dashboard/tools/withdraw-split-calculator/', 'Withdraw Split Calculator', 'To wallet and reinvested', 'percent', 'Tools'),
     ('c-wl', 'dashboard/tools/working-level-calculator/', 'Working Level Calculator', 'Levels 1 to 9', 'calculator', 'Tools'),
     ('c-m', 'dashboard/tools/matching-calculator/', 'Matching Calculator', 'Smaller side times rate', 'equal', 'Tools'),

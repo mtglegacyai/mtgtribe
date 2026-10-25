@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 import core
 from config import *
 from pages_learn import p_home, p_fit, p_diff, p_split, p_pkg, p_leg, p_wl, p_match, p_ranks, p_wd
-from pages_do import (p_join, p_tut, p_exp, p_c_wd, p_c_wl, p_c_m, p_c_zar, p_faq, faq_ld, p_gloss, p_safe, p_dl,
+from pages_do import (p_first72, p_join, p_tut, p_exp, p_c_wd, p_c_wl, p_c_m, p_c_zar, p_faq, faq_ld, p_gloss, p_safe, p_dl,
                       p_card, p_tribe, p_disc)
 from pages_land import landing
 
@@ -15,7 +15,7 @@ SCR = '/tmp/claude-0/-home-claude/dc91e5da-c02d-54a0-a639-05ec78f3d408/scratchpa
 
 PAGES = {
     # key: (title, description, body fn, extra ld fn)
-    'home': ('ALTRUVA Dashboard: start here', 'Your route through the independent ALTRUVA guide: 13 videos in order, your progress, and how to use the dashboard.', p_home, None),
+    'home': ('ALTRUVA Dashboard: start here', f'Your route through the independent ALTRUVA guide: {NV} videos in order, your progress, and how to use the dashboard.', p_home, None),
     'fit': ('Is ALTRUVA right for me? An honest fit check', 'Five honest questions, who ALTRUVA suits and who it does not, and where the money really comes from.', p_fit, None),
     'diff': ('What makes ALTRUVA different', 'If a smart contract platform let you down before: what is different about ALTRUVA, what is the same, and the questions to ask any platform.', p_diff, None),
     'split': ('Where every ALTRUVA dollar goes: the 100% split', 'How every ALTRUVA package is shared: 40% global leg, 25% working levels, 25% level matching, 5% ranks, 5% Lucky Tickets.', p_split, ['e1']),
@@ -25,6 +25,7 @@ PAGES = {
     'match': ('ALTRUVA level matching explained (25%)', 'How ALTRUVA level matching works: the smaller side, the daily 25% pool and the real day 22 rate per unit.', p_match, ['e4']),
     'ranks': ('ALTRUVA ranks and Lucky Tickets explained', 'Nexus and Legacy Crown ranks, and how the ALTRUVA Lucky Ticket draw shares 4,000 USDT among 250 tickets.', p_ranks, ['e5']),
     'wd': ('ALTRUVA withdraw and reinvest explained', 'How ALTRUVA withdrawals split 50/50, 60/40 or 70/30 by total deposit, and why you claim first.', p_wd, ['e6']),
+    'first72': ('Your first 72 hours in ALTRUVA', 'Just joined ALTRUVA? What may be waiting from minute one, why the $100 position matters, and what two directs in your first 72 hours open.', p_first72, ['e7']),
     'join': ('How to join ALTRUVA step by step with SafePal', 'Join ALTRUVA in five steps with SafePal: set up the wallet, get USDT and BNB, copy the sign-up link, join, and tour the app.', p_join, None),
     'tut': ('ALTRUVA tutorial videos', 'Seven step-by-step ALTRUVA tutorials: SafePal setup, funding, joining, claiming a prize, withdrawing and cashing out to your bank.', p_tut, TUT),
     'exp': ('ALTRUVA explainer videos', 'Six animated ALTRUVA explainers: the 100% split, global leg, working levels, level matching, ranks and Lucky Tickets, withdraw and reinvest.', p_exp, EXP),
@@ -35,7 +36,7 @@ PAGES = {
     'faq': ('ALTRUVA FAQ: questions and myths', 'Straight answers to the most common ALTRUVA questions, and the myths checked against the live app.', p_faq, 'faq'),
     'gloss': ('ALTRUVA glossary: crypto words in plain English', 'Smart contract, Web3, renounced, BEP20, gas and more, explained in plain English with everyday examples.', p_gloss, None),
     'safe': ('ALTRUVA safety centre', 'Protect your wallet: six safety habits, scam patterns to walk away from, and how to check a smart contract on BscScan.', p_safe, None),
-    'dl': ('ALTRUVA downloads: videos, quick guide, share kit', 'Download all 13 ALTRUVA videos, the two-page quick guide PDF, and a share message for WhatsApp.', p_dl, None),
+    'dl': ('ALTRUVA downloads: videos, quick guide, share kit', f'Download all {NV} ALTRUVA videos, the two-page quick guide PDF, and a share message for WhatsApp.', p_dl, None),
     'card': ('Spend your USDT with a crypto card', 'A shorter road from USDT to spending: a crypto debit card for USDT and USDC on BNB Smart Chain.', p_card, None),
     'tribe': ('Join the MTG TRIBE', 'The MTG TRIBE: a WhatsApp community for action takers. Join the group, WhatsApp MTG, or follow on TikTok.', p_tribe, None),
     'disc': ('Disclaimer', 'This independent ALTRUVA guide is educational, not official and not financial advice. Affiliate links, risk and privacy explained.', p_disc, None),
@@ -86,7 +87,7 @@ def og(path, em):
     d.text((80, 270), 'See every dollar move', font=orb, fill=(255, 255, 255))
     d.text((80, 345), 'before you move a dollar.', font=orb, fill=(205, 224, 240))
     d.text((80, 440), 'The independent ALTRUVA guide by MTG', font=mon, fill=(238, 189, 92))
-    d.text((80, 486), '13 short videos, plain-English pages, 4 calculators', font=mon7, fill=(147, 169, 201))
+    d.text((80, 486), f'{NV} short videos, plain-English pages, 4 calculators', font=mon7, fill=(147, 169, 201))
     # gold route line with stations
     pts = [(80, 575), (330, 575), (430, 545), (700, 545), (800, 575), (1120, 575)]
     d.line(pts, fill=(238, 189, 92), width=8, joint='curve')
@@ -108,14 +109,14 @@ def quick_guide(pdf):
 @font-face{{font-family:M;src:url(file:///tmp/assets/fonts/Montserrat-600.ttf);font-weight:400 600}}
 @page{{size:A4;margin:0}}
 *{{box-sizing:border-box}}body{{margin:0;font:600 10.5pt/1.5 M,sans-serif;color:#cde0f0;background:#01081b;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.pg{{width:210mm;height:297mm;padding:14mm 15mm 22mm;position:relative;overflow:hidden;page-break-after:always;background:radial-gradient(120mm 90mm at 0 0,rgba(4,72,182,.45),transparent),#01081b}}
+.pg{{width:210mm;height:297mm;padding:13mm 15mm 18mm;position:relative;overflow:hidden;page-break-after:always;background:radial-gradient(120mm 90mm at 0 0,rgba(4,72,182,.45),transparent),#01081b}}
 h1{{font:800 22pt/1.1 O;color:#fff;margin:0}}h2{{font:800 12pt O;color:#eebd5c;margin:0 0 3mm;letter-spacing:.02em}}
 .top{{display:flex;gap:6mm;align-items:center;margin-bottom:8mm}}.top img{{width:22mm}}.top p{{margin:2mm 0 0;color:#93a9c9}}
-.card{{background:rgba(13,31,74,.75);border:1px solid rgba(120,170,255,.25);border-radius:4mm;padding:4.5mm 6mm;margin-bottom:4.5mm}}
+.card{{background:rgba(13,31,74,.75);border:1px solid rgba(120,170,255,.25);border-radius:4mm;padding:4mm 6mm;margin-bottom:4mm}}
 table{{width:100%;border-collapse:collapse;font-size:9.5pt}}th,td{{text-align:left;padding:2mm 2.5mm;border-bottom:1px solid rgba(120,170,255,.18)}}th{{color:#93a9c9;font-size:8.5pt}}td b{{color:#eebd5c}}
 .bar{{display:flex;height:11mm;border-radius:3mm;overflow:hidden;margin:2mm 0 3mm;font:800 9pt O;color:#04122e}}.bar span{{display:flex;align-items:center;justify-content:center}}
 .leg{{display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 6mm;font-size:9.5pt}}.leg i{{display:inline-block;width:3mm;height:3mm;border-radius:1mm;margin-right:2mm}}
-ol,ul{{margin:0;padding-left:5mm}}li{{margin:1.2mm 0}}b{{color:#fff}}
+ol,ul{{margin:0;padding-left:5mm}}li{{margin:0.9mm 0}}b{{color:#fff}}
 .honest{{border-color:rgba(238,189,92,.5);background:rgba(60,44,10,.45)}}
 .foot{{position:absolute;left:15mm;right:15mm;bottom:10mm;font-size:8pt;color:#6a809f;display:flex;justify-content:space-between}}
 .sig{{color:#eebd5c;font-weight:800}}.links td{{border:0;padding:1.2mm 0}}.links td:first-child{{color:#93a9c9;width:40mm}}
@@ -128,12 +129,13 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:1.2mm 0}}b{{color:#fff}}
 <div class="card"><h2>Withdrawals</h2><table><tr><th>Your total deposit</th><th>To your wallet</th><th>Reinvested</th></tr><tr><td>Up to 5,000 USDT</td><td><b>50%</b></td><td>50%</td></tr><tr><td>5,001 to 49,999 USDT</td><td><b>60%</b></td><td>40%</td></tr><tr><td>50,000 USDT and up</td><td><b>70%</b></td><td>30%</td></tr></table>
 <p style="margin:3mm 0 0"><b>Claim first, then withdraw.</b> A withdrawal always takes the whole balance. Working level income arrives without a claim. Lucky Ticket prizes go to your wallet in full.</p></div>
 <div class="foot"><span>Figures checked against the live app on 24 Oct 2026. The app is always the final word.</span><span>1 of 2</span></div></div>
-<div class="pg"><div class="card"><h2>Join in five steps</h2><ol>
+<div class="pg"><div class="card"><h2>Join and start strong</h2><ol>
 <li><b>Set up SafePal</b> and write your recovery phrase on paper. (Tutorial 1)</li>
 <li><b>Fund your wallet:</b> BNB on BNB Smart Chain, swap to USDT BEP20, keep $5 to $10 of BNB for fees. (Tutorial 2)</li>
 <li><b>Copy the sign-up link</b> of the person who introduced you.</li>
 <li><b>Join in SafePal Explore:</b> paste, choose BNB Chain, pick a package, approve and sign. (Tutorial 3)</li>
-<li><b>Tour your dashboard</b> so every number makes sense. (Tutorial 7)</li></ol>
+<li><b>Tour your dashboard</b> so every number makes sense. (Tutorial 7)</li>
+<li><b>Use your first 72 hours:</b> claim what's waiting, and know what two directs inside three days open. (Explainer 7)</li></ol>
 <p style="margin:3mm 0 0">Then: claim a prize (Tutorial 4), withdraw to SafePal (Tutorial 5), cash out to your bank (Tutorial 6).</p></div>
 <div class="card"><h2>Six safety habits</h2><ul>
 <li><b>Never share your recovery phrase.</b> Nobody genuine will ever ask for it.</li>
@@ -144,7 +146,7 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:1.2mm 0}}b{{color:#fff}}
 <li>Hide balances and addresses before you share a screenshot.</li></ul></div>
 <div class="card honest"><h2>The honest part</h2><p style="margin:0">Payouts come from members' packages and reinvestments. No outside revenue is named, so earnings depend on new deposits and are not guaranteed. You can lose what you put in. Learn first, start small if it fits, and judge it by what your own dashboard shows.</p></div>
 <div class="card"><h2>Keep learning</h2><table class="links">
-<tr><td>Full guide and 13 videos</td><td><b>mtgtribe.com/altruva</b></td></tr>
+<tr><td>Full guide and {NV} videos</td><td><b>mtgtribe.com/altruva</b></td></tr>
 <tr><td>MTG TRIBE on WhatsApp</td><td><b>mtgtribe.com/group</b></td></tr>
 <tr><td>WhatsApp MTG</td><td><b>{WA_NUM}</b> (messages and voice notes)</td></tr>
 <tr><td>TikTok</td><td><b>@joinmtgtribe</b></td></tr>
@@ -167,7 +169,7 @@ def render(mode, dst):
         shutil.rmtree(dst)
     base = dst + ('/altruva' if mode == 'prod' else '')
     os.makedirs(base + '/assets', exist_ok=True)
-    for f in ('altruva.css', 'altruva.js'):
+    for f in sorted(os.listdir(SRC + '/assets')):
         shutil.copy(SRC + '/assets/' + f, base + '/assets/' + f)
         core.HASH['assets/' + f] = hashlib.md5(open(SRC + '/assets/' + f, 'rb').read()).hexdigest()[:8]
     shutil.copytree(OUT + '/_img', base + '/img')

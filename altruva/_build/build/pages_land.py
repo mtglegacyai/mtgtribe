@@ -22,9 +22,9 @@ def station(n, icon, title, desc, main, subs, here, kind=''):
             f'<span class="go" aria-hidden="true">{ic("chevron-right")}</span></div></li>')
 
 
-WELCOME_LEN = '6:03'
+WELCOME_LEN = '6:29'
 WELCOME_MIN = 6
-WELCOME_ISO = 'PT6M3S'
+WELCOME_ISO = 'PT6M29S'
 
 
 def landing():

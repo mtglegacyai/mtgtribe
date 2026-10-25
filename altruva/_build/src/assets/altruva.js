@@ -123,20 +123,20 @@
   function openDrawer() {
     if (!side) return;
     side.classList.add('open'); scrim && scrim.classList.add('on');
-    mbtn && mbtn.setAttribute('aria-expanded', 'true');
+    mbtn && mbtn.setAttribute('aria-expanded', 'true'); syncToggle();
     var cur = $('[aria-current="page"]', side) || $('a', side);
     setTimeout(function () { cur && cur.focus({ preventScroll: false }); }, 60);
   }
   function closeDrawer() {
     if (!side || !side.classList.contains('open')) return;
     side.classList.remove('open'); scrim && scrim.classList.remove('on');
-    mbtn && mbtn.setAttribute('aria-expanded', 'false');
+    mbtn && mbtn.setAttribute('aria-expanded', 'false'); syncToggle();
   }
   function syncToggle() {
     if (!tog) return;
     var off = html.classList.contains('side-off');
     tog.setAttribute('aria-expanded', mobile() ? String(side.classList.contains('open')) : String(!off));
-    tog.setAttribute('aria-label', mobile() ? 'Open the menu' : (off ? 'Show the menu' : 'Hide the menu'));
+    tog.setAttribute('aria-label', mobile() ? (side.classList.contains('open') ? 'Hide the menu' : 'Show the menu') : (off ? 'Show the menu' : 'Hide the menu'));
   }
   on(mbtn, 'click', function () { side.classList.contains('open') ? closeDrawer() : openDrawer(); });
   on(scrim, 'click', closeDrawer);

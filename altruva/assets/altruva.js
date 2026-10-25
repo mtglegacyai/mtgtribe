@@ -18,21 +18,38 @@
   }
 
   /* ------------------------------------------------------------ sheets (copy sheet, video player) */
-  var lastFocus = null;
+  /* A sheet never traps anyone: Close is always on screen, tapping outside, Escape and the phone's Back button
+     all close it, and a finished video closes itself and returns the visitor to exactly where they were. */
+  var lastFocus = null, savedY = 0, sheetHist = false;
+  function exitFs(v) {
+    try {
+      if (d.fullscreenElement && d.exitFullscreen) d.exitFullscreen();
+      else if (d.webkitFullscreenElement && d.webkitExitFullscreen) d.webkitExitFullscreen();
+      if (v && v.webkitDisplayingFullscreen && v.webkitExitFullscreen) v.webkitExitFullscreen();
+    } catch (e) {}
+  }
   function openSheet(el) {
     if (!el) return;
-    lastFocus = d.activeElement;
+    if (!$('.sheet.on')) { lastFocus = d.activeElement; savedY = window.scrollY || 0; }
     el.hidden = false; void el.offsetWidth; el.classList.add('on');
     d.body.style.overflow = 'hidden';
-    var f = $('[data-close]', el); if (f) setTimeout(function () { f.focus(); }, 30);
+    if (!sheetHist) { try { history.pushState({ altSheet: 1 }, ''); sheetHist = true; } catch (e) {} }
+    var f = $('[data-close]', el); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
   }
-  function closeSheet(el) {
-    if (!el || el.hidden) return;
+  function closeSheet(el, fromPop) {
+    if (!el || el.hidden || !el.classList.contains('on')) return;
     el.classList.remove('on'); d.body.style.overflow = '';
-    var v = $('video', el); if (v) { v.pause(); }
+    var v = $('video', el); if (v) { exitFs(v); v.pause(); }
     setTimeout(function () { el.hidden = true; if (v) { v.removeAttribute('src'); v.load(); } }, 260);
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+    if (Math.abs((window.scrollY || 0) - savedY) > 2) window.scrollTo(0, savedY);
+    if (sheetHist && !fromPop) { sheetHist = false; try { history.back(); } catch (e) {} }
   }
+  on(window, 'popstate', function () {
+    if (!sheetHist) return;
+    sheetHist = false;
+    $$('.sheet.on').forEach(function (s) { closeSheet(s, true); });
+  });
   $$('.sheet').forEach(function (s) {
     on(s, 'click', function (e) { if (e.target === s || e.target.closest('[data-close]')) closeSheet(s); });
   });
@@ -162,6 +179,19 @@
     v.src = btn.getAttribute('data-src');
     var img = $('img', box); if (img) v.poster = img.currentSrc || img.src;
     box.replaceChild(v, btn); track(v, k);
+    // a close button on the video, and back to the poster when it ends
+    var x = d.createElement('button');
+    x.type = 'button'; x.className = 'vclose'; x.setAttribute('aria-label', 'Close the video');
+    x.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>';
+    box.appendChild(x);
+    function restore() {
+      exitFs(v); v.pause();
+      if (v.parentNode === box) box.replaceChild(btn, v);
+      if (x.parentNode === box) box.removeChild(x);
+      v.removeAttribute('src'); try { v.load(); } catch (e) {}
+    }
+    on(x, 'click', restore);
+    on(v, 'ended', function () { setTimeout(restore, 700); });
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
   on(d, 'click', function (e) { var b = e.target.closest('.vplay'); if (b) startInline(b); });
@@ -175,7 +205,7 @@
     $('[data-mark]', pl).setAttribute('data-mark', k);
     var v = $('video', pl);
     v.poster = info.p.replace('-360.webp', '.webp'); v.src = info.s;
-    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
+    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 900); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
     paintWatched(); openSheet(pl);
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   });

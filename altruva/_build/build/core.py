@@ -260,10 +260,9 @@ def overlays(here):
 </div>
 <div class="sheet player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-h" hidden>
  <div class="sheet-in">
-  <button type="button" class="x" data-close>Close {ic('x')}</button>
-  <h2 id="player-h"><span data-k="title"></span></h2>
+  <div class="phead"><h2 id="player-h"><span data-k="title"></span></h2><button type="button" class="xbtn" data-close aria-label="Close the video">{ic('x')}</button></div>
   <div class="vbox"><video controls playsinline preload="none"></video></div>
-  <div class="btn-row"><button type="button" class="mark" data-mark="">Mark as watched</button><span class="wbadge">{ic('circle-check')}Watched</span></div>
+  <div class="prow"><button type="button" class="mark" data-mark="">Mark as watched</button><span class="wbadge">{ic('circle-check')}Watched</span><button type="button" class="btn btn-ghost btn-sm" data-close>{ic('x')}<span class="lbl">Close video</span></button></div>
  </div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

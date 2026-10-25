@@ -25,6 +25,7 @@ def station(n, icon, title, desc, main, subs, here, kind=''):
 WELCOME_LEN = '6:29'
 WELCOME_MIN = 6
 WELCOME_ISO = 'PT6M29S'
+WELCOME_SECS = 389
 
 
 def landing():
@@ -103,12 +104,11 @@ def landing():
  <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{esc(MTG_SITE)}" target="_blank" rel="noopener">MusaTheGiant.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>
 </div></footer>
 {overlays(here)}'''
-    desc = (f'The independent ALTRUVA guide by MTG: {NV} short videos and plain-English pages on how the plan pays, '
-            'how to join safely with SafePal and how money comes out. Top package $100. Free to learn.')
-    tour = [{'@type': 'VideoObject', 'name': 'ALTRUVA welcome tour: your map to the guide',
-             'description': 'A guided tour of the independent ALTRUVA guide by MTG: what ALTRUVA is in plain English, five key words, '
-                            'how every dollar moves, where to find every page, video and tool, and where to start.',
-             'thumbnailUrl': SITE + BASE + 'img/altruva-welcome-tour.webp', 'uploadDate': TODAY, 'duration': WELCOME_ISO,
-             'contentUrl': SITE + BASE + 'media/altruva-welcome-tour.mp4', 'inLanguage': 'en-ZA', 'author': {'@id': SITE + BASE + '#mtg'}}]
+    from seo import SEO_DESC
+    desc = SEO_DESC['land']
+    tour = [video_obj('tour', 'ALTRUVA welcome tour: your map to the guide',
+                           'A guided tour of the independent ALTRUVA guide by MTG: what ALTRUVA is in plain English, five key words, '
+                           'how every dollar moves, where to find every page, video and tool, and where to start.',
+                           'img/altruva-welcome-tour.webp', 'media/altruva-welcome-tour.mp4', WELCOME_ISO)]
     hd = head('ALTRUVA Guide by MTG: plan, videos and how to join', desc, '', here, extra_ld=tour, og_key='land')
     return hd, body

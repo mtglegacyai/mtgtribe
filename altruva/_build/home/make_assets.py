@@ -68,3 +68,7 @@ for n, fn in ((32, 'favicon-32.png'), (180, 'apple-touch-icon.png'), (512, 'icon
         out = Image.new('RGBA', (n, n), (0, 0, 0, 0)); out.paste(bgc, (0, 0), m); bgc = out
     bgc.save(OUT + fn, optimize=True)
 print('icons ok')
+
+# header avatar (MTG's profile photo from musathegiant.com, images/mtg-profile.jpg), 96 px for a 38 px circle at 2x
+_av = Image.open('/home/claude/mtglegacyai/musathegiant/images/mtg-profile.jpg').convert('RGB')
+_av.resize((96, 96), Image.LANCZOS).save(OUT + 'mtg-avatar.webp', quality=88)

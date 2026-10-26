@@ -244,7 +244,18 @@ def render(mode, dst):
                   f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod>' + ''.join(vtag(*x) for x in vids.get(u, [])) + '</url>\n'
                   for u in urls) + '</urlset>\n')
         open(base + '/sitemap.xml', 'w').write(sm)
+        import home
+        open(dst + '/sitemap-home.xml', 'w').write(
+            '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
+            f'<url><loc>{SITE}/</loc><lastmod>{TODAY}</lastmod><video:video><video:thumbnail_loc>{SITE}/assets/mtg-tribe-invite-cover.webp</video:thumbnail_loc>'
+            '<video:title>Join the MTG TRIBE: an invite from MTG</video:title><video:description>MTG, Your Digital Architect, on what the MTG TRIBE is: '
+            'a WhatsApp community for action takers, with tutorials, explainers, tips and strategies across different opportunities.</video:description>'
+            f'<video:content_loc>{SITE}/assets/mtg-tribe-invite.mp4</video:content_loc><video:duration>{int(round(home.VIDEO_SECS))}</video:duration>'
+            f'<video:publication_date>{home.PUBLISHED}T00:00:00+02:00</video:publication_date><video:family_friendly>yes</video:family_friendly>'
+            f'<video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video></url>\n</urlset>\n')
         open(dst + '/sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                              f'<sitemap><loc>{SITE}/sitemap-home.xml</loc><lastmod>{TODAY}</lastmod></sitemap>\n'
                                               f'<sitemap><loc>{SITE}{BASE}sitemap.xml</loc><lastmod>{TODAY}</lastmod></sitemap>\n</sitemapindex>\n')
         open(dst + '/robots.txt', 'w').write(ROBOTS)
         open(dst + f'/{INDEXNOW_KEY}.txt', 'w').write(INDEXNOW_KEY)
@@ -252,7 +263,7 @@ def render(mode, dst):
         llms.build_llms(dst, [('land', '')] + [(k, NAVD[k][1]) for k in PAGES if k != 'disc'] + [('disc', NAVD['disc'][1])])
         redirect(dst + '/group/index.html', WA_GROUP, 'Join the MTG TRIBE on WhatsApp', 'group', SITE + '/group/',
                  'Tap to join the MTG TRIBE WhatsApp group: a community for action takers to learn, ask and grow together.')
-        root_page(dst + '/index.html')
+        home.home_page(dst)   # standalone MTG TRIBE coming soon home (MTG, 26 Oct 2026), no redirect
         notfound(dst + '/404.html')
         os.makedirs(base + '/media', exist_ok=True)
         for k, v in V.items():
@@ -260,7 +271,7 @@ def render(mode, dst):
         shutil.copy(ROOT + '/media/altruva-welcome-tour.mp4', base + '/media/')
 
 
-ROBOTS = f"""# mtgtribe.com: search engines and AI assistants are welcome to read, index and cite this independent guide.
+ROBOTS = f"""# mtgtribe.com: search engines and AI assistants are welcome to read, index and cite the MTG TRIBE home and the independent ALTRUVA guide.
 User-agent: *
 Allow: /
 
@@ -305,19 +316,6 @@ def redirect(path, to, title, og_key=None, self_url=None, desc=''):
 <meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url={to}"><link rel="canonical" href="{canon}">{og}
 <style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}}a{{color:#eebd5c}}</style>
 <script>location.replace({json.dumps(to)})</script></head><body><p>Taking you there. <a href="{to}">Tap here</a> if nothing happens.</p></body></html>''')
-
-
-def root_page(path):
-    """mtgtribe.com home: sends visitors straight to the ALTRUVA guide (MTG, 25 Oct 2026), keeps its own social preview."""
-    t = 'MTG TRIBE | mtgtribe.com'
-    d = 'Independent guides, videos and free calculators by MTG, Your Digital Architect. Learn first, then decide.'
-    open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{t}</title><meta name="description" content="{d}"><link rel="canonical" href="{SITE}{BASE}">
-<meta http-equiv="refresh" content="0;url=/altruva/">
-{core.og_tags(t, d, SITE + '/', 'root')}
-<script>location.replace('https://mtgtribe.com/altruva/'+location.search+location.hash)</script>
-<style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}}a{{color:#eebd5c}}</style>
-</head><body><p>Taking you to the <a href="/altruva/">ALTRUVA guide</a>.</p></body></html>''')
 
 
 def notfound(path):

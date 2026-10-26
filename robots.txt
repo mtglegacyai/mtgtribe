@@ -1,4 +1,4 @@
-# mtgtribe.com: search engines and AI assistants are welcome to read, index and cite this independent guide.
+# mtgtribe.com: search engines and AI assistants are welcome to read, index and cite the MTG TRIBE home and the independent ALTRUVA guide.
 User-agent: *
 Allow: /
 

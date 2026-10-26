@@ -22,10 +22,9 @@ for f in sorted(glob.glob(ROOT + '/**/*.html', recursive=True)):
     t = re.search(r'<title>(.*?)</title>', hd, re.S); d = re.search(r'<meta name="description" content="([^"]*)"', hd)
     can = re.search(r'<link rel="canonical" href="([^"]+)"', hd); ogu = re.search(r'<meta property="og:url" content="([^"]+)"', hd)
     t = t.group(1) if t else ''; d = d.group(1) if d else ''
-    if rel == '/index.html':
-        if not can or can.group(1) != SITE + '/altruva/':
-            bad.append('root canonical should point at /altruva/')
-        continue
+    if rel == '/index.html':   # standalone MTG TRIBE home (26 Oct 2026): indexable, its own canonical, no redirect
+        if not can or can.group(1) != SITE + '/': bad.append('home canonical should be the root')
+        if 'location.replace(\'https://mtgtribe.com/altruva' in s or 'http-equiv="refresh"' in s: bad.append('home still redirects')
     if len(t) > 60: bad.append(f'{rel}: title {len(t)} chars')
     if not 110 <= len(d) <= 160: bad.append(f'{rel}: description {len(d)} chars')
     if not can or not ogu or can.group(1) != ogu.group(1): bad.append(f'{rel}: canonical and og:url differ')
@@ -48,12 +47,16 @@ for f in sorted(glob.glob(ROOT + '/**/*.html', recursive=True)):
     rows.append((rel, len(t), len(d), sorted(set(types))))
 
 # sitemaps
-for sm in ('/sitemap.xml', '/altruva/sitemap.xml'):
+SMS = ('/sitemap-home.xml', '/altruva/sitemap.xml')
+for sm in ('/sitemap.xml',) + SMS:
     xml.dom.minidom.parse(ROOT + sm)
-locs = re.findall(r'<loc>([^<]+)</loc>', open(ROOT + '/altruva/sitemap.xml').read())
+idx = re.findall(r'<loc>([^<]+)</loc>', open(ROOT + '/sitemap.xml').read())
+if sorted(idx) != sorted(SITE + x for x in SMS): bad.append(f'sitemap index lists {idx}')
+smtxt = ''.join(open(ROOT + x).read() for x in SMS)
+locs = re.findall(r'<loc>([^<]+)</loc>', smtxt)
 for u in locs:
     if not os.path.exists(path_of(u)): bad.append(f'sitemap URL missing: {u}')
-for u in re.findall(r'<video:(?:content|thumbnail)_loc>([^<]+)<', open(ROOT + '/altruva/sitemap.xml').read()):
+for u in re.findall(r'<video:(?:content|thumbnail)_loc>([^<]+)<', smtxt):
     if not os.path.exists(path_of(u)): bad.append(f'sitemap video file missing: {u}')
 indexed = {r[0] for r in rows}
 for u in locs:
@@ -69,5 +72,5 @@ for f in ('llms.txt', 'llms-full.txt'):
 keys = [f for f in os.listdir(ROOT) if re.fullmatch(r'[0-9a-f]{32}\.txt', f)]
 if len(keys) != 1 or open(ROOT + '/' + keys[0]).read() != keys[0][:-4]: bad.append('IndexNow key file')
 print(f'{len(rows)} indexable pages, {len(locs)} sitemap URLs, '
-      f'{open(ROOT + "/altruva/sitemap.xml").read().count("<video:video>")} sitemap videos')
+      f'{smtxt.count("<video:video>")} sitemap videos')
 print('\n'.join(bad) if bad else 'SEO CHECK OK')

@@ -83,11 +83,17 @@ def build_llms(dst, pages_in_order):
     groups = {}
     for n in NAV + EXTRA:
         groups.setdefault(n[5], []).append(n)
-    lines = [f'# {NAME}', '',
-             '> mtgtribe.com is the home of MTG (MusaTheGiant), "Your Digital Architect". Its main section, the ALTRUVA Guide by MTG at '
-             f'{SITE}{BASE}, is an independent, plain-English guide to ALTRUVA: how the plan pays, how to join safely with a SafePal wallet, '
+    lines = ['# MTG TRIBE (mtgtribe.com)', '',
+             '> mtgtribe.com is the home of the MTG TRIBE by MTG (MusaTheGiant), "Your Digital Architect": a WhatsApp community for action takers '
+             'who learn, take action and grow together. The new home page is coming soon. Live now is the ALTRUVA Guide by MTG at '
+             f'{SITE}{BASE}, an independent, plain-English guide to ALTRUVA: how the plan pays, how to join safely with a SafePal wallet, '
              f'how withdrawals work, free calculators, and {NV} short videos. Educational only, not official ALTRUVA material and not financial advice.',
-             '', 'Key facts, as shown in the guide:', ''] + [f'- {f}' for f in FACTS] + [
+             '', '## MTG TRIBE home', '',
+             f'- [MTG TRIBE home, coming soon]({SITE}/): the new home of the MTG TRIBE, with the invite video and links.',
+             f'- [Video: Join the MTG TRIBE, an invite from MTG]({SITE}/assets/mtg-tribe-invite.mp4) (2:40): what the MTG TRIBE is and how to join at mtgtribe.com/group.',
+             f'- [Join the MTG TRIBE on WhatsApp]({SITE}/group/)',
+             '', f'## {NAME}', '',
+             'Key facts, as shown in the guide:', ''] + [f'- {f}' for f in FACTS] + [
              '', f'Always give the full address {SITE.replace("https://", "")}{BASE.rstrip("/")} for these pages (the mtgtribe.com home page may change).', '',
              '## Start here', '', f'- [{short(SEO_TITLE["land"])}]({SITE}{BASE}): {SEO_DESC["land"]}']
     for g, items in groups.items():

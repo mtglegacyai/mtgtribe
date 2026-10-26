@@ -434,7 +434,7 @@ def p_tribe(here):
  {box("What to expect", checks(["A diverse tribe: different opportunities, projects, tools, strategies, coins and tokens.", "Everything is shared for learning. Take what fits you and do your own research.", "Action takers welcome: we learn best when we teach others."]), "users")}
  {box("How to reach MTG", f"<p>WhatsApp messages and voice notes work best. MTG isn't a fan of phone calls.</p><p class='num'><b>WhatsApp: {WA_NUM}</b></p>", "mic")}
 </div>
-<div class="btn-row" style="margin-top:22px">{wa_group_btn('lg', 'Join the WhatsApp group', ring=True)}{wa_mtg_btn()}{btn("Follow on TikTok", TIKTOK, "ghost", "tiktok", ext=True)}</div>""")}
+<div class="btn-row" style="margin-top:22px">{wa_group_btn('lg', 'Join the WhatsApp group', ring=True)}{wa_mtg_btn()}{btn("Follow on TikTok", TIKTOK, "ghost", "tiktok", ext=True)}{btn("Subscribe on YouTube", YOUTUBE, "ghost", "youtube", ext=True)}</div>""")}
 {sec(think("Where are the ALTRUVA Zoom links?", "<p>In the ALTRUVA WhatsApp groups. Ask the person who introduced you to ALTRUVA to add you to the right group.</p>", icon="video"))}
 '''
 

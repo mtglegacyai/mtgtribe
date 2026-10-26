@@ -10,7 +10,7 @@ follow links and the signature footer."""
 import hashlib, json, os, shutil
 import core
 from core import ic, esc
-from config import SITE, BASE, TIKTOK, MTG_SITE, WA_MTG, WA_NUM, NV
+from config import SITE, BASE, TIKTOK, YOUTUBE, MTG_SITE, WA_MTG, WA_NUM, NV
 
 HOME_SRC = '/home/claude/site/home/src'
 TITLE = 'MTG TRIBE | Coming soon by MTG, Your Digital Architect'
@@ -38,7 +38,7 @@ def ld():
         {'@type': 'Organization', '@id': SITE + '/#tribe', 'name': 'MTG TRIBE', 'url': SITE + '/',
          'description': 'A WhatsApp community for action takers who learn, take action and grow together, hosted by MTG.',
          'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/icon-512.png', 'width': 512, 'height': 512},
-         'founder': {'@id': core.PERSON_ID}, 'sameAs': [TIKTOK]},
+         'founder': {'@id': core.PERSON_ID}, 'sameAs': [TIKTOK, YOUTUBE]},
         person,
         {'@type': 'WebPage', '@id': SITE + '/#webpage', 'url': SITE + '/', 'name': TITLE, 'description': DESC, 'inLanguage': 'en-ZA',
          'isPartOf': {'@id': SITE + '/#website'}, 'about': {'@id': SITE + '/#tribe'}, 'author': {'@id': core.PERSON_ID},
@@ -66,6 +66,7 @@ def page():
     fl = ''.join(f'<li><span class="pi">{ic(i)}</span><span><b>{esc(t)}</b><span>{esc(s)}</span></span></li>' for i, t, s in feats)
     ext = ' target="_blank" rel="noopener"'
     follow = (f'<a class="chip" href="{esc(TIKTOK)}"{ext}>{ic("tiktok")}TikTok <span>@joinmtgtribe</span></a>'
+              f'<a class="chip" href="{esc(YOUTUBE)}"{ext}>{ic("youtube")}YouTube <span>@mtgtribe</span></a>'
               f'<a class="chip" href="{esc(WA_MTG)}"{ext}>{ic("message-circle")}WhatsApp MTG <span>{esc(WA_NUM)}</span></a>'
               f'<a class="chip" href="{esc(MTG_SITE)}"{ext}>{ic("globe")}MusaTheGiant.com</a>')
     join = (f'<span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/">'

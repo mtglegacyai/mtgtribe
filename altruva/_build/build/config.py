@@ -14,6 +14,7 @@ WA_MTG_MSG = 'Hi MTG, I found your ALTRUVA guide on mtgtribe.com and I have a qu
 WA_NUM = '072 171 4626'
 WA_GROUP = 'https://chat.whatsapp.com/DwRWt83LQO78FFlHVbtj4E?s=cl&p=a&mlu=4&ilr=4'
 TIKTOK = 'https://www.tiktok.com/@joinmtgtribe'
+YOUTUBE = 'https://www.youtube.com/@mtgtribe'   # MTG TRIBE channel (26 Oct 2026)
 CARD_GUIDE = 'https://bellveraffiliates.com/'
 MENU_EXT = {'card': CARD_GUIDE}   # menu items that open another website in a new tab
 MTG_SITE = 'https://www.musathegiant.com'

@@ -106,7 +106,7 @@ def build_llms(dst, pages_in_order):
         lines.append(f'- [{v["label"]}: {v["title"]}]({SITE}{BASE}media/{v["slug"]}.mp4) ({mmss(v["secs"])}): {v["desc"]}')
     lines += ['', '## Community and contact', '',
               f'- [MTG TRIBE WhatsApp community]({SITE}/group/): a community for action takers to learn, ask and grow together.',
-              f'- [MTG TRIBE on TikTok]({TIKTOK})', f'- [MusaTheGiant.com]({MTG_SITE}): MTG\'s own website.',
+              f'- [MTG TRIBE on TikTok]({TIKTOK})', f'- [MTG TRIBE on YouTube]({YOUTUBE})', f'- [MusaTheGiant.com]({MTG_SITE}): MTG\'s own website.',
               '', '## Optional', '', f'- [Full text of every page]({SITE}/llms-full.txt): the readable text of the whole guide in one file.', '']
     open(dst + '/llms.txt', 'w', encoding='utf-8').write('\n'.join(lines))
 

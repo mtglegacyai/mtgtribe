@@ -58,7 +58,7 @@ def landing():
         station(None, 'credit-card', 'Side trip: the crypto card', 'Spend your USDT with a crypto debit card. It has an income opportunity of its own.',
                 'dashboard/crypto-card/', [('Crypto card', 'dashboard/crypto-card/')], here, 'branch'),
         station(None, 'message-circle', 'Side trip: the MTG TRIBE', 'A WhatsApp community for action takers. Ask questions and learn with others.',
-                'dashboard/tribe/', [('WhatsApp group', WA_GROUP), ('TikTok', TIKTOK)], here, 'branch wa'),
+                'dashboard/tribe/', [('WhatsApp group', WA_GROUP), ('TikTok', TIKTOK), ('YouTube', YOUTUBE)], here, 'branch wa'),
     ]
     end = (f'<li class="stn end rv"><span class="dot" aria-hidden="true">{ic("flag")}</span><div class="card endcard">{ped("user-plus")}'
            f'<div class="tx"><b>Copy your sign-up link</b><span>When you\'re ready. The button copies MTG\'s link and opens nothing: paste it into your wallet\'s browser. '
@@ -95,10 +95,10 @@ def landing():
 <footer class="lfoot"><div class="wrap">
  <div class="lfoot-top">
   <div class="about"><img src="{A('img/altruva-logo-horizontal.png', here)}" width="616" height="144" alt="ALTRUVA" loading="lazy"><p>Independent ALTRUVA education by MTG 👑 | Your Digital Architect.</p>
-   <div class="socials"><a href="{esc(TIKTOK)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on TikTok">{ic('tiktok')}</a><a href="{esc(WA_GROUP)}" target="_blank" rel="noopener" aria-label="Join the MTG TRIBE WhatsApp group">{ic('whatsapp')}</a><a href="{esc(WA_MTG)}" target="_blank" rel="noopener" aria-label="WhatsApp MTG">{ic('message-circle')}</a></div></div>
+   <div class="socials"><a href="{esc(TIKTOK)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on TikTok">{ic('tiktok')}</a><a href="{esc(YOUTUBE)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on YouTube">{ic('youtube')}</a><a href="{esc(WA_GROUP)}" target="_blank" rel="noopener" aria-label="Join the MTG TRIBE WhatsApp group">{ic('whatsapp')}</a><a href="{esc(WA_MTG)}" target="_blank" rel="noopener" aria-label="WhatsApp MTG">{ic('message-circle')}</a></div></div>
   <div><h3>Learn</h3><ul><li><a href="{A('dashboard/', here)}">Dashboard</a></li><li><a href="{A('dashboard/explainers/', here)}">Explainer videos</a></li><li><a href="{A('dashboard/tutorials/', here)}">Tutorial videos</a></li><li><a href="{A('dashboard/faq/', here)}">FAQ</a></li><li><a href="{A('dashboard/glossary/', here)}">Glossary</a></li></ul></div>
   <div><h3>Tools</h3><ul><li><a href="{A('dashboard/tools/withdraw-split-calculator/', here)}">Withdraw Split Calculator</a></li><li><a href="{A('dashboard/tools/working-level-calculator/', here)}">Working Level Calculator</a></li><li><a href="{A('dashboard/tools/matching-calculator/', here)}">Matching Calculator</a></li><li><a href="{A('dashboard/tools/usdt-to-rand/', here)}">USDT to Rand Converter</a></li></ul></div>
-  <div><h3>Connect</h3><ul><li><a href="{esc(WA_GROUP)}" target="_blank" rel="noopener">Join the MTG TRIBE</a></li><li><a href="{esc(WA_MTG)}" target="_blank" rel="noopener">WhatsApp MTG</a></li><li><a href="{esc(TIKTOK)}" target="_blank" rel="noopener">TikTok</a></li><li><a href="{A('dashboard/disclaimer/', here)}">Disclaimer</a></li></ul></div>
+  <div><h3>Connect</h3><ul><li><a href="{esc(WA_GROUP)}" target="_blank" rel="noopener">Join the MTG TRIBE</a></li><li><a href="{esc(WA_MTG)}" target="_blank" rel="noopener">WhatsApp MTG</a></li><li><a href="{esc(TIKTOK)}" target="_blank" rel="noopener">TikTok</a></li><li><a href="{esc(YOUTUBE)}" target="_blank" rel="noopener">YouTube</a></li><li><a href="{A('dashboard/disclaimer/', here)}">Disclaimer</a></li></ul></div>
  </div>
  <p class="disc">{DISCLAIMER} Affiliate links: the ALTRUVA sign-up button and the <a href="{esc(CARD_GUIDE)}" target="_blank" rel="noopener">crypto card guide</a>. <a href="{A('dashboard/disclaimer/', here)}">Full disclaimer</a>.</p>
  <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{esc(MTG_SITE)}" target="_blank" rel="noopener">MusaTheGiant.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>

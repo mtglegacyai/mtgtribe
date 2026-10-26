@@ -4,7 +4,7 @@ from config import *
 
 ICON_DIR = '/tmp/assets/x/lucide-static-1.61.0/package/icons/'
 BRAND_DIR = '/tmp/assets/si/package/icons/'
-BRANDS = {'tiktok', 'whatsapp'}
+BRANDS = {'tiktok', 'whatsapp', 'youtube'}
 
 MODE = 'prod'          # 'prod' or 'preview'
 HASH = {}              # asset content hashes (prod cache busting)
@@ -225,7 +225,7 @@ def person_ld():
     return {'@type': 'Person', '@id': PERSON_ID, 'name': 'MTG', 'alternateName': ['MusaTheGiant', 'Musa the Giant'],
             'jobTitle': 'Your Digital Architect',
             'description': 'MTG, Your Digital Architect: creator of independent, plain-English crypto education, videos and free tools, and host of the MTG TRIBE community.',
-            'url': MTG_SITE, 'sameAs': [MTG_SITE, TIKTOK],
+            'url': MTG_SITE, 'sameAs': [MTG_SITE, TIKTOK, YOUTUBE],
             'knowsAbout': ['ALTRUVA', 'Web3 wallets', 'SafePal', 'USDT on BNB Smart Chain', 'Crypto safety', 'Affiliate marketing']}
 
 
@@ -362,7 +362,8 @@ def sidebar(key, here):
  <div class="side-bot">
   {copy_btn('signup', 'Copy sign-up link', size='sm')}
   <div class="srow"><a class="slink" href="{A('', here)}"><span aria-hidden="true">🏡</span>GO HOME</a><a class="slink" href="{esc(WA_GROUP)}" target="_blank" rel="noopener">{ic('whatsapp')}MTG TRIBE</a></div>
-  <div class="srow"><a class="slink" href="{A('dashboard/disclaimer/', here)}">{ic('info')}Disclaimer</a><a class="slink" href="{esc(TIKTOK)}" target="_blank" rel="noopener">{ic('tiktok')}TikTok</a></div>
+  <div class="srow"><a class="slink" href="{esc(TIKTOK)}" target="_blank" rel="noopener">{ic('tiktok')}TikTok</a><a class="slink" href="{esc(YOUTUBE)}" target="_blank" rel="noopener">{ic('youtube')}YouTube</a></div>
+  <div class="srow"><a class="slink" style="grid-column:1/-1" href="{A('dashboard/disclaimer/', here)}">{ic('info')}Disclaimer</a></div>
  </div>
 </aside>
 <button type="button" class="side-toggle" id="side-toggle" aria-controls="side" aria-expanded="true" aria-label="Hide the menu">{ic('chevron-left')}</button>

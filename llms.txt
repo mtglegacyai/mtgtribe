@@ -8,6 +8,12 @@
 - [Video: Join the MTG TRIBE, an invite from MTG](https://mtgtribe.com/assets/mtg-tribe-invite.mp4) (2:40): what the MTG TRIBE is and how to join at mtgtribe.com/group.
 - [Join the MTG TRIBE on WhatsApp](https://mtgtribe.com/group/)
 
+## Guide: How to buy CNTN stock from South Africa
+
+- [How to Buy CNTN Stock in South Africa (2026 Step-by-Step Guide)](https://mtgtribe.com/buy-cntn-south-africa/): six steps to buy Canton Strategic Holdings (Nasdaq: CNTN) from South Africa through Interactive Brokers: open a Cash account, verify your identity, send US dollars from your SA bank under the R2 million single discretionary allowance, find CNTN on NASDAQ, place a limit order, check your portfolio. Includes US market hours in South African time and a FAQ.
+- CNTN is Canton Strategic Holdings, a Nasdaq-listed company that holds Canton Coin (CC) and runs a Super Validator. It is not Digital Asset, the private company that built Canton Network.
+- Educational only, not financial advice. Independent, not official material from Interactive Brokers or Canton Strategic Holdings.
+
 ## ALTRUVA Guide by MTG
 
 Key facts, as shown in the guide:

@@ -325,8 +325,8 @@
  "video_script": [
   {
    "scene": "intro",
-   "text": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this training. Here is your Canton Coin weekly update for the first of November, twenty twenty six.",
-   "caption": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this training. Here is your Canton Coin weekly update for 1 November 2026."
+   "text": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for the first of November, twenty twenty six.",
+   "caption": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for 1 November 2026."
   },
   {
    "scene": "price",

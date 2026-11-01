@@ -229,9 +229,49 @@ def update_sitemap(urls):
             s = s.replace("</urlset>", f"  <url><loc>{u}</loc></url>\n</urlset>")
     open(p, "w", encoding="utf-8").write(s)
 
+GUIDE_FILES = {"cc": os.path.join(ROOT, "cc", "index.html"), "cntn": os.path.join(ROOT, "cntn", "index.html")}
+GUIDE_KEYS = {"cc": ("date", "date_h", "price", "chg", "mcap", "ath", "supply"), "cntn": ("date", "price", "price_date", "range")}
+
+def refresh_guides(d):
+    """Copy this week's snapshot numbers into /cc/ and /cntn/ (the "guides" block of the JSON).
+
+    cc  : the fallback table shown when the live CoinGecko price cannot load, plus its snapshot date.
+    cntn: the dated price, 52 week range and the date that drives the "may be out of date" notice.
+    Only elements marked data-snap="key" change, so the rest of each guide stays exactly as approved.
+    """
+    g = d.get("guides")
+    if not g:
+        print("no guides block, guides left as they are")
+        return
+    for name, keys in GUIDE_KEYS.items():
+        vals = g.get(name)
+        if not vals:
+            continue
+        missing = [k for k in keys if k not in vals]
+        assert not missing, f"guides.{name} is missing {missing}"
+        p = GUIDE_FILES[name]
+        s = open(p, encoding="utf-8").read()
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", vals["date"]), f"guides.{name}.date must be YYYY-MM-DD"
+        attr = "data-snap-date" if name == "cc" else "data-stale"
+        s, n = re.subn(rf'{attr}="[0-9-]+"', f'{attr}="{vals["date"]}"', s)
+        assert n >= 1, f"{name}: no {attr} found"
+        for k in keys:
+            if k == "date":
+                continue
+            s, n = re.subn(rf'(<(\w+)\b[^>]*\bdata-snap="{k}"[^>]*>).*?(</\2>)', lambda m: m.group(1) + vals[k] + m.group(3), s, flags=re.S)
+            assert n >= 1, f"{name}: no data-snap=\"{k}\" found"
+        if name == "cntn":
+            plain = re.sub(r"<[^>]+>", "", vals["price"])
+            s, n = re.subn(r"about \$[0-9.]+ at the \d{1,2} [A-Z][a-z]+ \d{4} close", f"about {plain} at the {vals['price_date']} close", s)
+            assert n >= 1, "cntn: FAQ price sentence for structured data not found"
+        assert "—" not in s and "–" not in s, f"dash found in {name}"
+        open(p, "w", encoding="utf-8").write(s)
+        print("refreshed", p)
+
 def main():
     head, sprite, header, footer = master_parts()
     paths = sys.argv[1:] or sorted(glob.glob(os.path.join(DATA_DIR, "*.json")))
+    latest = max(os.path.basename(p) for p in glob.glob(os.path.join(DATA_DIR, "*.json")))
     for p in paths:
         d = json.load(open(p, encoding="utf-8"))
         out = os.path.join(ROOT, "canton-weekly", d["date"])
@@ -240,6 +280,8 @@ def main():
         assert "—" not in page and "–" not in page, "dash found"
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page)
         print("built", out)
+        if os.path.basename(p) == latest:
+            refresh_guides(d)
     reports = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(DATA_DIR, "*.json")), reverse=True)]
     os.makedirs(os.path.join(ROOT, "canton-weekly"), exist_ok=True)
     open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(hub(reports, head, sprite, header, footer))

@@ -51,7 +51,7 @@
   ],
   [
    "All-time high",
-   "$0.1942 (3 Feb 2026), about 50% higher"
+   "$0.1942 (3 Feb 2026), about double today's price"
   ],
   [
    "All-time low",
@@ -410,5 +410,22 @@
    "⚖️ Still about 2 CC minted for every 1 burned",
    "🏦 Banks use the network, deals settle in USDC"
   ]
+ },
+ "guides": {
+  "cc": {
+   "date": "2026-11-01",
+   "date_h": "1 November 2026",
+   "price": "<b>$0.0962</b>",
+   "chg": "About -5% / about -21%",
+   "mcap": "About $3.85 billion (top 30)",
+   "ath": "$0.1942 on 3 February 2026, about double today's price",
+   "supply": "39.97 billion CC, no maximum, still growing"
+  },
+  "cntn": {
+   "date": "2026-10-30",
+   "price": "$1.98",
+   "price_date": "30 October 2026",
+   "range": "$1.66 to $6.89"
+  }
  }
 }

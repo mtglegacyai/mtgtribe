@@ -172,6 +172,21 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
 .upd{color:var(--muted);font-size:14px}
 .disc{margin:0 0 20px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--muted);font-size:14px}
 
+/* back to top */
+.totop{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;place-items:center;width:56px;height:56px;padding:0;border:0;border-radius:50%;cursor:pointer;
+ background:transparent;color:#1b1102;opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);transition:opacity .3s,transform .3s var(--ease),visibility 0s .3s;-webkit-tap-highlight-color:transparent}
+.totop.on{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .35s var(--ease),visibility 0s}
+.totop svg.pr{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.totop .tr{fill:none;stroke:rgba(242,173,60,.18);stroke-width:3}
+.totop .bar{fill:none;stroke:var(--amber);stroke-width:3;stroke-linecap:round;stroke-dasharray:157;stroke-dashoffset:157}
+.totop .core{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,214,138,.75);
+ background:linear-gradient(180deg,#f6bd59 0%,#dfa02d 58%,#ca8318 100%);box-shadow:0 5px 0 rgba(113,67,6,.45),0 12px 28px rgba(0,0,0,.5),0 0 26px rgba(242,173,60,.3),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .18s,box-shadow .18s}
+.totop .core svg{width:20px;height:20px}
+.totop:active .core{transform:translateY(4px);box-shadow:0 1px 0 rgba(113,67,6,.45),0 6px 14px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+@media (hover:hover){.totop:hover .core{transform:translateY(-2px)}}
+.totop:focus-visible{outline:3px solid var(--amber-l);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.totop,.totop.on{transition:none}}
+
 /* footer (same as home) */
 .foot{padding:56px 0 calc(44px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:linear-gradient(180deg,#07080a,#040506);text-align:center;color:var(--muted)}
 .slog{margin:0;font:800 clamp(1.25rem,2.5vw,1.7rem)/1.25 var(--f-d);letter-spacing:-.015em;word-spacing:.08em;color:#eceef1;text-wrap:balance}
@@ -481,5 +496,17 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
  <div class="fl"><strong>MTG 👑 | Your Digital Architect</strong><span><a href="/">MTG TRIBE home</a><a href="https://www.musathegiant.com" target="_blank" rel="noopener">MusaTheGiant.com</a><a href="/altruva/">ALTRUVA guide</a><a href="/altruva/dashboard/disclaimer/">Disclaimer</a></span></div>
  <p class="fine">© 2026 MTG. Education only, not financial advice. Always do your own research.</p>
 </div></footer>
+<button class="totop" id="totop" type="button" aria-label="Back to top" title="Back to top"><svg class="pr" viewBox="0 0 56 56" aria-hidden="true"><circle class="tr" cx="28" cy="28" r="25"/><circle class="bar" id="totop-bar" cx="28" cy="28" r="25"/></svg><span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></span></button>
+<script>
+(function(){var b=document.getElementById('totop'),bar=document.getElementById('totop-bar'),L=157,tick=false,
+ reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function upd(){tick=false;var y=window.scrollY||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;
+  b.classList.toggle('on',y>window.innerHeight*.8);bar.style.strokeDashoffset=(L-L*(h>0?Math.min(1,y/h):0)).toFixed(1)}
+ window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+ window.addEventListener('resize',upd);upd();
+ b.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+  var t=document.getElementById('main');if(t){t.setAttribute('tabindex','-1');setTimeout(function(){t.focus({preventScroll:true})},reduce?0:600)}});
+})();
+</script>
 </body>
 </html>

@@ -75,6 +75,10 @@ def table(cols, rows):
     tr = "".join("<tr>" + "".join(f'<td data-label="{cols[i]}">{v}</td>' for i, v in enumerate(r)) + "</tr>" for r in rows)
     return f'<div class="tw"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
+INVESTORS_URL = "https://crypto-fundraising.info/projects/canton-network/"
+INVESTORS_CARD = '<a class="rel-guide" style="margin:0 0 12px" href="https://crypto-fundraising.info/projects/canton-network/" target="_blank" rel="noopener" aria-label="See who has invested in Canton Network on Crypto-Fundraising (opens in a new tab)"><span><span class="k">Do your own research</span><b>Who has invested in Canton Network?</b><span class="upd">See every funding round behind Digital Asset, the company that built Canton Network. Lead investors include a16z crypto, Goldman Sachs, Blackstone, DRW and Tradeweb.</span></span><span class="go">See the investors<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></a><p class="upd">These firms invested in Digital Asset, the company. Buying CC or CNTN does not make you a Digital Asset shareholder, and big backers do not guarantee any price.</p>'
+INVESTORS_SRC = '<li><a class="tx" href="https://crypto-fundraising.info/projects/canton-network/" target="_blank" rel="noopener">Crypto-Fundraising: Canton Network (Digital Asset) funding rounds and investors</a></li>'
+
 def tip(t, icon="bulb"):
     return f'<div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-{icon}"/></svg><span>{t}</span></div>'
 
@@ -172,14 +176,14 @@ def report(d, head, sprite, header, footer):
  <section class="sec" id="changed" aria-labelledby="ch-h"><h2 id="ch-h">What changed since last week</h2><ul class="do">{changed}</ul></section>
  <section class="sec" id="technicals" aria-labelledby="t-h"><h2 id="t-h">Technical analysis</h2>{tech}<h3 class="part">Key levels</h3>{levels}</section>
  <section class="sec" id="scenarios" aria-labelledby="sc-h"><h2 id="sc-h">Three scenarios for the coming week</h2>{scen}{tip("Scenarios are possibilities, not predictions. Levels can break either way, so plan your risk before you act.")}</section>
- <section class="sec" id="fundamentals" aria-labelledby="f-h"><h2 id="f-h">Fundamentals</h2><p class="score">Score: {esc(d["fund_score"])}</p><ul class="do">{fund}</ul></section>
+ <section class="sec" id="fundamentals" aria-labelledby="f-h"><h2 id="f-h">Fundamentals</h2><p class="score">Score: {esc(d["fund_score"])}</p><ul class="do">{fund}</ul>{INVESTORS_CARD}</section>
  <section class="sec" id="cntn" aria-labelledby="c-h"><h2 id="c-h">CNTN stock</h2>{cntn}<ul class="do">{cntn_notes}</ul></section>
  <section class="sec" id="bottom-line" aria-labelledby="b-h"><h2 id="b-h">Bottom line</h2><ul class="do">{bottom}</ul></section>
  <section class="join" aria-labelledby="join-h">
   <div><h2 id="join-h">Want this every Sunday?</h2><p>Join the MTG TRIBE on WhatsApp. The new Canton report lands there first, and we learn and take action together.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></span>
  </section>
- <section class="sec" id="sources" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="src">{src}</ul>
+ <section class="sec" id="sources" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="src">{src}{INVESTORS_SRC if INVESTORS_URL not in src else ""}</ul>
   <p class="upd" style="margin-top:20px"><a class="tx" href="/canton-weekly/">All Canton weekly reports</a></p></section>
  <p class="disc">Education only, not financial advice. MTG is not a financial adviser. Crypto and small-company shares are high risk: only use money you can afford to lose and always do your own research. The VALR and Bellver Card links are MTG's referral links: MTG may earn a commission at no extra cost to you.</p>
 </div></div>

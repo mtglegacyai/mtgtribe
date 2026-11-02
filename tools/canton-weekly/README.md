@@ -31,4 +31,11 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
       "cntn": {"date": "2026-10-30", "price": "$1.98", "price_date": "30 October 2026", "range": "$1.66 to $6.89"}
     }
 
+## Official website links
+
+`official_links.py` holds the verified official site for every company, exchange, wallet and tool we name.
+build.py links the first mention of each name in every section of the reports, the hub and both guides.
+Before naming something new in a report, add it there with its official address, checked against
+cantonecosystem.com (Canton Network's official directory) or the company's own site. Never guess an address.
+
 Design: everything reuses cntn/index.html (the master page). No em or en dashes anywhere.

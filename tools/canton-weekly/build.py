@@ -12,6 +12,9 @@ and adds both URLs to sitemap-home.xml.
 """
 import glob, html, json, os, re, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from official_links import link_html  # links every named company or tool to its verified official site
+
 ROOT = os.getcwd()
 SITE = "https://mtgtribe.com"
 MASTER = os.path.join(ROOT, "cntn", "index.html")
@@ -268,6 +271,7 @@ def refresh_guides(d):
             plain = re.sub(r"<[^>]+>", "", vals["price"])
             s, n = re.subn(r"about \$[0-9.]+ at the \d{1,2} [A-Z][a-z]+ \d{4} close", f"about {plain} at the {vals['price_date']} close", s)
             assert n >= 1, "cntn: FAQ price sentence for structured data not found"
+        s = link_html(s)
         assert "—" not in s and "–" not in s, f"dash found in {name}"
         open(p, "w", encoding="utf-8").write(s)
         print("refreshed", p)
@@ -280,7 +284,7 @@ def main():
         d = json.load(open(p, encoding="utf-8"))
         out = os.path.join(ROOT, "canton-weekly", d["date"])
         os.makedirs(out, exist_ok=True)
-        page = report(d, head, sprite, header, footer)
+        page = link_html(report(d, head, sprite, header, footer))
         assert "—" not in page and "–" not in page, "dash found"
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page)
         print("built", out)
@@ -288,7 +292,7 @@ def main():
             refresh_guides(d)
     reports = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(DATA_DIR, "*.json")), reverse=True)]
     os.makedirs(os.path.join(ROOT, "canton-weekly"), exist_ok=True)
-    open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(hub(reports, head, sprite, header, footer))
+    open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(link_html(hub(reports, head, sprite, header, footer)))
     update_sitemap([SITE + "/canton-weekly/"] + [f"{SITE}/canton-weekly/{r['date']}/" for r in reports])
     print("hub built,", len(reports), "reports")
 

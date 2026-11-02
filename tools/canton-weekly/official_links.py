@@ -1,8 +1,8 @@
 """Official website links for every company, exchange, wallet and tool named on the Canton pages.
 
 Why: visitors should never have to search for a name and risk landing on a copycat or scam site.
-Every page gets (1) the first mention of each name in each section linked to its official site and
-(2) on the two guides, an "Official websites" table that shows the exact address to check.
+Every page gets the first mention of each name in each section linked to its official site.
+(directory_table() can build an "Official websites" table, but MTG chose not to show one: the inline links are enough.)
 
 Sources used to verify each address (checked 2 November 2026):
 - Canton Network's official ecosystem directory (cantonecosystem.com, linked from canton.network)

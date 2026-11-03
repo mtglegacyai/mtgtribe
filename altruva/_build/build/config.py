@@ -12,7 +12,7 @@ LOGIN = 'https://altruva.io/app'
 WA_MTG = 'https://wa.me/27721714626'
 WA_MTG_MSG = 'Hi MTG, I found your ALTRUVA guide on mtgtribe.com and I have a question.'
 WA_NUM = '072 171 4626'
-WA_GROUP = 'https://chat.whatsapp.com/HAaErtOVPr7G0AsnNCNsSN'
+WA_GROUP = 'https://chat.whatsapp.com/HAaErtOVPr7G0AsnNCNsSN?s=cl&p=a&iam=2'
 TIKTOK = 'https://www.tiktok.com/@joinmtgtribe'
 YOUTUBE = 'https://www.youtube.com/@mtgtribe'   # MTG TRIBE channel (26 Oct 2026)
 CARD_GUIDE = 'https://bellveraffiliates.com/'

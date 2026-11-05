@@ -20,6 +20,6 @@ guide it mentions today. Follow the dashboard order: 1 Bellver Affiliates, 2 Jet
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
 Planning note: today the only stream MTG names out loud is ALTRUVA. Naming the others in his voice needs new lines in
-his approved HeyGen voice "MTG Master Voice V2" (ID 3931c505632149ceb2bbfecf2778c09c), which costs HeyGen credits:
+his approved HeyGen voice "MTG Master Voice V2", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.

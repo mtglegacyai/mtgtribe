@@ -185,7 +185,7 @@
 .mtg{overflow:clip;background:linear-gradient(180deg,#050403,#0b0906 40%,#050403)}
 .mtg .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(48px,7vw,96px);align-items:center}
 .stage{position:relative;perspective:1400px;padding:0 0 30px}
-.stage .photo-card{width:min(500px,100%);margin:0 auto;transform-style:preserve-3d;transition:transform .6s var(--ease)}
+.stage .photo-card{width:min(420px,84vw);margin:0 auto;transform-style:preserve-3d;transition:transform .6s var(--ease)}
 .stage .halo{position:absolute;left:50%;top:46%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
   background:conic-gradient(from var(--ang),transparent 0 70%,rgba(var(--gold-rgb),.35) 82%,transparent 94%);filter:blur(40px);opacity:.8}
 .mtg h2{margin:16px 0 0}
@@ -432,7 +432,7 @@ html.vm-lock{overflow:hidden}
  <div class="wrap grid">
   <div class="stage rv">
    <span class="halo" aria-hidden="true"></span>
-   <div class="photo-card tilt" id="photo"><picture><source srcset="/assets/tribe/mtg-photo-720.webp" type="image/webp"><img src="/assets/tribe/mtg-photo-720.jpg" alt="MTG in his white mtgTribe.com Let's Get This Crypto t-shirt and gold watch, with the gold mtgTribe.com sign behind him" width="720" height="720" loading="lazy" decoding="async"></picture><span class="glare" aria-hidden="true"></span></div>
+   <div class="photo-card round tilt" id="photo"><picture><source srcset="/assets/tribe/mtg-photo-round-720.webp 720w, /assets/tribe/mtg-photo-round-1000.webp 1000w" sizes="(max-width:520px) 84vw, 420px" type="image/webp"><img src="/assets/tribe/mtg-photo-round-720.jpg" alt="MTG in his white mtgTribe.com Let's Get This Crypto t-shirt and gold watch, with the gold mtgTribe.com sign behind him" width="720" height="720" loading="lazy" decoding="async"></picture><span class="glare" aria-hidden="true"></span></div>
    <span class="photo-tag glass dark"><svg class="ic" style="color:var(--gold)" aria-hidden="true"><use href="#i-crown"/></svg>MTG<i class="bar" aria-hidden="true"></i><b>Your Digital Architect</b></span>
   </div>
   <div class="copy">
@@ -454,7 +454,7 @@ html.vm-lock{overflow:hidden}
  <span class="seam" aria-hidden="true"></span>
  <div class="wrap">
   <figure class="scene rv" id="scene-wrap" style="margin-top:0">
-   <canvas id="tribe-scene" role="img" aria-label="Animated scene: happy little people stand in a circle around a campfire, cheering and sending up hearts. Two members walk out and each starts a new circle, and newcomers walk in to join them. Three tribes stand side by side, sharing hearts."></canvas>
+   <canvas id="tribe-scene" role="img" aria-label="Animated scene: happy little people stand in a circle around a TikTok logo, cheering and sending up hearts. Two members walk out and start new circles around a WhatsApp logo and a Facebook logo, and newcomers walk in to join them. Three communities stand side by side, joined by a ribbon of light and sharing hearts: one tribe."></canvas>
    <button class="replay" type="button" id="scene-replay" hidden><svg aria-hidden="true"><use href="#i-play"/></svg>Play it again</button>
   </figure>
   <h2 class="display rv" id="lead-h"><span class="silver-text">Join a tribe today.</span><br><span class="gold-text">Lead your own tomorrow.</span></h2>

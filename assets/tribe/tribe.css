@@ -105,6 +105,12 @@ button{font:inherit;color:inherit}
   box-shadow:0 0 0 1px rgba(255,217,142,.4),0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(var(--gold-rgb),.32)}
 .photo-card img{width:100%;height:100%;object-fit:cover;border-radius:23px;background:#1a140c}
 .photo-card .glare{border-radius:23px;inset:5px}
+/* round version (MTG, 5 Nov 2026): the whole square photo inside a circle with a gold metal rim */
+.photo-card.round{border-radius:50%;padding:6px;
+  background:conic-gradient(from 210deg,#fff1c8,#f2ad3c 18%,#7a4a0c 34%,#ffd98e 52%,#b8741a 70%,#fff1c8 86%,#f2ad3c);
+  box-shadow:0 0 0 1px rgba(255,217,142,.45),0 0 0 9px rgba(242,173,60,.07),0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(var(--gold-rgb),.3)}
+.photo-card.round img{border-radius:50%;box-shadow:0 0 0 2px rgba(10,7,3,.55)}
+.photo-card.round .glare{border-radius:50%;inset:6px}
 .photo-tag{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;white-space:nowrap;
   font:800 13px/1 var(--f-b);letter-spacing:.06em}
 .photo-tag b{color:var(--gold-hi);font-weight:800}

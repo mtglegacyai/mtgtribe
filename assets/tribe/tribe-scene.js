@@ -148,19 +148,49 @@ function glowGround(c,amt){
   cx.fillStyle=g;cx.beginPath();cx.arc(0,0,rx,0,TAU);cx.fill();
   cx.strokeStyle='rgba(255,217,142,'+(.28*amt)+')';cx.lineWidth=1/(ry/rx);cx.beginPath();cx.arc(0,0,rx*.72,0,TAU);cx.stroke();cx.restore();
 }
-function fire(c,t,amt){
-  if(amt<=0)return;var x=G.cx[c],y=G.cy-G.ry[c]*.15,u=G.s*amt;
-  var g=cx.createRadialGradient(x,y-8*u,0,x,y-8*u,48*u);g.addColorStop(0,'rgba(255,190,90,.38)');g.addColorStop(1,'rgba(255,190,90,0)');
-  cx.fillStyle=g;cx.beginPath();cx.arc(x,y-8*u,48*u,0,TAU);cx.fill();
-  cx.strokeStyle='#6b4423';cx.lineWidth=3.4*u;cx.lineCap='round';seg(x-9*u,y,x+9*u,y-4*u);seg(x+9*u,y,x-9*u,y-4*u);
-  var cols=['#f97316','#f2ad3c','#fff3c4'],hs=[21,14,8],ws=[8.5,6,3.4];
-  for(var k=0;k<3;k++){
-    var h=hs[k]*u*(.9+.12*Math.sin(t*9+k*1.7)+.06*Math.sin(t*13.7+k*2.3)),wd=ws[k]*u,tip=Math.sin(t*3.1+k)*1.6*u,b=y-2*u;
-    cx.fillStyle=cols[k];cx.beginPath();cx.moveTo(x+tip,b-h);
-    cx.bezierCurveTo(x+wd,b-h*.45,x+wd*.9,b,x,b);cx.bezierCurveTo(x-wd*.9,b,x-wd,b-h*.45,x+tip,b-h);cx.fill();
+/* the heart of each circle: the community it lives on (MTG, 5 Nov 2026):
+   left WhatsApp, middle TikTok, right Facebook. Different communities, one tribe. */
+var P_WA=window.Path2D?new Path2D('M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z'):null;
+var P_TT=window.Path2D?new Path2D('M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z'):null;
+var BRAND=[{glow:'37,211,102'},{glow:'254,44,85'},{glow:'24,119,242'}];
+function glyph(path,x,y,size,col){if(!path)return;var k=size/24;cx.save();cx.translate(x-12*k,y-12*k);cx.scale(k,k);cx.fillStyle=col;cx.fill(path);cx.restore()}
+function logo(c,x,y,r){
+  if(c===0){ // WhatsApp
+    cx.fillStyle='#25D366';cx.beginPath();cx.arc(x,y,r,0,TAU);cx.fill();
+    glyph(P_WA,x,y,r*1.32,'#fff');
+  }else if(c===1){ // TikTok
+    rr(x-r,y-r,2*r,2*r,r*.42);cx.fillStyle='#010101';cx.fill();cx.lineWidth=Math.max(1,r*.07);cx.strokeStyle='rgba(255,255,255,.22)';cx.stroke();
+    var o=r*.07;glyph(P_TT,x-o,y-o,r*1.2,'#25F4EE');glyph(P_TT,x+o,y+o,r*1.2,'#FE2C55');glyph(P_TT,x,y,r*1.2,'#fff');
+  }else{ // Facebook
+    cx.save();cx.beginPath();cx.arc(x,y,r,0,TAU);cx.fillStyle='#1877F2';cx.fill();cx.clip();
+    cx.fillStyle='#fff';cx.font='700 '+(r*1.95).toFixed(1)+'px "Helvetica Neue",Helvetica,Arial,sans-serif';cx.textAlign='center';cx.textBaseline='alphabetic';
+    cx.fillText('f',x+r*.14,y+r*1.12);cx.restore();
   }
+  // glassy shine on top
+  cx.save();cx.beginPath();cx.arc(x,y,r,0,TAU);cx.clip();var sh=cx.createLinearGradient(x,y-r,x,y);sh.addColorStop(0,'rgba(255,255,255,.28)');sh.addColorStop(1,'rgba(255,255,255,0)');
+  cx.fillStyle=sh;cx.fillRect(x-r,y-r,2*r,r);cx.restore();
 }
-
+function backOut(k){var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)}
+function fire(c,t,amt){
+  if(amt<=0)return;
+  var k=amt<1?backOut(amt):1,u=G.s,x=G.cx[c],base=G.cy-G.ry[c]*.15,r=15*u*k,y=base-16*u+Math.sin(t*2.1+c*1.9)*2.4*u,col=BRAND[c].glow;
+  // coloured glow on the ground and around the badge
+  var g=cx.createRadialGradient(x,y,0,x,y,52*u);g.addColorStop(0,'rgba('+col+',.42)');g.addColorStop(1,'rgba('+col+',0)');
+  cx.fillStyle=g;cx.beginPath();cx.arc(x,y,52*u,0,TAU);cx.fill();
+  cx.save();cx.translate(x,base);cx.scale(1,.32);var g2=cx.createRadialGradient(0,0,0,0,0,26*u);g2.addColorStop(0,'rgba('+col+',.5)');g2.addColorStop(1,'rgba('+col+',0)');
+  cx.fillStyle=g2;cx.beginPath();cx.arc(0,0,26*u,0,TAU);cx.fill();cx.restore();
+  // a soft "ping" ripple, like a notification
+  var ph=((t+c*.85)%2.6)/2.6;cx.strokeStyle='rgba('+col+','+(.5*(1-ph)*amt).toFixed(3)+')';cx.lineWidth=2*u;cx.beginPath();cx.arc(x,y,r*(1.05+ph*1.5),0,TAU);cx.stroke();
+  cx.save();cx.shadowColor='rgba(0,0,0,.45)';cx.shadowBlur=10*u;cx.shadowOffsetY=4*u;cx.beginPath();cx.arc(x,y,r,0,TAU);cx.fillStyle='rgba(0,0,0,.01)';cx.fill();cx.restore();
+  logo(c,x,y,r);
+}
+/* once all three stand, a ribbon of light joins them: different communities, one tribe */
+function bridge(t){
+  var a=clamp((t-(END-2.2))/1.6,0,1);if(a<=0)return;var u=G.s,y=G.cy-G.ry[1]*.15-16*u;
+  cx.save();cx.setLineDash([3*u,6*u]);cx.lineDashOffset=-t*22*u;cx.lineWidth=2*u;cx.lineCap='round';cx.strokeStyle='rgba(255,217,142,'+(.55*a).toFixed(3)+')';
+  for(var i=0;i<2;i++){var x0=G.cx[i],x1=G.cx[i+1],mx=(x0+x1)/2;cx.beginPath();cx.moveTo(x0,y);cx.quadraticCurveTo(mx,y-H*.3,x1,y);cx.stroke()}
+  cx.restore();
+}
 var HCOL=['#ff5d7a','#ff7f9b','#ffd98e','#f2ad3c','#ff9eb5'];
 function burst(x,y,n,u){for(var i=0;i<n;i++){var a=-Math.PI/2+(i-(n-1)/2)*.5;hearts.push({x:x,y:y,vx:Math.cos(a)*28*u,vy:Math.sin(a)*42*u-10*u,age:0,life:1.6,s:(6+rnd(i+T*7)*3)*u,c:HCOL[i%HCOL.length]})}}
 
@@ -172,6 +202,7 @@ function frame(t,dt){
   for(var q=soft.length-1;q>=0;q--){var sh=soft[q];sh.age+=dt;if(sh.age>sh.life){soft.splice(q,1);continue}
     sh.y+=sh.vy*dt;var sx=sh.x+Math.sin(sh.age*1.3+sh.ph)*10*s;heart(sx,sh.y,sh.s,sh.c,.2*Math.sin(Math.min(1,sh.age/sh.life)*Math.PI))}
   glowGround(1,1);glowGround(0,litL);glowGround(2,litR);
+  bridge(t);
   // sort everyone and the fires by depth
   var items=[];
   people.forEach(function(p){var o=where(p,t);if(o)items.push({y:o.y,p:p,o:o})});

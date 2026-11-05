@@ -1,6 +1,6 @@
 # MTG TRIBE invite, horizontal 16:9 and vertical 9:16 (DRAFTS, not published)
 
-Status (5 November 2026): first draft rendered and sent to MTG for review. Not on the website yet.
+Status (5 November 2026): horizontal and vertical drafts rendered and sent to MTG for review. Not on the website yet.
 The current vertical invite (`/assets/mtg-tribe-invite.mp4`) stays live until MTG approves a replacement.
 
 ## What it is
@@ -35,4 +35,4 @@ Same timing, same soundtrack (`mix.wav`) and same scenes, laid out for a phone: 
 MTG sits full width on top when he explains, the host bubble sits above the captions in full-screen scenes,
 captions are two lines at 60px above the zone TikTok, Reels and Shorts cover with their own buttons and text.
 
-Rules: no em or en dashes on screen, never fake numbers or results, keep 16:9.
+Rules: no em or en dashes on screen, never fake numbers or results, keep each orientation as built (16:9 stays 16:9, 9:16 stays 9:16).

@@ -14,6 +14,7 @@
   --md-line:rgba(255,255,255,.09);
   --md-text:#fbf8f2;--md-soft:#d6cec0;--md-muted:#a19785;--md-faint:#7a7163;
   --md-font:'Manrope',system-ui,sans-serif;--md-display:'Anton',Impact,sans-serif;
+  --md-ang:0deg;
 }
 body.dash{background:#050403}
 /* living background: the hero poster, blurred and darkened, with drifting gold light */
@@ -61,7 +62,7 @@ body.dash{background:#050403}
 .md-act .wa-top svg{width:16px;height:16px}
 
 /* page rhythm */
-.dmain{padding:clamp(20px,3vw,36px) clamp(16px,3vw,40px) 40px;display:grid;gap:clamp(20px,2.4vw,30px)}
+.dmain{width:100%;max-width:1640px;margin-inline:auto;padding:clamp(20px,3vw,36px) clamp(16px,3vw,40px) 40px;display:grid;gap:clamp(20px,2.4vw,30px)}
 .dsec{scroll-margin-top:84px}
 .shead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin:clamp(18px,3vw,34px) 0 18px}
 .shead h2{margin:8px 0 0;font:400 clamp(1.9rem,3.6vw,2.9rem)/.95 var(--f-d);text-transform:uppercase;letter-spacing:.01em}
@@ -79,7 +80,7 @@ body.dash{background:#050403}
 .welcome .lede{margin:18px 0 0;max-width:36rem}
 .welcome .acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
 .welcome .me{position:relative;padding-bottom:28px}
-.welcome .photo-card{width:min(300px,100%);margin:0 auto}
+.welcome .photo-card{width:min(300px,100%,58vh);margin:0 auto}
 .welcome .photo-tag{font-size:12px;padding:10px 15px}
 .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
 .stat{padding:16px 18px;border-radius:18px;background:rgba(0,0,0,.25);box-shadow:inset 0 0 0 1px var(--line)}

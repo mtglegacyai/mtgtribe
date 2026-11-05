@@ -34,20 +34,40 @@ if('IntersectionObserver'in w){
   sp.animate([{left:'6%',opacity:0},{opacity:1,offset:.08},{opacity:1,offset:.92},{left:'94%',opacity:0}],{duration:5200,iterations:Infinity,easing:'cubic-bezier(.45,0,.55,1)'});
 })();
 
-/* ---------- live market (CoinGecko) ---------- */
-var COINS=[['bitcoin','Bitcoin','BTC','₿'],['ethereum','Ethereum','ETH','Ξ'],['binancecoin','BNB','BNB','BNB'],['solana','Solana','SOL','SOL'],['canton-network','Canton Coin','CC','CC'],['ripple','XRP','XRP','XRP']];
+/* ---------- live market: crypto from CoinGecko, then CNTN (Nasdaq stock) from TradingView ---------- */
+var COINS=[['bitcoin','Bitcoin','BTC','₿'],['ethereum','Ethereum','ETH','Ξ'],['binancecoin','BNB','BNB','BNB'],['solana','Solana','SOL','SOL'],['canton-network','Canton Coin','CC','CC']];
 var grid=$('#mgrid'),cur='usd',busy=false;
 function money(n,c){
   var dp=n>=100?0:n>=1?2:4;
   return new Intl.NumberFormat(c==='zar'?'en-ZA':'en-US',{style:'currency',currency:c.toUpperCase(),minimumFractionDigits:dp,maximumFractionDigits:dp}).format(n);
 }
+var stock=null;
+/* CNTN tile: built once and never redrawn, so switching USD and ZAR does not reload it */
+function stockTile(){
+  var el=d.createElement('div');el.className='coin stock';el.id='coin-cntn';
+  el.innerHTML='<div class="st-w"></div><p class="st-fb"><b>CNTN</b> <span>Canton Strategic Holdings</span><span class="st-msg">Loading the live price.</span> <a href="https://www.nasdaq.com/market-activity/stocks/cntn" target="_blank" rel="noopener">See CNTN on Nasdaq.com</a></p>'+
+    '<span class="st-foot">Nasdaq stock, priced in USD · 1 month chart · <a href="https://www.tradingview.com/symbols/NASDAQ-CNTN/" target="_blank" rel="noopener nofollow">TradingView</a>, may be delayed</span>';
+  var box=$('.st-w',el),wrap=d.createElement('div');wrap.className='tradingview-widget-container';
+  var inner=d.createElement('div');inner.className='tradingview-widget-container__widget';wrap.appendChild(inner);
+  var s=d.createElement('script');s.src='https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';s.async=true;
+  s.text=JSON.stringify({symbol:'NASDAQ:CNTN',width:'100%',height:'100%',locale:'en',dateRange:'1M',colorTheme:'dark',isTransparent:true,autosize:true,largeChartUrl:'',
+    trendLineColor:'rgba(242, 173, 60, 1)',underLineColor:'rgba(242, 173, 60, 0.25)',underLineBottomColor:'rgba(242, 173, 60, 0)'});
+  var done=false;function ok(){if(!done){done=true;el.classList.add('st-on')}}
+  function fail(){if(!done){done=true;$('.st-msg',el).textContent='The live price could not load right now.'}}
+  s.onerror=fail;
+  if('MutationObserver'in w)new MutationObserver(function(m,o){var f=wrap.querySelector('iframe');if(f){o.disconnect();f.addEventListener('load',ok);setTimeout(ok,2500)}}).observe(wrap,{childList:true,subtree:true});
+  setTimeout(function(){if(!wrap.querySelector('iframe'))fail()},12000);
+  wrap.appendChild(s);box.appendChild(wrap);
+  return el;
+}
 function tiles(){
-  grid.innerHTML='';
+  $$('.coin:not(.stock)',grid).forEach(function(el){grid.removeChild(el)});
+  if(!stock){stock=stockTile();grid.appendChild(stock)}
   COINS.forEach(function(c){
     var el=d.createElement('div');el.className='coin sk';el.id='coin-'+c[0];
     el.innerHTML='<span class="sym" aria-hidden="true">'+c[3]+'</span><span class="nm">'+c[1]+'<small>'+c[2]+'</small></span><span class="ch">+0.00%</span><span class="px">$00,000</span>'+
       '<svg class="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="'+c[1]+' price over the last 7 days"></svg><span class="r7"><span class="lo"></span><span class="hi"></span></span><span class="tip" aria-hidden="true"></span>';
-    grid.appendChild(el);
+    grid.insertBefore(el,stock);
   });
 }
 function draw(el,c,data){
@@ -91,7 +111,7 @@ function loadMarket(force){
     put(key,{t:now,list:list});render(list,now,false);
   }).catch(function(){
     if(c&&c.list){render(c.list,c.t,true)}
-    else{$$('.coin',grid).forEach(function(el){el.classList.remove('sk');$('.px',el).textContent='-';$('.ch',el).textContent=''});$('#m-time').textContent='Prices unavailable'}
+    else{$$('.coin:not(.stock)',grid).forEach(function(el){el.classList.remove('sk');$('.px',el).textContent='-';$('.ch',el).textContent=''});$('#m-time').textContent='Prices unavailable'}
     $('#m-err').classList.add('on');
   }).then(function(){busy=false;$('#m-ref').classList.remove('spin')});
 }

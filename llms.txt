@@ -1,10 +1,11 @@
 # MTG TRIBE (mtgtribe.com)
 
-> mtgtribe.com is the home of the MTG TRIBE by MTG (MusaTheGiant), "Your Digital Architect": a WhatsApp community for action takers who learn, take action and grow together. The new home page is coming soon. Live now is the ALTRUVA Guide by MTG at https://mtgtribe.com/altruva/, an independent, plain-English guide to ALTRUVA: how the plan pays, how to join safely with a SafePal wallet, how withdrawals work, free calculators, and 19 short videos. Educational only, not official ALTRUVA material and not financial advice.
+> mtgtribe.com is the home of the MTG TRIBE by MTG (MusaTheGiant), "Your Digital Architect": a community of action takers who learn, take action and teach each other: multiple streams of income, diversified crypto portfolios, AI tutorials and explainers. The home page is at https://mtgtribe.com/ and the tribe dashboard (income streams, portfolio playbook, live prices, tutorials, tools and the Tribe Path) is at https://mtgtribe.com/dashboard/. Also live is the ALTRUVA Guide by MTG at https://mtgtribe.com/altruva/, an independent, plain-English guide to ALTRUVA: how the plan pays, how to join safely with a SafePal wallet, how withdrawals work, free calculators, and 19 short videos. Educational only, not official ALTRUVA material and not financial advice.
 
 ## MTG TRIBE home
 
-- [MTG TRIBE home, coming soon](https://mtgtribe.com/): the new home of the MTG TRIBE, with the invite video and links.
+- [MTG TRIBE home](https://mtgtribe.com/): Create wealth. Build legacy. The MTG TRIBE code, the five-move wealth engine (earn, promote, grow, spend, teach), MTG's invite video and how to join.
+- [MTG TRIBE dashboard](https://mtgtribe.com/dashboard/): the tribe command centre. Income streams ranked: 1. Bellver Card (https://bellveraffiliates.com/), 2. ClickBaitPays (https://clickbaitpaysus.com/), 3. Bitcoin Wealth (https://bitcoinwealthpays.com/), 4. ALTRUVA (https://mtgtribe.com/altruva/). Plus the crypto portfolio playbook, live prices, tutorials, tools and the Tribe Path. Streams are reviewed and replaced when they stop performing. Education only, not financial advice.
 - [Video: Join the MTG TRIBE, an invite from MTG](https://mtgtribe.com/assets/mtg-tribe-invite.mp4) (2:40): what the MTG TRIBE is and how to join at mtgtribe.com/group.
 - [Join the MTG TRIBE on WhatsApp](https://mtgtribe.com/group/)
 

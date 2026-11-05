@@ -19,6 +19,9 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 - /cc/ loads the live Canton Coin price from CoinGecko in the visitor's browser (no credits used). If that fails,
   it shows the `guides.cc` snapshot, and once that is over 14 days old a "may be out of date" line links to CoinGecko.
 - /cntn/ shows the `guides.cntn` snapshot. Once `guides.cntn.date` is over 14 days old, a notice links to Nasdaq.com.
+- Live CNTN price: /cntn/, /cc/, the hub and every report show a "CNTN live price" card (TradingView mini chart, filled in the
+  browser by `/assets/tribe/cntn-live.js`, which the master page head loads). The report and hub cards come from `CNTN_CARD` in
+  build.py. On /cntn/ the card's fallback line reuses the `guides.cntn` snapshot (`data-snap="price"` and `price_date`).
 - If the weekly task stops (cancelled, or out of Claude credits), nothing breaks: the guides keep the last numbers and
   the notices tell visitors to check a live price.
 

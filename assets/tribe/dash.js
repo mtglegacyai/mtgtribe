@@ -35,7 +35,7 @@ if('IntersectionObserver'in w){
 })();
 
 /* ---------- live market (CoinGecko) ---------- */
-var COINS=[['bitcoin','Bitcoin','BTC','₿'],['ethereum','Ethereum','ETH','Ξ'],['binancecoin','BNB','BNB','BNB'],['solana','Solana','SOL','SOL'],['ripple','XRP','XRP','XRP'],['canton-network','Canton Coin','CC','CC']];
+var COINS=[['bitcoin','Bitcoin','BTC','₿'],['ethereum','Ethereum','ETH','Ξ'],['binancecoin','BNB','BNB','BNB'],['solana','Solana','SOL','SOL'],['canton-network','Canton Coin','CC','CC'],['ripple','XRP','XRP','XRP']];
 var grid=$('#mgrid'),cur='usd',busy=false;
 function money(n,c){
   var dp=n>=100?0:n>=1?2:4;

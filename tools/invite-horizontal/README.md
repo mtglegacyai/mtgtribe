@@ -1,4 +1,4 @@
-# MTG TRIBE invite, horizontal 16:9 (DRAFT, not published)
+# MTG TRIBE invite, horizontal 16:9 and vertical 9:16 (DRAFTS, not published)
 
 Status (5 November 2026): first draft rendered and sent to MTG for review. Not on the website yet.
 The current vertical invite (`/assets/mtg-tribe-invite.mp4`) stays live until MTG approves a replacement.
@@ -27,5 +27,12 @@ The current vertical invite (`/assets/mtg-tribe-invite.mp4`) stays live until MT
 4. `inv_render.js`: Playwright renders frames (run 4 in parallel). `inv_test.js` renders single test frames.
 5. `inv_sfx_dump.js` exports the sound cues, `inv_audio.py` re-cuts the voice and synthesises the sound design (ducked under the voice).
 6. ffmpeg: `hqdn3d=1.5:1.2:4:4`, x264 CRF 20, maxrate 8M, AAC 192k. Loudness matches the original (about -14 LUFS).
+
+## Vertical 9:16 version (1080x1920)
+
+Same timing, same soundtrack (`mix.wav`) and same scenes, laid out for a phone: `stage_v.html` + `scenes_v.js`
+(the engine switches with `window.ORIENT = 'v'`). Render with `ORIENT=v node inv_render.js <from> <to> <outDir>`.
+MTG sits full width on top when he explains, the host bubble sits above the captions in full-screen scenes,
+captions are two lines at 60px above the zone TikTok, Reels and Shorts cover with their own buttons and text.
 
 Rules: no em or en dashes on screen, never fake numbers or results, keep 16:9.

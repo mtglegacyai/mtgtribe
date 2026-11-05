@@ -2,8 +2,8 @@
    Every visual is a pure function of time t (seconds), so any frame can be rendered on its own. */
 (function () {
 'use strict';
-const TM = window.TIMING, CO = TM.CO, TOTAL = TM.TOTAL, W = 1920, H = 1080;
-const E = window.E = {};
+const TM = window.TIMING, CO = TM.CO, TOTAL = TM.TOTAL, V = window.ORIENT === 'v', W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const E = window.E = {}; E.V = V; E.W = W; E.H = H;
 
 /* ---------- time maps ---------- */
 E.S = function (s) {               // source voice time -> output time
@@ -92,6 +92,11 @@ const AVL = { // target rect and source viewport (in 1000x564 frame space)
   split: { x: 96, y: 176, w: 1000, h: 564, r: 30, v: [0, 0, 1000, 564] },
   pip: { x: 84, y: 760, w: 236, h: 236, r: 118, v: [352, 44, 356, 356] }
 };
+if (V) Object.assign(AVL, {   // phone: MTG big on top, the host bubble sits above the captions
+  hero: { x: 40, y: 330, w: 1000, h: 760, r: 36, v: [143, 0, 742, 564] },
+  split: { x: 40, y: 180, w: 1000, h: 564, r: 30, v: [0, 0, 1000, 564] },
+  pip: { x: 440, y: 1186, w: 200, h: 200, r: 100, v: [352, 44, 356, 356] }
+});
 const AVK = E.AVK = [];   // keyframes {t, mode, d}
 E.av = function (t, mode, d = .55) { AVK.push({ t, mode, d }); };
 const avEl = document.getElementById('av'), avImg = document.getElementById('avimg'), avRing = document.getElementById('avring');
@@ -174,7 +179,7 @@ function drawBg(t) {
     for (let x = -64 + off; x < W; x += 64) { bg.moveTo(x, 0); bg.lineTo(x, H); }
     for (let y = 0; y < H; y += 64) { bg.moveTo(0, y); bg.lineTo(W, y); }
     bg.stroke();
-    const m = bg.createRadialGradient(W / 2, H * .45, 200, W / 2, H * .45, 1100); m.addColorStop(0, 'rgba(5,4,3,0)'); m.addColorStop(1, 'rgba(5,4,3,.95)');
+    const m = bg.createRadialGradient(W / 2, H * .45, 200, W / 2, H * .45, V ? 1250 : 1100); m.addColorStop(0, 'rgba(5,4,3,0)'); m.addColorStop(1, 'rgba(5,4,3,.95)');
     bg.fillStyle = m; bg.fillRect(0, 0, W, H);
   }
   // gold dust
@@ -190,10 +195,10 @@ const fx = document.getElementById('fx').getContext('2d');
 const grain = []; { const r = E.rng(11); for (let k = 0; k < 6; k++) { const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); const id = g.createImageData(256, 256); for (let i = 0; i < id.data.length; i += 4) { const v = r() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } g.putImageData(id, 0, 0); grain.push(fx.createPattern(c, 'repeat')); } }
 function drawFx(t) {
   fx.clearRect(0, 0, W, H);
-  const v = fx.createRadialGradient(W / 2, H / 2, 420, W / 2, H / 2, 1180); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.62)');
+  const v = V ? fx.createRadialGradient(W / 2, H / 2, 520, W / 2, H / 2, 1250) : fx.createRadialGradient(W / 2, H / 2, 420, W / 2, H / 2, 1180); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.62)');
   fx.fillStyle = v; fx.fillRect(0, 0, W, H);
   // caption bed
-  if (t > CO - .2) { const b = fx.createLinearGradient(0, 840, 0, H); b.addColorStop(0, 'rgba(0,0,0,0)'); b.addColorStop(1, 'rgba(0,0,0,.55)'); fx.fillStyle = b; fx.fillRect(0, 840, W, H - 840); }
+  if (t > CO - .2) { const y0 = V ? 1330 : 840; const b = fx.createLinearGradient(0, y0, 0, H); b.addColorStop(0, 'rgba(0,0,0,0)'); b.addColorStop(V ? .5 : 1, 'rgba(0,0,0,.55)'); if (V) b.addColorStop(1, 'rgba(0,0,0,.35)'); fx.fillStyle = b; fx.fillRect(0, y0, W, H - y0); }
   for (const f of FLASH) {
     const k = (t - f.t) / f.dur; if (k < -.08 || k > 1) continue;
     const a = k < 0 ? f.peak * (1 + k / .08) : f.peak * Math.pow(1 - k, 2);

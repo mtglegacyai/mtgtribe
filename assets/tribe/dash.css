@@ -40,7 +40,7 @@ body.dash{background:#050403}
 .md-top{-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4)}
 @media (max-width:1060px){.md-side{background:linear-gradient(180deg,rgba(14,11,7,.94),rgba(6,5,4,.97))}}
 .side-brand{display:flex;align-items:center;gap:12px;padding:2px 8px 16px;margin-bottom:6px;border-bottom:1px solid var(--md-line)}
-.side-brand img{width:44px;height:44px;border-radius:13px;object-fit:cover;border:1.5px solid rgba(242,173,60,.8);box-shadow:0 0 0 3px rgba(242,173,60,.14),0 0 22px rgba(242,173,60,.3)}
+.side-brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(242,173,60,.8);box-shadow:0 0 0 3px rgba(242,173,60,.14),0 0 22px rgba(242,173,60,.3)}
 .side-brand b{display:block;font:400 18px/1 var(--f-d);letter-spacing:.12em}
 .side-brand small{display:block;margin-top:5px;color:var(--md-muted);font-size:.72rem;font-weight:700}
 .md-nav .rk{font:400 .95rem var(--f-d);letter-spacing:.02em}
@@ -79,8 +79,7 @@ body.dash{background:#050403}
 .welcome .lede{margin:18px 0 0;max-width:36rem}
 .welcome .acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px}
 .welcome .me{position:relative;padding-bottom:28px}
-.welcome .photo-card{width:min(300px,100%);margin:0 auto;border-radius:24px}
-.welcome .photo-card img{border-radius:19px}
+.welcome .photo-card{width:min(300px,100%);margin:0 auto}
 .welcome .photo-tag{font-size:12px;padding:10px 15px}
 .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:6px}
 .stat{padding:16px 18px;border-radius:18px;background:rgba(0,0,0,.25);box-shadow:inset 0 0 0 1px var(--line)}
@@ -251,7 +250,7 @@ body.dash{background:#050403}
 
 /* talk to MTG */
 .talk{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}
-.talk img{width:84px;height:84px;border-radius:20px;object-fit:cover;border:2px solid rgba(242,173,60,.7);box-shadow:0 0 30px rgba(242,173,60,.3)}
+.talk img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(242,173,60,.7);box-shadow:0 0 30px rgba(242,173,60,.3)}
 .talk h2{margin:0;font:400 clamp(1.6rem,2.8vw,2.2rem)/1 var(--f-d);text-transform:uppercase}
 .talk p{margin:8px 0 0;color:var(--body);font-size:15px}
 .talk .acts{margin:0}

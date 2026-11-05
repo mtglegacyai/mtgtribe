@@ -23,6 +23,9 @@ CC_GUIDE = "/cc/"
 CNTN_GUIDE = "/cntn/"
 VALR = "https://www.valr.com/invite/VAKM6VZY"
 
+# Live CNTN price card (filled in the browser by /assets/tribe/cntn-live.js, loaded from the master page head)
+CNTN_CARD = '<div class="cl" data-cntn-live><div class="cl-head"><span class="cl-t">CNTN live price<small>Canton Strategic Holdings, Nasdaq</small></span><span class="cl-live"><i aria-hidden="true"></i>Live chart</span></div><div class="cl-body"></div><p class="cl-fb"><span class="cl-msg">Loading the live price.</span> You can also see <a href="https://www.nasdaq.com/market-activity/stocks/cntn" target="_blank" rel="noopener">CNTN on Nasdaq.com</a>.</p><p class="cl-foot">Price and chart by <a href="https://www.tradingview.com/symbols/NASDAQ-CNTN/" target="_blank" rel="noopener nofollow">TradingView</a>, may be delayed by up to 15 minutes. Education only, not financial advice.</p></div>'
+
 EXTRA_CSS = """
 .cta{text-transform:uppercase;letter-spacing:.04em}
 .learn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 56px}
@@ -180,7 +183,7 @@ def report(d, head, sprite, header, footer):
  <section class="sec" id="technicals" aria-labelledby="t-h"><h2 id="t-h">Technical analysis</h2>{tech}<h3 class="part">Key levels</h3>{levels}</section>
  <section class="sec" id="scenarios" aria-labelledby="sc-h"><h2 id="sc-h">Three scenarios for the coming week</h2>{scen}{tip("Scenarios are possibilities, not predictions. Levels can break either way, so plan your risk before you act.")}</section>
  <section class="sec" id="fundamentals" aria-labelledby="f-h"><h2 id="f-h">Fundamentals</h2><p class="score">Score: {esc(d["fund_score"])}</p><ul class="do">{fund}</ul>{INVESTORS_CARD}</section>
- <section class="sec" id="cntn" aria-labelledby="c-h"><h2 id="c-h">CNTN stock</h2>{cntn}<ul class="do">{cntn_notes}</ul></section>
+ <section class="sec" id="cntn" aria-labelledby="c-h"><h2 id="c-h">CNTN stock</h2>{cntn}<ul class="do">{cntn_notes}</ul><h3 class="part">CNTN right now</h3>{CNTN_CARD}</section>
  <section class="sec" id="bottom-line" aria-labelledby="b-h"><h2 id="b-h">Bottom line</h2><ul class="do">{bottom}</ul></section>
  <section class="join" aria-labelledby="join-h">
   <div><h2 id="join-h">Want this every Sunday?</h2><p>Join the MTG TRIBE on WhatsApp. The new Canton report lands there first, and we learn and take action together.</p></div>
@@ -217,6 +220,7 @@ def hub(reports, head, sprite, header, footer):
 <div class="content"><div class="wrap narrow">
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: {esc(latest["date_h"])}</h2><p>{latest["summary"]}</p></section>
  {learn_cards()}
+ <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>
  <section class="sec" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
  <section class="join" aria-labelledby="join-h"><div><h2 id="join-h">Get it first every Sunday</h2><p>Join the MTG TRIBE on WhatsApp and the new report lands in the group first.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE{arrow}</a></span></section>

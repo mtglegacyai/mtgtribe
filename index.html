@@ -216,9 +216,33 @@
 .vm.show .vm-bg{opacity:1}
 .vm-box{position:relative;display:grid;grid-template-columns:auto minmax(0,340px);gap:clamp(24px,4vw,52px);align-items:center;opacity:0;transform:translateY(26px) scale(.96);transition:opacity .35s ease,transform .55s var(--spring)}
 .vm.show .vm-box{opacity:1;transform:none}
-.vm-vid{position:relative;width:calc(min(82vh,760px) * .5625);max-width:calc(100vw - 32px);aspect-ratio:9/16;border-radius:26px;padding:5px;
-  background:linear-gradient(145deg,#fff1c8,#f2ad3c 30%,#7a4a0c 55%,#ffd98e 78%,#b8741a);box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 80px rgba(var(--gold-rgb),.28)}
-.vm-vid video{display:block;width:100%;height:100%;border-radius:21px;background:#000;object-fit:cover}
+/* device frames (MTG, 5 Nov 2026): vertical videos sit in a slim gold-titanium phone, horizontal ones in a laptop */
+.vm-vid{position:relative;--pw:min(calc(min(82vh,760px) * .5625 - 14px),calc(100vw - 46px))}
+.vm-vid video{display:block;width:100%;background:#000;object-fit:cover}
+.vm-vid.phone{width:calc(var(--pw) + 14px);padding:2px;border-radius:calc(var(--pw) * .115 + 7px);
+  background:linear-gradient(145deg,#fff4d6 0%,#e2b25a 12%,#6b4614 30%,#2b1d0c 48%,#5c3d12 62%,#e9bd63 82%,#fff1c8 100%);
+  box-shadow:0 40px 100px rgba(0,0,0,.72),0 0 90px rgba(var(--gold-rgb),.26),inset 0 0 0 1px rgba(255,244,214,.35)}
+.vm-vid.phone .dev-scr{position:relative;padding:5px;border-radius:calc(var(--pw) * .115 + 5px);background:#040404;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.vm-vid.phone video{aspect-ratio:9/16;border-radius:calc(var(--pw) * .115)}
+.dev-island{position:absolute;left:50%;top:calc(5px + var(--pw) * .028);width:28%;height:calc(var(--pw) * .068);transform:translateX(-50%);border-radius:999px;background:#000;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.dev-island:after{content:"";position:absolute;right:12%;top:50%;width:calc(var(--pw) * .028);height:calc(var(--pw) * .028);transform:translateY(-50%);border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#3a4a6a,#0b0f18 60%);box-shadow:0 0 0 1px rgba(255,255,255,.05)}
+.dev-btn{position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#5c3d12,#f2c66d 55%,#7a531c)}
+.dev-btn.l1{left:-3px;top:17%;height:5%}.dev-btn.l2{left:-3px;top:25%;height:9%}.dev-btn.l3{left:-3px;top:36%;height:9%}.dev-btn.r1{right:-3px;top:27%;height:13%}
+.vm-vid.laptop .dev-btn,.vm-vid.laptop .dev-island{display:none}
+.vm-vid.laptop{--lw:min(1000px,calc(100vw - 72px),calc((82vh - 40px) * 16 / 9));width:var(--lw)}
+.vm-vid.laptop .dev-scr{position:relative;padding:10px;border-radius:16px 16px 6px 6px;background:linear-gradient(160deg,#3a2e1f,#16110b 50%,#2b2117);
+  border:1px solid rgba(255,217,142,.45);box-shadow:0 40px 110px rgba(0,0,0,.75),0 0 100px rgba(var(--gold-rgb),.2),inset 0 1px 0 rgba(255,255,255,.18)}
+.vm-vid.laptop .dev-scr:before{content:"";position:absolute;left:50%;top:3px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#0b0907;box-shadow:0 0 0 1px rgba(255,217,142,.3)}
+.vm-vid.laptop video{aspect-ratio:16/9;border-radius:5px;box-shadow:0 0 0 1px rgba(0,0,0,.8)}
+.dev-base{display:none}
+.vm-vid.laptop .dev-base{display:block;position:relative;height:16px;margin:0 -22px;border-radius:0 0 22px 22px / 0 0 14px 14px;background:linear-gradient(180deg,#d9b46a,#6b4a1c 55%,#2a1d0c);
+  border:1px solid rgba(255,217,142,.4);border-top:0;box-shadow:0 26px 50px rgba(0,0,0,.65),0 0 60px rgba(var(--gold-rgb),.14),inset 0 1px 0 rgba(255,255,255,.35)}
+.vm-vid.laptop .dev-base i{position:absolute;left:50%;top:0;width:min(22%,150px);height:6px;transform:translateX(-50%);border-radius:0 0 10px 10px;background:linear-gradient(180deg,#1b140c,#4a3518)}
+.vm.is-h .vm-box{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:22px}
+.vm.is-h .vm-copy .eyebrow{justify-content:center}.vm.is-h .vm-copy .lede{display:none}
+.vm.is-h .vm-x{top:-16px;right:-30px}
 .vm-x{position:absolute;top:-14px;right:-14px;z-index:3;display:grid;place-items:center;width:46px;height:46px;border:0;border-radius:50%;cursor:pointer;color:#1a1002;
   background:linear-gradient(180deg,#ffd98e,#f2ad3c);box-shadow:0 8px 20px rgba(0,0,0,.45);transition:transform .2s var(--spring)}
 .vm-x:hover{transform:scale(1.08) rotate(90deg)}
@@ -280,7 +304,9 @@ html.vm-lock{overflow:hidden}
   .mtg .eyebrow{justify-content:center}
   .sign{text-align:center}
   .vm-box{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:18px}
-  .vm-vid{width:calc(min(70vh,640px) * .5625)}
+  .vm-vid{--pw:min(calc(min(70vh,640px) * .5625 - 14px),calc(100vw - 46px))}
+  .vm-vid.laptop{--lw:calc(100vw - 52px)}
+  .vm.is-h .vm-x{right:-10px}
   .vm-x{top:10px;right:10px;width:42px;height:42px}
   .vm-copy .eyebrow{justify-content:center}
   .vm-copy h2{margin-top:6px;font-size:1.9rem}
@@ -475,8 +501,10 @@ html.vm-lock{overflow:hidden}
 <dialog class="vm" id="vm" aria-labelledby="vm-h">
  <div class="vm-bg" aria-hidden="true"></div>
  <div class="vm-box">
-  <div class="vm-vid">
-   <video id="vid" controls preload="none" playsinline poster="/assets/mtg-tribe-invite-cover.webp?v=43ec70f9" aria-label="Join the MTG TRIBE, an invite from MTG (2 minutes 48 seconds)"><source src="/assets/mtg-tribe-invite.mp4?v=14370ebf" type="video/mp4"></video>
+  <div class="vm-vid phone" id="vm-dev">
+   <span class="dev-btn l1" aria-hidden="true"></span><span class="dev-btn l2" aria-hidden="true"></span><span class="dev-btn l3" aria-hidden="true"></span><span class="dev-btn r1" aria-hidden="true"></span>
+   <div class="dev-scr"><video id="vid" controls preload="none" playsinline poster="/assets/mtg-tribe-invite-cover.webp?v=43ec70f9" aria-label="Join the MTG TRIBE, an invite from MTG (2 minutes 48 seconds)"><source src="/assets/mtg-tribe-invite.mp4?v=14370ebf" type="video/mp4"></video><span class="dev-island" aria-hidden="true"></span></div>
+   <span class="dev-base" aria-hidden="true"><i></i></span>
    <button class="vm-x" type="button" id="vm-x" aria-label="Close the video"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
   </div>
   <div class="vm-copy">
@@ -679,12 +707,20 @@ if(fine&&!reduce)$$('.tilt').forEach(function(el){
 
 /* ---- the invite: a pop-up player over a blurred page ---- */
 (function(){
-  var dlg=$('#vm'),vid=$('#vid'),x=$('#vm-x'),opener=null,pausedBg=false,native=dlg&&typeof dlg.showModal==='function';
+  var dlg=$('#vm'),vid=$('#vid'),x=$('#vm-x'),dev=$('#vm-dev'),opener=null,pausedBg=false,native=dlg&&typeof dlg.showModal==='function';
   if(!dlg)return;
+  var defSrc=vid.querySelector('source').getAttribute('src'),defPoster=vid.getAttribute('poster');
+  // a link can bring its own video: data-src, data-poster, data-orient="h" for 16:9 (laptop frame), vertical by default (phone frame)
+  function frame(a){
+    var src=(a&&a.getAttribute('data-src'))||defSrc,h=!!a&&a.getAttribute('data-orient')==='h';
+    if((vid.getAttribute('src')||defSrc)!==src){vid.setAttribute('src',src);vid.setAttribute('poster',(a&&a.getAttribute('data-poster'))||defPoster);vid.load()}
+    dev.classList.toggle('phone',!h);dev.classList.toggle('laptop',h);dlg.classList.toggle('is-h',h);
+  }
   function open(e){
     if(e)e.preventDefault();
     if(dlg.open)return;
     opener=d.activeElement;
+    var a=e&&e.currentTarget;frame(a&&a.hasAttribute&&a.hasAttribute('data-invite')?a:null);
     if(native)dlg.showModal();else dlg.setAttribute('open','');
     html.classList.add('vm-lock');
     requestAnimationFrame(function(){requestAnimationFrame(function(){dlg.classList.add('show')})});
@@ -702,6 +738,12 @@ if(fine&&!reduce)$$('.tilt').forEach(function(el){
     if(pausedBg){pausedBg=false;var q=v.play();if(q&&q.catch)q.catch(function(){})}
   }
   $$('[data-invite]').forEach(function(a){a.addEventListener('click',open)});
+  // watched to the end: leave full screen, close the player and put the cover back for next time
+  vid.addEventListener('ended',function(){
+    try{if(d.fullscreenElement&&d.exitFullscreen)d.exitFullscreen().catch(function(){});else if(vid.webkitDisplayingFullscreen&&vid.webkitExitFullscreen)vid.webkitExitFullscreen()}catch(_){}
+    close();
+    setTimeout(function(){try{vid.currentTime=0;vid.load()}catch(_){}},reduce?50:420);
+  });
   x.addEventListener('click',close);
   $('.vm-bg',dlg).addEventListener('click',close);
   dlg.addEventListener('click',function(e){if(e.target===dlg)close()});

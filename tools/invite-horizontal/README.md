@@ -5,7 +5,7 @@ The current vertical invite (`/assets/mtg-tribe-invite.mp4`) stays live until MT
 
 ## What it is
 
-- 1920x1080, 30 fps, 2:49. Built from the approved vertical invite: MTG's own voice and avatar, no HeyGen, no new voice.
+- 1920x1080, 30 fps, 2:49 (2:48.8 after the voice fix). Built from the approved vertical invite: MTG's own voice and avatar, no HeyGen, no new voice.
 - The voice is only trimmed in silences (`edl.json`): "Thank you for taking the time to watch this video", one "So," and three long pauses.
   Everything from 88.79 s in the source onwards is untouched, so the closing track "They Call Me MTG" still starts exactly
   50 seconds before the end.
@@ -17,6 +17,14 @@ The current vertical invite (`/assets/mtg-tribe-invite.mp4`) stays live until MT
   the YOU member card with a crown.
 - Every CTA from the original: mtgtribe.com/group, Join the WhatsApp tribe, @joinmtgtribe on TikTok,
   WhatsApp MTG: 072 171 4626, voice note, not financial advice, Crypto Regards MTG, Let's Get This Crypto! 💪
+
+## Voice fix: "thank you for every step you've taken"
+
+MTG asked for this line to flow as one sentence. In the source, "you" fell to a sentence-final pitch and was
+followed by a 0.35 s silence before "for". Fix: "you" (12.87 to 13.10 s in the source) is lifted 2 semitones with
+Rubber Band, formants preserved (`audio48k_fixed.wav`), and the pause 13.10 to 13.35 s is closed in the edit list.
+The silence between "thank you" and "for" is now about 110 ms. Length is now 2:48.82; the closing track still starts
+exactly 50 seconds before the end.
 
 ## How it is built
 

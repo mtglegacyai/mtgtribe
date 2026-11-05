@@ -10,7 +10,8 @@ SR = 48000
 edl = json.load(open(D + 'edl.json')); cues = json.load(open(D + 'sfx.json'))['sfx']
 TOTAL, CO = edl['TOTAL'], edl['CO']
 N = int(round(TOTAL * SR))
-wf = wave.open(D + 'audio48k.wav'); src = np.frombuffer(wf.readframes(wf.getnframes()), dtype=np.int16).reshape(-1, 2).astype(np.float64) / 32768
+# 'you' in 'thank you for' is lifted 2 semitones (formants kept) so it no longer sounds like a full stop
+wf = wave.open(D + 'audio48k_fixed.wav'); src = np.frombuffer(wf.readframes(wf.getnframes()), dtype=np.int16).reshape(-1, 2).astype(np.float64) / 32768
 
 # ---------- voice + closing track, re-cut ----------
 voice = np.zeros((N, 2))

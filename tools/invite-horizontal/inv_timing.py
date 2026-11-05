@@ -4,7 +4,8 @@ so the closing track still starts 50 s before the end."""
 import json, wave, numpy as np
 D = '/tmp/claude-0/-home-user/da468685-967b-5760-877c-9c4fad4db3c6/scratchpad/inv/'
 CO = 13.4                      # cinematic cold open (text + sound design, no voice)
-CUTS = [(0.0, 3.45), (6.10, 20.25), (21.50, 36.0), (36.30, 88.40), (88.85, 160.4)]
+CUTS = [(0.0, 3.45), (6.10, 13.10), (13.35, 20.25), (21.50, 36.0), (36.30, 88.40), (88.85, 160.4)]
+EXACT = {13.10, 13.35}   # 'thank you for': the pause after 'you' is closed by hand, no auto search
 
 wf = wave.open(D + 'audio48k.wav'); sr = wf.getframerate()
 a = np.frombuffer(wf.readframes(wf.getnframes()), dtype=np.int16).reshape(-1, 2).astype(np.float32) / 32768
@@ -18,8 +19,8 @@ def quiet(t, span=.07):        # move a cut point to the quietest 10 ms nearby
     return round(float(bt), 3)
 segs = []
 for i, (s0, s1) in enumerate(CUTS):
-    s0 = s0 if i == 0 else quiet(s0)
-    s1 = s1 if i == len(CUTS) - 1 else quiet(s1)
+    s0 = s0 if i == 0 or s0 in EXACT else quiet(s0)
+    s1 = s1 if i == len(CUTS) - 1 or s1 in EXACT else quiet(s1)
     segs.append([s0, s1])
 off = CO; SEG = []
 for s0, s1 in segs:
@@ -51,6 +52,10 @@ while i < len(W):
 out = []
 for w in words:
     mid = (w['s'] + w['e']) / 2
+    if not any(g['a'] <= mid <= g['b'] for g in SEG):   # a word that straddles a closed pause keeps its spoken part
+        for g in SEG:
+            if min(w['e'], g['b']) - max(w['s'], g['a']) > .05: w = dict(w, s=max(w['s'], g['a']), e=min(w['e'], g['b'])); break
+        mid = (w['s'] + w['e']) / 2
     if any(g['a'] <= mid <= g['b'] for g in SEG):
         out.append({'w': w['w'], 's': round(mapS(w['s']), 3), 'e': round(mapS(w['e']), 3), 'src': w['s']})
 out[-1]['w'] = 'Crypto! 💪'; out[-2]['w'] = 'This'; out[-3]['w'] = 'Get'
@@ -89,4 +94,4 @@ chunks = [{'s': c[0]['s'], 'e': c[-1]['e'], 'w': [dict(x) for x in c]} for c in 
 open(D + 'video/timing.js', 'w').write('window.TIMING=' + json.dumps({'CO': CO, 'SEG': SEG, 'TOTAL': TOTAL, 'CHUNKS': chunks}) + ';\n')
 json.dump({'CO': CO, 'SEG': SEG, 'TOTAL': TOTAL}, open(D + 'edl.json', 'w'), indent=1)
 print('segments', SEG); print('total', TOTAL, 'closing track starts', round(TOTAL - mapS(110.4), 2), 's before end')
-for c in chunks: print(f"{c['s']:7.2f} {' '.join(x['w'] for x in c['w'])}")
+for c in chunks[:12]: print(f"{c['s']:7.2f} {' '.join(x['w'] for x in c['w'])}")

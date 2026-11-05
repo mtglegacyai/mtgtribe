@@ -163,6 +163,12 @@ if(host){
     var st=state(),before=levelsDone(st);st[cb.id]=cb.checked;put('tribe-path',st);paint(st,levelsDone(st)>before);
   })});
   paint(s,false);
-  $('#xp-reset').addEventListener('click',function(){if(!confirm('Reset your Tribe Path progress on this device?'))return;put('tribe-path',{});$$('.mission input',host).forEach(function(cb){cb.checked=false});paint({},false)});
+  // two taps to reset, so nobody loses progress by accident (no browser pop-up needed)
+  var rb=$('#xp-reset'),armed=0;
+  rb.addEventListener('click',function(){
+    if(!armed){armed=setTimeout(function(){armed=0;rb.textContent='Reset my progress'},4000);rb.textContent='Tap again to reset everything';return}
+    clearTimeout(armed);armed=0;rb.textContent='Progress reset';put('tribe-path',{});$$('.mission input',host).forEach(function(cb){cb.checked=false});paint({},false);
+    setTimeout(function(){rb.textContent='Reset my progress'},2500);
+  });
 }
 })();

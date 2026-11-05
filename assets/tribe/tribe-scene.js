@@ -49,12 +49,13 @@ function layout(){
   cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
   G.narrow=W<560;
   if(G.narrow){
-    // phones: the first tribe big in the middle, the two new tribes half visible at the edges
-    G.s=Math.max(.8,Math.min(1.05,W/400));
-    G.cy=H*.72;G.cx=[0,W*.5,W];G.rx=[W*.17,W*.26,W*.17];
+    // phones (MTG, 5 Nov 2026): all three communities fully on screen, side by side,
+    // with slightly smaller people and bigger badges so WhatsApp, TikTok and Facebook stay clear
+    G.s=Math.max(.6,Math.min(.85,W/510));
+    G.cy=H*.72;G.cx=[W*.17,W*.5,W*.83];G.rx=[W*.125,W*.145,W*.125];G.emb=1.3;
   }else{
     G.s=Math.max(.7,Math.min(1.45,W/620));
-    G.cy=H*.7;G.cx=[W*.17,W*.5,W*.83];G.rx=[W*.105,W*.14,W*.105];
+    G.cy=H*.7;G.cx=[W*.17,W*.5,W*.83];G.rx=[W*.105,W*.14,W*.105];G.emb=1;
   }
   G.ry=G.rx.map(function(x){return x*.34});
 }
@@ -173,7 +174,7 @@ function logo(c,x,y,r){
 function backOut(k){var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)}
 function fire(c,t,amt){
   if(amt<=0)return;
-  var k=amt<1?backOut(amt):1,u=G.s,x=G.cx[c],base=G.cy-G.ry[c]*.15,r=15*u*k,y=base-16*u+Math.sin(t*2.1+c*1.9)*2.4*u,col=BRAND[c].glow;
+  var k=amt<1?backOut(amt):1,u=G.s,x=G.cx[c],base=G.cy-G.ry[c]*.15,r=15*u*k*G.emb,y=base-16*u+Math.sin(t*2.1+c*1.9)*2.4*u,col=BRAND[c].glow;
   // coloured glow on the ground and around the badge
   var g=cx.createRadialGradient(x,y,0,x,y,52*u);g.addColorStop(0,'rgba('+col+',.42)');g.addColorStop(1,'rgba('+col+',0)');
   cx.fillStyle=g;cx.beginPath();cx.arc(x,y,52*u,0,TAU);cx.fill();

@@ -44,3 +44,9 @@ MTG sits full width on top when he explains, the host bubble sits above the capt
 captions are two lines at 60px above the zone TikTok, Reels and Shorts cover with their own buttons and text.
 
 Rules: no em or en dashes on screen, never fake numbers or results, keep each orientation as built (16:9 stays 16:9, 9:16 stays 9:16).
+
+## Next version (planned, MTG's request on 5 November 2026)
+
+When Bitcoin Wealth, ClickBaitPays and the full JetUp · TAG Markets guide are finished (Bellver Affiliates is done),
+remake both versions so the video names every income stream in dashboard order: Bellver Affiliates, JetUp · TAG Markets,
+ClickBaitPays, Bitcoin Wealth, ALTRUVA. Keep upgrading it whenever the streams change. See the reminder in `/CLAUDE.md`.

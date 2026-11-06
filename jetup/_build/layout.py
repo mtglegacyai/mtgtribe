@@ -231,7 +231,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
     graph += (ld_extra or [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(',', ':'))
     body = main
-    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + (LIGHTBOX if lightbox else ''))) | ({'i-chev-l'} if docked else set())
+    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + (LIGHTBOX if lightbox else ''))) | {'i-chev-l'}
     syms = ''.join(ICONS[u] for u in sorted(used) if u in ICONS)
     missing = [u for u in used if u not in ICONS]
     if missing:
@@ -270,7 +270,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 {top_bar(docked)}
 {side_menu(path)}
 <div class="scrim" id="scrim" aria-hidden="true"></div>
-{'<button class="side-tog" id="side-tog" type="button" aria-label="Show or hide the menu" aria-controls="side" aria-expanded="true">' + icon('i-chev-l', '') + '</button>' if docked else ''}
+<button class="side-tog" id="side-tog" type="button" aria-controls="side" aria-expanded="{'true' if docked else 'false'}" aria-label="{'Close the menu' if docked else 'Open the menu'}" title="{'Close the menu' if docked else 'Open the menu'}">{icon('i-chev-l', '')}</button>
 <div class="page">
 <main id="main">
 {body}

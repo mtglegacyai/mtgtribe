@@ -236,3 +236,33 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
   window.addEventListener('orientationchange', soon);
   if (window.ResizeObserver) { var ro = new ResizeObserver(soon); wraps.forEach(function (w) { ro.observe(w); }); }
 })();
+
+/* Back to the top (MTG, 6 Nov 2026): shows after a short scroll, its ring fills as you read,
+   one tap glides back to the top (instant with reduced motion) and puts keyboard focus on the top bar. */
+(function () {
+  var b = document.getElementById('totop');
+  if (!b) return;
+  var root = document.documentElement, ticking = false;
+  function update() {
+    ticking = false;
+    var y = window.scrollY || root.scrollTop, max = root.scrollHeight - window.innerHeight;
+    b.classList.toggle('on', y > Math.min(600, window.innerHeight * 0.75));
+    b.style.setProperty('--sp', max > 0 ? Math.min(1, y / max).toFixed(3) : 0);
+  }
+  function soon() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', soon, { passive: true });
+  window.addEventListener('resize', soon);
+  update();
+  function jump(y) { root.style.scrollBehavior = 'auto'; window.scrollTo(0, y); root.style.scrollBehavior = ''; }
+  b.addEventListener('click', function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var y = window.scrollY || root.scrollTop, near = Math.round(window.innerHeight * 1.2);
+    if (reduce) jump(0);
+    else {
+      if (y > near * 2) jump(near);   /* long pages: skip most of the way at once, then glide the last stretch */
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    var t = document.querySelector('.top .brand');
+    if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } }
+  });
+})();

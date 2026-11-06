@@ -74,9 +74,9 @@ def build_checks():
 {phead('i-shield2', 'Burned before? Start here', 'The 5 checks <span class="grad">before you try JetUP</span>',
        "If you've lost money in a trading platform, a copy trading app, or a program that promised you the world, this page is for you. You are not foolish for trying. The lesson is not to stop trying. The lesson is to verify first. So let's verify JetUP and TAG Markets, together.",
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('The 5 checks', None)],
-       [icon('i-film2') + '5:53 video', icon('i-search') + 'Sources included', icon('i-check2') + 'Tick as you check'])}
+       [icon('i-film2') + '5:25 video', icon('i-search') + 'Sources included', icon('i-check2') + 'Tick as you check'])}
 <section class="sec tight" style="padding-top:0"><div class="wrap">
- <div style="max-width:980px;margin:0 auto" class="rv">{laptop('5checks', 'Watch the 5 checks (5:53), then tick each one below as you check it', eager=True)}</div>
+ <div style="max-width:980px;margin:0 auto" class="rv">{laptop('5checks', 'Watch the 5 checks (5:25), then tick each one below as you check it', eager=True)}</div>
 </div></section>
 <section class="sec tight"><div class="narrow stack" style="gap:20px">
  {c1}{c2}{c3}{c4}{c5}
@@ -94,7 +94,7 @@ def build_checks():
            ('What can go wrong with JetUP and TAG Markets?', '24x Amplify makes swings bigger in both directions. You can lose your whole deposit, the account is closed at a 10% loss of the starting balance (5% with a community token), and the insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
                 'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA, warnings), Sonic AI results on Myfxbook, 24x Amplify risk and withdrawals.',
-                main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks.jpg', og_alt='Lost money before? Check these 5 things before you try again')
+                main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'

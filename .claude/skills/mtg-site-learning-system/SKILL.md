@@ -26,8 +26,10 @@ latest instruction in the chat wins, then mtg-creative-standard.
   no fake balances, no "best ever". Hide personal data in every frame.
 - **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". No em or en dashes anywhere,
   including inside videos, PDFs and file names. Follow each site's own content rules (names or brands MTG has ruled out).
-- **Every dashboard opens with a site tour.** The very top of each website's dashboard is a video that shows visitors
-  around the whole site, click by click, from the landing page to the dashboard and every page.
+- **Every dashboard opens with a site tour.** Each opportunity has a landing page whose **Dashboard** button (sometimes
+  "Learn more") leads to its dashboard. The very top of every dashboard is a video that shows visitors around the whole
+  site, click by click, from the landing page to the dashboard and every page. It takes the top spot where MTG's photo
+  card sits today (for example the main MTG TRIBE dashboard at mtgtribe.com/dashboard/).
 - **Never publish or push live without MTG's approval**, and show a real preview first (a phone recording or the
   rendered file), not a description.
 

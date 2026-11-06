@@ -24,7 +24,10 @@ Last known HeyGen balance: about 249 credits (resets 3 Dec 2026). Check before a
 |---|---|---|---|---|
 | 0 | JetUP site tour, click by click: landing page, the JetUP hub, the menu on laptop and phone, all 13 pages, how to get back, first step | very top of the JetUP hub (/jetup/, JetUP's dashboard); listed first on the Videos page | mostly new lines (about 7 to 14 credits) or captions with recorded lines only | made last, once all pages and videos are done |
 
-The main MTG TRIBE dashboard (/dashboard/) gets its own tour of the whole mtgtribe.com site when we do the main-site pass.
+The main MTG TRIBE dashboard (mtgtribe.com/dashboard/) gets its own tour of the whole mtgtribe.com site, replacing MTG's
+photo card at the top, when we do the main-site pass. Open question for MTG: JetUP has no dashboard of its own yet (its
+Dashboard button goes to the main MTG TRIBE dashboard), so either JetUP gets its own dashboard like ALTRUVA, or the
+JetUP tour sits at the top of /jetup/.
 
 ## Videos, first the six with the biggest impact
 

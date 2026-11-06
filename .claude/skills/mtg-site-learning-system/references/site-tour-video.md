@@ -12,7 +12,11 @@ tour was recorded, so it never shows a site that no longer exists.
 
 ## Where
 
-- At the very top of the dashboard (the site's hub page), above everything else, in the laptop frame (16:9), closing
+Every MTG opportunity has the same shape: a landing page, a **Dashboard** button on it (sometimes "Learn more"),
+and the dashboard with every page behind it. The tour belongs to the dashboard.
+
+- At the very top of the dashboard, above everything else, replacing MTG's photo card where the dashboard has one
+  today (MTG, 6 November 2026), in the laptop frame (16:9), closing
   itself at the end like every MTG player, with a poster that says what it is ("Your 3-minute tour of the site").
 - A short "New here? Take the tour" link on the landing page and in the menu, pointing to it.
 - Listed first on the site's videos page, and as a "Take the site tour" button on the PDF companion's cover.

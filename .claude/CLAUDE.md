@@ -41,6 +41,8 @@ account so it works for all his sites): audit every section for short 16:9 expla
 credits, cut his tutorials into chapter clips, and finish each site with one PDF guide with tappable buttons. One website
 at a time. JetUP's plan and status: `tools/learning-system/PLAN.md`. JetUP voice bank: branch `jetup-video-work`,
 `jetup-work/voice-bank/`. Do not produce a video until MTG has picked it and supplied his links.
+Every opportunity is landing page, then its Dashboard button, then the dashboard: the top of every dashboard gets the
+click-by-click site tour video, replacing MTG's photo card where there is one (mtgtribe.com/dashboard/ today).
 
 ## Standing rule: nothing scrolls sideways on phones (MTG, 6 November 2026)
 

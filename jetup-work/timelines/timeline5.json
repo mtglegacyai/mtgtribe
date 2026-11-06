@@ -1,0 +1,715 @@
+{
+ "av_dur": 346.944,
+ "speech_end": 347.944,
+ "total": 352.944,
+ "cards": [
+  1.16,
+  8.28,
+  13.6,
+  18.92,
+  27.64,
+  36.48,
+  40.48,
+  47.28,
+  66.4,
+  72.64,
+  81.36,
+  85.68,
+  90.4,
+  92.84,
+  102.72,
+  107.48,
+  113.68,
+  117.92,
+  129.88,
+  143.64,
+  154.2,
+  163.0,
+  165.6,
+  171.52,
+  180.36,
+  188.12,
+  194.76,
+  200.2,
+  208.68,
+  212.88,
+  221.32,
+  229.64,
+  231.88,
+  246.44,
+  253.28,
+  269.56,
+  278.8,
+  285.04,
+  290.52,
+  297.52,
+  303.92,
+  311.6,
+  319.96,
+  323.56,
+  328.28,
+  338.44
+ ],
+ "captions": [
+  [
+   1.24,
+   4.76,
+   "If you've lost money in a trading platform, a copy trading app,"
+  ],
+  [
+   4.76,
+   8.32,
+   "or a program that promised you the world, this video is for you."
+  ],
+  [
+   8.32,
+   10.48,
+   "I'm not going to tell you this one is different."
+  ],
+  [
+   10.48,
+   12.32,
+   "You've heard that line before."
+  ],
+  [
+   12.32,
+   15.48,
+   "Instead, I'm going to give you 5 checks you can do yourself."
+  ],
+  [
+   15.48,
+   19.0,
+   "So whatever you decide, you decide with your eyes open."
+  ],
+  [
+   19.0,
+   22.32,
+   "Hi, I'm MTG, Your Digital Architect."
+  ],
+  [
+   22.32,
+   23.88,
+   "Stay with me to the end,"
+  ],
+  [
+   23.88,
+   27.68,
+   "because check number 4 is the one most people skip."
+  ],
+  [
+   27.68,
+   29.0,
+   "I know the feeling."
+  ],
+  [
+   29.0,
+   30.88,
+   "The withdrawal that never came."
+  ],
+  [
+   30.88,
+   32.56,
+   "The group that went quiet."
+  ],
+  [
+   32.56,
+   34.68,
+   "The leader who stopped answering."
+  ],
+  [
+   34.68,
+   36.52,
+   "So let me say this clearly."
+  ],
+  [
+   36.52,
+   38.24,
+   "You are not foolish for trying."
+  ],
+  [
+   38.24,
+   40.56,
+   "Trying means you want more for your family."
+  ],
+  [
+   40.56,
+   42.6,
+   "The lesson is not to stop trying."
+  ],
+  [
+   42.6,
+   44.92,
+   "The lesson is to verify first."
+  ],
+  [
+   44.92,
+   47.36,
+   "So let's verify, together."
+  ],
+  [
+   47.36,
+   49.24,
+   "Here is the simple picture."
+  ],
+  [
+   49.24,
+   52.92,
+   "JetUP is a community, with training and AI tools."
+  ],
+  [
+   52.92,
+   55.88,
+   "It does not trade, and it does not take your money."
+  ],
+  [
+   55.88,
+   57.84,
+   "TAG Markets is the broker."
+  ],
+  [
+   57.84,
+   60.96,
+   "You open a trading account there, in your own name."
+  ],
+  [
+   60.96,
+   63.68,
+   "Then you connect a strategy through CopyX."
+  ],
+  [
+   63.68,
+   69.56,
+   "The main one, Sonic AI, trades gold, shown as XAU/USD."
+  ],
+  [
+   69.56,
+   72.72,
+   "That's gold, priced in US dollars."
+  ],
+  [
+   72.72,
+   76.52,
+   "When the strategy makes a profit, 70% is yours."
+  ],
+  [
+   76.52,
+   81.44,
+   "30% pays the broker, the strategy provider, and the partner program."
+  ],
+  [
+   81.44,
+   85.72,
+   "So if the strategy makes $10, $7 is yours."
+  ],
+  [
+   85.72,
+   86.96,
+   "And if it makes a loss,"
+  ],
+  [
+   86.96,
+   90.48,
+   "nobody charges you a performance fee on that loss."
+  ],
+  [
+   90.48,
+   91.48,
+   "Check 1."
+  ],
+  [
+   91.48,
+   92.88,
+   "Who holds my money?"
+  ],
+  [
+   92.88,
+   97.92,
+   "Your deposit goes into an MT5 account at TAG Markets, in your name."
+  ],
+  [
+   97.92,
+   102.76,
+   "MT5 means MetaTrader 5, the trading app many brokers use."
+  ],
+  [
+   102.76,
+   104.36,
+   "Don't take my word for it."
+  ],
+  [
+   104.36,
+   107.56,
+   "Log in yourself, and see your own balance."
+  ],
+  [
+   107.56,
+   108.68,
+   "Check 2."
+  ],
+  [
+   108.68,
+   110.72,
+   "Who regulates the broker?"
+  ],
+  [
+   110.72,
+   113.44,
+   "TAG Markets' trading company, TM Financials,"
+  ],
+  [
+   113.44,
+   115.88,
+   "is licensed in Mauritius by the FSC,"
+  ],
+  [
+   115.88,
+   118.0,
+   "the Financial Services Commission."
+  ],
+  [
+   118.0,
+   122.36,
+   "TAG also has a South African company, authorised by the FSCA,"
+  ],
+  [
+   122.36,
+   128.16,
+   "our Financial Sector Conduct Authority, under FSP number 55237."
+  ],
+  [
+   128.16,
+   129.56,
+   "You can look it up yourself."
+  ],
+  [
+   129.56,
+   131.48,
+   "But read the fine print."
+  ],
+  [
+   131.48,
+   133.64,
+   "TAG's own website says the South African"
+  ],
+  [
+   133.64,
+   135.96,
+   "company provides marketing services,"
+  ],
+  [
+   135.96,
+   139.64,
+   "and that trading accounts are held by the Mauritius company."
+  ],
+  [
+   139.64,
+   142.16,
+   "So know which regulator covers your account."
+  ],
+  [
+   142.16,
+   143.72,
+   "Also know this."
+  ],
+  [
+   143.72,
+   148.12,
+   "Regulators in Austria, Luxembourg, Slovenia, Russia,"
+  ],
+  [
+   148.12,
+   151.36,
+   "and Quebec in Canada have published warnings that"
+  ],
+  [
+   151.36,
+   154.24,
+   "TAG Markets is not authorised in their countries."
+  ],
+  [
+   154.24,
+   157.4,
+   "I'm telling you this because you deserve the whole picture."
+  ],
+  [
+   157.4,
+   160.76,
+   "Search TAG Markets on the global regulator warning list."
+  ],
+  [
+   160.76,
+   163.04,
+   "I've put the link on my page."
+  ],
+  [
+   163.04,
+   164.2,
+   "Check 3."
+  ],
+  [
+   164.2,
+   165.64,
+   "Are the results real?"
+  ],
+  [
+   165.64,
+   169.44,
+   "Sonic AI publishes its track record on Myfxbook,"
+  ],
+  [
+   169.44,
+   171.6,
+   "so you can look before you deposit."
+  ],
+  [
+   171.6,
+   178.16,
+   "It shows +30.1%, from November 2024 to October 2026."
+  ],
+  [
+   178.16,
+   180.44,
+   "That's before the 70/30 split."
+  ],
+  [
+   180.44,
+   185.24,
+   "So 30.1% \u00d7 70%, is about 21% to you,"
+  ],
+  [
+   185.24,
+   188.2,
+   "over about 23 months, before fees."
+  ],
+  [
+   188.2,
+   190.24,
+   "Not 40% a month."
+  ],
+  [
+   190.24,
+   191.84,
+   "Not a fixed return."
+  ],
+  [
+   191.84,
+   194.84,
+   "And past results never guarantee the future."
+  ],
+  [
+   194.84,
+   196.0,
+   "Check 4."
+  ],
+  [
+   196.0,
+   197.44,
+   "What can go wrong?"
+  ],
+  [
+   197.44,
+   199.8,
+   "This is the one most people skip."
+  ],
+  [
+   199.8,
+   202.48,
+   "JetUP's latest start promo works like this."
+  ],
+  [
+   202.48,
+   204.8,
+   "You put in $150."
+  ],
+  [
+   204.8,
+   206.72,
+   "The promo adds $100."
+  ],
+  [
+   206.72,
+   208.76,
+   "That's $250."
+  ],
+  [
+   208.76,
+   212.92,
+   "Amplify it 24 times, and it trades like $6,000."
+  ],
+  [
+   212.92,
+   215.48,
+   "That's exposure, not money you own."
+  ],
+  [
+   215.48,
+   218.92,
+   "Bigger exposure means bigger swings, up and down."
+  ],
+  [
+   218.92,
+   220.68,
+   "You can lose your whole deposit."
+  ],
+  [
+   220.68,
+   224.4,
+   "And the broker's insolvency cover is $1,000,000 in total,"
+  ],
+  [
+   224.4,
+   227.28,
+   "for all clients together, not per person."
+  ],
+  [
+   227.28,
+   229.72,
+   "Trading losses are not covered."
+  ],
+  [
+   229.72,
+   230.72,
+   "Check 5."
+  ],
+  [
+   230.72,
+   231.96,
+   "Can I get out?"
+  ],
+  [
+   231.96,
+   234.12,
+   "Profits can be withdrawn any time."
+  ],
+  [
+   234.12,
+   235.84,
+   "But the promo has rules."
+  ],
+  [
+   235.84,
+   238.08,
+   "The bonus is released after 12 months,"
+  ],
+  [
+   238.08,
+   241.4,
+   "and taking your own money out before then ends the promo."
+  ],
+  [
+   241.4,
+   242.8,
+   "Promo amounts change,"
+  ],
+  [
+   242.8,
+   246.48,
+   "so check the current rules in your dashboard before you start."
+  ],
+  [
+   246.48,
+   247.56,
+   "My advice?"
+  ],
+  [
+   247.56,
+   250.84,
+   "Start small, and do a small withdrawal early."
+  ],
+  [
+   250.84,
+   253.16,
+   "Let the system prove itself to you."
+  ],
+  [
+   253.16,
+   255.56,
+   "So why would anyone still give this a shot?"
+  ],
+  [
+   255.56,
+   257.72,
+   "Because you can check before you deposit."
+  ],
+  [
+   257.72,
+   259.44,
+   "Because you can start small."
+  ],
+  [
+   259.44,
+   261.36,
+   "Because the account is in your name."
+  ],
+  [
+   261.36,
+   264.68,
+   "And because the company writes down, in its own risk warning,"
+  ],
+  [
+   264.68,
+   267.4,
+   "that what a partner earns can be zero."
+  ],
+  [
+   267.4,
+   269.6,
+   "That kind of honesty is worth noticing."
+  ],
+  [
+   269.6,
+   272.8,
+   "One more truth, from JetUP's own founder."
+  ],
+  [
+   272.8,
+   274.72,
+   "The big money comes from building a team,"
+  ],
+  [
+   274.72,
+   276.96,
+   "not from the trading percentage."
+  ],
+  [
+   276.96,
+   278.88,
+   "Know that going in."
+  ],
+  [
+   278.88,
+   281.68,
+   "If you check all 5, and it still feels right,"
+  ],
+  [
+   281.68,
+   285.12,
+   "start small, with money you can afford to lose."
+  ],
+  [
+   285.12,
+   290.56,
+   "Everything I showed you, plus my links, is at mtgtribe.com/jetup."
+  ],
+  [
+   290.56,
+   292.36,
+   "And if it doesn't feel right?"
+  ],
+  [
+   292.36,
+   294.08,
+   "That's a good decision too."
+  ],
+  [
+   294.08,
+   297.56,
+   "It pays to pay attention, and take action."
+  ],
+  [
+   297.56,
+   299.84,
+   "If you believe in multiple streams of income,"
+  ],
+  [
+   299.84,
+   301.32,
+   "in learning before you earn,"
+  ],
+  [
+   301.32,
+   303.96,
+   "and in never putting all your eggs in one basket,"
+  ],
+  [
+   303.96,
+   307.04,
+   "join my tribe at mtgtribe.com/group,"
+  ],
+  [
+   307.04,
+   310.16,
+   "or message me on Telegram @mtgtribe."
+  ],
+  [
+   310.16,
+   311.68,
+   "Check my bio."
+  ],
+  [
+   311.68,
+   315.2,
+   "Save this video, so you have the 5 checks when you need them."
+  ],
+  [
+   315.2,
+   317.76,
+   "And share it with someone who's been burned before."
+  ],
+  [
+   317.76,
+   320.04,
+   "We learn best when we teach others."
+  ],
+  [
+   320.04,
+   321.12,
+   "Comment below."
+  ],
+  [
+   321.12,
+   323.6,
+   "Which check surprised you most?"
+  ],
+  [
+   323.6,
+   326.56,
+   "Quick reminder: none of this is financial advice."
+  ],
+  [
+   326.56,
+   328.32,
+   "Always do your own research."
+  ],
+  [
+   328.32,
+   332.92,
+   "Thank you for tuning in, and for every like, share, and comment."
+  ],
+  [
+   332.92,
+   334.96,
+   "Your support means everything."
+  ],
+  [
+   334.96,
+   336.36,
+   "And thank yourself for taking massive"
+  ],
+  [
+   336.36,
+   338.48,
+   "action today to change your future!"
+  ],
+  [
+   338.48,
+   341.56,
+   "I wish you nothing but the best, because YOU are the best."
+  ],
+  [
+   341.56,
+   344.48,
+   "I'm MTG, Your Digital Architect."
+  ],
+  [
+   344.48,
+   346.0,
+   "See you on the next one."
+  ],
+  [
+   346.0,
+   347.52,
+   "Let's Get This Crypto!"
+  ]
+ ]
+}

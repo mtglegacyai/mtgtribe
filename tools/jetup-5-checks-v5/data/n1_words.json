@@ -1,0 +1,329 @@
+{
+"duration": 15.62125,
+"words": [
+{
+"word": "So",
+"start": 0.3,
+"end": 0.44,
+"src": "fa"
+},
+{
+"word": "here's",
+"start": 0.44,
+"end": 0.65,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 0.65,
+"end": 0.74,
+"src": "fa"
+},
+{
+"word": "next",
+"start": 0.74,
+"end": 0.97,
+"src": "fa"
+},
+{
+"word": "step.",
+"start": 0.97,
+"end": 1.5,
+"src": "fa"
+},
+{
+"word": "Watch",
+"start": 1.655,
+"end": 1.855,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 1.855,
+"end": 1.964,
+"src": "fa"
+},
+{
+"word": "step-by-step",
+"start": 1.964,
+"end": 2.654,
+"src": "fa"
+},
+{
+"word": "training,",
+"start": 2.654,
+"end": 3.135,
+"src": "fa"
+},
+{
+"word": "right",
+"start": 3.194,
+"end": 3.414,
+"src": "fa"
+},
+{
+"word": "after",
+"start": 3.414,
+"end": 3.655,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 3.655,
+"end": 3.865,
+"src": "fa"
+},
+{
+"word": "one.",
+"start": 3.865,
+"end": 4.294,
+"src": "fa"
+},
+{
+"word": "I'll",
+"start": 4.47,
+"end": 4.55,
+"src": "fa"
+},
+{
+"word": "show",
+"start": 4.55,
+"end": 4.71,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 4.71,
+"end": 4.88,
+"src": "fa"
+},
+{
+"word": "every",
+"start": 4.88,
+"end": 5.199,
+"src": "fa"
+},
+{
+"word": "tap,",
+"start": 5.199,
+"end": 5.76,
+"src": "fa"
+},
+{
+"word": "from",
+"start": 5.76,
+"end": 5.939,
+"src": "fa"
+},
+{
+"word": "sign-up",
+"start": 5.939,
+"end": 6.37,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 6.37,
+"end": 6.579,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 6.579,
+"end": 6.669,
+"src": "fa"
+},
+{
+"word": "promo,",
+"start": 6.669,
+"end": 7.22,
+"src": "fa"
+},
+{
+"word": "so",
+"start": 7.232,
+"end": 7.382,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 7.382,
+"end": 7.452,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 7.452,
+"end": 7.582,
+"src": "fa"
+},
+{
+"word": "follow",
+"start": 7.582,
+"end": 7.892,
+"src": "fa"
+},
+{
+"word": "along",
+"start": 7.892,
+"end": 8.112,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 8.112,
+"end": 8.212,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 8.212,
+"end": 8.312,
+"src": "fa"
+},
+{
+"word": "phone.",
+"start": 8.312,
+"end": 8.652,
+"src": "fa"
+},
+{
+"word": "Now,",
+"start": 9.143,
+"end": 9.523,
+"src": "fa"
+},
+{
+"word": "comment",
+"start": 9.812,
+"end": 10.123,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 10.123,
+"end": 10.193,
+"src": "fa"
+},
+{
+"word": "number",
+"start": 10.193,
+"end": 10.473,
+"src": "fa"
+},
+{
+"word": "of",
+"start": 10.473,
+"end": 10.623,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 10.623,
+"end": 10.703,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 10.703,
+"end": 10.992,
+"src": "fa"
+},
+{
+"word": "you'll",
+"start": 10.992,
+"end": 11.133,
+"src": "fa"
+},
+{
+"word": "do",
+"start": 11.133,
+"end": 11.293,
+"src": "fa"
+},
+{
+"word": "first,",
+"start": 11.293,
+"end": 11.623,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 11.936,
+"end": 12.146,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 12.146,
+"end": 12.236,
+"src": "fa"
+},
+{
+"word": "five.",
+"start": 12.236,
+"end": 12.756,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 13.106,
+"end": 13.196,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 13.196,
+"end": 13.436,
+"src": "fa"
+},
+{
+"word": "most",
+"start": 13.436,
+"end": 13.716,
+"src": "fa"
+},
+{
+"word": "of",
+"start": 13.716,
+"end": 13.806,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 13.806,
+"end": 13.936,
+"src": "fa"
+},
+{
+"word": "pick",
+"start": 13.936,
+"end": 14.206,
+"src": "fa"
+},
+{
+"word": "becomes",
+"start": 14.206,
+"end": 14.576,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 14.576,
+"end": 14.686,
+"src": "fa"
+},
+{
+"word": "next",
+"start": 14.686,
+"end": 14.976,
+"src": "fa"
+},
+{
+"word": "video.",
+"start": 14.976,
+"end": 15.416,
+"src": "fa"
+}
+]
+}

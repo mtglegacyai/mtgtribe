@@ -1,0 +1,5807 @@
+{
+"duration": 346.9456875,
+"words": [
+{
+"word": "If",
+"start": 0.3,
+"end": 0.46,
+"src": "fa"
+},
+{
+"word": "you've",
+"start": 0.46,
+"end": 0.66,
+"src": "fa"
+},
+{
+"word": "lost",
+"start": 0.66,
+"end": 0.95,
+"src": "fa"
+},
+{
+"word": "money",
+"start": 0.95,
+"end": 1.2,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 1.2,
+"end": 1.28,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 1.28,
+"end": 1.32,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 1.32,
+"end": 1.67,
+"src": "fa"
+},
+{
+"word": "platform,",
+"start": 1.67,
+"end": 2.22,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 2.46,
+"end": 2.52,
+"src": "fa"
+},
+{
+"word": "copy",
+"start": 2.52,
+"end": 2.97,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 2.97,
+"end": 3.35,
+"src": "fa"
+},
+{
+"word": "app,",
+"start": 3.35,
+"end": 3.75,
+"src": "fa"
+},
+{
+"word": "or",
+"start": 3.846,
+"end": 4.046,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 4.046,
+"end": 4.075,
+"src": "fa"
+},
+{
+"word": "program",
+"start": 4.075,
+"end": 4.546,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 4.546,
+"end": 4.726,
+"src": "fa"
+},
+{
+"word": "promised",
+"start": 4.726,
+"end": 5.116,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 5.116,
+"end": 5.216,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 5.216,
+"end": 5.296,
+"src": "fa"
+},
+{
+"word": "world,",
+"start": 5.296,
+"end": 5.626,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 5.866,
+"end": 6.106,
+"src": "fa"
+},
+{
+"word": "video",
+"start": 6.106,
+"end": 6.456,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 6.456,
+"end": 6.646,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 6.646,
+"end": 6.756,
+"src": "fa"
+},
+{
+"word": "you.",
+"start": 6.756,
+"end": 6.986,
+"src": "fa"
+},
+{
+"word": "I'm",
+"start": 7.405,
+"end": 7.514,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 7.514,
+"end": 7.635,
+"src": "fa"
+},
+{
+"word": "going",
+"start": 7.635,
+"end": 7.774,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 7.774,
+"end": 7.875,
+"src": "fa"
+},
+{
+"word": "tell",
+"start": 7.875,
+"end": 8.044,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 8.044,
+"end": 8.204,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 8.204,
+"end": 8.354,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 8.354,
+"end": 8.524,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 8.524,
+"end": 8.675,
+"src": "fa"
+},
+{
+"word": "different.",
+"start": 8.675,
+"end": 9.215,
+"src": "fa"
+},
+{
+"word": "You've",
+"start": 9.574,
+"end": 9.764,
+"src": "fa"
+},
+{
+"word": "heard",
+"start": 9.764,
+"end": 9.984,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 9.984,
+"end": 10.144,
+"src": "fa"
+},
+{
+"word": "line",
+"start": 10.144,
+"end": 10.374,
+"src": "fa"
+},
+{
+"word": "before.",
+"start": 10.374,
+"end": 10.804,
+"src": "fa"
+},
+{
+"word": "Instead,",
+"start": 11.424,
+"end": 11.984,
+"src": "fa"
+},
+{
+"word": "I'm",
+"start": 12.174,
+"end": 12.274,
+"src": "fa"
+},
+{
+"word": "going",
+"start": 12.274,
+"end": 12.404,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 12.404,
+"end": 12.484,
+"src": "fa"
+},
+{
+"word": "give",
+"start": 12.484,
+"end": 12.644,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 12.644,
+"end": 12.754,
+"src": "fa"
+},
+{
+"word": "five",
+"start": 12.754,
+"end": 13.004,
+"src": "fa"
+},
+{
+"word": "checks",
+"start": 13.004,
+"end": 13.314,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 13.314,
+"end": 13.404,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 13.404,
+"end": 13.564,
+"src": "fa"
+},
+{
+"word": "do",
+"start": 13.564,
+"end": 13.664,
+"src": "fa"
+},
+{
+"word": "yourself.",
+"start": 13.664,
+"end": 14.334,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 14.568,
+"end": 14.787,
+"src": "fa"
+},
+{
+"word": "whatever",
+"start": 14.787,
+"end": 15.098,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 15.098,
+"end": 15.277,
+"src": "fa"
+},
+{
+"word": "decide,",
+"start": 15.277,
+"end": 15.787,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 16.008,
+"end": 16.148,
+"src": "fa"
+},
+{
+"word": "decide",
+"start": 16.148,
+"end": 16.508,
+"src": "fa"
+},
+{
+"word": "with",
+"start": 16.508,
+"end": 16.657,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 16.657,
+"end": 16.878,
+"src": "fa"
+},
+{
+"word": "eyes",
+"start": 16.878,
+"end": 17.218,
+"src": "fa"
+},
+{
+"word": "open.",
+"start": 17.218,
+"end": 17.648,
+"src": "fa"
+},
+{
+"word": "Hi,",
+"start": 18.071,
+"end": 18.481,
+"src": "fa"
+},
+{
+"word": "I'm",
+"start": 18.661,
+"end": 18.911,
+"src": "fa"
+},
+{
+"word": "MTG,",
+"start": 18.911,
+"end": 19.611,
+"src": "fa"
+},
+{
+"word": "Your",
+"start": 19.801,
+"end": 19.901,
+"src": "fa"
+},
+{
+"word": "Digital",
+"start": 19.901,
+"end": 20.291,
+"src": "fa"
+},
+{
+"word": "Architect.",
+"start": 20.291,
+"end": 20.911,
+"src": "fa"
+},
+{
+"word": "Stay",
+"start": 21.409,
+"end": 21.649,
+"src": "fa"
+},
+{
+"word": "with",
+"start": 21.649,
+"end": 21.838,
+"src": "fa"
+},
+{
+"word": "me",
+"start": 21.838,
+"end": 22.119,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 22.169,
+"end": 22.309,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 22.309,
+"end": 22.468,
+"src": "fa"
+},
+{
+"word": "end,",
+"start": 22.468,
+"end": 22.829,
+"src": "fa"
+},
+{
+"word": "because",
+"start": 23.009,
+"end": 23.299,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 23.299,
+"end": 23.538,
+"src": "fa"
+},
+{
+"word": "number",
+"start": 23.538,
+"end": 23.809,
+"src": "fa"
+},
+{
+"word": "four",
+"start": 23.809,
+"end": 24.198,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 24.198,
+"end": 24.358,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 24.358,
+"end": 24.439,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 24.439,
+"end": 24.838,
+"src": "fa"
+},
+{
+"word": "most",
+"start": 24.989,
+"end": 25.239,
+"src": "fa"
+},
+{
+"word": "people",
+"start": 25.239,
+"end": 25.619,
+"src": "fa"
+},
+{
+"word": "skip.",
+"start": 25.619,
+"end": 26.018,
+"src": "fa"
+},
+{
+"word": "I",
+"start": 26.755,
+"end": 26.864,
+"src": "fa"
+},
+{
+"word": "know",
+"start": 26.864,
+"end": 27.065,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 27.065,
+"end": 27.165,
+"src": "fa"
+},
+{
+"word": "feeling.",
+"start": 27.165,
+"end": 27.635,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 28.061,
+"end": 28.181,
+"src": "fa"
+},
+{
+"word": "withdrawal",
+"start": 28.181,
+"end": 28.741,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 28.741,
+"end": 28.912,
+"src": "fa"
+},
+{
+"word": "never",
+"start": 28.912,
+"end": 29.122,
+"src": "fa"
+},
+{
+"word": "came.",
+"start": 29.122,
+"end": 29.521,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 29.966,
+"end": 30.036,
+"src": "fa"
+},
+{
+"word": "group",
+"start": 30.036,
+"end": 30.356,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 30.356,
+"end": 30.546,
+"src": "fa"
+},
+{
+"word": "went",
+"start": 30.546,
+"end": 30.746,
+"src": "fa"
+},
+{
+"word": "quiet.",
+"start": 30.746,
+"end": 31.306,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 31.64,
+"end": 31.76,
+"src": "fa"
+},
+{
+"word": "leader",
+"start": 31.76,
+"end": 32.14,
+"src": "fa"
+},
+{
+"word": "who",
+"start": 32.14,
+"end": 32.35,
+"src": "fa"
+},
+{
+"word": "stopped",
+"start": 32.35,
+"end": 32.79,
+"src": "fa"
+},
+{
+"word": "answering.",
+"start": 32.79,
+"end": 33.35,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 33.76,
+"end": 34.14,
+"src": "fa"
+},
+{
+"word": "let",
+"start": 34.14,
+"end": 34.26,
+"src": "fa"
+},
+{
+"word": "me",
+"start": 34.26,
+"end": 34.35,
+"src": "fa"
+},
+{
+"word": "say",
+"start": 34.35,
+"end": 34.52,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 34.52,
+"end": 34.64,
+"src": "fa"
+},
+{
+"word": "clearly.",
+"start": 34.64,
+"end": 35.06,
+"src": "fa"
+},
+{
+"word": "You",
+"start": 35.605,
+"end": 35.745,
+"src": "fa"
+},
+{
+"word": "are",
+"start": 35.745,
+"end": 35.805,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 35.805,
+"end": 35.995,
+"src": "fa"
+},
+{
+"word": "foolish",
+"start": 35.995,
+"end": 36.365,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 36.365,
+"end": 36.475,
+"src": "fa"
+},
+{
+"word": "trying.",
+"start": 36.475,
+"end": 36.935,
+"src": "fa"
+},
+{
+"word": "Trying",
+"start": 37.316,
+"end": 37.676,
+"src": "fa"
+},
+{
+"word": "means",
+"start": 37.676,
+"end": 37.926,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 37.926,
+"end": 38.026,
+"src": "fa"
+},
+{
+"word": "want",
+"start": 38.026,
+"end": 38.246,
+"src": "fa"
+},
+{
+"word": "more",
+"start": 38.246,
+"end": 38.446,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 38.446,
+"end": 38.616,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 38.616,
+"end": 38.726,
+"src": "fa"
+},
+{
+"word": "family.",
+"start": 38.726,
+"end": 39.196,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 39.633,
+"end": 39.733,
+"src": "fa"
+},
+{
+"word": "lesson",
+"start": 39.733,
+"end": 40.113,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 40.113,
+"end": 40.253,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 40.253,
+"end": 40.453,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 40.453,
+"end": 40.533,
+"src": "fa"
+},
+{
+"word": "stop",
+"start": 40.533,
+"end": 40.843,
+"src": "fa"
+},
+{
+"word": "trying.",
+"start": 40.843,
+"end": 41.293,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 41.673,
+"end": 41.763,
+"src": "fa"
+},
+{
+"word": "lesson",
+"start": 41.763,
+"end": 42.203,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 42.203,
+"end": 42.353,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 42.353,
+"end": 42.473,
+"src": "fa"
+},
+{
+"word": "verify",
+"start": 42.473,
+"end": 43.043,
+"src": "fa"
+},
+{
+"word": "first.",
+"start": 43.043,
+"end": 43.613,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 43.986,
+"end": 44.166,
+"src": "fa"
+},
+{
+"word": "let's",
+"start": 44.166,
+"end": 44.406,
+"src": "fa"
+},
+{
+"word": "verify,",
+"start": 44.406,
+"end": 44.986,
+"src": "fa"
+},
+{
+"word": "together.",
+"start": 45.166,
+"end": 45.636,
+"src": "fa"
+},
+{
+"word": "Here",
+"start": 46.422,
+"end": 46.633,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 46.633,
+"end": 46.742,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 46.742,
+"end": 46.822,
+"src": "fa"
+},
+{
+"word": "simple",
+"start": 46.822,
+"end": 47.172,
+"src": "fa"
+},
+{
+"word": "picture.",
+"start": 47.172,
+"end": 47.602,
+"src": "fa"
+},
+{
+"word": "JetUP",
+"start": 48.308,
+"end": 48.778,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 48.778,
+"end": 48.908,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 48.908,
+"end": 48.978,
+"src": "fa"
+},
+{
+"word": "community,",
+"start": 48.978,
+"end": 49.638,
+"src": "fa"
+},
+{
+"word": "with",
+"start": 49.888,
+"end": 50.068,
+"src": "fa"
+},
+{
+"word": "training",
+"start": 50.068,
+"end": 50.478,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 50.478,
+"end": 50.608,
+"src": "fa"
+},
+{
+"word": "AI",
+"start": 50.608,
+"end": 50.988,
+"src": "fa"
+},
+{
+"word": "tools.",
+"start": 50.988,
+"end": 51.608,
+"src": "fa"
+},
+{
+"word": "It",
+"start": 51.971,
+"end": 52.141,
+"src": "fa"
+},
+{
+"word": "does",
+"start": 52.141,
+"end": 52.321,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 52.321,
+"end": 52.501,
+"src": "fa"
+},
+{
+"word": "trade,",
+"start": 52.501,
+"end": 52.851,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 53.141,
+"end": 53.381,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 53.381,
+"end": 53.471,
+"src": "fa"
+},
+{
+"word": "does",
+"start": 53.471,
+"end": 53.631,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 53.631,
+"end": 53.821,
+"src": "fa"
+},
+{
+"word": "take",
+"start": 53.821,
+"end": 54.051,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 54.051,
+"end": 54.161,
+"src": "fa"
+},
+{
+"word": "money.",
+"start": 54.161,
+"end": 54.541,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 54.947,
+"end": 55.247,
+"src": "fa"
+},
+{
+"word": "Markets",
+"start": 55.247,
+"end": 55.687,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 55.687,
+"end": 55.917,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 55.917,
+"end": 56.007,
+"src": "fa"
+},
+{
+"word": "broker.",
+"start": 56.007,
+"end": 56.487,
+"src": "fa"
+},
+{
+"word": "You",
+"start": 56.892,
+"end": 57.051,
+"src": "fa"
+},
+{
+"word": "open",
+"start": 57.051,
+"end": 57.301,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 57.301,
+"end": 57.371,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 57.371,
+"end": 57.752,
+"src": "fa"
+},
+{
+"word": "account",
+"start": 57.752,
+"end": 58.132,
+"src": "fa"
+},
+{
+"word": "there,",
+"start": 58.132,
+"end": 58.431,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 58.742,
+"end": 58.871,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 58.871,
+"end": 59.091,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 59.091,
+"end": 59.212,
+"src": "fa"
+},
+{
+"word": "name.",
+"start": 59.212,
+"end": 59.481,
+"src": "fa"
+},
+{
+"word": "Then",
+"start": 60.063,
+"end": 60.183,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 60.183,
+"end": 60.313,
+"src": "fa"
+},
+{
+"word": "connect",
+"start": 60.313,
+"end": 60.703,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 60.703,
+"end": 60.733,
+"src": "fa"
+},
+{
+"word": "strategy",
+"start": 60.733,
+"end": 61.393,
+"src": "fa"
+},
+{
+"word": "through",
+"start": 61.393,
+"end": 61.723,
+"src": "fa"
+},
+{
+"word": "CopyX.",
+"start": 61.723,
+"end": 62.393,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 62.756,
+"end": 62.816,
+"src": "fa"
+},
+{
+"word": "main",
+"start": 62.816,
+"end": 63.046,
+"src": "fa"
+},
+{
+"word": "one,",
+"start": 63.046,
+"end": 63.296,
+"src": "fa"
+},
+{
+"word": "Sonic",
+"start": 63.586,
+"end": 64.056,
+"src": "fa"
+},
+{
+"word": "AI,",
+"start": 64.056,
+"end": 64.536,
+"src": "fa"
+},
+{
+"word": "trades",
+"start": 64.736,
+"end": 65.016,
+"src": "fa"
+},
+{
+"word": "gold,",
+"start": 65.016,
+"end": 65.426,
+"src": "fa"
+},
+{
+"word": "shown",
+"start": 65.666,
+"end": 65.956,
+"src": "fa"
+},
+{
+"word": "as",
+"start": 65.956,
+"end": 66.266,
+"src": "fa"
+},
+{
+"word": "X",
+"start": 66.476,
+"end": 66.756,
+"src": "fa"
+},
+{
+"word": "A",
+"start": 66.756,
+"end": 66.896,
+"src": "fa"
+},
+{
+"word": "U,",
+"start": 66.896,
+"end": 67.226,
+"src": "fa"
+},
+{
+"word": "U",
+"start": 67.448,
+"end": 67.728,
+"src": "fa"
+},
+{
+"word": "S",
+"start": 67.728,
+"end": 68.028,
+"src": "fa"
+},
+{
+"word": "D.",
+"start": 68.028,
+"end": 68.237,
+"src": "fa"
+},
+{
+"word": "That's",
+"start": 68.599,
+"end": 68.778,
+"src": "fa"
+},
+{
+"word": "gold,",
+"start": 68.778,
+"end": 69.168,
+"src": "fa"
+},
+{
+"word": "priced",
+"start": 69.358,
+"end": 69.998,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 69.998,
+"end": 70.168,
+"src": "fa"
+},
+{
+"word": "US",
+"start": 70.168,
+"end": 70.668,
+"src": "fa"
+},
+{
+"word": "dollars.",
+"start": 70.668,
+"end": 71.228,
+"src": "fa"
+},
+{
+"word": "When",
+"start": 71.763,
+"end": 71.913,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 71.913,
+"end": 71.983,
+"src": "fa"
+},
+{
+"word": "strategy",
+"start": 71.983,
+"end": 72.503,
+"src": "fa"
+},
+{
+"word": "makes",
+"start": 72.503,
+"end": 72.833,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 72.833,
+"end": 72.893,
+"src": "fa"
+},
+{
+"word": "profit,",
+"start": 72.893,
+"end": 73.393,
+"src": "fa"
+},
+{
+"word": "seventy",
+"start": 73.693,
+"end": 74.183,
+"src": "fa"
+},
+{
+"word": "percent",
+"start": 74.183,
+"end": 74.653,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 74.653,
+"end": 74.783,
+"src": "fa"
+},
+{
+"word": "yours.",
+"start": 74.783,
+"end": 75.183,
+"src": "fa"
+},
+{
+"word": "Thirty",
+"start": 75.579,
+"end": 75.84,
+"src": "fa"
+},
+{
+"word": "percent",
+"start": 75.84,
+"end": 76.37,
+"src": "fa"
+},
+{
+"word": "pays",
+"start": 76.37,
+"end": 76.659,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 76.659,
+"end": 76.749,
+"src": "fa"
+},
+{
+"word": "broker,",
+"start": 76.749,
+"end": 77.159,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 77.159,
+"end": 77.519,
+"src": "fa"
+},
+{
+"word": "strategy",
+"start": 77.519,
+"end": 78.049,
+"src": "fa"
+},
+{
+"word": "provider,",
+"start": 78.049,
+"end": 78.599,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 78.599,
+"end": 79.07,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 79.07,
+"end": 79.139,
+"src": "fa"
+},
+{
+"word": "partner",
+"start": 79.139,
+"end": 79.529,
+"src": "fa"
+},
+{
+"word": "program.",
+"start": 79.529,
+"end": 80.01,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 80.477,
+"end": 80.647,
+"src": "fa"
+},
+{
+"word": "if",
+"start": 80.647,
+"end": 80.807,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 80.807,
+"end": 80.917,
+"src": "fa"
+},
+{
+"word": "strategy",
+"start": 80.917,
+"end": 81.437,
+"src": "fa"
+},
+{
+"word": "makes",
+"start": 81.437,
+"end": 81.777,
+"src": "fa"
+},
+{
+"word": "ten",
+"start": 81.777,
+"end": 82.037,
+"src": "fa"
+},
+{
+"word": "dollars,",
+"start": 82.037,
+"end": 82.517,
+"src": "fa"
+},
+{
+"word": "seven",
+"start": 82.717,
+"end": 83.127,
+"src": "fa"
+},
+{
+"word": "dollars",
+"start": 83.127,
+"end": 83.547,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 83.547,
+"end": 83.717,
+"src": "fa"
+},
+{
+"word": "yours.",
+"start": 83.717,
+"end": 84.087,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 84.738,
+"end": 84.878,
+"src": "fa"
+},
+{
+"word": "if",
+"start": 84.878,
+"end": 84.998,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 84.998,
+"end": 85.118,
+"src": "fa"
+},
+{
+"word": "makes",
+"start": 85.118,
+"end": 85.378,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 85.378,
+"end": 85.448,
+"src": "fa"
+},
+{
+"word": "loss,",
+"start": 85.448,
+"end": 85.858,
+"src": "fa"
+},
+{
+"word": "nobody",
+"start": 86.038,
+"end": 86.478,
+"src": "fa"
+},
+{
+"word": "charges",
+"start": 86.478,
+"end": 86.908,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 86.908,
+"end": 87.018,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 87.018,
+"end": 87.068,
+"src": "fa"
+},
+{
+"word": "performance",
+"start": 87.068,
+"end": 87.628,
+"src": "fa"
+},
+{
+"word": "fee",
+"start": 87.628,
+"end": 87.818,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 87.818,
+"end": 88.018,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 88.018,
+"end": 88.228,
+"src": "fa"
+},
+{
+"word": "loss.",
+"start": 88.228,
+"end": 88.588,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 89.504,
+"end": 89.794,
+"src": "fa"
+},
+{
+"word": "one.",
+"start": 89.794,
+"end": 90.104,
+"src": "fa"
+},
+{
+"word": "Who",
+"start": 90.541,
+"end": 90.731,
+"src": "fa"
+},
+{
+"word": "holds",
+"start": 90.731,
+"end": 90.971,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 90.971,
+"end": 91.131,
+"src": "fa"
+},
+{
+"word": "money?",
+"start": 91.131,
+"end": 91.491,
+"src": "fa"
+},
+{
+"word": "Your",
+"start": 91.962,
+"end": 92.102,
+"src": "fa"
+},
+{
+"word": "deposit",
+"start": 92.102,
+"end": 92.572,
+"src": "fa"
+},
+{
+"word": "goes",
+"start": 92.572,
+"end": 92.852,
+"src": "fa"
+},
+{
+"word": "into",
+"start": 92.852,
+"end": 93.082,
+"src": "fa"
+},
+{
+"word": "an",
+"start": 93.082,
+"end": 93.192,
+"src": "fa"
+},
+{
+"word": "M",
+"start": 93.192,
+"end": 93.432,
+"src": "fa"
+},
+{
+"word": "T",
+"start": 93.432,
+"end": 93.662,
+"src": "fa"
+},
+{
+"word": "five",
+"start": 93.662,
+"end": 93.962,
+"src": "fa"
+},
+{
+"word": "account",
+"start": 93.962,
+"end": 94.372,
+"src": "fa"
+},
+{
+"word": "at",
+"start": 94.372,
+"end": 94.492,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 94.492,
+"end": 94.742,
+"src": "fa"
+},
+{
+"word": "Markets,",
+"start": 94.742,
+"end": 95.312,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 95.457,
+"end": 95.657,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 95.657,
+"end": 95.817,
+"src": "fa"
+},
+{
+"word": "name.",
+"start": 95.817,
+"end": 96.157,
+"src": "fa"
+},
+{
+"word": "M",
+"start": 96.953,
+"end": 97.143,
+"src": "fa"
+},
+{
+"word": "T",
+"start": 97.143,
+"end": 97.343,
+"src": "fa"
+},
+{
+"word": "five",
+"start": 97.343,
+"end": 97.763,
+"src": "fa"
+},
+{
+"word": "means",
+"start": 97.763,
+"end": 98.043,
+"src": "fa"
+},
+{
+"word": "MetaTrader",
+"start": 98.043,
+"end": 98.643,
+"src": "fa"
+},
+{
+"word": "five,",
+"start": 98.643,
+"end": 99.103,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 99.383,
+"end": 99.463,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 99.463,
+"end": 99.933,
+"src": "fa"
+},
+{
+"word": "app",
+"start": 99.933,
+"end": 100.183,
+"src": "fa"
+},
+{
+"word": "many",
+"start": 100.183,
+"end": 100.444,
+"src": "fa"
+},
+{
+"word": "brokers",
+"start": 100.444,
+"end": 100.944,
+"src": "fa"
+},
+{
+"word": "use.",
+"start": 100.944,
+"end": 101.334,
+"src": "fa"
+},
+{
+"word": "Don't",
+"start": 101.812,
+"end": 102.002,
+"src": "fa"
+},
+{
+"word": "take",
+"start": 102.002,
+"end": 102.202,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 102.202,
+"end": 102.302,
+"src": "fa"
+},
+{
+"word": "word",
+"start": 102.302,
+"end": 102.572,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 102.572,
+"end": 102.832,
+"src": "fa"
+},
+{
+"word": "it.",
+"start": 102.832,
+"end": 102.922,
+"src": "fa"
+},
+{
+"word": "Log",
+"start": 103.392,
+"end": 103.662,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 103.662,
+"end": 103.772,
+"src": "fa"
+},
+{
+"word": "yourself,",
+"start": 103.772,
+"end": 104.332,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 104.522,
+"end": 104.642,
+"src": "fa"
+},
+{
+"word": "see",
+"start": 104.642,
+"end": 104.832,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 104.832,
+"end": 104.992,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 104.992,
+"end": 105.242,
+"src": "fa"
+},
+{
+"word": "balance.",
+"start": 105.242,
+"end": 105.832,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 106.587,
+"end": 106.997,
+"src": "fa"
+},
+{
+"word": "two.",
+"start": 106.997,
+"end": 107.327,
+"src": "fa"
+},
+{
+"word": "Who",
+"start": 107.724,
+"end": 107.954,
+"src": "fa"
+},
+{
+"word": "regulates",
+"start": 107.954,
+"end": 108.514,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 108.514,
+"end": 108.603,
+"src": "fa"
+},
+{
+"word": "broker?",
+"start": 108.603,
+"end": 109.044,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 109.746,
+"end": 109.996,
+"src": "fa"
+},
+{
+"word": "Markets'",
+"start": 109.996,
+"end": 110.406,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 110.406,
+"end": 110.736,
+"src": "fa"
+},
+{
+"word": "company,",
+"start": 110.736,
+"end": 111.336,
+"src": "fa"
+},
+{
+"word": "T",
+"start": 111.516,
+"end": 111.696,
+"src": "fa"
+},
+{
+"word": "M",
+"start": 111.696,
+"end": 111.846,
+"src": "fa"
+},
+{
+"word": "Financials,",
+"start": 111.846,
+"end": 112.486,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 112.716,
+"end": 112.776,
+"src": "fa"
+},
+{
+"word": "licensed",
+"start": 112.776,
+"end": 113.286,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 113.286,
+"end": 113.386,
+"src": "fa"
+},
+{
+"word": "Mauritius",
+"start": 113.386,
+"end": 113.836,
+"src": "fa"
+},
+{
+"word": "by",
+"start": 113.836,
+"end": 113.976,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 113.976,
+"end": 114.106,
+"src": "fa"
+},
+{
+"word": "F",
+"start": 114.106,
+"end": 114.376,
+"src": "fa"
+},
+{
+"word": "S",
+"start": 114.376,
+"end": 114.576,
+"src": "fa"
+},
+{
+"word": "C,",
+"start": 114.576,
+"end": 114.806,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 114.915,
+"end": 115.075,
+"src": "fa"
+},
+{
+"word": "Financial",
+"start": 115.075,
+"end": 115.475,
+"src": "fa"
+},
+{
+"word": "Services",
+"start": 115.475,
+"end": 115.935,
+"src": "fa"
+},
+{
+"word": "Commission.",
+"start": 115.935,
+"end": 116.425,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 117.028,
+"end": 117.328,
+"src": "fa"
+},
+{
+"word": "also",
+"start": 117.328,
+"end": 117.698,
+"src": "fa"
+},
+{
+"word": "has",
+"start": 117.698,
+"end": 117.888,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 117.888,
+"end": 117.928,
+"src": "fa"
+},
+{
+"word": "South",
+"start": 117.928,
+"end": 118.157,
+"src": "fa"
+},
+{
+"word": "African",
+"start": 118.157,
+"end": 118.528,
+"src": "fa"
+},
+{
+"word": "company,",
+"start": 118.528,
+"end": 119.118,
+"src": "fa"
+},
+{
+"word": "authorised",
+"start": 119.368,
+"end": 119.987,
+"src": "fa"
+},
+{
+"word": "by",
+"start": 119.987,
+"end": 120.138,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 120.138,
+"end": 120.248,
+"src": "fa"
+},
+{
+"word": "F",
+"start": 120.248,
+"end": 120.538,
+"src": "fa"
+},
+{
+"word": "S",
+"start": 120.538,
+"end": 120.698,
+"src": "fa"
+},
+{
+"word": "C",
+"start": 120.698,
+"end": 120.957,
+"src": "fa"
+},
+{
+"word": "A,",
+"start": 120.957,
+"end": 121.388,
+"src": "fa"
+},
+{
+"word": "our",
+"start": 121.393,
+"end": 121.583,
+"src": "fa"
+},
+{
+"word": "Financial",
+"start": 121.583,
+"end": 122.063,
+"src": "fa"
+},
+{
+"word": "Sector",
+"start": 122.063,
+"end": 122.373,
+"src": "fa"
+},
+{
+"word": "Conduct",
+"start": 122.373,
+"end": 122.823,
+"src": "fa"
+},
+{
+"word": "Authority,",
+"start": 122.823,
+"end": 123.513,
+"src": "fa"
+},
+{
+"word": "under",
+"start": 123.703,
+"end": 123.943,
+"src": "fa"
+},
+{
+"word": "F",
+"start": 123.943,
+"end": 124.183,
+"src": "fa"
+},
+{
+"word": "S",
+"start": 124.183,
+"end": 124.393,
+"src": "fa"
+},
+{
+"word": "P",
+"start": 124.393,
+"end": 124.643,
+"src": "fa"
+},
+{
+"word": "number",
+"start": 124.643,
+"end": 124.883,
+"src": "fa"
+},
+{
+"word": "five",
+"start": 124.883,
+"end": 125.203,
+"src": "fa"
+},
+{
+"word": "five,",
+"start": 125.203,
+"end": 125.613,
+"src": "fa"
+},
+{
+"word": "two",
+"start": 125.902,
+"end": 126.142,
+"src": "fa"
+},
+{
+"word": "three",
+"start": 126.142,
+"end": 126.352,
+"src": "fa"
+},
+{
+"word": "seven.",
+"start": 126.352,
+"end": 126.742,
+"src": "fa"
+},
+{
+"word": "You",
+"start": 127.183,
+"end": 127.272,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 127.272,
+"end": 127.453,
+"src": "fa"
+},
+{
+"word": "look",
+"start": 127.453,
+"end": 127.612,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 127.612,
+"end": 127.742,
+"src": "fa"
+},
+{
+"word": "up",
+"start": 127.742,
+"end": 127.892,
+"src": "fa"
+},
+{
+"word": "yourself.",
+"start": 127.892,
+"end": 128.422,
+"src": "fa"
+},
+{
+"word": "But",
+"start": 128.743,
+"end": 128.963,
+"src": "fa"
+},
+{
+"word": "read",
+"start": 128.963,
+"end": 129.103,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 129.103,
+"end": 129.183,
+"src": "fa"
+},
+{
+"word": "fine",
+"start": 129.183,
+"end": 129.503,
+"src": "fa"
+},
+{
+"word": "print.",
+"start": 129.503,
+"end": 129.883,
+"src": "fa"
+},
+{
+"word": "TAG's",
+"start": 130.523,
+"end": 130.883,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 130.883,
+"end": 131.073,
+"src": "fa"
+},
+{
+"word": "website",
+"start": 131.073,
+"end": 131.583,
+"src": "fa"
+},
+{
+"word": "says",
+"start": 131.583,
+"end": 131.893,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 131.893,
+"end": 131.973,
+"src": "fa"
+},
+{
+"word": "South",
+"start": 131.973,
+"end": 132.233,
+"src": "fa"
+},
+{
+"word": "African",
+"start": 132.233,
+"end": 132.653,
+"src": "fa"
+},
+{
+"word": "company",
+"start": 132.653,
+"end": 133.103,
+"src": "fa"
+},
+{
+"word": "provides",
+"start": 133.103,
+"end": 133.653,
+"src": "fa"
+},
+{
+"word": "marketing",
+"start": 133.653,
+"end": 134.133,
+"src": "fa"
+},
+{
+"word": "services,",
+"start": 134.133,
+"end": 134.823,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 134.976,
+"end": 135.316,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 135.316,
+"end": 135.486,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 135.486,
+"end": 135.876,
+"src": "fa"
+},
+{
+"word": "accounts",
+"start": 135.876,
+"end": 136.346,
+"src": "fa"
+},
+{
+"word": "are",
+"start": 136.346,
+"end": 136.506,
+"src": "fa"
+},
+{
+"word": "held",
+"start": 136.506,
+"end": 136.856,
+"src": "fa"
+},
+{
+"word": "by",
+"start": 136.856,
+"end": 137.016,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 137.016,
+"end": 137.136,
+"src": "fa"
+},
+{
+"word": "Mauritius",
+"start": 137.136,
+"end": 137.706,
+"src": "fa"
+},
+{
+"word": "company.",
+"start": 137.706,
+"end": 138.226,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 138.654,
+"end": 138.804,
+"src": "fa"
+},
+{
+"word": "know",
+"start": 138.804,
+"end": 139.024,
+"src": "fa"
+},
+{
+"word": "which",
+"start": 139.024,
+"end": 139.254,
+"src": "fa"
+},
+{
+"word": "regulator",
+"start": 139.254,
+"end": 139.754,
+"src": "fa"
+},
+{
+"word": "covers",
+"start": 139.754,
+"end": 140.134,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 140.134,
+"end": 140.324,
+"src": "fa"
+},
+{
+"word": "account.",
+"start": 140.324,
+"end": 140.804,
+"src": "fa"
+},
+{
+"word": "Also",
+"start": 141.192,
+"end": 141.482,
+"src": "fa"
+},
+{
+"word": "know",
+"start": 141.482,
+"end": 141.682,
+"src": "fa"
+},
+{
+"word": "this.",
+"start": 141.682,
+"end": 142.062,
+"src": "fa"
+},
+{
+"word": "Regulators",
+"start": 142.744,
+"end": 143.354,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 143.354,
+"end": 143.474,
+"src": "fa"
+},
+{
+"word": "Austria,",
+"start": 143.474,
+"end": 144.074,
+"src": "fa"
+},
+{
+"word": "Luxembourg,",
+"start": 144.314,
+"end": 145.244,
+"src": "fa"
+},
+{
+"word": "Slovenia,",
+"start": 145.454,
+"end": 146.214,
+"src": "fa"
+},
+{
+"word": "Russia,",
+"start": 146.434,
+"end": 146.944,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 146.944,
+"end": 147.364,
+"src": "fa"
+},
+{
+"word": "Quebec",
+"start": 147.364,
+"end": 147.964,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 147.964,
+"end": 148.114,
+"src": "fa"
+},
+{
+"word": "Canada",
+"start": 148.114,
+"end": 148.714,
+"src": "fa"
+},
+{
+"word": "have",
+"start": 149.054,
+"end": 149.284,
+"src": "fa"
+},
+{
+"word": "published",
+"start": 149.284,
+"end": 149.734,
+"src": "fa"
+},
+{
+"word": "warnings",
+"start": 149.734,
+"end": 150.144,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 150.144,
+"end": 150.374,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 150.374,
+"end": 150.614,
+"src": "fa"
+},
+{
+"word": "Markets",
+"start": 150.614,
+"end": 151.134,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 151.134,
+"end": 151.304,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 151.304,
+"end": 151.484,
+"src": "fa"
+},
+{
+"word": "authorised",
+"start": 151.484,
+"end": 151.974,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 151.974,
+"end": 152.114,
+"src": "fa"
+},
+{
+"word": "their",
+"start": 152.114,
+"end": 152.244,
+"src": "fa"
+},
+{
+"word": "countries.",
+"start": 152.244,
+"end": 152.914,
+"src": "fa"
+},
+{
+"word": "I'm",
+"start": 153.275,
+"end": 153.415,
+"src": "fa"
+},
+{
+"word": "telling",
+"start": 153.415,
+"end": 153.715,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 153.715,
+"end": 153.845,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 153.845,
+"end": 154.055,
+"src": "fa"
+},
+{
+"word": "because",
+"start": 154.055,
+"end": 154.425,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 154.425,
+"end": 154.545,
+"src": "fa"
+},
+{
+"word": "deserve",
+"start": 154.545,
+"end": 154.895,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 154.895,
+"end": 154.975,
+"src": "fa"
+},
+{
+"word": "whole",
+"start": 154.975,
+"end": 155.165,
+"src": "fa"
+},
+{
+"word": "picture.",
+"start": 155.165,
+"end": 155.675,
+"src": "fa"
+},
+{
+"word": "Search",
+"start": 156.398,
+"end": 156.768,
+"src": "fa"
+},
+{
+"word": "TAG",
+"start": 156.768,
+"end": 157.028,
+"src": "fa"
+},
+{
+"word": "Markets",
+"start": 157.028,
+"end": 157.488,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 157.488,
+"end": 157.588,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 157.588,
+"end": 157.658,
+"src": "fa"
+},
+{
+"word": "global",
+"start": 157.658,
+"end": 158.118,
+"src": "fa"
+},
+{
+"word": "regulator",
+"start": 158.118,
+"end": 158.668,
+"src": "fa"
+},
+{
+"word": "warning",
+"start": 158.668,
+"end": 159.028,
+"src": "fa"
+},
+{
+"word": "list.",
+"start": 159.028,
+"end": 159.388,
+"src": "fa"
+},
+{
+"word": "I've",
+"start": 159.779,
+"end": 159.918,
+"src": "fa"
+},
+{
+"word": "put",
+"start": 159.918,
+"end": 160.108,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 160.108,
+"end": 160.179,
+"src": "fa"
+},
+{
+"word": "link",
+"start": 160.179,
+"end": 160.459,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 160.459,
+"end": 160.569,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 160.569,
+"end": 160.709,
+"src": "fa"
+},
+{
+"word": "page.",
+"start": 160.709,
+"end": 161.258,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 162.109,
+"end": 162.419,
+"src": "fa"
+},
+{
+"word": "three.",
+"start": 162.419,
+"end": 162.779,
+"src": "fa"
+},
+{
+"word": "Are",
+"start": 163.252,
+"end": 163.352,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 163.352,
+"end": 163.452,
+"src": "fa"
+},
+{
+"word": "results",
+"start": 163.452,
+"end": 163.882,
+"src": "fa"
+},
+{
+"word": "real?",
+"start": 163.882,
+"end": 164.282,
+"src": "fa"
+},
+{
+"word": "Sonic",
+"start": 164.707,
+"end": 165.167,
+"src": "fa"
+},
+{
+"word": "AI",
+"start": 165.167,
+"end": 165.527,
+"src": "fa"
+},
+{
+"word": "publishes",
+"start": 165.527,
+"end": 166.127,
+"src": "fa"
+},
+{
+"word": "its",
+"start": 166.127,
+"end": 166.277,
+"src": "fa"
+},
+{
+"word": "track",
+"start": 166.277,
+"end": 166.587,
+"src": "fa"
+},
+{
+"word": "record",
+"start": 166.587,
+"end": 167.007,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 167.007,
+"end": 167.157,
+"src": "fa"
+},
+{
+"word": "My",
+"start": 167.157,
+"end": 167.427,
+"src": "fa"
+},
+{
+"word": "F",
+"start": 167.427,
+"end": 167.747,
+"src": "fa"
+},
+{
+"word": "X",
+"start": 167.747,
+"end": 167.997,
+"src": "fa"
+},
+{
+"word": "Book,",
+"start": 167.997,
+"end": 168.417,
+"src": "fa"
+},
+{
+"word": "so",
+"start": 168.516,
+"end": 168.656,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 168.656,
+"end": 168.806,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 168.806,
+"end": 168.966,
+"src": "fa"
+},
+{
+"word": "look",
+"start": 168.966,
+"end": 169.216,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 169.216,
+"end": 169.506,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 169.506,
+"end": 169.626,
+"src": "fa"
+},
+{
+"word": "deposit.",
+"start": 169.626,
+"end": 170.336,
+"src": "fa"
+},
+{
+"word": "It",
+"start": 170.634,
+"end": 170.754,
+"src": "fa"
+},
+{
+"word": "shows",
+"start": 170.754,
+"end": 171.144,
+"src": "fa"
+},
+{
+"word": "plus",
+"start": 171.144,
+"end": 171.424,
+"src": "fa"
+},
+{
+"word": "thirty",
+"start": 171.424,
+"end": 171.824,
+"src": "fa"
+},
+{
+"word": "point",
+"start": 171.824,
+"end": 172.224,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 172.224,
+"end": 172.424,
+"src": "fa"
+},
+{
+"word": "percent,",
+"start": 172.424,
+"end": 172.984,
+"src": "fa"
+},
+{
+"word": "from",
+"start": 173.174,
+"end": 173.394,
+"src": "fa"
+},
+{
+"word": "November",
+"start": 173.394,
+"end": 173.864,
+"src": "fa"
+},
+{
+"word": "twenty",
+"start": 173.864,
+"end": 174.214,
+"src": "fa"
+},
+{
+"word": "twenty-four",
+"start": 174.214,
+"end": 174.834,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 174.834,
+"end": 174.984,
+"src": "fa"
+},
+{
+"word": "October",
+"start": 174.984,
+"end": 175.434,
+"src": "fa"
+},
+{
+"word": "twenty",
+"start": 175.434,
+"end": 175.764,
+"src": "fa"
+},
+{
+"word": "twenty-six.",
+"start": 175.764,
+"end": 176.594,
+"src": "fa"
+},
+{
+"word": "That's",
+"start": 177.225,
+"end": 177.415,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 177.415,
+"end": 177.715,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 177.715,
+"end": 177.825,
+"src": "fa"
+},
+{
+"word": "seventy",
+"start": 177.825,
+"end": 178.245,
+"src": "fa"
+},
+{
+"word": "thirty",
+"start": 178.245,
+"end": 178.605,
+"src": "fa"
+},
+{
+"word": "split.",
+"start": 178.605,
+"end": 179.055,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 179.474,
+"end": 179.714,
+"src": "fa"
+},
+{
+"word": "thirty",
+"start": 179.714,
+"end": 180.094,
+"src": "fa"
+},
+{
+"word": "point",
+"start": 180.094,
+"end": 180.444,
+"src": "fa"
+},
+{
+"word": "one,",
+"start": 180.444,
+"end": 180.684,
+"src": "fa"
+},
+{
+"word": "times",
+"start": 180.944,
+"end": 181.144,
+"src": "fa"
+},
+{
+"word": "seventy",
+"start": 181.144,
+"end": 181.575,
+"src": "fa"
+},
+{
+"word": "percent,",
+"start": 181.575,
+"end": 182.174,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 182.444,
+"end": 182.524,
+"src": "fa"
+},
+{
+"word": "about",
+"start": 182.524,
+"end": 182.764,
+"src": "fa"
+},
+{
+"word": "twenty-one",
+"start": 182.764,
+"end": 183.234,
+"src": "fa"
+},
+{
+"word": "percent",
+"start": 183.234,
+"end": 183.644,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 183.644,
+"end": 183.754,
+"src": "fa"
+},
+{
+"word": "you,",
+"start": 183.754,
+"end": 184.094,
+"src": "fa"
+},
+{
+"word": "over",
+"start": 184.315,
+"end": 184.555,
+"src": "fa"
+},
+{
+"word": "about",
+"start": 184.555,
+"end": 184.805,
+"src": "fa"
+},
+{
+"word": "twenty-three",
+"start": 184.805,
+"end": 185.365,
+"src": "fa"
+},
+{
+"word": "months,",
+"start": 185.365,
+"end": 185.815,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 185.975,
+"end": 186.325,
+"src": "fa"
+},
+{
+"word": "fees.",
+"start": 186.325,
+"end": 186.865,
+"src": "fa"
+},
+{
+"word": "Not",
+"start": 187.255,
+"end": 187.514,
+"src": "fa"
+},
+{
+"word": "forty",
+"start": 187.514,
+"end": 187.845,
+"src": "fa"
+},
+{
+"word": "percent",
+"start": 187.845,
+"end": 188.294,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 188.294,
+"end": 188.365,
+"src": "fa"
+},
+{
+"word": "month.",
+"start": 188.365,
+"end": 188.915,
+"src": "fa"
+},
+{
+"word": "Not",
+"start": 189.291,
+"end": 189.53,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 189.53,
+"end": 189.56,
+"src": "fa"
+},
+{
+"word": "fixed",
+"start": 189.56,
+"end": 189.9,
+"src": "fa"
+},
+{
+"word": "return.",
+"start": 189.9,
+"end": 190.331,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 190.906,
+"end": 191.036,
+"src": "fa"
+},
+{
+"word": "past",
+"start": 191.036,
+"end": 191.306,
+"src": "fa"
+},
+{
+"word": "results",
+"start": 191.306,
+"end": 191.676,
+"src": "fa"
+},
+{
+"word": "never",
+"start": 191.676,
+"end": 191.906,
+"src": "fa"
+},
+{
+"word": "guarantee",
+"start": 191.906,
+"end": 192.336,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 192.336,
+"end": 192.416,
+"src": "fa"
+},
+{
+"word": "future.",
+"start": 192.416,
+"end": 192.866,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 193.86,
+"end": 194.17,
+"src": "fa"
+},
+{
+"word": "four.",
+"start": 194.17,
+"end": 194.59,
+"src": "fa"
+},
+{
+"word": "What",
+"start": 195.044,
+"end": 195.214,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 195.214,
+"end": 195.415,
+"src": "fa"
+},
+{
+"word": "go",
+"start": 195.415,
+"end": 195.624,
+"src": "fa"
+},
+{
+"word": "wrong?",
+"start": 195.624,
+"end": 196.014,
+"src": "fa"
+},
+{
+"word": "This",
+"start": 196.45,
+"end": 196.71,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 196.71,
+"end": 196.84,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 196.84,
+"end": 196.92,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 196.92,
+"end": 197.28,
+"src": "fa"
+},
+{
+"word": "most",
+"start": 197.28,
+"end": 197.65,
+"src": "fa"
+},
+{
+"word": "people",
+"start": 197.65,
+"end": 197.99,
+"src": "fa"
+},
+{
+"word": "skip.",
+"start": 197.99,
+"end": 198.35,
+"src": "fa"
+},
+{
+"word": "JetUP's",
+"start": 198.83,
+"end": 199.3,
+"src": "fa"
+},
+{
+"word": "latest",
+"start": 199.3,
+"end": 199.68,
+"src": "fa"
+},
+{
+"word": "start",
+"start": 199.68,
+"end": 199.97,
+"src": "fa"
+},
+{
+"word": "promo",
+"start": 199.97,
+"end": 200.26,
+"src": "fa"
+},
+{
+"word": "works",
+"start": 200.26,
+"end": 200.58,
+"src": "fa"
+},
+{
+"word": "like",
+"start": 200.58,
+"end": 200.8,
+"src": "fa"
+},
+{
+"word": "this.",
+"start": 200.8,
+"end": 201.15,
+"src": "fa"
+},
+{
+"word": "You",
+"start": 201.534,
+"end": 201.704,
+"src": "fa"
+},
+{
+"word": "put",
+"start": 201.704,
+"end": 201.914,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 201.914,
+"end": 202.034,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 202.034,
+"end": 202.204,
+"src": "fa"
+},
+{
+"word": "hundred",
+"start": 202.204,
+"end": 202.554,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 202.554,
+"end": 202.664,
+"src": "fa"
+},
+{
+"word": "fifty",
+"start": 202.664,
+"end": 202.994,
+"src": "fa"
+},
+{
+"word": "dollars.",
+"start": 202.994,
+"end": 203.484,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 203.847,
+"end": 203.947,
+"src": "fa"
+},
+{
+"word": "promo",
+"start": 203.947,
+"end": 204.357,
+"src": "fa"
+},
+{
+"word": "adds",
+"start": 204.357,
+"end": 204.647,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 204.647,
+"end": 204.807,
+"src": "fa"
+},
+{
+"word": "hundred.",
+"start": 204.807,
+"end": 205.207,
+"src": "fa"
+},
+{
+"word": "That's",
+"start": 205.767,
+"end": 206.007,
+"src": "fa"
+},
+{
+"word": "two",
+"start": 206.007,
+"end": 206.197,
+"src": "fa"
+},
+{
+"word": "hundred",
+"start": 206.197,
+"end": 206.477,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 206.477,
+"end": 206.597,
+"src": "fa"
+},
+{
+"word": "fifty",
+"start": 206.597,
+"end": 206.907,
+"src": "fa"
+},
+{
+"word": "dollars.",
+"start": 206.907,
+"end": 207.417,
+"src": "fa"
+},
+{
+"word": "Amplify",
+"start": 207.778,
+"end": 208.298,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 208.298,
+"end": 208.468,
+"src": "fa"
+},
+{
+"word": "twenty-four",
+"start": 208.468,
+"end": 208.958,
+"src": "fa"
+},
+{
+"word": "times,",
+"start": 208.958,
+"end": 209.458,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 209.658,
+"end": 209.758,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 209.758,
+"end": 209.848,
+"src": "fa"
+},
+{
+"word": "trades",
+"start": 209.848,
+"end": 210.188,
+"src": "fa"
+},
+{
+"word": "like",
+"start": 210.188,
+"end": 210.408,
+"src": "fa"
+},
+{
+"word": "six",
+"start": 210.408,
+"end": 210.758,
+"src": "fa"
+},
+{
+"word": "thousand",
+"start": 210.758,
+"end": 211.148,
+"src": "fa"
+},
+{
+"word": "dollars.",
+"start": 211.148,
+"end": 211.628,
+"src": "fa"
+},
+{
+"word": "That's",
+"start": 211.984,
+"end": 212.234,
+"src": "fa"
+},
+{
+"word": "exposure,",
+"start": 212.234,
+"end": 212.784,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 213.154,
+"end": 213.364,
+"src": "fa"
+},
+{
+"word": "money",
+"start": 213.364,
+"end": 213.584,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 213.584,
+"end": 213.794,
+"src": "fa"
+},
+{
+"word": "own.",
+"start": 213.794,
+"end": 214.154,
+"src": "fa"
+},
+{
+"word": "Bigger",
+"start": 214.522,
+"end": 214.782,
+"src": "fa"
+},
+{
+"word": "exposure",
+"start": 214.782,
+"end": 215.352,
+"src": "fa"
+},
+{
+"word": "means",
+"start": 215.352,
+"end": 215.612,
+"src": "fa"
+},
+{
+"word": "bigger",
+"start": 215.612,
+"end": 215.822,
+"src": "fa"
+},
+{
+"word": "swings,",
+"start": 215.822,
+"end": 216.412,
+"src": "fa"
+},
+{
+"word": "up",
+"start": 216.582,
+"end": 216.782,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 216.782,
+"end": 216.902,
+"src": "fa"
+},
+{
+"word": "down.",
+"start": 216.902,
+"end": 217.252,
+"src": "fa"
+},
+{
+"word": "You",
+"start": 217.952,
+"end": 218.052,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 218.052,
+"end": 218.212,
+"src": "fa"
+},
+{
+"word": "lose",
+"start": 218.212,
+"end": 218.442,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 218.442,
+"end": 218.572,
+"src": "fa"
+},
+{
+"word": "whole",
+"start": 218.572,
+"end": 218.762,
+"src": "fa"
+},
+{
+"word": "deposit.",
+"start": 218.762,
+"end": 219.192,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 219.701,
+"end": 219.851,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 219.851,
+"end": 219.911,
+"src": "fa"
+},
+{
+"word": "broker's",
+"start": 219.911,
+"end": 220.401,
+"src": "fa"
+},
+{
+"word": "insolvency",
+"start": 220.401,
+"end": 221.071,
+"src": "fa"
+},
+{
+"word": "cover",
+"start": 221.071,
+"end": 221.522,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 221.552,
+"end": 221.791,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 221.791,
+"end": 222.041,
+"src": "fa"
+},
+{
+"word": "million",
+"start": 222.041,
+"end": 222.431,
+"src": "fa"
+},
+{
+"word": "dollars",
+"start": 222.431,
+"end": 222.772,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 222.772,
+"end": 222.881,
+"src": "fa"
+},
+{
+"word": "total,",
+"start": 222.881,
+"end": 223.242,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 223.476,
+"end": 223.856,
+"src": "fa"
+},
+{
+"word": "all",
+"start": 223.946,
+"end": 224.136,
+"src": "fa"
+},
+{
+"word": "clients",
+"start": 224.136,
+"end": 224.495,
+"src": "fa"
+},
+{
+"word": "together,",
+"start": 224.495,
+"end": 224.956,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 225.145,
+"end": 225.356,
+"src": "fa"
+},
+{
+"word": "per",
+"start": 225.356,
+"end": 225.476,
+"src": "fa"
+},
+{
+"word": "person.",
+"start": 225.476,
+"end": 225.886,
+"src": "fa"
+},
+{
+"word": "Trading",
+"start": 226.314,
+"end": 226.664,
+"src": "fa"
+},
+{
+"word": "losses",
+"start": 226.664,
+"end": 227.134,
+"src": "fa"
+},
+{
+"word": "are",
+"start": 227.134,
+"end": 227.244,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 227.244,
+"end": 227.474,
+"src": "fa"
+},
+{
+"word": "covered.",
+"start": 227.474,
+"end": 227.894,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 228.743,
+"end": 228.982,
+"src": "fa"
+},
+{
+"word": "five.",
+"start": 228.982,
+"end": 229.322,
+"src": "fa"
+},
+{
+"word": "Can",
+"start": 229.745,
+"end": 229.925,
+"src": "fa"
+},
+{
+"word": "I",
+"start": 229.925,
+"end": 229.995,
+"src": "fa"
+},
+{
+"word": "get",
+"start": 229.995,
+"end": 230.155,
+"src": "fa"
+},
+{
+"word": "out?",
+"start": 230.155,
+"end": 230.455,
+"src": "fa"
+},
+{
+"word": "Profits",
+"start": 230.975,
+"end": 231.385,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 231.385,
+"end": 231.565,
+"src": "fa"
+},
+{
+"word": "be",
+"start": 231.565,
+"end": 231.675,
+"src": "fa"
+},
+{
+"word": "withdrawn",
+"start": 231.675,
+"end": 232.155,
+"src": "fa"
+},
+{
+"word": "any",
+"start": 232.155,
+"end": 232.355,
+"src": "fa"
+},
+{
+"word": "time.",
+"start": 232.355,
+"end": 232.665,
+"src": "fa"
+},
+{
+"word": "But",
+"start": 233.15,
+"end": 233.31,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 233.31,
+"end": 233.39,
+"src": "fa"
+},
+{
+"word": "promo",
+"start": 233.39,
+"end": 233.76,
+"src": "fa"
+},
+{
+"word": "has",
+"start": 233.76,
+"end": 233.99,
+"src": "fa"
+},
+{
+"word": "rules.",
+"start": 233.99,
+"end": 234.47,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 234.865,
+"end": 234.946,
+"src": "fa"
+},
+{
+"word": "bonus",
+"start": 234.946,
+"end": 235.326,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 235.326,
+"end": 235.456,
+"src": "fa"
+},
+{
+"word": "released",
+"start": 235.456,
+"end": 235.865,
+"src": "fa"
+},
+{
+"word": "after",
+"start": 235.865,
+"end": 236.166,
+"src": "fa"
+},
+{
+"word": "twelve",
+"start": 236.166,
+"end": 236.566,
+"src": "fa"
+},
+{
+"word": "months,",
+"start": 236.566,
+"end": 236.986,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 236.986,
+"end": 237.335,
+"src": "fa"
+},
+{
+"word": "taking",
+"start": 237.335,
+"end": 237.686,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 237.686,
+"end": 237.886,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 237.886,
+"end": 238.106,
+"src": "fa"
+},
+{
+"word": "money",
+"start": 238.106,
+"end": 238.376,
+"src": "fa"
+},
+{
+"word": "out",
+"start": 238.376,
+"end": 238.596,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 238.596,
+"end": 238.916,
+"src": "fa"
+},
+{
+"word": "then",
+"start": 238.916,
+"end": 239.085,
+"src": "fa"
+},
+{
+"word": "ends",
+"start": 239.085,
+"end": 239.436,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 239.436,
+"end": 239.506,
+"src": "fa"
+},
+{
+"word": "promo.",
+"start": 239.506,
+"end": 239.946,
+"src": "fa"
+},
+{
+"word": "Promo",
+"start": 240.401,
+"end": 240.761,
+"src": "fa"
+},
+{
+"word": "amounts",
+"start": 240.761,
+"end": 241.091,
+"src": "fa"
+},
+{
+"word": "change,",
+"start": 241.091,
+"end": 241.611,
+"src": "fa"
+},
+{
+"word": "so",
+"start": 241.901,
+"end": 242.041,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 242.041,
+"end": 242.311,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 242.311,
+"end": 242.381,
+"src": "fa"
+},
+{
+"word": "current",
+"start": 242.381,
+"end": 242.742,
+"src": "fa"
+},
+{
+"word": "rules",
+"start": 242.742,
+"end": 242.992,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 242.992,
+"end": 243.091,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 243.091,
+"end": 243.221,
+"src": "fa"
+},
+{
+"word": "dashboard",
+"start": 243.221,
+"end": 243.731,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 243.731,
+"end": 244.061,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 244.061,
+"end": 244.181,
+"src": "fa"
+},
+{
+"word": "start.",
+"start": 244.181,
+"end": 244.611,
+"src": "fa"
+},
+{
+"word": "My",
+"start": 245.495,
+"end": 245.665,
+"src": "fa"
+},
+{
+"word": "advice?",
+"start": 245.665,
+"end": 246.135,
+"src": "fa"
+},
+{
+"word": "Start",
+"start": 246.581,
+"end": 246.861,
+"src": "fa"
+},
+{
+"word": "small,",
+"start": 246.861,
+"end": 247.291,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 247.441,
+"end": 247.891,
+"src": "fa"
+},
+{
+"word": "do",
+"start": 248.031,
+"end": 248.181,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 248.181,
+"end": 248.221,
+"src": "fa"
+},
+{
+"word": "small",
+"start": 248.221,
+"end": 248.531,
+"src": "fa"
+},
+{
+"word": "withdrawal",
+"start": 248.531,
+"end": 249.131,
+"src": "fa"
+},
+{
+"word": "early.",
+"start": 249.131,
+"end": 249.461,
+"src": "fa"
+},
+{
+"word": "Let",
+"start": 249.88,
+"end": 250.049,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 250.049,
+"end": 250.119,
+"src": "fa"
+},
+{
+"word": "system",
+"start": 250.119,
+"end": 250.489,
+"src": "fa"
+},
+{
+"word": "prove",
+"start": 250.489,
+"end": 250.76,
+"src": "fa"
+},
+{
+"word": "itself",
+"start": 250.76,
+"end": 251.119,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 251.119,
+"end": 251.23,
+"src": "fa"
+},
+{
+"word": "you.",
+"start": 251.23,
+"end": 251.399,
+"src": "fa"
+},
+{
+"word": "So",
+"start": 252.191,
+"end": 252.361,
+"src": "fa"
+},
+{
+"word": "why",
+"start": 252.361,
+"end": 252.561,
+"src": "fa"
+},
+{
+"word": "would",
+"start": 252.561,
+"end": 252.771,
+"src": "fa"
+},
+{
+"word": "anyone",
+"start": 252.771,
+"end": 253.081,
+"src": "fa"
+},
+{
+"word": "still",
+"start": 253.081,
+"end": 253.361,
+"src": "fa"
+},
+{
+"word": "give",
+"start": 253.361,
+"end": 253.591,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 253.591,
+"end": 253.761,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 253.761,
+"end": 253.791,
+"src": "fa"
+},
+{
+"word": "shot?",
+"start": 253.791,
+"end": 254.241,
+"src": "fa"
+},
+{
+"word": "Because",
+"start": 254.512,
+"end": 254.862,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 254.862,
+"end": 254.962,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 254.962,
+"end": 255.122,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 255.122,
+"end": 255.372,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 255.372,
+"end": 255.672,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 255.672,
+"end": 255.792,
+"src": "fa"
+},
+{
+"word": "deposit.",
+"start": 255.792,
+"end": 256.252,
+"src": "fa"
+},
+{
+"word": "Because",
+"start": 256.733,
+"end": 257.013,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 257.013,
+"end": 257.133,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 257.133,
+"end": 257.263,
+"src": "fa"
+},
+{
+"word": "start",
+"start": 257.263,
+"end": 257.583,
+"src": "fa"
+},
+{
+"word": "small.",
+"start": 257.583,
+"end": 258.003,
+"src": "fa"
+},
+{
+"word": "Because",
+"start": 258.465,
+"end": 258.735,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 258.735,
+"end": 258.865,
+"src": "fa"
+},
+{
+"word": "account",
+"start": 258.865,
+"end": 259.225,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 259.225,
+"end": 259.325,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 259.325,
+"end": 259.425,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 259.425,
+"end": 259.545,
+"src": "fa"
+},
+{
+"word": "name.",
+"start": 259.545,
+"end": 259.895,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 260.387,
+"end": 260.727,
+"src": "fa"
+},
+{
+"word": "because",
+"start": 260.727,
+"end": 260.997,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 260.997,
+"end": 261.057,
+"src": "fa"
+},
+{
+"word": "company",
+"start": 261.057,
+"end": 261.437,
+"src": "fa"
+},
+{
+"word": "writes",
+"start": 261.437,
+"end": 261.767,
+"src": "fa"
+},
+{
+"word": "down,",
+"start": 261.767,
+"end": 262.207,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 262.387,
+"end": 262.497,
+"src": "fa"
+},
+{
+"word": "its",
+"start": 262.497,
+"end": 262.667,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 262.667,
+"end": 262.897,
+"src": "fa"
+},
+{
+"word": "risk",
+"start": 262.897,
+"end": 263.147,
+"src": "fa"
+},
+{
+"word": "warning,",
+"start": 263.147,
+"end": 263.647,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 263.774,
+"end": 263.964,
+"src": "fa"
+},
+{
+"word": "what",
+"start": 263.964,
+"end": 264.084,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 264.084,
+"end": 264.135,
+"src": "fa"
+},
+{
+"word": "partner",
+"start": 264.135,
+"end": 264.695,
+"src": "fa"
+},
+{
+"word": "earns",
+"start": 264.695,
+"end": 265.154,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 265.154,
+"end": 265.354,
+"src": "fa"
+},
+{
+"word": "be",
+"start": 265.354,
+"end": 265.494,
+"src": "fa"
+},
+{
+"word": "zero.",
+"start": 265.494,
+"end": 266.044,
+"src": "fa"
+},
+{
+"word": "That",
+"start": 266.434,
+"end": 266.614,
+"src": "fa"
+},
+{
+"word": "kind",
+"start": 266.614,
+"end": 266.854,
+"src": "fa"
+},
+{
+"word": "of",
+"start": 266.854,
+"end": 266.924,
+"src": "fa"
+},
+{
+"word": "honesty",
+"start": 266.924,
+"end": 267.334,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 267.334,
+"end": 267.464,
+"src": "fa"
+},
+{
+"word": "worth",
+"start": 267.464,
+"end": 267.704,
+"src": "fa"
+},
+{
+"word": "noticing.",
+"start": 267.704,
+"end": 268.234,
+"src": "fa"
+},
+{
+"word": "One",
+"start": 268.624,
+"end": 268.884,
+"src": "fa"
+},
+{
+"word": "more",
+"start": 268.884,
+"end": 269.134,
+"src": "fa"
+},
+{
+"word": "truth,",
+"start": 269.134,
+"end": 269.594,
+"src": "fa"
+},
+{
+"word": "from",
+"start": 269.784,
+"end": 270.044,
+"src": "fa"
+},
+{
+"word": "JetUP's",
+"start": 270.044,
+"end": 270.484,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 270.484,
+"end": 270.704,
+"src": "fa"
+},
+{
+"word": "founder.",
+"start": 270.704,
+"end": 271.204,
+"src": "fa"
+},
+{
+"word": "The",
+"start": 271.82,
+"end": 271.91,
+"src": "fa"
+},
+{
+"word": "big",
+"start": 271.91,
+"end": 272.09,
+"src": "fa"
+},
+{
+"word": "money",
+"start": 272.09,
+"end": 272.37,
+"src": "fa"
+},
+{
+"word": "comes",
+"start": 272.37,
+"end": 272.69,
+"src": "fa"
+},
+{
+"word": "from",
+"start": 272.69,
+"end": 272.86,
+"src": "fa"
+},
+{
+"word": "building",
+"start": 272.86,
+"end": 273.18,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 273.18,
+"end": 273.24,
+"src": "fa"
+},
+{
+"word": "team,",
+"start": 273.24,
+"end": 273.51,
+"src": "fa"
+},
+{
+"word": "not",
+"start": 273.81,
+"end": 274.05,
+"src": "fa"
+},
+{
+"word": "from",
+"start": 274.05,
+"end": 274.31,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 274.31,
+"end": 274.4,
+"src": "fa"
+},
+{
+"word": "trading",
+"start": 274.4,
+"end": 274.79,
+"src": "fa"
+},
+{
+"word": "percentage.",
+"start": 274.79,
+"end": 275.49,
+"src": "fa"
+},
+{
+"word": "Know",
+"start": 275.962,
+"end": 276.272,
+"src": "fa"
+},
+{
+"word": "that",
+"start": 276.272,
+"end": 276.482,
+"src": "fa"
+},
+{
+"word": "going",
+"start": 276.482,
+"end": 276.852,
+"src": "fa"
+},
+{
+"word": "in.",
+"start": 276.852,
+"end": 276.972,
+"src": "fa"
+},
+{
+"word": "If",
+"start": 277.887,
+"end": 278.037,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 278.037,
+"end": 278.167,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 278.167,
+"end": 278.507,
+"src": "fa"
+},
+{
+"word": "all",
+"start": 278.507,
+"end": 278.667,
+"src": "fa"
+},
+{
+"word": "five,",
+"start": 278.667,
+"end": 279.107,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 279.367,
+"end": 279.547,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 279.547,
+"end": 279.647,
+"src": "fa"
+},
+{
+"word": "still",
+"start": 279.647,
+"end": 279.907,
+"src": "fa"
+},
+{
+"word": "feels",
+"start": 279.907,
+"end": 280.257,
+"src": "fa"
+},
+{
+"word": "right,",
+"start": 280.257,
+"end": 280.747,
+"src": "fa"
+},
+{
+"word": "start",
+"start": 280.889,
+"end": 281.199,
+"src": "fa"
+},
+{
+"word": "small,",
+"start": 281.199,
+"end": 281.689,
+"src": "fa"
+},
+{
+"word": "with",
+"start": 281.889,
+"end": 282.059,
+"src": "fa"
+},
+{
+"word": "money",
+"start": 282.059,
+"end": 282.339,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 282.339,
+"end": 282.509,
+"src": "fa"
+},
+{
+"word": "can",
+"start": 282.509,
+"end": 282.699,
+"src": "fa"
+},
+{
+"word": "afford",
+"start": 282.699,
+"end": 283.059,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 283.059,
+"end": 283.189,
+"src": "fa"
+},
+{
+"word": "lose.",
+"start": 283.189,
+"end": 283.549,
+"src": "fa"
+},
+{
+"word": "Everything",
+"start": 284.126,
+"end": 284.496,
+"src": "fa"
+},
+{
+"word": "I",
+"start": 284.496,
+"end": 284.556,
+"src": "fa"
+},
+{
+"word": "showed",
+"start": 284.556,
+"end": 284.866,
+"src": "fa"
+},
+{
+"word": "you,",
+"start": 284.866,
+"end": 285.096,
+"src": "fa"
+},
+{
+"word": "plus",
+"start": 285.306,
+"end": 285.536,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 285.536,
+"end": 285.676,
+"src": "fa"
+},
+{
+"word": "links,",
+"start": 285.676,
+"end": 286.126,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 286.336,
+"end": 286.426,
+"src": "fa"
+},
+{
+"word": "at",
+"start": 286.426,
+"end": 286.626,
+"src": "fa"
+},
+{
+"word": "MTG",
+"start": 286.626,
+"end": 287.316,
+"src": "fa"
+},
+{
+"word": "tribe",
+"start": 287.316,
+"end": 287.656,
+"src": "fa"
+},
+{
+"word": "dot",
+"start": 287.656,
+"end": 287.876,
+"src": "fa"
+},
+{
+"word": "com",
+"start": 287.876,
+"end": 288.216,
+"src": "fa"
+},
+{
+"word": "slash",
+"start": 288.336,
+"end": 288.676,
+"src": "fa"
+},
+{
+"word": "jet",
+"start": 288.676,
+"end": 288.966,
+"src": "fa"
+},
+{
+"word": "up.",
+"start": 288.966,
+"end": 289.206,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 289.594,
+"end": 289.714,
+"src": "fa"
+},
+{
+"word": "if",
+"start": 289.714,
+"end": 289.844,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 289.844,
+"end": 289.944,
+"src": "fa"
+},
+{
+"word": "doesn't",
+"start": 289.944,
+"end": 290.224,
+"src": "fa"
+},
+{
+"word": "feel",
+"start": 290.224,
+"end": 290.504,
+"src": "fa"
+},
+{
+"word": "right?",
+"start": 290.504,
+"end": 290.964,
+"src": "fa"
+},
+{
+"word": "That's",
+"start": 291.372,
+"end": 291.572,
+"src": "fa"
+},
+{
+"word": "a",
+"start": 291.572,
+"end": 291.632,
+"src": "fa"
+},
+{
+"word": "good",
+"start": 291.632,
+"end": 291.822,
+"src": "fa"
+},
+{
+"word": "decision",
+"start": 291.822,
+"end": 292.252,
+"src": "fa"
+},
+{
+"word": "too.",
+"start": 292.252,
+"end": 292.592,
+"src": "fa"
+},
+{
+"word": "It",
+"start": 293.09,
+"end": 293.26,
+"src": "fa"
+},
+{
+"word": "pays",
+"start": 293.26,
+"end": 293.56,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 293.56,
+"end": 293.66,
+"src": "fa"
+},
+{
+"word": "pay",
+"start": 293.66,
+"end": 293.86,
+"src": "fa"
+},
+{
+"word": "attention,",
+"start": 293.86,
+"end": 294.47,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 294.66,
+"end": 294.83,
+"src": "fa"
+},
+{
+"word": "take",
+"start": 294.83,
+"end": 295.07,
+"src": "fa"
+},
+{
+"word": "action.",
+"start": 295.07,
+"end": 295.5,
+"src": "fa"
+},
+{
+"word": "If",
+"start": 296.572,
+"end": 296.672,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 296.672,
+"end": 296.802,
+"src": "fa"
+},
+{
+"word": "believe",
+"start": 296.802,
+"end": 297.092,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 297.092,
+"end": 297.202,
+"src": "fa"
+},
+{
+"word": "multiple",
+"start": 297.202,
+"end": 297.672,
+"src": "fa"
+},
+{
+"word": "streams",
+"start": 297.672,
+"end": 298.092,
+"src": "fa"
+},
+{
+"word": "of",
+"start": 298.092,
+"end": 298.192,
+"src": "fa"
+},
+{
+"word": "income,",
+"start": 298.192,
+"end": 298.652,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 298.862,
+"end": 298.982,
+"src": "fa"
+},
+{
+"word": "learning",
+"start": 298.982,
+"end": 299.322,
+"src": "fa"
+},
+{
+"word": "before",
+"start": 299.322,
+"end": 299.612,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 299.612,
+"end": 299.782,
+"src": "fa"
+},
+{
+"word": "earn,",
+"start": 299.782,
+"end": 300.152,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 300.344,
+"end": 300.504,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 300.504,
+"end": 300.634,
+"src": "fa"
+},
+{
+"word": "never",
+"start": 300.634,
+"end": 300.874,
+"src": "fa"
+},
+{
+"word": "putting",
+"start": 300.874,
+"end": 301.224,
+"src": "fa"
+},
+{
+"word": "all",
+"start": 301.224,
+"end": 301.414,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 301.414,
+"end": 301.604,
+"src": "fa"
+},
+{
+"word": "eggs",
+"start": 301.604,
+"end": 301.894,
+"src": "fa"
+},
+{
+"word": "in",
+"start": 301.894,
+"end": 302.034,
+"src": "fa"
+},
+{
+"word": "one",
+"start": 302.034,
+"end": 302.244,
+"src": "fa"
+},
+{
+"word": "basket,",
+"start": 302.244,
+"end": 302.794,
+"src": "fa"
+},
+{
+"word": "join",
+"start": 302.98,
+"end": 303.2,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 303.2,
+"end": 303.33,
+"src": "fa"
+},
+{
+"word": "tribe",
+"start": 303.33,
+"end": 303.65,
+"src": "fa"
+},
+{
+"word": "at",
+"start": 303.65,
+"end": 303.85,
+"src": "fa"
+},
+{
+"word": "MTG",
+"start": 303.85,
+"end": 304.45,
+"src": "fa"
+},
+{
+"word": "tribe",
+"start": 304.45,
+"end": 304.78,
+"src": "fa"
+},
+{
+"word": "dot",
+"start": 304.78,
+"end": 305.0,
+"src": "fa"
+},
+{
+"word": "com",
+"start": 305.0,
+"end": 305.24,
+"src": "fa"
+},
+{
+"word": "slash",
+"start": 305.24,
+"end": 305.53,
+"src": "fa"
+},
+{
+"word": "group,",
+"start": 305.53,
+"end": 305.86,
+"src": "fa"
+},
+{
+"word": "or",
+"start": 306.067,
+"end": 306.197,
+"src": "fa"
+},
+{
+"word": "message",
+"start": 306.197,
+"end": 306.617,
+"src": "fa"
+},
+{
+"word": "me",
+"start": 306.617,
+"end": 306.747,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 306.747,
+"end": 306.846,
+"src": "fa"
+},
+{
+"word": "Telegram",
+"start": 306.846,
+"end": 307.406,
+"src": "fa"
+},
+{
+"word": "at",
+"start": 307.567,
+"end": 307.787,
+"src": "fa"
+},
+{
+"word": "MTG",
+"start": 307.787,
+"end": 308.397,
+"src": "fa"
+},
+{
+"word": "tribe.",
+"start": 308.397,
+"end": 308.716,
+"src": "fa"
+},
+{
+"word": "Check",
+"start": 309.166,
+"end": 309.426,
+"src": "fa"
+},
+{
+"word": "my",
+"start": 309.426,
+"end": 309.556,
+"src": "fa"
+},
+{
+"word": "bio.",
+"start": 309.556,
+"end": 310.036,
+"src": "fa"
+},
+{
+"word": "Save",
+"start": 310.669,
+"end": 310.959,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 310.959,
+"end": 311.139,
+"src": "fa"
+},
+{
+"word": "video,",
+"start": 311.139,
+"end": 311.449,
+"src": "fa"
+},
+{
+"word": "so",
+"start": 311.719,
+"end": 311.899,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 311.899,
+"end": 312.079,
+"src": "fa"
+},
+{
+"word": "have",
+"start": 312.079,
+"end": 312.389,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 312.389,
+"end": 312.469,
+"src": "fa"
+},
+{
+"word": "five",
+"start": 312.469,
+"end": 312.779,
+"src": "fa"
+},
+{
+"word": "checks",
+"start": 312.779,
+"end": 313.089,
+"src": "fa"
+},
+{
+"word": "when",
+"start": 313.089,
+"end": 313.259,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 313.259,
+"end": 313.369,
+"src": "fa"
+},
+{
+"word": "need",
+"start": 313.369,
+"end": 313.579,
+"src": "fa"
+},
+{
+"word": "them.",
+"start": 313.579,
+"end": 313.749,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 314.194,
+"end": 314.344,
+"src": "fa"
+},
+{
+"word": "share",
+"start": 314.344,
+"end": 314.613,
+"src": "fa"
+},
+{
+"word": "it",
+"start": 314.613,
+"end": 314.754,
+"src": "fa"
+},
+{
+"word": "with",
+"start": 314.754,
+"end": 314.884,
+"src": "fa"
+},
+{
+"word": "someone",
+"start": 314.884,
+"end": 315.183,
+"src": "fa"
+},
+{
+"word": "who's",
+"start": 315.183,
+"end": 315.373,
+"src": "fa"
+},
+{
+"word": "been",
+"start": 315.373,
+"end": 315.553,
+"src": "fa"
+},
+{
+"word": "burned",
+"start": 315.553,
+"end": 315.813,
+"src": "fa"
+},
+{
+"word": "before.",
+"start": 315.813,
+"end": 316.284,
+"src": "fa"
+},
+{
+"word": "We",
+"start": 316.767,
+"end": 316.907,
+"src": "fa"
+},
+{
+"word": "learn",
+"start": 316.907,
+"end": 317.157,
+"src": "fa"
+},
+{
+"word": "best",
+"start": 317.157,
+"end": 317.597,
+"src": "fa"
+},
+{
+"word": "when",
+"start": 317.597,
+"end": 317.847,
+"src": "fa"
+},
+{
+"word": "we",
+"start": 317.847,
+"end": 317.987,
+"src": "fa"
+},
+{
+"word": "teach",
+"start": 317.987,
+"end": 318.237,
+"src": "fa"
+},
+{
+"word": "others.",
+"start": 318.237,
+"end": 318.697,
+"src": "fa"
+},
+{
+"word": "Comment",
+"start": 318.928,
+"end": 319.368,
+"src": "fa"
+},
+{
+"word": "below.",
+"start": 319.368,
+"end": 319.748,
+"src": "fa"
+},
+{
+"word": "Which",
+"start": 320.121,
+"end": 320.401,
+"src": "fa"
+},
+{
+"word": "check",
+"start": 320.401,
+"end": 320.721,
+"src": "fa"
+},
+{
+"word": "surprised",
+"start": 320.721,
+"end": 321.181,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 321.181,
+"end": 321.271,
+"src": "fa"
+},
+{
+"word": "most?",
+"start": 321.271,
+"end": 321.731,
+"src": "fa"
+},
+{
+"word": "Quick",
+"start": 322.606,
+"end": 322.806,
+"src": "fa"
+},
+{
+"word": "reminder:",
+"start": 322.806,
+"end": 323.266,
+"src": "fa"
+},
+{
+"word": "none",
+"start": 323.566,
+"end": 323.736,
+"src": "fa"
+},
+{
+"word": "of",
+"start": 323.736,
+"end": 323.836,
+"src": "fa"
+},
+{
+"word": "this",
+"start": 323.836,
+"end": 324.076,
+"src": "fa"
+},
+{
+"word": "is",
+"start": 324.076,
+"end": 324.196,
+"src": "fa"
+},
+{
+"word": "financial",
+"start": 324.196,
+"end": 324.616,
+"src": "fa"
+},
+{
+"word": "advice.",
+"start": 324.616,
+"end": 325.116,
+"src": "fa"
+},
+{
+"word": "Always",
+"start": 325.562,
+"end": 325.912,
+"src": "fa"
+},
+{
+"word": "do",
+"start": 325.912,
+"end": 326.052,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 326.052,
+"end": 326.222,
+"src": "fa"
+},
+{
+"word": "own",
+"start": 326.222,
+"end": 326.412,
+"src": "fa"
+},
+{
+"word": "research.",
+"start": 326.412,
+"end": 326.972,
+"src": "fa"
+},
+{
+"word": "Thank",
+"start": 327.334,
+"end": 327.554,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 327.554,
+"end": 327.684,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 327.684,
+"end": 327.774,
+"src": "fa"
+},
+{
+"word": "tuning",
+"start": 327.774,
+"end": 328.134,
+"src": "fa"
+},
+{
+"word": "in,",
+"start": 328.134,
+"end": 328.254,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 328.564,
+"end": 328.934,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 329.004,
+"end": 329.214,
+"src": "fa"
+},
+{
+"word": "every",
+"start": 329.214,
+"end": 329.514,
+"src": "fa"
+},
+{
+"word": "like,",
+"start": 329.514,
+"end": 329.984,
+"src": "fa"
+},
+{
+"word": "share,",
+"start": 329.991,
+"end": 330.461,
+"src": "fa"
+},
+{
+"word": "and",
+"start": 330.751,
+"end": 331.021,
+"src": "fa"
+},
+{
+"word": "comment.",
+"start": 331.021,
+"end": 331.581,
+"src": "fa"
+},
+{
+"word": "Your",
+"start": 331.927,
+"end": 332.067,
+"src": "fa"
+},
+{
+"word": "support",
+"start": 332.067,
+"end": 332.557,
+"src": "fa"
+},
+{
+"word": "means",
+"start": 332.557,
+"end": 332.877,
+"src": "fa"
+},
+{
+"word": "everything.",
+"start": 332.877,
+"end": 333.357,
+"src": "fa"
+},
+{
+"word": "And",
+"start": 333.971,
+"end": 334.101,
+"src": "fa"
+},
+{
+"word": "thank",
+"start": 334.101,
+"end": 334.291,
+"src": "fa"
+},
+{
+"word": "yourself",
+"start": 334.291,
+"end": 334.651,
+"src": "fa"
+},
+{
+"word": "for",
+"start": 334.651,
+"end": 334.761,
+"src": "fa"
+},
+{
+"word": "taking",
+"start": 334.761,
+"end": 335.041,
+"src": "fa"
+},
+{
+"word": "massive",
+"start": 335.041,
+"end": 335.371,
+"src": "fa"
+},
+{
+"word": "action",
+"start": 335.371,
+"end": 335.681,
+"src": "fa"
+},
+{
+"word": "today",
+"start": 335.681,
+"end": 335.961,
+"src": "fa"
+},
+{
+"word": "to",
+"start": 335.961,
+"end": 336.081,
+"src": "fa"
+},
+{
+"word": "change",
+"start": 336.081,
+"end": 336.381,
+"src": "fa"
+},
+{
+"word": "your",
+"start": 336.381,
+"end": 336.481,
+"src": "fa"
+},
+{
+"word": "future!",
+"start": 336.481,
+"end": 336.961,
+"src": "fa"
+},
+{
+"word": "I",
+"start": 337.483,
+"end": 337.534,
+"src": "fa"
+},
+{
+"word": "wish",
+"start": 337.534,
+"end": 337.753,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 337.753,
+"end": 337.844,
+"src": "fa"
+},
+{
+"word": "nothing",
+"start": 337.844,
+"end": 338.163,
+"src": "fa"
+},
+{
+"word": "but",
+"start": 338.163,
+"end": 338.303,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 338.303,
+"end": 338.383,
+"src": "fa"
+},
+{
+"word": "best,",
+"start": 338.383,
+"end": 338.913,
+"src": "fa"
+},
+{
+"word": "because",
+"start": 338.913,
+"end": 339.293,
+"src": "fa"
+},
+{
+"word": "YOU",
+"start": 339.293,
+"end": 339.493,
+"src": "fa"
+},
+{
+"word": "are",
+"start": 339.493,
+"end": 339.563,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 339.563,
+"end": 339.673,
+"src": "fa"
+},
+{
+"word": "best.",
+"start": 339.673,
+"end": 340.173,
+"src": "fa"
+},
+{
+"word": "I'm",
+"start": 340.546,
+"end": 340.856,
+"src": "fa"
+},
+{
+"word": "MTG,",
+"start": 340.856,
+"end": 341.656,
+"src": "fa"
+},
+{
+"word": "Your",
+"start": 341.846,
+"end": 341.966,
+"src": "fa"
+},
+{
+"word": "Digital",
+"start": 341.966,
+"end": 342.406,
+"src": "fa"
+},
+{
+"word": "Architect.",
+"start": 342.406,
+"end": 343.056,
+"src": "fa"
+},
+{
+"word": "See",
+"start": 343.455,
+"end": 343.645,
+"src": "fa"
+},
+{
+"word": "you",
+"start": 343.645,
+"end": 343.795,
+"src": "fa"
+},
+{
+"word": "on",
+"start": 343.795,
+"end": 343.895,
+"src": "fa"
+},
+{
+"word": "the",
+"start": 343.895,
+"end": 343.965,
+"src": "fa"
+},
+{
+"word": "next",
+"start": 343.965,
+"end": 344.235,
+"src": "fa"
+},
+{
+"word": "one.",
+"start": 344.235,
+"end": 344.455,
+"src": "fa"
+},
+{
+"word": "Let's",
+"start": 344.99,
+"end": 345.211,
+"src": "fa"
+},
+{
+"word": "Get",
+"start": 345.211,
+"end": 345.44,
+"src": "fa"
+},
+{
+"word": "This",
+"start": 345.44,
+"end": 345.601,
+"src": "fa"
+},
+{
+"word": "Crypto!",
+"start": 345.601,
+"end": 346.091,
+"src": "fa"
+}
+]
+}

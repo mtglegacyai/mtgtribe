@@ -5,7 +5,8 @@ Every line MTG has approved so far for JetUP, in his approved HeyGen voice **MTG
 44.1 kHz, mono), saved before HeyGen's download links expire. About 15 minutes, 262 sentences.
 
 **Reuse these first.** A new explainer built only from these lines costs no HeyGen credits. New lines are made in the
-same voice only when MTG approves the credits for that video (about 2 credits per 500 characters, measured).
+same voice only when MTG approves the credits for that video (measured: 14 credits for 5,400 characters; budget about
+2 credits per 500 characters).
 
 | Folder | Files | What it is |
 |---|---|---|

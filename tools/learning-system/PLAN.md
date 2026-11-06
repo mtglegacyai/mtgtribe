@@ -16,7 +16,7 @@ Status key: planned, voice approved, storyboard, preview sent, approved, live.
 
 Voice bank: branch `jetup-video-work`, folder `jetup-work/voice-bank/` (saved 6 Nov 2026 with MTG's permission):
 5 Checks and sign-up training narration, about 15 minutes, 262 sentences in `sentences.tsv`.
-Last known HeyGen balance: about 249 credits (resets 3 Dec 2026). Check before any speech request.
+Check the HeyGen credit balance before any speech request.
 
 ## Standard: the site tour (video 0)
 

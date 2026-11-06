@@ -131,6 +131,7 @@ def build_videos():
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('profitshare')])
 
 DOWNLOADS = [
+ ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),
  ('jetup-business-plan-oct-2026.pdf', 'pdf', 'JetUP Business Plan (Oct 2026)', "JetUP's official 14-page plan: the three pillars, the 70/30 split, the four incomes and the rewards.", '3.6 MB'),
  ('jetup-how-partners-grow-one-pager.pdf', 'pdf', 'How Partners Grow (one page)', "JetUP's one-pager: the Dennis promo, 70/30, the four incomes and its risk warning.", '0.4 MB'),
  ('bix-card-setup-and-funding-guide.pdf', 'pdf', 'BIX Card Setup and Funding Guide', 'Install, verify, fund, order a card and link BIX to the JetUP portal. 16 pages.', '2.8 MB'),

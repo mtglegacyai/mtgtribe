@@ -7,7 +7,7 @@ SITE = 'https://mtgtribe.com'
 TODAY = '2026-11-06'
 
 # One place for facts that may need a quick change
-RETAIL_LOSS = '80%'   # TAG Markets' own sign-up reminder (guide page 6). The v4.2 training says 88%: MTG to confirm.
+RETAIL_LOSS = '88%'   # TAG Markets' reminder, as in the approved videos (MTG confirmed 88%, 6 Nov 2026).
 VALR = 'https://www.valr.com/invite/VAKM6VZY'
 BINANCE = 'https://accounts.binance.com/register?ref=11139868'
 WA_MTG = 'https://wa.me/27721714626'

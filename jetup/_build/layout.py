@@ -44,6 +44,8 @@ ICONS.update({
  'i-chart': _sym('i-chart', '<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>'),
  'i-check2': _sym('i-check2', '<path d="M20 6 9 17l-5-5"/>'),
  'i-chev-l': _sym('i-chev-l', '<path d="m15 18-6-6 6-6"/>'),
+ 'i-chev-r': _sym('i-chev-r', '<path d="m9 18 6-6-6-6"/>'),
+ 'i-up': _sym('i-up', '<path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>'),
  'i-x2': _sym('i-x2', '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'),
  'i-play2': _sym('i-play2', '<path d="M7 4.5v15a1 1 0 0 0 1.52.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5Z"/>', fill=True),
  'i-arrow2': _sym('i-arrow2', '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'),
@@ -119,7 +121,7 @@ def side_menu(path):
     out.append(' </nav>')
     out.append(' <div class="side-bot">')
     out.append('  <a class="btn btn-lime btn-sm" href="%s"><span class="emo" aria-hidden="true">💬</span>Join the MTG TRIBE</a>' % GROUP)
-    out.append('  <div class="row"><a class="slink" href="/"><span aria-hidden="true">🏡</span>Go home</a><a class="slink" href="/dashboard/"><span aria-hidden="true">📊</span>Dashboard</a></div>')
+    out.append('  <div class="row"><a class="slink" href="/jetup/"><span aria-hidden="true">🏡</span>JetUP home</a><a class="slink" href="/dashboard/"><span aria-hidden="true">📊</span>Dashboard</a></div>')
     out.append('  <a class="sfine" href="/jetup/disclaimer/">Disclaimer · Education only, not financial advice</a>')
     out.append(' </div>')
     out.append('</aside>')
@@ -131,7 +133,7 @@ def top_bar(docked):
      '<header class="top">',
      ' ' + first,
      ' <a class="brand" href="/jetup/" aria-label="JetUP and TAG Markets guide home"><img src="/jetup/img/jetup-mark-64.webp" width="38" height="38" alt=""><span class="bt"><b>JetUP <span>×</span> TAG Markets</b><small>Independent guide by MTG 👑</small></span></a>',
-     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-ghost btn-sm" href="/"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">Go home</span></a></div>' % icon('i-rocket2'),
+     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-ghost btn-sm" href="/jetup/" aria-label="JetUP and TAG Markets home" title="JetUP and TAG Markets home"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">JetUP home</span></a></div>' % icon('i-rocket2'),
      '</header>'])
 
 def footer():
@@ -150,6 +152,33 @@ def footer():
  <p class="fine">Independent guide by MTG. Not official JetUP or TAG Markets material. Education only, not financial advice: always do your own research. Trading forex, CFDs and copy trading is high risk, and you can lose all the money you deposit. TAG Markets' own reminder says %s of retail investor accounts lose money when trading CFDs. Past results never promise future ones. The VALR and Binance buttons are MTG's referral links.</p>
  <p class="made">Made with ❤️ by MTG 👑 | Your Digital Architect · © 2026 MTG</p>
 </div></footer>''' % (GROUP, icon('i-whatsapp'), YT, icon('i-youtube'), TT, icon('i-tiktok'), TG, icon('i-telegram'), FB, icon('i-facebook'), RETAIL_LOSS)
+
+# Previous and next page, in menu order, then the disclaimer (MTG, 6 Nov 2026)
+ORDER = [it[:4] for _, items in MENU for it in items] + [('/jetup/disclaimer/', 'i-scale2', 'Disclaimer', 'Education only, and the risks')]
+
+def pager(path):
+    paths = [o[0] for o in ORDER]
+    if path not in paths:
+        return ''
+    i, n = paths.index(path), len(ORDER)
+    def card(o, cls, key, rel):
+        href, ic, name, sub = o
+        chev = icon('i-chev-l' if cls == 'prev' else 'i-chev-r')
+        k = (chev + key) if cls == 'prev' else (key + chev)
+        return ('<a class="pg %s" href="%s"%s><span class="pg-k">%s</span>'
+                '<span class="pg-t"><span class="si">%s</span><b>%s</b></span><small>%s</small></a>') % (cls, href, rel, k, icon(ic), name, sub)
+    prev = card(ORDER[i - 1], 'prev', 'Previous', ' rel="prev"') if i > 0 else '<span class="pg pg-none" aria-hidden="true"></span>'
+    if i < n - 1:
+        nxt = card(ORDER[i + 1], 'next', 'Next', ' rel="next"')
+    else:
+        nxt = card(('/jetup/', 'i-home', 'Back to the start', 'The JetUP and TAG Markets home'), 'next', 'Start again', '')
+    return ('<nav class="pager" aria-label="Previous and next page"><div class="wrap">'
+            '<p class="pg-pos"><span>Page %d of %d</span><i style="--p:%.3f" aria-hidden="true"></i></p>'
+            '<div class="pg-row">%s%s</div></div></nav>') % (i + 1, n, (i + 1) / n, prev, nxt)
+
+TOTOP = ('<button class="totop" id="totop" type="button" aria-label="Back to the top" title="Back to the top">'
+         '<svg class="ring" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><circle class="bg" cx="26" cy="26" r="24"/>'
+         '<circle class="fg" cx="26" cy="26" r="24"/></svg>%s</button>') % icon('i-up')
 
 PLAYER = '''<dialog class="vm" id="vm" aria-label="Video player">
  <div class="vm-bg" aria-hidden="true"></div>
@@ -232,7 +261,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
     graph += (ld_extra or [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(',', ':'))
     body = main
-    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + (LIGHTBOX if lightbox else ''))) | {'i-chev-l'}
+    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + pager(path) + TOTOP + (LIGHTBOX if lightbox else ''))) | {'i-chev-l'}
     syms = ''.join(ICONS[u] for u in sorted(used) if u in ICONS)
     missing = [u for u in used if u not in ICONS]
     if missing:
@@ -275,11 +304,13 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <div class="page">
 <main id="main">
 {body}
+{pager(path)}
 </main>
 {footer()}
 </div>
 {PLAYER}
 {LIGHTBOX if lightbox else ''}
+{TOTOP}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/jetup/assets/jetup.js?v={js}" defer></script>
 </body>

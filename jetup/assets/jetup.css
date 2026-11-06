@@ -630,6 +630,48 @@ html.vm-lock{overflow:hidden}
   .illus{left:var(--gut);right:auto}
 }
 
+/* ---------- Page navigation: previous and next, back to top (MTG, 6 Nov 2026) ---------- */
+.pager{padding:8px 0 56px}
+.pg-pos{display:flex;align-items:center;gap:14px;margin:0 0 14px;color:var(--muted);font:800 11.5px/1 var(--f-m);letter-spacing:.14em;text-transform:uppercase}
+.pg-pos i{position:relative;flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.pg-pos i:after{content:"";position:absolute;top:0;bottom:0;left:0;width:calc(var(--p,0) * 100%);border-radius:inherit;background:linear-gradient(90deg,var(--vio),var(--lime))}
+.pg-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pg{position:relative;display:flex;flex-direction:column;gap:9px;min-width:0;padding:18px 20px;border-radius:20px;color:var(--text);text-decoration:none;background:linear-gradient(160deg,rgba(32,26,49,.9),rgba(18,15,28,.9));box-shadow:inset 0 0 0 1px var(--line-2),0 18px 40px rgba(0,0,0,.3);transition:transform .3s var(--ease),box-shadow .3s}
+.pg:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.7),0 22px 48px rgba(0,0,0,.38),0 0 30px rgba(var(--vio-rgb),.18)}
+.pg:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.pg.next{align-items:flex-end;text-align:right}
+.pg-k{display:inline-flex;align-items:center;gap:6px;color:var(--lime);font:800 11.5px/1 var(--f-b);letter-spacing:.18em;text-transform:uppercase}
+.pg-k svg{width:16px;height:16px}
+.pg-t{display:flex;align-items:center;gap:12px;min-width:0}
+.pg.next .pg-t{flex-direction:row-reverse}
+.pg-t b{min-width:0;font:400 clamp(1.25rem,2.4vw,1.6rem)/1.05 var(--f-d);text-transform:uppercase;overflow-wrap:anywhere}
+.pg .si{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:12px;color:var(--vio);background:rgba(var(--vio-rgb),.12);box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.3)}
+.pg .si svg{width:19px;height:19px}
+.pg small{color:var(--muted);font-size:13.5px;line-height:1.45}
+.pg-none{visibility:hidden}
+@media (max-width:640px){
+  .pg-row{grid-template-columns:minmax(0,1fr);gap:10px}
+  .pg-none{display:none}
+  .pg{padding:16px 18px}
+  .pg.next{order:-1}
+}
+.totop{position:fixed;z-index:80;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:grid;place-items:center;width:52px;height:52px;padding:0;border:0;border-radius:50%;cursor:pointer;color:#fff;
+  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.2),transparent 55%),linear-gradient(160deg,var(--vio),#4b2fb0);
+  box-shadow:0 12px 28px rgba(0,0,0,.45),0 0 26px rgba(var(--vio-rgb),.35);
+  opacity:0;visibility:hidden;transform:translateY(16px) scale(.86);transition:opacity .3s var(--ease),transform .45s var(--spring),visibility 0s .3s}
+.totop.on{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--ease),transform .45s var(--spring),visibility 0s}
+.totop.on:hover{transform:translateY(-3px)}
+.totop.on:active{transform:scale(.94)}
+.totop:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+.totop .ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.totop .ring circle{fill:none;stroke-width:2.5}
+.totop .ring .bg{stroke:rgba(255,255,255,.18)}
+.totop .ring .fg{stroke:var(--lime);stroke-linecap:round;stroke-dasharray:151;stroke-dashoffset:calc(151 - 151 * var(--sp,0))}
+.totop>.ic{position:relative;width:20px;height:20px}
+html.menu-open .totop{opacity:0;visibility:hidden}
+@media (prefers-reduced-motion:reduce){.totop,.totop.on,.pg{transition:none}}
+@media print{.totop,.pager{display:none}}
+
 /* ---------- Phones never scroll sideways (MTG, 6 Nov 2026) ----------
    Table cells wrap at every size. A table that still does not fit its box gets class "stack" from the page script
    and stacks its rows. On phones, tables with long text or 3 or more columns always stack, for easy reading.

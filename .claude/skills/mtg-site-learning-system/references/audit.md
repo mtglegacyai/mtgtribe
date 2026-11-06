@@ -29,6 +29,11 @@ few that matter.
   stacking, with "what a partner earns can be zero" said out loud.
 - **Every calculator or tool:** a short walkthrough of the real tool with the visitor's own kind of numbers.
 
+## Always on the list
+
+- **The site tour** at the very top of the dashboard (see `site-tour-video.md`): a standard item on every report, made
+  last, once the pages are finished. Put it in the report as video 0.
+
 ## What does not need one
 
 Legal and disclaimer pages, the downloads page, the videos library page (it will list the new videos) and the FAQ

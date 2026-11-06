@@ -1,6 +1,6 @@
 ---
 name: mtg-site-learning-system
-description: "MTG's learning and conversion system for every one of his websites: audit every page and section for short horizontal explainer videos, plan each video around his approved voice with the fewest HeyGen credits (reuse his recorded lines first), turn his step-by-step tutorial recordings into clips, and finish each website with one ultimate PDF companion guide whose tappable buttons link to the pages, the videos and his referral sign-ups. Use this whenever MTG (MusaTheGiant, mtgtribe.com) is building, finishing, upgrading or double-checking a website or a section of one (JetUP and TAG Markets, ALTRUVA, Canton, Bitcoin Wealth / bitcoinwealthpays.com, ClickBaitPays, Bellver Affiliates, MusaTheGiant.com or any new site), or asks which sections need explainer videos, wants explainers or tutorial clips made, wants a PDF guide for a site, or talks about turning a site into a 24/7 educating and converting machine, even if he does not name this system."
+description: "MTG's learning and conversion system for every one of his websites: audit every page and section for short horizontal explainer videos, plan each video around his approved voice with the fewest HeyGen credits (reuse his recorded lines first), turn his step-by-step tutorial recordings into clips, open every dashboard with a click-by-click site tour video, and finish each website with one ultimate PDF companion guide whose tappable buttons link to the pages, the videos and his referral sign-ups. Use this whenever MTG (MusaTheGiant, mtgtribe.com) is building, finishing, upgrading or double-checking a website or a section of one (JetUP and TAG Markets, ALTRUVA, Canton, Bitcoin Wealth / bitcoinwealthpays.com, ClickBaitPays, Bellver Affiliates, MusaTheGiant.com or any new site), or asks which sections need explainer videos, wants explainers or tutorial clips made, wants a PDF guide for a site, or talks about turning a site into a 24/7 educating and converting machine, even if he does not name this system."
 ---
 
 # MTG's website learning system
@@ -26,6 +26,8 @@ latest instruction in the chat wins, then mtg-creative-standard.
   no fake balances, no "best ever". Hide personal data in every frame.
 - **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". No em or en dashes anywhere,
   including inside videos, PDFs and file names. Follow each site's own content rules (names or brands MTG has ruled out).
+- **Every dashboard opens with a site tour.** The very top of each website's dashboard is a video that shows visitors
+  around the whole site, click by click, from the landing page to the dashboard and every page.
 - **Never publish or push live without MTG's approval**, and show a real preview first (a phone recording or the
   rendered file), not a description.
 
@@ -55,7 +57,13 @@ videos page and downloads list, give it a poster and structured data (VideoObjec
 explainer. Then run the site's checks, including the sideways-scroll check (`tools/qa/hscroll.js` in mtgtribe.com):
 nothing on the site may scroll sideways on a phone.
 
-### 5. The ultimate PDF companion (last step for each website)
+### 5. The site tour at the top of the dashboard (standard on every website)
+Read `references/site-tour-video.md`. Once the pages are finished, record the real site and make the click-by-click
+tour: landing page, dashboard, menu (laptop and phone), every page and its key button, how to get back, and the first
+step. It goes at the very top of the dashboard, is listed first on the videos page, and is re-recorded whenever the
+navigation changes.
+
+### 6. The ultimate PDF companion (last step for each website)
 Read `references/pdf-companion.md`. When the site and its videos are done, build one PDF for visitors who prefer PDFs:
 enough content to understand everything, mostly short summaries, and tappable buttons on every page that open the
 matching web page, the explainer video and MTG's sign-up links. Check every link with
@@ -73,4 +81,6 @@ session picks up exactly where this one stopped.
 When the current site is done, the next one gets the full treatment in the order MTG chooses. Finished sites to
 double-check afterwards: Bellver Affiliates, ALTRUVA (mtgtribe.com/altruva), Canton Weekly and the CC and CNTN guides,
 the MTG TRIBE home and dashboard, and JetUP and TAG Markets once it is complete. A revisit means: run the audit, compare
-it with what the site already has, and report the gaps before changing anything.
+it with what the site already has (including a click-by-click site tour at the top of the dashboard; ALTRUVA's 6:29
+welcome tour is a map of the site and may need real click-by-click screens added), and report the gaps before
+changing anything.

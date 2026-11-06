@@ -18,6 +18,14 @@ Voice bank: branch `jetup-video-work`, folder `jetup-work/voice-bank/` (saved 6 
 5 Checks and sign-up training narration, about 15 minutes, 262 sentences in `sentences.tsv`.
 Last known HeyGen balance: about 249 credits (resets 3 Dec 2026). Check before any speech request.
 
+## Standard: the site tour (video 0)
+
+| # | Video | Where | Voice | Status |
+|---|---|---|---|---|
+| 0 | JetUP site tour, click by click: landing page, the JetUP hub, the menu on laptop and phone, all 13 pages, how to get back, first step | very top of the JetUP hub (/jetup/, JetUP's dashboard); listed first on the Videos page | mostly new lines (about 7 to 14 credits) or captions with recorded lines only | made last, once all pages and videos are done |
+
+The main MTG TRIBE dashboard (/dashboard/) gets its own tour of the whole mtgtribe.com site when we do the main-site pass.
+
 ## Videos, first the six with the biggest impact
 
 | # | Video | Where | Voice | Status |

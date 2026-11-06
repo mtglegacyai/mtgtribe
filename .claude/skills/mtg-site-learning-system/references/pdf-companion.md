@@ -13,7 +13,7 @@ whenever a page, a video or a link changes, and put the version date on the cove
 ## Structure
 
 1. **Cover:** the site's name and promise in one line, MTG 👑 | Your Digital Architect, the date, and a big
-   "Start here" button that opens the site's main page.
+   "Start here" button that opens the site's main page, and a "Take the site tour" button that opens the tour video.
 2. **How to use this guide:** one short paragraph ("tap any button to open the page or video"), plus the risk line the
    site requires.
 3. **One spread per topic**, in the site's own order (for JetUP: the simple picture, 70/30, exposure and Amplify,

@@ -1,0 +1,33 @@
+# Sideways-scroll check (MTG, 6 November 2026)
+
+MTG: no section or part of any page may make a visitor scroll sideways on a smartphone. `hscroll.js` checks every
+page for three things, at phone, tablet and small laptop widths, at normal text size and with Android's larger text (130%):
+
+1. the page itself scrolling sideways,
+2. any box inside the page that scrolls sideways (this is what tables used to do),
+3. visible text cut off by the screen edge.
+
+## Run it
+
+Serve the repo locally (any static server, for example `http-server . -p 8765 -c-1`), then:
+
+```bash
+find . -name "*.html" -not -path "./tools/*" -not -path "./.git/*" -not -path "*/_build/*" | sed 's#^\./##' | sort > /tmp/pages.txt
+```
+
+```bash
+node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
+```
+
+It prints how many page views had a problem and writes the details to the JSON file. Things that are fine by design
+and can be ignored: screen-reader-only text (`.sr`, `caption.sr`), the moving ticker tape on /jetup/ (`.tape`) and
+ALTRUVA video titles that end in "..." (`.vt`).
+
+## How tables stay on the screen
+
+- JetUP and ALTRUVA pages: the page builders run `phone_tables.py` (in `jetup/_build/` and `altruva/_build/build/`), which
+  copies each column name onto its cells. Cells wrap at every size. A small script in `jetup.js` and `altruva.js` stacks
+  any table that would not fit its box, and on phones tables with long text or 3 or more columns always stack.
+  Tables that fit stay normal tables, so desktop looks the same as before.
+- Canton guides and weekly reports: their own stacked layout now applies up to 640 px (the weekly builder copies it
+  from `cntn/index.html`).

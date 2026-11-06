@@ -3,7 +3,7 @@ from layout import *
 
 def section(i, eyebrow, title, body, ic='i-info2', ped=''):
     return f'''<article class="card pad rv" id="{i}" style="scroll-margin-top:90px">
- <div style="display:flex;gap:16px;align-items:flex-start"><span class="ped {ped}"><b>{icon(ic)}</b></span><div style="min-width:0;flex:1">
+ <div class="srow"><span class="ped {ped}"><b>{icon(ic)}</b></span><div class="sbody">
  <p class="eyebrow">{eyebrow}</p><h2 class="h2" style="margin:10px 0 14px;font-size:clamp(1.7rem,3.6vw,2.4rem)">{title}</h2>
  <div class="prose">{body}</div></div></div>
 </article>'''

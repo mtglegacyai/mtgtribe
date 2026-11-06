@@ -1,6 +1,7 @@
 """Shared helpers: links, icons, components and page shells."""
 import hashlib, html, json, os, re, posixpath
 from config import *
+from phone_tables import label_tables   # phones never scroll sideways (MTG, 6 Nov 2026)
 
 ICON_DIR = '/tmp/assets/x/lucide-static-1.61.0/package/icons/'
 BRAND_DIR = '/tmp/assets/si/package/icons/'
@@ -444,6 +445,7 @@ def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True):
 
 def wrap_doc(hd, content, body_cls='', main_page=False):
     sp = sprite()
+    content = label_tables(content)
     body = f'<a class="skip" href="#main">Skip to content</a>{sp}{content}'
     if main_page and MODE == 'preview':
         # artifact main page: the host adds the skeleton; keep our head tags at the top

@@ -1,6 +1,7 @@
 # JetUP and TAG Markets guide by MTG: shared layout (head, top bar, side menu, footer, player).
 # Run build.py to write every page. No em or en dashes anywhere in the output.
 import hashlib, json, os, re
+from phone_tables import label_tables   # phones never scroll sideways (MTG, 6 Nov 2026)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SITE = 'https://mtgtribe.com'
@@ -289,6 +290,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
         raise SystemExit('dash found in %s: %s' % (path, bad[:3]))
     if re.search(r'\bluno\b', html, re.I):
         raise SystemExit('Luno mentioned in %s' % path)
+    html = label_tables(html)
     out = os.path.join(ROOT, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, 'w') as f:

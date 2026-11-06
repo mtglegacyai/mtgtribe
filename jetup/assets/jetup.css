@@ -629,3 +629,58 @@ html.vm-lock{overflow:hidden}
   .vm-x{top:-12px;right:-6px;width:42px;height:42px}
   .illus{left:var(--gut);right:auto}
 }
+
+/* ---------- Phones never scroll sideways (MTG, 6 Nov 2026) ----------
+   Table cells wrap at every size. A table that still does not fit its box gets class "stack" from the page script
+   and stacks its rows. On phones, tables with long text or 3 or more columns always stack, for easy reading.
+   Every table that fits stays a normal table. */
+body{overflow-wrap:break-word}
+.srow{display:flex;gap:16px;align-items:flex-start}.sbody{min-width:0;flex:1}
+.tbl th,.tbl td{white-space:normal}
+.tbl-wrap.stack{overflow:visible}
+  .tbl-wrap.stack .pt-c2,.tbl-wrap.stack .pt-c2 thead,.tbl-wrap.stack .pt-c2 tbody,.tbl-wrap.stack .pt-c2 tr,.tbl-wrap.stack .pt-c2 th,.tbl-wrap.stack .pt-c2 td{display:block}
+  .tbl-wrap.stack .pt-c2 tr{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .tbl-wrap.stack .pt-c2 tbody tr:last-child{border-bottom:0}
+  .tbl-wrap.stack .pt-c2 th,.tbl-wrap.stack .pt-c2 td{padding:0;border:0;white-space:normal!important;min-width:0;overflow-wrap:anywhere;text-align:left}
+  .tbl-wrap.stack .pt-c2 th{background:none}.tbl-wrap.stack .pt-c2 thead tr{background:rgba(255,255,255,.03)}
+  .tbl-wrap.stack .pt-c2 tr.hl{background:rgba(238,189,92,.08)}.tbl-wrap.stack .pt-c2 tr.hl td{background:none}
+  .tbl-wrap.stack .pt-c2 td+td,.tbl-wrap.stack .pt-c2 th+th{text-align:right}
+  .tbl-wrap.stack .pt-c2 td.tl{flex:1 1 100%;text-align:left}
+  .tbl-wrap.stack .pt-c2.pt-stack thead{display:none}
+  .tbl-wrap.stack .pt-c2.pt-stack td:first-child{color:var(--text);font-weight:800}
+  .tbl-wrap.stack .pt:not(.pt-c2),.tbl-wrap.stack .pt:not(.pt-c2) tbody,.tbl-wrap.stack .pt:not(.pt-c2) tr,.tbl-wrap.stack .pt:not(.pt-c2) td{display:block}
+  .tbl-wrap.stack .pt:not(.pt-c2) thead{display:none}
+  .tbl-wrap.stack .pt:not(.pt-c2) tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .tbl-wrap.stack .pt:not(.pt-c2) tbody tr:last-child{border-bottom:0}
+  .tbl-wrap.stack .pt:not(.pt-c2) td{padding:3px 0;border:0;white-space:normal!important;min-width:0;overflow-wrap:anywhere;text-align:right;line-height:1.6}
+  .tbl-wrap.stack .pt:not(.pt-c2) td:after{content:"";display:table;clear:both}
+  .tbl-wrap.stack .pt:not(.pt-c2) td:first-child{text-align:left;color:var(--text);font-weight:800;padding:0 0 6px}
+  .tbl-wrap.stack .pt:not(.pt-c2) td+td:before{content:attr(data-label);float:left;margin-right:14px;color:var(--muted);font:800 .76em/2.1 var(--f-m);letter-spacing:.1em;text-transform:uppercase}
+  .tbl-wrap.stack .pt:not(.pt-c2) td.tl{text-align:left}.tbl-wrap.stack .pt:not(.pt-c2) td.tl:before{float:none;display:block;margin:0 0 2px}
+  .tbl-wrap.stack .pt:not(.pt-c2) tr.hl{background:rgba(238,189,92,.08)}.tbl-wrap.stack .pt:not(.pt-c2) tr.hl td{background:none}
+@media (max-width:640px){
+  .srow{display:block}.srow>.ped{margin:0 0 12px}
+  kbd,.k{white-space:normal;overflow-wrap:anywhere;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .prose,.prose li,.prose p,.small,.lede{overflow-wrap:anywhere}
+  .tbl-wrap{overflow:visible}
+  .pt-c2.pt-stack,.pt-c2.pt-stack thead,.pt-c2.pt-stack tbody,.pt-c2.pt-stack tr,.pt-c2.pt-stack th,.pt-c2.pt-stack td{display:block}
+  .pt-c2.pt-stack tr{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .pt-c2.pt-stack tbody tr:last-child{border-bottom:0}
+  .pt-c2.pt-stack th,.pt-c2.pt-stack td{padding:0;border:0;white-space:normal!important;min-width:0;overflow-wrap:anywhere;text-align:left}
+  .pt-c2.pt-stack th{background:none}.pt-c2.pt-stack thead tr{background:rgba(255,255,255,.03)}
+  .pt-c2.pt-stack tr.hl{background:rgba(238,189,92,.08)}.pt-c2.pt-stack tr.hl td{background:none}
+  .pt-c2.pt-stack td+td,.pt-c2.pt-stack th+th{text-align:right}
+  .pt-c2.pt-stack td.tl{flex:1 1 100%;text-align:left}
+  .pt-c2.pt-stack.pt-stack thead{display:none}
+  .pt-c2.pt-stack.pt-stack td:first-child{color:var(--text);font-weight:800}
+  .pt:not(.pt-c2),.pt:not(.pt-c2) tbody,.pt:not(.pt-c2) tr,.pt:not(.pt-c2) td{display:block}
+  .pt:not(.pt-c2) thead{display:none}
+  .pt:not(.pt-c2) tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .pt:not(.pt-c2) tbody tr:last-child{border-bottom:0}
+  .pt:not(.pt-c2) td{padding:3px 0;border:0;white-space:normal!important;min-width:0;overflow-wrap:anywhere;text-align:right;line-height:1.6}
+  .pt:not(.pt-c2) td:after{content:"";display:table;clear:both}
+  .pt:not(.pt-c2) td:first-child{text-align:left;color:var(--text);font-weight:800;padding:0 0 6px}
+  .pt:not(.pt-c2) td+td:before{content:attr(data-label);float:left;margin-right:14px;color:var(--muted);font:800 .76em/2.1 var(--f-m);letter-spacing:.1em;text-transform:uppercase}
+  .pt:not(.pt-c2) td.tl{text-align:left}.pt:not(.pt-c2) td.tl:before{float:none;display:block;margin:0 0 2px}
+  .pt:not(.pt-c2) tr.hl{background:rgba(238,189,92,.08)}.pt:not(.pt-c2) tr.hl td{background:none}
+}

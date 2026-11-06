@@ -34,6 +34,14 @@ publish without approval.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 
+## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
+
+Every MTG website gets the system in the skill `.claude/skills/mtg-site-learning-system/` (MTG can also save it to his
+account so it works for all his sites): audit every section for short 16:9 explainers in his voice, reuse his recorded lines before spending HeyGen
+credits, cut his tutorials into chapter clips, and finish each site with one PDF guide with tappable buttons. One website
+at a time. JetUP's plan and status: `tools/learning-system/PLAN.md`. JetUP voice bank: branch `jetup-video-work`,
+`jetup-work/voice-bank/`. Do not produce a video until MTG has picked it and supplied his links.
+
 ## Standing rule: nothing scrolls sideways on phones (MTG, 6 November 2026)
 
 - No page, section, table, card or button may make a visitor scroll sideways on a smartphone, at normal or larger

@@ -1,7 +1,12 @@
 # JetUp and TAG Markets (mtgtribe.com/jetup/)
 
-Status (5 November 2026): coming-soon page live at `/jetup/`, listed as stream #2 on the dashboard
-(menu item "JetUp · TAG Markets" and a "Coming soon" card), directly below Bellver Affiliates.
+Status (6 November 2026): the full guide is built as a **preview** on branch `claude/modest-hypatia-oljoio`,
+waiting for MTG's approval. 13 pages: `/jetup/` (overview), `/jetup/five-checks/`, `/jetup/get-started/`,
+`/jetup/how-it-works/`, `/jetup/partner-plan/`, `/jetup/promo/`, `/jetup/bix-card/`, `/jetup/videos/`,
+`/jetup/downloads/`, `/jetup/faq/`, `/jetup/disclaimer/`, and two tools on their own pages:
+`/jetup/tools/exposure-calculator/` and `/jetup/tools/profit-split-calculator/`. The dashboard card, the
+sitemap and `llms.txt` are updated on the same branch. How to rebuild: `jetup/_build/README.md`.
+Until it is merged, `main` still shows the coming-soon page.
 `mtgtribe.com/JetUp` also works: the 404 page lowercases the address.
 
 ## MTG's instruction for the full build

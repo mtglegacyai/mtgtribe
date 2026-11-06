@@ -179,10 +179,10 @@ def ld_faq(qas, pid):
         {"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qas]}
 
 VIDEOS = {
- '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp', jpg='/jetup/img/cover-5-checks-v5.jpg', dur='5:25', iso='PT5M25S', orient='h',
+ '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp?v=2', jpg='/jetup/img/cover-5-checks-v5.jpg?v=2', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),
- 'training': dict(src='/jetup/media/jetup-tag-markets-signup-training-mtg.mp4', poster='/jetup/img/cover-signup-training.webp', jpg='/jetup/img/cover-signup-training.jpg', dur='9:09', iso='PT9M9S', orient='h',
+ 'training': dict(src='/jetup/media/jetup-tag-markets-signup-training-mtg.mp4', poster='/jetup/img/cover-signup-training.webp?v=2', jpg='/jetup/img/cover-signup-training.jpg?v=2', dur='9:09', iso='PT9M9S', orient='h',
    title='JetUP and TAG Markets sign-up training: every tap shown',
    desc='Step-by-step training by MTG: create your JetUP account, link TAG Markets, verify your identity, fund your account, connect Sonic AI and claim the Dennis Fast Start Promo.'),
  'profitshare': dict(src='/jetup/media/jetup-profit-share-explained.mp4', poster='/jetup/img/cover-profit-share.webp', jpg='/jetup/img/cover-profit-share.webp', dur='1:14', iso='PT1M14S', orient='v',
@@ -219,7 +219,7 @@ def phone(k, caption=None):
         out += '<p class="vcap">%s%s</p>' % (icon('i-film2'), caption)
     return out
 
-def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, og_img='/jetup/img/cover-5-checks-v5.jpg', og_alt='JetUP and TAG Markets guide by MTG', lightbox=False, keywords=None):
+def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, og_img='/jetup/img/cover-5-checks-v5.jpg?v=2', og_alt='JetUP and TAG Markets guide by MTG', lightbox=False, keywords=None):
     url = SITE + path
     kw = keywords or 'JetUP, JetUp, TAG Markets, JetUp TAG Markets, TAG Markets copy trading, JetUp review, TAG Markets review, TAG Markets South Africa, how to join JetUp, CopyX, Sonic AI, MTG TRIBE'
     graph = [{"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "description": desc, "inLanguage": "en-ZA",

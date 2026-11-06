@@ -527,8 +527,8 @@ html.vm-lock{overflow:hidden}
 
 /* meet MTG: his whole photo in a rounded gold frame */
 .mtg{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(22px,4vw,52px);align-items:center}
-.photo{position:relative;padding:5px;border-radius:30px;background:linear-gradient(145deg,#fff3d6,#e8b04a 30%,#8a5a1a 55%,#f2cf7a 80%,#fff1c8);box-shadow:0 0 60px rgba(var(--gold-rgb),.3),0 30px 70px rgba(0,0,0,.5)}
-.photo img{width:100%;aspect-ratio:1;border-radius:26px;object-fit:cover}
+.photo{position:relative;padding:6px;border-radius:50%;background:linear-gradient(145deg,#fff3d6,#e8b04a 30%,#8a5a1a 55%,#f2cf7a 80%,#fff1c8);box-shadow:0 0 60px rgba(var(--gold-rgb),.3),0 30px 70px rgba(0,0,0,.5)}
+.photo img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(10,7,3,.55)}
 .sig{margin:10px 0 0;font:400 clamp(2.4rem,5vw,3.6rem)/1 var(--f-d);letter-spacing:.04em}
 
 /* promo */

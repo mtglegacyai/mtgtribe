@@ -33,3 +33,11 @@ publish without approval.
   like the Bellver players. Never make the viewer press close after watching the whole video.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
+
+## Standing rule: nothing scrolls sideways on phones (MTG, 6 November 2026)
+
+- No page, section, table, card or button may make a visitor scroll sideways on a smartphone, at normal or larger
+  Android text size. MTG's phone shows pages about 360 px wide. Test 320 to 430 px, and tablets up to 1024 px.
+- Tables: build them through the page builders (`phone_tables.py` labels every cell); never set `white-space:nowrap`
+  on table cells or long button labels. Before showing MTG a preview, run `tools/qa/hscroll.js` (see `tools/qa/README.md`)
+  and make sure it reports nothing beyond the items it lists as fine by design.

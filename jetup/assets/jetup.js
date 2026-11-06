@@ -212,3 +212,27 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
 })();
 
 })();
+
+/* Phones never scroll sideways (MTG, 6 Nov 2026): a table that would not fit its box stacks its rows (class "stack").
+   Checked on load, after the fonts arrive and whenever the box changes width. Tables that fit stay as tables. */
+(function () {
+  var wraps = [].slice.call(document.querySelectorAll('.tbl-wrap'));
+  if (!wraps.length) return;
+  var last = [], timer;
+  function fit(force) {
+    wraps.forEach(function (w, i) {
+      var wd = w.clientWidth;
+      if (!force && last[i] === wd) return;
+      w.classList.remove('stack');
+      if (w.scrollWidth > w.clientWidth + 1) w.classList.add('stack');
+      last[i] = w.clientWidth;
+    });
+  }
+  function soon() { clearTimeout(timer); timer = setTimeout(function () { fit(true); }, 80); }
+  fit(true);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fit(true); });
+  window.addEventListener('load', function () { fit(true); });
+  window.addEventListener('resize', soon);
+  window.addEventListener('orientationchange', soon);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(soon); wraps.forEach(function (w) { ro.observe(w); }); }
+})();

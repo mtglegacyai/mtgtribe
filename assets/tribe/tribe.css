@@ -156,3 +156,6 @@ button{font:inherit;color:inherit}
 @media (max-width:560px){
   .btn{min-height:54px;padding:0 20px;font-size:14px}
 }
+
+/* Phones never scroll sideways (MTG, 6 Nov 2026): long button labels wrap instead of running off the screen */
+@media (max-width:640px){.btn{white-space:normal;text-align:center;overflow-wrap:anywhere}}

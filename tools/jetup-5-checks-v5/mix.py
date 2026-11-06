@@ -19,7 +19,7 @@ def wav_out(p, y, ch=1):
 def env(n, a, d):
     t = np.arange(n) / SR; e = np.minimum(1, t / max(a, 1e-4)) * np.exp(-np.maximum(0, t - a) / d); return e
 
-def whoosh(dur=0.42, lo=500, hi=3500, gain=0.10):
+def whoosh(dur=0.42, lo=500, hi=3500, gain=0.085):
     n = int(dur * SR); x = rng.standard_normal(n)
     X = np.fft.rfft(x); f = np.fft.rfftfreq(n, 1 / SR)
     X *= np.exp(-0.5 * ((np.log(f + 1) - np.log((lo * hi) ** 0.5)) / 0.75) ** 2)
@@ -35,7 +35,7 @@ def pop(gain=0.16):
     n = int(0.12 * SR); t = np.arange(n) / SR; f = 520 + 900 * (t / t[-1])
     return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.035) * gain
 
-def impact(gain=0.22):
+def impact(gain=0.14):
     n = int(0.6 * SR); t = np.arange(n) / SR; f = 95 * np.exp(-t * 3) + 45
     y = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.16)
     return y * gain + whoosh(0.6, 200, 1500, gain * 0.35)[:n]
@@ -63,7 +63,7 @@ put(EV['end'] - 0.4, whoosh(0.8, 300, 5000, 0.14))
 voice_raw = os.path.join(HERE, 'voice_v5_dry.wav'); voice = os.path.join(HERE, 'voice_v5.wav')
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', voice_raw, '-af',
                 'highpass=f=70,equalizer=f=260:t=q:w=1.1:g=-2.2,equalizer=f=3300:t=q:w=1.0:g=2.6,equalizer=f=9500:t=q:w=0.9:g=1.6,'
-                'acompressor=threshold=-21dB:ratio=2.4:attack=6:release=140:makeup=2.2,aresample=48000', '-ac', '1', voice], check=True)
+                'acompressor=threshold=-21dB:ratio=2.4:attack=6:release=140:makeup=2.2,deesser=i=0.3:m=0.5:f=0.55,aresample=48000', '-ac', '1', voice], check=True)
 wav_out(os.path.join(HERE, 'sfx.wav'), sfx[:N])
 
 # music: starts 51.36 s before the end, soft under speech (0.09), rises after the speech (+0.6/s to 0.9), 2 s fade in

@@ -205,6 +205,29 @@ for f in range(nfr):
     seg_id.append(seg)
 # local video speed report
 sp = np.diff(np.array(src_frames, float)); sp = sp[(sp >= 0) & (sp < 6)]
+# ---- 5. smooth the avatar's speed (v5.1): word-level anchors made the speed step at every word boundary,
+# which showed as small jerks. Gaussian-smooth the frame map inside each continuous stretch (never across a cut,
+# a skipped pause or a scene jump), then keep it monotonic. Lip timing moves by about a frame at most.
+raw = np.array(src_frames, float)
+SIG = 3.0                                   # frames (0.12 s)
+k = np.arange(-9, 10); ker = np.exp(-0.5 * (k / SIG) ** 2); ker /= ker.sum()
+brk = [0] + [i + 1 for i in range(len(raw) - 1) if abs(raw[i + 1] - raw[i]) > 3.5 or (i + 1) == int(COVER * FPS)] + [len(raw)]
+sm = raw.copy()
+for a_, b_ in zip(brk[:-1], brk[1:]):
+    seg_ = raw[a_:b_]
+    if len(seg_) < 5 or a_ < int(COVER * FPS) <= b_ - 1 and a_ == 0: continue
+    pad = np.concatenate([2 * seg_[0] - seg_[1:10][::-1], seg_, 2 * seg_[-1] - seg_[-10:-1][::-1]]) if len(seg_) > 10 else seg_
+    if len(seg_) > 10:
+        sm[a_:b_] = np.convolve(pad, ker, 'same')[9:9 + len(seg_)]
+    for i in range(a_ + 1, b_):
+        if sm[i] < sm[i - 1]: sm[i] = sm[i - 1]
+shift = []
+for it in items:
+    if it['kind'] == 'A':
+        f_ = int(round(it['ns'] * FPS))
+        if f_ < len(raw): shift.append((sm[f_] - raw[f_]) * 1000 / FPS)
+print(f'speed smoothing: lip timing moved median {np.median(np.abs(shift)):.0f} ms, p95 {np.percentile(np.abs(shift), 95):.0f} ms, max {np.max(np.abs(shift)):.0f} ms')
+src_frames = [round(float(x), 3) for x in sm]
 words_out = [dict(w=it['word'], s=round(it['ns'], 3), e=round(it['ne'], 3), kind=it['kind'], idx=it['idx']) for it in items]
 json.dump(dict(fps=FPS, cover=COVER, speech_end=speech_end, total=TOTAL, frames=src_frames, cuts=[c for c in cuts if c],
                xfades=xfades, scenes=[dict(t0=s['t0'], t1=s['t1']) for s in scenes], words=words_out),

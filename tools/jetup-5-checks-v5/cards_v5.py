@@ -104,7 +104,7 @@ CARDS = [
                         R('👀', 'Look BEFORE you deposit', 'look before', LIME)])]),
  dict(at="it shows plus thirty", check=3, els=[
    dict(k='kicker', t='PUBLISHED RESULT'),
-   dict(k='head', t='+30.1%', s=140, c=GREEN, center=True, at='thirty point one'),
+   dict(k='count', to=30.1, fmt='+{:.1f}%', s=140, c=GREEN, center=True, at='thirty point one'),
    dict(k='sub', t='3 Nov 2024 to 4 Oct 2026', center=True, at='november', s=32, c=WHITE),
    dict(k='chip', t='GROSS: before the 70/30 split', at='before the seventy')]),
  dict(at="so thirty point one times", check=3, els=[
@@ -129,7 +129,7 @@ CARDS = [
                         R('🔻', 'You can lose your whole deposit', 'lose your whole', RED)])]),
  dict(at="and the brokers insolvency cover", check=4, els=[
    dict(k='kicker', t='INSOLVENCY COVER'),
-   dict(k='head', t='$1,000,000 TOTAL', s=76, c=LIME, at='one million'),
+   dict(k='count', to=1000000, fmt='${:,.0f} TOTAL', s=70, c=LIME, at='one million'),
    dict(k='rows', rows=[R('👥', 'For ALL clients together, not per person', 'all clients'),
                         R('🚫', 'Trading losses NOT covered', 'trading losses', RED)]),
    dict(k='sub', t='Insolvency = the broker itself going bust.')]),

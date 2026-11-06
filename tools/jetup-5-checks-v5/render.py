@@ -288,13 +288,17 @@ def layout_card(card, t0, t1, k0, k1):
         if k == 'kicker':
             sp = kicker_sprite(e['t']); blocks.append((sp.height, [(sp, None if centered else 0, 0, None, 'pop', None)]))
         elif k in ('head', 'sub'):
-            s = int(e.get('s', 60 if k == 'head' else 28) * 1.08); f = F('b' if k == 'head' else 'm', s)
+            s = int(e.get('s', 60 if k == 'head' else 30) * 1.08); f = F('b' if k == 'head' else 'm', s)
             col = e.get('c', WHITE if k == 'head' else GREY)
             lines = wrap(e['t'], f, IW); lh = int(s * (1.12 if k == 'head' else 1.4)); parts = []
             for i, l in enumerate(lines):
                 sp = text_sprite(l, f, col)
                 parts.append((sp, None if (e.get('center') or centered) else 0, i * lh, e.get('at'), 'pop', None))
             blocks.append((lh * len(lines), parts))
+        elif k == 'count':
+            s = int(e['s'] * 1.0); f = F('b', s); final = text_sprite(e['fmt'].format(e['to']), f, e.get('c', WHITE))
+            blocks.append((int(s * 1.12), [(final, None if (e.get('center') or centered) else 0, 0, e.get('at'), 'count',
+                                             dict(fmt=e['fmt'], to=e['to'], s=s, c=e.get('c', WHITE), center=bool(e.get('center') or centered)))]))
         elif k == 'rows':
             s = int(e.get('s', 31) * 1.1); parts = []; y = 0
             for r in e['rows']:
@@ -563,6 +567,14 @@ def draw_el(base, el, t):
         q = ease_out(min(1.0, max(0.0, (t - el.t_in - 0.25) / 0.35)))
         if q <= 0: return
         img = el.img.crop((0, 0, max(1, int(el.img.width * q)), el.img.height))
+    elif el.kind == 'count':
+        q = ease_out(min(1.0, (t - el.t_in) / 0.9)); ex = el.extra
+        txt = ex['fmt'].format(ex['to'] * q if q < 1 else ex['to'])
+        key = ('cnt', txt, ex['s'], ex['c'])
+        if key not in _chrome: _chrome[key] = text_sprite(txt, F('b', ex['s']), ex['c'])
+        img = _chrome[key]
+        if ex['center']: x = el.x + (el.img.width - img.width) // 2
+        y += int((1 - ease_out(p)) * 10)
     elif el.kind == 'slide':
         dx = int((1 - ease_out(p)) * 140); x += dx
     else:
@@ -717,11 +729,10 @@ def frame_at(f, get):
     t = f / FPS
     v = min(TL['frames'][f], NSRC - 2)
     if t < TL['cover']:
-        st = get(int(v) + 3); return cover_img(st['cur'].copy())
+        st = get(int(v) + 3); _cover['img'] = cover_img(st['cur'].copy()); return _cover['img']
     n = int(math.floor(v)); q = v - n
     nxt_v = min(TL['frames'][min(f + 1, NFR - 1)], NSRC - 2); prv_v = min(TL['frames'][max(f - 1, 0)], NSRC - 2)
-    slow = (nxt_v - prv_v) / 2 < 0.97
-    if slow and 0.18 < q < 0.82:
+    if 0.2 < q < 0.8:
         st = get(n + 1); fa, fb = st['prev'], st['cur']
         src = interp(fa, fb, q) if fa is not None else fb.copy()
     else:
@@ -730,7 +741,11 @@ def frame_at(f, get):
     for x in XF:
         if 0 <= t - x < 3 / FPS and f > 0:
             pass
-    return compose(t, src)
+    out = compose(t, src)
+    if TL['cover'] <= t < TL['cover'] + 0.36 and _cover.get('img') is not None:
+        out = cv2.addWeighted(_cover['img'], 1 - (t - TL['cover']) / 0.36, out, (t - TL['cover']) / 0.36, 0)
+    return out
+_cover = {}
 
 def render_range(a, b, out):
     start = max(0, min(int(min(TL['frames'][a:b])) - 1, NSRC - 3))

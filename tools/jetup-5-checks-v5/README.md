@@ -1,6 +1,6 @@
-# JetUP 5 Checks v5 (6 November 2026): how it was built
+# JetUP 5 Checks v5.1 (6 November 2026): how it was built
 
-Preview only. Not on the website or any channel until MTG approves. Output: `JetUP_5_Checks_MTG_v5.mp4`
+Preview only. Not on the website or any channel until MTG approves. Output: `JetUP_5_Checks_MTG_v5.1.mp4`
 (5:25, 1920x1080, 25 fps, -14.7 LUFS, true peak -3.4 dBFS) and a web copy of about 82 MB.
 
 ## What changed from v4.2 (5:53)
@@ -24,6 +24,15 @@ Preview only. Not on the website or any channel until MTG approves. Output: `Jet
   the JetUP mark in the top bar, a new end card that sends viewers to the step-by-step training.
 - **Audio:** sharper voice (less mud, more presence and air, gentle compression), soft SFX on reveals, the closing
   track "They Call Me MTG" from 51.36 s before the end, soft under speech, rising after.
+
+## v5.1 polish (same day)
+
+- Avatar speed is Gaussian-smoothed inside each continuous stretch, and every frame that falls between two source
+  frames is built with optical flow. Jerky frames: v5 0.89%, v5.1 0.20% (HeyGen original 0.15%).
+- Lip map uses word times measured in the render's own soundtrack (`render_words.json`; the old v3 list drifted
+  up to 80 ms) with the measured 140 ms lip lead. m/b/p closures on the sound: 95, 96, 88 and 80% in four stretches.
+- The cover dissolves into the first card, +30.1% and $1,000,000 count up on their words, softer check hits,
+  a light de-esser on the voice, larger small text. Posting pack with the new chapters: `posting-pack-v5.1.md`.
 
 ## Rebuild
 

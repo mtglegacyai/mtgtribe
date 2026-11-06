@@ -177,4 +177,4 @@ def build_start():
     ld = [ld_video('training'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
-                main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training.jpg?v=2', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)
+                main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

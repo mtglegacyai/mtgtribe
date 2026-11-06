@@ -34,14 +34,6 @@ Approved by MTG and live on mtgtribe.com/jetup (6 Nov 2026) as `jetup/media/jetu
 - The cover dissolves into the first card, +30.1% and $1,000,000 count up on their words, softer check hits,
   a light de-esser on the voice, larger small text. Posting pack with the new chapters: `posting-pack-v5.1.md`.
 
-## v5.2 (6 November 2026): corrected skin tone in the photo
-
-MTG: "I look too light in the picture, but my real skin colour is that in the video." The gold-ringed circle photo
-(intro card, slogan card, signature card, end card) and the small face in the top bar now use
-`assets/tribe/mtg-profile-photo-v2.png` and the matching face crop (see `tools/photo-skin-tone/`). Nothing else changed:
-same voice, mix, timing and frames (5:25, 8,122 frames, -14.6 LUFS, true peak -4.9 dBFS, web copy about 82 MB).
-Same file name on the site, `jetup/media/jetup-5-checks-mtg-v5.mp4`.
-
 ## Rebuild
 
 Scratch layout used: `v5/work` (voice takes `o1_raw.wav`, `o2_raw.wav`, `n1_raw.wav` and the JSON in `data/`),

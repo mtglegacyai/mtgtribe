@@ -33,14 +33,3 @@ publish without approval.
   like the Bellver players. Never make the viewer press close after watching the whole video.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
-
-## Standing rule: MTG's profile photo (MTG, 6 November 2026)
-
-- **Always a circle** with a thin gold ring, everywhere: pages, share images, video cards, end cards, small badges.
-  Never a square or rounded-square photo.
-- **Always the corrected skin tone.** MTG: "I look too light in the picture, but my real skin colour is that in the
-  video." The master is `assets/tribe/mtg-profile-photo-v2.png` (skin matched to the 5 Checks video, version D);
-  site sizes are the `-v2` files in `assets/tribe/` and `jetup/img/`. The old file names now hold the corrected photo too.
-  Never use the lighter original from the `brand-assets` branch.
-- Any new image or video that shows the photo: start from the v2 master. To fix an image that already contains the
-  old photo, use `tools/photo-skin-tone/` (recolor, small-badge recolor, badge swap).

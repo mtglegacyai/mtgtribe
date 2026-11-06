@@ -109,7 +109,7 @@ def build_home():
    </ul>
   </div>
   <div class="rv" style="--d:2">
-   {laptop('5checks', 'Watch first: 5 checks before you try JetUP (5:53)', eager=True)}
+   {laptop('5checks', 'Watch first: 5 checks before you try JetUP (5:25)', eager=True)}
   </div>
  </div>
  <p class="illus" aria-hidden="true">Chart: illustration only, not live prices</p>
@@ -285,4 +285,4 @@ def build_home():
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',
                 "MTG's plain-English JetUP and TAG Markets guide: who holds your money, how TAG Markets copy trading with Sonic AI works, the 70/30 split, 24x Amplify, the risks and every sign-up step.",
-                main, crumbs_l, ld, docked=False, og_img='/jetup/img/cover-5-checks.jpg', og_alt='Lost money before? Check these 5 things before you try again. JetUP and TAG Markets guide by MTG')
+                main, crumbs_l, ld, docked=False, og_img='/jetup/img/cover-5-checks-v5.jpg', og_alt='Lost money before? Check these 5 things before you try again. JetUP and TAG Markets guide by MTG')

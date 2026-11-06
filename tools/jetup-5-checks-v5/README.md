@@ -1,6 +1,6 @@
 # JetUP 5 Checks v5.1 (6 November 2026): how it was built
 
-Preview only. Not on the website or any channel until MTG approves. Output: `JetUP_5_Checks_MTG_v5.1.mp4`
+Approved by MTG and live on mtgtribe.com/jetup (6 Nov 2026) as `jetup/media/jetup-5-checks-mtg-v5.mp4`. Master: `JetUP_5_Checks_MTG_v5.1.mp4`
 (5:25, 1920x1080, 25 fps, -14.6 LUFS, true peak -4.9 dBFS) and a web copy of about 82 MB.
 
 ## What changed from v4.2 (5:53)

@@ -16,7 +16,8 @@ def part(n, title, sub, steps, shots, success, extra_before='', extra_after=''):
  <p class="lede" style="margin:0 0 16px">{sub}</p>
  <div class="pgrid">
   <div>{extra_before}<ol class="steps">{st}</ol>{extra_after}
-   <p class="success">{icon('i-check2')}<span>Success check: {success}</span></p></div>
+   <p class="success">{icon('i-check2')}<span>Success check: {success}</span></p>
+   <div data-ticks="parts"><button type="button" class="tick ptick" data-id="p{n}" aria-pressed="false"><span class="bx">{icon('i-check2')}</span>I've done part {n}</button></div></div>
   <div class="shots">{sh}</div>
  </div>
 </article>'''

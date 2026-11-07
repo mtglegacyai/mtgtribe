@@ -266,3 +266,259 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
     if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } }
   });
 })();
+
+/* Navigation and learning helpers (MTG, 7 Nov 2026): FAQ links open their answer, the jump bar on long pages,
+   "continue where you left off" (saved only on this phone), tap a word to see what it means, and search the guide. */
+(function () {
+  'use strict';
+  var d = document, w = window, html = d.documentElement;
+  var reduce = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s, c) { return (c || d).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  function json(k, fb) { try { return JSON.parse(get(k) || 'null') || fb; } catch (e) { return fb; } }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function topH() { var t = $('.top'); return t ? t.getBoundingClientRect().height : 60; }
+  function docTop(el) { var y = 0; for (var e = el; e; e = e.offsetParent) y += e.offsetTop; return y; }   /* ignores slide-in animations */
+  function scrollToY(y) {
+    y = Math.max(0, Math.round(y));
+    try { w.scrollTo({ top: y, behavior: reduce ? 'instant' : 'smooth' }); } catch (e) { w.scrollTo(0, y); }
+  }
+  var path = location.pathname, pageName = d.body.getAttribute('data-page') || 'JetUP guide';
+
+  /* ---- FAQ links (from search or anywhere) open their answer ---- */
+  function openHash() {
+    if (!location.hash) return;
+    var el = null; try { el = d.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (e) {}
+    for (var p = el; p; p = p.parentElement) if (p.tagName === 'DETAILS') p.open = true;
+  }
+  openHash();
+  w.addEventListener('hashchange', openHash);
+  /* arriving with an address like #part-4: once fonts and images have settled, land exactly on it
+     (unless the visitor has already started scrolling) */
+  var touched = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { w.addEventListener(ev, function () { touched = true; }, { passive: true, once: true }); });
+  function settleHash() {
+    if (touched || !location.hash) return;
+    var el = null; try { el = d.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (e) {}
+    if (!el) return;
+    var j = $('#jump'), y = Math.max(0, docTop(el) - topH() - (j ? j.offsetHeight : 0) - 14);
+    if (Math.abs(w.scrollY - y) > 16) { html.style.scrollBehavior = 'auto'; w.scrollTo(0, y); html.style.scrollBehavior = ''; }
+  }
+  if (location.hash) {
+    var settled = function () { settleHash(); setTimeout(settleHash, 400); };
+    if (d.readyState === 'complete') settled(); else w.addEventListener('load', settled);
+    if (d.fonts && d.fonts.ready) d.fonts.ready.then(settleHash);
+  }
+
+  /* ---- remember where the visitor is (this phone only) ---- */
+  function remember(section) {
+    if (path === '/jetup/' || path === '/jetup') return;
+    set('jetup-last', JSON.stringify({ u: path + (section ? '#' + section.id : ''), p: pageName, s: section ? section.label : '', t: Date.now() }));
+  }
+
+  /* ---- 1. jump bar ---- */
+  var jump = $('#jump');
+  if (jump) (function () {
+    var btn = $('.jcur', jump), list = $('#jlist'), jn = $('[data-jn]', jump), jt = $('[data-jt]', jump);
+    var links = $$('a', list), chips = $$('.jc', jump);
+    var items = links.map(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      return { id: id, label: $('.jl', a).textContent, el: d.getElementById(id) };
+    }).filter(function (x) { return x.el; });
+    if (!items.length) return;
+    html.classList.add('has-jump');
+    var cur = -2, shown = false, ticking = false, tkey = jump.getAttribute('data-ticks-key');
+    /* a section is "current" once its top reaches the upper third of the screen (and is never hidden under the bars) */
+    function line() { return Math.max(topH() + jump.offsetHeight + 28, w.innerHeight * 0.35); }
+    function update() {
+      ticking = false;
+      var L = line(), y = w.scrollY, i = -1;
+      for (var k = 0; k < items.length; k++) if (docTop(items[k].el) - y <= L) i = k;
+      var on = docTop(items[0].el) - y < w.innerHeight * 0.55;
+      if (on !== shown) { shown = on; jump.classList.toggle('on', on); if (!on) close(false); }
+      if (i < 0) i = 0;
+      if (i !== cur) {
+        cur = i;
+        jn.textContent = i + 1; jt.textContent = items[i].label;
+        jump.style.setProperty('--jp', ((i + 1) / items.length).toFixed(3));
+        links.forEach(function (a, k) { if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+        chips.forEach(function (a, k) { a.classList.toggle('cur', k === i); if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+        if (shown) remember(items[i]); else remember(null);
+      }
+    }
+    function soon() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    function ticks() {
+      if (!tkey) return;
+      var saved = json(tkey, {});
+      links.concat(chips).forEach(function (a) { var t = a.getAttribute('data-tick'); if (t) a.classList.toggle('done', !!saved[t]); });
+    }
+    function open() { list.hidden = false; btn.setAttribute('aria-expanded', 'true'); jump.classList.add('open');
+      var a = $('a[aria-current]', list) || links[0]; if (a) { try { a.focus({ preventScroll: true }); } catch (e) { a.focus(); } } }
+    function close(focus) { if (list.hidden) return; list.hidden = true; btn.setAttribute('aria-expanded', 'false'); jump.classList.remove('open'); if (focus) btn.focus(); }
+    function goTo(t) {
+      scrollToY(docTop(t) - topH() - jump.offsetHeight - 14);
+      if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+      try { t.focus({ preventScroll: true }); } catch (e) {}
+    }
+    btn.addEventListener('click', function () { if (list.hidden) open(); else close(true); });
+    links.concat(chips).forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var t = d.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
+        e.preventDefault(); close(false); goTo(t);
+        if (history.replaceState) history.replaceState(null, '', '#' + t.id);
+      });
+    });
+    d.addEventListener('click', function (e) { if (!list.hidden && !jump.contains(e.target)) close(false); });
+    d.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && !list.hidden) close(true); });
+    d.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.tick')) setTimeout(ticks, 0); });
+    w.addEventListener('scroll', soon, { passive: true });
+    w.addEventListener('resize', soon);
+    ticks(); update();
+  })();
+  else remember(null);
+
+  /* ---- 2. continue where you left off (JetUP home) ---- */
+  var wb = $('#wb');
+  if (wb) (function () {
+    var last = json('jetup-last', null), parts = json('jetup-parts', {}), checks = json('jetup-checks', {});
+    if (last && (!last.t || Date.now() - last.t > 120 * 864e5 || !/^\/jetup\//.test(last.u || ''))) last = null;
+    var np = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'].filter(function (k) { return parts[k]; }).length;
+    var nc = ['c1', 'c2', 'c3', 'c4', 'c5'].filter(function (k) { return checks[k]; }).length;
+    if (!last && !np && !nc) return;
+    var arrow = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m12 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var h = '<div class="wb-in"><p class="wb-k"><span aria-hidden="true">👋</span> Welcome back</p>';
+    if (last) h += '<a class="wb-go" href="' + esc(last.u) + '"><span><small>Continue where you left off</small><b>' + esc(last.p) + (last.s ? ' · ' + esc(last.s) : '') + '</b></span>' + arrow + '</a>';
+    else h += '<a class="wb-go" href="/jetup/get-started/"><span><small>Your next step</small><b>The sign-up training</b></span>' + arrow + '</a>';
+    h += '<div class="wb-prog">';
+    if (np) h += '<a href="/jetup/get-started/"><span aria-hidden="true">🚀</span> Sign-up parts done: <b>' + np + ' of 6</b></a>';
+    if (nc) h += '<a href="/jetup/five-checks/"><span aria-hidden="true">🛡️</span> 5 checks ticked: <b>' + nc + ' of 5</b></a>';
+    h += '</div><button class="wb-x" type="button">Clear my progress</button></div>';
+    wb.innerHTML = h; wb.hidden = false;
+    var x = $('.wb-x', wb), armed = false, t0;
+    x.addEventListener('click', function () {
+      if (!armed) { armed = true; x.textContent = 'Tap again to clear it from this phone'; clearTimeout(t0); t0 = setTimeout(function () { armed = false; x.textContent = 'Clear my progress'; }, 4000); return; }
+      ['jetup-last', 'jetup-parts', 'jetup-checks'].forEach(del);
+      $$('.tick[aria-pressed="true"]').forEach(function (t) { t.setAttribute('aria-pressed', 'false'); });
+      wb.hidden = true; wb.innerHTML = '';
+      var tt = $('#toast'); if (tt) { tt.textContent = 'Your progress is cleared from this phone'; tt.classList.add('on'); setTimeout(function () { tt.classList.remove('on'); }, 2200); }
+    });
+  })();
+
+  /* ---- 4. tap a word to see what it means ---- */
+  var pop = $('#glpop'), gdata = null;
+  if (pop) (function () {
+    try { gdata = JSON.parse($('#gl-data').textContent); } catch (e) { return; }
+    var gh = $('.glh', pop), gd = $('.gld', pop), more = $('.gll', pop), x = $('.glx', pop), open = null;
+    function bottomBar() { var t = $('.thumb'); return t && t.offsetHeight ? t.offsetHeight : 0; }
+    function place(b) {
+      var r = b.getBoundingClientRect(), vw = html.clientWidth, pw = Math.min(320, vw - 24);
+      pop.style.width = pw + 'px';
+      var left = Math.max(12, Math.min(r.left + r.width / 2 - pw / 2, vw - pw - 12));
+      var ph = pop.offsetHeight, below = r.bottom + 12, above = r.top - ph - 12;
+      var up = below + ph > w.innerHeight - bottomBar() - 8 && above > topH() + 8;
+      pop.style.left = (left + w.scrollX) + 'px';
+      pop.style.top = ((up ? above : below) + w.scrollY) + 'px';
+      pop.style.setProperty('--ax', Math.max(18, Math.min(pw - 18, r.left + r.width / 2 - left)) + 'px');
+      pop.classList.toggle('up', up);
+    }
+    function show(b) {
+      var g = gdata[b.getAttribute('data-g')]; if (!g) return;
+      if (open && open !== b) open.setAttribute('aria-expanded', 'false');
+      gh.textContent = g[0]; gd.textContent = g[1]; more.setAttribute('href', g[2]); more.textContent = 'See it in the glossary';
+      pop.hidden = false; place(b); pop.classList.add('on');
+      b.setAttribute('aria-expanded', 'true'); open = b;
+    }
+    function hide(focus) {
+      if (!open) return;
+      pop.classList.remove('on'); pop.hidden = true; open.setAttribute('aria-expanded', 'false');
+      if (focus) open.focus(); open = null;
+    }
+    $$('button.gl').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); if (open === b) hide(false); else show(b); });
+    });
+    x.addEventListener('click', function () { hide(true); });
+    d.addEventListener('click', function (e) { if (open && !pop.contains(e.target)) hide(false); });
+    d.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && open) hide(true); });
+    w.addEventListener('resize', function () { if (open) place(open); });
+  })();
+
+  /* ---- 5. search the guide (in the menu) ---- */
+  var sq = $('#sq');
+  if (sq) (function () {
+    var res = $('#sres'), nav = $('#side nav'), clr = $('.sclear'), idx = null, loading = null;
+    function load() {
+      if (idx) return Promise.resolve(idx);
+      if (loading) return loading;
+      loading = fetch(sq.getAttribute('data-index')).then(function (r) { return r.json(); }).then(function (j) {
+        idx = j.map(function (e) { e.hl = e.h.toLowerCase(); e.pl = e.p.toLowerCase(); e.tl = e.t.toLowerCase(); return e; });
+        return idx;
+      }).catch(function () { loading = null; return null; });
+      return loading;
+    }
+    function hl(s, toks) {   /* mark every match, escaping the text around it */
+      var low = s.toLowerCase(), on = [];
+      toks.forEach(function (t) { var i = low.indexOf(t); while (i > -1) { for (var k = i; k < i + t.length; k++) on[k] = true; i = low.indexOf(t, i + t.length); } });
+      var out = '', open = false;
+      for (var i = 0; i < s.length; i++) {
+        if (on[i] && !open) { out += '<mark>'; open = true; } else if (!on[i] && open) { out += '</mark>'; open = false; }
+        out += esc(s[i]);
+      }
+      return out + (open ? '</mark>' : '');
+    }
+    function snip(e, toks) {
+      var p = -1; toks.forEach(function (t) { var i = e.tl.indexOf(t); if (i > -1 && (p < 0 || i < p)) p = i; });
+      if (p < 0) p = 0;
+      var a = Math.max(0, p - 50), b = Math.min(e.t.length, p + 120);
+      while (a > 0 && e.t[a - 1] !== ' ') a--;
+      return (a > 0 ? '… ' : '') + hl(e.t.slice(a, b), toks) + (b < e.t.length ? ' …' : '');
+    }
+    function run() {
+      var q = sq.value.trim().toLowerCase();
+      clr.hidden = !q;
+      if (q.length < 2) { res.hidden = true; res.innerHTML = ''; if (nav) nav.hidden = false; return; }
+      if (nav) nav.hidden = true;
+      res.hidden = false;
+      if (!idx) { res.innerHTML = '<p class="snone">Searching the guide</p>'; load().then(function (r) { if (r) run(); else res.innerHTML = '<p class="snone">Search is not available right now. Use the pages below.</p>'; }); return; }
+      var toks = q.split(/\s+/).filter(function (t) { return t.length > 1; });
+      if (!toks.length) toks = [q];
+      var hits = [];
+      idx.forEach(function (e) {
+        var s = 0, all = true;
+        toks.forEach(function (t) {
+          var h = e.hl.indexOf(t) > -1, p = e.pl.indexOf(t) > -1, x = e.tl.indexOf(t) > -1;
+          if (!h && !p && !x) all = false;
+          s += (h ? 6 : 0) + (p ? 2 : 0) + (x ? 1 : 0);
+        });
+        if (!all) return;
+        if (e.hl.indexOf(q) > -1) s += 8; else if (e.tl.indexOf(q) > -1) s += 3;
+        hits.push([s, e]);
+      });
+      hits.sort(function (a, b) { return b[0] - a[0]; });
+      hits = hits.slice(0, 8);
+      if (!hits.length) {
+        res.innerHTML = '<p class="snone">Nothing found for “' + esc(sq.value.trim()) + '”. Try another word, or ask in the tribe.</p><a class="btn btn-lime btn-sm" href="/group/">Ask in the MTG TRIBE</a>';
+        return;
+      }
+      res.innerHTML = '<p class="scount">' + hits.length + (hits.length === 1 ? ' result' : ' results') + '</p>' + hits.map(function (x) {
+        var e = x[1];
+        return '<a class="sitem" href="' + esc(e.u) + '"><b>' + hl(e.h, toks) + '</b><small>' + esc(e.p) + '</small><span>' + snip(e, toks) + '</span></a>';
+      }).join('');
+    }
+    sq.addEventListener('focus', load);
+    sq.addEventListener('input', run);
+    sq.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { var a = $('.sitem', res); if (a) { e.preventDefault(); a.click(); } }
+      else if (e.key === 'ArrowDown') { var f = $('.sitem', res); if (f) { e.preventDefault(); f.focus(); } }
+      else if ((e.key === 'Escape' || e.key === 'Esc') && sq.value) { e.stopPropagation(); sq.value = ''; run(); }
+    });
+    clr.addEventListener('click', function () { sq.value = ''; run(); sq.focus(); });
+    res.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a'); if (!a) return;
+      var u = new URL(a.href, location.href);
+      if (u.pathname === location.pathname && html.classList.contains('menu-open')) { var s = $('#scrim'); if (s) s.click(); }
+    });
+  })();
+})();

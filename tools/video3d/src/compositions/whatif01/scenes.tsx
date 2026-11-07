@@ -240,7 +240,7 @@ export const S06Coping: React.FC = () => {
 	return (
 		<AbsoluteFill>
 			<Center style={{opacity: fadeOut(t, 21.9)}}>
-				<div style={{display: 'flex', gap: 40, opacity: 1 - respect * 0.75}}>
+				<div style={{display: 'flex', gap: 40, opacity: 1 - respect}}>
 					{COPE.map((c, i) => {
 						const p = ease(t, c.at, 0.5);
 						return (

@@ -322,7 +322,7 @@ def notfound(path):
     """GitHub Pages is case-sensitive: send /ALTRUVA (any case) to /altruva, otherwise a friendly 404."""
     open(path, 'w').write(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page not found | mtgtribe.com</title><meta name="robots" content="noindex">
-<script>(function(){{var p=location.pathname,l=p.toLowerCase();if(p!==l){{location.replace(l+location.search+location.hash);}}}})();</script>
+<script>(function(){{var p=location.pathname,l=p.toLowerCase(),q=location.search+location.hash,a={{'/jetupzoom':'/JetUpZoom/'}},k=l.replace(/\\/+$/,'');if(a[k]&&p!==a[k]){{location.replace(a[k]+q);return;}}if(p!==l){{location.replace(l+q);}}}})();</script>
 <style>body{{background:#01081b;color:#cde0f0;font:600 16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}}h1{{color:#fff;margin:0 0 8px}}a{{color:#eebd5c}}</style></head>
 <body><main><h1>This page isn't here</h1><p>Try the <a href="/altruva/">ALTRUVA guide</a> or its <a href="/altruva/dashboard/">dashboard</a>.</p></main></body></html>''')
 

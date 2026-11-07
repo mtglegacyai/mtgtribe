@@ -6,7 +6,7 @@ import {useLayout} from '../lib/layout';
 
 // The small brand bar shown in every frame. The tiny icon is the only place the face crop is used,
 // because the t-shirt print cannot be read at this size.
-export const BrandBar: React.FC<{opacity?: number}> = ({opacity = 1}) => {
+export const BrandBar: React.FC<{opacity?: number; site?: string}> = ({opacity = 1, site = BRAND.site}) => {
 	const {vertical, safe} = useLayout();
 	return (
 		<AbsoluteFill style={{pointerEvents: 'none', opacity}}>
@@ -34,7 +34,7 @@ export const BrandBar: React.FC<{opacity?: number}> = ({opacity = 1}) => {
 						{BRAND.line.split('|')[1]}
 					</div>
 					<div style={{fontFamily: MONO, fontWeight: 500, fontSize: 18, color: COLORS.gold, letterSpacing: 1}}>
-						{BRAND.site}
+						{site}
 					</div>
 				</div>
 			</div>

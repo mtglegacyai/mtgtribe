@@ -6,7 +6,9 @@ export const BRAND = {
 	line: 'MTG 👑 | Your Digital Architect',
 	name: 'MTG',
 	title: 'Your Digital Architect',
-	site: 'MusaTheGiant.com',
+	// on-screen site: mtgtribe.com (mtg-hooks-standard). A video about another site can pass its address to <BrandBar site=... />
+	site: 'mtgtribe.com',
+	personalSite: 'MusaTheGiant.com',
 	slogan: "Let's Get This Crypto! 💪",
 } as const;
 

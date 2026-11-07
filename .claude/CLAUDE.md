@@ -79,3 +79,10 @@ history) pull in new viewers and end on the MTG TRIBE; his own niche sends peopl
 3D studio as `kit/video3d/`, which installs into any site's project. After changing the skill or `tools/video3d/`,
 rebuild the upload file with `python3 tools/skills/package_skill.py mtg-scriptforge` and give MTG the new
 `tools/skills/dist/mtg-scriptforge.skill` to upload to his claude.ai account.
+
+**This is MTG's business (MTG, 7 November 2026).** Every video gets a job (reach, engagement, traffic, leads, sign-ups
+and sales, team or tribe growth), an interaction layer (questions, guesses, votes, takeaways, share prompts), the right
+website address at the right moment, the right length, and a posting pack. Method:
+`.claude/skills/mtg-scriptforge/references/engagement-and-conversion.md` and `references/posting-pack.md`. The same
+rules are section 5a of the updated mtg-hooks-standard (upload file in `tools/skills/dist/`). On-screen site in videos:
+mtgtribe.com (the 3D brand bar can show another site's address for a video about that site).

@@ -1,6 +1,6 @@
 ---
 name: mtg-scriptforge
-description: "MTG's video idea, script and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and any new site), based on his ScriptForge prompt: a niche menu, 10 video ideas, then a full 3 to 4 minute script in his voice with visual and build cues, Shorts cut-downs and the honest destination for every video, plus a bundled Remotion and Three.js 3D studio (word synced captions, audio, his photo in a circle) that installs into any site's project. Use whenever MTG (MusaTheGiant) asks for video ideas, scripts, voiceovers, YouTube, TikTok or Shorts plans, 3D or animated videos, or content to promote any of his websites, products, services, income streams, tools or the MTG TRIBE, or mentions ScriptForge, even if he does not name this skill."
+description: "MTG's video idea, script, engagement and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and any new site), built on his ScriptForge prompt and run as a business: every video gets a job (reach, traffic, leads, sign-ups and sales, team or tribe growth), an interaction layer (questions, guesses, votes, takeaways, share prompts), the right website address at the right moment, the right length, and a posting pack. Includes a niche menu, 10 ideas, full scripts in his voice with visual and build cues, Shorts cut-downs and a bundled Remotion and Three.js 3D studio with his photo in a circle. Use whenever MTG (MusaTheGiant) asks for video ideas, scripts, voiceovers, YouTube, TikTok or Shorts plans, engaging or viral content, captions and descriptions, 3D or animated videos, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE, or mentions ScriptForge, even if he does not name this skill."
 ---
 
 # MTG ScriptForge (all websites)
@@ -14,6 +14,25 @@ that site needs; this skill writes and produces them. MTG's latest instruction i
 **MTG's photo is always shown in a circle** with a gold gradient ring and a soft gold glow (his rule since
 7 November 2026). The whole photo fills the circle so his face, the t-shirt print and the sign stay visible; never a
 zoomed face-only crop. This replaces the rounded square in older copies of mtg-creative-standard section 10a.
+
+## This is MTG's business
+
+MTG, 7 November 2026: "This is not a hobby. This is the serious business to me." Every video must be fun, helpful,
+educational and thought provoking, AND do a job for the business: grow traffic to his websites, sign people up, close
+deals honestly, make sales, grow his team of business partners, grow the MTG TRIBE and his platforms. So every video
+gets:
+
+- **A job:** one primary goal (reach, engagement, traffic, leads, sign-ups and sales, team growth) and the viewer
+  journey stage it serves (discover, learn, trust, decide, grow).
+- **An interaction layer:** questions that make people think and answer, a guess or a number to comment, a takeaway,
+  a specific person to share it with, a reason to like, save and follow.
+- **The right website address at the right moment:** the one page that fits the topic, said and shown when the viewer
+  has just received value, plus the tribe.
+- **The right length** for its job and platform.
+- **A posting pack** so it goes out with titles, descriptions, pinned comment and share messages ready.
+
+The full method is in `references/engagement-and-conversion.md`; read it before Step 2 and Step 3. Honesty still
+comes first: no income promises, no fake urgency, no manipulation, risks shown plainly.
 
 ## Step 0: know the website
 
@@ -71,25 +90,34 @@ Give exactly 10 ideas for the chosen sub niche. For each:
 - **Destination**: the page or platform it leads to, and why that is the honest next step.
 - **Build**: GrowKaz stickman 2D (stories, What If, history, psychology), 3D studio (objects, money flows, numbers,
   products, intros), screen recording (tutorials, tool trainings) or a mix; 16:9, 9:16 or both.
+- **Job**: primary goal, journey stage and length (playbook sections 1 to 3).
+- **Engage**: the main comment prompt (a question, a guess, a number, a vote) and who to share it with.
 
 Mix formats: listicles, single deep dives, "the truth about...", countdowns, myth busters, story driven pieces, honest
 checks. Avoid generic or overdone titles. Then ask MTG to pick a number, or ask for 10 more.
 
 ## Step 3: the full script
 
-Write a complete narration script of 450 to 600 words for the main body (about 3 to 4 minutes at 150 words per
-minute), plus MTG's greeting and signature outro.
+Fit the length to the video's job (playbook section 3). For a 3 to 4 minute What If or bridge video, write a
+narration script of 450 to 600 words for the main body (about 150 words per minute), plus MTG's greeting and
+signature outro. Other jobs scale the same structure up (explainers, trainings) or down (Shorts: hook, one idea,
+one prompt, one call to action, short sign-off).
 
-**Structure**
+**Structure** (with the interaction layer and address placement built in)
 
 1. HOOK (0:00 to 0:12): a surprising fact, question or scene that stops the scroll. No greeting before it.
 2. GREETING (0:12 to 0:20): "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this
    training." Then one line on what the video teaches.
-3. SETUP (to about 0:45): why this matters to the viewer; open a curiosity loop.
+3. SETUP (to about 0:45): why this matters to the viewer; open a curiosity loop. `[ENGAGE]` a prediction prompt
+   ("comment your guess") that the video pays off later.
 4. MAIN BODY (to about 3:00): 3 to 5 escalating beats. Each ends with a mini cliffhanger or a re-hook into the next.
-5. PAYOFF (to about 3:20): the biggest reveal or the most useful insight. It must pay off the hook.
-6. BRIDGE (one or two sentences): the honest link from the topic to the destination.
-7. OUTRO: one tribe CTA that fits the platform, then MTG's signature outro word for word (see mtg-creative-standard).
+   `[ENGAGE]` one reflection moment in the middle ("pause, what would you have done?").
+5. PAYOFF (to about 3:20): the biggest reveal or the most useful insight. It must pay off the hook and the
+   prediction. `[ENGAGE]` the takeaway or vote prompt.
+6. BRIDGE (one or two sentences): the honest link from the topic to the destination. `[CTA]` the primary action with
+   its one main address, said and shown (playbook section 5).
+7. OUTRO: `[ENGAGE]` share with a specific person, then the tribe call to action that fits the platform, then MTG's
+   signature outro word for word (see mtg-creative-standard).
 
 **Narration style by niche** (always MTG's own approved voice, warm and patient; the niche changes pace, music mood and
 visuals, never the voice)
@@ -112,6 +140,8 @@ visuals, never the voice)
 - `[VISUAL]` what the viewer sees: the object, diagram or action that explains the line, one focal point.
 - `[BUILD]` stickman 2D, 3D, screen recording or photo (circle), so production can start straight from the script.
 - `[ON SCREEN]` short text, labels and numbers (no em or en dashes).
+- `[ENGAGE]` the question, guess, vote, takeaway or share prompt, spoken and shown on screen.
+- `[CTA]` the action and the exact address, with when it appears on screen.
 - `(pause)`, *emphasis* and tone notes where they help the voiceover.
 
 **After the script, add**
@@ -122,9 +152,12 @@ visuals, never the voice)
 - Word count and estimated runtime.
 - Voice plan: which lines can reuse MTG's recorded voice bank and which need new HeyGen lines (estimate the credits;
   ask MTG before spending any).
-- Shorts plan: 2 or 3 vertical cut-downs of 30 to 60 seconds, each with its own hook and one CTA.
+- Shorts plan: 2 or 3 vertical cut-downs of 20 to 60 seconds, each with its own hook, one prompt and one CTA.
+- The job card: goal, stage, main address, comment prompt, share target.
 
 Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a new topic?"
+
+When the video is finished, deliver its posting pack (`references/posting-pack.md`).
 
 ## Rules
 
@@ -135,6 +168,9 @@ Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a 
   This also keeps his YouTube and TikTok channels within platform rules.
 - **Psychology and manipulation topics** are for awareness and self protection only (spotting scams, FOMO, pressure
   tactics). Never use those tactics on the viewer.
+- **Engagement is real.** Every prompt comes from the content and starts a real conversation; no empty "comment YES"
+  bait (Facebook demotes it). Never ask for wallet addresses, recovery phrases, balances or account screenshots in
+  comments. Only promise a reply, a part two or a link if MTG will really deliver it.
 - **MTG's photo** is always a circle (see above).
 - **Wording.** "Potential business partners" and "business partners", never "downline" or "recruits". "Training", not
   "demo". Say abbreviations in full the first time.
@@ -157,5 +193,8 @@ Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a 
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
 5. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
-6. Put the video where it helps: the matching website page (9:16 inside the slim gold phone frame, 16:9 inside the
+6. Hand over the posting pack (`references/posting-pack.md`).
+7. Put the video where it helps: the matching website page (9:16 inside the slim gold phone frame, 16:9 inside the
    laptop frame, and the player closes itself when the video ends), YouTube, TikTok and WhatsApp status.
+8. After posting: pin the comment, answer early comments, share it in the tribe, and turn the best questions into
+   the next videos. Check the numbers weekly and make more of what works (playbook section 8).

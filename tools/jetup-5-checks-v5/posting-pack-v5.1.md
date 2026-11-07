@@ -42,7 +42,7 @@ I won't tell you "this one is different". I'll show you how to check JetUP and T
 
 🔗 The 5 checks, the sources, the training and how to join: https://mtgtribe.com/jetup
 🤝 Join the MTG TRIBE: https://mtgtribe.com/group
-✈️ Message me on Telegram: https://t.me/mtgtribe
+✈️ Message me on Telegram: https://t.me/mtgtribez
 ▶️ Subscribe for the next one: https://www.youtube.com/@mtgtribe
 
 Education only, not financial advice. Always do your own research. Trading involves risk and you can lose your whole deposit. Past results never guarantee future results. This is an independent guide by MTG, not an official JetUP or TAG Markets channel. If you join through my link, I may earn a reward.
@@ -92,7 +92,7 @@ Lost money to a trading app or a program that promised you the world? I won't te
 🔗 The 5 checks, the training and how to join: https://mtgtribe.com/jetup
 ▶️ YouTube: https://www.youtube.com/@mtgtribe
 📲 TikTok: https://www.tiktok.com/@joinmtgtribe
-✈️ Telegram: https://t.me/mtgtribe
+✈️ Telegram: https://t.me/mtgtribez
 
 _Education only, not financial advice. Trading involves risk. Independent guide by MTG._
 

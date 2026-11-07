@@ -15,6 +15,7 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | TikTok | tiktok.com/@joinmtgtribe |
 | Telegram | t.me/mtgtribez |
 | Facebook | facebook.com/Musa.TheMTG |
+| WhatsApp MTG directly (messages and voice notes, no calls) | wa.me/27721714626 |
 
 Platform fit: on TikTok point to the WhatsApp tribe and YouTube; on YouTube point to the WhatsApp tribe, Telegram and
 TikTok. Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard).
@@ -38,6 +39,17 @@ TikTok. Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard).
 | 3 | ClickBaitPays | clickbaitpaysus.com | |
 | 4 | Bitcoin Wealth | bitcoinwealthpays.com | |
 | 5 | ALTRUVA | mtgtribe.com/altruva (fit check: /altruva/dashboard/is-it-right-for-me) | independent guide; MTG earns as a sponsor |
+
+## Journey pages per stream (playbook section 2)
+
+| Stream | Learn | Trust | Decide and act | Grow |
+|---|---|---|---|---|
+| ALTRUVA | mtgtribe.com/altruva (explainers, how it works) | /altruva/dashboard/is-it-right-for-me, /altruva/dashboard/faq, /altruva/dashboard/safety | /altruva/dashboard/join, /altruva/dashboard/first-72-hours | /altruva/dashboard/downloads (share kit) |
+| JetUp and TAG Markets | mtgtribe.com/jetup, /jetup/how-it-works | /jetup/five-checks, /jetup/faq | /jetup/get-started, /jetup/promo | /jetup/partner-plan, /jetup/downloads |
+| Bellver Card | bellveraffiliates.com | bellveraffiliates.com | sign-up link as on the live dashboard (app.bellvercards.com?ref=mtg) | bellveraffiliates.com |
+| MTG TRIBE | mtgtribe.com | mtgtribe.com/dashboard | mtgtribe.com/group | start your own tribe (tribe code on mtgtribe.com) |
+
+Paths after a site name belong to that site (for example /jetup/faq is mtgtribe.com/jetup/faq).
 
 ## Topic pages on mtgtribe.com (direct videos)
 

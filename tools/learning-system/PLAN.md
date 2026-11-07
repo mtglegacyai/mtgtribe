@@ -100,3 +100,10 @@ Two PDFs, both waiting for MTG's tutorial video and links:
 ## Facts and consistency
 
 `tools/learning-system/jetup-facts.md` is the single source of truth for every JetUP number, step, label and rule.
+
+## Links received (7 Nov 2026)
+
+- JetUP Partner link from MTG: in `JETUP_JOIN` (`jetup/_build/layout.py`). Used by every "Join JetUP" button: top bar, side
+  menu, phone thumb bar, home hero, get-started "Get ready", and the Join card at the end of every page except the
+  disclaimer. Each carries the fair-play note (invited by someone else? use their Partner link). Preview on the working
+  branch; live after MTG's approval. BIX Card link: still to come.

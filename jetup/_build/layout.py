@@ -15,6 +15,10 @@ BINANCE = 'https://accounts.binance.com/register?ref=11139868'
 WA_MTG = 'https://wa.me/27721714626'
 WA_PARTNER = WA_MTG + '?text=' + 'Hi%20MTG%2C%20I%20watched%20your%20JetUP%20training.%20Please%20send%20me%20your%20JetUP%20Partner%20link.'
 GROUP = '/group/'
+# MTG's JetUP Partner link (sent by MTG 7 Nov 2026). Every "Join JetUP" button on the guide uses this one constant.
+JETUP_JOIN = 'https://jetup.ibportal.io/auth/register?e=y0ylqkMzz0m1XW_OPx2MYQWc4ZKJrNQWbP0Vz6aATbI&a=1'
+JOIN_NOTE = ("Join JetUP opens JetUP's sign-up page with MTG's Partner link, so MTG becomes your sponsor. "
+             "Invited by someone else? Use their Partner link instead, so you join their team.")
 YT = 'https://www.youtube.com/@mtgtribe'
 TT = 'https://www.tiktok.com/@joinmtgtribe'
 TG = 'https://t.me/mtgtribez'
@@ -125,6 +129,7 @@ def side_menu(path):
         out.append('  </div>')
     out.append(' </nav>')
     out.append(' <div class="side-bot">')
+    out.append('  <a class="btn btn-pri btn-sm" href="%s" target="_blank" rel="sponsored noopener" data-join>%sJoin JetUP</a>' % (JETUP_JOIN, icon('i-rocket2')))
     out.append('  <a class="btn btn-lime btn-sm" href="%s"><span class="emo" aria-hidden="true">💬</span>Join the MTG TRIBE</a>' % GROUP)
     out.append('  <div class="row"><a class="slink" href="/jetup/"><span aria-hidden="true">🏡</span>JetUP home</a><a class="slink" href="/dashboard/"><span aria-hidden="true">📊</span>Dashboard</a></div>')
     out.append('  <a class="sfine" href="/jetup/disclaimer/">Disclaimer · Education only, not financial advice</a>')
@@ -138,7 +143,7 @@ def top_bar(docked):
      '<header class="top">',
      ' ' + first,
      ' <a class="brand" href="/jetup/" aria-label="JetUP and TAG Markets guide home"><img src="/jetup/img/jetup-mark-64.webp" width="38" height="38" alt=""><span class="bt"><b>JetUP <span>×</span> TAG Markets</b><small>Independent guide by MTG 👑</small></span></a>',
-     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-ghost btn-sm" href="/jetup/" aria-label="JetUP and TAG Markets home" title="JetUP and TAG Markets home"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">JetUP home</span></a></div>' % icon('i-rocket2'),
+     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-lime btn-sm" href="%s" target="_blank" rel="sponsored noopener" data-join>Join<span class="hide-s">&nbsp;JetUP</span></a><a class="btn btn-ghost btn-sm" href="/jetup/" aria-label="JetUP and TAG Markets home" title="JetUP and TAG Markets home"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">JetUP home</span></a></div>' % (icon('i-rocket2'), JETUP_JOIN),
      '</header>'])
 
 def footer():
@@ -220,6 +225,9 @@ def ld_faq(qas, pid):
         {"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qas]}
 
 VIDEOS = {
+ 'tut1': dict(src='/jetup/media/jetup-tutorial-part-1-create-account.mp4', poster='/jetup/img/cover-tutorial-part-1.webp', jpg='/jetup/img/cover-tutorial-part-1.jpg', dur='3:38', iso='PT3M38S', orient='v',
+   title='JetUP step by step, part 1: create your JetUP account',
+   desc="MTG's own recording, tap by tap: the Partner link, Individual, your real name, a password of 8 to 12 characters, country and phone, Register Now, verify your email, log in and check Account Type: Partner."),
  '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp', jpg='/jetup/img/cover-5-checks-v5.jpg', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),
@@ -272,7 +280,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
     graph += (ld_extra or [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(',', ':'))
     body = main
-    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + pager(path) + TOTOP + jump_bar(path, icon) + thumb_bar(path, icon, GROUP) + (LIGHTBOX if lightbox else ''))) | {'i-chev-l', 'i-search'}
+    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + pager(path) + TOTOP + jump_bar(path, icon) + thumb_bar(path, icon, JETUP_JOIN) + (LIGHTBOX if lightbox else ''))) | {'i-chev-l', 'i-search'}
     syms = ''.join(ICONS[u] for u in sorted(used) if u in ICONS)
     missing = [u for u in used if u not in ICONS]
     if missing:
@@ -322,7 +330,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 </div>
 {PLAYER}
 {LIGHTBOX if lightbox else ''}
-{thumb_bar(path, icon, GROUP)}
+{thumb_bar(path, icon, JETUP_JOIN)}
 {TOTOP}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/jetup/assets/jetup.js?v={js}" defer></script>
@@ -361,8 +369,21 @@ def phead(icon_name, eyebrow, h1, lede, crumbs_list, chips=None, ped='', extra='
  </div></div>
 </div></section>'''
 
-def tribe_cta(title='Don\'t learn this <span class="lime">alone.</span>', text='Action takers learn together. Join the MTG TRIBE on WhatsApp for new trainings, straight answers and the next step, the moment it lands.'):
-    return f'''<section class="sec tight"><div class="wrap"><div class="card tribe rv">
+def join_btn(label='Join JetUP', cls='btn btn-pri'):
+    return f'<a class="{cls}" href="{JETUP_JOIN}" target="_blank" rel="sponsored noopener" data-join>{icon("i-rocket2")}{label}</a>'
+
+def join_note(extra=''):
+    return f'<p class="jnote">{icon("i-alert")}<span>{JOIN_NOTE}{extra}</span></p>'
+
+def join_cta(title='Ready to start? <span class="lime">Join JetUP.</span>', text='Learn first, then decide for yourself. When you are ready, create your account and follow the sign-up training one tap at a time.'):
+    return f'''<section class="sec tight"><div class="wrap"><div class="card tribe joincta rv">
+ <span class="wa jw" aria-hidden="true"><img src="/jetup/img/jetup-mark-128.webp" width="54" height="54" alt=""></span>
+ <div><h2>{title}</h2><p>{text}</p>{join_note(' Trading is risky: ' + RETAIL_LOSS + ' of retail investor accounts lose money when trading CFDs.')}</div>
+ {join_btn()}
+</div></div></section>'''
+
+def tribe_cta(title='Don\'t learn this <span class="lime">alone.</span>', text='Action takers learn together. Join the MTG TRIBE on WhatsApp for new trainings, straight answers and the next step, the moment it lands.', join=True):
+    return (join_cta() if join else '') + f'''<section class="sec tight"><div class="wrap"><div class="card tribe rv">
  <span class="wa" aria-hidden="true">{icon('i-whatsapp')}</span>
  <div><h2>{title}</h2><p>{text}</p></div>
  <a class="btn btn-lime" href="{GROUP}"><span class="emo" aria-hidden="true">💬</span>Join the tribe, free</a>

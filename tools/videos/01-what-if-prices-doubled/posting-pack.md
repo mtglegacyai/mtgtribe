@@ -4,7 +4,8 @@ Files (v2): `tools/video3d/out/whatif01-v2-16x9.mp4` (16:9, 1920x1080, 30 fps, 4
 `tools/video3d/out/whatif01-v3-9x16.mp4` (9:16, 1080x1920, 4:28, MTG's theme at the end, no background music) for
 vertical feeds where long videos are allowed (TikTok). YouTube Shorts and Instagram Reels take up to 3 minutes, so they
 get the short cuts (3 Shorts, after approval). The 16:9 file is still v2 (4:24, music bed) until MTG asks for it.
-Goal: reach (+ tribe growth). Stage: discover. Main address: mtgtribe.com/group.
+Goal: reach (+ tribe growth). Stage: discover. Main address: mtgtribe.com (MTG, 7 Nov 2026: his website, not the
+WhatsApp group link, because WhatsApp can suspend accounts; the website links to his socials and the tribe).
 
 ## Title (+ 2 alternates for a re-post or test)
 ```
@@ -19,7 +20,7 @@ Money Became Cheaper Than Paper
 
 ## YouTube description
 ```
-What would you do if your bread cost double tomorrow, and double again the day after? It really happened, right next door to South Africa. Join the MTG TRIBE: https://mtgtribe.com/group
+What would you do if your bread cost double tomorrow, and double again the day after? It really happened, right next door to South Africa. Learn with the MTG TRIBE: https://mtgtribe.com
 
 In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this training you'll see how it happened, how families coped, the 100 trillion dollar banknote, the posters printed on real money, and the one lesson that still protects people today.
 
@@ -41,7 +42,7 @@ In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this training you
 💾 Save this for the day someone tells you money can't lose its value.
 🔁 Send it to the friend who keeps all their savings in one place.
 
-🤝 Join the MTG TRIBE: https://mtgtribe.com/group
+🌐 Visit https://mtgtribe.com: Step-by-step tutorial videos, explainer videos and honest guides to multiple income streams (risks included). Education only, not financial advice.
 ✈️ Telegram: https://t.me/mtgtribez
 🎵 TikTok: https://www.tiktok.com/@joinmtgtribe
 ▶️ Subscribe: https://www.youtube.com/@mtgtribe
@@ -63,17 +64,17 @@ what if, what if prices doubled every day, hyperinflation, hyperinflation explai
 
 ## Pinned comment
 ```
-Be honest: how many zeros did you guess before the reveal? 👇 And finish this sentence for me: money is ___. If this opened your mind, come learn with us: https://mtgtribe.com/group
+Be honest: how many zeros did you guess before the reveal? 👇 And finish this sentence for me: money is ___. If this opened your mind, come learn with us at https://mtgtribe.com (tutorials, explainers and honest guides)
 ```
 
 ## TikTok and Instagram caption (for the Shorts cut from this video)
 ```
-Prices doubled every single day. It really happened, next door to South Africa. How many zeros would you guess? 👇 Full video on YouTube, tribe link in bio. #WhatIf #Zimbabwe #MoneyHistory #MTGTribe
+Prices doubled every single day. It really happened, next door to South Africa. How many zeros would you guess? 👇 Full video on YouTube, mtgtribe.com in bio. #WhatIf #Zimbabwe #MoneyHistory #MTGTribe
 ```
 
 ## Facebook post
 ```
-If your pay lost half its value every day, what would you buy first? In 2008 that was real life in Zimbabwe. Here's what happened, and the one lesson it still teaches all of us. Watch, then tell me your answer in the comments. Join the MTG TRIBE: https://mtgtribe.com/group
+If your pay lost half its value every day, what would you buy first? In 2008 that was real life in Zimbabwe. Here's what happened, and the one lesson it still teaches all of us. Watch, then tell me your answer in the comments. Learn more at https://mtgtribe.com
 ```
 
 ## WhatsApp tribe message
@@ -100,7 +101,7 @@ Risk tier: green (money history and education; no opportunity, no returns, no re
 Scan: compliance_scan.py run on the script and this pack on 7 November 2026 (flags explained below, if any).
 YouTube: altered or synthetic content YES (MTG's AI voice and AI-generated Leo), made for kids NO, paid promotion NO.
 TikTok: AI-generated label ON, content disclosure OFF. Instagram and Facebook: AI label ON, paid partnership NO.
-Links: mtgtribe.com/group, Telegram, TikTok, YouTube only (safe list). Music and footage: MTG's own voice, Leo clips
+Links: mtgtribe.com, Telegram, TikTok, YouTube only (safe list). Music and footage: MTG's own voice, Leo clips
 generated in MTG's HeyGen account, original graphics; closing track to be added (MTG confirms he holds the rights).
 Policy pages last checked: 7 November 2026.
 

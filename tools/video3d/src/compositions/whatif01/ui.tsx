@@ -181,7 +181,20 @@ export const Cues: React.FC<{list: Cue[]}> = ({list}) => {
 	);
 };
 
-export const BrandIcon: React.FC<{icon: 'whatsapp' | 'telegram' | 'tiktok' | 'youtube'; size: number}> = ({icon, size}) => {
+/** A gold globe: MTG's website (mtgtribe.com). */
+export const GlobeIcon: React.FC<{size: number}> = ({size}) => (
+	<svg width={size} height={size} viewBox="0 0 24 24" role="img" aria-label="website">
+		<g fill="none" stroke={COLORS.goldHi} strokeWidth="1.8" strokeLinecap="round">
+			<circle cx="12" cy="12" r="9.5" />
+			<ellipse cx="12" cy="12" rx="4.2" ry="9.5" />
+			<path d="M2.8 9h18.4M2.8 15h18.4" />
+		</g>
+	</svg>
+);
+
+export type BrandIconName = 'web' | 'whatsapp' | 'telegram' | 'tiktok' | 'youtube';
+export const BrandIcon: React.FC<{icon: BrandIconName; size: number}> = ({icon, size}) => {
+	if (icon === 'web') return <GlobeIcon size={size} />;
 	const map = {whatsapp: si.siWhatsapp, telegram: si.siTelegram, tiktok: si.siTiktok, youtube: si.siYoutube};
 	const ic = map[icon];
 	const fill = icon === 'tiktok' ? '#ffffff' : `#${ic.hex}`;
@@ -239,6 +252,49 @@ export const Coin: React.FC<{symbol: string; size: number; at: number}> = ({symb
 			>
 				{symbol}
 			</div>
+		</div>
+	);
+};
+
+const Tick: React.FC<{size: number}> = ({size}) => (
+	<svg width={size} height={size} viewBox="0 0 24 24" style={{flexShrink: 0}}>
+		<circle cx="12" cy="12" r="11" fill="rgba(242,173,60,0.18)" stroke={COLORS.gold} strokeWidth="1.5" />
+		<path d="M7 12.5l3.2 3.2L17.5 8.5" fill="none" stroke={COLORS.goldHi} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+	</svg>
+);
+
+/** What people find on mtgtribe.com (education first, risks named next to income, no promises). */
+export const SITE_HINTS = ['Step-by-step tutorial videos', 'Explainer videos', 'Honest guides to multiple income streams (risks included)'];
+
+/**
+ * The call to action: MTG's own website, not the WhatsApp group (MTG, 7 Nov 2026: WhatsApp can suspend accounts, the
+ * website is always there, and from it people find his socials and the tribe). `at`: when the card pops in (seconds
+ * inside the section); the three hints follow one by one.
+ */
+export const SiteCard: React.FC<{t: number; at: number; vertical: boolean}> = ({t, at, vertical}) => {
+	const p = interpolate(t, [at, at + 0.5], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.5))});
+	return (
+		<div style={{opacity: Math.min(1, p * 1.4), transform: `translateY(${(1 - p) * 40}px) scale(${interpolate(p, [0, 1], [0.92, 1])})`}}>
+			<Panel style={{padding: vertical ? '22px 30px' : '22px 40px', background: 'rgba(12,9,5,0.93)', display: 'flex', flexDirection: vertical ? 'column' : 'row', gap: vertical ? 14 : 44, alignItems: vertical ? 'stretch' : 'center'}}>
+				<div style={{display: 'flex', alignItems: 'center', gap: 22}}>
+					<GlobeIcon size={vertical ? 78 : 88} />
+					<div>
+						<div style={{fontFamily: MONO, fontWeight: 700, fontSize: 28, color: COLORS.muted, letterSpacing: 3}}>VISIT MY WEBSITE</div>
+						<div style={{fontFamily: 'Anton, Impact, sans-serif', fontSize: vertical ? 96 : 100, lineHeight: 1, ...GOLD_TEXT}}>mtgtribe.com</div>
+					</div>
+				</div>
+				<div style={{display: 'flex', flexDirection: 'column', gap: 8, borderTop: vertical ? '1px solid rgba(242,173,60,0.35)' : 'none', borderLeft: vertical ? 'none' : '1px solid rgba(242,173,60,0.35)', paddingTop: vertical ? 12 : 0, paddingLeft: vertical ? 0 : 36}}>
+					{SITE_HINTS.map((h, i) => {
+						const o = interpolate(t, [at + 1.0 + i * 0.45, at + 1.35 + i * 0.45], [0, 1], clamp);
+						return (
+							<div key={h} style={{display: 'flex', alignItems: 'center', gap: 14, opacity: o, transform: `translateX(${(1 - o) * 20}px)`, maxWidth: vertical ? 860 : 700}}>
+								<Tick size={34} />
+								<div style={{fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: vertical ? 33 : 32, color: COLORS.text, lineHeight: 1.2}}>{h}</div>
+							</div>
+						);
+					})}
+				</div>
+			</Panel>
 		</div>
 	);
 };

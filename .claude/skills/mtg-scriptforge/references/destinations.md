@@ -9,7 +9,7 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | Destination | Address |
 |---|---|
 | MTG TRIBE hub | mtgtribe.com |
-| WhatsApp tribe | mtgtribe.com/group |
+| WhatsApp tribe | mtgtribe.com/group (on the website only: never the CTA in a video) |
 | Tribe dashboard (income streams, playbook, prices, tools) | mtgtribe.com/dashboard |
 | YouTube | youtube.com/@mtgtribe |
 | TikTok | tiktok.com/@joinmtgtribe |
@@ -17,8 +17,11 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | Facebook | facebook.com/Musa.TheMTG |
 | WhatsApp MTG directly (messages and voice notes, no calls) | wa.me/27721714626 |
 
-Platform fit: on TikTok point to the WhatsApp tribe and YouTube; on YouTube point to the WhatsApp tribe, Telegram and
-TikTok. Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard).
+**Main CTA in every video: mtgtribe.com, never the WhatsApp group link** (MTG, 7 November 2026: WhatsApp sometimes
+suspends accounts, and a video would then send people to a dead link; the website is always there and shows his socials
+and the tribe). Say what they will find there, education first: step-by-step tutorial videos, explainer videos, honest
+guides to multiple income streams with the risks named. On screen: the website card (`SiteCard` in the 3D studio).
+Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard). The WhatsApp tribe link stays on the website.
 
 ## MTG's websites
 
@@ -55,7 +58,7 @@ Paths after a site name belong to that site (for example /jetup/faq is mtgtribe.
 
 | From social platforms | Pages |
 |---|---|
-| Safe (green) | mtgtribe.com, mtgtribe.com/group, the safety page, the glossary, the USDT to rand converter |
+| Safe (green) | mtgtribe.com (the main CTA), the safety page, the glossary, the USDT to rand converter |
 | With care (amber: risks stated, no return figures, disclosures on) | mtgtribe.com/jetup and /jetup/five-checks, mtgtribe.com/cntn, bellveraffiliates.com, the crypto card page, mtgtribe.com/dashboard |
 | Websites and WhatsApp tribe only (red) | ALTRUVA plan, join, calculators of levels and matching, first 72 hours, Lucky Tickets; JetUp partner plan, promo and sign-up training; any sign-up or referral link into a program that pays from recruiting |
 

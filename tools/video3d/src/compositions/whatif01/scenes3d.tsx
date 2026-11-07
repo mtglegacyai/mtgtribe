@@ -12,7 +12,7 @@ import {BODY, DISPLAY, MONO} from '../../fonts';
 import {Cam, CHAMPAGNE, Coin3D, DARK, Dust, fade, GOLD, GOLD_HI, GoldText, GoldWorld, k, Note3D, OnCamera, Pedestal, pop, RED, useSec} from '../../three/kit3d';
 import {Loaf3D} from './Hook3D';
 import {S12Outro} from './scenes';
-import {BrandIcon, Chip, Cues, type Cue, GOLD_TEXT, LeoClip, Panel} from './ui';
+import {Chip, Cues, type Cue, GOLD_TEXT, LeoClip, Panel, SiteCard} from './ui';
 
 // Video 01 in REAL 3D (vertical 9:16): every scene is a Three.js world (MTG's black-and-gold studio) with carved gold
 // text and 3D props. 2D is kept only where it reads better on a phone: captions, chips, the quote, the call to action
@@ -677,7 +677,6 @@ export const S10Lesson3D: React.FC = () => {
 // S11: the MTG TRIBE in carved gold (MTG's theme is playing: only soft toneless effects)
 export const S11Tribe3D: React.FC = () => {
 	const t = useSec();
-	const cta = pop(t, 12.3, 0.5);
 	const share = fade(t, 15.8);
 	return (
 		<AbsoluteFill>
@@ -700,22 +699,16 @@ export const S11Tribe3D: React.FC = () => {
 					</div>
 				))}
 			</div>
-			<div style={{position: 'absolute', left: 0, right: 0, bottom: 720, display: 'flex', justifyContent: 'center', opacity: cta, transform: `translateY(${(1 - cta) * 40}px)`}}>
-				<Panel style={{display: 'flex', alignItems: 'center', gap: 26, padding: '20px 30px', background: 'rgba(12,9,5,0.92)'}}>
-					<BrandIcon icon="whatsapp" size={80} />
-					<div>
-						<div style={{fontFamily: MONO, fontWeight: 700, fontSize: 30, color: COLORS.muted, letterSpacing: 2}}>JOIN THE MTG TRIBE</div>
-						<div style={{fontFamily: DISPLAY, fontSize: 84, lineHeight: 1, ...GOLD_TEXT}}>mtgtribe.com/group</div>
-					</div>
-				</Panel>
+			<div style={{position: 'absolute', left: 0, right: 0, bottom: 720, display: 'flex', justifyContent: 'center'}}>
+				<SiteCard t={t} at={12.5} vertical />
 			</div>
-			<AbsoluteFill style={{top: 300, bottom: 900, height: 'auto', justifyContent: 'center', alignItems: 'center', opacity: share, padding: '0 60px'}}>
+			<AbsoluteFill style={{top: 300, bottom: 1080, height: 'auto', justifyContent: 'center', alignItems: 'center', opacity: share, padding: '0 60px'}}>
 				<div style={{fontSize: 110}}>🔁</div>
 				<div style={{fontFamily: DISPLAY, fontSize: 92, lineHeight: 1.08, color: COLORS.text, textAlign: 'center', marginTop: 10}}>
 					SEND THIS TO THE FRIEND WHO KEEPS <span style={GOLD_TEXT}>ALL THEIR SAVINGS IN ONE PLACE</span>
 				</div>
 			</AbsoluteFill>
-			<Cues list={[[1.8, 'air', 0.35], [12.3, 'thud', 0.4], [15.8, 'air', 0.3]]} />
+			<Cues list={[[1.8, 'air', 0.35], [12.5, 'thud', 0.4], [15.8, 'air', 0.3]]} />
 		</AbsoluteFill>
 	);
 };

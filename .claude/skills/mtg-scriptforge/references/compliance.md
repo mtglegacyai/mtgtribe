@@ -35,7 +35,7 @@ The platforms' fraud and scam rules target exactly the kind of opportunity conte
 | Honest checks and reviews with risks shown, no return figures | Earnings, withdrawals, returns or "past performance" of any opportunity |
 | Tool trainings that do not calculate earnings from recruits | Paid draws and prizes (for example lottery-style tickets) |
 | The MTG TRIBE, community, lead with value | "Join my team" pitches |
-| Links to mtgtribe.com, mtgtribe.com/group and education pages | Links into recruitment or sign-up pages |
+| Links to mtgtribe.com (the main CTA) and education pages | Links into recruitment or sign-up pages |
 
 Social videos bring people into the tribe and onto the websites through education and trust; the opportunity
 details are explained on MTG's own sites and in the tribe, with full risks and disclaimers. When a video's main

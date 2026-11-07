@@ -101,3 +101,13 @@ A black-and-gold studio with depth (gold arches, reflective floor, fog), a 3D lo
 gold Anton (`public/fonts/anton.typeface.json`, made by `scripts/make-typeface.mjs`), and up to 170 gold coins that rain
 down and pile up as the price doubles. Renders at about 1 frame per second per core in software WebGL (swangle).
 
+## v5 (7 November 2026): call to action moved to mtgtribe.com
+
+MTG: the WhatsApp group can be suspended, so videos send people to mtgtribe.com, which shows his socials and the tribe.
+- Voice: "slash group" was cut out of section 11's recorded line (15.14 s to 15.88 s replaced by silence, same length),
+  so it now says "Come and learn with us at MTG tribe dot com." No new HeyGen credits. Captions realigned.
+- Screen: the website card (`SiteCard`): globe icon, VISIT MY WEBSITE, mtgtribe.com, then step-by-step tutorial videos,
+  explainer videos, honest guides to multiple income streams (risks included). End card first line: mtgtribe.com.
+- Files: `out/whatif01-v5-9x16.mp4` (vertical, 4:28, -14.0 LUFS, true peak -1.3 dBFS, cover embedded) and the cover
+  `out/whatif01-cover.png`. The 3D version is rendered with the same change.
+

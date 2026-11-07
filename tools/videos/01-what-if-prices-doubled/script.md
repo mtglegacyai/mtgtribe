@@ -1,7 +1,7 @@
 # Script v2: What If Prices Doubled Every Day? (It Really Happened)
 
 Status: script APPROVED by MTG (7 November 2026). Research: `research.md` in this folder.
-Job: reach + tribe growth. Stage: discover. 16:9, about 5 minutes. Main address: mtgtribe.com/group.
+Job: reach + tribe growth. Stage: discover. 16:9, about 5 minutes. Main address: mtgtribe.com (changed from mtgtribe.com/group on 7 Nov 2026, see below).
 Voice: MTG Master Voice V2 (new lines, HeyGen credits only after MTG's go-ahead). Closing track: "They Call Me MTG",
 starting 50 seconds before the end.
 
@@ -100,18 +100,19 @@ No money is perfect. *Your real protection is knowledge.*
 
 ## BRIDGE AND CTA (4:30 to 4:48)
 [NARRATION] And that's exactly why the MTG TRIBE exists: a community of action takers who learn how money really works,
-old and new, so we can make our own decisions with our eyes wide open. Come and learn with us at mtgtribe dot com slash
-group.
-[CTA] mtgtribe.com/group as a lower third for 4 seconds, WhatsApp icon.
+old and new, so we can make our own decisions with our eyes wide open. Come and learn with us at mtgtribe dot com.
+[CTA] Website card: globe icon, "VISIT MY WEBSITE", mtgtribe.com, then three ticked lines: step-by-step tutorial videos,
+explainer videos, honest guides to multiple income streams (risks included). (7 Nov 2026: MTG moved the CTA from the
+WhatsApp group to his website; "slash group" was cut from the recorded line, no new voice credits.)
 [ENGAGE] And send this video to the friend who keeps all their savings in one place.
-[ON SCREEN] mtgtribe.com/group ▪ 🔁 Send this to that friend
+[ON SCREEN] mtgtribe.com ▪ 🔁 Send this to that friend
 
 ## OUTRO (4:48 to 5:20)
 [NARRATION] Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and
 for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today
 to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See
 you on the next one. Let's Get This Crypto!
-[VISUAL] End card: MTG's circle photo, mtgtribe.com/group, WhatsApp, Telegram and TikTok icons, the next video.
+[VISUAL] End card: MTG's circle photo, mtgtribe.com, Telegram, TikTok and YouTube, the next video.
 
 ## Extras
 
@@ -131,7 +132,7 @@ you on the next one. Let's Get This Crypto!
 - compliance_scan.py: no flags. Human check of section 3: passed (facts sourced, respectful framing, no advice).
 - Labels at upload: YouTube altered or synthetic content Yes (AI voice), made for kids No, paid promotion No;
   TikTok AI-generated label On; Instagram and Facebook AI label On.
-- Links: mtgtribe.com/group only (safe list). Media: own 3D and stick-figure visuals; closing track is MTG's own
+- Links: mtgtribe.com only (safe list). Media: own 3D and stick-figure visuals; closing track is MTG's own
   (confirm rights before the first upload).
 
 ## Leo's clips (plan, about 15 credits each, MTG to OK before generating)

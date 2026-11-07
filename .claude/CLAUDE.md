@@ -75,6 +75,9 @@ needs one; MTG: "do not just use one and the same sound effects, even if they do
 under the video**: only MTG's theme "They Call Me MTG" from 50
 seconds before the end, heard clearly after his last word (MTG, 7 November 2026: the music bed was "too loud, I don't
 like it. Remove it completely"). Long videos come in 16:9 and 9:16; he posts the vertical one on socials first.
+**Every video sends people to mtgtribe.com, never to the WhatsApp group link** (MTG, 7 November 2026: WhatsApp can
+suspend accounts, the website is always there and links to his socials and the tribe); say what they will find there
+(tutorials, explainers, honest guides to multiple income streams, risks included).
 **Every video comes with a designed cover** (MTG, 7 November 2026): a 9:16 PNG safe for the 3:4 profile-grid crop (and a
 16:9 YouTube thumbnail for long videos), embedded in the MP4 as cover art and handed over with the video, so he can
 attach it when posting. MTG is not sure how to update a skill: when he approves a change, rebuild the upload file

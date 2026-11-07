@@ -57,7 +57,7 @@ angled toward money, crypto, safety or digital life, so its natural next step is
 his own niche and send people to the exact page that helps them.
 
 - **Bridge videos** (menu 1 to 5): story first, value first. One honest sentence near the end connects the topic to a
-  destination. Main CTA: join the MTG TRIBE (mtgtribe.com or mtgtribe.com/group). Never bolt an income pitch onto a
+  destination. Main CTA: mtgtribe.com, never the WhatsApp group link (WhatsApp can suspend accounts), with what they will find there. Never bolt an income pitch onto a
   story video.
 - **Direct videos** (menu 6 to 11): explainers, tutorials, honest reviews, tool trainings, myth busters, site tours.
   CTA: the one page that answers the viewer's next question, then the tribe.

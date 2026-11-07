@@ -20,7 +20,7 @@ Then: what they will learn (2 to 3 lines), chapters, then:
 💾 Save this so you have it when you need it.
 🔁 Share it with [the specific person from the video].
 🔗 [Main page]: [link]
-🤝 Join the MTG TRIBE: https://mtgtribe.com/group
+🌐 Visit https://mtgtribe.com: step-by-step tutorials, explainer videos and honest guides (risks included)
 ✈️ Telegram: https://t.me/mtgtribez
 🎵 TikTok: https://www.tiktok.com/@joinmtgtribe
 ▶️ Subscribe: https://www.youtube.com/@mtgtribe

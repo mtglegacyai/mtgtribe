@@ -7,7 +7,7 @@ import countries50m from 'world-atlas/countries-50m.json';
 import {BRAND, COLORS} from '../../brand';
 import {PhotoCard} from '../../components/PhotoCard';
 import {BODY, DISPLAY, MONO} from '../../fonts';
-import {BrandIcon, Chip, clamp, Coin, type Cue, Cues, ease, fadeOut, Flip, GOLD_TEXT, LeoClip, Loaf, Note, Panel, Stage, usePop, useT, useV} from './ui';
+import {BrandIcon, type BrandIconName, Chip, clamp, Coin, type Cue, Cues, ease, fadeOut, Flip, GOLD_TEXT, LeoClip, Loaf, Note, Panel, SiteCard, Stage, usePop, useT, useV} from './ui';
 
 // Video 01 v2: both orientations (16:9 and 9:16), 3D entrances, camera drift, sound cues, 7 Leo moments.
 // Times are seconds inside each section, from the narration's word timings (HeyGen, 7 Nov 2026).
@@ -530,34 +530,27 @@ export const S10Lesson: React.FC = () => {
 	);
 };
 
-// S11 BRIDGE AND CTA: the MTG TRIBE, mtgtribe.com/group, share it
+// S11 BRIDGE AND CTA: the MTG TRIBE, mtgtribe.com (his website, not the WhatsApp group), share it
 export const S11Tribe: React.FC = () => {
 	const t = useT();
 	const v = useV();
-	const cta = usePop(12.9, 14);
 	const share = ease(t, 16.0);
 	return (
 		<AbsoluteFill>
 			{/* MTG's theme plays from here: only soft, toneless effects, so nothing clashes with his music */}
-			<Cues list={[[1.5, 'air', 0.35], [12.9, 'thud', 0.4], [16.0, 'air', 0.3]]} />
+			<Cues list={[[1.5, 'air', 0.35], [12.5, 'thud', 0.4], [16.0, 'air', 0.3]]} />
 			<Stage style={{opacity: Math.min(ease(t, 0.2), 1 - share), justifyContent: v ? 'flex-start' : 'center', paddingTop: v ? 40 : 0}}>
 				<div style={{fontFamily: MONO, fontWeight: 700, fontSize: v ? 36 : 38, color: COLORS.muted, letterSpacing: 4, marginBottom: 10}}>THAT'S EXACTLY WHY THE</div>
 				<div style={{fontFamily: DISPLAY, fontSize: v ? 160 : 190, lineHeight: 1, ...GOLD_TEXT, opacity: ease(t, 1.5, 0.2), transform: `scale(${interpolate(usePop(1.5, 12), [0, 1], [0.6, 1])})`}}>MTG TRIBE</div>
-				<div style={{fontFamily: BODY, fontWeight: 800, fontSize: v ? 50 : 54, color: COLORS.text, marginTop: 14, opacity: ease(t, 3.7)}}>A community of action takers</div>
-				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 14 : 24, marginTop: 30}}>
+				<div style={{fontFamily: BODY, fontWeight: 800, fontSize: v ? 50 : 54, color: COLORS.text, marginTop: 14, opacity: Math.min(ease(t, 3.7), v ? 1 : fadeOut(t, 12.1, 0.4))}}>A community of action takers</div>
+				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 14 : 24, marginTop: 30, opacity: fadeOut(t, 12.1, 0.4)}}>
 					{([['LEARN HOW MONEY WORKS', 5.9], ['OLD AND NEW', 7.8], ['YOUR OWN DECISIONS', 9.6]] as Array<[string, number]>).map(([w, at]) => (
 						<Flip key={w} at={at}><Chip size={v ? 36 : 34}>{w}</Chip></Flip>
 					))}
 				</div>
 			</Stage>
-			<div style={{position: 'absolute', left: 0, right: 0, bottom: v ? 720 : 215, display: 'flex', justifyContent: 'center', opacity: cta, transform: `translateY(${(1 - cta) * 40}px) scale(${interpolate(cta, [0, 1], [0.9, 1])})`}}>
-				<Panel style={{display: 'flex', alignItems: 'center', gap: 26, padding: v ? '20px 30px' : '22px 44px', background: 'rgba(12,9,5,0.92)'}}>
-					<BrandIcon icon="whatsapp" size={v ? 80 : 90} />
-					<div>
-						<div style={{fontFamily: MONO, fontWeight: 700, fontSize: 30, color: COLORS.muted, letterSpacing: 2}}>JOIN THE MTG TRIBE</div>
-						<div style={{fontFamily: DISPLAY, fontSize: v ? 84 : 100, lineHeight: 1, ...GOLD_TEXT}}>mtgtribe.com/group</div>
-					</div>
-				</Panel>
+			<div style={{position: 'absolute', left: 0, right: 0, bottom: v ? 720 : 205, display: 'flex', justifyContent: 'center'}}>
+				<SiteCard t={t} at={12.5} vertical={v} />
 			</div>
 			<Stage style={{opacity: share, justifyContent: 'flex-start', paddingTop: v ? 60 : 10}}>
 				<Flip at={16.0}>
@@ -572,8 +565,8 @@ export const S11Tribe: React.FC = () => {
 };
 
 // S12 OUTRO: MTG's end card (circle photo), like share comment, platforms, Leo waves, slogan
-const PLATFORMS: Array<['whatsapp' | 'telegram' | 'tiktok' | 'youtube', string]> = [
-	['whatsapp', 'mtgtribe.com/group'],
+const PLATFORMS: Array<[BrandIconName, string]> = [
+	['web', 'mtgtribe.com'],
 	['telegram', 't.me/mtgtribez'],
 	['tiktok', '@joinmtgtribe'],
 	['youtube', '@mtgtribe'],

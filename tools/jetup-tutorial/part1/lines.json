@@ -1,0 +1,138 @@
+{
+ "p1": {
+  "file": "v_p1.wav",
+  "src": "t1",
+  "a": 131.155,
+  "b": 131.87,
+  "dur": 0.715,
+  "text": "Part one."
+ },
+ "create": {
+  "file": "v_create.wav",
+  "src": "t1",
+  "a": 132.39,
+  "b": 133.99,
+  "dur": 1.6,
+  "text": "Create your JetUP account."
+ },
+ "open": {
+  "file": "v_open.wav",
+  "src": "t1",
+  "a": 134.365,
+  "b": 136.315,
+  "dur": 1.95,
+  "text": "Open the Partner link from your sponsor."
+ },
+ "partner": {
+  "file": "v_partner.wav",
+  "src": "t1",
+  "a": 137.145,
+  "b": 139.815,
+  "dur": 2.67,
+  "text": "Make sure it's the Partner link, not the Client link."
+ },
+ "ifme": {
+  "file": "v_ifme.wav",
+  "src": "t1",
+  "a": 45.79,
+  "b": 50.955,
+  "dur": 5.165,
+  "text": "If that's me, you'll find it at MTG tribe dot com slash jet up."
+ },
+ "indiv": {
+  "file": "v_indiv.wav",
+  "src": "t1",
+  "a": 140.285,
+  "b": 142.665,
+  "dur": 2.38,
+  "text": "On the sign up form, choose Individual."
+ },
+ "type": {
+  "file": "v_type.wav",
+  "src": "t1",
+  "a": 143.45,
+  "b": 149.31,
+  "dur": 5.86,
+  "text": "Type your first name, last name, email and a password, using English letters only."
+ },
+ "pw": {
+  "file": "v_pw.wav",
+  "src": "t1",
+  "a": 156.71,
+  "b": 163.4,
+  "dur": 6.69,
+  "text": "Your password needs an uppercase letter, a lowercase letter, a number and a special character, with no spaces."
+ },
+ "country": {
+  "file": "v_country.wav",
+  "src": "t1",
+  "a": 150.165,
+  "b": 153.875,
+  "dur": 3.71,
+  "text": "Choose your country, then type your cell number without the first zero."
+ },
+ "code": {
+  "file": "v_code.wav",
+  "src": "t1",
+  "a": 154.025,
+  "b": 155.905,
+  "dur": 1.88,
+  "text": "The country code is already there."
+ },
+ "reg": {
+  "file": "v_reg.wav",
+  "src": "t1",
+  "a": 174.375,
+  "b": 177.775,
+  "dur": 3.4,
+  "text": "Then pass the security check, and tap Register Now."
+ },
+ "mail": {
+  "file": "v_mail.wav",
+  "src": "t1",
+  "a": 178.57,
+  "b": 181.185,
+  "dur": 2.615,
+  "text": "Check your email, and tap the verification link."
+ },
+ "inbox": {
+  "file": "v_inbox.wav",
+  "src": "t1",
+  "a": 181.53,
+  "b": 182.495,
+  "dur": 0.965,
+  "text": "Not in your inbox?"
+ },
+ "spam": {
+  "file": "v_spam.wav",
+  "src": "t1",
+  "a": 182.63,
+  "b": 184.29,
+  "dur": 1.66,
+  "text": "Check spam or junk mail."
+ },
+ "links": {
+  "file": "v_links.wav",
+  "src": "t3",
+  "a": 150.255,
+  "b": 157.12,
+  "dur": 6.865,
+  "text": "Everything I showed you, plus my links, is at MTG tribe dot com slash jet up."
+ },
+ "save": {
+  "file": "v_save.wav",
+  "src": "t3",
+  "a": 137.975,
+  "b": 140.56,
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it."
+ },
+ "pays": {
+  "file": "v_pays.wav",
+  "src": "t3",
+  "a": 165.28,
+  "b": 167.875,
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action."
+ }
+}

@@ -1,0 +1,183 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>JetUP tutorial part 1 stage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--vio:#9b7cff;--pink:#e371fc;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--red:#ff5f7a;
+ --grad:linear-gradient(100deg,#8c6ce7 0%,#b56cf6 45%,#e371fc 100%);--goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);
+ --f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif;--emoji:'Noto Color Emoji'}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+.glow{position:absolute;border-radius:50%;pointer-events:none}
+#g1{left:-300px;top:-80px;width:1000px;height:800px;background:radial-gradient(closest-side,rgba(140,108,231,.30),transparent)}
+#g2{right:-320px;top:1000px;width:950px;height:900px;background:radial-gradient(closest-side,rgba(232,194,90,.14),transparent)}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:60px 60px;
+ -webkit-mask-image:radial-gradient(900px 1300px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.em{font-family:var(--emoji);font-weight:400}
+svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.k{display:inline-block;padding:2px 16px 4px;border-radius:14px;background:rgba(203,251,97,.13);box-shadow:inset 0 0 0 2px rgba(203,251,97,.55);color:var(--lime);white-space:nowrap}
+
+/* top bar */
+#top{left:56px;right:56px;top:58px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:52px;height:52px}
+.who b{display:block;font:800 27px/1 var(--f-b)}
+.who small{display:block;margin-top:6px;font:700 19px/1 var(--f-b);color:var(--muted);letter-spacing:.04em}
+#part{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 22px/1 var(--f-b);letter-spacing:.14em}
+
+/* step card */
+#step{left:56px;right:56px;top:156px;height:236px;display:flex;align-items:center;gap:28px}
+#snum{flex:0 0 auto;width:112px;height:112px;border-radius:30px;display:grid;place-items:center;background:var(--goldg);color:#1a1405;font:400 66px/1 var(--f-d);
+ box-shadow:0 10px 40px rgba(232,194,90,.28)}
+#stx b{display:block;font:800 58px/1.06 var(--f-b);letter-spacing:-.01em}
+#stx small{display:block;margin-top:12px;font:700 33px/1.28 var(--f-b);color:var(--body)}
+#sof{position:absolute;right:0;top:-2px;font:800 20px/1 var(--f-b);letter-spacing:.14em;color:var(--muted)}
+
+/* the phone screen window */
+#win{left:70px;top:414px;width:940px;height:1222px;border-radius:46px;padding:5px;
+ background:linear-gradient(145deg,#f5e3b0 0%,#b8954f 22%,#6d5a35 48%,#d9c08a 72%,#8f7443 100%);box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06)}
+#wini{position:relative;width:100%;height:100%;border-radius:41px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 6px #050507}
+#wini img{position:absolute;left:0;top:0;width:720px;height:1562px;transform-origin:0 0;will-change:transform,opacity}
+#ov{position:absolute;inset:0;pointer-events:none}
+.ring{position:absolute;border-radius:20px;box-shadow:0 0 0 6px var(--lime),0 0 0 14px rgba(203,251,97,.22),0 0 46px rgba(203,251,97,.55)}
+.ring.gold{box-shadow:0 0 0 6px var(--gold-hi),0 0 0 14px rgba(255,224,143,.22),0 0 46px rgba(255,224,143,.55)}
+.tap{position:absolute;width:0;height:0}
+.tap i{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:50%;border:6px solid #fff;box-shadow:0 0 30px rgba(255,255,255,.6)}
+.tap b{position:absolute;left:-26px;top:-26px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.chip{position:absolute;left:50%;display:inline-flex;align-items:center;gap:14px;padding:18px 30px;border-radius:24px;white-space:nowrap;
+ background:rgba(14,11,22,.94);box-shadow:inset 0 0 0 3px var(--lime),0 16px 40px rgba(0,0,0,.5);font:800 44px/1.1 var(--f-b);color:#fff}
+.chip .em{font-size:36px}
+.chip.gold{box-shadow:inset 0 0 0 2.5px var(--gold-hi),0 16px 40px rgba(0,0,0,.45)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+
+/* cards that replace the screen */
+.card{border-radius:40px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
+/* title */
+#tt{left:0;right:0;top:470px;text-align:center}
+#tt .p{font:400 230px/.9 var(--f-d);letter-spacing:.02em}
+#tt .h{margin-top:30px;font:800 74px/1.08 var(--f-b)}
+#tt .s{margin-top:28px;font:700 36px/1.3 var(--f-b);color:var(--body)}
+#ttm{left:390px;top:1240px;width:300px;height:300px}
+/* link scene */
+.lk{left:90px;width:900px;height:170px;display:flex;align-items:center;gap:30px;padding:0 40px}
+.lk .ic{flex:0 0 auto;width:96px;height:96px;border-radius:28px;display:grid;place-items:center}
+.lk .ic svg{width:58px;height:58px}
+.lk b{display:block;font:800 52px/1.1 var(--f-b)}
+.lk small{display:block;margin-top:8px;font:700 30px/1.2 var(--f-b);color:var(--body)}
+#lk1{top:520px;box-shadow:inset 0 0 0 3px var(--lime),0 22px 60px rgba(0,0,0,.45)}
+#lk1 .ic{background:var(--lime);color:#14110b}
+#lk2{top:730px;opacity:.9}
+#lk2 .ic{background:rgba(255,95,122,.16);color:var(--red);box-shadow:inset 0 0 0 3px var(--red)}
+#lk2 b{color:var(--muted);text-decoration:line-through;text-decoration-thickness:4px;text-decoration-color:rgba(255,95,122,.8)}
+#lkq{top:990px;font:700 36px/1.2 var(--f-b);color:var(--body)}
+#lku{left:120px;right:120px;top:1060px;height:118px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:18px;
+ background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 2.5px rgba(255,255,255,.18);font:800 54px/1 var(--f-b)}
+#lku i{font-style:normal;color:var(--lime)}
+#lkb{left:200px;right:200px;top:1230px;height:120px;border-radius:30px;display:flex;align-items:center;justify-content:center;
+ background:var(--goldg);color:#1a1405;font:800 44px/1 var(--f-b);box-shadow:0 18px 50px rgba(232,194,90,.35)}
+#lkn{top:1380px;font:700 26px/1.3 var(--f-b);color:var(--muted)}
+#lktap{left:540px;top:1290px}
+/* tip card */
+#tip{left:90px;right:90px;top:560px;padding:64px 60px 70px}
+#tip .tg{display:inline-flex;align-items:center;gap:14px;height:62px;padding:0 26px;border-radius:999px;background:rgba(255,224,143,.14);box-shadow:inset 0 0 0 2.5px var(--gold-hi);
+ color:var(--gold-hi);font:800 26px/1 var(--f-b);letter-spacing:.14em}
+#tip h2{margin-top:44px;font:800 66px/1.1 var(--f-b)}
+#tip p{margin-top:30px;font:700 40px/1.36 var(--f-b);color:var(--body)}
+#tip .ok{margin-top:40px;display:flex;flex-direction:column;gap:22px}
+#tip .ok div{display:flex;align-items:center;gap:20px;font:800 40px/1.2 var(--f-b)}
+#tip .ok svg{flex:0 0 auto;width:52px;height:52px;padding:8px;border-radius:16px;background:var(--lime);color:#14110b}
+/* email card */
+#mail{left:90px;right:90px;top:470px;height:1120px;overflow:hidden;background:#fff;color:#1d1b24}
+#mail .bar{height:120px;display:flex;align-items:center;gap:20px;padding:0 44px;background:#f1eff7;font:800 38px/1 var(--f-b);color:#4b4560}
+#mail .bar small{margin-left:auto;font:700 27px/1 var(--f-b);color:#8a84a3}
+#mail .row{display:flex;align-items:center;gap:28px;padding:56px 50px 0}
+#mail .av{flex:0 0 auto;width:118px;height:118px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font:800 36px/1 var(--f-b)}
+#mail .fr b{display:block;font:800 44px/1.1 var(--f-b)}
+#mail .fr small{display:block;margin-top:8px;font:700 30px/1.2 var(--f-b);color:#7a7491}
+#mail h3{padding:54px 50px 0;font:800 62px/1.12 var(--f-b)}
+#mail .bd{margin:50px 50px 0;padding:56px 44px 64px;border-radius:30px;background:#f6f4fb;text-align:center;font:700 38px/1.4 var(--f-b);color:#4b4560}
+#mail .btn{margin:48px auto 0;width:560px;height:130px;border-radius:28px;display:grid;place-items:center;background:var(--grad);color:#fff;font:800 48px/1 var(--f-b)}
+#mail .ex{position:absolute;left:50px;bottom:40px;font:700 26px/1 var(--f-b);color:#a19bb8;letter-spacing:.08em}
+#mtap{left:540px;top:1280px}
+/* end card */
+#endc{left:0;right:0;top:300px;text-align:center}
+#done{display:inline-flex;align-items:center;gap:18px;height:96px;padding:0 40px 0 22px;border-radius:999px;background:var(--lime);color:#14110b;font:800 46px/1 var(--f-b)}
+#done svg{width:62px;height:62px;padding:10px;border-radius:50%;background:#14110b;color:var(--lime)}
+#nx{left:90px;right:90px;top:500px;padding:50px 56px}
+#nx small{display:block;font:800 28px/1 var(--f-b);letter-spacing:.16em;color:var(--gold-hi)}
+#nx b{display:block;margin-top:22px;font:400 96px/1 var(--f-d);letter-spacing:.01em}
+#nx span{display:block;margin-top:18px;font:800 46px/1.15 var(--f-b);color:var(--body)}
+#eu{left:110px;right:110px;top:900px;height:130px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:16px;
+ background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 58px/1 var(--f-b)}
+#eu i{font-style:normal;color:var(--lime)}
+#esv{top:1076px;font:700 34px/1.3 var(--f-b);color:var(--body)}
+#ebrand{top:1290px;font:800 40px/1 var(--f-b);letter-spacing:.06em}
+#ebrand .sep{display:inline-block;margin:0 18px;color:var(--muted)}
+#eslog{top:1366px;font:400 92px/1 var(--f-d);letter-spacing:.01em}
+#erisk{top:1520px;font:700 24px/1.35 var(--f-b);color:var(--muted)}
+
+/* captions + progress */
+#cap{left:60px;right:60px;top:1668px;height:170px;display:flex;align-items:center;justify-content:center}
+#capbox{max-width:960px;padding:12px 24px;border-radius:24px;background:rgba(11,9,18,.66);font:800 50px/1.24 var(--f-b);text-align:center;color:#fff}
+#capbox span{display:inline-block;margin:0 .12em}
+#capbox span.on{color:var(--lime)}
+#capbox span.todo{color:rgba(255,255,255,.5)}
+#prog{left:70px;right:70px;top:1866px;height:10px;display:flex;gap:8px}
+#prog i{flex:1;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
+#prog i b{position:absolute;inset:0;background:var(--lime);transform-origin:0 0}
+</style></head><body><div id="v">
+<div class="glow" id="g1"></div><div class="glow" id="g2"></div><div id="grid"></div>
+
+<div class="ab" id="top"><div class="who"><img src="jetup-mark.png" alt=""><div><b>MTG <span class="em">👑</span> JetUP tutorial</b><small>Your Digital Architect</small></div></div><span id="part">PART 1</span></div>
+
+<div class="ab" id="step"><div id="snum">1</div><div id="stx"><b id="st1"></b><small id="st2"></small></div><span id="sof"></span></div>
+
+<!-- title -->
+<div class="ab" id="tt"><div class="p goldtxt">PART 1</div><div class="h">Create your<br>JetUP account</div><div class="s">Step by step, on your phone</div></div>
+<img class="ab" id="ttm" src="jetup-mark.png" alt="">
+
+<!-- step 1: the link -->
+<div class="ab card lk" id="lk1"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><b>Partner link</b><small>Use this one to sign up</small></div></div>
+<div class="ab card lk" id="lk2"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div><b>Client link</b><small>Not the one to sign up with</small></div></div>
+<div class="ab c" id="lkq">If MTG invited you:</div>
+<div class="ab" id="lku"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="lkb">Tap a sign up button</div>
+<div class="ab c" id="lkn">Or use the Partner link from your own sponsor</div>
+<div class="ab tap" id="lktap"><i></i><b></b></div>
+
+<!-- screen -->
+<div class="ab" id="win"><div id="wini"><img id="imA" alt=""><img id="imB" alt=""><div id="ov"></div><div id="flash"></div></div></div>
+
+<!-- tip -->
+<div class="ab card" id="tip"><span class="tg"><span class="em">💡</span>GOOD TO KNOW</span><h2>"Registration failed"?</h2>
+<p>That email address is already registered. Two easy fixes:</p>
+<div class="ok"><div><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Use another email address</div><div><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Or tap Log In with that one</div></div></div>
+
+<!-- email -->
+<div class="ab card" id="mail"><div class="bar"><span class="em">📧</span>Inbox<small>check Spam or Junk too</small></div>
+<div class="row"><div class="av">IB</div><div class="fr"><b>IB Portal</b><small>to you</small></div></div>
+<h3>Verify your IB Portal account</h3>
+<div class="bd">Scroll down in the email and tap the button:<div class="btn">Verify Account</div></div>
+<div class="ex">EXAMPLE OF THE EMAIL</div></div>
+<div class="ab tap" id="mtap"><i></i><b></b></div>
+
+<!-- end -->
+<div class="ab" id="endc"><span id="done"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Part 1 done</span></div>
+<div class="ab card" id="nx"><small>NEXT VIDEO</small><b>PART 2</b><span>Link JetUP to TAG Markets</span></div>
+<div class="ab" id="eu"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab c" id="esv">Save this video, so it's here when you need it.</div>
+<div class="ab c" id="ebrand">MTG <span class="em">👑</span><span class="sep">|</span>YOUR DIGITAL ARCHITECT</div>
+<div class="ab c goldtxt" id="eslog">LET'S GET THIS CRYPTO! <span class="em" style="-webkit-text-fill-color:initial">💪</span></div>
+<div class="ab c" id="erisk">Trading is risky. Learn first, then decide for yourself.</div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+<div class="ab" id="prog"></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

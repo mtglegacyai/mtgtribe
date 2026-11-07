@@ -253,9 +253,9 @@
  },
  {
   "text": " my",
-  "startMs": 14081,
+  "startMs": 14121,
   "endMs": 14321,
-  "timestampMs": 14201,
+  "timestampMs": 14221,
   "confidence": null
  },
  {
@@ -268,22 +268,22 @@
  {
   "text": " is",
   "startMs": 14461,
-  "endMs": 14601,
-  "timestampMs": 14531,
+  "endMs": 14621,
+  "timestampMs": 14541,
   "confidence": null
  },
  {
   "text": " MTG,",
-  "startMs": 14601,
+  "startMs": 14621,
   "endMs": 15161,
-  "timestampMs": 14881,
+  "timestampMs": 14891,
   "confidence": null
  },
  {
   "text": " Your",
-  "startMs": 15441,
+  "startMs": 15421,
   "endMs": 15581,
-  "timestampMs": 15511,
+  "timestampMs": 15501,
   "confidence": null
  },
  {
@@ -302,72 +302,72 @@
  },
  {
   "text": " Thank",
-  "startMs": 16961,
-  "endMs": 17041,
-  "timestampMs": 17001,
+  "startMs": 16941,
+  "endMs": 17001,
+  "timestampMs": 16971,
   "confidence": null
  },
  {
   "text": " you",
-  "startMs": 17041,
-  "endMs": 17181,
-  "timestampMs": 17111,
+  "startMs": 17001,
+  "endMs": 17141,
+  "timestampMs": 17071,
   "confidence": null
  },
  {
   "text": " for",
-  "startMs": 17181,
-  "endMs": 17281,
-  "timestampMs": 17231,
+  "startMs": 17141,
+  "endMs": 17261,
+  "timestampMs": 17201,
   "confidence": null
  },
  {
   "text": " taking",
-  "startMs": 17281,
-  "endMs": 17481,
-  "timestampMs": 17381,
+  "startMs": 17261,
+  "endMs": 17441,
+  "timestampMs": 17351,
   "confidence": null
  },
  {
   "text": " the",
-  "startMs": 17481,
-  "endMs": 17681,
-  "timestampMs": 17581,
+  "startMs": 17441,
+  "endMs": 17661,
+  "timestampMs": 17551,
   "confidence": null
  },
  {
   "text": " time",
-  "startMs": 17681,
-  "endMs": 17841,
+  "startMs": 17661,
+  "endMs": 17861,
   "timestampMs": 17761,
   "confidence": null
  },
  {
   "text": " to",
-  "startMs": 17841,
-  "endMs": 18021,
-  "timestampMs": 17931,
+  "startMs": 17861,
+  "endMs": 18061,
+  "timestampMs": 17961,
   "confidence": null
  },
  {
   "text": " watch",
-  "startMs": 18021,
-  "endMs": 18181,
-  "timestampMs": 18101,
+  "startMs": 18061,
+  "endMs": 18201,
+  "timestampMs": 18131,
   "confidence": null
  },
  {
   "text": " this",
-  "startMs": 18181,
-  "endMs": 18401,
-  "timestampMs": 18291,
+  "startMs": 18201,
+  "endMs": 18421,
+  "timestampMs": 18311,
   "confidence": null
  },
  {
-  "text": " training.",
-  "startMs": 18401,
-  "endMs": 18761,
-  "timestampMs": 18581,
+  "text": " video.",
+  "startMs": 18421,
+  "endMs": 18781,
+  "timestampMs": 18601,
   "confidence": null
  },
  {
@@ -387,15 +387,15 @@
  {
   "text": " see",
   "startMs": 20221,
-  "endMs": 20381,
-  "timestampMs": 20301,
+  "endMs": 20361,
+  "timestampMs": 20291,
   "confidence": null
  },
  {
   "text": " what",
-  "startMs": 20381,
+  "startMs": 20361,
   "endMs": 20521,
-  "timestampMs": 20451,
+  "timestampMs": 20441,
   "confidence": null
  },
  {
@@ -449,9 +449,9 @@
  },
  {
   "text": " and",
-  "startMs": 22841,
+  "startMs": 22781,
   "endMs": 23081,
-  "timestampMs": 22961,
+  "timestampMs": 22931,
   "confidence": null
  },
  {

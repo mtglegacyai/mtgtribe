@@ -22,7 +22,7 @@ Money Became Cheaper Than Paper
 ```
 What would you do if your bread cost double tomorrow, and double again the day after? It really happened, right next door to South Africa. Learn with the MTG TRIBE: https://mtgtribe.com
 
-In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this training you'll see how it happened, how families coped, the 100 trillion dollar banknote, the posters printed on real money, and the one lesson that still protects people today.
+In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this video you'll see how it happened, how families coped, the 100 trillion dollar banknote, the posters printed on real money, and the one lesson that still protects people today.
 
 ⏱️ Chapters
 0:00 Imagine your bread doubling every day

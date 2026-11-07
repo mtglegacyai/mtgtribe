@@ -14,7 +14,7 @@ the tag. A "TODAY, +1 DAY, +2 DAYS" counter ticks above it (the doubling format 
 [ON SCREEN] TODAY: R10 ▪ +1 DAY: R20 ▪ +2 DAYS: R40 ▪ 30 DAYS LATER: R10,737,418,240
 
 ## GREETING (0:14 to 0:24)
-[NARRATION] Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this training. Today
+[NARRATION] Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this video. Today
 we'll see what happens when money stops keeping its promise, and what that teaches every one of us.
 [BUILD] MTG's photo in a circle, large, the name on the right.
 

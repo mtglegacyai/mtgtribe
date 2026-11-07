@@ -78,6 +78,9 @@ like it. Remove it completely"). Long videos come in 16:9 and 9:16; he posts the
 **Every video sends people to mtgtribe.com, never to the WhatsApp group link** (MTG, 7 November 2026: WhatsApp can
 suspend accounts, the website is always there and links to his socials and the tribe); say what they will find there
 (tutorials, explainers, honest guides to multiple income streams, risks included).
+**The greeting names the real type of each video** (MTG, 7 November 2026): "Thank you for taking the time to watch this
+video / tutorial / explainer video / guide / training ...", chosen per video ("training" only for a real training); reuse
+the voice bank's recorded greeting with the right word before spending credits.
 **Every video comes with a designed cover** (MTG, 7 November 2026): a 9:16 PNG safe for the 3:4 profile-grid crop (and a
 16:9 YouTube thumbnail for long videos), embedded in the MP4 as cover art and handed over with the video, so he can
 attach it when posting. MTG is not sure how to update a skill: when he approves a change, rebuild the upload file

@@ -131,7 +131,18 @@ one prompt, one call to action, short sign-off).
 
 1. HOOK (0:00 to 0:12): a surprising fact, question or scene that stops the scroll. No greeting before it.
 2. GREETING (0:12 to 0:20): "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this
-   training." Then one line on what the video teaches.
+   [type]." Then one line on what the video teaches. **Name the real type of THIS video** (MTG, 7 November 2026: "not
+   all the videos are training ... use your intelligence to determine each type of a video"):
+   - **video**: stories, What If, Did You Know, bridge videos (the default when unsure)
+   - **tutorial**: step by step, how to do something on screen
+   - **explainer video**: how something works
+   - **guide**: a longer walk through a topic or a website
+   - **training**: only a real training, such as a sign-up or course walkthrough
+   - **honest review** or **honest check**, **site tour**, **Short**
+
+   Never call every video a "training". Check the voice bank for a recorded greeting with the right word before
+   spending credits: "Thank you for taking the time to watch this video." is in `jetup-work/voice-bank/tutorial/p1v2.mp3`
+   (branch jetup-video-work, 0.33 to 2.28 s); video 01 uses it.
 3. SETUP (to about 0:45): why this matters to the viewer; open a curiosity loop. `[ENGAGE]` a prediction prompt
    ("comment your guess") that the video pays off later.
 4. MAIN BODY (to about 3:00): 3 to 5 escalating beats. Each ends with a mini cliffhanger or a re-hook into the next.
@@ -205,8 +216,9 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
   bait (Facebook demotes it). Never ask for wallet addresses, recovery phrases, balances or account screenshots in
   comments. Only promise a reply, a part two or a link if MTG will really deliver it.
 - **MTG's photo** is always a circle (see above).
-- **Wording.** "Potential business partners" and "business partners", never "downline" or "recruits". "Training", not
-  "demo". Say abbreviations in full the first time.
+- **Wording.** "Potential business partners" and "business partners", never "downline" or "recruits". A walkthrough is
+  a "training" or a "tutorial", never a "demo". Name each video by its real type (video, tutorial, explainer, guide,
+  training, review, site tour), never "training" by default. Say abbreviations in full the first time.
 - **Write for the ear.** Simple words, varied sentence length, no walls of text, every line earns its place.
 - **No em dashes or en dashes** anywhere: commas, colons, full stops or parentheses.
 - **Analogies** say where they stop being accurate (a stokvel explains pooling, it does not prove a platform is safe).

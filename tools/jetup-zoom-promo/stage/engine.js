@@ -86,9 +86,13 @@ window.R = function (t) {
     st($('hsub'), e.v * h.o, 0, e.y + h.y); }
 
   /* S1 intro */
-  { const e = scene(t, ...S.s1); const p = pop(t, 2.68, .6), n1 = pop(t, C.mtg1 - .12), n2 = rise(t, C.arch1 - .42);
-    st($('pc'), e.v * p.o, 0, e.y, p.s * (1 + .025 * lin(t, 2.68, 6.7)));
-    st($('n1'), e.v * n1.o, 0, e.y, n1.s);
+  { const e = scene(t, ...S.s1); const dr = ez.inOut(lin(t, 2.62, 3.9)), cr = pop(t, 2.72, .6), m = pop(t, C.mtg1 - .45, .6), n2 = rise(t, C.arch1 - .42);
+    st($('ring'), e.v * ez.out(lin(t, 2.6, 2.9)), 0, e.y, 1 + .02 * lin(t, 2.6, 6.7));
+    $('rc1').setAttribute('stroke-dashoffset', (2073.5 * (1 - dr)).toFixed(1));
+    $('rc2').setAttribute('transform', `rotate(${((t - 2.6) * 9).toFixed(2)} 370 370)`);
+    $('rticks').setAttribute('opacity', (.7 * ez.out(lin(t, 3.3, 3.9))).toFixed(3));
+    st($('crown'), e.v * cr.o, 0, e.y, cr.s, 6 * Math.sin((t - 2.72) * 2.2) * lin(t, 2.9, 3.4));
+    st($('mono'), e.v * m.o, 0, e.y, m.s);
     st($('n2'), e.v * n2.o, 0, e.y + n2.y); }
 
   /* S2 the simple picture */
@@ -166,8 +170,9 @@ window.R = function (t) {
     const nf = pop(t, C.advice - .45); st($('nfa'), e.v * nf.o, 0, e.y, nf.s); }
 
   /* S6 end card */
-  { const e = scene(t, ...S.s6, .35, .01); const p = pop(t, 43.5, .6), e1 = rise(t, C.me - .05), e2 = pop(t, C.lgtc - .08, .6), u = rise(t, 44.6, .5, 50), d = rise(t, 45.2);
-    st($('pc6'), e.v * p.o, 0, e.y, p.s * (1 + .02 * lin(t, 43.5, T)));
+  { const e = scene(t, ...S.s6, .35, .01); const p = pop(t, 43.5, .6), m6 = pop(t, C.me + .2, .55), e1 = rise(t, C.me + 1.1), e2 = pop(t, C.lgtc - .08, .6), u = rise(t, 44.6, .5, 50), d = rise(t, 45.2);
+    st($('crown6'), e.v * p.o, 0, e.y, p.s);
+    st($('mono6'), e.v * m6.o, 0, e.y, m6.s * (1 + .015 * lin(t, 44, T)));
     st($('e1'), e.v * e1.o, 0, e.y + e1.y);
     st($('e2'), e.v * e2.o, 0, e.y, e2.s);
     st($('u6'), e.v * u.o, 0, e.y + u.y, 1 + .012 * Math.sin(Math.max(0, t - 45.1) * 3.2));

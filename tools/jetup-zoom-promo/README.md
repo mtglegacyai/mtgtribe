@@ -10,13 +10,14 @@ any spelling via `404.html`) and opens the Zoom meeting (ID 405 692 8305, passco
   trims to forced-alignment word times so no neighbouring word leaks in.
 - Story: hook (Automated gold trading?), "Hi, my name is MTG", the simple picture (TAG Markets broker, your account in
   your own name, CopyX, Sonic AI trades gold, XAU/USD), the $100 promo and its rules, TONIGHT with the three times,
-  CTA mtgtribe.com/JetUpZoom with a tap, not financial advice, end card with MTG's full photo and the slogan.
+  CTA mtgtribe.com/JetUpZoom with a tap, not financial advice, end card with the crown, MTG and the slogan.
 - Closing track "They Call Me MTG" plays from the start (0.85 s into the track) so it ends exactly on the last frame,
   about 14 dB under speech, rising in the music-only parts.
 - Captions follow the voice word by word. The first frame already shows the hook (WhatsApp uses it as the preview).
+- **No photo of MTG in this video (MTG, 7 Nov 2026: "Don't put me in the video").** The greeting and the end card show a
+  gold crown and "MTG" (with a drawn gold ring on the greeting); the top bar is text only. His voice stays.
 
-Rebuild (scratch folder with `vb/` voice bank files, `track.mp3`, `stage/` images: `mtg-photo.jpg` 900 px,
-`mtg-face.jpg` 160 px from branch `brand-assets`, `jetup-mark.png`):
+Rebuild (scratch folder with `vb/` voice bank files, `track.mp3` and `stage/jetup-mark.png`):
 
 ```bash
 python3 timeline.py      # voice.wav + stage/timing.js

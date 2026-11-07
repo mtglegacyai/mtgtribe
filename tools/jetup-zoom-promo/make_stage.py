@@ -70,7 +70,6 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
 /* top bar */
 #top{left:56px;right:56px;top:70px;height:84px;display:flex;align-items:center;justify-content:space-between}
 .who{display:flex;align-items:center;gap:16px}
-.face{width:76px;height:76px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #e8c25a,0 0 0 7px rgba(232,194,90,.18),0 8px 22px rgba(0,0,0,.5)}
 .who b{display:block;font:800 30px/1 var(--f-b)}
 .who small{display:block;margin-top:6px;font:700 21px/1 var(--f-b);color:var(--muted);letter-spacing:.04em}
 .live{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 24px 0 20px;border-radius:999px;background:var(--lime);color:#14110b;font:800 22px/1 var(--f-b);letter-spacing:.14em;
@@ -96,11 +95,11 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
 #hsub{top:1270px;font:700 50px/1.2 var(--f-b);color:var(--body)}
 
 /* intro */
-#pc{left:170px;top:270px;width:740px;height:740px;border-radius:66px;padding:14px;background:linear-gradient(135deg,#fae496 0%,#e8c25a 45%,#c48e2c 100%);
- box-shadow:0 0 0 2px rgba(255,241,191,.4),0 0 90px rgba(232,194,90,.40),0 30px 80px rgba(0,0,0,.55)}
-#pc img{display:block;width:100%;height:100%;border-radius:54px;object-fit:cover}
-#n1{top:1060px;font:400 132px/1 var(--f-d);letter-spacing:.02em}
-#n2{top:1210px;font:800 50px/1 var(--f-b);color:var(--body);letter-spacing:.03em}
+#ring{left:170px;top:270px;width:740px;height:740px}
+#ring svg{width:100%;height:100%;overflow:visible}
+#crown{top:395px;font-size:150px;line-height:1}
+#mono{top:540px;font:400 300px/1 var(--f-d);letter-spacing:.02em}
+#n2{top:1075px;font:800 50px/1 var(--f-b);color:var(--body);letter-spacing:.12em}
 
 /* the simple picture */
 .kick{display:flex;align-items:center;justify-content:center;gap:16px;font:800 30px/1 var(--f-b);letter-spacing:.24em;color:var(--lime)}
@@ -183,15 +182,14 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
 #nfa svg{width:40px;height:40px;color:var(--lime)}
 
 /* end card */
-#pc6{left:290px;top:220px;width:500px;height:500px;border-radius:44px;padding:10px;background:linear-gradient(135deg,#fae496 0%,#e8c25a 45%,#c48e2c 100%);
- box-shadow:0 0 0 2px rgba(255,241,191,.4),0 0 70px rgba(232,194,90,.40),0 24px 60px rgba(0,0,0,.55)}
-#pc6 img{display:block;width:100%;height:100%;border-radius:36px;object-fit:cover}
-#e1{top:770px;font:800 46px/1 var(--f-b)}
-#e2{top:870px;font:400 88px/1 var(--f-d);letter-spacing:.01em;white-space:nowrap}
+#crown6{top:320px;font-size:110px;line-height:1}
+#mono6{top:440px;font:400 220px/1 var(--f-d);letter-spacing:.02em}
+#e1{top:690px;font:800 44px/1 var(--f-b);color:var(--body);letter-spacing:.12em}
+#e2{top:800px;font:400 88px/1 var(--f-d);letter-spacing:.01em;white-space:nowrap}
 #e2 .em{font-size:76px;vertical-align:4px}
-#u6{top:1030px;height:176px}
+#u6{top:960px;height:176px}
 #u6 b{font-size:64px}
-#disc{top:1250px;font:600 28px/1.3 var(--f-b);color:var(--muted)}
+#disc{top:1180px;font:600 28px/1.3 var(--f-b);color:var(--muted)}
 #fade{inset:0;background:#000}
 """
 
@@ -209,9 +207,16 @@ HTML = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Jet
 <div class="ab c" id="hsub">Here's the simple picture.</div>
 
 <!-- S1 intro -->
-<div class="ab" id="pc"><img src="mtg-photo.jpg" alt=""></div>
-<div class="ab c" id="n1">MTG <span class="em" style="font-size:112px">👑</span></div>
-<div class="ab c" id="n2">Your Digital Architect</div>
+<div class="ab" id="ring"><svg viewBox="0 0 740 740">
+  <defs><radialGradient id="rg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e8c25a" stop-opacity=".22"/><stop offset="1" stop-color="#e8c25a" stop-opacity="0"/></radialGradient></defs>
+  <circle cx="370" cy="370" r="360" fill="url(#rg)"/>
+  <circle id="rc1" cx="370" cy="370" r="330" fill="none" stroke="#e8c25a" stroke-width="3" stroke-opacity=".75" stroke-dasharray="2073.5" stroke-dashoffset="2073.5" transform="rotate(-90 370 370)"/>
+  <g id="rc2"><circle cx="370" cy="370" r="356" fill="none" stroke="#9b7cff" stroke-width="2" stroke-opacity=".55" stroke-dasharray="3 15"/></g>
+  <g id="rticks" stroke="#ffe08f" stroke-width="3" stroke-linecap="round" opacity=".7"><line x1="370" y1="22" x2="370" y2="40" transform="rotate(0 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(30 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(60 370 370)"/><line x1="370" y1="22" x2="370" y2="40" transform="rotate(90 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(120 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(150 370 370)"/><line x1="370" y1="22" x2="370" y2="40" transform="rotate(180 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(210 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(240 370 370)"/><line x1="370" y1="22" x2="370" y2="40" transform="rotate(270 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(300 370 370)"/><line x1="370" y1="22" x2="370" y2="32" transform="rotate(330 370 370)"/></g>
+</svg></div>
+<div class="ab c em" id="crown">👑</div>
+<div class="ab c" id="mono"><span class="goldtxt">MTG</span></div>
+<div class="ab c" id="n2">YOUR DIGITAL ARCHITECT</div>
 
 <!-- S2 the simple picture -->
 <div class="ab c kick" id="k2"><img src="jetup-mark.png" alt="">THE SIMPLE PICTURE</div>
@@ -263,14 +268,15 @@ HTML = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Jet
 <div class="ab c" id="nfa"><span>{ic('shield')}Not financial advice</span></div>
 
 <!-- S6 end card -->
-<div class="ab" id="pc6"><img src="mtg-photo.jpg" alt=""></div>
-<div class="ab c" id="e1">MTG <span class="em">👑</span><span class="sep">|</span>Your Digital Architect</div>
+<div class="ab c em" id="crown6">👑</div>
+<div class="ab c" id="mono6"><span class="goldtxt">MTG</span></div>
+<div class="ab c" id="e1">YOUR DIGITAL ARCHITECT</div>
 <div class="ab c" id="e2"><span class="goldtxt">Let's Get This Crypto!</span> <span class="em">💪</span></div>
 <div class="ab url" id="u6"><small>Join tonight on Zoom</small><b>mtgtribe.com/<i>JetUpZoom</i></b></div>
 <div class="ab c" id="disc">Education only, not financial advice. Trading carries risk.</div>
 
 <!-- always on -->
-<div class="ab" id="top"><div class="who"><img class="face" src="mtg-face.jpg" alt=""><div><b>MTG <span class="em">👑</span></b><small>Your Digital Architect</small></div></div>
+<div class="ab" id="top"><div class="who"><div><b>MTG <span class="em">👑</span></b><small>Your Digital Architect</small></div></div>
   <span class="live"><i id="dot"></i>LIVE ON ZOOM</span></div>
 <div class="ab" id="cap"><div id="capbox"></div></div>
 <div class="ab" id="fade"></div>

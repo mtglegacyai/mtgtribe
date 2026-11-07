@@ -1,12 +1,12 @@
 # JetUp and TAG Markets (mtgtribe.com/jetup/)
 
-Status (6 November 2026): the full guide is built as a **preview** on branch `claude/modest-hypatia-oljoio`,
-waiting for MTG's approval. 13 pages: `/jetup/` (overview), `/jetup/five-checks/`, `/jetup/get-started/`,
-`/jetup/how-it-works/`, `/jetup/partner-plan/`, `/jetup/promo/`, `/jetup/bix-card/`, `/jetup/videos/`,
-`/jetup/downloads/`, `/jetup/faq/`, `/jetup/disclaimer/`, and two tools on their own pages:
-`/jetup/tools/exposure-calculator/` and `/jetup/tools/profit-split-calculator/`. The dashboard card, the
-sitemap and `llms.txt` are updated on the same branch. How to rebuild: `jetup/_build/README.md`.
-Until it is merged, `main` still shows the coming-soon page.
+Status (7 November 2026): **live** at mtgtribe.com/jetup/ (approved by MTG). 14 pages: `/jetup/` (overview),
+`/jetup/five-checks/`, `/jetup/get-started/`, `/jetup/how-it-works/`, `/jetup/partner-plan/`, `/jetup/promo/`,
+`/jetup/bix-card/`, `/jetup/videos/`, `/jetup/downloads/`, `/jetup/faq/`, `/jetup/glossary/`, `/jetup/disclaimer/`,
+and two tools on their own pages: `/jetup/tools/exposure-calculator/` and `/jetup/tools/profit-split-calculator/`.
+Navigation: jump bar, phone thumb bar, word meanings, search, previous/next and back to top. The "Welcome back"
+card was removed on 7 Nov 2026 at MTG's request (it made the top of the home page look bigger).
+How to rebuild: `jetup/_build/README.md`. `mtgtribe.com/JetUpZoom` opens the JetUP Zoom presentation link.
 `mtgtribe.com/JetUp` also works: the 404 page lowercases the address.
 
 ## MTG's instruction for the full build

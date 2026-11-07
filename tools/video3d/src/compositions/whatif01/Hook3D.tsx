@@ -132,14 +132,15 @@ const CenterX: React.FC<{text: string; size: number}> = ({text, size}) => {
 	return <object3D ref={ref} />;
 };
 
-const Loaf: React.FC = () => {
+/** The 3D loaf of bread. pulses: seconds where it swells a little (a price change). */
+export const Loaf3D: React.FC<{pulses?: number[]; position?: [number, number, number]; size?: number}> = ({pulses = [], position = [0, 1.02, 0], size = 0.82}) => {
 	const frame = useCurrentFrame();
 	const t = frame / FPS;
-	const pulse = [2.6, 5.3, 7.1].reduce((acc, at) => acc + Math.max(0, 1 - Math.abs(t - at - 0.12) / 0.18) * 0.06, 0);
+	const pulse = pulses.reduce((acc, at) => acc + Math.max(0, 1 - Math.abs(t - at - 0.12) / 0.18) * 0.06, 0);
 	const crust = useMemo(() => new THREE.MeshPhysicalMaterial({color: '#d98b2e', roughness: 0.55, clearcoat: 0.35, clearcoatRoughness: 0.4, sheen: 0.4, sheenColor: new THREE.Color('#ffd59a')}), []);
 	const score = useMemo(() => new THREE.MeshStandardMaterial({color: '#f6d28e', roughness: 0.8}), []);
 	return (
-		<group position={[0, 1.02, 0]} rotation={[0, t * 0.25 - 0.4, 0]} scale={(1 + pulse) * 0.82}>
+		<group position={position} rotation={[0, t * 0.25 - 0.4, 0]} scale={(1 + pulse) * size}>
 			<mesh material={crust} scale={[1.3, 0.62, 0.68]} castShadow>
 				<sphereGeometry args={[1, 64, 32, 0, Math.PI * 2, 0, Math.PI * 0.56]} />
 			</mesh>
@@ -213,7 +214,7 @@ const Floor: React.FC = () => (
 	</mesh>
 );
 
-const World: React.FC = () => (
+export const World: React.FC = () => (
 	<>
 		<color attach="background" args={['#050403']} />
 		<fog attach="fog" args={['#050403', 9, 30]} />
@@ -225,34 +226,46 @@ const World: React.FC = () => (
 		<Arches />
 		<Floor />
 		<Pedestal />
-		<Loaf />
+		<Loaf3D pulses={[2.6, 5.3, 7.1]} />
 		<Coins />
 		<Price />
 	</>
 );
 
-export const Hook3D: React.FC = () => {
+/** The hook's picture and sound effects (no voice or captions): scene 1 of the full 3D video, and the sample below. */
+export const Hook3DScene: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {width, height} = useVideoConfig();
 	const t = frame / FPS;
 	const d = daysAt(t);
 	const label = d === 0 ? 'TODAY' : d === 30 ? '30 DAYS LATER' : `+${d} DAY${d > 1 ? 'S' : ''}`;
+	return (
+		<AbsoluteFill>
+			<ThreeCanvas width={width} height={height} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping}} camera={{fov: 42, near: 0.1, far: 80}} shadows>
+				<World />
+			</ThreeCanvas>
+			<div style={{position: 'absolute', top: 250, width: '100%', textAlign: 'center', opacity: interpolate(t, [0.2, 0.6, 2.4, 2.8], [0, 1, 1, 0], clamp)}}>
+				<Chip size={40}>IMAGINE THIS</Chip>
+			</div>
+			<div style={{position: 'absolute', top: 700, width: '100%', textAlign: 'center', fontFamily: MONO, fontWeight: 700, fontSize: 44, letterSpacing: 4, color: COLORS.champagne, textShadow: '0 4px 18px rgba(0,0,0,0.9)', opacity: interpolate(t, [0.6, 1.0], [0, 1], clamp)}}>
+				{label}
+			</div>
+			{/* sound: rising notes as the price doubles, soft ticks speeding up, coins raining, a swell into R10 billion */}
+			<Cues list={[[0.1, 'air', 0.4], [2.6, 'pluck1', 0.45], [5.33, 'pluck3', 0.45], [7.13, 'pluck5', 0.45], [8.2, 'count', 0.28], [9.0, 'coinrain', 0.4], [9.3, 'swell', 0.45], [11.9, 'reveal', 0.55]]} />
+		</AbsoluteFill>
+	);
+};
+
+export const Hook3D: React.FC = () => {
+	const frame = useCurrentFrame();
+	const t = frame / FPS;
 	const fade = interpolate(t, [0, 0.4, SECONDS - 0.4, SECONDS], [0, 1, 1, 0], clamp);
 	return (
 		<AbsoluteFill style={{background: COLORS.bg}}>
 			<AbsoluteFill style={{opacity: fade}}>
-				<ThreeCanvas width={width} height={height} gl={{antialias: true, toneMapping: THREE.ACESFilmicToneMapping}} camera={{fov: 42, near: 0.1, far: 80}} shadows>
-					<World />
-				</ThreeCanvas>
-				<div style={{position: 'absolute', top: 250, width: '100%', textAlign: 'center', opacity: interpolate(t, [0.2, 0.6, 2.4, 2.8], [0, 1, 1, 0], clamp)}}>
-					<Chip size={40}>IMAGINE THIS</Chip>
-				</div>
-				<div style={{position: 'absolute', top: 700, width: '100%', textAlign: 'center', fontFamily: MONO, fontWeight: 700, fontSize: 44, letterSpacing: 4, color: COLORS.champagne, textShadow: '0 4px 18px rgba(0,0,0,0.9)', opacity: interpolate(t, [0.6, 1.0], [0, 1], clamp)}}>
-					{label}
-				</div>
+				<Hook3DScene />
 			</AbsoluteFill>
 			<Html5Audio src={staticFile('videos/01/voice/s01.wav')} />
-			<Cues list={[[0.1, 'air', 0.4], [2.6, 'pluck1', 0.45], [5.33, 'pluck3', 0.45], [7.13, 'pluck5', 0.45], [8.2, 'count', 0.3], [9.3, 'swell', 0.5], [11.9, 'reveal', 0.55]]} />
 			<Captions captions={captions} holdMs={600} />
 			<BrandBar />
 		</AbsoluteFill>

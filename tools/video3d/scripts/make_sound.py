@@ -25,6 +25,15 @@ The palette (what each one is for):
   coin       mellow coin: money, dollar and rand
   paper      soft paper rustle: banknotes, posters
   shutter    low rolling rumble: a shop closing
+  coinrain   a gentle cascade of coins landing: money piling up (video 01)
+  whirr      clock hands spinning fast, softly: time racing (video 01)
+  flutter    banknotes fluttering into place: posters, printing money (video 01)
+  rise       soft low rumble that grows: something rising out of the floor (video 01's map)
+  melt       a slow gliding fall in pitch: value melting away (video 01's pay bars)
+
+Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
+even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
+video it was made for), run `sfx`, and keep `check` at "all soft".
 """
 import argparse
 import glob
@@ -260,6 +269,68 @@ def shutter():
     return lowpass(x, 700)
 
 
+def coinrain():
+    d = 2.6
+    x = np.zeros(int(d * SR))
+    rng = np.random.default_rng(21)
+    times = np.sort(rng.random(26) ** 1.6 * 2.0)
+    for k, at in enumerate(times):
+        base = rng.uniform(1000, 1500)
+        tt = t(0.45)
+        c = (np.sin(2 * np.pi * base * tt) + 0.3 * np.sin(2 * np.pi * base * 2.4 * tt)) * env(len(tt), 0.006, 0.12, curve=1.2)
+        i = int(at * SR)
+        x[i:i + len(c)] += c[:len(x) - i] * rng.uniform(0.35, 0.8)
+    x += band(noise(d), 200, 1200) * env(int(d * SR), 0.3, 1.0, hold=1.2) * 0.12
+    return lowpass(x, 2400)
+
+
+def whirr():
+    d = 2.4
+    x = np.zeros(int(d * SR))
+    at, gap, k = 0.0, 0.14, 0
+    while at < 2.1:
+        tk = band(noise(0.06), 500, 1500) * env(int(0.06 * SR), 0.009, 0.015)
+        tk += sine(650 + 8 * k, 0.06) * env(int(0.06 * SR), 0.009, 0.02) * 0.4
+        i = int(at * SR)
+        x[i:i + len(tk)] += tk * (0.5 + 0.5 * min(1, at / 1.5))
+        at += gap
+        gap = max(0.035, gap * 0.9)
+        k += 1
+    fade = np.ones_like(x)
+    fade[-int(0.3 * SR):] = np.linspace(1, 0, int(0.3 * SR))
+    return lowpass(x * fade, 1900)
+
+
+def flutter():
+    d = 2.0
+    x = np.zeros(int(d * SR))
+    rng = np.random.default_rng(5)
+    for at in np.sort(rng.random(9) * 1.5):
+        f = band(noise(0.35), 300, 2400) * (0.55 + 0.45 * np.abs(np.sin(2 * np.pi * rng.uniform(9, 15) * t(0.35))))
+        f *= env(len(f), 0.05, 0.15, hold=0.08)
+        i = int(at * SR)
+        x[i:i + len(f)] += f[:len(x) - i] * rng.uniform(0.5, 1.0)
+    return x
+
+
+def rise():
+    d = 1.9
+    tt = t(d)
+    grow = (tt / d) ** 1.4
+    x = band(noise(d), 60, 500) * grow
+    x += sum(sine(f, d) * a for f, a in ((82.4, 0.5), (164.8, 0.35), (247.2, 0.2))) * grow
+    fade = np.ones_like(x)
+    fade[-int(0.35 * SR):] = np.linspace(1, 0, int(0.35 * SR)) ** 2
+    return lowpass(x * fade * env(len(x), 0.4, d, hold=d), 900)
+
+
+def melt():
+    d = 1.8
+    fr = lambda u: 440 * 2 ** (-1.2 * u / d)
+    x = sum(sine(lambda u, m=m: m * fr(u), d) * a for m, a in ((1, 1), (2, 0.25), (1.5, 0.2)))
+    return lowpass(x * env(int(d * SR), 0.08, 1.2, hold=0.4), 1600)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -267,6 +338,8 @@ PALETTE = {
     'pluck4': (pluck(587.3), 0.25), 'pluck5': (pluck(659.3), 0.25),
     'tick': (tick, 0.12), 'count': (count, 0.12), 'clock': (clock, 0.12), 'thud': (thud, 0.15),
     'coin': (coin, 0.25), 'paper': (paper, 0.15), 'shutter': (shutter, 0.15),
+    # made for video 01's 3D version
+    'coinrain': (coinrain, 0.3), 'whirr': (whirr, 0.15), 'flutter': (flutter, 0.2), 'rise': (rise, 0.2), 'melt': (melt, 0.3),
 }
 
 

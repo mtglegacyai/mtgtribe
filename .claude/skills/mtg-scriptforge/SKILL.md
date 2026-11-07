@@ -238,6 +238,13 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      `clock`, `thud`, `coin`, `paper`, `shutter`. Fewer, meaningful cues beat many. No effect may be louder than his
      voice (volumes 0.3 to 0.6), and only toneless ones (`air`, `thud`, `tick`) once his theme is playing.
      `make_sound.py check` must say "all soft" (warm tone, nothing above 6 kHz, no instant clicks).
+     **Fit every effect to THIS video's story** (MTG: "do not just use one and the same sound effects, even if they
+     do not fit"). Pick per moment what the viewer sees: coins land on `coin`/`coinrain`, a clock races on `whirr`, notes
+     flutter on `flutter`, a map rises on `rise`, value melts on `melt`. When a moment needs a sound the palette lacks,
+     design a new soft one in `make_sound.py` (noted with the video it was made for) instead of reusing a poor fit.
+   - **A designed cover with every video** (MTG, 7 November 2026): 9:16 cover safe for the 3:4 grid crop, plus the
+     16:9 YouTube thumbnail for long videos (`references/posting-pack.md`, "Cover and thumbnail"). Build it as a Remotion
+     Still next to the video, embed it in the MP4 as cover art, and hand over the PNG with the video.
    - **Music: only his theme, never a background bed** (MTG, 7 November 2026: "too loud, I don't like it. Remove it
      completely, and only play my theme music towards the end"). "They Call Me MTG" starts 50 seconds before the end,
      about 12 dB under his voice while he speaks, and is heard in the clear on a short end card after his last word.

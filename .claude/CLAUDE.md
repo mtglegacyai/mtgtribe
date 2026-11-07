@@ -70,9 +70,15 @@ card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never
 audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, closing track 50 seconds
 before the end, preview before anything is published. Every video gets sound effects from the **soft palette** made in
 code (`scripts/make_sound.py`; `check` must say "all soft"; MTG: "soft, interesting ... not the ones that almost hurt the
-ear"), never louder than his voice, but **no background music under the video**: only MTG's theme "They Call Me MTG" from 50
+ear"), never louder than his voice and **chosen to fit each video's story** (new soft effects are designed when a moment
+needs one; MTG: "do not just use one and the same sound effects, even if they do not fit"), but **no background music
+under the video**: only MTG's theme "They Call Me MTG" from 50
 seconds before the end, heard clearly after his last word (MTG, 7 November 2026: the music bed was "too loud, I don't
 like it. Remove it completely"). Long videos come in 16:9 and 9:16; he posts the vertical one on socials first.
+**Every video comes with a designed cover** (MTG, 7 November 2026): a 9:16 PNG safe for the 3:4 profile-grid crop (and a
+16:9 YouTube thumbnail for long videos), embedded in the MP4 as cover art and handed over with the video, so he can
+attach it when posting. MTG is not sure how to update a skill: when he approves a change, rebuild the upload file
+and walk him through uploading it to his claude.ai account, one step at a time.
 
 ## Video ideas and scripts: MTG ScriptForge (MTG, 7 November 2026)
 

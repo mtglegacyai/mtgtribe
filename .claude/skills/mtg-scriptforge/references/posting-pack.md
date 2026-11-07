@@ -48,6 +48,15 @@ One line hook + link. Under 60 seconds of video.
 
 ## Thumbnail text (2 to 4 words)
 
+## Cover and thumbnail (designed for every video, MTG 7 November 2026)
+- 9:16 cover (1080x1920 PNG) for TikTok, Reels and Shorts. Profile grids crop covers to 3:4, so every face, number
+  and word sits in the middle 1080x1440 (y 240 to 1680). One idea: a shocked or curious face (Leo), one big number or
+  object, 2 to 5 bold words, MTG's circle photo for trust. Truthful: it shows what the video really shows.
+- 16:9 thumbnail (1280x720) for YouTube long videos, two concepts for an A/B test.
+- The cover is also embedded in the MP4 as cover art (phones and some players show it). TikTok, Instagram and YouTube
+  do not read it from the file: MTG attaches the PNG when posting (TikTok and Instagram: edit cover, add from gallery
+  or camera roll, where his app offers it; otherwise pick the frame).
+
 ## End screen and cards
 Which video or playlist comes next, and the subscribe button.
 

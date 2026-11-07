@@ -14,7 +14,7 @@ const buf = readFileSync(input);
 const font = opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
 const scale = (1000 * 100) / ((font.unitsPerEm || 2048) * 72);
 const r = (v) => Math.round(v * scale);
-const chars = ' 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;!?$%&+-=/()\'"#@*R';
+const chars = ' 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;!?$%&+-=/()\'"#@*_<>[]|~^';
 const glyphs = {};
 for (const ch of new Set(chars)) {
 	const g = font.charToGlyph(ch);

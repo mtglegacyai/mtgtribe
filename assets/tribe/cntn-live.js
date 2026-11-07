@@ -2,7 +2,9 @@
    Fills every <div class="cl" data-cntn-live> with TradingView's free mini chart: price, change and a
    1 month chart in MTG gold. Loads only when the card is near the screen. If TradingView cannot load,
    the card keeps its fallback line (a link to Nasdaq.com, and on /cntn/ the weekly snapshot price).
-   Include once per page: <script src="/assets/tribe/cntn-live.js?v=1" defer></script> */
+   Other markets: add data-symbol="EXCHANGE:PAIR" to the card (e.g. the CC card on /cc/ uses KRAKEN:CCUSD).
+   Cards without data-symbol show CNTN.
+   Include once per page: <script src="/assets/tribe/cntn-live.js?v=2" defer></script> */
 (function(){
 "use strict";
 var cards=document.querySelectorAll('[data-cntn-live]');if(!cards.length)return;
@@ -31,7 +33,9 @@ function load(card){
   var body=card.querySelector('.cl-body'),fb=card.querySelector('.cl-fb');if(!body)return;
   var wrap=document.createElement('div');wrap.className='tradingview-widget-container';
   var inner=document.createElement('div');inner.className='tradingview-widget-container__widget';wrap.appendChild(inner);
-  var s=document.createElement('script');s.src='https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';s.async=true;s.text=JSON.stringify(CFG);
+  var cfg={};for(var k in CFG)cfg[k]=CFG[k];
+  if(card.dataset.symbol&&/^[A-Z0-9_]+:[A-Z0-9_.]+$/.test(card.dataset.symbol))cfg.symbol=card.dataset.symbol;
+  var s=document.createElement('script');s.src='https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';s.async=true;s.text=JSON.stringify(cfg);
   var done=false;
   function ok(){if(done)return;done=true;card.classList.add('cl-on')}
   function fail(){if(done)return;done=true;if(fb){var m=fb.querySelector('.cl-msg');if(m)m.textContent='The live price could not load right now.'}}

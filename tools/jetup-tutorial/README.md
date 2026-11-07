@@ -41,8 +41,35 @@ Differences from the current site, to apply when the video is in: the 12 charact
 "Success" check; the "email already exists" tip; the email sender "IB Portal" and the **Verify Account** button; the
 "Email verified" screen.
 
+## Part 2: link JetUP to TAG Markets (notes from MTG's narration, 7 Nov 2026)
+
+1. Log in at **jetup.ibportal.io** with the email and password you registered with in part 1.
+2. Scroll down to the bottom of the page to the **CopyX banner**: "To access all platform features, please register your
+   TAG Markets account exclusively using this button. Registering through IB Portal ensures proper linking and
+   synchronization between both accounts." Never register on CopyX or TAG Markets separately.
+3. On MTG's new account the button says **Register CopyX** (older screenshots say "Login to CopyX": same step).
+4. The screen asks for your password: "At this moment we are going to sync your account. Please continue." Enter the
+   **same password you created on JetUP** in part 1.
+5. Tick the boxes, then tap **Sync Account**. You see **Syncing with CopyX**, "please wait while we verify...", then
+   **Sync successful**: "Your account has been linked with TAG Markets. You will receive an email to validate your password
+   and complete activation. If you do not see it, please check your spam or junk."
+6. Tick "I understand that I need to verify my email and validate my password to finish the TAG Markets..." and close.
+7. Success check: the banner says **User Active**. Tap it to go to TAG Markets (portal.tagmarkets.com): "Checking your
+   browser", then the TAG Markets log in.
+8. Log in with the **same email and the exact same password** (up to 12 characters, as created on JetUP). Then "Checking",
+   "Verify you are human", "Please wait", and you are on the TAG Markets dashboard. Next is KYC (part 3).
+
+Do not show (MTG, 7 Nov 2026): his search through inbox, spam, promotions and other folders for the TAG Markets email,
+and the failed log in. Turn them into tip cards instead:
+- **Tip: the TAG Markets email can be slow.** Check spam or junk. In MTG's recording it had not arrived yet, and he could
+  still log in to TAG Markets with the same email and password.
+- **Tip: "Username and password incorrect"?** Check the password first. It must be exactly the one you created on JetUP
+  (JetUP accepts at most 12 characters, so a longer password you had in mind was not saved). MTG hit this himself; with
+  the exact password it worked straight away.
+
 ## Status
 
-- [ ] Part 1 video received (narration saved 7 Nov 2026)
-- [ ] Part 2 onwards: MTG is recording
+- [x] Part 1 video received 7 Nov 2026 (5:59, silent, 720x1562); edit in progress, redacted
+- [x] Part 2 narration saved 7 Nov 2026; video to come
+- [ ] Part 3 onwards (KYC next): MTG is recording
 - [ ] MTG's links received

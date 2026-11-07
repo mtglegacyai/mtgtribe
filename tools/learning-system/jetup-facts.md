@@ -14,10 +14,13 @@ the voice bank).
 | Start amount | About $155 in USDT or USDC: $50 into Sonic AI, $100 left in the balance for the promo, a few dollars spare | get-started, FAQ, home, training video, onboarding PDF | MTG's guide |
 | Why not exactly $150 | A few cents can go on fees, so send a little more than $150 (the training uses $155) | get-started part 4 | MTG's guide; Sunday training 7 Nov 2026 |
 | Password | Up to 12 characters, plus the rules shown on the sign-up screen | get-started part 1 | MTG's recording, 7 Nov 2026 (confirm on the video) |
+| Sign-up tick boxes | MTG's recording (7 Nov 2026) shows no tick boxes on the sign-up form: the risk line "Trading Forex & CFDs is risky" sits under Register Now. The site still says "read the two boxes before you tick them": update when part 1 is approved | get-started part 1 | MTG's part 1 recording |
 | Email already registered | Registration fails with "email address already exists": use another email or log in | get-started part 1 | MTG's recording, 7 Nov 2026 |
 | Partner link, not Client link | Every member has two links. New people sign up with the Partner link | get-started part 1, FAQ | MTG's guide |
 | Name at sign-up | First and last name exactly as on the ID (no nickname), or KYC fails | get-started part 1 | Sunday training 7 Nov 2026 |
-| CopyX banner | Tap "Login to CopyX". On some new accounts it says "Register": same step. Never register on CopyX directly | get-started part 2 | MTG's guide screenshots; Sunday training |
+| CopyX banner | Tap "Login to CopyX". On some new accounts it says "Register": same step. Never register on CopyX directly | get-started part 2 | MTG's guide screenshots; Sunday training; MTG's part 2 recording (7 Nov 2026) says "Register CopyX" on his new account |
+| Sync | Enter the same password as JetUP, tick the boxes, tap "Sync Account"; "Syncing with CopyX", then "Sync successful". An email to validate the password follows (check spam); MTG could log in to TAG Markets before it arrived | get-started part 2 | MTG's part 2 narration, 7 Nov 2026 (confirm on the video) |
+| TAG Markets log in | Same email and the exact same password as JetUP (12 characters at most). "Username and password incorrect" usually means the password differs | get-started part 2, FAQ | MTG's part 2 narration, 7 Nov 2026 |
 | Linked | The banner shows "User Active" and the CU number | get-started part 2 | MTG's guide |
 | KYC | TAG Markets questions, then Sumsub ID and face scan, on the phone | get-started part 3 | MTG's guide |
 | Deposit path | portal.tagmarkets.com, Deposit, USD, Other, 155, Next, Crypto, Submit | get-started part 4 | MTG's guide |
@@ -79,8 +82,9 @@ the voice bank).
 
 ## Open questions for MTG (do not publish an answer until he confirms)
 
-1. CopyX banner label: MTG's guide shows "Login to CopyX"; the Sunday presenter says new accounts see "Register". The site now
-   mentions both. Confirm with MTG's own recording.
+1. CopyX banner label: MTG's guide shows "Login to CopyX"; the Sunday presenter says new accounts see "Register". MTG's own
+   part 2 narration (7 Nov 2026) says "Register CopyX" on his new account. Confirm on his part 2 video, then lead with
+   "Register CopyX" and keep "Login to CopyX" as the older label.
 2. Deposit network: the Sunday presenter prefers USDC or ETH on ERC20 as "cheaper"; this site ranks BEP20, then TRC20, then
    ERC20 (normally the most expensive). The site's ranking stays unless MTG decides otherwise.
 3. BIX commission figures come from a presentation slide. Confirm them in the partner account or an official JetUP document.

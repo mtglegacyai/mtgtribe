@@ -116,23 +116,29 @@ add(bed / (np.abs(bed).max() + 1e-9), 0, -31)
 # sound design: title hit, a whoosh at every step, a soft click on every tap, pops on highlights, chimes on success
 add(impact(), .15, -16); add(sparkle(), .5, -27)
 for s in TL['steps']: add(whoosh(.45), s - .3, -27)
-for sc in ('tip', 'mail', 'end'): add(whoosh(.5), TL['scenes'][sc][0] - .3, -25)
+for sc in ('tip', 'mail', 'recap', 'next', 'outro'): add(whoosh(.5), TL['scenes'][sc][0] - .3, -25)
 add(pop(), TL['scenes']['tip'][0] + .1, -24)
-for t in TL['taps'] + [C['linktap'], C['mailtap']]: add(tick(2600), t - .01, -21); add(pop(520, 330, .1), t, -27)
+for t in TL['taps']: add(tick(2600), t - .01, -21); add(pop(520, 330, .1), t, -27)
 for t in TL['rings']: add(pop(700, 450, .1), t, -30)
 for t in TL['chips']: add(tick(2000), t, -30)
 for key in ('suc_reg', 'suc_mail', 'suc_login', 'suc_profile'):
     if key in C: add(chime(), C[key], -26)
-add(chime((1318.5, 1975.5, 2637.0, 3520.0)), TL['scenes']['end'][0] + .1, -24); add(sparkle(), C['pays'] + .4, -25)
+for t in C['plan_in']: add(pop(680, 420, .1), t - .1, -27)
+for i, t in enumerate(C['plan_tick']): add(tick(2000 + 90 * i), t - .03, -24)
+add(chime((1318.5, 1975.5, 2637.0, 3520.0)), C['plan_tick'][-1] + .3, -25)
+for t in C['nb']: add(pop(640, 400, .1), t - .15, -26)
+for k in ('o_like', 'o_share', 'o_comment'): add(pop(), C[k] - .15, -25)
+add(sparkle(), C['o_you'] - .05, -24); add(impact(), C['o_lgtc'] - .2, -18); add(sparkle(), C['o_lgtc'] + .1, -25)
+add(chime(), .55, -27)
 sfx *= (1 - .45 * duck)[:, None]
 
 mixd = voice[:, None] * np.ones((1, 2)) + trk + sfx
 mixd[-int(.08 * SR):] *= np.linspace(1, 0, int(.08 * SR))[:, None]
 write(os.path.join(HERE, 'mix_raw.wav'), mixd)
 p1 = subprocess.run(['ffmpeg', '-v', 'info', '-nostats', '-i', os.path.join(HERE, 'mix_raw.wav'), '-af',
-                     'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'], capture_output=True, text=True).stderr
+                     'loudnorm=I=-14:TP=-1.8:LRA=11:print_format=json', '-f', 'null', '-'], capture_output=True, text=True).stderr
 m = json.loads(p1[p1.rindex('{'):p1.rindex('}') + 1])
-af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:"
+af = (f"loudnorm=I=-14:TP=-1.8:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:"
       f"measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(HERE, 'mix_raw.wav'), '-af', af, '-ar', str(SR), os.path.join(HERE, 'mix.wav')], check=True)
 out = subprocess.run(['ffmpeg', '-v', 'info', '-nostats', '-i', os.path.join(HERE, 'mix.wav'), '-af', 'ebur128=peak=true', '-f', 'null', '-'],

@@ -25,7 +25,7 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 /* top bar */
 #top{left:56px;right:56px;top:58px;height:70px;display:flex;align-items:center;justify-content:space-between}
 .who{display:flex;align-items:center;gap:14px}
-.who img{width:52px;height:52px}
+.who img{width:60px;height:60px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
 .who b{display:block;font:800 27px/1 var(--f-b)}
 .who small{display:block;margin-top:6px;font:700 19px/1 var(--f-b);color:var(--muted);letter-spacing:.04em}
 #part{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 22px/1 var(--f-b);letter-spacing:.14em}
@@ -57,12 +57,34 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 
 /* cards that replace the screen */
 .card{border-radius:40px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
-/* title */
-#tt{left:0;right:0;top:470px;text-align:center}
-#tt .p{font:400 230px/.9 var(--f-d);letter-spacing:.02em}
-#tt .h{margin-top:30px;font:800 74px/1.08 var(--f-b)}
-#tt .s{margin-top:28px;font:700 36px/1.3 var(--f-b);color:var(--body)}
-#ttm{left:390px;top:1240px;width:300px;height:300px}
+/* intro, plan (overview and recap), pause */
+.phc{position:absolute;width:576px;height:576px;padding:8px;border-radius:52px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);
+ box-shadow:0 0 70px rgba(232,194,90,.45),0 30px 80px rgba(0,0,0,.55);transform-origin:50% 50%;will-change:transform,opacity}
+.phc img{display:block;width:560px;height:560px;border-radius:44px}
+#iph{left:252px;top:420px}
+#ipart{left:0;right:0;top:168px;display:flex;justify-content:center}
+#ipart span{display:inline-flex;align-items:center;height:58px;padding:0 28px;border-radius:999px;background:var(--lime);color:#14110b;font:800 24px/1 var(--f-b);letter-spacing:.16em}
+#ititle{top:252px;font:800 70px/1.06 var(--f-b);letter-spacing:-.01em}
+#ihi{top:1048px;font:800 76px/1.05 var(--f-b)}
+#iarch{top:1146px;font:800 40px/1 var(--f-b);letter-spacing:.14em}
+#iname{left:300px;top:182px}
+#iname b{display:block;font:800 56px/1 var(--f-b)}
+#iname small{display:block;margin-top:12px;font:800 26px/1 var(--f-b);letter-spacing:.12em;color:var(--gold-hi)}
+#plan{left:60px;right:60px;top:440px;padding:34px 40px 30px}
+#plh{font:400 64px/1 var(--f-d);letter-spacing:.02em}
+#plh small{display:block;margin-top:10px;font:800 30px/1.2 var(--f-b);color:var(--body);letter-spacing:0}
+.pr{display:flex;align-items:center;gap:24px;height:98px;border-top:1.5px solid rgba(255,255,255,.07);will-change:transform,opacity}
+.pr:first-of-type{margin-top:22px}
+.pr i{flex:0 0 auto;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:400 34px/1 var(--f-d);font-style:normal;
+ background:rgba(255,224,143,.12);box-shadow:inset 0 0 0 2.5px var(--gold-hi);color:var(--gold-hi)}
+.pr i svg{width:38px;height:38px;display:none}
+.pr.ok i{background:var(--lime);box-shadow:none;color:#14110b}
+.pr.ok i svg{display:block}.pr.ok i em{display:none}
+.pr span{font:800 42px/1.15 var(--f-b)}
+#pz{left:80px;right:80px;top:1512px;height:120px;border-radius:30px;display:flex;align-items:center;justify-content:center;gap:22px;
+ background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 40px/1.15 var(--f-b)}
+#pz svg{flex:0 0 auto;width:56px;height:56px;padding:12px;border-radius:50%;background:var(--lime);color:#14110b}
+
 /* link scene */
 .lk{left:90px;width:900px;height:170px;display:flex;align-items:center;gap:30px;padding:0 40px}
 .lk .ic{flex:0 0 auto;width:96px;height:96px;border-radius:28px;display:grid;place-items:center}
@@ -104,22 +126,32 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 #mail .btn{margin:48px auto 0;width:560px;height:130px;border-radius:28px;display:grid;place-items:center;background:var(--grad);color:#fff;font:800 48px/1 var(--f-b)}
 #mail .ex{position:absolute;left:50px;bottom:40px;font:700 26px/1 var(--f-b);color:#a19bb8;letter-spacing:.08em}
 #mtap{left:540px;top:1280px}
-/* end card */
-#endc{left:0;right:0;top:300px;text-align:center}
-#done{display:inline-flex;align-items:center;gap:18px;height:96px;padding:0 40px 0 22px;border-radius:999px;background:var(--lime);color:#14110b;font:800 46px/1 var(--f-b)}
-#done svg{width:62px;height:62px;padding:10px;border-radius:50%;background:#14110b;color:var(--lime)}
-#nx{left:90px;right:90px;top:500px;padding:50px 56px}
+/* next video */
+#nx{left:80px;right:80px;top:440px;padding:46px 54px}
 #nx small{display:block;font:800 28px/1 var(--f-b);letter-spacing:.16em;color:var(--gold-hi)}
-#nx b{display:block;margin-top:22px;font:400 96px/1 var(--f-d);letter-spacing:.01em}
-#nx span{display:block;margin-top:18px;font:800 46px/1.15 var(--f-b);color:var(--body)}
-#eu{left:110px;right:110px;top:900px;height:130px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:16px;
- background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 58px/1 var(--f-b)}
+#nx b{display:block;margin-top:20px;font:400 104px/1 var(--f-d);letter-spacing:.01em}
+#nx span{display:block;margin-top:16px;font:800 50px/1.12 var(--f-b)}
+.nb{left:110px;right:80px;height:96px;display:flex;align-items:center;gap:24px;font:800 42px/1.15 var(--f-b)}
+.nb i{flex:0 0 auto;width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:rgba(203,251,97,.14);box-shadow:inset 0 0 0 2.5px var(--lime);
+ color:var(--lime);font:400 34px/1 var(--f-d);font-style:normal}
+#nb0{top:860px}#nb1{top:966px}#nb2{top:1072px}
+#euq{top:1222px;font:700 34px/1.2 var(--f-b);color:var(--body)}
+#eu{left:110px;right:110px;top:1276px;height:130px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+ background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 60px/1 var(--f-b)}
 #eu i{font-style:normal;color:var(--lime)}
-#esv{top:1076px;font:700 34px/1.3 var(--f-b);color:var(--body)}
-#ebrand{top:1290px;font:800 40px/1 var(--f-b);letter-spacing:.06em}
+#esv{top:1450px;font:800 38px/1.3 var(--f-b);color:#fff}
+/* outro */
+#oph{left:282px;top:300px;width:516px;height:516px}
+#oph img{width:500px;height:500px}
+#omsg{left:60px;right:60px;top:880px;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;font:800 58px/1.18 var(--f-b)}
+#omsg .big{font:400 128px/1 var(--f-d);letter-spacing:.01em}
+#omsg .soc{display:flex;gap:30px;justify-content:center}
+#omsg .soc div{display:flex;flex-direction:column;align-items:center;gap:14px;font:800 32px/1 var(--f-b);will-change:transform,opacity}
+#omsg .soc svg{width:110px;height:110px;padding:24px;border-radius:32px;background:rgba(203,251,97,.12);box-shadow:inset 0 0 0 3px var(--lime);color:var(--lime)}
+#ebrand{top:1240px;font:800 40px/1 var(--f-b);letter-spacing:.06em}
 #ebrand .sep{display:inline-block;margin:0 18px;color:var(--muted)}
-#eslog{top:1366px;font:400 92px/1 var(--f-d);letter-spacing:.01em}
-#erisk{top:1520px;font:700 24px/1.35 var(--f-b);color:var(--muted)}
+#eslog{top:1320px;font:400 96px/1 var(--f-d);letter-spacing:.01em}
+#erisk{top:1480px;font:700 26px/1.35 var(--f-b);color:var(--muted)}
 
 /* captions + progress */
 #cap{left:60px;right:60px;top:1668px;height:170px;display:flex;align-items:center;justify-content:center}
@@ -133,13 +165,19 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 </style></head><body><div id="v">
 <div class="glow" id="g1"></div><div class="glow" id="g2"></div><div id="grid"></div>
 
-<div class="ab" id="top"><div class="who"><img src="jetup-mark.png" alt=""><div><b>MTG <span class="em">👑</span> JetUP tutorial</b><small>Your Digital Architect</small></div></div><span id="part">PART 1</span></div>
+<div class="ab" id="top"><div class="who"><img src="mtg-face.png" alt=""><div><b>MTG <span style="color:var(--muted);font-weight:700">|</span> Your Digital Architect</b><small>JetUP tutorial</small></div></div><span id="part">PART 1</span></div>
 
 <div class="ab" id="step"><div id="snum">1</div><div id="stx"><b id="st1"></b><small id="st2"></small></div><span id="sof"></span></div>
 
-<!-- title -->
-<div class="ab" id="tt"><div class="p goldtxt">PART 1</div><div class="h">Create your<br>JetUP account</div><div class="s">Step by step, on your phone</div></div>
-<img class="ab" id="ttm" src="jetup-mark.png" alt="">
+<!-- intro -->
+<div class="ab" id="ipart"><span>PART 1 · JETUP TUTORIAL</span></div>
+<div class="ab c" id="ititle">Create your<br>JetUP account</div>
+<div class="ab phc" id="iph"><img src="mtg-photo.png" alt="MTG"></div>
+<div class="ab c" id="ihi">Hi, my name is MTG</div>
+<div class="ab c goldtxt" id="iarch">YOUR DIGITAL ARCHITECT</div>
+<div class="ab" id="iname"><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div>
+<div class="ab card" id="plan"><div id="plh"></div><div class="pr" id="pr0"><i><em>1</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr1"><i><em>2</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr2"><i><em>3</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr3"><i><em>4</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr4"><i><em>5</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr5"><i><em>6</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr6"><i><em>7</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr7"><i><em>8</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div class="pr" id="pr8"><i><em>9</em><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div></div>
+<div class="ab" id="pz"><svg class="i" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg>Take your time. Pause any step and follow along.</div>
 
 <!-- step 1: the link -->
 <div class="ab card lk" id="lk1"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><b>Partner link</b><small>Use this one to sign up</small></div></div>
@@ -166,14 +204,21 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 <div class="ex">EXAMPLE OF THE EMAIL</div></div>
 <div class="ab tap" id="mtap"><i></i><b></b></div>
 
-<!-- end -->
-<div class="ab" id="endc"><span id="done"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Part 1 done</span></div>
+<!-- next video -->
 <div class="ab card" id="nx"><small>NEXT VIDEO</small><b>PART 2</b><span>Link JetUP to TAG Markets</span></div>
+<div class="ab nb" id="nb0"><i>1</i>Sync your account through CopyX</div>
+<div class="ab nb" id="nb1"><i>2</i>Confirm your TAG Markets email</div>
+<div class="ab nb" id="nb2"><i>3</i>Log in to your TAG Markets dashboard</div>
+<div class="ab c" id="euq">Everything I showed you, plus my links:</div>
 <div class="ab" id="eu"><span>mtgtribe.com/<i>jetup</i></span></div>
-<div class="ab c" id="esv">Save this video, so it's here when you need it.</div>
+<div class="ab c" id="esv"></div>
+<!-- outro -->
+<div class="ab phc" id="oph"><img src="mtg-photo.png" alt="MTG"></div>
+<div class="ab" id="omsg"></div>
 <div class="ab c" id="ebrand">MTG <span class="em">👑</span><span class="sep">|</span>YOUR DIGITAL ARCHITECT</div>
 <div class="ab c goldtxt" id="eslog">LET'S GET THIS CRYPTO! <span class="em" style="-webkit-text-fill-color:initial">💪</span></div>
-<div class="ab c" id="erisk">Trading is risky. Learn first, then decide for yourself.</div>
+<div class="ab c" id="erisk">Not financial advice. Trading is risky: learn first, then decide for yourself.</div>
+<template id="t_soc"><div class="soc"><div id="s_like"><svg class="i" viewBox="0 0 24 24"><path d="M7 11v9H4v-9h3zm0 0l4-8c1.7 0 2.6 1.2 2.3 2.8L12.8 9H19c1.2 0 2.1 1.1 1.9 2.3l-1.2 7c-.2 1-1 1.7-2 1.7H7"/></svg>Like</div><div id="s_share"><svg class="i" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>Share</div><div id="s_comm"><svg class="i" viewBox="0 0 24 24"><path d="M21 12c0 4.4-4 8-9 8-1.5 0-2.9-.3-4.2-.9L3 20l1.3-3.8C3.5 15 3 13.5 3 12c0-4.4 4-8 9-8s9 3.6 9 8z"/></svg>Comment</div></div></template>
 
 <div class="ab" id="cap"><div id="capbox"></div></div>
 <div class="ab" id="prog"></div>

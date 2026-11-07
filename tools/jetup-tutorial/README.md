@@ -15,6 +15,9 @@ tutorial video arrives"). Raw recordings show his personal details: they stay pr
 - Where MTG opens his sponsor's link, the edit tells viewers to tap a sign-up button on MTG's website (with his Partner link,
   once he sends it) or to use the link from their own sponsor.
 - One action at a time, exact on-screen labels, a success check at the end of each part (mtg-creative-standard).
+- **Every part follows the tutorial script structure** (MTG, 7 Nov 2026): greeting with his photo ("Hi, my name is MTG,
+  Your Digital Architect. Thank you for taking the time to watch this video", never "training"), "In this video" list of
+  what he will show, the steps, a recap of what we covered, what the next video does, then the signature outro.
 - **Always show the browser address bar** when a new site or page opens (MTG, 7 Nov 2026: "so that they know they're at the
   right place"), and point it out (for example jetup.ibportal.io, portal.tagmarkets.com). Only then zoom in.
 - Check every step against `tools/learning-system/jetup-facts.md`; MTG's recording wins, update the facts file first.

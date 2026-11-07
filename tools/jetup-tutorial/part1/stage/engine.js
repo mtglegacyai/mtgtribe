@@ -152,18 +152,51 @@ function overlays(t, cur) {
 }
 
 /* ---------- cards ---------- */
+const PH_SMALL = { dx: 170 - 540, dy: 250 - 708, s: 200 / 576 };   // the intro photo shrinks to the top left
 function cards(t) {
-  const S = TL.scenes;
-  // title
-  { const v = vis(t, S.title[0], S.title[1], 0, .35);
-    const r = rise(t, S.title[0] + .05, S.title[1], 50, .45, .35);
-    st($('tt'), v, 0, -40 * (1 - v));
-    $('tt').children[0].style.transform = `scale(${(1.06 - .06 * ez.out(lin(t, 0, 2.6))).toFixed(4)})`;
-    const m = vis(t, S.title[0], S.title[1], 0, .3);
-    st($('ttm'), m, 0, 10 * Math.sin(t * 2.2), .96 + .04 * ez.out(lin(t, 0, 1)));
-    void r; }
-  // link scene
-  { const [a, b] = S.link, C = TL.cues;
+  const S = TL.scenes, C = TL.cues;
+  // ----- intro, overview, recap and next video share MTG's photo (large in the greeting, small afterwards) -----
+  { const [a, b] = S.intro, [ra, rb] = S.recap, [na, nb] = S.next;
+    const inIntro = t >= a && t <= b, inRec = t >= ra && t <= rb, inNext = t >= na && t <= nb;
+    const v = Math.max(vis(t, a, b, 0, .35), vis(t, ra, nb, .45, .35));
+    const k = inIntro ? ez.inOut(lin(t, C.inthis - .1, C.inthis + .6)) : 1;
+    const breathe = 1 + .012 * Math.sin(t * 1.6);
+    const sc = (1 - k) * breathe + k * PH_SMALL.s;
+    st($('iph'), v, k * PH_SMALL.dx, k * PH_SMALL.dy + (1 - k) * 20 * (1 - ez.out(lin(t, 0, .8))), sc);
+    const nm = Math.max(inIntro ? lin(t, C.inthis + .3, C.inthis + .7) : 0, vis(t, ra, nb, .45, .35));
+    st($('iname'), Math.min(nm, v), 30 * (1 - nm), 0);
+    const g = vis(t, a, C.inthis + .1, 0, .3);
+    st($('ipart'), g, 0, 0); st($('ititle'), g, 0, 0);
+    const h = rise(t, .3, C.inthis + .1, 40, .4, .3), h2 = rise(t, .7, C.inthis + .1, 30, .4, .3);
+    st($('ihi'), h.o, 0, h.y); st($('iarch'), h2.o, 0, h2.y);
+    // plan panel: overview (rows pop in as named) and recap (rows tick as named)
+    const ov = inIntro ? vis(t, C.inthis + .3, b, .45, .3) : 0, rc = inRec ? vis(t, ra, rb, .45, .35) : 0;
+    const pv = Math.max(ov, rc);
+    st($('plan'), pv, 0, 50 * (1 - pv));
+    if (pv > 0) {
+      const head = inRec ? 'WHAT WE COVERED<small>In this video, you learned to:</small>' : 'IN THIS VIDEO<small>Create your JetUP account, step by step</small>';
+      if ($('plh').dataset.h !== head) { $('plh').innerHTML = head; $('plh').dataset.h = head; }
+      for (let i = 0; i < 9; i++) {
+        const row = $('pr' + i);
+        if (row.dataset.txt !== TL.plan[i]) { row.lastChild.innerHTML = TL.plan[i]; row.dataset.txt = TL.plan[i]; }
+        if (inRec) {
+          const tk = C.plan_tick[i], on = t >= tk - .05;
+          row.className = 'pr' + (on ? ' ok' : '');
+          const p = ez.back(lin(t, tk - .05, tk + .3));
+          row.style.opacity = on ? 1 : .45; row.style.visibility = 'visible';
+          row.firstChild.style.transform = `scale(${on ? (.6 + .4 * p).toFixed(3) : 1})`;
+          row.style.transform = 'none';
+        } else {
+          const r = rise(t, C.plan_in[i] - .15, b, 30, .3, 0);
+          row.className = 'pr'; row.style.opacity = r.o.toFixed(3); row.style.visibility = r.o > .002 ? 'visible' : 'hidden';
+          row.style.transform = `translateX(${(40 * (1 - r.o)).toFixed(1)}px)`; row.firstChild.style.transform = 'none';
+        }
+      }
+    }
+    const pz = inIntro ? rise(t, C.pause - .2, b, 40, .4, .3) : { o: 0, y: 0 };
+    st($('pz'), pz.o, 0, pz.y); }
+  // ----- step 1: the Partner link -----
+  { const [a, b] = S.link;
     const v1 = rise(t, a + .1, b, 50), v2 = rise(t, C.client - .3, b, 50);
     st($('lk1'), v1.o, 0, v1.y, 1 + .03 * Math.sin(Math.PI * lin(t, C.partner, C.partner + .5)));
     st($('lk2'), v2.o * .92, 0, v2.y);
@@ -172,20 +205,47 @@ function cards(t) {
     const press = t > C.linktap - .05 && t < C.linktap + .18 ? .95 : 1;
     st($('lkb'), bt.o, 0, bt.y, press); st($('lkn'), n.o, 0, n.y);
     tapAt($('lktap'), t, C.linktap); }
-  // tip
+  // ----- tip -----
   { const [a, b] = S.tip; const r = rise(t, a, b, 70, .4, .3); st($('tip'), r.o, 0, r.y); }
-  // email
+  // ----- email -----
   { const [a, b] = S.mail; const r = rise(t, a, b, 70, .4, .3); st($('mail'), r.o, 0, r.y);
-    tapAt($('mtap'), t, TL.cues.mailtap); }
-  // end
-  { const [a, b] = S.end, C = TL.cues;
-    const d = rise(t, a, b, 40, .4, 0); st($('endc'), d.o, 0, d.y, .8 + .2 * ez.back(lin(t, a, a + .5)));
-    const n = rise(t, a + .35, b, 60, .4, 0); st($('nx'), n.o, 0, n.y);
-    const u = rise(t, C.links_url - .3, b, 50, .4, 0); st($('eu'), u.o, 0, u.y, 1 + .04 * Math.sin(Math.PI * lin(t, C.links_url, C.links_url + .6)));
-    const s = rise(t, C.save - .2, b, 30, .4, 0); st($('esv'), s.o, 0, s.y);
-    const br = rise(t, C.pays - .3, b, 30, .4, 0); st($('ebrand'), br.o, 0, br.y);
-    const sl = rise(t, C.pays + .4, b, 40, .45, 0); st($('eslog'), sl.o, 0, sl.y, .9 + .1 * ez.back(lin(t, C.pays + .4, C.pays + .9)));
-    const rk = rise(t, C.pays + 1.0, b, 20, .4, 0); st($('erisk'), rk.o, 0, rk.y); }
+    tapAt($('mtap'), t, C.mailtap); }
+  // ----- next video -----
+  { const [a, b] = S.next;
+    const n = rise(t, C.next - .3, b, 60, .4, .35); st($('nx'), n.o, 0, n.y, .92 + .08 * ez.back(lin(t, C.next - .3, C.next + .2)));
+    for (let i = 0; i < 3; i++) { const r = rise(t, C.nb[i] - .2, b, 0, .35, .35); st($('nb' + i), r.o, 50 * (1 - r.o), 0); }
+    const q = rise(t, C.links_url - .9, b, 30, .4, .35); st($('euq'), q.o, 0, q.y);
+    const u = rise(t, C.links_url - .3, b, 40, .4, .35); st($('eu'), u.o, 0, u.y, 1 + .04 * Math.sin(Math.PI * lin(t, C.links_url, C.links_url + .6)));
+    const txt = t < C.share - .2 ? 'Save this video, so it is here when you need it.' : 'Share it with someone who is ready to start.';
+    if ($('esv').dataset.t !== txt) { $('esv').textContent = txt; $('esv').dataset.t = txt; }
+    const sv = Math.min(rise(t, C.save - .2, b, 30, .35, .35).o, 1);
+    const sw = t > C.share - .45 && t < C.share - .2 ? lin(t, C.share - .2, C.share - .45) : 1;
+    st($('esv'), sv * (t < C.share - .2 ? sw : vis(t, C.share - .2, b, .25, .35)), 0, 0); }
+  // ----- outro -----
+  { const [a, b] = S.outro;
+    const p = rise(t, a, b, 40, .5, 0); st($('oph'), p.o, 0, p.y, 1 + .012 * Math.sin(t * 1.6));
+    const M = [[a, C.o_thanks - .15, 'None of this is financial advice.<br>Always do your own research.'],
+               [C.o_thanks - .15, C.o_massive - .15, 'SOC'],
+               [C.o_massive - .15, C.o_best - .15, 'Thank yourself for taking<br>massive action today!'],
+               [C.o_best - .15, C.o_im - .15, '<div><div style="font:800 46px/1.2 var(--f-b)">I wish you nothing but the best,</div><div class="big goldtxt" style="margin-top:14px">BECAUSE YOU ARE THE BEST</div></div>']];
+    const om = $('omsg'); let shown = false;
+    for (const [m0, m1, html] of M) {
+      if (t >= m0 && t < m1) {
+        const key = String(m0);
+        if (om.dataset.k !== key) { om.innerHTML = html === 'SOC' ? $('t_soc').innerHTML : html; om.dataset.k = key; }
+        const v = vis(t, m0, m1, .3, .25); st(om, v, 0, 24 * (1 - v)); shown = true;
+        if (html === 'SOC') {
+          [['s_like', C.o_like], ['s_share', C.o_share], ['s_comm', C.o_comment]].forEach(([id, tt]) => {
+            const e = document.getElementById(id); if (!e) return;
+            const k = ez.back(lin(t, tt - .2, tt + .25)); e.style.opacity = lin(t, tt - .2, tt).toFixed(3); e.style.transform = `scale(${(.5 + .5 * k).toFixed(3)})`;
+          });
+        }
+      }
+    }
+    if (!shown) st(om, 0);
+    const br = rise(t, C.o_im - .2, b, 30, .4, 0); st($('ebrand'), br.o, 0, br.y);
+    const sl = rise(t, C.o_lgtc - .25, b, 40, .45, 0); st($('eslog'), sl.o, 0, sl.y, .9 + .1 * ez.back(lin(t, C.o_lgtc - .25, C.o_lgtc + .25)));
+    const rk = rise(t, C.o_lgtc + .5, b, 20, .4, 0); st($('erisk'), rk.o, 0, rk.y); }
 }
 function tapAt(el, t, tt) {
   if (t < tt - .35 || t > tt + .7) { el.style.visibility = 'hidden'; return; }
@@ -232,7 +292,7 @@ window.R = function (t) {
   overlays(t, cur);
   cards(t);
   captions(t);
-  const pv = vis(t, TL.scenes.title[1] - .2, TL.T, .4, 0);
+  const pv = vis(t, TL.scenes.link[0], TL.scenes.recap[0] + .3, .4, .3);
   st($('prog'), pv);
   return Promise.all(pend);
 };

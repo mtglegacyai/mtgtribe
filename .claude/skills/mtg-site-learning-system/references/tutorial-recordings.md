@@ -27,6 +27,19 @@ outside the repository, never in code. Per frame:
 Then OCR every second frame of the finished video and look at contact sheets. Nothing goes to MTG until both are clean.
 Cut app switchers, home screens, inboxes and anything showing balances or other apps.
 
+## Script structure of every tutorial video (MTG, 7 Nov 2026: "Just like we did with the ALTRUVA tutorial videos")
+
+1. **Greeting:** "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this video." Say
+   "video", not "training". Show his full profile photo, large (mtg-creative-standard Section 10a).
+2. **In this video:** what you will show them, as a short list that fills in on screen as each item is said, so they know
+   what to expect and what to ask. Then "Take your time. You can pause any step and follow along with me."
+3. **The steps** (the meat and potatoes), every step voiced, with the success check.
+4. **Recap:** "Let's recap what we covered in this video", ticking the same list item by item.
+5. **Next video:** say what the next part will do, with its 2 or 3 actions on screen.
+6. **Links and save/share**, then the **signature outro** (financial advice reminder, thank you, like/share/comment,
+   massive action, "YOU are the best", "I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto!")
+   with his photo, the brand line and the slogan. The closing track starts about 50 seconds before the end.
+
 ## Editing rules
 
 - **Always show the browser address bar** when a new site or page opens, and point it out (ring plus a chip such as

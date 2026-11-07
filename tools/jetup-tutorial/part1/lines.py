@@ -4,8 +4,14 @@ SR = 48000
 def load(f):
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', f, '-ac', '1', '-ar', str(SR), '-f', 's16le', '-'], capture_output=True).stdout
     return np.frombuffer(raw, np.int16).astype(np.float32) / 32768
-AUD = {'t1': load('t1.mp3'), 't3': load('t3.mp3')}
 rows = list(csv.reader(open('sentences.tsv'), delimiter='\t'))
+AUD = {'t1': load('t1.mp3'), 't3': load('t3.mp3'), 'v2': load('p1v2_raw.wav')}
+V2 = json.load(open('p1v2_lines.json'))
+V2SPANS = [(0.256, 2.112), (2.688, 7.941), (8.366, 13.132), (13.785, 18.357), (19.181, 23.294), (23.832, 27.345), (28.246, 32.235),
+           (32.811, 37.658), (38.653, 41.67), (42.322, 45.492), (45.992, 49.012), (50.086, 52.027), (52.603, 55.73), (56.23, 57.717),
+           (58.426, 61.178), (61.754, 66.332), (67.216, 71.043), (71.696, 76.696), (77.537, 81.864), (82.401, 89.548)]
+for (k, t), (a, b) in zip(V2, V2SPANS):
+    rows.append(['signup-training/v2.mp3', str(a), str(b), t])
 def find(fid, text):
     for r in rows:
         if r[0] == f'signup-training/{fid}.mp3' and r[3].startswith(text):
@@ -19,7 +25,13 @@ LINES = [
     ('reg', 't1', 'Then pass the security check'), ('mail', 't1', 'Check your email, and tap'),
     ('inbox', 't1', 'Not in your inbox?'), ('spam', 't1', 'Check spam or junk mail.'),
     ('links', 't3', 'Everything I showed you'), ('save', 't3', 'Save this video'), ('pays', 't3', 'It pays to pay attention'),
-]
+    ('hi', 't1', 'Hi, my name is MTG'), ('takeyour', 't1', 'Take your time.'), ('pause', 't1', 'You can pause any step'),
+    ('grab', 't1', 'Grab your phone.'), ('together', 't1', "We're going to do this together"),
+    ('share', 't3', "Share it with someone who's ready"), ('o_fin', 't3', 'Quick reminder'), ('o_dyor', 't3', 'Always do your own'),
+    ('o_thanks', 't3', 'Thank you for tuning in'), ('o_support', 't3', 'Your support means'), ('o_massive', 't3', 'And thank yourself'),
+    ('o_best', 't3', 'I wish you nothing'), ('o_im', 't3', "I'm MTG, Your Digital"), ('o_see', 't3', 'See you on the next'),
+    ('o_lgtc', 't3', "Let's Get This Crypto"),
+] + [(k, 'v2', t) for k, t in V2]
 def env(x):
     hop = SR // 200  # 5 ms
     n = len(x) // hop

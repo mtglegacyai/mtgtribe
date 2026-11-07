@@ -414,5 +414,29 @@
   "b": 89.29,
   "dur": 6.92,
   "text": "You'll sync your account through Copy X, confirm your TAG Markets email, and log in to your TAG Markets dashboard."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "v3",
+  "a": 0.275,
+  "b": 6.925,
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
+ },
+ "l_other": {
+  "file": "v_l_other.wav",
+  "src": "v3",
+  "a": 7.28,
+  "b": 11.92,
+  "dur": 4.64,
+  "text": "If someone else invited you, use their Partner link instead, so you join their team."
+ },
+ "l_every": {
+  "file": "v_l_every.wav",
+  "src": "v3",
+  "a": 12.195,
+  "b": 18.075,
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it."
  }
 }

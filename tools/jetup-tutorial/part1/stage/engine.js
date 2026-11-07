@@ -200,7 +200,7 @@ function cards(t) {
     const v1 = rise(t, a + .1, b, 50), v2 = rise(t, C.client - .3, b, 50);
     st($('lk1'), v1.o, 0, v1.y, 1 + .03 * Math.sin(Math.PI * lin(t, C.partner, C.partner + .5)));
     st($('lk2'), v2.o * .92, 0, v2.y);
-    const q = rise(t, C.ifme - .2, b, 40), u = rise(t, C.ifme + .25, b, 40), bt = rise(t, C.ifme + .9, b, 40), n = rise(t, C.ifme + 1.4, b, 30);
+    const q = rise(t, C.ifme - .2, b, 40), u = rise(t, (C.lk_url || C.ifme + .25) - .3, b, 40), bt = rise(t, (C.lk_btn || C.ifme + .9) - .4, b, 40), n = rise(t, (C.lk_other || C.ifme + 1.4) - .2, b, 30);
     st($('lkq'), q.o, 0, q.y); st($('lku'), u.o, 0, u.y);
     const press = t > C.linktap - .05 && t < C.linktap + .18 ? .95 : 1;
     st($('lkb'), bt.o, 0, bt.y, press); st($('lkn'), n.o, 0, n.y);
@@ -216,6 +216,7 @@ function cards(t) {
     for (let i = 0; i < 3; i++) { const r = rise(t, C.nb[i] - .2, b, 0, .35, .35); st($('nb' + i), r.o, 50 * (1 - r.o), 0); }
     const q = rise(t, C.links_url - .9, b, 30, .4, .35); st($('euq'), q.o, 0, q.y);
     const u = rise(t, C.links_url - .3, b, 40, .4, .35); st($('eu'), u.o, 0, u.y, 1 + .04 * Math.sin(Math.PI * lin(t, C.links_url, C.links_url + .6)));
+    { const r = rise(t, (C.every || 1e9) - .2, b, 30, .4, .35); st($('einv'), r.o, 0, r.y); }
     const txt = t < C.share - .2 ? 'Save this video, so it is here when you need it.' : 'Share it with someone who is ready to start.';
     if ($('esv').dataset.t !== txt) { $('esv').textContent = txt; $('esv').dataset.t = txt; }
     const sv = Math.min(rise(t, C.save - .2, b, 30, .35, .35).o, 1);

@@ -58,9 +58,9 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 /* cards that replace the screen */
 .card{border-radius:40px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
 /* intro, plan (overview and recap), pause */
-.phc{position:absolute;width:576px;height:576px;padding:8px;border-radius:52px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);
+.phc{position:absolute;width:576px;height:576px;padding:9px;border-radius:50%;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);
  box-shadow:0 0 70px rgba(232,194,90,.45),0 30px 80px rgba(0,0,0,.55);transform-origin:50% 50%;will-change:transform,opacity}
-.phc img{display:block;width:560px;height:560px;border-radius:44px}
+.phc img{display:block;width:558px;height:558px;border-radius:50%}
 #iph{left:252px;top:420px}
 #ipart{left:0;right:0;top:168px;display:flex;justify-content:center}
 #ipart span{display:inline-flex;align-items:center;height:58px;padding:0 28px;border-radius:999px;background:var(--lime);color:#14110b;font:800 24px/1 var(--f-b);letter-spacing:.16em}
@@ -102,7 +102,8 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 #lku i{font-style:normal;color:var(--lime)}
 #lkb{left:200px;right:200px;top:1230px;height:120px;border-radius:30px;display:flex;align-items:center;justify-content:center;
  background:var(--goldg);color:#1a1405;font:800 44px/1 var(--f-b);box-shadow:0 18px 50px rgba(232,194,90,.35)}
-#lkn{top:1380px;font:700 26px/1.3 var(--f-b);color:var(--muted)}
+#lkn{left:90px;right:90px;top:1400px;padding:30px 36px;border-radius:30px;text-align:center;background:rgba(255,224,143,.08);box-shadow:inset 0 0 0 2.5px rgba(255,224,143,.6);font:700 36px/1.3 var(--f-b);color:var(--body)}
+#lkn b{display:block;margin-bottom:8px;font:800 42px/1.2 var(--f-b);color:var(--gold-hi)}
 #lktap{left:540px;top:1290px}
 /* tip card */
 #tip{left:90px;right:90px;top:560px;padding:64px 60px 70px}
@@ -139,10 +140,12 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 #eu{left:110px;right:110px;top:1276px;height:130px;border-radius:999px;display:flex;align-items:center;justify-content:center;
  background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 60px/1 var(--f-b)}
 #eu i{font-style:normal;color:var(--lime)}
-#esv{top:1450px;font:800 38px/1.3 var(--f-b);color:#fff}
+#einv{left:90px;right:90px;top:1436px;padding:22px 30px;border-radius:26px;text-align:center;background:rgba(255,224,143,.08);box-shadow:inset 0 0 0 2.5px rgba(255,224,143,.6);font:700 33px/1.3 var(--f-b);color:var(--body)}
+#einv b{color:var(--gold-hi)}
+#esv{top:1580px;font:800 36px/1.3 var(--f-b);color:#fff}
 /* outro */
 #oph{left:282px;top:300px;width:516px;height:516px}
-#oph img{width:500px;height:500px}
+#oph img{width:498px;height:498px}
 #omsg{left:60px;right:60px;top:880px;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;font:800 58px/1.18 var(--f-b)}
 #omsg .big{font:400 128px/1 var(--f-d);letter-spacing:.01em}
 #omsg .soc{display:flex;gap:30px;justify-content:center}
@@ -172,7 +175,7 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 <!-- intro -->
 <div class="ab" id="ipart"><span>PART 1 · JETUP TUTORIAL</span></div>
 <div class="ab c" id="ititle">Create your<br>JetUP account</div>
-<div class="ab phc" id="iph"><img src="mtg-photo.png" alt="MTG"></div>
+<div class="ab phc" id="iph"><img src="mtg-photo-round.jpg" alt="MTG"></div>
 <div class="ab c" id="ihi">Hi, my name is MTG</div>
 <div class="ab c goldtxt" id="iarch">YOUR DIGITAL ARCHITECT</div>
 <div class="ab" id="iname"><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div>
@@ -182,10 +185,10 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 <!-- step 1: the link -->
 <div class="ab card lk" id="lk1"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><b>Partner link</b><small>Use this one to sign up</small></div></div>
 <div class="ab card lk" id="lk2"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div><b>Client link</b><small>Not the one to sign up with</small></div></div>
-<div class="ab c" id="lkq">If MTG invited you:</div>
+<div class="ab c" id="lkq">If MTG invited you, go to:</div>
 <div class="ab" id="lku"><span>mtgtribe.com/<i>jetup</i></span></div>
-<div class="ab" id="lkb">Tap a sign up button</div>
-<div class="ab c" id="lkn">Or use the Partner link from your own sponsor</div>
+<div class="ab" id="lkb">Tap any Join JetUP button</div>
+<div class="ab" id="lkn"><b>Invited by someone else?</b>Use their Partner link, so you join their team.</div>
 <div class="ab tap" id="lktap"><i></i><b></b></div>
 
 <!-- screen -->
@@ -211,9 +214,10 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke
 <div class="ab nb" id="nb2"><i>3</i>Log in to your TAG Markets dashboard</div>
 <div class="ab c" id="euq">Everything I showed you, plus my links:</div>
 <div class="ab" id="eu"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="einv"><b>Invited by someone else?</b> Use their link. This video is for every team: share it freely.</div>
 <div class="ab c" id="esv"></div>
 <!-- outro -->
-<div class="ab phc" id="oph"><img src="mtg-photo.png" alt="MTG"></div>
+<div class="ab phc" id="oph"><img src="mtg-photo-round.jpg" alt="MTG"></div>
 <div class="ab" id="omsg"></div>
 <div class="ab c" id="ebrand">MTG <span class="em">👑</span><span class="sep">|</span>YOUR DIGITAL ARCHITECT</div>
 <div class="ab c goldtxt" id="eslog">LET'S GET THIS CRYPTO! <span class="em" style="-webkit-text-fill-color:initial">💪</span></div>

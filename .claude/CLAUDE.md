@@ -62,6 +62,14 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 - **No conflicting content, ever.** `jetup-facts.md` is the single source of truth. Third-party trainings feed it only after
   checking; their income claims and advice never go on the site.
 
+## Tutorial videos: the locked formula (MTG, 7 Nov 2026)
+
+Every step-by-step tutorial video follows `.claude/skills/mtg-tutorial-video/`: greeting ("Hi, my name is MTG, Your
+Digital Architect. Thank you for taking the time to watch this video", never "training"), "In this video" list, the
+steps, recap, next video, fair-play sign-up wording ("tap any Join JetUP button; invited by someone else? use their
+link"), signature outro. **MTG's photo is always in a circle with a gold ring, never a rectangle or rounded square.**
+Do not make MTG repeat any of this.
+
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 
 When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated

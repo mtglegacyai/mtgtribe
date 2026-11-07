@@ -831,3 +831,17 @@ body{overflow-wrap:break-word}
   .pt:not(.pt-c2) td.tl{text-align:left}.pt:not(.pt-c2) td.tl:before{float:none;display:block;margin:0 0 2px}
   .pt:not(.pt-c2) tr.hl{background:rgba(238,189,92,.08)}.pt:not(.pt-c2) tr.hl td{background:none}
 }
+/* Join JetUP (MTG's Partner link, 7 Nov 2026) */
+.joincta{border-color:rgba(var(--lime-rgb,203,251,97),.35)}
+.joincta .jw{background:linear-gradient(180deg,#1e1a2e,#0f0c18);box-shadow:0 0 40px rgba(155,124,255,.35),inset 0 0 0 1.5px rgba(255,255,255,.12)}
+.joincta .jw img{width:54px;height:54px}
+.jnote{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.04);color:var(--muted);font:600 13.5px/1.5 var(--f-b)}
+.jnote svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--gold,#e8c25a)}
+.joinrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+/* step-by-step phone videos (MTG's own recordings) */
+.pvid{max-width:240px;margin:0 0 18px}
+.vrow{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch}
+.vpart{display:flex;flex-direction:column;gap:6px;width:200px;color:inherit;text-decoration:none}
+.vpart b{font:800 16px/1.2 var(--f-b);margin-top:6px}.vpart small{color:var(--muted);font:600 13px/1.4 var(--f-b)}
+.vsoon{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:20px;border-radius:22px;border:1.5px dashed rgba(255,255,255,.16)}
+.vsoon b{font:800 17px/1.2 var(--f-b)}.vsoon small{color:var(--muted);font:600 14px/1.5 var(--f-b)}

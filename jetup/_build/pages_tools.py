@@ -58,7 +58,8 @@ def build_exposure():
  <p><b>Exposure</b> is the size you trade with. With the training example, $250 × 24 = $6,000. A 1% move on $6,000 is $60, which is 40% of your own $150.</p>
  <p>The <b>move that equals all your own money</b> is $150 ÷ $6,000 = 2.5%. The <b>move that equals the whole balance</b> is 100% ÷ 24 = 4.17%, which is why the training says a drop of about 4.2% is the same size as your whole deposit.</p>
  <p>Want the other side, the profit split? Try the <a href="/jetup/tools/profit-split-calculator/">Profit Split Calculator</a>.</p>
-</div></div></section>'''
+</div></div></section>
+{join_cta()}'''
     app = {"@type": "WebApplication", "name": "Exposure Calculator (JetUP and TAG Markets Amplify)", "url": SITE + path, "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
     return page(path, 'Exposure Calculator: 24x Amplify on TAG Markets | MTG',
                 'Free Exposure Calculator for JetUP and TAG Markets: see what 24x Amplify does to a deposit, the profit or loss from a price move, and the move that equals all your own money.',
@@ -100,7 +101,8 @@ def build_split():
  <h2>Where the 30% goes</h2>
  <p>The 30% performance fee pays the broker, the strategy provider and the partner program, and it is taken from profits only. JetUP's one-pager says the Profit Share to partners comes out of this 30%, never from client deposits.</p>
  <p>Curious what Amplify does to the same money? Try the <a href="/jetup/tools/exposure-calculator/">Exposure Calculator</a>.</p>
-</div></div></section>'''
+</div></div></section>
+{join_cta()}'''
     app = {"@type": "WebApplication", "name": "Profit Split Calculator (JetUP and TAG Markets 70/30)", "url": SITE + path, "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
     return page(path, 'Profit Split Calculator: the 70/30 on TAG Markets CopyX | MTG',
                 'Free Profit Split Calculator for JetUP and TAG Markets CopyX: see your 70% of a Sonic AI profit, the 30% performance fee, your return, and why a loss carries no fee.',
@@ -212,7 +214,8 @@ def build_faq():
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('FAQ', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow">{blocks}
  <div class="card pad block rv center" style="display:grid;justify-items:center;gap:12px"><h2 class="h2" style="font-size:clamp(1.7rem,3.4vw,2.3rem)">Still have a question?</h2><p class="lede">Ask in the MTG TRIBE. The question most of you ask becomes the next video.</p><a class="btn btn-lime" href="{GROUP}">{icon('i-whatsapp')}Ask the tribe</a></div>
-</div></section>'''
+</div></section>
+{join_cta()}'''
     return page(path, 'JetUP and TAG Markets FAQ: Deposits, Risks, Promo | MTG',
                 'JetUP and TAG Markets questions answered: what they are, how much to start, BEP20 or TRC20, the 70/30 split, withdrawals, 24x Amplify, liquidation, the Dennis promo and the community codes.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('FAQ', None)], [ld_faq(allqa, SITE + path)])

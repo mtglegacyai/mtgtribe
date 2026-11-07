@@ -59,3 +59,10 @@ timeline, captions, audio and rendering. Read `tools/video3d/README.md` first. I
 card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never the clock. Captions come from the final
 audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, closing track 50 seconds
 before the end, preview before anything is published.
+
+## Video ideas and scripts: MTG ScriptForge (MTG, 7 November 2026)
+
+MTG's ScriptForge prompt, adapted to his niche, is the skill `.claude/skills/mtg-scriptforge/`: niche menu, 10 ideas,
+full script with visual and build cues, Shorts plan. Bridge topics (self-improvement, psychology, What If, science,
+history) pull in new viewers and end on the MTG TRIBE; his own niche sends people to the right page
+(`references/destinations.md`).

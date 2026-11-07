@@ -13,9 +13,15 @@ the voice bank).
 |---|---|---|---|
 | Start amount | About $155 in USDT or USDC: $50 into Sonic AI, $100 left in the balance for the promo, a few dollars spare | get-started, FAQ, home, training video, onboarding PDF | MTG's guide |
 | Why not exactly $150 | A few cents can go on fees, so send a little more than $150 (the training uses $155) | get-started part 4 | MTG's guide; Sunday training 7 Nov 2026 |
+| Password | Up to 12 characters, plus the rules shown on the sign-up screen | get-started part 1 | MTG's recording, 7 Nov 2026 (confirm on the video) |
+| Sign-up tick boxes | MTG's recording (7 Nov 2026) shows no tick boxes on the sign-up form: the risk line "Trading Forex & CFDs is risky" sits under Register Now. Removed from get-started part 1 in the 7 Nov 2026 preview; the tick boxes now sit at the CopyX sync (part 2) | get-started parts 1 and 2 | MTG's part 1 and part 2 recordings |
+| Email already registered | Registration fails with "email address already exists": use another email or log in | get-started part 1 | MTG's recording, 7 Nov 2026 |
+| Join JetUP buttons | Every "Join JetUP" button opens MTG's Partner link (one constant, `JETUP_JOIN` in `jetup/_build/layout.py`), with the note: invited by someone else? Use their Partner link. Videos say the same | every JetUP page, tutorial videos | MTG, 7 Nov 2026 |
 | Partner link, not Client link | Every member has two links. New people sign up with the Partner link | get-started part 1, FAQ | MTG's guide |
 | Name at sign-up | First and last name exactly as on the ID (no nickname), or KYC fails | get-started part 1 | Sunday training 7 Nov 2026 |
-| CopyX banner | Tap "Login to CopyX". On some new accounts it says "Register": same step. Never register on CopyX directly | get-started part 2 | MTG's guide screenshots; Sunday training |
+| CopyX banner | A new account shows "Register CopyX": tap it. After syncing, the banner shows "User Active" with the CU number and a "Login to CopyX" button. Never register on CopyX directly ("the account will not be synchronized") | get-started part 2 | MTG's part 2 recording, 7 Nov 2026 (settles the old "Login to CopyX" vs "Register" question) |
+| Sync | Enter the same password as JetUP, tick the boxes, tap "Sync Account"; "Syncing with CopyX", then "Sync successful". Then log in to TAG Markets with the same email and password; the TAG Markets email arrives (it came after the first log in for MTG): tap "Confirm email address", "Verification successful", then log in again. Confirm the email before KYC | get-started part 2 | MTG's part 2 narration, 7 Nov 2026 (confirm on the video) |
+| TAG Markets log in | Same email and the exact same password as JetUP (12 characters at most). "Username and password incorrect" usually means the password differs | get-started part 2, FAQ | MTG's part 2 narration, 7 Nov 2026 |
 | Linked | The banner shows "User Active" and the CU number | get-started part 2 | MTG's guide |
 | KYC | TAG Markets questions, then Sumsub ID and face scan, on the phone | get-started part 3 | MTG's guide |
 | Deposit path | portal.tagmarkets.com, Deposit, USD, Other, 155, Next, Crypto, Submit | get-started part 4 | MTG's guide |
@@ -77,10 +83,13 @@ the voice bank).
 
 ## Open questions for MTG (do not publish an answer until he confirms)
 
-1. CopyX banner label: MTG's guide shows "Login to CopyX"; the Sunday presenter says new accounts see "Register". The site now
-   mentions both. Confirm with MTG's own recording.
+1. Settled by MTG's part 2 recording (7 Nov 2026): "Register CopyX" before linking, "User Active" and "Login to CopyX" after.
+   Update get-started part 2 and the FAQ when part 2 is approved.
 2. Deposit network: the Sunday presenter prefers USDC or ETH on ERC20 as "cheaper"; this site ranks BEP20, then TRC20, then
    ERC20 (normally the most expensive). The site's ranking stays unless MTG decides otherwise.
+4. Risk percentage: the CopyX sync tick box says "80% of retail investors lose money"; TAG Markets' KYC reminder (and this
+   site) says 88% of retail investor accounts lose money when trading CFDs. Both are TAG texts on different screens. Keep 88%
+   where the site quotes the KYC reminder; quote 80% only when showing that tick box.
 3. BIX commission figures come from a presentation slide. Confirm them in the partner account or an official JetUP document.
 
 ## Never import from third-party trainings

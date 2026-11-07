@@ -165,8 +165,8 @@ def thumb_bar(path, icon, group):
             '<a class="tb" href="/jetup/"%s>%s<span>Home</span></a>'
             '<button class="tb" type="button" data-menu aria-controls="side">%s<span>Menu</span></button>'
             '<a class="tb" href="/jetup/get-started/"%s>%s<span>Start</span></a>'
-            '<a class="tb tb-join" href="%s">%s<span>Join</span></a>'
-            '</nav>') % (cur('/jetup/'), icon('i-home'), icon('i-menu'), cur('/jetup/get-started/'), icon('i-rocket2'), group, icon('i-whatsapp'))
+            '<a class="tb tb-join" href="%s" target="_blank" rel="sponsored noopener" data-join>%s<span>Join JetUP</span></a>'
+            '</nav>') % (cur('/jetup/'), icon('i-home'), icon('i-menu'), cur('/jetup/get-started/'), icon('i-play2'), group, icon('i-rocket2'))
 
 # ---------------------------------------------------------------- 5. search
 def search_box(icon):

@@ -12,6 +12,11 @@ Status key: planned, voice approved, storyboard, preview sent, approved, live.
 - [ ] Any other referral links for the buttons.
 - [ ] MTG's own **step-by-step tutorial recording** of getting started with JetUP and TAG Markets.
 
+## MTG's tutorial recording (started 7 Nov 2026)
+
+MTG records one short silent phone video per part and sends his spoken notes with each. Notes, editing rules and status:
+`tools/jetup-tutorial/README.md`. Format: separate short videos per part, not one long video.
+
 ## When MTG's step-by-step tutorial video arrives (do all of this without being asked again)
 
 1. Watch it end to end and list every step, label and screen. Compare with `jetup-facts.md` and the sign-up training page;
@@ -95,3 +100,10 @@ Two PDFs, both waiting for MTG's tutorial video and links:
 ## Facts and consistency
 
 `tools/learning-system/jetup-facts.md` is the single source of truth for every JetUP number, step, label and rule.
+
+## Links received (7 Nov 2026)
+
+- JetUP Partner link from MTG: in `JETUP_JOIN` (`jetup/_build/layout.py`). Used by every "Join JetUP" button: top bar, side
+  menu, phone thumb bar, home hero, get-started "Get ready", and the Join card at the end of every page except the
+  disclaimer. Each carries the fair-play note (invited by someone else? use their Partner link). Preview on the working
+  branch; live after MTG's approval. BIX Card link: still to come.

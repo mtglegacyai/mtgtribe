@@ -101,6 +101,7 @@ def build_home():
    <div class="ctas rv" style="--d:3">
     {video_btn('5checks', 'btn btn-pri', '<span class="play">' + icon('i-play2', '') + '</span>Watch the 5 checks first')}
     <a class="btn btn-ghost" href="/jetup/get-started/">{icon('i-rocket2')}Start the sign-up training</a>
+    {join_btn('Join JetUP', 'btn btn-lime')}
    </div>
    <ul class="chips rv" style="--d:4">
     <li class="chip">{icon('i-film2')}2 videos, about 15 minutes</li>

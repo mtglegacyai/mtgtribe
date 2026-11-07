@@ -12,3 +12,8 @@ The file lands in `tools/skills/dist/` (not saved in git). For `mtg-scriptforge`
 project. It refuses to build when the description is too long or a dash rule is broken.
 
 Rebuild and re-upload whenever the skill or the studio changes.
+
+If the full ScriptForge file will not upload (it bundles the studio, about 2 MB), build the skill text only:
+`python3 tools/skills/package_skill.py mtg-scriptforge --no-kit` makes `dist/mtg-scriptforge-small.skill` (about
+180 KB). It works the same in claude.ai; only the copy of the studio for other sites' projects is left out.
+

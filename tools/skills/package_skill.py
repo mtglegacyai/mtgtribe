@@ -22,6 +22,7 @@ KITS = {
 ap = argparse.ArgumentParser()
 ap.add_argument('skill')
 ap.add_argument('--out', default=None)
+ap.add_argument('--no-kit', action='store_true', help='leave out the bundled tools kit (smaller file, skill text only)')
 a = ap.parse_args()
 
 root = Path(subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, check=True).stdout.strip())
@@ -55,7 +56,7 @@ files = []  # (path on disk, path inside the zip)
 for p in sorted(src.rglob('*')):
     if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc':
         files.append((p, Path(a.skill) / p.relative_to(src)))
-for folder, inside in KITS.get(a.skill, []):
+for folder, inside in ([] if a.no_kit else KITS.get(a.skill, [])):
     tracked = subprocess.run(['git', 'ls-files'], cwd=root / folder, capture_output=True, text=True, check=True).stdout.split('\n')
     for rel in filter(None, tracked):
         files.append((root / folder / rel, Path(a.skill) / inside / rel))
@@ -64,7 +65,7 @@ skill_mds = [z for _, z in files if z.name == 'SKILL.md']
 if len(skill_mds) != 1:
     sys.exit(f'A skill must contain exactly one SKILL.md, found {len(skill_mds)}')
 
-target = out_dir / f'{a.skill}.skill'
+target = out_dir / (f'{a.skill}-small.skill' if a.no_kit else f'{a.skill}.skill')
 with tempfile.TemporaryDirectory() as tmp:
     tmp_zip = Path(tmp) / target.name
     with zipfile.ZipFile(tmp_zip, 'w', zipfile.ZIP_DEFLATED) as z:

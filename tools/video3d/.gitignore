@@ -6,3 +6,7 @@ public/brand/*
 # Closing track: MTG attaches the mp3, it is not stored in the website repo
 public/music/*
 !public/music/README.md
+# Per-video audio and AI clips: large, regenerable, not stored in git (manifests are)
+public/videos/*/voice/*.wav
+public/videos/*/narration.wav
+public/videos/*/leo/*.mp4

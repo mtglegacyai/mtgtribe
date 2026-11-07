@@ -1,0 +1,112 @@
+# What If Prices Doubled Every Day? Posting pack (7 November 2026, awaiting MTG's approval)
+
+File: `tools/video3d/out/whatif01-preview.mp4` (16:9, 1920x1080, 30 fps, 4:27). Preview only: the closing track
+"They Call Me MTG" is added when MTG supplies the mp3.
+Goal: reach (+ tribe growth). Stage: discover. Main address: mtgtribe.com/group.
+
+## Title (+ 2 alternates for a re-post or test)
+```
+What If Prices Doubled Every Day? (It Really Happened)
+```
+```
+The Country Where Prices Doubled Every Day
+```
+```
+Money Became Cheaper Than Paper
+```
+
+## YouTube description
+```
+What would you do if your bread cost double tomorrow, and double again the day after? It really happened, right next door to South Africa. Join the MTG TRIBE: https://mtgtribe.com/group
+
+In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this training you'll see how it happened, how families coped, the 100 trillion dollar banknote, the posters printed on real money, and the one lesson that still protects people today.
+
+⏱️ Chapters
+0:00 Imagine your bread doubling every day
+0:13 Hi, I'm MTG
+0:25 It happened next door: guess the zeros
+0:50 Prices doubled about every 24.7 hours
+1:14 Why it happened
+1:36 How families coped
+2:05 The 100 trillion dollar note
+2:21 When money was cheaper than paper
+2:56 Money is a promise
+3:13 The lesson
+3:42 Join the MTG TRIBE
+4:02 Thank you
+
+💬 How many zeros did you guess? And finish this sentence: money is ___
+💾 Save this for the day someone tells you money can't lose its value.
+🔁 Send it to the friend who keeps all their savings in one place.
+
+🤝 Join the MTG TRIBE: https://mtgtribe.com/group
+✈️ Telegram: https://t.me/mtgtribez
+🎵 TikTok: https://www.tiktok.com/@joinmtgtribe
+▶️ Subscribe: https://www.youtube.com/@mtgtribe
+
+Sources: Hanke and Kwok (Cato Journal, 2009) and Hanke and Bostrom (Johns Hopkins) on the 24.7-hour doubling; Reserve Bank of Zimbabwe 100 trillion dollar note (January 2009); the Zimbabwe dollar abandoned (April 2009); "The Trillion Dollar Campaign" by TBWA\Hunt\Lascaris for The Zimbabwean (Cannes Lions 2009 Outdoor Grand Prix). Rand prices in the opening are an illustration.
+
+Education only, not financial advice. Always do your own research. Narrated with MTG's AI voice; Leo is an AI-generated character.
+
+MTG 👑 | Your Digital Architect
+Let's Get This Crypto! 💪
+
+#WhatIf #Zimbabwe #MTGTribe
+```
+
+## Tags (YouTube)
+```
+what if, what if prices doubled every day, hyperinflation, hyperinflation explained, Zimbabwe 2008, Zimbabwe 100 trillion dollar note, 100 trillion dollars, money explained, money history, what is money, trillion dollar campaign, inflation explained, South Africa, MTG Tribe, MTG Your Digital Architect
+```
+
+## Pinned comment
+```
+Be honest: how many zeros did you guess before the reveal? 👇 And finish this sentence for me: money is ___. If this opened your mind, come learn with us: https://mtgtribe.com/group
+```
+
+## TikTok and Instagram caption (for the Shorts cut from this video)
+```
+Prices doubled every single day. It really happened, next door to South Africa. How many zeros would you guess? 👇 Full video on YouTube, tribe link in bio. #WhatIf #Zimbabwe #MoneyHistory #MTGTribe
+```
+
+## Facebook post
+```
+If your pay lost half its value every day, what would you buy first? In 2008 that was real life in Zimbabwe. Here's what happened, and the one lesson it still teaches all of us. Watch, then tell me your answer in the comments. Join the MTG TRIBE: https://mtgtribe.com/group
+```
+
+## WhatsApp tribe message
+```
+Tribe 👋 New training: What If Prices Doubled Every Day? (It really happened, right next door.) Watch it, then let's talk: what would YOU have bought first? [YouTube link] 💪
+```
+
+## WhatsApp status text
+```
+Bread: R10 today, R10.7 billion a month later? 🍞 It happened. Watch: [YouTube link]
+```
+
+## Thumbnail text (2 to 4 words)
+```
+DOUBLED EVERY DAY
+```
+Concept A: the 3D loaf, giant price "R10,737,418,240", a "30 DAYS LATER" chip, MTG's circle photo. Concept B: Leo amazed beside "14 ZEROS".
+
+## End screen and cards
+End screen (last 20 s, over the end card): subscribe button + the next Mind Opener (video 02, the sunken stone). Card at 2:05: video 02.
+
+## Compliance record (compliance.md)
+Risk tier: green (money history and education; no opportunity, no returns, no recruitment, no affiliate links).
+Scan: compliance_scan.py run on the script and this pack on 7 November 2026 (flags explained below, if any).
+YouTube: altered or synthetic content YES (MTG's AI voice and AI-generated Leo), made for kids NO, paid promotion NO.
+TikTok: AI-generated label ON, content disclosure OFF. Instagram and Facebook: AI label ON, paid partnership NO.
+Links: mtgtribe.com/group, Telegram, TikTok, YouTube only (safe list). Music and footage: MTG's own voice, Leo clips
+generated in MTG's HeyGen account, original graphics; closing track to be added (MTG confirms he holds the rights).
+Policy pages last checked: 7 November 2026.
+
+## Publish checklist
+- [ ] MTG approved the final video (with the closing track)
+- [ ] Compliance gate passed and recorded above (no red content on social platforms)
+- [ ] Every link opened and checked
+- [ ] Captions match the final audio
+- [ ] No personal or sensitive data in any frame or the thumbnail
+- [ ] Closing track placed, speech clear
+- [ ] Pinned comment ready to post in the first minute

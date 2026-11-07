@@ -32,8 +32,16 @@ latest instruction in the chat wins, then mtg-creative-standard.
   card sits today (for example the main MTG TRIBE dashboard at mtgtribe.com/dashboard/).
 - **Never publish or push live without MTG's approval**, and show a real preview first (a phone recording or the
   rendered file), not a description.
+- **One source of truth, no conflicts.** Each site keeps a facts register (`tools/learning-system/<site>-facts.md`).
+  Every page, video script, tutorial clip, PDF and promo says exactly what it says. Read `references/facts-and-consistency.md`.
 
 ## The workflow
+
+### 0. Facts, outside sources and consistency (always on)
+Read `references/facts-and-consistency.md`. Keep the site's facts register up to date. When MTG sends someone else's
+training or transcript, extract the useful steps, check them against the register, add what helps, list conflicts for
+MTG and leave out income claims, advice and hype. Run the consistency pass before every publish and after every new
+video, PDF or link.
 
 ### 1. Audit every page and section
 Read `references/audit.md`. Scan every page of the site and every section on it, rank where a short explainer would
@@ -65,8 +73,13 @@ tour: landing page, dashboard, menu (laptop and phone), every page and its key b
 step. It goes at the very top of the dashboard, is listed first on the videos page, and is re-recorded whenever the
 navigation changes.
 
+### 5b. MTG's links on every call to action
+Read `references/links-rollout.md`. The moment MTG supplies his partner or referral links, every CTA on the site carries
+them, with honest, compelling copy, structured data updated, and every button checked live.
+
 ### 6. The ultimate PDF companion (last step for each website)
-Read `references/pdf-companion.md`. When the site and its videos are done, build one PDF for visitors who prefer PDFs:
+Read `references/pdf-companion.md`. When MTG's own step-by-step tutorial video is in, first reproduce the
+**Getting started PDF** from his steps. When the site and its videos are done, build the master PDF for visitors who prefer PDFs:
 enough content to understand everything, mostly short summaries, and tappable buttons on every page that open the
 matching web page, the explainer video and MTG's sign-up links. Check every link with
 `scripts/check_pdf_links.py` before showing MTG. Add it to the site's downloads page once approved.

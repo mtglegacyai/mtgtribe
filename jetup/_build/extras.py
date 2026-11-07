@@ -21,6 +21,7 @@ GLOSSARY = [
  ('liquidated', 'Liquidated', r'\b[Ll]iquidat(?:ed|es|ion)\b', 'Closed. The account is closed when the loss limit is reached.', '/jetup/how-it-works/#amplify'),
  ('lot', 'Lot', r'\blots?\b', "A standard trade size. JetUP's lot commission is counted per lot traded in your structure.", '/jetup/partner-plan/#lot'),
  ('mt5', 'MT5', r'\bMT5\b', 'MetaTrader 5: the trading app many brokers use. Your TAG Markets trading account is an MT5 account.', '/jetup/five-checks/#check-1'),
+ ('investor-password', 'Investor password', r'\binvestor password\b', 'A read-only password for your MT5 account. It lets you watch every trade in MetaTrader 5, but not trade, change or withdraw anything.', '/jetup/get-started/#mt5'),
  ('myfxbook', 'Myfxbook', r'\bMyfxbook\b', "A website that publishes trading results, so you can look at a strategy's record before you deposit.", '/jetup/five-checks/#check-3'),
  ('network', 'Network', r'\bnetwork\b', 'The blockchain route a coin travels on, for example Tron (TRC20). The sending side and the receiving side must use the same network.', '/jetup/get-started/#part-4'),
  ('partner-link', 'Partner link', r'\bPartner link\b', 'The sign-up link for partners. Every member has a Partner link and a Client link: use the Partner link to join as a partner.', '/jetup/get-started/#part-1'),

@@ -7,10 +7,36 @@ Status key: planned, voice approved, storyboard, preview sent, approved, live.
 
 ## Links MTG still has to supply
 
-- [ ] JetUP Partner link (sign-up button on every end card, page and PDF)
-- [ ] BIX Card link
-- [ ] Any other referral links for the buttons
-- [ ] Step-by-step screen recording of the sign-up (for training v5, the chapter clips and real footage in explainers)
+- [ ] JetUP **Partner link** (MTG is registering now, 7 Nov 2026). It goes on every sign-up button.
+- [ ] **BIX Card referral link** (for people who only want the card; JetUP joiners use the Partner link first).
+- [ ] Any other referral links for the buttons.
+- [ ] MTG's own **step-by-step tutorial recording** of getting started with JetUP and TAG Markets.
+
+## When MTG's step-by-step tutorial video arrives (do all of this without being asked again)
+
+1. Watch it end to end and list every step, label and screen. Compare with `jetup-facts.md` and the sign-up training page;
+   MTG's own recording wins on any difference (update the facts file first, then everything that uses it).
+2. Cut it into chapter clips (parts 1 to 6) and put them beside the matching parts of /jetup/get-started/.
+3. **Getting started PDF:** reproduce the step-by-step guide as a PDF from MTG's video steps and screens (plus anything
+   useful from `jetup-facts.md`), with tappable buttons to the page, the clips and his links.
+4. **Master PDF companion:** the ultimate PDF for the whole JetUP site (`references/pdf-companion.md` in the skill).
+5. **Consistency pass:** check every page, video script, clip and PDF against `jetup-facts.md`. No conflicting numbers,
+   steps, labels or rules anywhere. Report what changed.
+6. Preview everything to MTG; publish only with his approval.
+
+## When MTG's links arrive: the CTA rollout (JetUP site)
+
+Every call to action on the JetUP pages carries MTG's own link, with copy that tells the visitor what happens next.
+Today's placeholders to replace or upgrade:
+- get-started "Before we start": the "Ask MTG for his Partner link" WhatsApp button becomes the Partner link itself
+  (keep WhatsApp as the second option: "Stuck? Ask MTG").
+- get-started part 1 "Open the Partner link from your sponsor": add "If MTG invited you, start here" with his link.
+- Home hero, the 5 checks ending, how-it-works, promo, partner plan and FAQ endings: one clear sign-up button each.
+- BIX Card page: "MTG's BIX Card link is coming" becomes a "Get your BIX Card" button with his BIX link.
+- The top bar "Start the training" and the phone thumb bar stay as they are (they lead to the training first).
+- Mark every referral button as MTG's referral link (the site's disclosure line), keep the risk line near it.
+- Update the HowTo and FAQ structured data, titles and descriptions where the new step adds search value.
+- Run the full test suite, the sideways-scroll check and a live link check, then preview to MTG.
 
 ## Voice
 
@@ -62,4 +88,10 @@ Disclaimer, Downloads, the Videos page (it lists all videos), FAQ (each answer l
 
 ## PDF companion
 
-Not started. Built last, after the videos are live (see the skill's `references/pdf-companion.md`).
+Two PDFs, both waiting for MTG's tutorial video and links:
+- **Getting started step by step** (reproduced from MTG's own video steps).
+- **The master PDF companion** for the whole site (see the skill's `references/pdf-companion.md`).
+
+## Facts and consistency
+
+`tools/learning-system/jetup-facts.md` is the single source of truth for every JetUP number, step, label and rule.

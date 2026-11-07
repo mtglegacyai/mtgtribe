@@ -181,6 +181,12 @@ FAQ = [
   ('How is profit split?', 'When the strategy makes a profit, 70% is yours and 30% is the performance fee, which pays the broker, the strategy provider and the partner program. There is no performance fee on a loss, and no management or join fee.'),
   ('How do withdrawals work?', "Profits can be withdrawn any time, through the broker. JetUP's one-pager says withdrawals take about 48 hours on average. With the Dennis promo, taking your own money out before 12 months ends the promo. Test a small withdrawal early."),
  ]),
+ ('After you join', [
+  ('How do I see my trades?', "Install MetaTrader 5 (MT5), add an account and search for TM Financials, the company behind TAG Markets. Log in with your account number and investor password from CopyX, Follower Hub, Strategies (tap the eye icon). It is read only: you can watch every trade, not change anything. Sonic usually trades two or three times a day. Steps: mtgtribe.com/jetup/get-started/#mt5"),
+  ('Can I open another strategy later?', "Yes. Deposit in TAG Markets, open CopyX, connect SONIC with the new amount and enter the two community codes again. Each one becomes its own account with the same rules. The Dennis Fast Start Promo is one time only, so a new strategy does not get another $100."),
+  ('How do I withdraw my partner earnings?', "In the JetUP portal open your Wallet, tap Withdraw and choose your TAG wallet or one of your MT5 accounts. To send money out, add your own crypto wallet address under Wallets first. Start with a small withdrawal."),
+  ('Do I have to buy the BIX Card to link BIX?', "No. Linking your BixPay wallet to the JetUP portal moves no money and costs nothing. It records your place in the team for BIX Card commissions. You can link it with a phone only: screenshot the QR code, then use Load from gallery in BixPay."),
+ ]),
  ('Risk', [
   ('Can I lose money with JetUP and TAG Markets?', "Yes. Forex, CFDs and copy trading are high risk, and with 24x Amplify the swings are bigger in both directions. You can lose your whole deposit. TAG Markets' own reminder says " + RETAIL_LOSS + " of retail investor accounts lose money when trading CFDs."),
   ('What is Amplify 24x?', 'Amplify lets the account trade at 24 times its size: $50 trades like $1,200. That is exposure, the size you trade with, not money you own. A drop of about 4.2% on the trading balance is the same size as the whole account.'),

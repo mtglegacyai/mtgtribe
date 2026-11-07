@@ -711,23 +711,8 @@ html:not(.js) .jump{display:none}
 .jl{min-width:0;overflow-wrap:anywhere}
 @media (max-width:480px){.jump-in{gap:8px}.jchips{gap:6px}.jc{width:28px;height:28px}.jchips~.jcur .jt,.jcur:has(~.jchips) .jt{display:none}}
 /* 2. welcome back (JetUP home) and part ticks */
-.wb{position:relative;z-index:2;margin-top:14px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,rgba(var(--vio-rgb),.2),rgba(var(--lime-rgb),.06));
   box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.45),0 18px 40px rgba(0,0,0,.3)}
-.wb[hidden]{display:none}
-.wb-in{display:grid;gap:12px}
-.wb-k{margin:0;color:var(--lime);font:800 12px/1 var(--f-b);letter-spacing:.2em;text-transform:uppercase}
-.wb-go{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:14px;color:var(--text);text-decoration:none;background:rgba(11,9,18,.55);
   box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .2s,transform .25s var(--ease)}
-.wb-go:hover{transform:translateY(-1px);box-shadow:inset 0 0 0 1px rgba(var(--lime-rgb),.6)}
-.wb-go>span{min-width:0}
-.wb-go small{display:block;color:var(--muted);font:700 12px/1.3 var(--f-b)}
-.wb-go b{display:block;font:800 16px/1.35 var(--f-b);overflow-wrap:anywhere}
-.wb-go svg{flex:none;width:20px;height:20px;color:var(--lime)}
-.wb-prog{display:flex;flex-wrap:wrap;gap:8px}
-.wb-prog:empty{display:none}
-.wb-prog a{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;color:var(--body);text-decoration:none;font-size:13px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px var(--line-2)}
-.wb-prog b{color:var(--lime)}
-.wb-x{justify-self:start;padding:6px 2px;border:0;background:none;color:var(--muted);font:700 12.5px/1.2 var(--f-b);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .ptick{margin-top:14px}
 /* 3. thumb bar on phones and small tablets */
 .thumb{display:none}
@@ -789,8 +774,8 @@ button.gl:hover,button.gl[aria-expanded="true"]{color:var(--lime);text-decoratio
 .sitem mark{padding:0 1px;border-radius:3px;color:var(--text);background:rgba(var(--lime-rgb),.24)}
 .snone{margin:8px 8px 12px;color:var(--body);font-size:14px;line-height:1.5}
 .sres .btn{margin:0 8px}
-@media (prefers-reduced-motion:reduce){.jump,.jump.on,.jbar,.glpop,.wb-go{transition:none}}
-@media print{.jump,.thumb,.glpop,.sfind,.sres,.wb-x{display:none!important}}
+@media (prefers-reduced-motion:reduce){.jump,.jump.on,.jbar,.glpop{transition:none}}
+@media print{.jump,.thumb,.glpop,.sfind,.sres{display:none!important}}
 
 /* ---------- Phones never scroll sideways (MTG, 6 Nov 2026) ----------
    Table cells wrap at every size. A table that still does not fit its box gets class "stack" from the page script

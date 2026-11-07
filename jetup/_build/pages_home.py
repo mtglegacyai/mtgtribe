@@ -91,7 +91,6 @@ def build_home():
     faq_html = ''.join('<details class="rv" style="--d:%d"><summary>%s</summary><p>%s</p></details>' % (i, q, a) for i, (q, a) in enumerate(HOME_FAQ))
 
     main = f'''
-<div class="wb-wrap wrap"><section class="wb" id="wb" aria-label="Continue where you left off" hidden></section></div>
 <section class="hero" aria-labelledby="h1">
  <canvas class="candles" aria-hidden="true"></canvas>
  <div class="wrap hero-in">

@@ -58,7 +58,9 @@ one, and never claim to have a copy of his voice that can say new words: new wor
 ### 3. Storyboard, build, preview
 Read `references/explainer-video-spec.md`. Storyboard first (what is seen on every spoken idea), then build, then check
 the finished file yourself before showing MTG. Use his step-by-step tutorial screen recordings as real footage inside
-the explainers wherever a real screen makes the point stronger, and cut each tutorial into chapter clips.
+the explainers wherever a real screen makes the point stronger, and cut each tutorial into chapter clips. When MTG sends
+his own step-by-step recordings, read `references/tutorial-recordings.md` first: privacy masking in every frame, the
+address bar shown on every new site, mistakes turned into tip cards, banked voice before new lines.
 
 ### 4. Put it on the website
 Horizontal videos play in the laptop frame, vertical ones in the slim phone frame, and the player closes itself when

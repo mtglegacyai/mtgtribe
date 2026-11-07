@@ -46,7 +46,7 @@ if len(desc) > 1024:
     problems.append(f'description is {len(desc)} characters (max 1024)')
 if '<' in desc or '>' in desc:
     problems.append('description contains angle brackets')
-if re.search('[–—]', text):
+if re.search('[\u2013\u2014]', text):
     problems.append('SKILL.md contains an em or en dash (MTG rule)')
 if problems:
     sys.exit('Not packaged:\n  ' + '\n  '.join(problems))

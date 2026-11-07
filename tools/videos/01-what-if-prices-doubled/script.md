@@ -1,6 +1,6 @@
 # Script v2: What If Prices Doubled Every Day? (It Really Happened)
 
-Status: draft for MTG's approval (7 November 2026). Research: `research.md` in this folder.
+Status: script APPROVED by MTG (7 November 2026). Research: `research.md` in this folder.
 Job: reach + tribe growth. Stage: discover. 16:9, about 5 minutes. Main address: mtgtribe.com/group.
 Voice: MTG Master Voice V2 (new lines, HeyGen credits only after MTG's go-ahead). Closing track: "They Call Me MTG",
 starting 50 seconds before the end.
@@ -133,3 +133,11 @@ you on the next one. Let's Get This Crypto!
   TikTok AI-generated label On; Instagram and Facebook AI label On.
 - Links: mtgtribe.com/group only (safe list). Media: own 3D and stick-figure visuals; closing track is MTG's own
   (confirm rights before the first upload).
+
+## Leo's clips (plan, about 15 credits each, MTG to OK before generating)
+1. Hook: Leo looks at the loaf's price tag, eyebrows shoot up (0:00 to 0:05).
+2. Beat 3: Leo turns to camera and asks with an open paw, "What would you buy first?" (reflection prompt).
+3. Beat 4: Leo leans in, amazed, as the 14th zero lands.
+4. Ending: Leo waves next to MTG's end card (MTG's circle photo stays the main image).
+About 60 credits for the four clips, reused in the Shorts.
+

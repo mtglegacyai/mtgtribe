@@ -1,7 +1,7 @@
-# MTG's mascot: the mtgTribe lion
+# MTG's mascot: Leo, the mtgTribe lion
 
-Approved direction (MTG, 7 November 2026: "redesign him to be clearly mine, I want him to wear this t-shirt"). Name:
-to be chosen by MTG. Reference picture: `assets/mascot-reference.jpg` in this skill.
+Approved (MTG, 7 November 2026: "redesign him to be clearly mine, I want him to wear this t-shirt", "name him Leo").
+His name is **Leo**. Reference picture: `assets/mascot-reference.jpg` in this skill.
 
 ## Look (keep it identical in every clip)
 

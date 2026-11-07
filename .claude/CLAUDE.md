@@ -51,3 +51,11 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 - Tables: build them through the page builders (`phone_tables.py` labels every cell); never set `white-space:nowrap`
   on table cells or long button labels. Before showing MTG a preview, run `tools/qa/hscroll.js` (see `tools/qa/README.md`)
   and make sure it reports nothing beyond the items it lists as fine by design.
+
+## 3D video studio (MTG, 7 November 2026)
+
+3D animated videos are made in `tools/video3d/`: Three.js (React Three Fiber) inside Remotion, which handles the
+timeline, captions, audio and rendering. Read `tools/video3d/README.md` first. In cloud sessions there is no graphics
+card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never the clock. Captions come from the final
+audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, closing track 50 seconds
+before the end, preview before anything is published.

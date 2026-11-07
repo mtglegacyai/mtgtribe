@@ -1,0 +1,58 @@
+[
+ {
+  "text": "Hi,",
+  "startMs": 260,
+  "endMs": 920,
+  "timestampMs": 590,
+  "confidence": 0.922
+ },
+ {
+  "text": " my",
+  "startMs": 1280,
+  "endMs": 1460,
+  "timestampMs": 1370,
+  "confidence": 0.914
+ },
+ {
+  "text": " name",
+  "startMs": 1460,
+  "endMs": 1600,
+  "timestampMs": 1530,
+  "confidence": 0.999
+ },
+ {
+  "text": " is",
+  "startMs": 1600,
+  "endMs": 1760,
+  "timestampMs": 1680,
+  "confidence": 0.981
+ },
+ {
+  "text": " MTG,",
+  "startMs": 1760,
+  "endMs": 2300,
+  "timestampMs": 2030,
+  "confidence": 0.961
+ },
+ {
+  "text": " Your",
+  "startMs": 2620,
+  "endMs": 2720,
+  "timestampMs": 2670,
+  "confidence": 0.072
+ },
+ {
+  "text": " Digital",
+  "startMs": 2720,
+  "endMs": 3100,
+  "timestampMs": 2910,
+  "confidence": 0.604
+ },
+ {
+  "text": " Architect.",
+  "startMs": 3100,
+  "endMs": 3520,
+  "timestampMs": 3310,
+  "confidence": 0.981
+ }
+]

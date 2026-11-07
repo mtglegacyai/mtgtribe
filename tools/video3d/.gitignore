@@ -1,0 +1,8 @@
+node_modules/
+out/
+# MTG's photos are fetched from the brand-assets branch by scripts/fetch-brand.mjs (single source of truth)
+public/brand/*
+!public/brand/README.md
+# Closing track: MTG attaches the mp3, it is not stored in the website repo
+public/music/*
+!public/music/README.md

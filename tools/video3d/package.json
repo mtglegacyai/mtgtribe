@@ -1,0 +1,39 @@
+{
+  "name": "mtg-video3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MTG 3D video studio: Three.js scenes, captions, audio and rendering with Remotion.",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/fetch-brand.mjs --quiet",
+    "setup": "node scripts/fetch-brand.mjs && remotion browser ensure",
+    "studio": "remotion studio",
+    "render": "remotion render",
+    "still": "remotion still",
+    "render:demo": "remotion render Intro3D-16x9 out/intro3d-16x9.mp4 && remotion render Intro3D-9x16 out/intro3d-9x16.mp4",
+    "captions": "node scripts/whisper-to-captions.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/anton": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/manrope": "5.3.0",
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "@remotion/captions": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/fonts": "4.0.541",
+    "@remotion/media-utils": "4.0.541",
+    "@remotion/three": "4.0.541",
+    "mediabunny": "1.64.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.541",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/three": "0.187.0",
+    "typescript": "5.9.3"
+  }
+}

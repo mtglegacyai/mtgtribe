@@ -111,3 +111,9 @@ MTG: the WhatsApp group can be suspended, so videos send people to mtgtribe.com,
 - Files: `out/whatif01-v5-9x16.mp4` (vertical, 4:28, -14.0 LUFS, true peak -1.3 dBFS, cover embedded) and the cover
   `out/whatif01-cover.png`. The 3D version is rendered with the same change.
 
+## Decision (7 November 2026)
+
+MTG posted the vertical video and chose its format as the house format. The full real-3D version was stopped about
+halfway through its render ("takes too long to make": about 3 to 4 hours per video against about 20 minutes). Its code
+stays in the studio for reference (`Hook3D.tsx`, `scenes3d.tsx`, `WhatIf01_3D.tsx`, `src/three/kit3d.tsx`).
+

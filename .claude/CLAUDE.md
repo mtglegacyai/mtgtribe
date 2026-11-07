@@ -64,6 +64,13 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 
 ## 3D video studio (MTG, 7 November 2026)
 
+**House format (MTG, 7 November 2026): the format of video 01 as he posted it** (`src/compositions/whatif01/`,
+composition `WhatIf01-9x16`, file `out/whatif01-v6-9x16.mp4`): gold-and-black scenes with 3D card entrances and a slow
+camera push-in, Leo in gold windows, word-by-word captions, soft sound effects fitted to the story, his theme at the end,
+the mtgtribe.com card and a designed cover. It renders in about 20 minutes. The full Three.js version
+(`WhatIf01-3D-9x16`, `scenes3d.tsx`) was stopped at MTG's request ("takes too long to make"): do not use full Three.js
+scenes for whole videos unless he asks; small 3D touches are fine when they render fast.
+
 3D animated videos are made in `tools/video3d/`: Three.js (React Three Fiber) inside Remotion, which handles the
 timeline, captions, audio and rendering. Read `tools/video3d/README.md` first. In cloud sessions there is no graphics
 card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never the clock. Captions come from the final

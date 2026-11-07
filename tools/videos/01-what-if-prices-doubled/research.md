@@ -61,7 +61,7 @@ The bread with a giant price is already proven for this exact topic.
   keeps it tight for a growing channel, and the Shorts carry the reach.
 - Titles: A "What If Prices Doubled Every Day? (It Really Happened)", B "The Country Where Prices Doubled Every Day",
   C "Money Became Cheaper Than Paper".
-- Thumbnail A: a 3D loaf with a giant price tag "R10,737,418,240" and a "DAY 30" chip, MTG's circle photo on the right.
+- Thumbnail A: a 3D loaf with a giant price tag "R10,737,418,240" and a "30 DAYS LATER" chip (R10 doubled 30 times; "day 30" would be R5,368,709,120), MTG's circle photo on the right.
   Thumbnail B: an illustrated note (not a copy of the real design) with "14 ZEROS" and "IT HAPPENED".
 - Hook: the rand bread thought experiment, then the reveal.
 - Prompts: guess the zeros; what would you buy first; finish the sentence "money is..."; send it to the friend who

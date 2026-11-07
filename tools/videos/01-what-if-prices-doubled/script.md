@@ -9,9 +9,9 @@ starting 50 seconds before the end.
 [NARRATION] Imagine you buy a loaf of bread today for ten rand. (pause) Tomorrow, the same loaf costs twenty. The day
 after, forty. Keep going, and in one month, that loaf costs *more than ten billion rand.*
 [VISUAL] A 3D loaf on a shop counter. Its price tag flips R10, R20, R40, then the digits multiply until they spill off
-the tag. A "DAY 1, DAY 2, DAY 3" counter ticks above it (the doubling format viewers know).
+the tag. A "TODAY, +1 DAY, +2 DAYS" counter ticks above it (the doubling format viewers know).
 [BUILD] 3D
-[ON SCREEN] DAY 1: R10 ▪ DAY 2: R20 ▪ DAY 3: R40 ▪ DAY 30: R10,737,418,240
+[ON SCREEN] TODAY: R10 ▪ +1 DAY: R20 ▪ +2 DAYS: R40 ▪ 30 DAYS LATER: R10,737,418,240
 
 ## GREETING (0:14 to 0:24)
 [NARRATION] Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this training. Today
@@ -117,7 +117,7 @@ you on the next one. Let's Get This Crypto!
 
 - Titles: A "What If Prices Doubled Every Day? (It Really Happened)" ▪ B "The Country Where Prices Doubled Every Day" ▪
   C "Money Became Cheaper Than Paper"
-- Thumbnails: A 3D loaf, giant price "R10,737,418,240", "DAY 30" chip, MTG's circle photo ▪ B illustrated note,
+- Thumbnails: A 3D loaf, giant price "R10,737,418,240", "30 DAYS LATER" chip, MTG's circle photo ▪ B illustrated note,
   "14 ZEROS", "IT HAPPENED"
 - Tags: what if, hyperinflation, Zimbabwe 2008, 100 trillion dollar note, money explained, MTG TRIBE
 - Length: 645-word body plus greeting and outro, about 5 minutes 20 seconds

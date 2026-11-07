@@ -54,10 +54,11 @@ whole t-shirt print above the captions) or a face window under a panel. L1, L3 a
 
 ## Sound (v2, all made in code, no licences needed)
 
-- Effects: `tools/video3d/public/sfx/` (21 effects from `scripts/make_sound.py sfx`), placed per scene with `Cues`
-  in `scenes.tsx` at the narration's word timings, then lifted by about 4 dB (`SFX_GAIN` in `ui.tsx`) after a mix
-  check showed the softest ones 8 to 15 dB under the voice. Measured in the final mix: each effect stands 10 to 20 dB
-  above the moment before it, the voice stays on top, no clipping.
+- Effects (v4): MTG found some v3 effects "too loud and too sharp". The whole palette was replaced by soft effects
+  made in code (`scripts/make_sound.py`, 19 effects, all pass `check`), and every scene was re-cued with fewer,
+  meaningful ones: rising notes as the price doubles, a soft clock into "24.7 hours", falling notes as the pay melts,
+  swells into the reveals, a tension pulse before the guess and before "the part most people miss". Measured: the
+  loudest effect moment went from about 10 dB above his voice (v3) to about his voice level (v4).
 - No background music (v3). v2 had a code-made music bed under the whole video; MTG (7 Nov 2026): "too loud, I don't
   like it. Remove it completely, and only play my theme music towards the end." Removed, with its files.
 - Closing track (v3): MTG's theme "They Call Me MTG" (his mp3, 51.4 s, mastered at about -14 LUFS; kept in
@@ -90,3 +91,13 @@ REMOTION_GL=swangle npx remotion render WhatIf01-9x16 out/whatif01-v2-9x16-raw.m
 # v3 (vertical only, MTG wants it for socials first): no music bed, theme from 50 s before the end, end card 5 s,
 # 4:28. Made from the v2 vertical render: new sound mix, the two v2 patches and the new ending frames 7880 to 8032.
 ```
+
+## Real 3D sample (7 November 2026)
+
+MTG asked which parts of video 01 are 3D. Honest answer: none of the graphics. They are flat layers tilted in
+perspective (CSS 3D); only Leo's clips are 3D-animated. To show the difference, the hook was rebuilt in real 3D
+(Three.js): `src/compositions/whatif01/Hook3D.tsx`, composition `Hook3D-9x16`, file `out/hook3d-sample.mp4` (13.2 s).
+A black-and-gold studio with depth (gold arches, reflective floor, fog), a 3D loaf on a pedestal, the price extruded in
+gold Anton (`public/fonts/anton.typeface.json`, made by `scripts/make-typeface.mjs`), and up to 170 gold coins that rain
+down and pile up as the price doubles. Renders at about 1 frame per second per core in software WebGL (swangle).
+

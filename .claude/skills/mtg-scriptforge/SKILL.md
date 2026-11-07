@@ -229,9 +229,15 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
    - **Stick-figure stories:** the GrowKaz Stickman Studio plugin (`growkaz-stickman:make-2d-video`) when it is
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
-   - **Sound, every video (MTG, 7 November 2026: "I didn't hear the sound effects, not even a single one"):** sound
-     effects on the moments that matter (reveals, counters, stamps, pop-ups, transitions), made in code, so no
-     licences or copyright claims (`scripts/make_sound.py` in the studio). Keep effects soft and the voice on top.
+   - **Sound effects, every video, soft only** (MTG, 7 November 2026: first "I didn't hear the sound effects", then
+     "some are too loud and too sharp ... I just want them to be soft, interesting, pique interest"). Use only the soft
+     palette made in code by the studio's `scripts/make_sound.py` (no licences, no copyright claims): `air` for scene
+     changes, `swell` into every reveal, `tension` under questions and "here's the part most people miss", `reveal`
+     when the big number lands, `drop` for a serious turn, `glow` for brand moments, `chime` for a question to the
+     viewer, `pluck1` to `pluck5` (notes that rise as things build and fall as things are lost), `tick`, `count`,
+     `clock`, `thud`, `coin`, `paper`, `shutter`. Fewer, meaningful cues beat many. No effect may be louder than his
+     voice (volumes 0.3 to 0.6), and only toneless ones (`air`, `thud`, `tick`) once his theme is playing.
+     `make_sound.py check` must say "all soft" (warm tone, nothing above 6 kHz, no instant clicks).
    - **Music: only his theme, never a background bed** (MTG, 7 November 2026: "too loud, I don't like it. Remove it
      completely, and only play my theme music towards the end"). "They Call Me MTG" starts 50 seconds before the end,
      about 12 dB under his voice while he speaks, and is heard in the clear on a short end card after his last word.

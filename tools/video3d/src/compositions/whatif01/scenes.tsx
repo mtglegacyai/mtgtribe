@@ -7,7 +7,7 @@ import countries50m from 'world-atlas/countries-50m.json';
 import {BRAND, COLORS} from '../../brand';
 import {PhotoCard} from '../../components/PhotoCard';
 import {BODY, DISPLAY, MONO} from '../../fonts';
-import {BrandIcon, Chip, clamp, Coin, Cues, ease, fadeOut, Flip, GOLD_TEXT, LeoClip, Loaf, Note, Panel, Stage, usePop, useT, useV} from './ui';
+import {BrandIcon, Chip, clamp, Coin, type Cue, Cues, ease, fadeOut, Flip, GOLD_TEXT, LeoClip, Loaf, Note, Panel, Stage, usePop, useT, useV} from './ui';
 
 // Video 01 v2: both orientations (16:9 and 9:16), 3D entrances, camera drift, sound cues, 7 Leo moments.
 // Times are seconds inside each section, from the narration's word timings (HeyGen, 7 Nov 2026).
@@ -32,7 +32,8 @@ export const S01Hook: React.FC = () => {
 	const pulse = (t > 5.3 && t < 5.6) || (t > 7.1 && t < 7.4) ? 1 : 0;
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.1, 'whoosh', 0.25], [2.6, 'pop', 0.22], [5.33, 'tick', 0.55], [7.13, 'tick', 0.55], [8.2, 'counter', 0.28], [9.7, 'counter', 0.3], [8.3, 'swish', 0.22], [11.9, 'stinger', 0.38]]} />
+			{/* sound: rising notes as the price doubles, soft ticks speeding up, a swell into the reveal of R10 billion */}
+			<Cues list={[[0.1, 'air', 0.4], [2.6, 'pluck1', 0.45], [5.33, 'pluck3', 0.45], [7.13, 'pluck5', 0.45], [8.2, 'count', 0.3], [9.3, 'swell', 0.5], [11.9, 'reveal', 0.55]]} />
 			<Stage style={v ? {justifyContent: 'flex-start'} : {transform: `translateX(${-420 * slide}px)`}}>
 				<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: v ? 18 : 22, transform: v ? `scale(${interpolate(slide, [0, 1], [1, 0.68])})` : undefined, transformOrigin: 'top center'}}>
 					<Flip at={0.1}><Chip size={v ? 40 : 36}>IMAGINE THIS</Chip></Flip>
@@ -64,7 +65,7 @@ export const S02Greeting: React.FC = () => {
 	const name = usePop(1.4);
 	return (
 		<Stage>
-			<Cues list={[[0.1, 'shimmer', 0.28], [1.4, 'swish', 0.2], [6.1, 'pop', 0.25]]} />
+			<Cues list={[[0.1, 'glow', 0.45], [6.1, 'pluck3', 0.4]]} />
 			<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 40 : 80, textAlign: v ? 'center' : 'left'}}>
 				<div style={{opacity: photo, transform: `scale(${interpolate(photo, [0, 1], [0.85, 1])}) rotateY(${interpolate(photo, [0, 1], [-25, 0])}deg)`}}>
 					<PhotoCard size={v ? 560 : 560} />
@@ -103,7 +104,8 @@ export const S03Setup: React.FC = () => {
 	const guess = ease(t, 16.2, 0.45);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[1.6, 'whoosh', 0.2], [4.5, 'hit', 0.4], [5.6, 'swish', 0.22], [5.75, 'pop', 0.25], [7.65, 'ding', 0.3], [10.8, 'pop', 0.22], [15.6, 'riser', 0.3], [16.2, 'impact', 0.3], [21.9, 'pop', 0.25]]} />
+			{/* sound: a soft knock on 2008, Zimbabwe lights up with a note, suspense before the guess, a chime for the question */}
+			<Cues list={[[1.6, 'air', 0.35], [4.4, 'thud', 0.5], [5.6, 'air', 0.35], [7.65, 'pluck4', 0.45], [10.8, 'pluck2', 0.35], [13.6, 'tension', 0.5], [16.2, 'chime', 0.5], [21.9, 'pluck3', 0.4]]} />
 			<Stage style={{opacity: 1 - guess * 0.85}}>
 				<div style={{position: 'absolute', left: v ? 0 : 40, top: v ? 0 : 60, width: v ? '100%' : 760, textAlign: v ? 'center' : 'left', opacity: fadeOut(t, 16.0), zIndex: 2}}>
 					<div style={{fontFamily: BODY, fontWeight: 800, fontSize: v ? 50 : 58, color: COLORS.text, opacity: ease(t, 1.6)}}>This is not science fiction.</div>
@@ -155,7 +157,8 @@ export const S04Doubling: React.FC = () => {
 	const maxH = v ? 470 : 470;
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.3, 'whoosh', 0.2], [2.2, 'pop', 0.22], [7.4, 'clock', 0.22], [8.4, 'impact', 0.32], [12.0, 'swish', 0.22], ...BAR_AT.map((a, i) => [a, 'blip', 0.16 + i * 0.01] as [number, string, number]), [17.7, 'stinger', 0.34], [20.4, 'pop', 0.22]]} />
+			{/* sound: a soft clock counts down to 24.7 hours; the pay bars fall on falling notes, quieter each day; a deep drop on "less than one percent" */}
+			<Cues list={[[0.3, 'air', 0.35], [2.2, 'pluck2', 0.35], [4.4, 'clock', 0.35], [8.4, 'reveal', 0.55], [12.0, 'air', 0.35], ...BAR_AT.map((a, i) => [a, `pluck${Math.max(1, 5 - i)}`, 0.45 - i * 0.035] as Cue), [17.7, 'drop', 0.6], [20.4, 'chime', 0.35]]} />
 			<Stage style={{opacity: part1}}>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 40 : 70, textAlign: v ? 'center' : 'left'}}>
 					<Flip at={0.3} from="y">
@@ -217,7 +220,7 @@ export const S05Why: React.FC = () => {
 	const priceSteps = [13.9, 14.9, 15.9, 16.9, 17.9, 18.9];
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.0, 'swish', 0.22], [4.1, 'whoosh', 0.22], [5.0, 'paper', 0.25], [11.85, 'coin', 0.3], [12.4, 'paper', 0.25], ...priceSteps.map((a) => [a, 'tick', 0.4] as [number, string, number]), [14.5, 'pop', 0.25], [16.4, 'paper', 0.25], [18.9, 'glitch', 0.18]]} />
+			<Cues list={[[0.0, 'air', 0.35], [4.1, 'air', 0.35], [5.0, 'paper', 0.4], [11.85, 'coin', 0.45], [12.4, 'paper', 0.35], ...priceSteps.map((a) => [a, 'tick', 0.3] as Cue), [14.5, 'pluck3', 0.4], [16.4, 'paper', 0.35], [18.9, 'drop', 0.45]]} />
 			<LeoClip clip="V5" from={0} seconds={4.0} style={v ? LEO_V_TALL : LEO_H} />
 			{v ? null : (
 				<Stage style={{opacity: fadeOut(t, 3.8), justifyContent: 'center', alignItems: 'flex-start', paddingLeft: 40}}>
@@ -285,7 +288,7 @@ export const S06Coping: React.FC = () => {
 	const respect = ease(t, 17.75, 0.6);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[3.3, 'swish', 0.25], [8.6, 'swish', 0.25], [9.2, 'pop', 0.2], [13.7, 'swish', 0.25], [14.1, 'coin', 0.3], [22.1, 'whoosh', 0.2], [23.4, 'pop', 0.28]]} />
+			<Cues list={[[3.3, 'pluck1', 0.45], [8.6, 'pluck3', 0.45], [13.7, 'pluck5', 0.45], [14.1, 'coin', 0.4], [22.1, 'air', 0.35], [23.4, 'chime', 0.5]]} />
 			<Stage style={{opacity: fadeOut(t, 21.9)}}>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', gap: v ? 22 : 40, opacity: 1 - respect}}>
 					{COPE.map((c) => (
@@ -322,7 +325,8 @@ export const S07Zeros: React.FC = () => {
 	const reveal = usePop(12.5, 13);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.3, 'whoosh', 0.2], [4.3, 'paper', 0.3], [8.1, 'pop', 0.22], [9.4, 'swish', 0.2], [10.65, 'counter', 0.32], [12.5, 'shimmer', 0.36], [13.0, 'hit', 0.3]]} />
+			{/* sound: the zeros count up on soft ticks inside a swell, and the 14 zeros land on a warm chord */}
+			<Cues list={[[0.3, 'air', 0.35], [4.3, 'paper', 0.45], [8.1, 'pluck2', 0.35], [9.4, 'air', 0.3], [9.9, 'swell', 0.5], [10.65, 'count', 0.3], [12.5, 'reveal', 0.55], [13.0, 'thud', 0.4]]} />
 			<Stage style={v ? {justifyContent: 'flex-start'} : {justifyContent: 'center', alignItems: 'flex-start', paddingLeft: 20}}>
 				<div style={{width: v ? 980 : 1150, textAlign: v ? 'center' : 'left', transform: v ? `scale(${interpolate(ease(t, 9.2, 0.6), [0, 1], [1, 0.74])})` : undefined, transformOrigin: 'top center'}}>
 					<Flip at={0.3}><Chip size={v ? 30 : 32}>JANUARY 2009 ▪ RESERVE BANK OF ZIMBABWE</Chip></Flip>
@@ -362,7 +366,8 @@ export const S08Posters: React.FC = () => {
 	const intro = fadeOut(t, 12.9);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.4, 'whoosh', 0.2], [4.4, 'pop', 0.22], [6.7, 'paper', 0.28], [8.0, 'paper', 0.28], [9.3, 'paper', 0.28], [10.3, 'swish', 0.22], [13.0, 'ding', 0.3], [16.9, 'swish', 0.22], [17.6, 'shimmer', 0.32], [24.9, 'stamp', 0.45], [29.2, 'coin', 0.3], [29.5, 'coin', 0.25], [31.6, 'riser', 0.26], [32.1, 'hit', 0.32]]} />
+			{/* sound: posters rustle onto the wall, a soft glow for the award, a knock for "abandoned", suspense into "the part most people miss" */}
+			<Cues list={[[0.4, 'air', 0.35], [4.4, 'pluck2', 0.35], [6.7, 'paper', 0.4], [8.0, 'paper', 0.35], [9.3, 'paper', 0.3], [10.3, 'pluck3', 0.4], [13.0, 'chime', 0.45], [16.9, 'air', 0.3], [17.6, 'glow', 0.5], [23.8, 'air', 0.35], [24.9, 'thud', 0.55], [29.2, 'coin', 0.45], [29.5, 'coin', 0.35], [29.6, 'tension', 0.45], [32.1, 'drop', 0.5]]} />
 			<Stage style={{opacity: intro, justifyContent: v ? 'flex-start' : 'center'}}>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: v ? 'center' : 'flex-start', gap: v ? 26 : 60, width: '100%'}}>
 					<div style={{width: v ? '100%' : 820, textAlign: v ? 'center' : 'left'}}>
@@ -428,7 +433,7 @@ export const S09Promise: React.FC = () => {
 	const gone = ease(t, 11.3, 1.2);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.9, 'hit', 0.3], [2.4, 'hit', 0.3], [3.0, 'shimmer', 0.3], [6.6, 'whoosh', 0.2], [7.1, 'pop', 0.2], [8.3, 'shutter', 0.42], [11.3, 'impact', 0.22], [13.4, 'pop', 0.25]]} />
+			<Cues list={[[0.9, 'thud', 0.35], [2.4, 'thud', 0.35], [3.0, 'reveal', 0.5], [6.6, 'air', 0.35], [8.3, 'shutter', 0.5], [11.3, 'drop', 0.4], [13.4, 'pluck1', 0.4]]} />
 			<Stage style={{opacity: Math.min(ease(t, 0.3), fadeOut(t, 2.9))}}>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', gap: v ? 60 : 120, alignItems: 'center'}}>
 					{['📄 PAPER', '🪙 METAL'].map((w, i) => (
@@ -478,7 +483,7 @@ export const S10Lesson: React.FC = () => {
 	const prompt = ease(t, 23.8);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.0, 'swish', 0.2], [3.2, 'swish', 0.22], [3.7, 'swish', 0.22], [4.2, 'swish', 0.22], [9.0, 'blip', 0.25], [13.1, 'blip', 0.25], [17.05, 'blip', 0.25], [21.3, 'ding', 0.32], [23.8, 'pop', 0.3]]} />
+			<Cues list={[[0.0, 'air', 0.35], [3.2, 'pluck1', 0.4], [3.7, 'pluck3', 0.4], [4.2, 'pluck5', 0.4], [9.0, 'tick', 0.35], [13.1, 'tick', 0.35], [17.05, 'tick', 0.35], [18.7, 'swell', 0.45], [21.3, 'reveal', 0.5], [23.8, 'chime', 0.5]]} />
 			<LeoClip clip="V7" from={0} seconds={3.3} style={v ? LEO_V_TALL : LEO_H} />
 			{v ? (
 				<div style={{position: 'absolute', top: TAB_V, width: '100%', textAlign: 'center', opacity: Math.min(ease(t, 0.3), fadeOut(t, 3.1))}}>
@@ -533,7 +538,8 @@ export const S11Tribe: React.FC = () => {
 	const share = ease(t, 16.0);
 	return (
 		<AbsoluteFill>
-			<Cues list={[[1.5, 'powerup', 0.28], [5.9, 'pop', 0.22], [7.8, 'pop', 0.22], [9.6, 'pop', 0.22], [12.9, 'impact', 0.3], [13.1, 'ding', 0.25], [16.0, 'swish', 0.25]]} />
+			{/* MTG's theme plays from here: only soft, toneless effects, so nothing clashes with his music */}
+			<Cues list={[[1.5, 'air', 0.35], [12.9, 'thud', 0.4], [16.0, 'air', 0.3]]} />
 			<Stage style={{opacity: Math.min(ease(t, 0.2), 1 - share), justifyContent: v ? 'flex-start' : 'center', paddingTop: v ? 40 : 0}}>
 				<div style={{fontFamily: MONO, fontWeight: 700, fontSize: v ? 36 : 38, color: COLORS.muted, letterSpacing: 4, marginBottom: 10}}>THAT'S EXACTLY WHY THE</div>
 				<div style={{fontFamily: DISPLAY, fontSize: v ? 160 : 190, lineHeight: 1, ...GOLD_TEXT, opacity: ease(t, 1.5, 0.2), transform: `scale(${interpolate(usePop(1.5, 12), [0, 1], [0.6, 1])})`}}>MTG TRIBE</div>
@@ -580,7 +586,7 @@ export const S12Outro: React.FC = () => {
 	const leoIn = v ? Math.min(ease(t, 12.4, 0.3), fadeOut(t, 18.2)) : 0;
 	return (
 		<AbsoluteFill>
-			<Cues list={[[0.1, 'shimmer', 0.28], [7.5, 'pop', 0.25], [7.9, 'pop', 0.25], [8.3, 'pop', 0.25], [9.6, 'swish', 0.2], [14.5, 'whoosh', 0.18], [22.0, 'impact', 0.3]]} />
+			<Cues list={[[0.1, 'air', 0.3], [7.5, 'tick', 0.3], [7.9, 'tick', 0.3], [8.3, 'tick', 0.3], [12.4, 'air', 0.3]]} />
 			<Stage style={{justifyContent: v ? 'flex-start' : 'center', alignItems: v ? 'center' : 'flex-start', opacity: 1 - leoIn}}>
 				<div style={{display: 'flex', flexDirection: 'column', alignItems: v ? 'center' : 'flex-start', gap: v ? 20 : 24, textAlign: v ? 'center' : 'left'}}>
 					<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: v ? 30 : 40, textAlign: 'left'}}>

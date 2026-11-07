@@ -110,8 +110,11 @@ graphics card, the default (`angle`) is much faster.
    ```bash
    python3 scripts/make_sound.py sfx                                    # effects into public/sfx/ (shared)
    ```
-   The effects come from the GrowKaz Stickman plugin's sound kit (install the plugin first; needs `pip install scipy`)
-   plus our own coin, stamp, shutter and paper. Keep effects soft (volume 0.15 to 0.45) and the voice on top.
+   MTG's rule: soft, warm, suspenseful effects only ("not the ones that almost hurt the ear"). The palette is listed
+   at the top of `scripts/make_sound.py` (air, swell, tension, reveal, drop, glow, chime, pluck1 to pluck5, tick, count,
+   clock, thud, coin, paper, shutter). It needs only numpy and ffmpeg, and `python3 scripts/make_sound.py check` measures
+   every file (warm tone, nothing above 6 kHz, no instant clicks, same loudness). Volumes 0.3 to 0.6 keep every effect
+   under his voice; once his theme plays, use only toneless effects (air, thud, tick) so nothing clashes with it.
 6. **Check frames before the full render** (one browser for all stills, much faster than `remotion still`):
    ```bash
    npx remotion bundle --out-dir=/tmp/bundle

@@ -1,6 +1,6 @@
 ---
 name: mtg-scriptforge
-description: "MTG's video idea, script, engagement and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and any new site), built on his ScriptForge prompt and run as a business: every video gets a job (reach, traffic, leads, sign-ups and sales, team or tribe growth), an interaction layer (questions, guesses, votes, takeaways, share prompts), the right website address at the right moment, the right length, and a posting pack. Includes a niche menu, 10 ideas, full scripts in his voice with visual and build cues, Shorts cut-downs and a bundled Remotion and Three.js 3D studio with his photo in a circle. Use whenever MTG (MusaTheGiant) asks for video ideas, scripts, voiceovers, YouTube, TikTok or Shorts plans, engaging or viral content, captions and descriptions, 3D or animated videos, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE, or mentions ScriptForge, even if he does not name this skill."
+description: "MTG's research-driven video idea, script, engagement and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and new sites), built on his ScriptForge prompt and run as a business. Every video starts with research (the similar videos winning big on YouTube, TikTok and Instagram, real view counts, the gap, how ours will be better) and gets a job (reach, traffic, leads, sign-ups and sales, team or tribe growth), an interaction layer, the right website address at the right moment, the right length and a posting pack. Includes a niche menu, 10 ideas, full scripts in his voice with visual and build cues, Shorts, a YouTube research tool and a Remotion and Three.js 3D studio. Use whenever MTG (MusaTheGiant) asks for video ideas, research, scripts, voiceovers, YouTube, TikTok or Shorts plans, engaging content, captions, 3D or animated videos, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE."
 ---
 
 # MTG ScriptForge (all websites)
@@ -30,9 +30,12 @@ gets:
   has just received value, plus the tribe.
 - **The right length** for its job and platform.
 - **A posting pack** so it goes out with titles, descriptions, pinned comment and share messages ready.
+- **Research first** (MTG, 7 November 2026: "Don't make a video for the sake of making a video"): find the similar
+  videos that get enormous traffic on each platform, learn what makes them win, and make MTG's version clearly better.
+  No script without a research brief (`references/research.md`).
 
-The full method is in `references/engagement-and-conversion.md`; read it before Step 2 and Step 3. Honesty still
-comes first: no income promises, no fake urgency, no manipulation, risks shown plainly.
+The full method is in `references/engagement-and-conversion.md` and `references/research.md`; read them before Step 2
+and Step 3. Honesty still comes first: no income promises, no fake urgency, no manipulation, risks shown plainly.
 
 ## Step 0: know the website
 
@@ -83,6 +86,10 @@ own sub niche. When the work is for one specific website, show section C first.
 
 ## Step 2: 10 ideas
 
+Before choosing ideas, run quick demand research (`references/research.md` section 1): what in this sub niche already
+pulls big numbers on YouTube (`scripts/yt_research.py`), TikTok and Instagram, which formats are hot right now, and
+where the gaps are. Ideas come from evidence, not guesses.
+
 Give exactly 10 ideas for the chosen sub niche. For each:
 
 - A curiosity driven title, under 60 characters (mtg-hooks-standard; no hype on money).
@@ -92,9 +99,18 @@ Give exactly 10 ideas for the chosen sub niche. For each:
   products, intros), screen recording (tutorials, tool trainings) or a mix; 16:9, 9:16 or both.
 - **Job**: primary goal, journey stage and length (playbook sections 1 to 3).
 - **Engage**: the main comment prompt (a question, a guess, a number, a vote) and who to share it with.
+- **Proof**: the evidence of demand (for example "top 3 videos on this: 2 to 10 million views; the format is hot this
+  year") and the gap MTG's version fills.
 
 Mix formats: listicles, single deep dives, "the truth about...", countdowns, myth busters, story driven pieces, honest
 checks. Avoid generic or overdone titles. Then ask MTG to pick a number, or ask for 10 more.
+
+## Step 2b: the research brief (before every script)
+
+For the chosen idea, do the full research in `references/research.md`: 5 to 10 benchmark videos across platforms (3 to
+5 for a Short) with real numbers, their hook, thumbnail, length and format patterns, the gap, at least five specific
+"better than" points, verified facts with sources, and the decisions (length, titles, thumbnail concepts, hook,
+prompts, main address). Save the brief with the video's files and show MTG the short version with the script.
 
 ## Step 3: the full script
 
@@ -166,6 +182,10 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
 - **Money.** No income promises, no "get rich", no fake balances or testimonials. Show the risk next to every reward
   ("lower risk is not no risk"). Say "not financial advice". Where MTG earns from a referral link, say so plainly.
   This also keeps his YouTube and TikTok channels within platform rules.
+- **Learn from the winners, never copy them.** Copy the pattern (hook type, format, pacing, length, thumbnail
+  pattern), never the property (script, wording, footage, music, thumbnail, characters, distinctive layout). Never
+  re-upload anyone's video. Never claim a video is "top" or "viral" without numbers; when a platform hides its
+  numbers, say so.
 - **Psychology and manipulation topics** are for awareness and self protection only (spotting scams, FOMO, pressure
   tactics). Never use those tactics on the viewer.
 - **Engagement is real.** Every prompt comes from the content and starts a real conversation; no empty "comment YES"
@@ -182,7 +202,8 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
 
 ## From script to video
 
-1. MTG approves the script (and picks the build).
+1. MTG approves the research brief and the script (and picks the build). Before he sees them, do the craft passes in
+   `references/research.md` section 6 (5 hooks, 3 titles, 2 thumbnail concepts, read aloud, visual plan, fact check).
 2. Storyboard the beats (mtg-creative-standard section 6).
 3. Voice: reuse recorded lines first, new lines only with MTG's go-ahead (HeyGen "MTG Master Voice V2").
 4. Build:

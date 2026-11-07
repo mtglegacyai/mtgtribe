@@ -86,3 +86,8 @@ website address at the right moment, the right length, and a posting pack. Metho
 `.claude/skills/mtg-scriptforge/references/engagement-and-conversion.md` and `references/posting-pack.md`. The same
 rules are section 5a of the updated mtg-hooks-standard (upload file in `tools/skills/dist/`). On-screen site in videos:
 mtgtribe.com (the 3D brand bar can show another site's address for a video about that site).
+
+**Research before every video (MTG, 7 November 2026: "don't make a video for the sake of making a video").** No script
+without a research brief: the similar videos winning big on YouTube, TikTok and Instagram with real numbers
+(`.claude/skills/mtg-scriptforge/scripts/yt_research.py` for YouTube), what wins, the gap, at least five "better than"
+points, verified facts. Learn the pattern, never copy the property. Briefs and scripts live in `tools/videos/<nn>-<slug>/`.

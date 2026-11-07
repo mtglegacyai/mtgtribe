@@ -23,6 +23,9 @@ CC_GUIDE = "/cc/"
 CNTN_GUIDE = "/cntn/"
 VALR = "https://www.valr.com/invite/VAKM6VZY"
 
+# Live CC price card: same script, data-symbol picks Kraken's CC/USD market (the same card as on /cc/)
+CC_CARD = '<div class="cl" data-cntn-live data-symbol="KRAKEN:CCUSD" data-nolink><div class="cl-head"><span class="cl-t">CC live price<small>Canton Coin, CC/USD on Kraken</small></span><span class="cl-live"><i aria-hidden="true"></i>Live chart</span></div><div class="cl-body"></div><p class="cl-fb"><span class="cl-msg">Loading the live price.</span> You can also see <a href="https://www.coingecko.com/en/coins/canton-network" target="_blank" rel="noopener">Canton Coin on CoinGecko</a>.</p><p class="cl-foot">Price and chart by <a href="https://www.tradingview.com/symbols/CCUSD/?exchange=KRAKEN" target="_blank" rel="noopener nofollow">TradingView</a> (Kraken CC/USD market). Education only, not financial advice.</p></div>'
+
 # Live CNTN price card (filled in the browser by /assets/tribe/cntn-live.js, loaded from the master page head)
 CNTN_CARD = '<div class="cl" data-cntn-live><div class="cl-head"><span class="cl-t">CNTN live price<small>Canton Strategic Holdings, Nasdaq</small></span><span class="cl-live"><i aria-hidden="true"></i>Live chart</span></div><div class="cl-body"></div><p class="cl-fb"><span class="cl-msg">Loading the live price.</span> You can also see <a href="https://www.nasdaq.com/market-activity/stocks/cntn" target="_blank" rel="noopener">CNTN on Nasdaq.com</a>.</p><p class="cl-foot">Price and chart by <a href="https://www.tradingview.com/symbols/NASDAQ-CNTN/" target="_blank" rel="noopener nofollow">TradingView</a>, may be delayed by up to 15 minutes. Education only, not financial advice.</p></div>'
 
@@ -178,6 +181,7 @@ def report(d, head, sprite, header, footer):
   {table(["Canton Coin (CC)", d["date_h"]], s)}
   <div class="chartbox">{legend}{chart_svg(d)}</div>
   <p class="upd">{d["snapshot_note"]}</p>
+  <h3 class="part">CC right now</h3><p class="upd">The numbers above are from {esc(d["date_h"])}. This chart is live, so you can compare.</p>{CC_CARD}
  </section>
  <section class="sec" id="changed" aria-labelledby="ch-h"><h2 id="ch-h">What changed since last week</h2><ul class="do">{changed}</ul></section>
  <section class="sec" id="technicals" aria-labelledby="t-h"><h2 id="t-h">Technical analysis</h2>{tech}<h3 class="part">Key levels</h3>{levels}</section>
@@ -220,6 +224,7 @@ def hub(reports, head, sprite, header, footer):
 <div class="content"><div class="wrap narrow">
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: {esc(latest["date_h"])}</h2><p>{latest["summary"]}</p></section>
  {learn_cards()}
+ <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}</section>
  <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>
  <section class="sec" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
  <section class="join" aria-labelledby="join-h"><div><h2 id="join-h">Get it first every Sunday</h2><p>Join the MTG TRIBE on WhatsApp and the new report lands in the group first.</p></div>

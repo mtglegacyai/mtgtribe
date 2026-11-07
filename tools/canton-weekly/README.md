@@ -22,6 +22,8 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 - Live CNTN price: /cntn/, /cc/, the hub and every report show a "CNTN live price" card (TradingView mini chart, filled in the
   browser by `/assets/tribe/cntn-live.js`, which the master page head loads). The report and hub cards come from `CNTN_CARD` in
   build.py. On /cntn/ the card's fallback line reuses the `guides.cntn` snapshot (`data-snap="price"` and `price_date`).
+- Live CC price: /cc/, the hub ("Canton Coin right now") and every report (Snapshot, "CC right now") show a "CC live price"
+  card: the same script with data-symbol="KRAKEN:CCUSD". The report and hub cards come from `CC_CARD` in build.py.
 - If the weekly task stops (cancelled, or out of Claude credits), nothing breaks: the guides keep the last numbers and
   the notices tell visitors to check a live price.
 

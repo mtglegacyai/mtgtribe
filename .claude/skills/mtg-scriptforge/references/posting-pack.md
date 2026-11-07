@@ -72,6 +72,6 @@ Links checked against the social-safe list: [list]. Music and footage: owned or 
 - [ ] Every link opened and checked on the live site (referral parameters intact)
 - [ ] Captions match the final audio
 - [ ] No personal or sensitive data in any frame or the thumbnail
-- [ ] Closing track placed, speech clear
+- [ ] Theme's last line ("Let's get this crypto, wherever I go!") right after the last word, speech clear
 - [ ] Pinned comment ready to post in the first minute
 ```

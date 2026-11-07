@@ -192,7 +192,7 @@ export const Intro3D: React.FC<Intro3DProps> = ({voice, closingTrack, captions =
 			<BrandBar />
 
 			<Html5Audio src={staticFile(voice)} />
-			<ClosingTrack src={closingTrack} speech={captions} />
+			<ClosingTrack src={closingTrack} />
 		</AbsoluteFill>
 	);
 };

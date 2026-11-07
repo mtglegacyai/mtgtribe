@@ -5,9 +5,11 @@ preview before release). This file adds what is specific to short website explai
 
 ## Format
 
-- **16:9 horizontal, 1920x1080, 25 fps**, 60 to 90 seconds. Long enough for the 51-second closing track to start about
-  50 seconds before the end and sit softly under the voice; short enough to watch in one go. If a topic needs more,
+- **16:9 horizontal, 1920x1080, 25 fps**, 60 to 90 seconds; short enough to watch in one go. If a topic needs more,
   split it into two videos.
+- **Music (MTG, 7 November 2026):** only the last line of his theme "They Call Me MTG", "Let's get this crypto,
+  wherever I go!" (about 3 seconds, from about 48.5 s to the end of the track), right after his last word, ending with
+  the video. No other music under the voice.
 - One idea per video. If the title needs "and", it is probably two videos.
 - Captions burned in, with the active word lit, large enough to read on a phone.
 - Deliver: the master, a web copy (H.264 with faststart; keep it small enough for phones on mobile data, for reference

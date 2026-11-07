@@ -15,7 +15,7 @@ import {Section} from './ui';
 // with every scene rebuilt as a Three.js world. Made 7 Nov 2026 so MTG can compare the two side by side.
 
 export const WHATIF01_3D_FPS = 30;
-const TAIL_SECONDS = 5.0;
+const TAIL_SECONDS = 5.0; // posted with this end card; future videos use closingTail() from brand.ts
 export const WHATIF01_3D_FRAMES = Math.ceil((timeline.total + TAIL_SECONDS) * WHATIF01_3D_FPS);
 
 const SCENES = [Hook3DScene, S02Greeting3D, S03Setup3D, S04Doubling3D, S05Why3D, S06Coping3D, S07Zeros3D, S08Posters3D, S09Promise3D, S10Lesson3D, S11Tribe3D, S12Outro3D];
@@ -40,7 +40,7 @@ export const WhatIf01_3D: React.FC<{closingTrack: string | null}> = ({closingTra
 			})}
 			<Captions captions={captions} holdMs={600} />
 			<BrandBar />
-			<ClosingTrack src={closingTrack} speech={captions} />
+			<ClosingTrack src={closingTrack} />
 		</AbsoluteFill>
 	);
 };

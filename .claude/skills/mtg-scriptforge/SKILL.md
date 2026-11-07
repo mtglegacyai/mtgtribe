@@ -128,6 +128,10 @@ prompts, main address). Save the brief with the video's files and show MTG the s
 
 ## Step 3: the full script
 
+**MTG's videos are Shorts of at most 60 seconds** (7 November 2026): about 130 to 145 spoken words, no greeting,
+hook in the first 3 seconds, one idea in 3 or 4 beats, one prompt, the mtgtribe.com call to action, the short sign-off
+and his theme's last line. The longer structure below is kept for when he asks for a long video.
+
 Fit the length to the video's job (playbook section 3). For a 3 to 4 minute What If or bridge video, write a
 narration script of 450 to 600 words for the main body (about 150 words per minute), plus MTG's greeting and
 signature outro. Other jobs scale the same structure up (explainers, trainings) or down (Shorts: hook, one idea,
@@ -263,12 +267,13 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
    - **A designed cover with every video** (MTG, 7 November 2026): 9:16 cover safe for the 3:4 grid crop, plus the
      16:9 YouTube thumbnail for long videos (`references/posting-pack.md`, "Cover and thumbnail"). Build it as a Remotion
      Still next to the video, embed it in the MP4 as cover art, and hand over the PNG with the video.
-   - **Music: only his theme, never a background bed** (MTG, 7 November 2026: "too loud, I don't like it. Remove it
-     completely, and only play my theme music towards the end"). "They Call Me MTG" starts 50 seconds before the end,
-     about 12 dB under his voice while he speaks, and is heard in the clear on a short end card after his last word.
-     Before rendering, check his mp3 is in `public/music/` (it is not in git): no track, no final render.
-   - **Both layouts:** long videos are built for 16:9 and 9:16 from one set of scenes; MTG posts the vertical one on
-     socials first. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
+   - **Music: only the last line of his theme, never a background bed** (MTG, 7 November 2026: "Don't play the entire
+     theme song, just only play the very last few seconds where it says 'Let's Get This Crypto, wherever I go!'").
+     That line (48.46 s to the end of "They Call Me MTG", about 3 s) plays right after his last word and ends with the
+     video; the studio's `ClosingTrack` does this by default and `closingTail()` sizes the end card. Before rendering,
+     check his mp3 is in `public/music/` (it is not in git): no track, no final render.
+   - **Length:** every video is a vertical Short of at most 60 seconds (MTG, 7 November 2026: "I like the short
+     videos more, up to 1 minute, and not longer"). No long videos unless he asks. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
 5. Check frames in both layouts before the full render (`scripts/qc-stills.mjs`), preview to MTG, fix, render the
    Shorts cut-downs, and only publish after his approval.
 6. Run the final compliance check (`references/compliance.md` section 5: video, thumbnail, title, description, links,

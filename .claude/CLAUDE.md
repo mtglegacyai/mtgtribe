@@ -64,6 +64,13 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 
 ## 3D video studio (MTG, 7 November 2026)
 
+**Length (MTG, 7 November 2026): every video is a vertical Short of at most 60 seconds** ("I like the short videos
+more, up to 1 minute, and not longer"). No long videos unless he asks.
+**Music (MTG, 7 November 2026): only the last line of his theme "They Call Me MTG", "Let's get this crypto, wherever I go!" (about 3 s),
+right after his last word, ending with the video ("Don't play the entire theme song, just only play
+the very last few seconds"). No other music anywhere. Code: `ClosingTrack` plays it by default and `closingTail()` in
+`src/brand.ts` sizes the end card for it.
+
 **House format (MTG, 7 November 2026): the format of video 01 as he posted it** (`src/compositions/whatif01/`,
 composition `WhatIf01-9x16`, file `out/whatif01-v6-9x16.mp4`): gold-and-black scenes with 3D card entrances and a slow
 camera push-in, Leo in gold windows, word-by-word captions, soft sound effects fitted to the story, his theme at the end,
@@ -74,22 +81,20 @@ scenes for whole videos unless he asks; small 3D touches are fine when they rend
 3D animated videos are made in `tools/video3d/`: Three.js (React Three Fiber) inside Remotion, which handles the
 timeline, captions, audio and rendering. Read `tools/video3d/README.md` first. In cloud sessions there is no graphics
 card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never the clock. Captions come from the final
-audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, closing track 50 seconds
-before the end, preview before anything is published. Every video gets sound effects from the **soft palette** made in
+audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, his theme's last line at the
+very end, preview before anything is published. Every video gets sound effects from the **soft palette** made in
 code (`scripts/make_sound.py`; `check` must say "all soft"; MTG: "soft, interesting ... not the ones that almost hurt the
 ear"), never louder than his voice and **chosen to fit each video's story** (new soft effects are designed when a moment
 needs one; MTG: "do not just use one and the same sound effects, even if they do not fit"), but **no background music
-under the video**: only MTG's theme "They Call Me MTG" from 50
-seconds before the end, heard clearly after his last word (MTG, 7 November 2026: the music bed was "too loud, I don't
-like it. Remove it completely"). Long videos come in 16:9 and 9:16; he posts the vertical one on socials first.
+under the video** (MTG, 7 November 2026: the music bed was "too loud, I don't like it. Remove it completely"): only his
+theme's last line at the end (see Music above). Videos are vertical Shorts of at most 60 seconds.
 **Every video sends people to mtgtribe.com, never to the WhatsApp group link** (MTG, 7 November 2026: WhatsApp can
 suspend accounts, the website is always there and links to his socials and the tribe); say what they will find there
 (tutorials, explainers, honest guides to multiple income streams, risks included).
 **The greeting names the real type of each video** (MTG, 7 November 2026): "Thank you for taking the time to watch this
 video / tutorial / explainer video / guide / training ...", chosen per video ("training" only for a real training); reuse
 the voice bank's recorded greeting with the right word before spending credits.
-**Every video comes with a designed cover** (MTG, 7 November 2026): a 9:16 PNG safe for the 3:4 profile-grid crop (and a
-16:9 YouTube thumbnail for long videos), embedded in the MP4 as cover art and handed over with the video, so he can
+**Every video comes with a designed cover** (MTG, 7 November 2026): a 9:16 PNG safe for the 3:4 profile-grid crop, embedded in the MP4 as cover art and handed over with the video, so he can
 attach it when posting. MTG is not sure how to update a skill: when he approves a change, rebuild the upload file
 and walk him through uploading it to his claude.ai account, one step at a time.
 

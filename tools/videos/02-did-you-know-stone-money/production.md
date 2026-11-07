@@ -9,6 +9,8 @@ voice WAV is not stored in git (regenerable from the request ID below).
   standing approval (up to 5 per daily video). "rye" is spoken for rai; captions show "rai" and "mtgtribe.com".
 - Leo: video 01's clips V3 (amazed, 25.0 s) and V2 (asks a question, 36.9 s). No new credits.
 - Sound: soft effects fitted to this story, two new ones made for it (`sink` for the stone falling into the sea, `link`
-  for blocks joining the chain); MTG's theme from 50 s before the end (about 0:04), so only toneless effects after it
-  starts; 3 s end card with the theme in the clear.
-- Render: 1 min 44 s. Final: `out/dyk02-9x16.mp4`, 0:54, -14.0 LUFS, true peak -1.4 dBFS, no black frames.
+  for blocks joining the chain). Music (v2, MTG 7 Nov 2026): only the last line of his theme, "Let's get this crypto,
+  wherever I go!", from 50.6 s to the end, right after his spoken "Let's Get This Crypto!" (end card sized by
+  `closingTail()`). No music anywhere else.
+- Render: about 2 min. Final (v2): `out/dyk02-9x16.mp4`, 0:54, -14.0 LUFS, true peak -1.4 dBFS, no black frames,
+  cover embedded. HeyGen credits used: 3 (balance 77, renews 3 December 2026).

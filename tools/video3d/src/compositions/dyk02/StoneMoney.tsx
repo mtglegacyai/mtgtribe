@@ -3,7 +3,7 @@ import React from 'react';
 import {AbsoluteFill, Easing, Html5Audio, interpolate, random, staticFile} from 'remotion';
 import captionsJson from '../../../public/videos/02/captions.json';
 import timeline from '../../../public/videos/02/timeline.json';
-import {COLORS} from '../../brand';
+import {closingTail, COLORS} from '../../brand';
 import {BrandBar} from '../../components/BrandBar';
 import {Captions} from '../../components/Captions';
 import {ClosingTrack} from '../../components/ClosingTrack';
@@ -16,9 +16,10 @@ import {Backdrop, Chip, clamp, Cues, ease, fadeOut, Flip, GOLD_TEXT, LeoClip, Pa
 // Times are seconds from the start (one narration file, HeyGen word timings in public/videos/02/words.json).
 
 export const DYK02_FPS = 30;
-const TAIL = 3.0; // end card with MTG's theme in the clear
-export const DYK02_FRAMES = Math.ceil((timeline.total + TAIL) * DYK02_FPS);
 const captions = captionsJson as Caption[];
+// end card: MTG's last word, then his theme's last line "Let's get this crypto, wherever I go!" in the clear
+const TAIL = closingTail(captions[captions.length - 1].endMs / 1000, timeline.total);
+export const DYK02_FRAMES = Math.ceil((timeline.total + TAIL) * DYK02_FPS);
 const win = (t: number, a: number, b: number, d = 0.35) => Math.min(ease(t, a, d), fadeOut(t, b, d));
 
 /** A rai stone: a great carved stone wheel with a hole in the middle. */
@@ -249,7 +250,7 @@ export const StoneMoney: React.FC<{closingTrack: string | null}> = ({closingTrac
 				</div>
 			</AbsoluteFill>
 
-			{/* sound: fitted to this story, soft; MTG's theme starts about 0:04, so only toneless effects after that */}
+			{/* sound: fitted to this story, soft; MTG's theme plays only its last line, after his last word */}
 			<Cues
 				list={[
 					[0.1, 'air', 0.4], [1.0, 'sink', 0.55], [3.5, 'thud', 0.3],
@@ -263,7 +264,7 @@ export const StoneMoney: React.FC<{closingTrack: string | null}> = ({closingTrac
 			<Html5Audio src={staticFile('videos/02/voice/s01.wav')} />
 			<Captions captions={captions} holdMs={600} />
 			<BrandBar />
-			<ClosingTrack src={closingTrack} speech={captions} />
+			<ClosingTrack src={closingTrack} />
 		</AbsoluteFill>
 	);
 };

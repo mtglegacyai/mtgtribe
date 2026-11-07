@@ -17,11 +17,10 @@ import {Backdrop, Section} from './ui';
 // Research, script and compliance record: tools/videos/01-what-if-prices-doubled/
 // v2 (7 Nov 2026, after MTG's review): sound effects made in code, more 3D movement, bigger text, 7 Leo moments, and
 // the same video in 16:9 and 9:16 (layouts switch on the composition's shape). v3 (same day): no background music
-// (MTG: "remove it completely"), only his theme "They Call Me MTG" from 50 seconds before the end, and a longer end
-// card so the theme is heard in the clear after his last word.
+// (MTG: "remove it completely"); his theme at the end (since 7 Nov 2026 only its last line, see ClosingTrack).
 
 export const WHATIF01_FPS = 30;
-const TAIL_SECONDS = 5.0; // end card, slogan and MTG's theme in the clear after the last word
+const TAIL_SECONDS = 5.0; // posted with this end card; future videos use closingTail() from brand.ts
 export const WHATIF01_FRAMES = Math.ceil((timeline.total + TAIL_SECONDS) * WHATIF01_FPS);
 
 const SCENES = [S01Hook, S02Greeting, S03Setup, S04Doubling, S05Why, S06Coping, S07Zeros, S08Posters, S09Promise, S10Lesson, S11Tribe, S12Outro];
@@ -51,7 +50,7 @@ export const WhatIf01: React.FC<WhatIf01Props> = ({closingTrack}) => {
 			})}
 			<Captions captions={captions} holdMs={600} />
 			<BrandBar />
-			<ClosingTrack src={closingTrack} speech={captions} />
+			<ClosingTrack src={closingTrack} />
 		</AbsoluteFill>
 	);
 };

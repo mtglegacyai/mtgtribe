@@ -33,9 +33,10 @@ research shows big interest and a gap (strong long videos, weak or no Shorts).
 
 ## 4. Length and layout
 
-Default: a Short, 45 to 60 seconds, 9:16 (MTG posts vertical first). About once a week, a long video (3 to 5 minutes)
-when the topic deserves it, plus 2 or 3 Shorts cut from it. Shorts skip the greeting (hook, one idea, one prompt, one
-call to action, short sign-off). Long videos greet with the right type word ("this video", "this tutorial", ...).
+Always a vertical Short (9:16) of **at most 60 seconds, never longer** (MTG, 7 November 2026: "I like the short
+videos more, up to 1 minute, and not longer"). About 130 to 145 spoken words for 50 to 55 seconds, plus about 3 seconds
+for the theme's last line at the end. Shorts skip the greeting: hook, one idea in 3 or 4 beats, one prompt, one call to
+action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!").
 
 ## 5. Make it (same rules as every video)
 
@@ -47,8 +48,8 @@ call to action, short sign-off). Long videos greet with the right type word ("th
 4. Leo: reuse his existing clips first (video 01: V2 asks a question, V3 amazed, V5 thinking, V6 laughs in disbelief,
    V7 makes a point, L2 open paw); new clips only with MTG's go-ahead.
 5. Build in the house format (video 01 as posted): gold-and-black 2.5D scenes, 3D card entrances, slow push-in, Leo in
-   gold windows, word-by-word captions, soft effects fitted to this story, MTG's theme from 50 s before the end, the
-   mtgtribe.com card, a designed cover.
+   gold windows, word-by-word captions, soft effects fitted to this story, only the last line of his theme ("Let's get
+   this crypto, wherever I go!") right after his last word, the mtgtribe.com card, a designed cover.
 6. QC frames, render, loudness -14 LUFS, checks, cover embedded, posting pack (`references/posting-pack.md`).
 7. Send MTG the preview, the cover and the posting texts. He posts it himself. Never publish.
 8. Add the video to the log.

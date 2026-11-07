@@ -44,7 +44,7 @@ Keep it as short as covering every page allows: one beat per page, usually 2 to 
   and the voice say its exact on-screen label ("Tap **Start here**"). Zoom in gently on small targets.
 - After every click: show where you landed and light up that page's title, as the success check, before moving on.
 - One focal point at a time, the same icons, emojis, sound effects and brand bar as the other videos, captions with the
-  active word lit, and the closing track in the last 50 seconds.
+  active word lit, and only the last line of his theme ("Let's get this crypto, wherever I go!") at the very end.
 
 ## Voice
 

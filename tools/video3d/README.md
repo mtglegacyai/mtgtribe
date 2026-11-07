@@ -98,9 +98,9 @@ graphics card, the default (`angle`) is much faster.
    - `src/three/BuildingBlocks.tsx`: example of 3D objects that land exactly on spoken words.
    - `src/components/Captions.tsx`: word by word captions, the spoken word in gold, kept inside the safe area.
    - `src/components/PhotoCard.tsx`: MTG's photo, always in a circle with a gold ring (his rule since 7 November 2026). `BrandBar.tsx`: the small brand bar.
-   - `src/components/ClosingTrack.tsx`: "They Call Me MTG" starting 50 seconds before the end, about 12 dB under his
-     voice while he speaks (short pauses stay ducked), in the clear after his last word. Give the video a few seconds
-     of end card after the last word so the theme is heard (video 01 uses 5 s).
+   - `src/components/ClosingTrack.tsx`: only the last line of "They Call Me MTG", "Let's get this crypto, wherever
+     I go!" (about 3 s), ending with the video (MTG, 7 November 2026). Size the end card with `closingTail()` from
+     `src/brand.ts` so the line plays right after his last word.
    - `src/lib/media.ts`: exact audio length, captions loading, word start frames for syncing.
    - Video 01 (`src/compositions/whatif01/`) is the reference for a full long video: one set of scenes for 16:9 and
      9:16, 3D card entrances (`Flip`), a slow camera push-in (`Stage`), Leo clips in gold windows (`LeoClip`) and

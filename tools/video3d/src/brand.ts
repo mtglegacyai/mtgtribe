@@ -34,4 +34,14 @@ export const FILES = {
 	closingTrack: 'music/they-call-me-mtg.mp3',
 } as const;
 
-export const CLOSING_TRACK_LEAD_SECONDS = 50; // the track starts 50 seconds before the video ends
+/**
+ * MTG, 7 November 2026: "Don't play the entire theme song, just only play the very last few seconds where it says
+ * 'Let's Get This Crypto, wherever I go!'". That line, measured in the track: 48.56 s to the end (51.36 s).
+ */
+export const CLOSING_TAG = {from: 48.46, to: 51.36} as const;
+export const CLOSING_TAG_SECONDS = CLOSING_TAG.to - CLOSING_TAG.from;
+const CLOSING_TAG_GAP = 0.25; // pause between MTG's last spoken word and the song line
+const CLOSING_TAG_END_PAD = 0.15; // the line ends this long before the last frame
+/** End card length after the narration, so the tag plays right after the last word and ends with the video. */
+export const closingTail = (lastWordEndSeconds: number, narrationSeconds: number) =>
+	Math.max(0.5, lastWordEndSeconds + CLOSING_TAG_GAP + CLOSING_TAG_SECONDS + CLOSING_TAG_END_PAD - narrationSeconds);

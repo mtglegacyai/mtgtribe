@@ -165,13 +165,16 @@ const LeoWindow: React.FC<{clip: string; style?: React.CSSProperties; full?: boo
 
 /** Sound cues: [seconds, effect name, volume]. Effects live in public/sfx/ (made in code). */
 export type Cue = [number, string, number?];
+// v2 mix check (7 Nov 2026): at the written volumes the softest effects sat 8 to 15 dB under the voice, too quiet on a
+// phone speaker, so every cue is lifted by SFX_GAIN (about +4 dB) and the per-cue values stay as relative balance.
+const SFX_GAIN = 1.6;
 export const Cues: React.FC<{list: Cue[]}> = ({list}) => {
 	const {fps} = useVideoConfig();
 	return (
 		<>
 			{list.map(([at, name, vol = 0.32], i) => (
 				<Sequence key={i} from={Math.max(0, Math.round(at * fps))} layout="none" name={`sfx ${name}`}>
-					<Html5Audio src={staticFile(`sfx/${name}.mp3`)} volume={vol} />
+					<Html5Audio src={staticFile(`sfx/${name}.mp3`)} volume={Math.min(1, vol * SFX_GAIN)} />
 				</Sequence>
 			))}
 		</>

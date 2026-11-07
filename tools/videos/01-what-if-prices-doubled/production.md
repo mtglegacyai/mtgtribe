@@ -55,9 +55,12 @@ whole t-shirt print above the captions) or a face window under a panel. L1, L3 a
 ## Sound (v2, all made in code, no licences needed)
 
 - Effects: `tools/video3d/public/sfx/` (21 effects from `scripts/make_sound.py sfx`), placed per scene with `Cues`
-  in `scenes.tsx` at the narration's word timings, kept soft (volume 0.16 to 0.45, the voice stays at 1.0).
+  in `scenes.tsx` at the narration's word timings, then lifted by about 4 dB (`SFX_GAIN` in `ui.tsx`) after a mix
+  check showed the softest ones 8 to 15 dB under the voice. Measured in the final mix: each effect stands 10 to 20 dB
+  above the moment before it, the voice stays on top, no clipping.
 - Music bed: `public/videos/01/music-bed.m4a` from `music-plan.json` (`scripts/make_sound.py music`), 13 moods that
-  follow the story, at 0.13 between sentences and 0.05 under the voice. When MTG's closing track is supplied it hands
+  follow the story, at 0.32 between sentences and 0.2 under the voice (about 15 dB under in pauses; 0.13 and 0.05 were
+  inaudible on a phone). When MTG's closing track is supplied it hands
   over: the bed fades out as "They Call Me MTG" starts 50 seconds before the end.
 - Closing track: still waiting for MTG's mp3 and his confirmation that he holds the rights. Until then the renders
   have no closing track (the composition prop `closingTrack` is null).
@@ -83,4 +86,6 @@ python3 scripts/align_captions.py public/videos/01/voice public/videos/01/spoken
 REMOTION_GL=swangle npx remotion render WhatIf01-16x9 out/whatif01-v2-16x9-raw.mp4 --concurrency=4
 REMOTION_GL=swangle npx remotion render WhatIf01-9x16 out/whatif01-v2-9x16-raw.mp4 --concurrency=4
 # two-pass loudness to -14 LUFS (see the 3D studio README), AAC 192k, faststart
+# Final v2 files (7 Nov 2026): out/whatif01-v2-16x9.mp4 and out/whatif01-v2-9x16.mp4, 4:24, -14.1 LUFS, true peak
+# -1.1 dBFS, no black frames. The sound mix was rendered once (audio only, --codec=wav) and put into both videos.
 ```

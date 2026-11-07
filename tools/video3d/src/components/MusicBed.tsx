@@ -14,7 +14,10 @@ type Props = {
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 // A soft, copyright-free music bed under the whole video (made in code, see scripts/make_sound.py).
-export const MusicBed: React.FC<Props> = ({src, speech, volume = 0.13, duckTo = 0.05, endAt = null}) => {
+// Levels measured on video 01 (7 Nov 2026): 0.13 / 0.05 left the bed 22 dB under the voice in pauses and about 30 dB
+// under it while MTG speaks, which nobody hears on a phone. 0.32 / 0.2 keeps it about 15 dB under in pauses and about
+// 19 dB under his voice: present, never competing.
+export const MusicBed: React.FC<Props> = ({src, speech, volume = 0.32, duckTo = 0.2, endAt = null}) => {
 	const {fps, durationInFrames} = useVideoConfig();
 	const intervals = useMemo(() => speechIntervals(speech, 350), [speech]);
 	const end = endAt ?? durationInFrames / fps;

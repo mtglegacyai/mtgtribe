@@ -355,9 +355,10 @@ export const S08Posters: React.FC = () => {
 	const t = useT();
 	const v = useV();
 	const wall = Math.round(interpolate(t, [6.6, 10.0], [0, v ? 12 : 24], clamp));
-	const quote = Math.min(ease(t, 13.0), fadeOut(t, 23.4));
+	const quote = Math.min(ease(t, 13.0), fadeOut(t, 23.5));
 	const trophy = usePop(17.6, 13);
-	const abandon = ease(t, 24.9, 0.5);
+	const enterNote = ease(t, 23.8, 0.4); // "A few weeks later": the note arrives
+	const abandon = ease(t, 24.9, 0.5); // "April 2009": the stamp lands, the note goes grey
 	const intro = fadeOut(t, 12.9);
 	return (
 		<AbsoluteFill>
@@ -397,11 +398,11 @@ export const S08Posters: React.FC = () => {
 				</div>
 			</Stage>
 			<LeoClip clip="V6" from={16.9} seconds={6.0} style={v ? LEO_V_FACE : LEO_H} focus={v ? FACE : undefined} />
-			<Stage style={{opacity: Math.min(abandon, fadeOut(t, 31.9))}}>
+			<Stage style={{opacity: Math.min(enterNote, fadeOut(t, 31.9))}}>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 50 : 70}}>
 					<div style={{position: 'relative'}}>
 						<Note width={v ? 640 : 560} grey={abandon} />
-						<div style={{position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%,-50%) rotate(-12deg) scale(${interpolate(abandon, [0, 1], [1.6, 1])})`, border: '6px solid #e0602f', color: '#ff8a4c', fontFamily: DISPLAY, fontSize: v ? 68 : 70, padding: '6px 26px', borderRadius: 12, background: 'rgba(5,4,3,0.65)', whiteSpace: 'nowrap'}}>ABANDONED ▪ APRIL 2009</div>
+						<div style={{position: 'absolute', left: '50%', top: '50%', opacity: abandon, transform: `translate(-50%,-50%) rotate(-12deg) scale(${interpolate(abandon, [0, 1], [1.6, 1])})`, border: '6px solid #e0602f', color: '#ff8a4c', fontFamily: DISPLAY, fontSize: v ? 68 : 70, padding: '6px 26px', borderRadius: 12, background: 'rgba(5,4,3,0.65)', whiteSpace: 'nowrap'}}>ABANDONED ▪ APRIL 2009</div>
 					</div>
 					<div style={{display: 'flex', gap: 30}}>
 						<Coin symbol="$" size={v ? 210 : 200} at={29.2} />
@@ -533,8 +534,9 @@ export const S11Tribe: React.FC = () => {
 	return (
 		<AbsoluteFill>
 			<Cues list={[[1.5, 'powerup', 0.28], [5.9, 'pop', 0.22], [7.8, 'pop', 0.22], [9.6, 'pop', 0.22], [12.9, 'impact', 0.3], [13.1, 'ding', 0.25], [16.0, 'swish', 0.25]]} />
-			<Stage style={{opacity: Math.min(ease(t, 1.5), 1 - share), justifyContent: v ? 'flex-start' : 'center', paddingTop: v ? 40 : 0}}>
-				<div style={{fontFamily: DISPLAY, fontSize: v ? 160 : 190, lineHeight: 1, ...GOLD_TEXT, transform: `scale(${interpolate(usePop(1.5, 12), [0, 1], [0.6, 1])})`}}>MTG TRIBE</div>
+			<Stage style={{opacity: Math.min(ease(t, 0.2), 1 - share), justifyContent: v ? 'flex-start' : 'center', paddingTop: v ? 40 : 0}}>
+				<div style={{fontFamily: MONO, fontWeight: 700, fontSize: v ? 36 : 38, color: COLORS.muted, letterSpacing: 4, marginBottom: 10}}>THAT'S EXACTLY WHY THE</div>
+				<div style={{fontFamily: DISPLAY, fontSize: v ? 160 : 190, lineHeight: 1, ...GOLD_TEXT, opacity: ease(t, 1.5, 0.2), transform: `scale(${interpolate(usePop(1.5, 12), [0, 1], [0.6, 1])})`}}>MTG TRIBE</div>
 				<div style={{fontFamily: BODY, fontWeight: 800, fontSize: v ? 50 : 54, color: COLORS.text, marginTop: 14, opacity: ease(t, 3.7)}}>A community of action takers</div>
 				<div style={{display: 'flex', flexDirection: v ? 'column' : 'row', alignItems: 'center', gap: v ? 14 : 24, marginTop: 30}}>
 					{([['LEARN HOW MONEY WORKS', 5.9], ['OLD AND NEW', 7.8], ['YOUR OWN DECISIONS', 9.6]] as Array<[string, number]>).map(([w, at]) => (

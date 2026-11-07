@@ -80,9 +80,9 @@ export const S02Greeting3D: React.FC = () => {
 			<Canvas3D>
 				<GoldWorld />
 				<Dust />
-				<Cam keys={[[0, [-0.7, 1.8, 7.2], [0, 1.5, 0]], [12, [0.6, 1.7, 6.4], [0, 1.5, 0]]]} />
+				<Cam keys={[[0, [-0.7, 1.8, 8.2], [0, 1.5, 0]], [12, [0.6, 1.7, 7.6], [0, 1.5, 0]]]} />
 				<Medallion t={t} />
-				<GoldText text="MTG" size={0.5} position={[0, 1.18, 0.2]} scale={Math.max(0.001, pop(t, 1.3) * (1 - chip))} material={GOLD} />
+				<GoldText text="MTG" size={0.5} position={[0, 1.18, 0.2]} scale={Math.max(0.001, pop(t, 1.3) * (1 - chip))} material={GOLD_HI} />
 				<GoldText text="YOUR DIGITAL ARCHITECT" size={0.16} depth={0.2} maxWidth={2.4} position={[0, 0.82, 0.2]} scale={Math.max(0.001, pop(t, 2.2) * (1 - chip))} material={CHAMPAGNE} />
 			</Canvas3D>
 			<Top top={1090} o={chip}>

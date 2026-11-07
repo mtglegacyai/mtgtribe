@@ -143,7 +143,7 @@ def top_bar(docked):
      '<header class="top">',
      ' ' + first,
      ' <a class="brand" href="/jetup/" aria-label="JetUP and TAG Markets guide home"><img src="/jetup/img/jetup-mark-64.webp" width="38" height="38" alt=""><span class="bt"><b>JetUP <span>×</span> TAG Markets</b><small>Independent guide by MTG 👑</small></span></a>',
-     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-lime btn-sm" href="%s" target="_blank" rel="sponsored noopener" data-join>Join<span class="hide-s">&nbsp;JetUP</span></a><a class="btn btn-ghost btn-sm" href="/jetup/" aria-label="JetUP and TAG Markets home" title="JetUP and TAG Markets home"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">JetUP home</span></a></div>' % (icon('i-rocket2'), JETUP_JOIN),
+     ' <div class="acts"><a class="btn btn-pri btn-sm hide-s" href="/jetup/get-started/">%sStart the training</a><a class="btn btn-lime btn-sm tjoin" href="%s" target="_blank" rel="sponsored noopener" data-join>Join JetUP</a><a class="btn btn-ghost btn-sm" href="/jetup/" aria-label="JetUP and TAG Markets home" title="JetUP and TAG Markets home"><span class="emo" aria-hidden="true">🏡</span><span class="hide-s">JetUP home</span></a></div>' % (icon('i-rocket2'), JETUP_JOIN),
      '</header>'])
 
 def footer():

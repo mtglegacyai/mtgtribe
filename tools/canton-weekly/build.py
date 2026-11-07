@@ -62,6 +62,9 @@ def master_parts():
     body = src[src.index("<body") :]
     sprite = re.search(r'<svg width="0".*?</svg>', body, re.S).group(0)
     header = re.search(r'<a class="skip".*?</header>', body, re.S).group(0)
+    # On /cc/ and /cntn/ the Dashboard button opens Canton Weekly (MTG, 7 Nov 2026); the weekly pages
+    # themselves keep the main MTG dashboard, so the button never just reloads the page you are on.
+    header = header.replace('<a class="mn-btn mn-dash" href="/canton-weekly/">', '<a class="mn-btn mn-dash" href="/dashboard/">')
     footer = body[body.index('<footer class="foot">') :]
     head = head.replace("</style>", EXTRA_CSS + "</style>", 1)
     return head, sprite, header, footer

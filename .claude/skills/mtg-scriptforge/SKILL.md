@@ -1,6 +1,6 @@
 ---
 name: mtg-scriptforge
-description: "MTG's research-driven video idea, script, engagement and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and new sites), built on his ScriptForge prompt and run as a business. Every video starts with research (the similar videos winning big on YouTube, TikTok and Instagram, real view counts, the gap, how ours will be better) and gets a job (reach, traffic, leads, sign-ups and sales, team or tribe growth), an interaction layer, the right website address at the right moment, the right length and a posting pack. Includes a niche menu, 10 ideas, full scripts in his voice with visual and build cues, Shorts, a YouTube research tool and a Remotion and Three.js 3D studio. Use whenever MTG (MusaTheGiant) asks for video ideas, research, scripts, voiceovers, YouTube, TikTok or Shorts plans, engaging content, captions, 3D or animated videos, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE."
+description: "MTG's research-driven, platform-compliant video system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com, new sites), built on his ScriptForge prompt and run as a business. Every video starts with research (similar videos winning big on YouTube, TikTok and Instagram, real view counts, the gap, how ours will be better), gets a job (reach, traffic, leads, sign-ups, sales, team or tribe growth), an interaction layer, the right website address at the right moment, the right length and a posting pack, and passes a compliance gate for YouTube, TikTok, Meta and X rules so videos and channels stay safe. Includes a niche menu, 10 ideas, scripts in his voice, Shorts, research and compliance tools and a 3D studio. Use whenever MTG (MusaTheGiant) asks for video ideas, research, scripts, voiceovers, YouTube, TikTok or Shorts plans, captions, 3D videos, platform rules, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE."
 ---
 
 # MTG ScriptForge (all websites)
@@ -34,8 +34,14 @@ gets:
   videos that get enormous traffic on each platform, learn what makes them win, and make MTG's version clearly better.
   No script without a research brief (`references/research.md`).
 
-The full method is in `references/engagement-and-conversion.md` and `references/research.md`; read them before Step 2
-and Step 3. Honesty still comes first: no income promises, no fake urgency, no manipulation, risks shown plainly.
+- **Platform-safe, always** (MTG, 7 November 2026: "I don't want my videos banned or removed, or my channels shut
+  down"): every video passes the compliance gate in `references/compliance.md` before it is published. Social
+  platforms get education, trust and the tribe; compensation plans, recruitment, sign-up links into those programs,
+  returns and paid draws stay on MTG's websites and in the WhatsApp tribe.
+
+The full method is in `references/engagement-and-conversion.md`, `references/research.md` and
+`references/compliance.md`; read them before Step 2 and Step 3. Honesty still comes first: no income promises, no fake
+urgency, no manipulation, risks shown plainly.
 
 ## Step 0: know the website
 
@@ -101,6 +107,8 @@ Give exactly 10 ideas for the chosen sub niche. For each:
 - **Engage**: the main comment prompt (a question, a guess, a number, a vote) and who to share it with.
 - **Proof**: the evidence of demand (for example "top 3 videos on this: 2 to 10 million views; the format is hot this
   year") and the gap MTG's version fills.
+- **Risk tier**: green, amber or red (`references/compliance.md` section 2). Red ideas are planned for the websites and
+  the WhatsApp tribe, not for social platforms.
 
 Mix formats: listicles, single deep dives, "the truth about...", countdowns, myth busters, story driven pieces, honest
 checks. Avoid generic or overdone titles. Then ask MTG to pick a number, or ask for 10 more.
@@ -182,6 +190,11 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
 - **Money.** No income promises, no "get rich", no fake balances or testimonials. Show the risk next to every reward
   ("lower risk is not no risk"). Say "not financial advice". Where MTG earns from a referral link, say so plainly.
   This also keeps his YouTube and TikTok channels within platform rules.
+- **Platform compliance.** Follow `references/compliance.md` on every platform: no guaranteed, quick or risk-free
+  returns, no past returns of an opportunity, no recruitment pitches or compensation plans on social platforms, no
+  paid draws or gambling, truthful titles and thumbnails, no rewards for engagement, original content every time, AI
+  voice labelled, money interests disclosed, only owned or licensed media, privacy protected, adults only. Run
+  `scripts/compliance_scan.py` on every script and caption. Never call a video "100% safe": say what was checked.
 - **Learn from the winners, never copy them.** Copy the pattern (hook type, format, pacing, length, thumbnail
   pattern), never the property (script, wording, footage, music, thumbnail, characters, distinctive layout). Never
   re-upload anyone's video. Never claim a video is "top" or "viral" without numbers; when a platform hides its
@@ -214,7 +227,8 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
 5. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
-6. Hand over the posting pack (`references/posting-pack.md`).
+6. Run the final compliance check (`references/compliance.md` section 5: video, thumbnail, title, description, links,
+   platform labels) and hand over the posting pack (`references/posting-pack.md`) with the compliance record filled in.
 7. Put the video where it helps: the matching website page (9:16 inside the slim gold phone frame, 16:9 inside the
    laptop frame, and the player closes itself when the video ends), YouTube, TikTok and WhatsApp status.
 8. After posting: pin the comment, answer early comments, share it in the tribe, and turn the best questions into

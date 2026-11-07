@@ -51,8 +51,15 @@ One line hook + link. Under 60 seconds of video.
 ## End screen and cards
 Which video or playlist comes next, and the subscribe button.
 
+## Compliance record (compliance.md)
+Risk tier: [green / amber]. Scan: compliance_scan.py clean on [date] (or flags explained).
+YouTube: altered or synthetic content Yes (AI voice), made for kids No, paid promotion [Yes/No].
+TikTok: AI-generated label On, content disclosure [On/Off]. Instagram and Facebook: AI label On, paid partnership [Yes/No].
+Links checked against the social-safe list: [list]. Music and footage: owned or licensed. Policy pages last checked: [date].
+
 ## Publish checklist
 - [ ] MTG approved the final video
+- [ ] Compliance gate passed and recorded above (no red content on social platforms)
 - [ ] Every link opened and checked on the live site (referral parameters intact)
 - [ ] Captions match the final audio
 - [ ] No personal or sensitive data in any frame or the thumbnail

@@ -30,6 +30,11 @@ Every video moves the viewer one step forward, never from "just discovered you" 
 | Decide and act | sign-up training, the first 72 hours, first steps | the sign-up page with MTG's link (disclosed) |
 | Grow | partner plan, lead with value, start your own tribe, share kits | partner plan page, downloads and share kit |
 
+**Where each stage lives (platform compliance):** discover, learn and trust videos go on social platforms. For
+programs that pay from recruiting, the decide-and-act and grow content (sign-up training, compensation plans, partner
+plans, earnings, paid draws) lives on MTG's websites and in the WhatsApp tribe only (`compliance.md` section 1). A
+social video moves people one step forward: into the tribe or onto an education page, where the website takes over.
+
 **Default weekly mix** (adjust with the numbers in section 8): one long bridge video and its 2 or 3 Shorts; one long
 direct video (explainer, honest check or tutorial) and its Shorts; a decision video every week or two (sign-up training,
 fit check, or a Q&A built from comments); daily Shorts or WhatsApp status clips from the cut-downs. Most videos give
@@ -105,6 +110,8 @@ screenshots. Remind them often: "Never share your 12 words with anyone, not even
   comment, end screen, chapters. WhatsApp: the full link in the message.
 - **Links:** exact live links with referral parameters unchanged (such as `?ref=mtg`). When MTG can earn from a link,
   say so: "If you join through my link, I may earn a reward." Sites still being built: send people to the tribe.
+- **Social-safe links:** from social platforms, link to mtgtribe.com, mtgtribe.com/group and education pages (see
+  the social-safe list in `destinations.md`), never straight into a recruitment program's plan, sign-up or promo page.
 - **Short paths that exist:** mtgtribe.com, mtgtribe.com/group, mtgtribe.com/dashboard, mtgtribe.com/altruva,
   mtgtribe.com/jetup, mtgtribe.com/cntn, bellveraffiliates.com.
 

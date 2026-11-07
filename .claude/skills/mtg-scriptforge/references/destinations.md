@@ -51,6 +51,16 @@ TikTok. Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard).
 
 Paths after a site name belong to that site (for example /jetup/faq is mtgtribe.com/jetup/faq).
 
+## Which pages a social video may link to (compliance.md)
+
+| From social platforms | Pages |
+|---|---|
+| Safe (green) | mtgtribe.com, mtgtribe.com/group, the safety page, the glossary, the USDT to rand converter |
+| With care (amber: risks stated, no return figures, disclosures on) | mtgtribe.com/jetup and /jetup/five-checks, mtgtribe.com/cntn, bellveraffiliates.com, the crypto card page, mtgtribe.com/dashboard |
+| Websites and WhatsApp tribe only (red) | ALTRUVA plan, join, calculators of levels and matching, first 72 hours, Lucky Tickets; JetUp partner plan, promo and sign-up training; any sign-up or referral link into a program that pays from recruiting |
+
+The journey table above is the full path on the websites; on social platforms stop at the green or amber step.
+
 ## Topic pages on mtgtribe.com (direct videos)
 
 | Topic | Destination |

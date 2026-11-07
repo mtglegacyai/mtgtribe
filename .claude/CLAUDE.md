@@ -91,3 +91,11 @@ mtgtribe.com (the 3D brand bar can show another site's address for a video about
 without a research brief: the similar videos winning big on YouTube, TikTok and Instagram with real numbers
 (`.claude/skills/mtg-scriptforge/scripts/yt_research.py` for YouTube), what wins, the gap, at least five "better than"
 points, verified facts. Learn the pattern, never copy the property. Briefs and scripts live in `tools/videos/<nn>-<slug>/`.
+
+**Platform compliance for every video (MTG, 7 November 2026: "I don't want my videos banned or removed, or my channels
+shut down").** Every video passes the gate in `.claude/skills/mtg-scriptforge/references/compliance.md` (scan with
+`scripts/compliance_scan.py`, human check, platform labels). Social platforms carry education, trust and the tribe;
+compensation plans, recruitment, sign-up links into programs that pay from recruiting, returns and paid draws (for
+example ALTRUVA's plan and Lucky Tickets, JetUp's partner plan and promo) stay on MTG's websites and in the WhatsApp
+tribe. MTG's HeyGen voice is synthetic: switch on the AI label on YouTube, TikTok and Meta. Never promise a video is
+"100% safe"; say what was checked.

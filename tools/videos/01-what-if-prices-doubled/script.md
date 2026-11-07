@@ -125,3 +125,11 @@ you on the next one. Let's Get This Crypto!
   paper" (35 s, the poster story) ▪ C "Money is a promise" (30 s, the voucher)
 - Comment prompts: guess the zeros ▪ what would you buy first ▪ money is what? ▪ share with the friend who keeps all
   their savings in one place
+
+## Compliance (references/compliance.md, checked 7 November 2026)
+- Risk tier: green (history and money education, no opportunity, no returns, no recruitment, no affiliate links).
+- compliance_scan.py: no flags. Human check of section 3: passed (facts sourced, respectful framing, no advice).
+- Labels at upload: YouTube altered or synthetic content Yes (AI voice), made for kids No, paid promotion No;
+  TikTok AI-generated label On; Instagram and Facebook AI label On.
+- Links: mtgtribe.com/group only (safe list). Media: own 3D and stick-figure visuals; closing track is MTG's own
+  (confirm rights before the first upload).

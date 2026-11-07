@@ -1,8 +1,8 @@
 # Visual system (vertical 1080 x 1920, every frame a pure function of time)
 
 - Background #0b0912 with soft violet and gold glows and a faint grid. Fonts: Anton (display), Manrope 600 to 800.
-- Top bar (y 58): face crop in a 60 px circle with a gold ring, "MTG | Your Digital Architect", small "JetUP tutorial";
-  lime "PART N" chip on the right.
+- Top bar (y 58): face crop in a 60 px circle with a gold ring, "MTG" with "YOUR DIGITAL ARCHITECT" small in gold below it
+  (part 2 onwards: short, so the website phone frame's camera island never covers it); lime "PART N" chip on the right.
 - Step card (y 156 to 392): gold number tile, title 58 px with the exact on-screen label in a lime-outlined highlight,
   sub line 33 px, "STEP n OF N".
 - Screen window x 70 to 1010, y 414 to 1636, radius 46, 5 px gold-titanium rim. The recording is zoomed 1.3 to 1.75 and

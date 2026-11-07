@@ -225,9 +225,12 @@ def ld_faq(qas, pid):
         {"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qas]}
 
 VIDEOS = {
- 'tut1': dict(src='/jetup/media/jetup-tutorial-part-1-create-account.mp4', poster='/jetup/img/cover-tutorial-part-1.webp', jpg='/jetup/img/cover-tutorial-part-1.jpg', dur='3:38', iso='PT3M38S', orient='v',
+ 'tut1': dict(src='/jetup/media/jetup-tutorial-part-1-create-account.mp4', poster='/jetup/img/cover-tutorial-part-1-v2.webp', jpg='/jetup/img/cover-tutorial-part-1-v2.jpg', dur='3:38', iso='PT3M38S', orient='v',
    title='JetUP step by step, part 1: create your JetUP account',
    desc="MTG's own recording, tap by tap: the Partner link, Individual, your real name, a password of 8 to 12 characters, country and phone, Register Now, verify your email, log in and check Account Type: Partner."),
+ 'tut2': dict(src='/jetup/media/jetup-tutorial-part-2-link-tag-markets.mp4', poster='/jetup/img/cover-tutorial-part-2.webp', jpg='/jetup/img/cover-tutorial-part-2.jpg', dur='3:35', iso='PT3M35S', orient='v',
+   title='JetUP step by step, part 2: link JetUP to TAG Markets',
+   desc="MTG's own recording, tap by tap: log in to JetUP, tap Register CopyX on the CopyX banner, enter your JetUP password, tick the boxes, Sync Account, wait for User Active, log in to TAG Markets and confirm your email."),
  '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp', jpg='/jetup/img/cover-5-checks-v5.jpg', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),

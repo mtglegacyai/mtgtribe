@@ -98,7 +98,8 @@ and walk him through uploading it to his claude.ai account, one step at a time.
 **Daily video (MTG, 7 November 2026):** when MTG says "let's create today's video", run the routine in
 `.claude/skills/mtg-scriptforge/references/daily-video.md` end to end: next hook format in the rotation (Did You Know,
 What If, What Everyone Ought to Know About, ...), a fresh topic from his niche, research, script, voice, house format,
-cover, posting pack, preview. The log of videos is `tools/videos/README.md`.
+cover, posting pack, preview. The log of videos is `tools/videos/README.md`. MTG pre-approved up to 5 HeyGen credits per
+daily video for the voice (7 November 2026); new Leo clips and anything more still need his yes.
 
 MTG's ScriptForge prompt, adapted to his niche, is the skill `.claude/skills/mtg-scriptforge/`: niche menu, 10 ideas,
 full script with visual and build cues, Shorts plan. Bridge topics (self-improvement, psychology, What If, science,

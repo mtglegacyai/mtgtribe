@@ -30,6 +30,8 @@ The palette (what each one is for):
   flutter    banknotes fluttering into place: posters, printing money (video 01)
   rise       soft low rumble that grows: something rising out of the floor (video 01's map)
   melt       a slow gliding fall in pitch: value melting away (video 01's pay bars)
+  sink       a slow, low bubbling fall: something sinking into the sea (video 02's stone)
+  link       a soft, muted clink: a block joining a chain (video 02's blockchain)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -331,6 +333,29 @@ def melt():
     return lowpass(x * env(int(d * SR), 0.08, 1.2, hold=0.4), 1600)
 
 
+def sink():
+    d = 2.8
+    tt = t(d)
+    body = band(noise(d), 80, 700) * np.exp(-tt * 0.6) * (0.6 + 0.4 * np.sin(np.pi * tt / d))
+    x = body * 0.5
+    rng = np.random.default_rng(31)
+    for at in np.sort(rng.random(14) * 2.3):
+        dur = rng.uniform(0.05, 0.1)
+        bt = t(dur)
+        f0 = rng.uniform(260, 520)
+        chirp = np.sin(2 * np.pi * np.cumsum(f0 * (1 + 1.2 * bt / dur)) / SR) * np.sin(np.pi * bt / dur) ** 2
+        i = int(at * SR)
+        x[i:i + len(chirp)] += chirp[:len(x) - i] * rng.uniform(0.15, 0.35)
+    return lowpass(x * env(len(x), 0.25, 1.4, hold=0.9), 1500)
+
+
+def link():
+    d = 0.5
+    x = band(noise(d), 400, 1800) * env(int(d * SR), 0.014, 0.05)
+    x += sine(lambda u: 180 + 60 * np.exp(-u * 30), d) * env(int(d * SR), 0.014, 0.12) * 0.6
+    return lowpass(x, 1900)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -340,6 +365,8 @@ PALETTE = {
     'coin': (coin, 0.25), 'paper': (paper, 0.15), 'shutter': (shutter, 0.15),
     # made for video 01's 3D version
     'coinrain': (coinrain, 0.3), 'whirr': (whirr, 0.15), 'flutter': (flutter, 0.2), 'rise': (rise, 0.2), 'melt': (melt, 0.3),
+    # made for video 02 (the stone money of Yap)
+    'sink': (sink, 0.35), 'link': (link, 0.2),
 }
 
 

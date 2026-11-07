@@ -55,5 +55,6 @@ call to action, short sign-off). Long videos greet with the right type word ("th
 
 ## Standing approval for credits
 
-Ask MTG once for a standing approval (for example: one voice call of up to 5 credits per daily video) and record his
-answer here with the date. Until then, show the script and ask before the voice call.
+**Approved by MTG on 7 November 2026:** up to 5 HeyGen credits per daily video for the voice recording, without
+asking. New Leo clips (about 15 credits each) and anything above 5 credits still need his yes. Check the balance with
+`get_current_user` first; if a generation fails, ask before trying again.

@@ -57,12 +57,20 @@ Differences from the current site, to apply when the video is in: the 12 charact
 7. Success check: the banner says **User Active**. Tap it to go to TAG Markets (portal.tagmarkets.com): "Checking your
    browser", then the TAG Markets log in.
 8. Log in with the **same email and the exact same password** (up to 12 characters, as created on JetUP). Then "Checking",
-   "Verify you are human", "Please wait", and you are on the TAG Markets dashboard. Next is KYC (part 3).
+   "Verify you are human", "Please wait", and you are on the TAG Markets dashboard (portal.tagmarkets.com). It says
+   "Complete your KYC verification in order to make a deposit", with an **Upload document** link (that is part 3).
+9. Now the TAG Markets email arrives (in MTG's recording it came only after this first TAG Markets log in). Open it and
+   tap **Confirm email address**. Cloudflare checks, then **Verification successful**: "Your email address has been
+   successfully validated. You will now be redirected to the client portal. If you are not redirected within a few
+   seconds, please click here to log in."
+10. If nothing happens, tap **click here**, and log in again with the same email and password (on your own phone you can
+    let the browser remember the password). Success check: you are back on the TAG Markets dashboard with your email
+    confirmed. **Confirm the email before KYC.** End of part 2. Part 3: verify your identity (KYC).
 
 Do not show (MTG, 7 Nov 2026): his search through inbox, spam, promotions and other folders for the TAG Markets email,
 and the failed log in. Turn them into tip cards instead:
-- **Tip: the TAG Markets email can be slow.** Check spam or junk. In MTG's recording it had not arrived yet, and he could
-  still log in to TAG Markets with the same email and password.
+- **Tip: no TAG Markets email yet?** It can take a while, and in MTG's case it arrived only after his first log in to
+  TAG Markets. Log in first (step 8), then check your inbox, spam and junk, and tap Confirm email address.
 - **Tip: "Username and password incorrect"?** Check the password first. It must be exactly the one you created on JetUP
   (JetUP accepts at most 12 characters, so a longer password you had in mind was not saved). MTG hit this himself; with
   the exact password it worked straight away.
@@ -70,6 +78,6 @@ and the failed log in. Turn them into tip cards instead:
 ## Status
 
 - [x] Part 1 video received 7 Nov 2026 (5:59, silent, 720x1562); edit in progress, redacted
-- [x] Part 2 narration saved 7 Nov 2026; video to come
+- [x] Part 2 narration saved 7 Nov 2026 (two messages); video to come via Google Drive, like part 1
 - [ ] Part 3 onwards (KYC next): MTG is recording
 - [ ] MTG's links received

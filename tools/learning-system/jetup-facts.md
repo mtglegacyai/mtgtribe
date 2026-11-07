@@ -19,7 +19,7 @@ the voice bank).
 | Partner link, not Client link | Every member has two links. New people sign up with the Partner link | get-started part 1, FAQ | MTG's guide |
 | Name at sign-up | First and last name exactly as on the ID (no nickname), or KYC fails | get-started part 1 | Sunday training 7 Nov 2026 |
 | CopyX banner | Tap "Login to CopyX". On some new accounts it says "Register": same step. Never register on CopyX directly | get-started part 2 | MTG's guide screenshots; Sunday training; MTG's part 2 recording (7 Nov 2026) says "Register CopyX" on his new account |
-| Sync | Enter the same password as JetUP, tick the boxes, tap "Sync Account"; "Syncing with CopyX", then "Sync successful". An email to validate the password follows (check spam); MTG could log in to TAG Markets before it arrived | get-started part 2 | MTG's part 2 narration, 7 Nov 2026 (confirm on the video) |
+| Sync | Enter the same password as JetUP, tick the boxes, tap "Sync Account"; "Syncing with CopyX", then "Sync successful". Then log in to TAG Markets with the same email and password; the TAG Markets email arrives (it came after the first log in for MTG): tap "Confirm email address", "Verification successful", then log in again. Confirm the email before KYC | get-started part 2 | MTG's part 2 narration, 7 Nov 2026 (confirm on the video) |
 | TAG Markets log in | Same email and the exact same password as JetUP (12 characters at most). "Username and password incorrect" usually means the password differs | get-started part 2, FAQ | MTG's part 2 narration, 7 Nov 2026 |
 | Linked | The banner shows "User Active" and the CU number | get-started part 2 | MTG's guide |
 | KYC | TAG Markets questions, then Sumsub ID and face scan, on the phone | get-started part 3 | MTG's guide |

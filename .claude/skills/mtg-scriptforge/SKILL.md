@@ -119,6 +119,7 @@ Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a 
   This also keeps his YouTube and TikTok channels within platform rules.
 - **Psychology and manipulation topics** are for awareness and self protection only (spotting scams, FOMO, pressure
   tactics). Never use those tactics on the viewer.
+- **MTG's photo** is always shown in a circle (his rule since 7 November 2026), never the old rounded square.
 - **Wording.** "Potential business partners" and "business partners", never "downline" or "recruits". "Training", not
   "demo". Say abbreviations in full the first time.
 - **Write for the ear.** Simple words, varied sentence length, no walls of text, every line earns its place.
@@ -132,7 +133,8 @@ Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a 
 3. Voice: reuse recorded lines first, new lines only with MTG's go-ahead (HeyGen "MTG Master Voice V2").
 4. Captions from the final audio: `tools/video3d/scripts/transcribe.py`.
 5. Build: `tools/video3d/` for 3D (see its README) or the GrowKaz Stickman Studio plugin for stick-figure stories;
-   MTG's full photo card at the greeting and end card; closing track 50 seconds before the end.
+   MTG's photo, always in a circle with a gold ring, at the greeting and end card; closing track 50 seconds before
+   the end.
 6. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
 7. Put the video where it helps: the matching guide page (vertical in the phone frame, horizontal in the laptop frame,
    per CLAUDE.md), YouTube, TikTok and WhatsApp status.

@@ -1,5 +1,5 @@
 // MTG brand tokens, taken from the approved invite video (tools/invite-horizontal/stage.html)
-// and the gold photo frame (brand-assets branch, brand/photo_card.py).
+// and the gold photo frame colours (brand-assets branch, brand/photo_card.py). MTG's photo is always shown in a circle.
 // Rule: no em dashes or en dashes in any on-screen text.
 
 export const BRAND = {

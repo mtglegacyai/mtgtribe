@@ -34,6 +34,16 @@ publish without approval.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 
+## Standing rule: MTG's profile photo is always a circle (MTG, 7 November 2026)
+
+"Always put my profile picture in a circle, not in the current shape." In every video, page, thumbnail and graphic,
+MTG's profile photo is shown in a circle with a gold gradient ring and a soft gold glow. This replaces the square with
+rounded corners in section 10a of the mtg-creative-standard skill. Everything else in 10a still applies: use the whole
+photo (face, mtgTribe.com t-shirt print and sign visible, never a zoomed face-only crop), show it large and make room
+in the layout, and use the small face crop only for the tiny brand bar icon. Reference code: `PhotoCard` in
+`tools/video3d/src/components/PhotoCard.tsx`. Python pipelines that use `brand/photo_card.py` (brand-assets branch)
+need the same circle before their next render.
+
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 
 Every MTG website gets the system in the skill `.claude/skills/mtg-site-learning-system/` (MTG can also save it to his

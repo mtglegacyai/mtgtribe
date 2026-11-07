@@ -92,7 +92,7 @@ graphics card, the default (`angle`) is much faster.
    - `src/three/Studio.tsx`: `StudioLights` (premium gold product light, offline) and `CameraRig`.
    - `src/three/BuildingBlocks.tsx`: example of 3D objects that land exactly on spoken words.
    - `src/components/Captions.tsx`: word by word captions, the spoken word in gold, kept inside the safe area.
-   - `src/components/PhotoCard.tsx`: MTG's full photo in the gold frame. `BrandBar.tsx`: the small brand bar.
+   - `src/components/PhotoCard.tsx`: MTG's photo, always in a circle with a gold ring (his rule since 7 November 2026). `BrandBar.tsx`: the small brand bar.
    - `src/components/ClosingTrack.tsx`: "They Call Me MTG" starting 50 seconds before the end, dipping under speech.
    - `src/lib/media.ts`: exact audio length, captions loading, word start frames for syncing.
 5. **Preview** in `npm run studio`, then render, then watch the MP4 with sound.

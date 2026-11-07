@@ -67,6 +67,28 @@ Differences from the current site, to apply when the video is in: the 12 charact
     let the browser remember the password). Success check: you are back on the TAG Markets dashboard with your email
     confirmed. **Confirm the email before KYC.** End of part 2. Part 3: verify your identity (KYC).
 
+### Part 2 recording map (received 7 Nov 2026: 13:00, silent, 720x1562; raw file private, never committed)
+
+| Source time | What it shows | Edit |
+|---|---|---|
+| 0:00 | Phone app switcher (another app's balance) | cut |
+| 0:04 to 0:24 | JetUP profile, then profile settings and the Partner QR | keep briefly, hide all personal details |
+| 0:28 to 1:12 | CopyX banner: "CopyX Registration ... Register CopyX", warning "Do not register directly on the CopyX platform, as the account will not be synchronized" | keep |
+| 1:16 to 1:52 | "Welcome to Copy X": password field, three tick boxes (agreements; CFD risk; "80% of retail investors lose money"), Sync Account | keep, hide the password |
+| 1:56 | "Syncing with Copy X..." | keep |
+| 2:00 to 2:28 | "Sync Successful!", tick "I understand that I need to review my email...", Close | keep |
+| 2:32 to 3:52 | Home screen with his apps, then the email app (black) | cut |
+| 3:56 to 4:04 | Banner now "User Active" with the CU number and "Login to CopyX" | keep, hide the CU number |
+| 4:08 to 5:08 | TAG Markets: checking your browser, log in, typing | keep, hide email, keyboard strip |
+| 5:12 to 7:00 | "Username and/or Password are incorrect", email search in Gmail, app switcher | cut (tip cards) |
+| 7:04 to 7:52 | Banner, profile with IB ID and CU number, BIX and Bit1 banners, log in again | mostly cut, hide everything personal |
+| 8:12 to 8:44 | Log in filled (the password shows in plain text), checking, "Verification successful" | keep, hide email and password |
+| 8:48 to 10:16 | TAG Markets dashboard: Balance $0.00, "Please complete your KYC verification in order to make a deposit, upload documents", My wallet balances, Deposit, My Trading Accounts | keep |
+| 10:20 to 10:56 | App switcher, email app (black) | cut |
+| 11:00 to 11:28 | "Your email has been successfully validated... click here to log in" | keep |
+| 11:32 to 11:56 | Log in again (email and password visible) | keep, hide both |
+| 12:00 to 12:56 | TAG Markets dashboard | keep (end of part 2) |
+
 Do not show (MTG, 7 Nov 2026): his search through inbox, spam, promotions and other folders for the TAG Markets email,
 and the failed log in. Turn them into tip cards instead:
 - **Tip: no TAG Markets email yet?** It can take a while, and in MTG's case it arrived only after his first log in to
@@ -78,6 +100,6 @@ and the failed log in. Turn them into tip cards instead:
 ## Status
 
 - [x] Part 1 video received 7 Nov 2026 (5:59, silent, 720x1562); edit in progress, redacted
-- [x] Part 2 narration saved 7 Nov 2026 (two messages); video to come via Google Drive, like part 1
+- [x] Part 2 narration saved; video received 7 Nov 2026 (13:00) and mapped; edit after the part 1 preview
 - [ ] Part 3 onwards (KYC next): MTG is recording
 - [ ] MTG's links received

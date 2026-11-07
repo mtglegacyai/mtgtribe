@@ -229,7 +229,15 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
    - **Stick-figure stories:** the GrowKaz Stickman Studio plugin (`growkaz-stickman:make-2d-video`) when it is
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
-5. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
+   - **Sound, every video (MTG, 7 November 2026: "I didn't hear the sound effects, not even a single one"):** sound
+     effects on the moments that matter (reveals, counters, stamps, pop-ups, transitions), a soft music bed that
+     follows the story's mood and dips under his voice, and his closing track "They Call Me MTG" from 50 seconds
+     before the end (the bed hands over to it). Made in code, so no licences or copyright claims
+     (`scripts/make_sound.py` in the studio). Keep effects soft and the voice on top.
+   - **Both layouts:** long videos are delivered in 16:9 and 9:16 from one set of scenes, so MTG can compare them and
+     post each where it fits. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
+5. Check frames in both layouts before the full render (`scripts/qc-stills.mjs`), preview to MTG, fix, render the
+   Shorts cut-downs, and only publish after his approval.
 6. Run the final compliance check (`references/compliance.md` section 5: video, thumbnail, title, description, links,
    platform labels) and hand over the posting pack (`references/posting-pack.md`) with the compliance record filled in.
 7. Put the video where it helps: the matching website page (9:16 inside the slim gold phone frame, 16:9 inside the

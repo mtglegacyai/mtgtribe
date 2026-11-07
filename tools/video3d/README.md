@@ -84,6 +84,11 @@ graphics card, the default (`angle`) is much faster.
    python3 scripts/transcribe.py public/voice/my-video.m4a public/captions/my-video.json
    ```
    Then read the captions back while listening: names like MTG, ALTRUVA or JetUP can be misheard.
+   When the narration is made in sections (one HeyGen file per section), use the script's own words with Whisper's
+   timing, section by section (more reliable than one long file):
+   ```bash
+   python3 scripts/align_captions.py public/videos/01/voice public/videos/01/spoken-script.txt public/videos/01/captions.json --sections public/videos/01/timeline.json --replace public/videos/01/caption-replacements.json
+   ```
    Existing transcripts (like `tools/invite-horizontal/transcript.json`) or .srt files convert with
    `npm run captions -- <input> <output.json> --from <s> --to <s>`.
 3. **Storyboard** the beats (what is said, what the viewer sees, when) before building expensive scenes.
@@ -94,9 +99,27 @@ graphics card, the default (`angle`) is much faster.
    - `src/components/Captions.tsx`: word by word captions, the spoken word in gold, kept inside the safe area.
    - `src/components/PhotoCard.tsx`: MTG's photo, always in a circle with a gold ring (his rule since 7 November 2026). `BrandBar.tsx`: the small brand bar.
    - `src/components/ClosingTrack.tsx`: "They Call Me MTG" starting 50 seconds before the end, dipping under speech.
+   - `src/components/MusicBed.tsx`: a soft music bed under the whole video that dips under every spoken word and
+     hands over to the closing track.
    - `src/lib/media.ts`: exact audio length, captions loading, word start frames for syncing.
-5. **Preview** in `npm run studio`, then render, then watch the MP4 with sound.
-6. **Show MTG the preview.** Never publish or upload without his approval.
+   - Video 01 (`src/compositions/whatif01/`) is the reference for a full long video: one set of scenes for 16:9 and
+     9:16, 3D card entrances (`Flip`), a slow camera push-in (`Stage`), Leo clips in gold windows (`LeoClip`) and
+     sound effects on spoken words (`Cues`).
+5. **Sound (MTG, 7 November 2026: every video has sound effects and a music bed).** All made in code, so there are no
+   licences or copyright claims:
+   ```bash
+   python3 scripts/make_sound.py sfx                                    # effects into public/sfx/ (shared)
+   python3 scripts/make_sound.py music public/videos/NN/music-plan.json public/videos/NN/music-bed.wav
+   ```
+   The effects come from the GrowKaz Stickman plugin's sound kit (install the plugin first; needs `pip install scipy`)
+   plus our own coin, stamp, shutter and paper. Keep effects soft (volume 0.15 to 0.45) and the voice on top.
+6. **Check frames before the full render** (one browser for all stills, much faster than `remotion still`):
+   ```bash
+   npx remotion bundle --out-dir=/tmp/bundle
+   node scripts/qc-stills.mjs /tmp/bundle /tmp/qc WhatIf01-9x16 public/videos/01/timeline.json 1:3 1:12.5 8:33
+   ```
+7. **Preview** in `npm run studio`, then render, then watch the MP4 with sound.
+8. **Show MTG the preview.** Never publish or upload without his approval.
 
 ## Three rules for 3D in Remotion
 
@@ -129,10 +152,11 @@ tools/video3d/
   src/brand.ts            colours, brand lines, file paths
   src/fonts.ts            brand fonts, bundled locally
   src/compositions/       one file per video
-  src/components/         captions, photo card, brand bar, closing track
+  src/components/         captions, photo card, brand bar, closing track, music bed
   src/three/              3D lights, camera, objects
   src/lib/                media helpers, safe areas for 16:9 and 9:16
-  scripts/                transcribe.py, whisper-to-captions.mjs, fetch-brand.mjs
+  scripts/                transcribe.py, align_captions.py, make_sound.py, qc-stills.mjs, whisper-to-captions.mjs,
+                          fetch-brand.mjs
   public/                 voice, captions, music and brand files used by videos
   out/                    rendered videos (not saved in git)
 ```

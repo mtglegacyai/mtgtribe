@@ -11,3 +11,4 @@ public/videos/*/voice/*.wav
 public/videos/*/narration.wav
 public/videos/*/leo/*.mp4
 public/videos/*/leo/*.png
+public/videos/*/music-bed.*

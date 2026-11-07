@@ -10,6 +10,7 @@ export const RemotionRoot: React.FC = () => (
 	<>
 	<Folder name="Videos">
 		<Composition id="WhatIf01-16x9" component={WhatIf01} width={1920} height={1080} fps={WHATIF01_FPS} durationInFrames={WHATIF01_FRAMES} defaultProps={{closingTrack: null}} />
+			<Composition id="WhatIf01-9x16" component={WhatIf01} width={1080} height={1920} fps={WHATIF01_FPS} durationInFrames={WHATIF01_FRAMES} defaultProps={{closingTrack: null}} />
 		<Still id="Thumb01A" component={Thumb01A} width={1280} height={720} />
 		<Still id="Thumb01B" component={Thumb01B} width={1280} height={720} />
 	</Folder>

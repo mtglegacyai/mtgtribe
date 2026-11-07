@@ -1,7 +1,9 @@
 # What If Prices Doubled Every Day? Posting pack (7 November 2026, awaiting MTG's approval)
 
-File: `tools/video3d/out/whatif01-preview.mp4` (16:9, 1920x1080, 30 fps, 4:27). Preview only: the closing track
-"They Call Me MTG" is added when MTG supplies the mp3.
+Files (v2): `tools/video3d/out/whatif01-v2-16x9.mp4` (16:9, 1920x1080, 30 fps, 4:24) for YouTube and Facebook, and
+`tools/video3d/out/whatif01-v2-9x16.mp4` (9:16, 1080x1920, same length, 4:24) for vertical feeds where long videos are allowed
+(TikTok up to 10 min, Facebook). Instagram Reels and YouTube Shorts need the short cuts (3 Shorts, after approval).
+Preview only: the closing track "They Call Me MTG" is added when MTG supplies the mp3.
 Goal: reach (+ tribe growth). Stage: discover. Main address: mtgtribe.com/group.
 
 ## Title (+ 2 alternates for a re-post or test)
@@ -25,15 +27,15 @@ In 2008, prices in Zimbabwe doubled about every 24.7 hours. In this training you
 0:00 Imagine your bread doubling every day
 0:13 Hi, I'm MTG
 0:25 It happened next door: guess the zeros
-0:50 Prices doubled about every 24.7 hours
-1:14 Why it happened
-1:36 How families coped
-2:05 The 100 trillion dollar note
-2:21 When money was cheaper than paper
-2:56 Money is a promise
-3:13 The lesson
-3:42 Join the MTG TRIBE
-4:02 Thank you
+0:49 Prices doubled about every 24.7 hours
+1:13 Why it happened
+1:34 How families coped
+2:03 The 100 trillion dollar note
+2:19 When money was cheaper than paper
+2:53 Money is a promise
+3:11 The lesson
+3:39 Join the MTG TRIBE
+3:59 Thank you
 
 💬 How many zeros did you guess? And finish this sentence: money is ___
 💾 Save this for the day someone tells you money can't lose its value.
@@ -91,7 +93,7 @@ DOUBLED EVERY DAY
 Concept A: the 3D loaf, giant price "R10,737,418,240", a "30 DAYS LATER" chip, MTG's circle photo. Concept B: Leo amazed beside "14 ZEROS".
 
 ## End screen and cards
-End screen (last 20 s, over the end card): subscribe button + the next Mind Opener (video 02, the sunken stone). Card at 2:05: video 02.
+End screen (last 20 s, over the end card): subscribe button + the next Mind Opener (video 02, the sunken stone). Card at 2:03: video 02.
 
 ## Compliance record (compliance.md)
 Risk tier: green (money history and education; no opportunity, no returns, no recruitment, no affiliate links).

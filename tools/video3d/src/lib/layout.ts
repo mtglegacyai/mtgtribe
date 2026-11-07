@@ -13,7 +13,7 @@ export const useLayout = () => {
 		safe: vertical
 			? {top: 200, bottom: 480, left: 70, right: 150}
 			: {top: 60, bottom: 90, left: 90, right: 90},
-		captionSize: vertical ? 74 : 64,
+		captionSize: vertical ? 78 : 72,
 		captionMaxWidth: vertical ? 820 : 1500,
 	};
 };

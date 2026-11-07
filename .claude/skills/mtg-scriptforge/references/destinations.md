@@ -1,34 +1,45 @@
-# Where each video sends people
+# Where each video sends people (all of MTG's websites)
 
-Source: mtgtribe.com pages and llms.txt (checked 7 November 2026). Re-check a link before a video that relies on it is
-published. Keep `?ref=mtg` and other referral parameters exactly as they are on the live pages.
+Known on 7 November 2026 (from mtgtribe.com and its llms.txt). Sites change: before a video that relies on a link is
+published, open the live page and check it. Keep referral parameters (such as `?ref=mtg`) exactly as the live pages use
+them. When you work on a site, read it first (Step 0) and add what you learn here.
 
-## Tribe and platforms (main CTA for bridge videos)
+## Tribe and platforms (main CTA for bridge videos, on every site)
 
 | Destination | Address |
 |---|---|
 | MTG TRIBE hub | mtgtribe.com |
 | WhatsApp tribe | mtgtribe.com/group |
-| Tribe dashboard (streams, playbook, prices, tools) | mtgtribe.com/dashboard |
+| Tribe dashboard (income streams, playbook, prices, tools) | mtgtribe.com/dashboard |
 | YouTube | youtube.com/@mtgtribe |
 | TikTok | tiktok.com/@joinmtgtribe |
 | Telegram | t.me/mtgtribez |
 | Facebook | facebook.com/Musa.TheMTG |
 
 Platform fit: on TikTok point to the WhatsApp tribe and YouTube; on YouTube point to the WhatsApp tribe, Telegram and
-TikTok.
+TikTok. Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard).
+
+## MTG's websites
+
+| Site | What it is | Status (7 Nov 2026) |
+|---|---|---|
+| mtgtribe.com | the MTG TRIBE home, dashboard and guides (ALTRUVA, JetUp and TAG Markets, CNTN) | live |
+| bellveraffiliates.com | Bellver Card (income stream 1); sign-up link on the dashboard: app.bellvercards.com?ref=mtg | finished |
+| bitcoinwealthpays.com | Bitcoin Wealth (income stream 4) | still being built: tribe CTA until finished |
+| clickbaitpaysus.com | ClickBaitPays (income stream 3) | MTG's site still being built: tribe CTA until finished |
+| musathegiant.com | MTG's own website; design reference: musathegiant.com/cards/bellvercards | live |
 
 ## Income streams (dashboard order)
 
 | # | Stream | Destination | Notes |
 |---|---|---|---|
-| 1 | Bellver Card | bellveraffiliates.com | finished site |
+| 1 | Bellver Card | bellveraffiliates.com | |
 | 2 | JetUp and TAG Markets | mtgtribe.com/jetup (honest checks: /jetup/five-checks, sign-up: /jetup/get-started) | trading is high risk; show the 24x Amplify exposure and the loss limit |
-| 3 | ClickBaitPays | clickbaitpaysus.com | MTG's guide still being built: send to the tribe until it is finished |
-| 4 | Bitcoin Wealth | bitcoinwealthpays.com | still being built: send to the tribe until it is finished |
+| 3 | ClickBaitPays | clickbaitpaysus.com | |
+| 4 | Bitcoin Wealth | bitcoinwealthpays.com | |
 | 5 | ALTRUVA | mtgtribe.com/altruva (fit check: /altruva/dashboard/is-it-right-for-me) | independent guide; MTG earns as a sponsor |
 
-## Topic pages (direct videos)
+## Topic pages on mtgtribe.com (direct videos)
 
 | Topic | Destination |
 |---|---|
@@ -49,6 +60,7 @@ TikTok.
 | 3.5 What if you lost your recovery phrase? | how self custody works | SafePal setup tutorial, safety page |
 | 3.4 What if banks closed for a week? | why people hold some value they control | crypto basics, tribe |
 | 4.5 What really happens when you send USDT | networks and fees | glossary, tribe |
-| 5.5 Two pizzas for 10,000 Bitcoin (22 May 2010) | early adoption and patience, no price promises | tribe |
+| 5.5 Two pizzas for 10,000 Bitcoin (22 May 2010) | early adoption and patience, no price promises | tribe, Bitcoin Wealth when finished |
 | 5.5 The stokvel, Africa's savings network | pooling explained (and where the analogy stops) | tribe, ALTRUVA explainer 1 |
 | 1.5 Why the money is gone by the 5th | budgeting, the five moves | tribe |
+| 9.1 Paying with crypto in everyday life | what a crypto card does and does not do | Bellver Card, crypto card page |

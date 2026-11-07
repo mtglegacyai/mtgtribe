@@ -75,4 +75,7 @@ before the end, preview before anything is published.
 MTG's ScriptForge prompt, adapted to his niche, is the skill `.claude/skills/mtg-scriptforge/`: niche menu, 10 ideas,
 full script with visual and build cues, Shorts plan. Bridge topics (self-improvement, psychology, What If, science,
 history) pull in new viewers and end on the MTG TRIBE; his own niche sends people to the right page
-(`references/destinations.md`).
+(`references/destinations.md`). It works for ALL his websites (MTG, 7 November 2026): the account version bundles the
+3D studio as `kit/video3d/`, which installs into any site's project. After changing the skill or `tools/video3d/`,
+rebuild the upload file with `python3 tools/skills/package_skill.py mtg-scriptforge` and give MTG the new
+`tools/skills/dist/mtg-scriptforge.skill` to upload to his claude.ai account.

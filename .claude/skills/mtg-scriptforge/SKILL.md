@@ -1,34 +1,46 @@
 ---
 name: mtg-scriptforge
-description: "MTG's video idea and script engine (his ScriptForge prompt, adapted to his niche): pick a niche from the menu, get 10 video ideas, then a full 3 to 4 minute script in his voice with visual cues, a production plan for the 3D studio or the GrowKaz stickman studio, Shorts cut-downs and the right destination (mtgtribe.com, the WhatsApp tribe, a guide page or an income stream). Use this whenever MTG (MusaTheGiant, mtgtribe.com) asks for video ideas, a script, a voiceover, a YouTube or TikTok or Shorts plan, content to promote his websites, products, services, income streams, tools or the MTG TRIBE, faceless or stick-figure videos, or mentions ScriptForge, even if he does not name this skill."
+description: "MTG's video idea, script and 3D production system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com and any new site), based on his ScriptForge prompt: a niche menu, 10 video ideas, then a full 3 to 4 minute script in his voice with visual and build cues, Shorts cut-downs and the honest destination for every video, plus a bundled Remotion and Three.js 3D studio (word synced captions, audio, his photo in a circle) that installs into any site's project. Use whenever MTG (MusaTheGiant) asks for video ideas, scripts, voiceovers, YouTube, TikTok or Shorts plans, 3D or animated videos, or content to promote any of his websites, products, services, income streams, tools or the MTG TRIBE, or mentions ScriptForge, even if he does not name this skill."
 ---
 
-# MTG ScriptForge
+# MTG ScriptForge (all websites)
 
 MTG supplied the ScriptForge prompt on 7 November 2026 ("2D Niche Prompt for Claude"). This is that prompt adapted to
-his niche, his brand and his production tools. Always apply it together with **mtg-creative-standard** (voice, photo,
-music, visuals, preview) and **mtg-hooks-standard** (hooks, curiosity loop, CTAs, tribe growth). MTG's latest
-instruction in the chat always wins.
+his niche, his brand and his production tools, for every one of his websites. Always apply it together with
+**mtg-creative-standard** (voice, photo, music, visuals, preview) and **mtg-hooks-standard** (hooks, curiosity loop,
+CTAs, tribe growth). When a website section needs a short explainer, **mtg-site-learning-system** decides which videos
+that site needs; this skill writes and produces them. MTG's latest instruction in the chat always wins.
+
+**MTG's photo is always shown in a circle** with a gold gradient ring and a soft gold glow (his rule since
+7 November 2026). The whole photo fills the circle so his face, the t-shirt print and the sign stay visible; never a
+zoomed face-only crop. This replaces the rounded square in older copies of mtg-creative-standard section 10a.
+
+## Step 0: know the website
+
+Find out which website the videos are for (the project you are in, or ask). Before suggesting ideas, read what that
+site really offers: its `llms.txt`, home page, dashboard and guide pages in the repository, or the live site. Note its
+products, opportunities, tools and calculators, sign-up and referral links exactly as the live pages use them, and what
+is finished or still being built. `references/destinations.md` lists what is known for each site; add what you find.
 
 ## The idea: bridge, then destination
 
-Broad, interesting topics bring in new viewers who would never search for "ALTRUVA" or "copy trading". Each of those
-videos is angled toward money, crypto, safety or digital life, so its natural next step is MTG's world. Direct videos
-then teach his own niche and send people to the exact page that helps them.
+Broad, interesting topics bring in new viewers who would never search for a product name. Each of those videos is
+angled toward money, crypto, safety or digital life, so its natural next step is MTG's world. Direct videos then teach
+his own niche and send people to the exact page that helps them.
 
 - **Bridge videos** (menu 1 to 5): story first, value first. One honest sentence near the end connects the topic to a
   destination. Main CTA: join the MTG TRIBE (mtgtribe.com or mtgtribe.com/group). Never bolt an income pitch onto a
   story video.
-- **Direct videos** (menu 6 to 10): explainers, tutorials, honest reviews, tool trainings, myth busters. CTA: the one
-  page that answers the viewer's next question (see `references/destinations.md`), then the tribe.
+- **Direct videos** (menu 6 to 11): explainers, tutorials, honest reviews, tool trainings, myth busters, site tours.
+  CTA: the one page that answers the viewer's next question, then the tribe.
 
-Guide MTG through 3 steps. Never skip a step, and wait for his choice before moving on. If he already gave the niche
-or the idea, start at the step that follows.
+Guide MTG through the steps below. Never skip a step, and wait for his choice before moving on. If he already gave the
+niche or the idea, start at the step that follows.
 
 ## Step 1: niche menu
 
 Greet MTG briefly, show this menu and ask him to pick a sub niche by number (for example "3.5"). He may also type his
-own sub niche.
+own sub niche. When the work is for one specific website, show section C first.
 
 **A. BRIDGE TOPICS (pull in new viewers)**
 
@@ -45,6 +57,10 @@ own sub niche.
 8. MARKETS AND COINS: 8.1 Canton Coin and CNTN, 8.2 Building a diversified crypto portfolio, 8.3 Weekly market update
 9. AI AND DIGITAL SKILLS: 9.1 AI tools for everyday life, 9.2 Earning skills for the digital economy, 9.3 Websites and tools, the Digital Architect way
 10. MTG TRIBE: 10.1 The tribe code and the five moves (earn, promote, grow, spend, teach), 10.2 Start your own tribe, 10.3 Lead with value
+
+**C. THIS WEBSITE (built from Step 0)**
+
+11. [site name]: 11.1 The site in 60 seconds, 11.2 How it works or how it pays, 11.3 Sign-up training, 11.4 Each tool or calculator, 11.5 FAQ, myths and honest checks, 11.6 Click by click site tour
 
 ## Step 2: 10 ideas
 
@@ -86,15 +102,15 @@ visuals, never the voice)
 - Science: wonder filled and clear, vivid everyday analogies (buses, queues, shopping, stokvels), no hype beyond the
   evidence.
 - History: a storyteller opening in the middle of a dramatic moment, real names, dates and places.
-- MTG's niche (6 to 10): a trusted family member sitting beside the viewer; one action or idea at a time; exact
-  on-screen labels for tutorials; risks and fees said plainly.
+- MTG's niche and the website (6 to 11): a trusted family member sitting beside the viewer; one action or idea at a
+  time; exact on-screen labels for tutorials; risks and fees said plainly.
 
 **Format**
 
 - Section headers with timestamps.
 - `[NARRATION]` text written to be spoken aloud.
 - `[VISUAL]` what the viewer sees: the object, diagram or action that explains the line, one focal point.
-- `[BUILD]` stickman 2D, 3D, screen recording or photo card, so production can start straight from the script.
+- `[BUILD]` stickman 2D, 3D, screen recording or photo (circle), so production can start straight from the script.
 - `[ON SCREEN]` short text, labels and numbers (no em or en dashes).
 - `(pause)`, *emphasis* and tone notes where they help the voiceover.
 
@@ -113,28 +129,33 @@ Then ask: "Want edits, a different tone, a Shorts version, the storyboard, or a 
 ## Rules
 
 - **Accuracy.** Never invent statistics, quotes, studies, results or dates. Check facts against reliable sources. For
-  MTG's own streams, use his guide pages as the source and link the page. If something is debated, say so.
+  MTG's own streams and sites, use his guide pages as the source and link the page. If something is debated, say so.
 - **Money.** No income promises, no "get rich", no fake balances or testimonials. Show the risk next to every reward
   ("lower risk is not no risk"). Say "not financial advice". Where MTG earns from a referral link, say so plainly.
   This also keeps his YouTube and TikTok channels within platform rules.
 - **Psychology and manipulation topics** are for awareness and self protection only (spotting scams, FOMO, pressure
   tactics). Never use those tactics on the viewer.
-- **MTG's photo** is always shown in a circle (his rule since 7 November 2026), never the old rounded square.
+- **MTG's photo** is always a circle (see above).
 - **Wording.** "Potential business partners" and "business partners", never "downline" or "recruits". "Training", not
   "demo". Say abbreviations in full the first time.
 - **Write for the ear.** Simple words, varied sentence length, no walls of text, every line earns its place.
 - **No em dashes or en dashes** anywhere: commas, colons, full stops or parentheses.
 - **Analogies** say where they stop being accurate (a stokvel explains pooling, it does not prove a platform is safe).
+- **Links.** Keep referral parameters (such as `?ref=mtg`) exactly as the live pages use them. Sites still being built
+  get a tribe CTA until they are finished.
 
 ## From script to video
 
 1. MTG approves the script (and picks the build).
 2. Storyboard the beats (mtg-creative-standard section 6).
 3. Voice: reuse recorded lines first, new lines only with MTG's go-ahead (HeyGen "MTG Master Voice V2").
-4. Captions from the final audio: `tools/video3d/scripts/transcribe.py`.
-5. Build: `tools/video3d/` for 3D (see its README) or the GrowKaz Stickman Studio plugin for stick-figure stories;
-   MTG's photo, always in a circle with a gold ring, at the greeting and end card; closing track 50 seconds before
-   the end.
-6. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
-7. Put the video where it helps: the matching guide page (vertical in the phone frame, horizontal in the laptop frame,
-   per CLAUDE.md), YouTube, TikTok and WhatsApp status.
+4. Build:
+   - **3D:** the studio in `tools/video3d/` of the site's project. If it is not there yet, install it from this skill's
+     `kit/video3d/` (see `references/3d-studio.md`). It makes word synced captions from the final audio, places MTG's
+     circle photo, the brand bar and the closing track, and renders 16:9 and 9:16.
+   - **Stick-figure stories:** the GrowKaz Stickman Studio plugin (`growkaz-stickman:make-2d-video`) when it is
+     installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
+   - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
+5. Preview to MTG, fix, render the Shorts cut-downs, and only publish after his approval.
+6. Put the video where it helps: the matching website page (9:16 inside the slim gold phone frame, 16:9 inside the
+   laptop frame, and the player closes itself when the video ends), YouTube, TikTok and WhatsApp status.

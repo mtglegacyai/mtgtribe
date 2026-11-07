@@ -1,6 +1,6 @@
 ---
 name: mtg-scriptforge
-description: "MTG's research-driven, platform-compliant video system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com, new sites), built on his ScriptForge prompt and run as a business. Every video starts with research (similar videos winning big on YouTube, TikTok and Instagram, real view counts, the gap, how ours will be better), gets a job (reach, traffic, leads, sign-ups, sales, team or tribe growth), an interaction layer, the right website address at the right moment, the right length and a posting pack, and passes a compliance gate for YouTube, TikTok, Meta and X rules so videos and channels stay safe. Includes a niche menu, 10 ideas, scripts in his voice, Shorts, research and compliance tools and a 3D studio. Use whenever MTG (MusaTheGiant) asks for video ideas, research, scripts, voiceovers, YouTube, TikTok or Shorts plans, captions, 3D videos, platform rules, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE."
+description: "MTG's research-driven, platform-compliant video system for ALL his websites (mtgtribe.com and its guides, bellveraffiliates.com, bitcoinwealthpays.com, ClickBaitPays, MusaTheGiant.com, new sites), built on his ScriptForge prompt and run as a business. Every video starts with research (similar videos winning big on YouTube, TikTok and Instagram, real views, the gap, how ours will be better), gets a job (reach, traffic, leads, sign-ups, sales, team or tribe growth), an interaction layer, the right website address at the right moment, the right length and a posting pack, and passes a compliance gate for YouTube, TikTok, Meta and X rules. Includes a niche menu, ideas, scripts, Shorts, research and compliance tools and a 3D studio. Use whenever MTG (MusaTheGiant) says "let's create today's video" or asks for video ideas, research, scripts, voiceovers, YouTube, TikTok or Shorts plans, captions, 3D videos, platform rules, or content to grow traffic, sign-ups, sales, his team or the MTG TRIBE."
 ---
 
 # MTG ScriptForge (all websites)
@@ -14,6 +14,12 @@ that site needs; this skill writes and produces them. MTG's latest instruction i
 **MTG's photo is always shown in a circle** with a gold gradient ring and a soft gold glow (his rule since
 7 November 2026). The whole photo fills the circle so his face, the t-shirt print and the sign stay visible; never a
 zoomed face-only crop. This replaces the rounded square in older copies of mtg-creative-standard section 10a.
+
+## Today's video (the daily routine)
+
+When MTG says "let's create today's video" (or anything like it), do the whole job without asking what to make: next
+hook format in the rotation, a fresh topic from his niche, research, script, voice, build in the house format, cover,
+posting pack, preview. Full routine, the hook rotation and the credit rule: `references/daily-video.md`.
 
 ## This is MTG's business
 

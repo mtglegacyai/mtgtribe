@@ -120,17 +120,24 @@ def build_videos():
   <div class="rv"><p class="eyebrow" style="margin-bottom:14px">1 · Watch first</p>{laptop('5checks', 'JetUP 5 Checks, by MTG (5:25)')}<p class="small center" style="margin:8px 0 0">Lost money before? Five things to check before you try again.</p></div>
   <div class="rv" style="--d:1"><p class="eyebrow" style="margin-bottom:14px">2 · Then do</p>{laptop('training', 'Sign-up training, by MTG (9:09)')}<p class="small center" style="margin:8px 0 0">Every tap: sign up, KYC, deposit, Sonic AI and the $100 promo.</p></div>
  </div>
+ <div class="block rv" id="step-by-step">
+  <p class="eyebrow" style="margin-bottom:6px">3 · Step by step, one part at a time</p>
+  <p class="small" style="margin:0 0 16px">MTG's own phone recordings, tap by tap, with every personal detail hidden. The written steps for each part are on <a href="/jetup/get-started/#videos">Get started</a>.</p>
+  <div class="vlist"><div class="vpart">{phone('tut1')}<b>Part 1</b><small>Create your JetUP account</small></div>
+   <div class="vpart">{phone('tut2')}<b>Part 2</b><small>Link JetUP to TAG Markets</small></div>
+   <div class="vsoon"><b>Parts 3 to 6</b><small>KYC, deposit, Sonic AI and the promo: coming next.</small></div></div>
+ </div>
  <div class="card pad rv vrow" id="profit-share">
   <div>{phone('profitshare')}</div>
-  <div><p class="eyebrow">3 · JetUP's own explainer</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">Profit Share explained</h2>
+  <div><p class="eyebrow">4 · JetUP's own explainer</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">Profit Share explained</h2>
    <p class="lede">JetUP's official 74-second video on the 1.5% Profit Share across 10 levels. Read it with the <a href="/jetup/partner-plan/">partner plan rules</a>: what a partner earns can be zero.</p></div>
  </div>
  <p class="call info rv">{icon('i-info2')}<span>More short explainers are on the way, built from these pages. Follow <a href="{YT}" target="_blank" rel="noopener">YouTube @mtgtribe</a> or <a href="{TT}" target="_blank" rel="noopener">TikTok @joinmtgtribe</a> so the next one finds you first.</span></p>
 </div></section>
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Videos: Trainings by MTG | MTG',
-                'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the step-by-step sign-up training with Sonic AI and the Dennis promo, and JetUP\'s own Profit Share explainer.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('profitshare')])
+                'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the sign-up training with Sonic AI and the Dennis promo, MTG\'s step-by-step phone videos (create your JetUP account, link TAG Markets) and JetUP\'s own Profit Share explainer.',
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('profitshare')])
 
 DOWNLOADS = [
  ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),
@@ -173,7 +180,7 @@ FAQ = [
  ('Basics', [
   ('What is JetUP?', 'JetUP is a community and partner program with training and AI tools. Its portal is jetup.ibportal.io and its hub is jet-up.ai. JetUP does not trade and does not hold your money.'),
   ('What is TAG Markets?', "TAG Markets is the broker. Its trading company, T.M. Financials Ltd, is licensed in Mauritius by the FSC (licence GB21026474). Your trading account is opened there, in your own name."),
-  ('How are JetUP and TAG Markets linked?', 'JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets. You create your TAG Markets account by tapping Login to CopyX inside the JetUP portal, so the two are linked.'),
+  ('How are JetUP and TAG Markets linked?', 'JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets. You create your TAG Markets account by tapping Register CopyX inside the JetUP portal (after the sync the button says Login to CopyX), so the two are linked.'),
   ('What are CopyX and Sonic AI?', "CopyX is TAG Markets' copy trading platform. Sonic AI is the strategy members connect: it trades gold (XAU/USD), and its track record is published on Myfxbook."),
  ]),
  ('Money', [

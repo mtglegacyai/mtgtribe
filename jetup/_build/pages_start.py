@@ -53,12 +53,16 @@ def build_start():
       'you see "Registration Successful. You can now log in." After you verify your email and log in, your profile shows Account Type: Partner.',
       extra_before='<div class="pvid">' + phone('tut1', "Watch MTG do part 1 (3:38)") + '</div>')
     p2 = part(2, 'Link JetUP to TAG Markets', 'One tap inside JetUP creates and links your TAG Markets account.', [
-        'Log in at <b>jetup.ibportal.io</b>.',
-        'Scroll down to the CopyX banner and tap ' + k('Login to CopyX') + '. On some new accounts the button says ' + k('Register') + ': that is the same step.',
-        'Enter the <b>same password</b> you created on JetUP, read and tick the boxes, then tap ' + k('Sync Account') + '. You\'ll see ' + k('Syncing with Copy X...') + '. Use the <b>same email and password</b> for TAG Markets.',
-      ], [('04', 'Log in, scroll down, tap Login to CopyX'), ('05', 'Syncing with Copy X')],
-      'the banner says "User Active", with your CU number.',
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Never register directly on the CopyX platform,</b> or your account won\'t be linked to your team.</span></p>' % icon('i-alert'))
+        'Log in at <b>jetup.ibportal.io</b> with the email and password you created in part 1.',
+        'On your profile, scroll down to the CopyX banner and tap ' + k('Register CopyX') + '.',
+        'Enter the <b>same password</b> you created on JetUP, read and tick the three boxes, then tap ' + k('Sync Account') + '. You\'ll see ' + k('Syncing with Copy X...') + ', then ' + k('Sync Successful!') + '.',
+        'Tick "I understand that I need to review my email and validate my password..." and tap ' + k('Close') + '. The banner now says ' + k('User Active') + ' and the button says ' + k('Login to CopyX') + '.',
+        'Tap ' + k('Login to CopyX') + '. TAG Markets opens at <b>portal.tagmarkets.com</b>. Wait for the "Verify you are human" check, then log in with the <b>same email and exactly the same password</b>.',
+        'Check your email for the TAG Markets email and tap ' + k('Confirm email address') + '. It can take a while: MTG\'s arrived after his first log in. Not in your inbox? Check spam or junk mail. You\'ll see "Verification successful". If the page does not move on, tap ' + k('click here') + ' and log in again.',
+      ], [('04', 'The CopyX banner in your JetUP profile'), ('05', 'Syncing with Copy X')],
+      'the banner says "User Active" (with your CU number), and you are on your TAG Markets dashboard with your email confirmed.',
+      extra_before='<div class="pvid">' + phone('tut2', "Watch MTG do part 2 (3:35)") + '</div>',
+      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Never register directly on the CopyX platform,</b> or your account won\'t be linked to your team.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Username and/or Password are incorrect"?</b> Use exactly the password you created on JetUP, with the same capitals, numbers and symbols.</span></p>' % (icon('i-alert'), icon('i-info2')))
     p3 = part(3, 'Verify your identity', "TAG Markets asks a few questions, then checks your ID.", [
         'Answer TAG Markets\' questions honestly: your income, your net worth, your investment goal, and whether you understand the risks.',
         'Read their reminder: not for residents of the European Union, you may have fewer protections than with a local provider, and %s of retail investor accounts lose money when trading CFDs.' % RETAIL_LOSS,
@@ -158,8 +162,9 @@ def build_start():
   <div class="block rv vstrip" id="videos">
    <p class="eyebrow" style="margin-bottom:6px">Step-by-step videos, one per part</p>
    <p class="small" style="margin:0 0 16px">MTG records each part on his phone, tap by tap. Each video also sits at the top of its part below.</p>
-   <div class="vrow"><div class="vpart">{phone('tut1')}<b>Part 1</b><small>Create your JetUP account</small></div>
-    <div class="vsoon"><b>Parts 2 to 6</b><small>Link TAG Markets, KYC, deposit, Sonic AI and the promo: coming next.</small></div></div>
+   <div class="vlist"><div class="vpart">{phone('tut1')}<b>Part 1</b><small>Create your JetUP account</small></div>
+    <div class="vpart">{phone('tut2')}<b>Part 2</b><small>Link JetUP to TAG Markets</small></div>
+    <div class="vsoon"><b>Parts 3 to 6</b><small>KYC, deposit, Sonic AI and the promo: coming next.</small></div></div>
   </div>
   <div class="block rv" id="wallets">
    <p class="eyebrow" style="margin-bottom:14px">Need USDT or USDC? Start here</p>
@@ -223,7 +228,7 @@ def build_start():
     howto = {"@type": "HowTo", "name": "How to join JetUP and TAG Markets, connect Sonic AI and claim the Dennis Fast Start Promo",
              "totalTime": "PT45M", "step": [{"@type": "HowToStep", "position": i + 1, "name": n, "url": SITE + path + '#part-%d' % (i + 1)} for i, n in enumerate(
               ['Create your JetUP account', 'Link JetUP to TAG Markets', 'Verify your identity', 'Fund your TAG Markets account', 'Connect Sonic AI', 'Claim the Dennis Fast Start Promo'])]}
-    ld = [ld_video('training'), ld_video('tut1'), howto]
+    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
                 main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

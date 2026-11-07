@@ -840,7 +840,7 @@ body{overflow-wrap:break-word}
 .joinrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 /* step-by-step phone videos (MTG's own recordings) */
 .pvid{max-width:240px;margin:0 0 18px}
-.vrow{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch}
+.vlist{display:flex;flex-wrap:wrap;gap:18px;align-items:stretch}
 .vpart{display:flex;flex-direction:column;gap:6px;width:200px;color:inherit;text-decoration:none}
 .vpart b{font:800 16px/1.2 var(--f-b);margin-top:6px}.vpart small{color:var(--muted);font:600 13px/1.4 var(--f-b)}
 .vsoon{flex:1 1 200px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:20px;border-radius:22px;border:1.5px dashed rgba(255,255,255,.16)}

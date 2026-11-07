@@ -72,7 +72,7 @@ def build_home():
       <button type="button" class="tick" data-id="c%s" aria-pressed="false"><span class="bx">%s</span>I checked this</button></article>''' % (i, n, h, p, n, icon('i-check2')) for i, (n, h, p) in enumerate(checks))
     parts = [
      ('1', 'Create your JetUP account', "Your sponsor's Partner link, the sign-up form and the email check."),
-     ('2', 'Link JetUP to TAG Markets', 'Tap Login to CopyX inside JetUP, never directly on CopyX.'),
+     ('2', 'Link JetUP to TAG Markets', 'Tap Register CopyX inside JetUP, never register directly on CopyX.'),
      ('3', 'Verify your identity', "TAG Markets' questions, then the ID and face scan by Sumsub."),
      ('4', 'Fund your account', 'Deposit $155 in USDT or USDC on the right network.'),
      ('5', 'Connect Sonic AI', 'Invest 50 only, then the two community codes.'),

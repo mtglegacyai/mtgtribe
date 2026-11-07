@@ -44,7 +44,7 @@ def build_start():
     p1 = part(1, 'Create your JetUP account', 'Open the Partner link from your sponsor and fill in the sign-up form.', [
         "Open the <b>Partner</b> link from your sponsor. Every member has two links, Partner and Client: make sure it's the Partner link.",
         'On the sign-up form, choose ' + k('Individual') + '.',
-        'Type your first name, last name, email and a password, using English letters only.',
+        'Type your first name and last name <b>exactly as they are on your ID</b> (no nickname, or your KYC will not match), then your email and a password, using English letters only.',
         'Choose your country, then type your cell number <b>without the first 0</b>. The country code (for example +27) is already there.',
         'Your password needs an uppercase letter, a lowercase letter, a number and a special character, with no spaces.',
         '<b>Read the two boxes before you tick them.</b> The second one says leverage can amplify losses beyond your initial investment. Take that seriously.',
@@ -54,7 +54,7 @@ def build_start():
       'you see "Registration Successful. You can now log in."')
     p2 = part(2, 'Link JetUP to TAG Markets', 'One tap inside JetUP creates and links your TAG Markets account.', [
         'Log in at <b>jetup.ibportal.io</b>.',
-        'Scroll down to the CopyX banner and tap ' + k('Login to CopyX') + '.',
+        'Scroll down to the CopyX banner and tap ' + k('Login to CopyX') + '. On some new accounts the button says ' + k('Register') + ': that is the same step.',
         "You'll see " + k('Syncing with Copy X...') + '. Use the <b>same email and password</b> for TAG Markets.',
       ], [('04', 'Log in, scroll down, tap Login to CopyX'), ('05', 'Syncing with Copy X')],
       'the banner says "User Active", with your CU number.',
@@ -84,9 +84,9 @@ def build_start():
      <div class="code"><small>Code 2, then Submit</small><b>9MPromo</b><span class="then">Capital M, capital P</span><button type="button" class="copy" data-copy="9MPromo">{icon('i-copy2')}<span class="lbl">Copy 9MPromo</span><span class="done">Copied ✓</span></button></div>
     </div><p class="small" style="margin:0 0 14px;font-weight:700">Both codes are case sensitive. They come from MTG's team.</p>'''
     p5 = part(5, 'Connect Sonic AI', 'The part most people rush. Slow down here.', [
-        'Open the menu, tap ' + k('CopyX') + ', find <b>SONIC</b> and tap ' + k('Details') + ', then ' + k('Connect') + '.',
+        'Open the menu, tap ' + k('CopyX') + ', find <b>SONIC</b> (the first one in the list) and tap ' + k('Details') + ', then ' + k('Connect') + '. <b>Don\'t pick any other trader.</b>',
         'Read the terms: a 30% performance fee taken from profits only, no management fee, no join fee, a one month minimum, and an Amplify account.',
-        'In ' + k('Investment') + ' type ' + k('50') + '. <b>Only 50.</b> Leave the other $100 in your balance for the promo.',
+        'In ' + k('Investment') + ' type ' + k('50') + '. <b>Only 50.</b> The screen shows a $10 minimum, but 50 is the plan. Leave the other $100 in your balance for the promo.',
         '<b>Read the screen most people skip:</b> if the trader loses more than 10% of the starting balance, your account will be liquidated (closed). With a community token, that limit becomes 5%.',
         'Tap the arrow next to ' + k('Community Token') + '. Enter code 1, ' + k('#9M') + ', and tap ' + k('Verify') + '.',
         'A second field opens. Enter code 2, ' + k('9MPromo') + ', tap ' + k('Submit') + ' and wait for the tick.',
@@ -99,13 +99,53 @@ def build_start():
         'In TAG Markets open the menu, tap ' + k('Profile') + ' and write down your <b>CU number</b>.',
         'Go to <b>jet-up.ai</b> and tap the orange ' + k('Dennis Fast Start Promo') + ' tile.',
         'Enter your name, email and CU number exactly as in TAG Markets, then tap ' + k('Join the promo') + '.',
-        "You'll see " + k('Application received!') + ' Wait for the confirmation email.',
+        "You'll see " + k('Application received!') + ' Approval usually takes a few minutes and can take up to 24 hours. Wait for the confirmation email.',
         'When it arrives, open ' + k('CopyX') + ', then ' + k('Follower Hub') + ', then ' + k('Strategies') + '.',
         "You'll see two Sonic accounts: your $50 account ($50 × 24 = $1,200) and your $200 promo account ($200 × 24 = $4,800).",
       ], [('18', 'jet-up.ai: the orange Dennis Fast Start Promo tile and form'), ('20', 'Follower Hub, Strategies, both accounts (balances blurred)')],
       'both Sonic accounts show under Strategies.',
       extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Know the promo rules:</b> profits can be withdrawn any time. The $100 bonus is released after 12 months. Taking your own money out before then ends the promo. Rules can change, so check your dashboard. <a href="/jetup/promo/">All the promo rules</a></span></p>' % icon('i-info2'))
 
+    AFTER = f'''<section class="sec tight" id="after" aria-labelledby="after-h">
+ <div class="wrap stack" style="gap:22px">
+  <div class="center rv"><p class="eyebrow">After you're set up</p><h2 class="h2" id="after-h">Three things you'll want <span class="grad">next</span></h2></div>
+  <div class="grid3">
+   <article class="card pad rv" id="mt5" aria-labelledby="mt5-h">
+    <span class="ped" style="display:inline-grid;margin-bottom:12px"><b>{icon('i-candle2')}</b></span><h3 id="mt5-h" style="margin:0 0 6px;font:800 1.3rem/1.25 var(--f-b)">See every trade in MetaTrader 5</h3>
+    <p class="muted">A read-only view of your own account. You can watch, not trade or withdraw.</p>
+    <ol class="steps">
+     <li><span>Install <b>MetaTrader 5</b> (MT5) from the App Store or Google Play.</span></li>
+     <li><span>Tap {k('New account')} (or add an account) and search for <b>TM Financials</b>, the company behind TAG Markets.</span></li>
+     <li><span>In TAG Markets open {k('CopyX')}, then {k('Follower Hub')}, then {k('Strategies')}, and tap the eye icon on one account.</span></li>
+     <li><span>Copy the <b>account number</b> (your MT5 login) and the <b>investor password</b>. Paste them into MT5 and tap {k('Continue')}.</span></li>
+     <li><span>Open {k('History')}. Add your other account the same way.</span></li>
+    </ol>
+    <p class="success">{icon('i-check2')}<span>Success check: your account opens in MT5. Sonic usually trades only two or three times a day, so a new account's history can be empty at first.</span></p>
+   </article>
+   <article class="card pad rv" id="more" aria-labelledby="more-h">
+    <span class="ped" style="display:inline-grid;margin-bottom:12px"><b>{icon('i-layers2')}</b></span><h3 id="more-h" style="margin:0 0 6px;font:800 1.3rem/1.25 var(--f-b)">Open another strategy later</h3>
+    <p class="muted">Your JetUP membership stays. Each new deposit can become its own Sonic account.</p>
+    <ol class="steps">
+     <li><span>In TAG Markets tap {k('Deposit')} and fund your balance the same way as part 4.</span></li>
+     <li><span>Open {k('CopyX')}, find <b>SONIC</b>, tap {k('Details')}, then {k('Connect')}, and type the amount.</span></li>
+     <li><span>Enter the two community codes again, exactly as in part 5. They set the Amplify, so don't skip them.</span></li>
+    </ol>
+    <p class="call info" style="margin-top:12px">{icon('i-info2')}<span>The Dennis Fast Start Promo is <b>one time only</b>. New strategies don't get another $100 bonus. Every account follows the same rules: 24x Amplify, the 10% loss limit (5% with a community token) and a one month minimum.</span></p>
+   </article>
+   <article class="card pad rv" id="earnings" aria-labelledby="earn-h">
+    <span class="ped" style="display:inline-grid;margin-bottom:12px"><b>{icon('i-wallet2')}</b></span><h3 id="earn-h" style="margin:0 0 6px;font:800 1.3rem/1.25 var(--f-b)">Withdraw or reinvest</h3>
+    <p class="muted">Profits, and partner earnings if you share JetUP.</p>
+    <ol class="steps">
+     <li><span>In the JetUP portal (jetup.ibportal.io) open your <b>Wallet</b> to see partner earnings. Tap {k('Withdraw')} and choose your <b>TAG wallet</b> or one of your MT5 accounts.</span></li>
+     <li><span>To send money out, first add your own crypto wallet address under {k('Wallets')} (for example VALR, Binance, SafePal or your BIX wallet), then choose it when you withdraw.</span></li>
+     <li><span>In CopyX, {k('Reinvest')} adds a strategy's profit back into that same strategy. It starts a new one month minimum for that account.</span></li>
+    </ol>
+    <p class="call lime" style="margin-top:12px">{icon('i-shield2')}<span>Start small and test a small withdrawal early. Fees, limits and timing are the broker's terms, so check them in your account.</span></p>
+   </article>
+  </div>
+ </div>
+</section>
+'''
     main = f'''
 {phead('i-rocket2', 'Sign-up training', 'JetUP + TAG Markets, <span class="grad">one tap at a time</span>',
        "Grab your phone. We're going to do this together: your JetUP account, your TAG Markets account, your first deposit, the Sonic AI strategy and the Dennis Fast Start Promo. Take your time. You can pause any step and follow along.",
@@ -169,6 +209,7 @@ def build_start():
   </div>
  </div>
 </section>
+{AFTER}
 {tribe_cta('Comment <span class="lime">DONE</span> when you\'re set up.', 'Stuck on a step? Comment the part number under the video on YouTube or TikTok, and the step most of you ask about becomes my next video. Or ask the tribe on WhatsApp.')}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Sign-up training', None)]

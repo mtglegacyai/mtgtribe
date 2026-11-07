@@ -187,6 +187,9 @@ def build_plan():
  <li><b>Pool 2:</b> 1% of profit plus $1.50 per lot, from $1,000,000 of fresh capital a month.</li>
  <li>Qualification is confirmed every month, the 50% rule applies, and it is paid from broker margin.</li>
 </ul>''', 'i-coins2')}
+ {section('bix', 'Income 5 · BIX Card', 'Commissions from card sales and spending', '''
+<p>Half of the fees BIX collects (the 3% spending fee and the card purchases) goes into the plan: <b>15%</b> on level 1, <b>10%</b> on level 2, <b>2.5%</b> on each of levels 3 to 10, and <b>5%</b> to a leadership pool, as shown in a JetUP partner presentation (November 2026).</p>
+<p>It only counts once your BixPay wallet is linked to the JetUP portal. <a href="/jetup/bix-card/#link">How to link it, even from a phone</a>.</p>''', 'i-card2')}
  {section('rewards', 'Lifestyle rewards', "JetUP's rewards, and what they really are", '''
 <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Reward</th><th>Team volume</th><th>For</th></tr></thead><tbody>
 <tr><td>Travel voucher up to $2,000</td><td class="n">$50K</td><td>3 months in a row</td></tr>
@@ -270,11 +273,27 @@ def build_bix():
 </ol>''', 'i-rocket2')}
  {section('link', 'Link it to JetUP', 'One QR code, same email', '''
 <ol>
- <li>In the JetUP portal open <kbd>Profile</kbd>, then <kbd>BIX Wallets &amp; Debit Card</kbd>, and tap <kbd>Register</kbd>. A QR code opens.</li>
+ <li>Do your BixPay KYC first. Then in the JetUP portal tap the <b>BIX banner</b>, or open <kbd>Profile</kbd>, then <kbd>BIX Wallets &amp; Debit Card</kbd>, and tap <kbd>Register</kbd>. A QR code opens.</li>
  <li>In BixPay go to <kbd>Settings</kbd>, then <kbd>Scan QR</kbd>, and scan the code. <b>Scan inside the app, not with your phone camera.</b></li>
- <li>Tap <kbd>Approve</kbd>. Your wallet is linked to the portal.</li>
+ <li><b>Only have a phone?</b> Open the portal on your phone, take a screenshot of the QR code, then in BixPay tap <kbd>Scan QR</kbd> and choose <kbd>Load from gallery</kbd>.</li>
+ <li>Tap <kbd>Approve</kbd>. Your wallet is linked, and the portal shows <b>User active</b>. If the banner shows <kbd>Login</kbd> instead, you are already linked: that button only opens the app stores.</li>
 </ol>
+<p><b>Link it now, even if you don't buy a card yet.</b> Linking moves no money. It records your place in the team, so BIX Card commissions follow the right structure later.</p>
 <p>You never type an ID into a form to connect. Afterwards, your Profile shows your IDs: your IB number, your TID (the CU number used in JetUP promos) and your BIX ID. Tap the copy icon next to each one when support asks.</p>''', 'i-link')}
+ {section('topup', 'Spend your crypto', 'Top up the card from TAG Markets', '''
+<ol>
+ <li>In BixPay copy your wallet address for the coin and network you will send.</li>
+ <li>In TAG Markets withdraw from your <b>TAG wallet</b> to that address, on the same network. Check twice: the wrong network means lost funds.</li>
+ <li>In BixPay tap <kbd>Top up card</kbd>, choose the amount or <kbd>Max</kbd>, and confirm. It usually lands within a minute.</li>
+</ol>
+<p><b>Your keys, your money.</b> BIX is self-custody: export your private key (or recovery phrase) from the app's settings and keep it offline. If you lose your phone, it is your only way back in, and nobody, not even BIX, can recover it for you.</p>''', 'i-wallet2')}
+ {section('earn', 'For partners', 'BIX Card commissions', '''
+<p>Spending with the card has a <b>3% transaction fee</b>. Half of the fees BIX collects, including what is paid for virtual and plastic cards, goes into JetUP's partner plan:</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Where it goes</th><th>Share of collected fees</th></tr></thead><tbody>
+<tr><td>Level 1</td><td class="n">15%</td></tr><tr><td>Level 2</td><td class="n">10%</td></tr><tr><td>Levels 3 to 10</td><td class="n">2.5% each</td></tr><tr><td>Leadership pool</td><td class="n">5%</td></tr>
+</tbody></table></div>
+<p style="margin-top:14px">To see it in the portal, open the <kbd>CopyX</kbd> drop-down in the left menu and choose <kbd>BIX Crypto Wallet</kbd>: Network, Commissions and Progress (cards bought) appear. Choose <kbd>CopyX</kbd> again to switch back.</p>
+<p>These figures are from a JetUP partner presentation (November 2026). Confirm the current terms in your partner account. Commissions depend on real card sales and spending, so they can be zero.</p>''', 'i-users2', 'lime')}
  {section('prices', 'What it costs', 'Prices from the BIX Help Center', '''
 <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Item</th><th>Price</th></tr></thead><tbody>
 <tr><td>App</td><td class="n">Free</td></tr><tr><td>Virtual Visa card</td><td class="n">$9.99</td></tr><tr><td>Plastic card</td><td class="n">$100.99</td></tr><tr><td>Metal and Gold cards</td><td>Listed as coming soon</td></tr><tr><td>Card top-up fee</td><td class="n">None</td></tr><tr><td>FX and ATM fees</td><td style="white-space:normal">May apply by region: check the app</td></tr>
@@ -284,6 +303,6 @@ def build_bix():
 </div></section>
 {tribe_cta()}'''
     return page(path, 'BIX Card with JetUP: Setup, Fees and Linking | MTG',
-                'The BIX Card in the JetUP portal: what the BixPay self-custody wallet and Visa card are, how to set it up, KYC, card prices and how to link it to the JetUP IB portal with a QR code.',
+                'The BIX Card in the JetUP portal: the BixPay self-custody wallet and Visa card, setup, KYC, card prices, linking to the JetUP IB portal with a QR code (even from a phone), top-ups from TAG Markets and BIX Card commissions for partners.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('BIX Card', None)],
                 keywords='BIX Card, BixPay, JetUP BIX Card, BIX Wallet, crypto Visa card, JetUP IB portal, TAG Markets, MTG TRIBE')

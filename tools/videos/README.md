@@ -6,7 +6,7 @@ visual, build, engagement and address cues) and, once finished, `posting-pack.md
 
 | # | Video | Format | Status |
 |---|---|---|---|
-| 01 | What If Prices Doubled Every Day? (It Really Happened) | 16:9, about 5 min, plus 3 Shorts | script approved 7 Nov 2026; graphics proof done; waiting for voice credit OK and the closing track mp3 |
+| 01 | What If Prices Doubled Every Day? (It Really Happened) | 16:9, 4:27, plus 3 Shorts | preview sent 7 Nov 2026 (thumbnails A and B, posting pack); waiting for MTG's review and the closing track mp3; then the Shorts |
 | 02 | Did You Know This Money Sank, and People Kept Spending It? | 9:16 Short, about 55 s | research done, script v2 awaiting MTG |
 
 This repository is public: keep private strategy in MTG's Google Drive.

@@ -62,9 +62,6 @@ def master_parts():
     body = src[src.index("<body") :]
     sprite = re.search(r'<svg width="0".*?</svg>', body, re.S).group(0)
     header = re.search(r'<a class="skip".*?</header>', body, re.S).group(0)
-    # On /cc/ and /cntn/ the Dashboard button opens Canton Weekly (MTG, 7 Nov 2026); the weekly pages
-    # themselves keep the main MTG dashboard, so the button never just reloads the page you are on.
-    header = header.replace('<a class="mn-btn mn-dash" href="/canton-weekly/">', '<a class="mn-btn mn-dash" href="/dashboard/">')
     footer = body[body.index('<footer class="foot">') :]
     head = head.replace("</style>", EXTRA_CSS + "</style>", 1)
     return head, sprite, header, footer
@@ -204,6 +201,12 @@ def report(d, head, sprite, header, footer):
 {footer}'''
     return h + body
 
+# Dashboard button (MTG, 7 Nov 2026): on /cc/, /cntn/ and every report it opens Canton Weekly (the header is
+# copied from cntn/index.html, which already points there). The hub itself keeps the main MTG dashboard,
+# so its button never just reloads the page you are on.
+def HUB_HEADER(header):
+    return header.replace('<a class="mn-btn mn-dash" href="/canton-weekly/">', '<a class="mn-btn mn-dash" href="/dashboard/">')
+
 def hub(reports, head, sprite, header, footer):
     url = SITE + "/canton-weekly/"
     latest = reports[0]
@@ -304,7 +307,7 @@ def main():
             refresh_guides(d)
     reports = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(DATA_DIR, "*.json")), reverse=True)]
     os.makedirs(os.path.join(ROOT, "canton-weekly"), exist_ok=True)
-    open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(link_html(hub(reports, head, sprite, header, footer)))
+    open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(link_html(hub(reports, head, sprite, HUB_HEADER(header), footer)))
     update_sitemap([SITE + "/canton-weekly/"] + [f"{SITE}/canton-weekly/{r['date']}/" for r in reports])
     print("hub built,", len(reports), "reports")
 

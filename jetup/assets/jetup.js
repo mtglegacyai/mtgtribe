@@ -313,11 +313,7 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(settleHash);
   }
 
-  /* ---- remember where the visitor is (this phone only) ---- */
-  function remember(section) {
-    if (path === '/jetup/' || path === '/jetup') return;
-    set('jetup-last', JSON.stringify({ u: path + (section ? '#' + section.id : ''), p: pageName, s: section ? section.label : '', t: Date.now() }));
-  }
+  del('jetup-last');   // the welcome-back card was removed (MTG, 7 Nov 2026): nothing reads this any more
 
   /* ---- 1. jump bar ---- */
   var jump = $('#jump');
@@ -346,7 +342,6 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
         jump.style.setProperty('--jp', ((i + 1) / items.length).toFixed(3));
         links.forEach(function (a, k) { if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
         chips.forEach(function (a, k) { a.classList.toggle('cur', k === i); if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
-        if (shown) remember(items[i]); else remember(null);
       }
     }
     function soon() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
@@ -377,34 +372,6 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
     w.addEventListener('scroll', soon, { passive: true });
     w.addEventListener('resize', soon);
     ticks(); update();
-  })();
-  else remember(null);
-
-  /* ---- 2. continue where you left off (JetUP home) ---- */
-  var wb = $('#wb');
-  if (wb) (function () {
-    var last = json('jetup-last', null), parts = json('jetup-parts', {}), checks = json('jetup-checks', {});
-    if (last && (!last.t || Date.now() - last.t > 120 * 864e5 || !/^\/jetup\//.test(last.u || ''))) last = null;
-    var np = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'].filter(function (k) { return parts[k]; }).length;
-    var nc = ['c1', 'c2', 'c3', 'c4', 'c5'].filter(function (k) { return checks[k]; }).length;
-    if (!last && !np && !nc) return;
-    var arrow = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m12 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    var h = '<div class="wb-in"><p class="wb-k"><span aria-hidden="true">👋</span> Welcome back</p>';
-    if (last) h += '<a class="wb-go" href="' + esc(last.u) + '"><span><small>Continue where you left off</small><b>' + esc(last.p) + (last.s ? ' · ' + esc(last.s) : '') + '</b></span>' + arrow + '</a>';
-    else h += '<a class="wb-go" href="/jetup/get-started/"><span><small>Your next step</small><b>The sign-up training</b></span>' + arrow + '</a>';
-    h += '<div class="wb-prog">';
-    if (np) h += '<a href="/jetup/get-started/"><span aria-hidden="true">🚀</span> Sign-up parts done: <b>' + np + ' of 6</b></a>';
-    if (nc) h += '<a href="/jetup/five-checks/"><span aria-hidden="true">🛡️</span> 5 checks ticked: <b>' + nc + ' of 5</b></a>';
-    h += '</div><button class="wb-x" type="button">Clear my progress</button></div>';
-    wb.innerHTML = h; wb.hidden = false;
-    var x = $('.wb-x', wb), armed = false, t0;
-    x.addEventListener('click', function () {
-      if (!armed) { armed = true; x.textContent = 'Tap again to clear it from this phone'; clearTimeout(t0); t0 = setTimeout(function () { armed = false; x.textContent = 'Clear my progress'; }, 4000); return; }
-      ['jetup-last', 'jetup-parts', 'jetup-checks'].forEach(del);
-      $$('.tick[aria-pressed="true"]').forEach(function (t) { t.setAttribute('aria-pressed', 'false'); });
-      wb.hidden = true; wb.innerHTML = '';
-      var tt = $('#toast'); if (tt) { tt.textContent = 'Your progress is cleared from this phone'; tt.classList.add('on'); setTimeout(function () { tt.classList.remove('on'); }, 2200); }
-    });
   })();
 
   /* ---- 4. tap a word to see what it means ---- */

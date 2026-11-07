@@ -15,6 +15,8 @@ tutorial video arrives"). Raw recordings show his personal details: they stay pr
 - Where MTG opens his sponsor's link, the edit tells viewers to tap a sign-up button on MTG's website (with his Partner link,
   once he sends it) or to use the link from their own sponsor.
 - One action at a time, exact on-screen labels, a success check at the end of each part (mtg-creative-standard).
+- **Always show the browser address bar** when a new site or page opens (MTG, 7 Nov 2026: "so that they know they're at the
+  right place"), and point it out (for example jetup.ibportal.io, portal.tagmarkets.com). Only then zoom in.
 - Check every step against `tools/learning-system/jetup-facts.md`; MTG's recording wins, update the facts file first.
 
 ## Part 1: create your JetUP account (notes from MTG's narration, 7 Nov 2026)
@@ -97,9 +99,39 @@ and the failed log in. Turn them into tip cards instead:
   (JetUP accepts at most 12 characters, so a longer password you had in mind was not saved). MTG hit this himself; with
   the exact password it worked straight away.
 
+## Part 3: verify your identity, KYC (notes from MTG's narration, 7 Nov 2026)
+
+1. On the TAG Markets dashboard (**portal.tagmarkets.com**, show the address bar): "Please complete your KYC verification in
+   order to make a deposit". Tap **upload documents**.
+2. The Sumsub screen loads: "Verification for TAG Markets Ltd. You are about to submit sensitive data to TAG Markets Ltd. If
+   you received this link from a suspicious source, please close this page and notify us immediately." You opened it from
+   TAG Markets, so tap **Continue**.
+3. Confirm your country, then **Agree and continue**.
+4. "Let's get you verified": provide an identity document, then a liveness check. "Get verified faster with Sumsub ID":
+   enter **the same email you have used from the start** (stay consistent), then **Start verification**.
+5. "Verify your email to use Sumsub ID": enter the code Sumsub sends to that email (check your inbox).
+6. "Save your data with Sumsub ID": give consent and create the account: "Sumsub ID account successfully created". Tap
+   **Continue verification**.
+7. Choose the document (MTG: **Identity card**). If the card has two sides, tick **double-sided**. Continue.
+8. "Get ready to upload your ID card": read the tips, Continue, and **Allow** the camera.
+9. The camera captures automatically when the card fits the frame (move the phone back a little). Front, then back.
+   "Step 1 of 2" submitted.
+10. Step 2, "Get your camera ready": the selfie and liveness check (face and background in view), "Hold still", "All set".
+
+Tip cards from what happened to MTG (do not show the struggle):
+- **"This site can't ask for your permission. Close any bubbles or overlays from other apps"?** Close screen recorders and
+  chat bubbles (for example WhatsApp), then tap Allow again. MTG's screen recorder caused it, so the camera steps are not
+  in his recording: show them with his screenshots and clear cards.
+- **"We couldn't verify your profile because your documents have been submitted on another profile"**: you already have a
+  verified TAG Markets profile. One person, one verified profile. Contact your sponsor or TAG Markets support before going
+  further. (MTG got this message: he is checking which TAG Markets account he already has.)
+
+MTG is sending the part 3 video and two screenshots (the camera screens). Never store or show one-time codes.
+
 ## Status
 
 - [x] Part 1 video received 7 Nov 2026 (5:59, silent, 720x1562); edit in progress, redacted
 - [x] Part 2 narration saved; video received 7 Nov 2026 (13:00) and mapped; edit after the part 1 preview
-- [ ] Part 3 onwards (KYC next): MTG is recording
+- [x] Part 3 narration saved 7 Nov 2026; video and two screenshots to come
+- [ ] MTG: confirm which TAG Markets account is verified (the KYC said the documents are on another profile)
 - [ ] MTG's links received

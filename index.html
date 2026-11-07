@@ -456,6 +456,21 @@ html.vm-lock{overflow:hidden}
  </div>
 </section>
 
+<!-- CANTON COIN LIVE: the same live CC card as /cc/ and the weekly reports (cntn-live.js, KRAKEN:CCUSD) -->
+<section class="sec cc-live" id="cc-live" aria-labelledby="ccl-h">
+ <div class="wrap">
+  <div class="sec-head">
+   <p class="eyebrow rv">Track what we follow</p>
+   <h2 class="display rv" style="--d:1" id="ccl-h"><span class="silver-text">Canton Coin,</span> <span class="gold-text">live.</span></h2>
+   <p class="lede rv" style="--d:2">The price of Canton Coin (CC) and its last month, straight from the market.</p>
+  </div>
+  <div style="max-width:640px;margin:0 auto">
+   <div class="cl" data-cntn-live data-symbol="KRAKEN:CCUSD"><div class="cl-head"><span class="cl-t">CC live price<small>Canton Coin, CC/USD on Kraken</small></span><span class="cl-live"><i aria-hidden="true"></i>Live chart</span></div><div class="cl-body"></div><p class="cl-fb"><span class="cl-msg">Loading the live price.</span> You can also see <a href="https://www.coingecko.com/en/coins/canton-network" target="_blank" rel="noopener">Canton Coin on CoinGecko</a>.</p><p class="cl-foot">Price and chart by <a href="https://www.tradingview.com/symbols/CCUSD/?exchange=KRAKEN" target="_blank" rel="noopener nofollow">TradingView</a> (Kraken CC/USD market). Education only, not financial advice.</p></div>
+   <div class="more" style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px"><a class="link" href="/cc/">How to buy Canton Coin</a><a class="link" href="/canton-weekly/">Read the weekly report</a></div>
+  </div>
+ </div>
+</section>
+
 <!-- 04 MEET MTG: the full photo, large and readable -->
 <section class="sec mtg" id="mtg" aria-labelledby="mtg-h">
  <span class="seam" aria-hidden="true"></span>
@@ -755,6 +770,7 @@ if(fine&&!reduce)$$('.tilt').forEach(function(el){
 })();
 </script>
 <script src="/assets/tribe/tribe-scene.js?v=2" defer></script>
+<script src="/assets/tribe/cntn-live.js?v=2" defer></script>
 <script src="/assets/tribe/to-top.js?v=1" defer></script>
 </body>
 </html>

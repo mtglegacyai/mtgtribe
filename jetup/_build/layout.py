@@ -2,6 +2,7 @@
 # Run build.py to write every page. No em or en dashes anywhere in the output.
 import hashlib, json, os, re
 from phone_tables import label_tables   # phones never scroll sideways (MTG, 6 Nov 2026)
+from extras import JUMP, jump_bar, thumb_bar, search_box, mark_terms, gl_popover, faq_ids   # MTG, 7 Nov 2026
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SITE = 'https://mtgtribe.com'
@@ -46,6 +47,8 @@ ICONS.update({
  'i-chev-l': _sym('i-chev-l', '<path d="m15 18-6-6 6-6"/>'),
  'i-chev-r': _sym('i-chev-r', '<path d="m9 18 6-6-6-6"/>'),
  'i-up': _sym('i-up', '<path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>'),
+ 'i-chev-d': _sym('i-chev-d', '<path d="m6 9 6 6 6-6"/>'),
+ 'i-book': _sym('i-book', '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M9 7h7"/><path d="M9 11h5"/>'),
  'i-x2': _sym('i-x2', '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'),
  'i-play2': _sym('i-play2', '<path d="M7 4.5v15a1 1 0 0 0 1.52.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5Z"/>', fill=True),
  'i-arrow2': _sym('i-arrow2', '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'),
@@ -102,6 +105,7 @@ MENU = [
    ('/jetup/videos/', 'i-film2', 'Videos', 'Trainings and explainers'),
    ('/jetup/downloads/', 'i-dl2', 'Downloads', 'Guides, decks and videos'),
    ('/jetup/faq/', 'i-help', 'FAQ', 'Straight answers'),
+   ('/jetup/glossary/', 'i-book', 'Glossary', 'Every word, explained'),
  ]),
 ]
 
@@ -109,6 +113,7 @@ def side_menu(path):
     out = ['<aside class="side" id="side" aria-label="JetUP guide menu">',
            ' <div class="side-top"><img src="/jetup/img/jetup-mark-128.webp" width="64" height="64" alt="JetUP"><span><b>JetUP <span class="lime">×</span> TAG</b>Independent guide by MTG 👑</span>',
            '  <button class="menu-btn side-x" type="button" data-menu-x aria-label="Close the menu">%s</button></div>' % icon('i-x2'),
+           ' ' + search_box(icon),
            ' <nav aria-label="Guide pages">']
     for label, items in MENU:
         out.append('  <div role="group" aria-label="%s"><p class="slabel">%s</p>' % (label, label))
@@ -155,6 +160,12 @@ def footer():
 
 # Previous and next page, in menu order, then the disclaimer (MTG, 6 Nov 2026)
 ORDER = [it[:4] for _, items in MENU for it in items] + [('/jetup/disclaimer/', 'i-scale2', 'Disclaimer', 'Education only, and the risks')]
+
+def page_name(path):
+    for o in ORDER:
+        if o[0] == path:
+            return o[2]
+    return 'JetUP guide'
 
 def pager(path):
     paths = [o[0] for o in ORDER]
@@ -261,7 +272,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
     graph += (ld_extra or [])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(',', ':'))
     body = main
-    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + pager(path) + TOTOP + (LIGHTBOX if lightbox else ''))) | {'i-chev-l'}
+    used = set(re.findall(r'#(i-[a-z0-9-]+)', body + side_menu(path) + top_bar(docked) + footer() + PLAYER + pager(path) + TOTOP + jump_bar(path, icon) + thumb_bar(path, icon, GROUP) + (LIGHTBOX if lightbox else ''))) | {'i-chev-l', 'i-search'}
     syms = ''.join(ICONS[u] for u in sorted(used) if u in ICONS)
     missing = [u for u in used if u not in ICONS]
     if missing:
@@ -294,12 +305,13 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <script>if(location.protocol==='http:'&&location.hostname==='mtgtribe.com')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');{side_js}</script>
 <script type="application/ld+json">{ld}</script>
 </head>
-<body>
+<body data-page="{page_name(path)}">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>{syms}</defs></svg>
 <a class="skip" href="#main">Skip to content</a>
 {top_bar(docked)}
 {side_menu(path)}
 <div class="scrim" id="scrim" aria-hidden="true"></div>
+{jump_bar(path, icon)}
 <button class="side-tog" id="side-tog" type="button" aria-controls="side" aria-expanded="{'true' if docked else 'false'}" aria-label="{'Close the menu' if docked else 'Open the menu'}" title="{'Close the menu' if docked else 'Open the menu'}">{icon('i-chev-l', '')}</button>
 <div class="page">
 <main id="main">
@@ -310,6 +322,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 </div>
 {PLAYER}
 {LIGHTBOX if lightbox else ''}
+{thumb_bar(path, icon, GROUP)}
 {TOTOP}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/jetup/assets/jetup.js?v={js}" defer></script>
@@ -322,6 +335,12 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
     if re.search(r'\bluno\b', html, re.I):
         raise SystemExit('Luno mentioned in %s' % path)
     html = label_tables(html)
+    html = faq_ids(html)
+    if path != '/jetup/glossary/':
+        html, gl_keys = mark_terms(html)
+        html = html.replace('<button class="totop"', gl_popover(gl_keys) + '\n<button class="totop"', 1)
+    if re.search('[\u2013\u2014]', html):
+        raise SystemExit('dash found in %s after the glossary and FAQ steps' % path)
     out = os.path.join(ROOT, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, 'w') as f:

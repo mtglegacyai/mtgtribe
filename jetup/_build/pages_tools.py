@@ -229,3 +229,20 @@ def build_disclaimer():
     return page(path, 'Disclaimer: JetUP and TAG Markets Guide | MTG',
                 'Disclaimer for MTG\'s independent JetUP and TAG Markets guide: education only, not financial advice, trading is high risk, figures and screens change, and which links are referral links.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Disclaimer', None)])
+
+def build_glossary():
+    # every word the guide uses, explained in one or two plain sentences (MTG, 7 Nov 2026)
+    from extras import GLOSSARY
+    rows = ''.join(
+        '<div class="gterm" id="g-%s"><h2>%s</h2><p>%s</p><a class="gmore" href="%s">See it explained %s</a></div>' % (
+            k, name, d, more, icon('i-arrow2')) for k, name, pat, d, more in sorted(GLOSSARY, key=lambda g: g[1].lower()))
+    path = '/jetup/glossary/'
+    main = f'''
+{phead('i-book', 'Every word, explained', 'The JetUP and TAG Markets <span class="grad">glossary</span>',
+       'The words you will meet in this guide, in plain English. Tap any underlined word on the other pages to see its meaning right there.',
+       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Glossary', None)])}
+<section class="sec tight" style="padding-top:0"><div class="narrow"><div class="card pad rv glist">{rows}</div></div></section>
+{tribe_cta()}'''
+    return page(path, 'JetUP and TAG Markets Glossary: CFD, KYC, Amplify, XAU/USD | MTG',
+                'Plain English meanings of the words in the JetUP and TAG Markets guide: Amplify, exposure, CFD, KYC, CU number, community token, CopyX, Sonic AI, XAU/USD, MT5, network, performance fee and more.',
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Glossary', None)])

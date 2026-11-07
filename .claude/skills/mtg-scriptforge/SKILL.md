@@ -223,6 +223,9 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
    - **3D:** the studio in `tools/video3d/` of the site's project. If it is not there yet, install it from this skill's
      `kit/video3d/` (see `references/3d-studio.md`). It makes word synced captions from the final audio, places MTG's
      circle photo, the brand bar and the closing track, and renders 16:9 and 9:16.
+   - **The mascot:** MTG's mtgTribe lion (glasses, gold watch, MTG's evolution t-shirt) for hooks, reactions and
+     endings, generated with HeyGen from his reference picture (`references/mascot.md`; about 15 credits per 8-second
+     clip, so use him where he adds the most).
    - **Stick-figure stories:** the GrowKaz Stickman Studio plugin (`growkaz-stickman:make-2d-video`) when it is
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.

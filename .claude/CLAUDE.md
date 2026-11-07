@@ -99,3 +99,8 @@ compensation plans, recruitment, sign-up links into programs that pay from recru
 example ALTRUVA's plan and Lucky Tickets, JetUp's partner plan and promo) stay on MTG's websites and in the WhatsApp
 tribe. MTG's HeyGen voice is synthetic: switch on the AI label on YouTube, TikTok and Meta. Never promise a video is
 "100% safe"; say what was checked.
+
+**MTG's mascot (MTG, 7 November 2026).** An original lion in MTG's evolution t-shirt, round gold glasses and a gold
+watch, in a black-and-gold studio. Design rules, HeyGen asset IDs and the clip recipe: `.claude/skills/mtg-scriptforge/
+references/mascot.md` (reference picture in the skill's `assets/`). About 15 credits per 8-second clip: 4 to 6 per
+long video, ask MTG before a batch. Never the spiky orange tuft (too close to a famous film lion).

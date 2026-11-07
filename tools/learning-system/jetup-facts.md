@@ -13,6 +13,8 @@ the voice bank).
 |---|---|---|---|
 | Start amount | About $155 in USDT or USDC: $50 into Sonic AI, $100 left in the balance for the promo, a few dollars spare | get-started, FAQ, home, training video, onboarding PDF | MTG's guide |
 | Why not exactly $150 | A few cents can go on fees, so send a little more than $150 (the training uses $155) | get-started part 4 | MTG's guide; Sunday training 7 Nov 2026 |
+| Password | Up to 12 characters, plus the rules shown on the sign-up screen | get-started part 1 | MTG's recording, 7 Nov 2026 (confirm on the video) |
+| Email already registered | Registration fails with "email address already exists": use another email or log in | get-started part 1 | MTG's recording, 7 Nov 2026 |
 | Partner link, not Client link | Every member has two links. New people sign up with the Partner link | get-started part 1, FAQ | MTG's guide |
 | Name at sign-up | First and last name exactly as on the ID (no nickname), or KYC fails | get-started part 1 | Sunday training 7 Nov 2026 |
 | CopyX banner | Tap "Login to CopyX". On some new accounts it says "Register": same step. Never register on CopyX directly | get-started part 2 | MTG's guide screenshots; Sunday training |

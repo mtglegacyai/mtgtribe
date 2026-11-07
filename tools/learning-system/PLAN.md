@@ -12,6 +12,11 @@ Status key: planned, voice approved, storyboard, preview sent, approved, live.
 - [ ] Any other referral links for the buttons.
 - [ ] MTG's own **step-by-step tutorial recording** of getting started with JetUP and TAG Markets.
 
+## MTG's tutorial recording (started 7 Nov 2026)
+
+MTG records one short silent phone video per part and sends his spoken notes with each. Notes, editing rules and status:
+`tools/jetup-tutorial/README.md`. Format: separate short videos per part, not one long video.
+
 ## When MTG's step-by-step tutorial video arrives (do all of this without being asked again)
 
 1. Watch it end to end and list every step, label and screen. Compare with `jetup-facts.md` and the sign-up training page;

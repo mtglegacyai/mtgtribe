@@ -51,3 +51,19 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 - Tables: build them through the page builders (`phone_tables.py` labels every cell); never set `white-space:nowrap`
   on table cells or long button labels. Before showing MTG a preview, run `tools/qa/hscroll.js` (see `tools/qa/README.md`)
   and make sure it reports nothing beyond the items it lists as fine by design.
+
+## JetUP: what happens when MTG sends his tutorial video and his links (MTG, 7 Nov 2026)
+
+- **His step-by-step tutorial video:** cut it into chapter clips, reproduce the **Getting started PDF** from his steps, build the
+  **master PDF companion**, then run a full consistency pass (every page, video, clip and PDF) against
+  `tools/learning-system/jetup-facts.md`. Details: `tools/learning-system/PLAN.md`.
+- **His affiliate links (JetUP Partner link, BIX Card link):** put them on every CTA across the JetUP pages, with compelling,
+  honest copy, optimised for conversions and for search and AI search. Checklist in PLAN.md.
+- **No conflicting content, ever.** `jetup-facts.md` is the single source of truth. Third-party trainings feed it only after
+  checking; their income claims and advice never go on the site.
+
+## Skills: keep them growing (MTG, 7 Nov 2026)
+
+When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated
+package to install in his account), or create a new skill and tell him. Use the skills whenever they fit, without waiting
+to be asked.

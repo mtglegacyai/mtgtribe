@@ -58,14 +58,14 @@ whole t-shirt print above the captions) or a face window under a panel. L1, L3 a
   in `scenes.tsx` at the narration's word timings, then lifted by about 4 dB (`SFX_GAIN` in `ui.tsx`) after a mix
   check showed the softest ones 8 to 15 dB under the voice. Measured in the final mix: each effect stands 10 to 20 dB
   above the moment before it, the voice stays on top, no clipping.
-- Music bed: `public/videos/01/music-bed.m4a` from `music-plan.json` (`scripts/make_sound.py music`), 13 moods that
-  follow the story, at 0.32 between sentences and 0.2 under the voice (about 15 dB under in pauses; 0.13 and 0.05 were
-  inaudible on a phone). When MTG's closing track is supplied it hands
-  over: the bed fades out as "They Call Me MTG" starts 50 seconds before the end.
-- Closing track: still waiting for MTG's mp3 and his confirmation that he holds the rights. Until then the renders
-  have no closing track (the composition prop `closingTrack` is null).
+- No background music (v3). v2 had a code-made music bed under the whole video; MTG (7 Nov 2026): "too loud, I don't
+  like it. Remove it completely, and only play my theme music towards the end." Removed, with its files.
+- Closing track (v3): MTG's theme "They Call Me MTG" (his mp3, 51.4 s, mastered at about -14 LUFS; kept in
+  `public/music/they-call-me-mtg.mp3`, not in git) from 50 seconds before the end, about 12 dB under his voice while he
+  speaks (pauses under 1 s stay ducked, so it never pumps), then in the clear on a 5-second end card after his last
+  word, fading out with the last frame.
 
-## Narration timing (v2)
+## Narration timing (v2, v3)
 
 Gaps between sections cut from about 0.7 s to 0.2 s (faster pacing): total 4:23.7 (was 4:27). Captions are aligned
 section by section (`--sections`), because aligning the whole file let Whisper bunch the hook's first words together.
@@ -81,11 +81,12 @@ Total for video 01 so far: 136 credits.
 ```bash
 cd tools/video3d
 python3 scripts/make_sound.py sfx
-python3 scripts/make_sound.py music public/videos/01/music-plan.json public/videos/01/music-bed.wav  # then convert to .m4a
 python3 scripts/align_captions.py public/videos/01/voice public/videos/01/spoken-script.txt public/videos/01/captions.json --sections public/videos/01/timeline.json --replace public/videos/01/caption-replacements.json
 REMOTION_GL=swangle npx remotion render WhatIf01-16x9 out/whatif01-v2-16x9-raw.mp4 --concurrency=4
 REMOTION_GL=swangle npx remotion render WhatIf01-9x16 out/whatif01-v2-9x16-raw.mp4 --concurrency=4
 # two-pass loudness to -14 LUFS (see the 3D studio README), AAC 192k, faststart
 # Final v2 files (7 Nov 2026): out/whatif01-v2-16x9.mp4 and out/whatif01-v2-9x16.mp4, 4:24, -14.1 LUFS, true peak
 # -1.1 dBFS, no black frames. The sound mix was rendered once (audio only, --codec=wav) and put into both videos.
+# v3 (vertical only, MTG wants it for socials first): no music bed, theme from 50 s before the end, end card 5 s,
+# 4:28. Made from the v2 vertical render: new sound mix, the two v2 patches and the new ending frames 7880 to 8032.
 ```

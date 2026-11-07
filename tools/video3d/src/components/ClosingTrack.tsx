@@ -13,6 +13,8 @@ type Props = {
 	duckTo?: number; // music level while MTG speaks
 	// for videos shorter than 50 seconds: where in the track the excerpt starts
 	startInTrackSeconds?: number;
+	// pauses shorter than this stay ducked, so the music does not pump up and down between sentences
+	joinGapMs?: number;
 };
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -23,16 +25,19 @@ export const ClosingTrack: React.FC<Props> = ({
 	src = FILES.closingTrack,
 	speech = [],
 	volume = 0.5,
-	duckTo = 0.14,
+	duckTo = 0.125,
 	startInTrackSeconds = 0,
+	joinGapMs = 1000,
 }) => {
+	// Levels for MTG's master (about -14 LUFS) over his HeyGen voice (about -20 LUFS): 0.125 keeps the track about
+	// 12 dB under his voice while he speaks, 0.5 lets it come up in the clear after his last word.
 	const {durationInFrames, fps} = useVideoConfig();
-	const intervals = useMemo(() => speechIntervals(speech), [speech]);
+	const intervals = useMemo(() => speechIntervals(speech, joinGapMs), [speech, joinGapMs]);
 	if (!src) return null;
 
 	const from = Math.max(0, durationInFrames - CLOSING_TRACK_LEAD_SECONDS * fps);
 	const length = durationInFrames - from;
-	const rampMs = 350;
+	const rampMs = 450;
 
 	const duck = (ms: number) => {
 		let amount = 0;

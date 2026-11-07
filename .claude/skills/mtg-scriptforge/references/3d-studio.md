@@ -34,7 +34,7 @@ sites publish what is in the repository, so never put private files in `tools/`.
 ## Use it
 
 Read `tools/video3d/README.md`: make a new composition from `src/compositions/Intro3D.tsx` (a short demo) or follow
-`src/compositions/whatif01/` (a full long video in 16:9 and 9:16 with Leo, sound cues and a music bed), captions with
+`src/compositions/whatif01/` (a full long video in 16:9 and 9:16 with Leo, sound cues and MTG's closing theme), captions with
 `scripts/transcribe.py` or `scripts/align_captions.py --sections`, sound with `scripts/make_sound.py` (effects need the
 GrowKaz Stickman plugin's sound kit and `pip install scipy`; the 21 made for video 01 are already in `public/sfx/`),
 frame checks with `scripts/qc-stills.mjs`, preview with `npm run studio`, render with

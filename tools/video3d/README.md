@@ -98,18 +98,17 @@ graphics card, the default (`angle`) is much faster.
    - `src/three/BuildingBlocks.tsx`: example of 3D objects that land exactly on spoken words.
    - `src/components/Captions.tsx`: word by word captions, the spoken word in gold, kept inside the safe area.
    - `src/components/PhotoCard.tsx`: MTG's photo, always in a circle with a gold ring (his rule since 7 November 2026). `BrandBar.tsx`: the small brand bar.
-   - `src/components/ClosingTrack.tsx`: "They Call Me MTG" starting 50 seconds before the end, dipping under speech.
-   - `src/components/MusicBed.tsx`: a soft music bed under the whole video that dips under every spoken word and
-     hands over to the closing track.
+   - `src/components/ClosingTrack.tsx`: "They Call Me MTG" starting 50 seconds before the end, about 12 dB under his
+     voice while he speaks (short pauses stay ducked), in the clear after his last word. Give the video a few seconds
+     of end card after the last word so the theme is heard (video 01 uses 5 s).
    - `src/lib/media.ts`: exact audio length, captions loading, word start frames for syncing.
    - Video 01 (`src/compositions/whatif01/`) is the reference for a full long video: one set of scenes for 16:9 and
      9:16, 3D card entrances (`Flip`), a slow camera push-in (`Stage`), Leo clips in gold windows (`LeoClip`) and
      sound effects on spoken words (`Cues`).
-5. **Sound (MTG, 7 November 2026: every video has sound effects and a music bed).** All made in code, so there are no
-   licences or copyright claims:
+5. **Sound (MTG, 7 November 2026): sound effects yes, background music no.** Effects are made in code, so there are
+   no licences or copyright claims. The only music is MTG's theme at the end (his rule: no music bed under the video).
    ```bash
    python3 scripts/make_sound.py sfx                                    # effects into public/sfx/ (shared)
-   python3 scripts/make_sound.py music public/videos/NN/music-plan.json public/videos/NN/music-bed.wav
    ```
    The effects come from the GrowKaz Stickman plugin's sound kit (install the plugin first; needs `pip install scipy`)
    plus our own coin, stamp, shutter and paper. Keep effects soft (volume 0.15 to 0.45) and the voice on top.
@@ -152,7 +151,7 @@ tools/video3d/
   src/brand.ts            colours, brand lines, file paths
   src/fonts.ts            brand fonts, bundled locally
   src/compositions/       one file per video
-  src/components/         captions, photo card, brand bar, closing track, music bed
+  src/components/         captions, photo card, brand bar, closing track
   src/three/              3D lights, camera, objects
   src/lib/                media helpers, safe areas for 16:9 and 9:16
   scripts/                transcribe.py, align_captions.py, make_sound.py, qc-stills.mjs, whisper-to-captions.mjs,

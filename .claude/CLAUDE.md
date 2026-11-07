@@ -68,8 +68,10 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 timeline, captions, audio and rendering. Read `tools/video3d/README.md` first. In cloud sessions there is no graphics
 card: render with `REMOTION_GL=swangle`. Animate from `useCurrentFrame()`, never the clock. Captions come from the final
 audio (`scripts/transcribe.py`). Same rules as every video: approved voice only, MTG's full photo, closing track 50 seconds
-before the end, preview before anything is published. Every video also gets sound effects and a soft music bed made in
-code (`scripts/make_sound.py`; MTG, 7 November 2026), and long videos come in 16:9 and 9:16 so he can compare them.
+before the end, preview before anything is published. Every video gets sound effects made in code
+(`scripts/make_sound.py`), but **no background music under the video**: only MTG's theme "They Call Me MTG" from 50
+seconds before the end, heard clearly after his last word (MTG, 7 November 2026: the music bed was "too loud, I don't
+like it. Remove it completely"). Long videos come in 16:9 and 9:16; he posts the vertical one on socials first.
 
 ## Video ideas and scripts: MTG ScriptForge (MTG, 7 November 2026)
 

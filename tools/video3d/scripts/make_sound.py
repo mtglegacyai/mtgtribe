@@ -2,11 +2,12 @@
 
 1. Sound effects into public/sfx/ (shared by every video): uses the GrowKaz Stickman Studio plugin's procedural
    effects when the plugin is installed, plus a few of our own (coin, stamp, shutter, paper).
-2. A music bed for one video from a mood plan: uses the plugin's procedural score (moods cross-fade at story turns).
+2. A music bed from a mood plan (the plugin's procedural score). Not used by default: MTG wants no background music,
+   only his theme "They Call Me MTG" at the end (7 November 2026). Kept for a video where he asks for one.
 
 Usage:
   python3 scripts/make_sound.py sfx   [--kit <path to growkaz kit>]
-  python3 scripts/make_sound.py music public/videos/01/music-plan.json public/videos/01/music-bed.wav [--kit ...]
+  python3 scripts/make_sound.py music music-plan.json music-bed.wav [--kit ...]   (only when MTG asks for a bed)
 music-plan.json: {"total": 263.2, "seed": 7, "plan": [{"start": 0, "end": 13.5, "mood": "mystery", "intensity": 0.45}, ...]}
 Moods: mystery, tension, action, wonder, hopeful, sad, triumph, playful, calm, dark, epic.
 """

@@ -1,9 +1,9 @@
 # What If Prices Doubled Every Day? Posting pack (7 November 2026, awaiting MTG's approval)
 
 Files (v2): `tools/video3d/out/whatif01-v2-16x9.mp4` (16:9, 1920x1080, 30 fps, 4:24) for YouTube and Facebook, and
-`tools/video3d/out/whatif01-v2-9x16.mp4` (9:16, 1080x1920, same length, 4:24) for vertical feeds where long videos are allowed
-(TikTok up to 10 min, Facebook). Instagram Reels and YouTube Shorts need the short cuts (3 Shorts, after approval).
-Preview only: the closing track "They Call Me MTG" is added when MTG supplies the mp3.
+`tools/video3d/out/whatif01-v3-9x16.mp4` (9:16, 1080x1920, 4:28, MTG's theme at the end, no background music) for
+vertical feeds where long videos are allowed (TikTok). YouTube Shorts and Instagram Reels take up to 3 minutes, so they
+get the short cuts (3 Shorts, after approval). The 16:9 file is still v2 (4:24, music bed) until MTG asks for it.
 Goal: reach (+ tribe growth). Stage: discover. Main address: mtgtribe.com/group.
 
 ## Title (+ 2 alternates for a re-post or test)

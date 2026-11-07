@@ -6,8 +6,7 @@ import timeline from '../../../public/videos/01/timeline.json';
 import {BrandBar} from '../../components/BrandBar';
 import {Captions} from '../../components/Captions';
 import {ClosingTrack} from '../../components/ClosingTrack';
-import {MusicBed} from '../../components/MusicBed';
-import {CLOSING_TRACK_LEAD_SECONDS, COLORS} from '../../brand';
+import {COLORS} from '../../brand';
 import {
 	S01Hook, S02Greeting, S03Setup, S04Doubling, S05Why, S06Coping, S07Zeros, S08Posters, S09Promise, S10Lesson, S11Tribe,
 	S12Outro,
@@ -16,11 +15,13 @@ import {Backdrop, Section} from './ui';
 
 // Video 01: What If Prices Doubled Every Day? (It Really Happened). Script approved by MTG on 7 November 2026.
 // Research, script and compliance record: tools/videos/01-what-if-prices-doubled/
-// v2 (7 Nov 2026, after MTG's review): sound effects and a soft music bed made in code, more 3D movement, bigger text,
-// 7 Leo moments, and the same video in 16:9 and 9:16 (layouts switch on the composition's shape).
+// v2 (7 Nov 2026, after MTG's review): sound effects made in code, more 3D movement, bigger text, 7 Leo moments, and
+// the same video in 16:9 and 9:16 (layouts switch on the composition's shape). v3 (same day): no background music
+// (MTG: "remove it completely"), only his theme "They Call Me MTG" from 50 seconds before the end, and a longer end
+// card so the theme is heard in the clear after his last word.
 
 export const WHATIF01_FPS = 30;
-const TAIL_SECONDS = 1.0;
+const TAIL_SECONDS = 5.0; // end card, slogan and MTG's theme in the clear after the last word
 export const WHATIF01_FRAMES = Math.ceil((timeline.total + TAIL_SECONDS) * WHATIF01_FPS);
 
 const SCENES = [S01Hook, S02Greeting, S03Setup, S04Doubling, S05Why, S06Coping, S07Zeros, S08Posters, S09Promise, S10Lesson, S11Tribe, S12Outro];
@@ -32,7 +33,6 @@ export type WhatIf01Props = {
 
 export const WhatIf01: React.FC<WhatIf01Props> = ({closingTrack}) => {
 	const fps = WHATIF01_FPS;
-	const end = timeline.total + TAIL_SECONDS;
 	return (
 		<AbsoluteFill style={{background: COLORS.bg}}>
 			<Backdrop />
@@ -51,7 +51,6 @@ export const WhatIf01: React.FC<WhatIf01Props> = ({closingTrack}) => {
 			})}
 			<Captions captions={captions} holdMs={600} />
 			<BrandBar />
-			<MusicBed src="videos/01/music-bed.m4a" speech={captions} endAt={closingTrack ? end - CLOSING_TRACK_LEAD_SECONDS + 2 : null} />
 			<ClosingTrack src={closingTrack} speech={captions} />
 		</AbsoluteFill>
 	);

@@ -230,12 +230,14 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      installed. MTG's standards win where its style rules differ (voice, circle photo, closing track).
    - **Tutorials:** real screen recordings with a visible cursor, arrows and highlights.
    - **Sound, every video (MTG, 7 November 2026: "I didn't hear the sound effects, not even a single one"):** sound
-     effects on the moments that matter (reveals, counters, stamps, pop-ups, transitions), a soft music bed that
-     follows the story's mood and dips under his voice, and his closing track "They Call Me MTG" from 50 seconds
-     before the end (the bed hands over to it). Made in code, so no licences or copyright claims
-     (`scripts/make_sound.py` in the studio). Keep effects soft and the voice on top.
-   - **Both layouts:** long videos are delivered in 16:9 and 9:16 from one set of scenes, so MTG can compare them and
-     post each where it fits. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
+     effects on the moments that matter (reveals, counters, stamps, pop-ups, transitions), made in code, so no
+     licences or copyright claims (`scripts/make_sound.py` in the studio). Keep effects soft and the voice on top.
+   - **Music: only his theme, never a background bed** (MTG, 7 November 2026: "too loud, I don't like it. Remove it
+     completely, and only play my theme music towards the end"). "They Call Me MTG" starts 50 seconds before the end,
+     about 12 dB under his voice while he speaks, and is heard in the clear on a short end card after his last word.
+     Before rendering, check his mp3 is in `public/music/` (it is not in git): no track, no final render.
+   - **Both layouts:** long videos are built for 16:9 and 9:16 from one set of scenes; MTG posts the vertical one on
+     socials first. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
 5. Check frames in both layouts before the full render (`scripts/qc-stills.mjs`), preview to MTG, fix, render the
    Shorts cut-downs, and only publish after his approval.
 6. Run the final compliance check (`references/compliance.md` section 5: video, thumbnail, title, description, links,

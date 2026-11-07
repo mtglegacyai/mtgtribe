@@ -41,6 +41,13 @@ fm = m.group(1)
 name = re.search(r'^name:\s*(.+)$', fm, re.M).group(1).strip().strip('"')
 desc = re.search(r'^description:\s*"?(.*?)"?\s*$', fm, re.M).group(1)
 problems = []
+try:  # claude.ai parses the frontmatter as YAML: an unescaped quote inside the description makes the upload fail
+    import yaml
+    yaml.safe_load(fm)
+except ImportError:
+    pass
+except Exception as e:
+    problems.append('frontmatter is not valid YAML (check quotes inside the description): ' + str(e).splitlines()[0])
 if name != a.skill:
     problems.append(f'name "{name}" does not match the folder "{a.skill}"')
 if len(desc) > 1024:
@@ -72,4 +79,5 @@ with tempfile.TemporaryDirectory() as tmp:
         for disk, inside in files:
             z.write(disk, inside.as_posix())
     target.write_bytes(tmp_zip.read_bytes())
+    target.with_suffix('.zip').write_bytes(tmp_zip.read_bytes())  # claude.ai's upload asks for a ZIP
 print(f'{target} ({len(files)} files, {target.stat().st_size // 1024} KB)')

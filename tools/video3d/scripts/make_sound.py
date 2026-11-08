@@ -32,6 +32,8 @@ The palette (what each one is for):
   melt       a slow gliding fall in pitch: value melting away (video 01's pay bars)
   sink       a slow, low bubbling fall: something sinking into the sea (video 02's stone)
   link       a soft, muted clink: a block joining a chain (video 02's blockchain)
+  key        two soft key clinks and a small jingle: a key appears or is copied (video 03)
+  door       a soft, slow swing of air with a low wooden knock: a door opening quietly (video 03)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -356,6 +358,28 @@ def link():
     return lowpass(x, 1900)
 
 
+def key():
+    d = 0.9
+    x = np.zeros(int(d * SR))
+    rng = np.random.default_rng(41)
+    for at, f0, amp in ((0.0, 1450, 1.0), (0.09, 1720, 0.7), (0.22, 1580, 0.45), (0.3, 1880, 0.3)):
+        tt = t(0.5)
+        c = (np.sin(2 * np.pi * f0 * tt) + 0.25 * np.sin(2 * np.pi * f0 * 2.3 * tt)) * env(len(tt), 0.008, 0.12, curve=1.0)
+        i = int(at * SR)
+        x[i:i + len(c)] += c[:len(x) - i] * amp * rng.uniform(0.9, 1.1)
+    return lowpass(x, 2600)
+
+
+def door():
+    d = 1.6
+    tt = t(d)
+    air = band(noise(d), 120, 900) * np.sin(np.pi * np.clip(tt / 1.3, 0, 1)) ** 2
+    knock = sine(lambda u: 90 + 40 * np.exp(-u * 20), 0.4) * env(int(0.4 * SR), 0.012, 0.12)
+    x = air * 0.6
+    x[:len(knock)] += knock * 0.5
+    return lowpass(x * env(len(x), 0.02, 0.8, hold=0.8), 1200)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -367,6 +391,8 @@ PALETTE = {
     'coinrain': (coinrain, 0.3), 'whirr': (whirr, 0.15), 'flutter': (flutter, 0.2), 'rise': (rise, 0.2), 'melt': (melt, 0.3),
     # made for video 02 (the stone money of Yap)
     'sink': (sink, 0.35), 'link': (link, 0.2),
+    # made for video 03 (the 12 words)
+    'key': (key, 0.3), 'door': (door, 0.3),
 }
 
 

@@ -64,8 +64,8 @@ JetUP tour sits at the top of /jetup/.
 
 | # | Video | Where | Voice | Status |
 |---|---|---|---|---|
-| 1 | JetUP and TAG Markets: the simple picture (1:32) | home "Who does what", Videos page "Start here" | recorded lines only, 0 credits | live 8 Nov 2026 |
-| 2 | Who does what: five names, one picture (minibus taxi) | home "Five names", How it works "Who does what" | recorded; taxi lines new or on screen only | planned |
+| 1 | JetUP and TAG Markets: the simple picture (1:43 with the signature ending) | home "Who does what", Videos page "Start here" | recorded lines only, 0 credits | live 8 Nov 2026 |
+| 2 | Who does what: five names, one picture (minibus taxi), 2:11 | home "Five names", How it works "Who does what" | recorded + 8 new taxi lines (2 credits, 8 Nov 2026) | preview sent 8 Nov 2026 |
 | 3 | Amplify 24x: exposure is not money you own (market stall) | home "$155 in", How it works "Exposure", Exposure Calculator, check 4 | recorded; stall lines new or on screen only | planned |
 | 4 | The 70/30 split: where every profit goes (+ calculator demo) | home "70%", How it works "70/30", Profit Split Calculator, check 3 | recorded lines | planned |
 | 5 | The $100 promo, rules first | Promo page top, home "A promo is a promo", part 6 | recorded lines | planned |

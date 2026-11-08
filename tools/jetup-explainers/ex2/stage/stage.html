@@ -1,0 +1,184 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--red:#ff5f7a;--vio:#9b7cff;
+ --grad:linear-gradient(100deg,#8c6ce7 0%,#b56cf6 45%,#e371fc 100%);--goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);
+ --f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(900px 600px at 82% 18%,rgba(140,108,231,.30),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(232,194,90,.14),transparent 70%),
+ radial-gradient(700px 500px at 20% 15%,rgba(203,251,97,.07),transparent 70%),linear-gradient(160deg,#130c28,#0b0912 55%,#08060f)}
+#grid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(1100px 700px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;visibility:hidden;opacity:0;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.em{font-family:'Noto Color Emoji';font-style:normal}
+.card{border-radius:34px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
+/* top bar */
+#top{left:56px;right:56px;top:40px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
+.who b{display:block;font:800 26px/1 var(--f-b)}.who small{display:block;margin-top:7px;font:800 15px/1 var(--f-b);color:var(--gold);letter-spacing:.1em}
+#chipT{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 20px/1 var(--f-b);letter-spacing:.14em}
+/* hook: five names */
+.nm{left:0;top:0;display:inline-flex;align-items:center;gap:18px;height:118px;padding:0 40px 0 22px;border-radius:999px;white-space:nowrap;
+ background:linear-gradient(160deg,rgba(44,36,66,.97),rgba(22,18,34,.97));box-shadow:inset 0 0 0 3px rgba(155,124,255,.55),0 20px 50px rgba(0,0,0,.45);font:800 58px/1 var(--f-b)}
+.nm .ic{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;font-size:46px;background:rgba(155,124,255,.18)}
+.nm .ic img{width:62px}
+#c5{box-shadow:inset 0 0 0 3px var(--lime),0 20px 50px rgba(0,0,0,.45)}#c5 b{color:var(--lime)}
+.q{font:400 150px/1 var(--f-d);color:var(--gold-hi);text-shadow:0 0 40px rgba(232,194,90,.5)}
+#q1{left:840px;top:250px}#q2{left:300px;top:430px}#q3{left:1560px;top:610px}
+#hkT{top:190px;font:400 150px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#hkT span{color:var(--lime)}
+/* hi */
+#hdisc{left:760px;top:180px;width:400px;height:400px;border-radius:50%;padding:8px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);box-shadow:0 0 60px rgba(232,194,90,.45)}
+#hdisc img{width:384px;height:384px;border-radius:50%;display:block}
+#hhi{top:640px;font:800 84px/1 var(--f-b)}#harch{top:750px;font:800 38px/1 var(--f-b);letter-spacing:.16em}
+/* taxi scene */
+#thead{left:70px;top:150px;font:400 66px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#thead span{color:var(--lime)}
+#tchip{left:70px;top:245px;display:flex;align-items:center;gap:14px;height:70px;padding:0 28px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 30px/1 var(--f-b);white-space:nowrap}
+#tchip.gold{background:rgba(255,224,143,.10);box-shadow:inset 0 0 0 3px var(--gold-hi)}#tchip.red{background:rgba(255,95,122,.10);box-shadow:inset 0 0 0 3px var(--red)}
+#skyline{left:0;top:440px;width:1200px;height:260px;opacity:.5}
+#road{left:0;top:700px;width:1200px;height:110px;background:linear-gradient(180deg,#221c36,#15111f);box-shadow:inset 0 3px 0 rgba(255,255,255,.12)}
+#road i{position:absolute;left:0;right:0;top:50px;height:8px;background:repeating-linear-gradient(90deg,var(--lime) 0 60px,transparent 60px 120px);opacity:.75}
+#office{left:60px;top:395px;width:270px;height:305px}
+#office .roof{position:absolute;left:-14px;right:-14px;top:0;height:70px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(180deg,#9b7cff,#5b40b8)}
+#office .wall{position:absolute;left:0;right:0;top:70px;bottom:0;border-radius:0 0 10px 10px;background:linear-gradient(180deg,#2c2444,#1d1830);box-shadow:inset 0 0 0 3px rgba(155,124,255,.5)}
+#office .sign{position:absolute;left:20px;right:20px;top:88px;height:86px;border-radius:14px;display:flex;align-items:center;gap:12px;padding:0 14px;background:#120d22;box-shadow:inset 0 0 0 2px var(--gold-hi)}
+#office .sign img{width:56px}#office .sign b{display:block;font:800 26px/1 var(--f-b)}#office .sign small{display:block;margin-top:6px;font:800 15px/1 var(--f-b);color:var(--gold-hi);letter-spacing:.12em}
+#office .door{position:absolute;left:100px;width:70px;bottom:0;height:78px;border-radius:10px 10px 0 0;background:#3b3157;box-shadow:inset 0 0 0 2px rgba(255,255,255,.15)}
+#office .tags{position:absolute;left:14px;right:14px;top:180px;display:flex;justify-content:center;gap:10px;font-size:40px}
+#taxi{left:340px;top:398px;width:720px;height:300px}
+#taxi svg{width:720px;height:300px;overflow:visible}
+#drv{left:800px;top:470px;width:96px;height:80px;display:grid;place-items:center;font-size:64px}
+#drvL{left:560px;top:330px;height:58px;padding:0 22px;border-radius:999px;display:flex;align-items:center;gap:10px;background:var(--grad);font:800 28px/1 var(--f-b);white-space:nowrap;box-shadow:0 10px 30px rgba(227,113,252,.35)}
+#seat{left:655px;top:463px;width:130px;height:96px;border-radius:16px;display:grid;place-items:center;font-size:62px;box-shadow:0 0 0 5px var(--lime),0 0 40px rgba(203,251,97,.6)}
+#plate{left:560px;top:590px;height:56px;padding:0 20px;border-radius:14px;display:flex;align-items:center;gap:10px;background:#120d22;box-shadow:inset 0 0 0 3px var(--lime);font:800 26px/1 var(--f-b);white-space:nowrap}
+#plate b{color:var(--lime)}
+#pole{left:1146px;top:330px;width:14px;height:372px;border-radius:7px;background:linear-gradient(90deg,#8a84a3,#4b4563)}
+#board{left:910px;top:160px;width:282px;height:174px;border-radius:20px;padding:16px 18px;background:linear-gradient(160deg,#1f3a12,#132708);box-shadow:inset 0 0 0 4px var(--lime),0 18px 40px rgba(0,0,0,.45)}
+#board b{display:block;font:400 54px/1 var(--f-d);color:var(--lime);letter-spacing:.03em}#board small{display:block;margin-top:6px;font:800 16px/1 var(--f-b);letter-spacing:.16em;color:#d9f7a8}
+#board p{margin-top:16px;font:800 25px/1.15 var(--f-b);white-space:nowrap}
+#route{left:0;top:0;width:1200px;height:900px}
+#pass{left:120px;top:560px;font-size:110px}
+#think{left:60px;top:325px;display:flex;flex-direction:column;gap:12px}
+#think span{display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 22px;border-radius:999px;background:rgba(203,251,97,.12);box-shadow:inset 0 0 0 3px var(--lime);font:800 28px/1 var(--f-b);opacity:0;white-space:nowrap}
+#panel{left:1230px;top:150px;width:630px;height:640px;padding:24px 26px;border-radius:30px}
+#panel h4{font:400 54px/1 var(--f-d);letter-spacing:.02em;text-transform:uppercase}#panel h4 span{color:var(--lime)}
+.pr{display:flex;align-items:center;gap:18px;height:100px;margin-top:10px;padding:0 16px;border-radius:22px;opacity:0}
+.pr .ic{flex:0 0 auto;width:74px;height:74px;border-radius:20px;display:grid;place-items:center;font-size:42px;background:rgba(155,124,255,.16)}
+.pr .ic img{width:52px}
+.pr b{display:block;font:800 34px/1.05 var(--f-b)}.pr small{display:block;margin-top:6px;font:700 23px/1.2 var(--f-b);color:var(--body)}
+.pr.on{background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime)}
+/* where the picture stops */
+#sign{left:180px;top:250px;width:420px;height:380px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(180deg,#ffe08f,#e8a93a);display:grid;place-items:end center}
+#sign b{margin-bottom:56px;font:400 220px/1 var(--f-d);color:#2a1d05}
+#sh{left:0;right:0;top:150px;text-align:center;font:400 96px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#sh span{color:var(--gold-hi)}
+.sr2{left:690px;width:1100px;display:flex;align-items:center;gap:24px;padding:24px 34px;border-radius:28px;font:800 46px/1.15 var(--f-b)}
+.sr2 .em{font-size:54px}
+#sa{top:320px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime)}
+#sb{top:470px;background:rgba(255,95,122,.10);box-shadow:inset 0 0 0 3px var(--red)}
+#sc{top:620px;background:rgba(255,95,122,.10);box-shadow:inset 0 0 0 3px var(--red)}
+/* risk */
+#rk1{left:160px;top:200px;width:1600px;display:flex;align-items:center;gap:28px;padding:34px 44px;border-radius:32px;background:rgba(255,95,122,.10);box-shadow:inset 0 0 0 3px var(--red);font:800 54px/1.1 var(--f-b)}
+#rk1 .em{font-size:66px}
+#rk88{left:160px;top:330px;width:1600px;display:flex;align-items:center;gap:44px}
+#rk88 b{font:400 210px/1 var(--f-d);color:var(--red);text-shadow:0 0 60px rgba(255,95,122,.35);min-width:540px;text-align:right}
+#rk88 p{font:800 48px/1.22 var(--f-b);max-width:980px}#rk88 small{display:block;margin-top:12px;font:700 28px/1.3 var(--f-b);color:var(--muted)}
+#rk3{top:680px;font:800 56px/1 var(--f-b)}#rk3 span{color:var(--lime)}
+/* next */
+#nx1{top:150px;font:400 96px/1 var(--f-d);text-transform:uppercase}
+.step{width:760px;display:flex;align-items:center;gap:26px;padding:30px 36px;border-radius:30px}
+.step i{flex:0 0 auto;width:86px;height:86px;border-radius:24px;display:grid;place-items:center;background:var(--goldg);color:#1a1405;font:400 56px/1 var(--f-d);font-style:normal}
+.step b{display:block;font:800 46px/1.1 var(--f-b)}.step small{display:block;margin-top:8px;font:700 29px/1.25 var(--f-b);color:var(--body)}
+#st1{left:180px;top:320px}#st2{left:980px;top:320px}
+#nurl{top:560px;display:flex;justify-content:center}
+#nurl span{display:inline-flex;align-items:center;height:96px;padding:0 50px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 4px var(--lime);font:800 58px/1 var(--f-b)}
+#nurl i{font-style:normal;color:var(--lime)}
+#ninv{left:360px;right:360px;top:710px;padding:24px 34px;border-radius:26px;background:rgba(255,224,143,.10);box-shadow:inset 0 0 0 2.5px var(--gold-hi);text-align:center;font:700 32px/1.3 var(--f-b)}
+#ninv b{color:var(--gold-hi)}
+/* captions */
+#cap{left:0;right:0;top:900px;display:flex;justify-content:center;visibility:visible;opacity:1}
+#capbox{max-width:1560px;padding:14px 30px 16px;border-radius:20px;background:rgba(8,6,14,.72);text-align:center;font:800 44px/1.3 var(--f-b);color:rgba(255,255,255,.95);visibility:hidden}
+#capbox span{margin:0 .12em}#capbox .on{color:var(--lime)}#capbox .todo{color:rgba(255,255,255,.55)}
+</style></head><body><div id="v"><div id="grid"></div>
+
+<div class="ab" id="top"><div class="who"><img src="jetup-disc-small.png" alt=""><div><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div></div><span id="chipT">JETUP · WHO DOES WHAT</span></div>
+
+<!-- hook: five names -->
+<div class="ab nm" id="c1"><span class="ic"><img src="jetup-logo.webp" alt=""></span><b>JetUP</b></div>
+<div class="ab nm" id="c2"><span class="ic em">🏦</span><b>TAG Markets</b></div>
+<div class="ab nm" id="c3"><span class="ic em">🔁</span><b>CopyX</b></div>
+<div class="ab nm" id="c4"><span class="ic em">⚡</span><b>Sonic AI</b></div>
+<div class="ab nm" id="c5"><span class="ic em">🙋</span><b>You</b></div>
+<div class="ab q" id="q1">?</div><div class="ab q" id="q2">?</div><div class="ab q" id="q3">?</div>
+<div class="ab c" id="hkT">One simple <span>picture</span></div>
+
+<!-- hi -->
+<div class="ab" id="hdisc"><img src="jetup-disc.png" alt="JetUP"></div>
+<div class="ab c" id="hhi">Hi, I'm MTG</div>
+<div class="ab c goldtxt" id="harch">YOUR DIGITAL ARCHITECT</div>
+
+<!-- the minibus taxi -->
+<svg class="ab" id="skyline" viewBox="0 0 1200 260" preserveAspectRatio="none"><g fill="#2a2342">
+ <rect x="20" y="120" width="90" height="140"/><rect x="120" y="60" width="70" height="200"/><rect x="200" y="140" width="110" height="120"/><rect x="420" y="90" width="80" height="170"/>
+ <rect x="510" y="150" width="120" height="110"/><rect x="640" y="40" width="70" height="220"/><rect x="720" y="110" width="100" height="150"/><rect x="830" y="70" width="80" height="190"/>
+ <rect x="1000" y="130" width="130" height="130"/></g></svg>
+<div class="ab" id="road"><i id="dash"></i></div>
+<div class="ab" id="office"><div class="roof"></div><div class="wall"></div><div class="sign"><img src="jetup-logo.webp" alt=""><div><b>JetUP</b><small>ASSOCIATION</small></div></div>
+ <div class="tags"><span class="em" id="o1">🎓</span><span class="em" id="o2">👥</span></div><div class="door"></div></div>
+<div class="ab" id="taxi"><svg viewBox="0 0 720 300">
+ <defs><linearGradient id="bodyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#e9e4f7"/><stop offset="1" stop-color="#c9c1e2"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3157"/><stop offset="1" stop-color="#15111f"/></linearGradient></defs>
+ <rect x="282" y="10" width="110" height="34" rx="8" fill="#cbfb61"/><text x="337" y="35" text-anchor="middle" font-family="Anton" font-size="26" fill="#14110b" letter-spacing="2">TAXI</text>
+ <path d="M30 236 L30 78 Q30 44 64 44 L548 44 Q566 44 578 58 L676 150 Q700 168 700 196 L700 236 Z" fill="url(#bodyg)" stroke="#bdb3dc" stroke-width="3"/>
+ <rect x="30" y="180" width="670" height="22" fill="#8c6ce7"/><rect x="30" y="202" width="670" height="8" fill="#e371fc"/>
+ <rect x="52" y="66" width="120" height="92" rx="14" fill="url(#glass)"/><rect x="186" y="66" width="120" height="92" rx="14" fill="url(#glass)"/>
+ <rect x="320" y="66" width="120" height="92" rx="14" fill="url(#glass)"/>
+ <path d="M456 66 L556 66 Q566 66 574 76 L574 158 L456 158 Z" fill="url(#glass)"/>
+ <path d="M586 70 L668 150 L668 160 L586 160 Z" fill="url(#glass)"/>
+ <line x1="446" y1="60" x2="446" y2="230" stroke="#bdb3dc" stroke-width="3"/><rect x="420" y="170" width="20" height="6" rx="3" fill="#7d7398"/>
+ <rect x="684" y="166" width="16" height="16" rx="4" fill="#ffe08f"/><rect x="30" y="160" width="10" height="18" rx="3" fill="#ff5f7a"/>
+ <g id="w1"><circle cx="160" cy="236" r="44" fill="#14101f"/><circle cx="160" cy="236" r="24" fill="#8a84a3"/><path d="M160 214 L160 258 M138 236 L182 236" stroke="#14101f" stroke-width="6"/></g>
+ <g id="w2"><circle cx="560" cy="236" r="44" fill="#14101f"/><circle cx="560" cy="236" r="24" fill="#8a84a3"/><path d="M560 214 L560 258 M538 236 L582 236" stroke="#14101f" stroke-width="6"/></g>
+</svg></div>
+<div class="ab em" id="drv">🧑‍✈️</div>
+<div class="ab" id="drvL"><span class="em">⚡</span>Sonic AI · the driver</div>
+<div class="ab em" id="seat">💺</div>
+<div class="ab" id="plate"><span class="em">🔒</span><span id="plateT">Booked in <b>your name</b></span></div>
+<div class="ab" id="pole"></div>
+<div class="ab" id="board"><b>CopyX</b><small>ROUTE BOARD</small><p>You ➜ Sonic AI</p></div>
+<svg class="ab" id="route" viewBox="0 0 1200 900"><path id="routeP" d="M1040 336 C 1000 420, 880 410, 790 462" fill="none" stroke="#cbfb61" stroke-width="9" stroke-linecap="round" stroke-dasharray="16 14" style="filter:drop-shadow(0 0 10px rgba(203,251,97,.8))"/></svg>
+<div class="ab" id="think"><span id="th1">🚐 Which taxi? <b style="color:var(--lime)">You choose</b></span><span id="th2">💵 How much? <b style="color:var(--lime)">You decide</b></span></div>
+<div class="ab" id="thead">Think of a <span>minibus taxi</span> <span class="em">🚐</span></div>
+<div class="ab" id="tchip"></div>
+<div class="ab card" id="panel"><h4>Five names, <span>one picture</span></h4>
+ <div class="pr" id="pr1"><span class="ic em">🧑‍✈️</span><div><b>Sonic AI</b><small id="pr1s">The driver: it does the trading</small></div></div>
+ <div class="pr" id="pr2"><span class="ic em">💺</span><div><b>TAG Markets</b><small id="pr2s">Your seat, booked in your name</small></div></div>
+ <div class="pr" id="pr3"><span class="ic em">🪧</span><div><b>CopyX</b><small>The route board to the driver</small></div></div>
+ <div class="pr" id="pr4"><span class="ic"><img src="jetup-logo.webp" alt=""></span><div><b>JetUP</b><small>The association: trains, organises</small></div></div>
+ <div class="pr" id="pr5"><span class="ic em">🙋</span><div><b>You</b><small>You choose the taxi and how much</small></div></div>
+</div>
+
+<!-- where the picture stops -->
+<div class="ab c" id="sh">Where the picture <span>stops</span></div>
+<div class="ab" id="sign"><b>!</b></div>
+<div class="ab sr2" id="sa"><span class="em">✅</span><span>A taxi gets you there.</span></div>
+<div class="ab sr2" id="sb"><span class="em">❌</span><span>A strategy can lose money.</span></div>
+<div class="ab sr2" id="sc"><span class="em">❌</span><span>A good last trip never promises the next one.</span></div>
+<div class="ab" id="rk88"><b id="n88">0%</b><p>of retail investor accounts lose money when trading CFDs<small>TAG Markets' own risk reminder</small></p></div>
+<div class="ab c" id="rk3">Learn first. <span>Then decide for yourself.</span></div>
+
+<!-- next -->
+<div class="ab c" id="nx1">Let's verify, <span class="goldtxt">together</span></div>
+<div class="ab card step" id="st1"><i>1</i><div><b>Do the 5 checks</b><small>Who holds your money, who regulates the broker, and more</small></div></div>
+<div class="ab card step" id="st2"><i>2</i><div><b>Follow the step-by-step videos</b><small>One tap at a time, on your phone</small></div></div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

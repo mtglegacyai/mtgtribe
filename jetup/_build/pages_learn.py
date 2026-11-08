@@ -104,6 +104,7 @@ def build_how():
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('How it works', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  {section('who', 'The simple picture', 'Who does what', '''
+<div style="margin:4px 0 18px">''' + laptop('who', 'Five names, one picture: the minibus taxi (2:08)') + '''</div>
 <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Part</th><th>Its role</th></tr></thead><tbody>
 <tr><td><b>JetUP</b></td><td style="white-space:normal">The community and partner program, with training and AI tools. Portal: jetup.ibportal.io. Hub: jet-up.ai. Does not trade, does not hold your money.</td></tr>
 <tr><td><b>TAG Markets</b></td><td style="white-space:normal">The broker (T.M. Financials Ltd, FSC Mauritius). Your trading account sits here, in your own name.</td></tr>
@@ -139,7 +140,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How it works', None)], [ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How it works', None)], [ld_video('who'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'

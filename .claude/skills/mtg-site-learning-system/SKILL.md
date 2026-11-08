@@ -22,8 +22,12 @@ latest instruction in the chat wins, then mtg-creative-standard.
 - **His links make it a converting machine.** Every video's end card, every page button and every PDF button should
   carry MTG's own referral or partner link for that step. If a link is missing, ask for it; never invent one and never
   use someone else's.
-- **Honest, never hype.** Show the risks, the rules and "where the picture stops" for every analogy. No income promises,
-  no fake balances, no "best ever". Hide personal data in every frame.
+- **Honest, never hype, and never intimidating** (MTG, 8 Nov 2026: "Take it easy on the warnings and on the losses and
+  negativity... I'm trying to convert these people into action takers"). Explainers educate and convert: positive,
+  encouraging, ending on a clear action. No loss statistics (such as "88% of retail accounts lose money"), no "where the
+  picture stops" scenes, no repeated warnings; the risk lives in his gentle signature reminder ("none of this is financial
+  advice, always do your own research") and the end card's small risk line. Still no income promises, no fake balances,
+  no "best ever". Hide personal data in every frame.
 - **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". No em or en dashes anywhere,
   including inside videos, PDFs and file names. Follow each site's own content rules (names or brands MTG has ruled out).
 - **Every dashboard opens with a site tour.** Each opportunity has a landing page whose **Dashboard** button (sometimes

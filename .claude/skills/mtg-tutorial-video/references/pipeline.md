@@ -26,8 +26,10 @@ Also list each part on the site's Videos page (`#step-by-step`).
 
 Thumbnails (MTG, 7 Nov 2026: "make sure all the videos have a beautiful thumbnail"): `tools/jetup-tutorial/thumbs/`
 (`make_thumbs.py`, `shoot.js`). One series look: lime "JETUP STEP BY STEP" pill, a huge gold Anton "PART N", a 92 px
-title with the key words in lime, his full photo in a 476 px circle with the gold ring (left), a tilted gold-titanium
+title with the key words in lime, the official JetUP logo in a 476 px gold-ringed disc (left; never MTG's photo on a
+thumbnail, MTG 8 Nov 2026), a tilted gold-titanium
 phone with a real redacted screen from that part (right), a green-tick success badge (the real success check of the
 part), "MTG 👑 | YOUR DIGITAL ARCHITECT". Keep clear: the camera island (top centre), the play button (centre) and the
-duration tag (bottom left) of the site's phone card. Export a 1080 x 1920 jpg and a 720 x 1280 webp, new file name
+duration tag (bottom left) of the site's phone card. Promo clips from JetUP or BIX get the same rule: the official
+JetUP logo, a real frame from the clip, a short lime headline (`tools/bix-video/thumb_bix.html`). Export a 1080 x 1920 jpg and a 720 x 1280 webp, new file name
 per version so caches refresh. Check it at 270 px wide, as the site shows it. The player closes itself at the end (standing rule).

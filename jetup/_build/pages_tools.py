@@ -125,7 +125,8 @@ def build_videos():
   <p class="small" style="margin:0 0 16px">MTG's own phone recordings, tap by tap, with every personal detail hidden. The written steps for each part are on <a href="/jetup/get-started/#videos">Get started</a>.</p>
   <div class="vlist"><div class="vpart">{phone('tut1')}<b>Part 1</b><small>Create your JetUP account</small></div>
    <div class="vpart">{phone('tut2')}<b>Part 2</b><small>Link JetUP to TAG Markets</small></div>
-   <div class="vsoon"><b>Parts 3 to 6</b><small>KYC, deposit, Sonic AI and the promo: coming next.</small></div></div>
+   <div class="vpart">{phone('tut3')}<b>Part 3</b><small>Verify your identity (KYC)</small></div>
+   <div class="vsoon"><b>Parts 4 to 6</b><small>Deposit, Sonic AI and the promo: coming next.</small></div></div>
  </div>
  <div class="card pad rv vrow" id="profit-share">
   <div>{phone('profitshare')}</div>
@@ -137,7 +138,7 @@ def build_videos():
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Videos: Trainings by MTG | MTG',
                 'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the sign-up training with Sonic AI and the Dennis promo, MTG\'s step-by-step phone videos (create your JetUP account, link TAG Markets) and JetUP\'s own Profit Share explainer.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('profitshare')])
 
 DOWNLOADS = [
  ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),

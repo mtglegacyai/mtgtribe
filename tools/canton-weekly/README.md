@@ -24,9 +24,9 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
   build.py. On /cntn/ the card's fallback line reuses the `guides.cntn` snapshot (`data-snap="price"` and `price_date`).
 - Live CC price: /cc/, the hub ("Canton Coin right now") and every report (Snapshot, "CC right now") show a "CC live price"
   card: the same script with data-symbol="KRAKEN:CCUSD". The report and hub cards come from `CC_CARD` in build.py.
-- Bellver Card promo (MTG, 8 Nov 2026): a big card-image promo mid-page (/cc/ and /cntn/ before the FAQ, every report after
-  the Bottom line, the hub before All reports; `BELLVER_PROMO` in build.py) and a compact one in the footer. Styles:
-  /assets/tribe/bellver-promo.css. Both open bellveraffiliates.com.
+- Bellver Card promo (MTG, 8 Nov 2026): one slim card-image promo just above the footer of every Canton page (it comes with the
+  footer copied from cntn/index.html). MTG removed the big mid-page version: keep only the slim one. Styles:
+  /assets/tribe/bellver-promo.css. The card, ORDER YOUR CRYPTO CARD and BECOME A PARTNER open bellveraffiliates.com.
 - If the weekly task stops (cancelled, or out of Claude credits), nothing breaks: the guides keep the last numbers and
   the notices tell visitors to check a live price.
 

@@ -121,7 +121,7 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">Who does what</p><h2 class="h2 rv" style="--d:1" id="who-h">Five names. <span class="grad">One simple picture.</span></h2>
    <p class="lede rv" style="--d:2">Most confusion starts when these get mixed up. Tap each one and watch where it sits, from you to the strategy.</p></div>
-  <div class="rv" style="max-width:980px;margin:0 auto 34px">{laptop('simple', 'The simple picture, in 1:32')}</div>
+  <div class="rv" style="max-width:980px;margin:0 auto 34px">{laptop('simple', 'The simple picture, in 1:43')}</div>
   <div class="rv">{flow()}</div>
   <div class="card pad block rv">
    <p class="eyebrow" style="margin-bottom:14px">An everyday picture</p>
@@ -288,4 +288,4 @@ def build_home():
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',
                 "MTG's plain-English JetUP and TAG Markets guide: who holds your money, how TAG Markets copy trading with Sonic AI works, the 70/30 split, 24x Amplify, the risks and every sign-up step.",
-                main, crumbs_l, ld, docked=False, og_img='/jetup/img/cover-5-checks-v5.jpg', og_alt='Lost money before? Check these 5 things before you try again. JetUP and TAG Markets guide by MTG')
+                main, crumbs_l, ld, docked=False, og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again. JetUP and TAG Markets guide by MTG')

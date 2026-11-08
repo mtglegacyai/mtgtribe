@@ -116,7 +116,7 @@ def build_videos():
        'Watch first, then do. Every video opens on its own cover, plays in its own frame and closes itself when it ends.',
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Videos', None)])}
 <section class="sec tight" style="padding-top:0"><div class="wrap stack" style="gap:30px">
- <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Start here</p>{laptop('simple', 'JetUP and TAG Markets: the simple picture (1:32)')}<p class="small center" style="margin:8px 0 0">Who does what, where your money sits, the 70/30 split and the risks, in 92 seconds.</p></div>
+ <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Start here</p>{laptop('simple', 'JetUP and TAG Markets: the simple picture (1:43)')}<p class="small center" style="margin:8px 0 0">Who does what, where your money sits, the 70/30 split and the risks, in 92 seconds.</p></div>
  <div class="grid2" style="align-items:start">
   <div class="rv"><p class="eyebrow" style="margin-bottom:14px">1 · Watch first</p>{laptop('5checks', 'JetUP 5 Checks, by MTG (5:25)')}<p class="small center" style="margin:8px 0 0">Lost money before? Five things to check before you try again.</p></div>
   <div class="rv" style="--d:1"><p class="eyebrow" style="margin-bottom:14px">2 · Then do</p>{laptop('training', 'Sign-up training, by MTG (9:09)')}<p class="small center" style="margin:8px 0 0">Every tap: sign up, KYC, deposit, Sonic AI and the $100 promo.</p></div>
@@ -156,7 +156,7 @@ def build_downloads():
     path = '/jetup/downloads/'
     rows = ''.join(f'''<article class="card dl rv" style="--d:{i % 3}"><span class="ft">PDF</span><div><h3>{t}</h3><p>{d} {s}.</p></div>
  <a class="btn btn-ghost btn-sm" href="/jetup/downloads/{f}" download>{icon('i-dl2')}Download</a></article>''' for i, (f, k, t, d, s) in enumerate(DOWNLOADS))
-    vids = [('5checks', 'JetUP 5 Checks, by MTG', '5:25 · 1080p · 82 MB', 'jetup-5-checks-mtg-v5.mp4'), ('training', 'Sign-up training, by MTG', '9:09 · 1080p · 45 MB', 'jetup-tag-markets-signup-training-mtg.mp4'), ('profitshare', "Profit Share explained (JetUP's own)", '1:14 · vertical · 9 MB', 'jetup-profit-share-explained.mp4')]
+    vids = [('5checks', 'JetUP 5 Checks, by MTG', '5:25 · 1080p · 81 MB', 'jetup-5-checks-mtg-v5-3.mp4'), ('training', 'Sign-up training, by MTG', '9:09 · 1080p · 65 MB', 'jetup-tag-markets-signup-training-mtg-v4-4.mp4'), ('profitshare', "Profit Share explained (JetUP's own)", '1:14 · vertical · 9 MB', 'jetup-profit-share-explained.mp4')]
     vrows = ''.join(f'''<article class="card dl rv" style="--d:{i}"><span class="ft mp4">MP4</span><div><h3>{t}</h3><p>{m}</p></div>
  <a class="btn btn-ghost btn-sm" href="/jetup/media/{f}" download>{icon('i-dl2')}Download</a></article>''' for i, (k, t, m, f) in enumerate(vids))
     share = "Lost money before? Check these 5 things before you try JetUP and TAG Markets, then follow the training one tap at a time: https://mtgtribe.com/jetup/"

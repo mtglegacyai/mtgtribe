@@ -1,0 +1,76 @@
+{
+ "request_id": "528543bbf4a34f8cb5b434f9291a88e8",
+ "engine": "orca",
+ "voice_id": "3931c505632149ceb2bbfecf2778c09c",
+ "voice_name": "MTG Master Voice V2",
+ "speed": 1.0,
+ "duration": 47.621,
+ "credits": 2,
+ "date": "2026-11-08",
+ "lines": {
+  "n_hook": {
+   "file": "v_n_hook.wav",
+   "src": "ex2v1",
+   "a": 0.205,
+   "b": 10.285,
+   "dur": 10.08,
+   "text": "Jet Up, TAG Markets, Copy X, Sonic AI. Four names, plus you. Mix them up, and nothing makes sense. Here's one picture you'll never forget."
+  },
+  "n_taxi": {
+   "file": "v_n_taxi.wav",
+   "src": "ex2v1",
+   "a": 10.75,
+   "b": 19.08,
+   "dur": 8.33,
+   "text": "Think of a minibus taxi. You don't drive. You choose a driver, take your seat, and the driver does the driving. Copy trading works the same way."
+  },
+  "n_driver": {
+   "file": "v_n_driver.wav",
+   "src": "ex2v1",
+   "a": 19.7,
+   "b": 22.355,
+   "dur": 2.655,
+   "text": "Sonic AI is the driver. It does the trading."
+  },
+  "n_seat": {
+   "file": "v_n_seat.wav",
+   "src": "ex2v1",
+   "a": 22.975,
+   "b": 26.6,
+   "dur": 3.625,
+   "text": "Your seat is booked in your name. That's your TAG Markets account."
+  },
+  "n_board": {
+   "file": "v_n_board.wav",
+   "src": "ex2v1",
+   "a": 27.225,
+   "b": 30.62,
+   "dur": 3.395,
+   "text": "Copy X is the route board that puts you in that driver's taxi."
+  },
+  "n_assoc": {
+   "file": "v_n_assoc.wav",
+   "src": "ex2v1",
+   "a": 31.21,
+   "b": 35.395,
+   "dur": 4.185,
+   "text": "Jet Up is the association. It trains and organises the passengers."
+  },
+  "n_you": {
+   "file": "v_n_you.wav",
+   "src": "ex2v1",
+   "a": 35.99,
+   "b": 39.665,
+   "dur": 3.675,
+   "text": "And you? You decide which taxi to take, and how much to put in."
+  },
+  "n_stops": {
+   "file": "v_n_stops.wav",
+   "src": "ex2v1",
+   "a": 40.355,
+   "b": 47.335,
+   "dur": 6.98,
+   "text": "Here's where the picture stops. A taxi gets you there. A strategy can lose money, and a good last trip never promises the next one."
+  }
+ }
+}

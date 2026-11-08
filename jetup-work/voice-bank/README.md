@@ -17,6 +17,7 @@ same voice only when MTG approves the credits for that video (measured: 14 credi
 | `tutorial/` | `p1v3.mp3` (0:18) | Fair-play sign-up lines (MTG, 7 Nov 2026): "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button", "If someone else invited you, use their Partner link instead", "Invited by someone else? Use their link. This video is for every team, so feel free to share it." Request `108a7fa50fe04232a83702c53060598a` |
 | `tutorial/` | `p2v1.mp3` (2:00) | MTG's own tutorial, part 2 (7 Nov 2026): "In this video" (link Jet Up to TAG Markets), overview, step lines (same email and password, scroll to the Copy X banner, Register Copy X, password, tick the three boxes, Sync successful, tick and Close, Login to Copy X, username or password incorrect tip, checks that you're human, dashboard and K Y C, the TAG Markets email, Confirm email address, Verification successful, click here, back on your dashboard), the recap and the part 3 preview. Request `2e3c390e2b494680b8612363fd53ea4a`, about 7 credits |
 | `tutorial/` | `p3v1.mp3` (2:25) | MTG's own tutorial, part 3 (8 Nov 2026), KYC: "In this video" (verify your identity on TAG Markets), overview, step lines (upload documents, Continue, country, Sumsub ID email and Start verification, the 6 digit code and never share it, consent and Create my account, Sumsub ID created, Identity Card, double-sided, the tips, Allow the camera, can't ask for your permission, ID scan front and back, selfie, Hold still, All set, documents on another profile, reviewed then deposit), the recap and the part 4 preview. Request `89f01eda7b2c497a826a8a085021a412`, about 7 credits |
+| `explainers/` | `ex2v1.mp3` (0:48) | Explainer #2, the minibus taxi (8 Nov 2026): "Four names, plus you" hook, the taxi picture (you don't drive, choose a driver, take your seat), Sonic AI is the driver, your seat in your name is your TAG Markets account, Copy X is the route board, Jet Up is the association that trains and organises the passengers, you decide which taxi and how much, and where the picture stops. Request `528543bbf4a34f8cb5b434f9291a88e8`, 2 credits |
 | `signup-training/` | `t1.mp3` (3:04), `t2.mp3` (2:32), `t3.mp3` (3:14), `t4.mp3` (0:32) | Sign-up training narration, parts 1 to 6 plus the promo and comment lines |
 
 - `*_tts.json`: HeyGen's own response for each file, with **word-by-word timings** (`word_timestamps`) and the request ID.
@@ -41,6 +42,7 @@ Leave about 0.05 s before the first word and 0.15 s after the last one, and join
 - Loss limit 10%, 5% with a community token; leverage warning (training)
 - Withdrawals and the promo rules, start small, small test withdrawal (5 Checks part 2, training)
 - Partner link vs Client link, sign-up, KYC, deposit network and amount, Sonic AI codes, CU number, promo claim (training)
+- The minibus taxi picture of the five names (explainer #2)
 - Closing lines: mtgtribe.com/jetup, mtgtribe.com/group, Telegram, save and share, "It pays to pay attention, and take action"
 
 Not covered yet (needs new lines): the partner plan (levels, lot commission, Infinity, Global Pool, rewards), the BIX Card,

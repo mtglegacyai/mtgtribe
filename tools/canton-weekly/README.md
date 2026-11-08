@@ -44,3 +44,8 @@ Before naming something new in a report, add it there with its official address,
 cantonecosystem.com (Canton Network's official directory) or the company's own site. Never guess an address.
 
 Design: everything reuses cntn/index.html (the master page). No em or en dashes anywhere.
+
+## Standing publishing rule (MTG, 8 November 2026)
+
+From 8 November 2026 the weekly task publishes on its own: build, commit to the `claude/canton-weekly-DATE` branch, merge to
+`main`, push, confirm the four URLs load, then send MTG a notification that the report is live. MTG checks it afterwards.

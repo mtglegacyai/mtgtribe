@@ -9,11 +9,19 @@
 .bvp-stage:focus-visible{outline:2px solid #f2ad3c;outline-offset:4px}
 .bvp-shine{display:none} /* sheen removed: it lit the whole image box, not just the card */
 .bvp-k{display:inline-flex;align-items:center;gap:8px;margin:0 0 10px;color:#e8b862;font:800 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
-.bvp-k:before{content:"";width:22px;height:1px;background:currentColor}
+.bvp-k:before{content:"";width:8px;height:8px;border-radius:50%;background:#f2ad3c;box-shadow:0 0 10px rgba(242,173,60,.85)}
 .bvp h2{margin:0 0 10px;color:#fff;font:800 clamp(1.45rem,3vw,2rem)/1.12 Outfit,'DM Sans',system-ui,sans-serif;letter-spacing:-.02em}
 .bvp h2 b{background:linear-gradient(180deg,#fff2d2 0%,#ffd47c 40%,#f2ad3c 72%,#c27a14 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .bvp p{margin:0 0 20px;color:#c3c7cd;font-size:16px;line-height:1.6}
+.bvp p strong{color:#fff}
+.bvp-pts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.bvp-pts li{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;border:1px solid rgba(242,173,60,.32);background:rgba(242,173,60,.07);color:#f1e3c4;font-size:13.5px;font-weight:700;line-height:1.3}
+.bvp-btns{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
 .bvp .cta-w{display:inline-block}
+.bvp-alt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:12px 20px;border-radius:14px;border:1.5px solid rgba(242,173,60,.7);color:#ffe2aa;font:800 14px/1.2 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;text-decoration:none;transition:background .2s,border-color .2s}
+.bvp-alt:hover,.bvp-alt:focus-visible{background:rgba(242,173,60,.12);border-color:#f2ad3c}
+.bvp-alt .ic,.bvp-calc .ic{width:16px;height:16px}
+.bvp-calc{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:#e8b862;font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
 .bvp .cta{min-height:56px;padding:12px 22px;font-size:14.5px;letter-spacing:.06em}
 .bvp-small{display:block;margin-top:12px;color:#8a919b;font-size:12.5px;line-height:1.5}
 /* compact footer version */
@@ -22,13 +30,20 @@
 .bvp.bvp-sm .bvp-stage img{width:min(250px,100%)}
 .bvp.bvp-sm h2{font-size:clamp(1.15rem,2.2vw,1.4rem)}
 .bvp.bvp-sm p{margin-bottom:14px;font-size:15px}
+.bvp.bvp-sm .bvp-alt{min-height:50px}
 @media (prefers-reduced-motion:reduce){.bvp-stage img{transition:none}}
 @media (max-width:720px){
  .bvp,.bvp.bvp-sm{grid-template-columns:minmax(0,1fr);text-align:center;justify-items:center;padding:22px 18px 24px;gap:10px}
  .bvp-stage{min-height:0;width:100%;padding:6px 0 10px}
  .bvp-stage img{width:min(320px,88%)}
  .bvp.bvp-sm .bvp-stage img{width:min(220px,70%)}
- .bvp-k{justify-content:center}
- .bvp .cta-w,.bvp .cta{width:100%}
+ .bvp-k{display:block;text-align:center;letter-spacing:.08em;font-size:11px;line-height:1.5}
+ .bvp-k:before{display:inline-block;vertical-align:middle;margin:-2px 8px 0 0}
+ .bvp-pts li{font-size:12.5px;padding:7px 11px}
+ .bvp .cta-w,.bvp .cta,.bvp-alt{width:100%}
+ .bvp-btns{width:100%}
+ .bvp-pts{justify-content:center}
+ .bvp-calc{display:inline;text-align:center}
+ .bvp-calc .ic{display:inline-block;vertical-align:-3px;margin-left:4px}
  .bvp .cta{white-space:normal}
 }

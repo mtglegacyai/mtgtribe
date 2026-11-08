@@ -9,8 +9,8 @@ MTG approved this formula on 7 November 2026 (JetUP part 1). Do not ask him to r
 every tutorial part. His latest instruction in the chat still wins; when he changes the formula, update this skill.
 
 Works with **mtg-creative-standard** (voice, music, brand, preview, approval) and **mtg-site-learning-system**
-(facts register, consistency, links, PDFs). Where they differ on these points, this skill is newer: his photo is always a
-**circle**, and the greeting says **"video"**, never "training".
+(facts register, consistency, links, PDFs). Where they differ on these points, this skill is newer: **no MTG photo anywhere, neither in the video nor on the
+thumbnail; the official JetUP logo takes its place** (MTG, 8 Nov 2026), and the greeting says **"video"**, never "training".
 
 ## 1. Receive and store
 
@@ -24,7 +24,7 @@ Works with **mtg-creative-standard** (voice, music, brand, preview, approval) an
 
 ## 2. The script structure (fixed)
 
-1. **Greeting** with his photo large in a circle: "Hi, my name is MTG, Your Digital Architect. Thank you for taking the
+1. **Greeting** with the official JetUP logo large in a gold-ringed disc: "Hi, my name is MTG, Your Digital Architect. Thank you for taking the
    time to watch this video." (banked line + new line in the JetUP voice bank).
 2. **In this video:** "In this video, I'll show you how to ..." then the list of what they will do, said in 2 or 3 short
    sentences while a numbered list fills in on screen, item by item, on the word. Then "Take your time. You can pause any
@@ -36,7 +36,7 @@ Works with **mtg-creative-standard** (voice, music, brand, preview, approval) an
    "Invited by someone else? Use their link. This video is for every team, so feel free to share it." Save and share lines.
 7. **Signature outro** (banked): financial advice reminder, do your own research, thank you for every like, share and
    comment, your support means everything, thank yourself for taking massive action, YOU are the best, I'm MTG, Your
-   Digital Architect, see you on the next one, Let's Get This Crypto! With his circle photo, brand line and slogan.
+   Digital Architect, see you on the next one, Let's Get This Crypto! With the JetUP logo disc, brand line and slogan.
 
 **Fair-play sign-up wording (MTG, 7 Nov 2026), in every video that sends people to sign up:** "If I invited you, go to MTG
 tribe dot com slash ..., and tap any Join ... button. If someone else invited you, use their Partner link instead, so you
@@ -46,14 +46,15 @@ Full template and wording: `references/script-template.md`.
 
 ## 3. Look and motion (vertical 1080 x 1920)
 
-- Top bar: his face in a small gold-ringed circle, "MTG | Your Digital Architect", the part chip.
+- Top bar: the small JetUP logo disc with a gold ring, "MTG" over "YOUR DIGITAL ARCHITECT", the part chip.
 - Step card: gold number, title with the exact on-screen label highlighted, one-line sub.
 - The screen in a slim gold-titanium window, zoomed to the action; a lime ring on what to look at; a tap ripple where he
   taps; chips for short tips; tip cards for errors (never show his mistakes).
 - **The address bar is shown and ringed every time a new site or page opens**, then zoom in.
 - Captions under the window with the spoken word lit; progress bar of the steps.
-- His photo: **always a circle with a gold ring** (use the round crop, `assets/tribe/mtg-photo-round-1000.webp`), never a
-  rectangle or rounded square. Large in the greeting and outro, small with his name in the recap and next-video scenes.
+- **No photo of MTG** (MTG, 8 Nov 2026). Where his photo used to be (greeting, recap, next video, outro, top bar), use the
+  official JetUP logo on a dark purple disc with the gold ring (`tools/jetup-tutorial/jetup-disc.png`, small version
+  `jetup-disc-small.png`): large in the greeting and outro, small with his name in the recap and next-video scenes.
 
 Details: `references/visual-system.md`.
 
@@ -79,4 +80,5 @@ Send the video and the cover, with a short note: what is in it, what was checked
 Never publish without his approval. On the website, each part plays in the slim phone frame: at the top of its part on the
 step-by-step page, and in a "Step-by-step videos, one per part" strip near the top of that page (`references/pipeline.md`).
 Every video gets a thumbnail in the series look with the **official JetUP logo, never MTG's photo** (MTG, 8 Nov 2026: "Do
-not put my profile picture on these videos, put the official JetUp logo"). His photo stays inside the video itself.
+not put my profile picture on these videos, put the official JetUp logo"), and since the same day **no photo of MTG inside
+the videos either** ("I want my photo out of all videos themselves too"). His voice and his name stay.

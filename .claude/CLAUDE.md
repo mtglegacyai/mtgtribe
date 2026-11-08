@@ -68,9 +68,8 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 Every step-by-step tutorial video follows `.claude/skills/mtg-tutorial-video/`: greeting ("Hi, my name is MTG, Your
 Digital Architect. Thank you for taking the time to watch this video", never "training"), "In this video" list, the
 steps, recap, next video, fair-play sign-up wording ("tap any Join JetUP button; invited by someone else? use their
-link"), signature outro. **MTG's photo is always in a circle with a gold ring, never a rectangle or rounded square.**
-**Thumbnails (covers) carry the official JetUP logo, never MTG's photo** (MTG, 8 Nov 2026), for his tutorials and for
-promo clips such as BIX and Sonic AI. Do not make MTG repeat any of this.
+link"), signature outro. **No photo of MTG, neither inside the videos nor on the thumbnails: the official JetUP logo
+takes its place** (MTG, 8 Nov 2026), for his tutorials and for promo clips such as BIX and Sonic AI. His voice and name stay. Do not make MTG repeat any of this.
 
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 

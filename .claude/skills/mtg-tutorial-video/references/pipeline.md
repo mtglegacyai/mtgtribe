@@ -6,7 +6,7 @@ Reference builds: `tools/jetup-tutorial/part1/` and `tools/jetup-tutorial/part2/
 - `vo_v2.py` voice placement; `shots_v2.py` the edit (shots with clip, source start and speed, camera key points, rings,
   taps, chips, steps, scenes, window spans, plan items and cues); `make_tl3.py` builds `stage/timeline.js` and `voice.wav`.
 - `stage/stage.html` + `stage/engine.js`: the scenes (intro, plan, link, window, tip, mail, next, outro).
-  Needs `Anton-Regular.ttf`, `jetup-mark.png`, `mtg-face.png`, `mtg-photo-round.jpg` beside it.
+  Needs `Anton-Regular.ttf`, `jetup-mark.png`, `jetup-disc.png`, `jetup-disc-small.png` beside it (no MTG photo).
 - `render.js range a b frames` (4 workers in parallel), `mix_p1.py` (voice, light sound design, bed, closing track,
   loudnorm -14 LUFS, TP -2.8 target, because AAC raises the true peak by about 0.5 to 1 dB; measure the encoded file),
   ffmpeg x264 CRF 18, AAC 192k, faststart. `mix_p2.py` filters by FFT: the old sample loop and direct convolution took

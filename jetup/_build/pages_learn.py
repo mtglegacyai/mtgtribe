@@ -94,7 +94,7 @@ def build_checks():
            ('What can go wrong with JetUP and TAG Markets?', '24x Amplify makes swings bigger in both directions. You can lose your whole deposit, the account is closed at a 10% loss of the starting balance (5% with a community token), and the insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
                 'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA, warnings), Sonic AI results on Myfxbook, 24x Amplify risk and withdrawals.',
-                main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5.jpg', og_alt='Lost money before? Check these 5 things before you try again')
+                main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'

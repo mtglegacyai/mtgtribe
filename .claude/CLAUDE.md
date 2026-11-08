@@ -73,6 +73,16 @@ takes its place** (MTG, 8 Nov 2026), for his tutorials and for promo clips such 
 address) to the last frame. **Closing track:** videos longer than 60 seconds get the full 51-second "They Call Me MTG" under the
 ending; videos of 60 seconds or less get only its last line, right after his last word (MTG, 8 Nov 2026). Do not make MTG repeat any of this.
 
+## Standing rule: one signature standard for every video (MTG, 8 Nov 2026)
+
+The 9:09 JetUP + TAG Markets sign-up training is the reference: "the best transitions, sound effects, animations, and even
+my favourite line, We learn best when we teach others. I want consistency, professionalism, and precision across all my
+videos." Every MTG video (tutorial parts, explainers, new videos) ends with that training's signature ending (save and
+share, **WE LEARN BEST WHEN WE TEACH OTHERS**, IT PAYS TO PAY ATTENTION & TAKE ACTION, thank you trio, massive action,
+YOU ARE THE BEST, Crypto-Regards signature, end card with the site address), uses only its four sounds (whoosh, tick, pop,
+click) at its level, and its motion (pop-ins, bursts, emoji pops on key words). Tools: `tools/video-signature/` (README);
+details in `.claude/skills/mtg-tutorial-video/` section 3a. Every video uses the JetUP logo disc where his photo was.
+
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 
 When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated

@@ -34,14 +34,21 @@ right after his last word. Mix reference: `tools/jetup-explainers/ex1/mix_ex1.py
 
 - Icons, emojis, little people, drawings, arrows and connectors, ticks and crosses, counters that count up, money that
   splits, levels that unlock, gauges, phone and laptop mockups. Purposeful only: each one shows something he says.
-- Soft sound effects on reveals (pop, whoosh, tick), never louder than the voice.
-- MTG's brand bar and his photo where his standing rules say so; the site's colours and fonts so the video feels like
-  part of the page.
+- Sound effects: only the 9:09 sign-up training's four synthesised sounds (whoosh on scene changes, tick on list items
+  and reveals, pop on engagement and key highlights, click on taps), at the training's level, never louder than the voice
+  (`tools/video-signature/mix_consistent.py`). Emoji pops above the captions on key words, as in the training.
+- MTG's brand bar with the JetUP logo disc, never his photo (MTG, 8 Nov 2026); the site's colours and fonts so the video
+  feels like part of the page.
 - **Real screens from his step-by-step tutorial recordings** wherever a real tap or button makes the point: zoom on the
   button, spotlight or arrow on it, blur or cover all personal data (names, emails, balances, IDs, addresses, QR codes
   that carry private data). Footage from his own recordings needs no credits.
 
 ## End card and calls to action
+
+- **The ending is the 9:09 sign-up training's signature ending** (MTG, 8 Nov 2026: consistency across all his videos):
+  fair-play line, HELP SOMEONE START RIGHT (save, share), WE LEARN BEST WHEN WE TEACH OTHERS, IT PAYS TO PAY ATTENTION &
+  TAKE ACTION, then the signature outro and end card, all from MTG's banked lines (0 credits) and drawn by
+  `tools/video-signature/mtg_ending.py` in 16:9. Explainer #1 is the 16:9 reference (`tools/jetup-explainers/ex1/`).
 
 - **The site address in the final signature** (MTG, 8 Nov 2026): the end card shows the site's address as a large pill
   (for JetUP: mtgtribe.com/jetup) under the slogan, from "I'm MTG, Your Digital Architect" to the very last frame, so it is

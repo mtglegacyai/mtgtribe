@@ -51,7 +51,7 @@ def build_start():
         'Check your email and tap the verification link. Not in your inbox? Check spam or junk mail.',
       ], [('01', "The sponsor's Partner link (top left) and Client link"), ('02', 'The JetUP sign-up form'), ('03', 'Check your email, then verify')],
       'you see "Registration Successful. You can now log in." After you verify your email and log in, your profile shows Account Type: Partner.',
-      extra_before='<div class="pvid">' + phone('tut1', "Watch MTG do part 1 (3:38)") + '</div>')
+      extra_before='<div class="pvid">' + phone('tut1', "Watch MTG do part 1 (3:46)") + '</div>')
     p2 = part(2, 'Link JetUP to TAG Markets', 'One tap inside JetUP creates and links your TAG Markets account.', [
         'Log in at <b>jetup.ibportal.io</b> with the email and password you created in part 1.',
         'On your profile, scroll down to the CopyX banner and tap ' + k('Register CopyX') + '.',
@@ -61,7 +61,7 @@ def build_start():
         'Check your email for the TAG Markets email and tap ' + k('Confirm email address') + '. It can take a while: MTG\'s arrived after his first log in. Not in your inbox? Check spam or junk mail. You\'ll see "Verification successful". If the page does not move on, tap ' + k('click here') + ' and log in again.',
       ], [('04', 'The CopyX banner in your JetUP profile'), ('05', 'Syncing with Copy X')],
       'the banner says "User Active" (with your CU number), and you are on your TAG Markets dashboard with your email confirmed.',
-      extra_before='<div class="pvid">' + phone('tut2', "Watch MTG do part 2 (3:35)") + '</div>',
+      extra_before='<div class="pvid">' + phone('tut2', "Watch MTG do part 2 (3:42)") + '</div>',
       extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Never register directly on the CopyX platform,</b> or your account won\'t be linked to your team.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Username and/or Password are incorrect"?</b> Use exactly the password you created on JetUP, with the same capitals, numbers and symbols.</span></p>' % (icon('i-alert'), icon('i-info2')))
     p3 = part(3, 'Verify your identity', "Sumsub checks your ID and a selfie for TAG Markets.", [
         'On your TAG Markets dashboard (<b>portal.tagmarkets.com</b>), tap ' + k('upload documents') + ' in "Please complete your KYC verification in order to make a deposit".',
@@ -75,7 +75,7 @@ def build_start():
         'TAG Markets may also ask a few questions (your income, net worth, investment goal and whether you understand the risks): answer honestly. Read their reminder: not for residents of the European Union, you may have fewer protections than with a local provider, and %s of retail investor accounts lose money when trading CFDs.' % RETAIL_LOSS,
       ], [('06', "TAG Markets' questions and reminder"), ('07', 'The Sumsub identity check')],
       'you see "All set". TAG Markets reviews your documents, and once you are verified you can make your deposit (part 4).',
-      extra_before='<div class="pvid">' + phone('tut3', "Watch MTG do part 3 (3:29)") + '</div>',
+      extra_before='<div class="pvid">' + phone('tut3', "Watch MTG do part 3 (3:37)") + '</div>',
       extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>"This site can\'t ask for your permission"?</b> Close screen recorders and chat bubbles (for example WhatsApp), then tap Try again and Allow.</span></p><p class="call warn" style="margin-top:10px">%s<span><b>"Documents submitted on another profile"?</b> You already have a TAG Markets profile with these documents. One person, one profile: do not open a second account. Ask your sponsor or TAG Markets support.</span></p><p class="call info" style="margin-top:10px">%s<span><b>CFD</b> means contract for difference: you trade a price movement without owning the asset.</span></p>' % (icon('i-alert'), icon('i-alert'), icon('i-info2')))
     p4 = part(4, 'Fund your account', 'Send $155 from your exchange to your TAG Markets deposit address.', [
         'Log in at <b>portal.tagmarkets.com</b> with the same email and password.',
@@ -239,4 +239,4 @@ def build_start():
     ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
-                main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)
+                main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training-v4-4.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

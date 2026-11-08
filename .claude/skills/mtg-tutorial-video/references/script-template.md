@@ -13,10 +13,14 @@ are said: "Jet Up", "MTG tribe dot com slash jet up", "I B Portal", "Copy X", "t
 | 6 | Steps | One short line per step, exact on-screen labels; tips for errors he hit | Step card, window, ring, tap, chips, tip cards |
 | 7 | Recap | "Let's recap what we covered in this video." then 3 or 4 sentences in the past tense | Same list, each item ticks on its word |
 | 8 | Next | "In the next video, part N, I'll show you how to [next goal]." + one line with its 2 or 3 actions | NEXT VIDEO card, 3 numbered actions |
-| 9 | Links | "Everything I showed you, plus my links, is at MTG tribe dot com slash jet up." (bank: t3 `links`) | URL pill |
-| 10 | Fair play | "Invited by someone else? Use their link. This video is for every team, so feel free to share it." (bank: p1v3 `l_every`) | Gold-edged note |
-| 11 | Save, share | "Save this video, so it's here when you need it." "Share it with someone who's ready to start." (bank: t3) | Line under the URL |
-| 12 | Outro | Signature outro, all banked (t3 `o_fin` to `o_lgtc`) | JetUP logo disc, message line by line, like/share/comment icons on the words, YOU ARE THE BEST, brand line, slogan, risk line |
+| 9 | Links | "Everything I showed you, plus my links, is at MTG tribe dot com slash jet up." (bank: t3 `links`) | EVERYTHING I SHOWED YOU + MY LINKS, big url pill pops on the address |
+| 10 | Fair play | "Invited by someone else? Use their link. This video is for every team, so feel free to share it." (bank: p1v3 `l_every`) | url pill moves up; Invited by someone else? / Use their link / THIS VIDEO IS FOR EVERY TEAM / Feel free to share it |
+| 11 | Save, share | "Save this video, so it's here when you need it." "Share it with someone who's ready to start." (bank: t3) | HELP SOMEONE START RIGHT: SAVE and SHARE ring icons, bursts |
+| 12 | We learn best | "We learn best when we teach others." (bank: signup-training/t3 143.9 s, the training's own take) | WE LEARN BEST / WHEN WE TEACH OTHERS |
+| 13 | Slogan | "It pays to pay attention, and take action." (bank: signup-training/t3 165.3 s) | IT PAYS TO / PAY ATTENTION / & TAKE / ACTION, burst, JetUP disc |
+| 14 | Outro | Signature outro, all banked (t3 `o_fin` to `o_lgtc`) | The training's ending: shield, THANK YOU trio with hearts, MASSIVE ACTION, YOU ARE THE BEST with sparkles, Crypto-Regards signature with the JetUP disc, end card with url pill, platform badges, Next chip, risk line |
+
+Rows 9 to 14 are the signature ending of the 9:09 sign-up training (MTG, 8 Nov 2026), drawn by `tools/video-signature/`.
 
 Where the part sends people to sign up (usually step 1 of part 1), use the fair-play pair (bank: p1v3 `l_ifme`, `l_other`,
 adjust the URL and button label for other sites):

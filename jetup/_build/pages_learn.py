@@ -262,7 +262,14 @@ def build_bix():
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('BIX Card', None)],
        [icon('i-phone') + 'The BixPay app', icon('i-lock') + 'Self-custody', icon('i-info2') + 'Optional'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
- <div class="call info rv">{icon('i-info2')}<p><b>MTG's BIX Card link is coming.</b> Until then, install BixPay from the official bix.fi website. A full BIX Card video is planned.</p></div>
+ <div class="card pad rv vrow" id="bix-video">
+  <div>{phone('bix')}</div>
+  <div><p class="eyebrow">BIX's own clip · 0:10</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">See the BIX Card <span class="grad">in 10 seconds</span></h2>
+   <p class="lede">The lime BIX Visa card and the BixPay app. Top up the card from your self-custody crypto wallet, then pay anywhere Visa works, or add it to Apple Pay or Google Pay.</p>
+   <p class="small" style="margin-top:12px">This is BIX's own promo clip. The balance and the purchases on the screen are BIX's demo, not a real account.</p>
+   <div class="ctas" style="margin-top:16px"><a class="btn btn-pri" href="#setup">{icon('i-rocket2')}Set it up in 5 steps</a><a class="btn btn-ghost" href="#link">{icon('i-link')}Link it to JetUP</a></div></div>
+ </div>
+ <div class="call info rv">{icon('i-info2')}<p><b>MTG's BIX Card link is coming.</b> Until then, install BixPay from the official bix.fi website. A step-by-step BIX Card video is planned.</p></div>
  {section('setup', 'Set it up', 'Five steps to your card', '''
 <ol>
  <li><b>Install BixPay</b> from bix.fi, the App Store or Google Play. It is free to download.</li>
@@ -304,5 +311,5 @@ def build_bix():
 {tribe_cta()}'''
     return page(path, 'BIX Card with JetUP: Setup, Fees and Linking | MTG',
                 'The BIX Card in the JetUP portal: the BixPay self-custody wallet and Visa card, setup, KYC, card prices, linking to the JetUP IB portal with a QR code (even from a phone), top-ups from TAG Markets and BIX Card commissions for partners.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('BIX Card', None)],
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('BIX Card', None)], [ld_video('bix')],
                 keywords='BIX Card, BixPay, JetUP BIX Card, BIX Wallet, crypto Visa card, JetUP IB portal, TAG Markets, MTG TRIBE')

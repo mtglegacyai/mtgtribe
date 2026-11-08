@@ -1,0 +1,458 @@
+{
+ "date": "2026-11-08",
+ "date_h": "8 November 2026",
+ "headline": "holding $0.091 to $0.094 support after the SEC letter",
+ "price_short": "$0.0927",
+ "lede": "Canton Coin (CC) price, chart levels and three scenarios for the week ahead, plus what's happening with CNTN stock. Plain English, no hype.",
+ "summary": "Canton Coin is at <b>$0.0927</b> (about R1.53), down about <b>5%</b> this week and <b>24%</b> this month. Price is back at the $0.091 to $0.094 support zone for the second week, even after good news: the SEC staff's no-action letter on 3 November and DTCC going live on Canton. The network now burns about 70% as much CC as it mints, better than last week but still net new supply. CNTN stock rose about <b>6%</b> to <b>$2.06</b>, and tokenized CNTN shares made their first trades on 4 November.",
+ "summary_plain": "Canton Coin at $0.0927, down about 5% this week. Support $0.091 to $0.094, resistance $0.0995. SEC no-action letter, DTCC live, tokenized CNTN trading. Scenarios and CNTN stock for 8 November 2026.",
+ "meta_chips": [
+  [
+   "list",
+   "CC $0.0927"
+  ],
+  [
+   "clock",
+   "7 days: -5%"
+  ],
+  [
+   "wallet",
+   "CNTN $2.06"
+  ],
+  [
+   "calendar",
+   "Updated 8 Nov 2026"
+  ]
+ ],
+ "snapshot": [
+  [
+   "Price",
+   "<b>$0.0927</b> (about R1.53)"
+  ],
+  [
+   "24 hours",
+   "<span class=\"dn\">About -1.5%</span>"
+  ],
+  [
+   "7 days / 30 days",
+   "<span class=\"dn\">About -5%</span> / <span class=\"dn\">about -24%</span>"
+  ],
+  [
+   "Market cap",
+   "$3.71 billion (rank #27)"
+  ],
+  [
+   "24h volume",
+   "About $9 million"
+  ],
+  [
+   "Supply",
+   "40.02 billion CC, no maximum, still growing"
+  ],
+  [
+   "All-time high",
+   "$0.1942 (3 Feb 2026), about 52% below it"
+  ],
+  [
+   "All-time low",
+   "$0.0590 (6 Dec 2025)"
+  ]
+ ],
+ "snapshot_note": "Snapshot 8 November 2026 from CoinGecko, cross checked with the Kraken CC/USD price ($0.0927).",
+ "closes": [
+  [
+   "19 Oct",
+   0.101272
+  ],
+  [
+   "20 Oct",
+   0.105212
+  ],
+  [
+   "21 Oct",
+   0.105082
+  ],
+  [
+   "22 Oct",
+   0.111613
+  ],
+  [
+   "23 Oct",
+   0.102517
+  ],
+  [
+   "24 Oct",
+   0.101228
+  ],
+  [
+   "25 Oct",
+   0.101575
+  ],
+  [
+   "26 Oct",
+   0.10111
+  ],
+  [
+   "27 Oct",
+   0.099366
+  ],
+  [
+   "28 Oct",
+   0.099262
+  ],
+  [
+   "29 Oct",
+   0.100403
+  ],
+  [
+   "30 Oct",
+   0.094234
+  ],
+  [
+   "31 Oct",
+   0.09848
+  ],
+  [
+   "1 Nov",
+   0.097812
+  ],
+  [
+   "2 Nov",
+   0.097672
+  ],
+  [
+   "3 Nov",
+   0.094121
+  ],
+  [
+   "4 Nov",
+   0.096472
+  ],
+  [
+   "5 Nov",
+   0.099383
+  ],
+  [
+   "6 Nov",
+   0.096189
+  ],
+  [
+   "7 Nov",
+   0.094309
+  ],
+  [
+   "8 Nov",
+   0.0927
+  ]
+ ],
+ "chart_lines": [
+  {
+   "v": 0.0995,
+   "kind": "resistance"
+  },
+  {
+   "v": 0.105,
+   "kind": "resistance"
+  },
+  {
+   "v": 0.094,
+   "kind": "support"
+  },
+  {
+   "v": 0.091,
+   "kind": "support"
+  }
+ ],
+ "chart_alt": "Canton Coin daily closes from 19 October to 8 November 2026, falling from about $0.105 to $0.093, with support at $0.091 to $0.094 and resistance at $0.0995 and $0.105",
+ "chart_live_label": "8 Nov $0.0927",
+ "changed": [
+  "📉 Price slipped from $0.0962 to $0.0927. The 8 November price is the lowest of the past three weeks.",
+  "📜 SEC staff issued a no-action letter on 3 November treating CC as a digital commodity. CC rose about 4% that day, then gave it back. It is staff's enforcement view, not a binding ruling.",
+  "🏦 DTCC's tokenization service went live on Canton on 28 October and an Uber and HSBC pilot was announced, yet the CC chart barely reacted.",
+  "🔥 Burn is catching up: about 15 million CC burned per day against about 22 million minted, down from roughly 2 to 1 last week.",
+  "📈 CNTN stock rose from $1.98 to $2.06 (about +6% on the week) and tokenized CNTN shares made their first trades on 4 November."
+ ],
+ "technicals": [
+  [
+   "Trend",
+   "Lower highs since February, and since 22 October ($0.112, $0.105, $0.099)"
+  ],
+  [
+   "20 day average",
+   "About $0.0995 (price below)"
+  ],
+  [
+   "50 day average",
+   "About $0.112 (price below)"
+  ],
+  [
+   "200 day average",
+   "Roughly $0.13 (not re-checked this week; price is far below)"
+  ],
+  [
+   "RSI (14)",
+   "About 39: weak, not oversold"
+  ],
+  [
+   "MACD",
+   "About level with its signal line, both below zero (bearish but flattening)"
+  ],
+  [
+   "Volume",
+   "Quiet: about $9 million a day, versus $24 to $25 million on the 3 to 4 November spike"
+  ],
+  [
+   "Futures",
+   "Open interest and funding could not be read this week (Coinglass blocks automated readers)"
+  ]
+ ],
+ "levels": [
+  [
+   "🔴 Resistance 2",
+   "$0.105",
+   "20 October high and where the 21 to 22 October rally stalled"
+  ],
+  [
+   "🔴 Resistance 1",
+   "$0.0995",
+   "5 November close and the 20 day average"
+  ],
+  [
+   "🟢 Support 1",
+   "$0.094",
+   "3 and 7 November closes, buyers stepped in each time"
+  ],
+  [
+   "🟢 Support 2",
+   "$0.091",
+   "Last week's support and a low-volume gap below"
+  ],
+  [
+   "🟢 Support 3",
+   "$0.088",
+   "Older base"
+  ]
+ ],
+ "scenarios": [
+  [
+   "🟢 Bullish",
+   "Daily close above $0.0995",
+   "Room toward $0.105, then the 50 day average near $0.112"
+  ],
+  [
+   "🟡 Base",
+   "Holds $0.091 to $0.0995",
+   "Sideways chop while the market digests the SEC letter and burn data"
+  ],
+  [
+   "🔴 Bearish",
+   "Daily close below $0.091",
+   "Opens $0.088, with little support below that"
+  ]
+ ],
+ "fund_score": "Mixed",
+ "fundamentals": [
+  "🔥 <b>Burn vs mint:</b> one independent analysis (CantonNews, 8 November) finds about 15.2 million CC burned and 21.9 million minted per day, so about 6.7 million CC of net new supply daily. Universal burn (CIP-0129, approved) still starts around Q1 2027. Four nodes make up 87.5% of the burn.",
+  "🏦 <b>Banks:</b> DTCC's node bought network traffic once (787,155 CC on 26 October) and other big names bought none in the period studied. The network is being used, CC mostly is not yet.",
+  "📜 <b>Regulation and ecosystem:</b> SEC staff no-action letter (3 November), six new Canton Foundation members, Splice 0.9.4 MainNet upgrade due 9 November, new grant proposals. No unlocks or ETF news found."
+ ],
+ "cntn_table": [
+  [
+   "Price (6 Nov close)",
+   "<b>$2.06</b>"
+  ],
+  [
+   "Week",
+   "<span class=\"up\">About +5.6%</span>"
+  ],
+  [
+   "Market cap",
+   "About $164 million (sources differ)"
+  ],
+  [
+   "52 week range",
+   "$1.66 to $5.83"
+  ]
+ ],
+ "cntn_notes": [
+  "CNTN is Canton Strategic Holdings, a Nasdaq company that holds about 3.7 billion CC. It is <b>not</b> Digital Asset, the private company that built Canton Network.",
+  "Tokenized CNTN shares are <b>live</b>: the first four trades ($30,296 in total) ran on TSV LLC on 4 November, with Fairmint as transfer agent. Only verified participants can trade, and South African access has not been announced.",
+  "You can buy CNTN through Interactive Brokers from most countries, or any US broker. <a class=\"tx\" href=\"/cntn/\">See the step-by-step guide</a>."
+ ],
+ "bottom_line": [
+  "📉 Price is back on support at $0.091 to $0.094 despite good news. A close below $0.091 would be the level to respect.",
+  "🔥 Burn is closing the gap with minting but supply still grows, and bank use of CC itself is thin.",
+  "👀 Watch the Splice 0.9.4 upgrade and whether tokenized CNTN opens to more buyers."
+ ],
+ "sources": [
+  [
+   "CoinGecko: Canton Coin",
+   "https://www.coingecko.com/en/coins/canton-network"
+  ],
+  [
+   "CoinGecko: historical data",
+   "https://www.coingecko.com/en/coins/canton-network/historical_data"
+  ],
+  [
+   "Kraken: CC/USD ticker",
+   "https://www.kraken.com/prices/canton"
+  ],
+  [
+   "CantonNews daily",
+   "https://cantonnews.org/today"
+  ],
+  [
+   "CantonNews: DTCC came to Canton, CC didn't move",
+   "https://cantonnews.org/dtcc-a-100-trillion-custodian-came-to-canton-cc-didn-t-move-an-inch"
+  ],
+  [
+   "Canton Foundation GitHub: CIP-0129",
+   "https://github.com/canton-foundation/cips/blob/main/cip-0129/cip-0129.md"
+  ],
+  [
+   "Canton Foundation GitHub: dev fund",
+   "https://github.com/canton-foundation/canton-dev-fund"
+  ],
+  [
+   "Canton Foundation: community research grants",
+   "https://canton.foundation/introducing-the-canton-community-research-grants/"
+  ],
+  [
+   "Canton Foundation: six new members",
+   "https://canton.foundation/canton-foundation-welcomes-six-new-members-in-november-2026/"
+  ],
+  [
+   "Digital Asset: OpenAssets partnership",
+   "https://blog.digitalasset.com/press-release/openassets-and-digital-asset-partner"
+  ],
+  [
+   "Canton Network: SEC and Canton Coin",
+   "https://www.canton.network/canton-network-press-releases/sec-recognizes-canton-coin-as-a-digital-commodity-providing-additional-regulatory-clarity-for-institutional-adoption"
+  ],
+  [
+   "The Block: SEC no-action letter",
+   "https://www.theblock.co/news/regulation/2026-11-03-sec-no-action-letter-canton-coin-digital-commodity-432492"
+  ],
+  [
+   "Yahoo Finance: CNTN",
+   "https://finance.yahoo.com/quote/CNTN/"
+  ],
+  [
+   "Finviz: first tokenized CNTN trades",
+   "https://finviz.com/news/415946/first-trades-of-tokenized-us-equity-under-sec-innovation-exemption-executed-on-the-canton-network"
+  ]
+ ],
+ "video": {
+  "src": "video.mp4",
+  "poster": "poster.jpg",
+  "title": "Canton Coin weekly analysis, 8 November 2026",
+  "duration_iso": "PT1M50S"
+ },
+ "video_script": [
+  {
+   "scene": "intro",
+   "text": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for the eighth of November, twenty twenty six.",
+   "caption": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for 8 November 2026."
+  },
+  {
+   "scene": "price",
+   "text": "Canton Coin is trading at about nine point three cents, roughly one rand fifty three. That is down about five percent this week, about twenty four percent this month, and about half below its February high.",
+   "caption": "Canton Coin is trading at about $0.093, roughly R1.53. That is down about 5% this week, about 24% this month, and about half below its February high."
+  },
+  {
+   "scene": "trend",
+   "text": "On the chart, the trend is still making lower highs. Price sits below its twenty and fifty day moving averages, and the Relative Strength Index is around thirty nine: weak, but not oversold.",
+   "caption": "On the chart, the trend is still making lower highs. Price sits below its 20 and 50 day moving averages, and the RSI is around 39: weak, but not oversold."
+  },
+  {
+   "scene": "levels",
+   "text": "Watch two zones. Support sits between nine point one and nine point four cents. Resistance sits at nine point nine five cents, then ten and a half cents.",
+   "caption": "Watch two zones. Support sits between $0.091 and $0.094. Resistance sits at $0.0995, then $0.105."
+  },
+  {
+   "scene": "scenarios",
+   "text": "Three scenarios for the week. A daily close above nine point nine five cents opens room toward ten and a half cents. Holding between nine point one and nine point nine five cents means sideways chop. A daily close below nine point one cents opens the way to eight point eight cents.",
+   "caption": "Three scenarios for the week. A daily close above $0.0995 opens room toward $0.105. Holding between $0.091 and $0.0995 means sideways chop. A daily close below $0.091 opens the way to $0.088."
+  },
+  {
+   "scene": "fundamentals",
+   "text": "On the fundamentals, the S E C staff issued a no action letter on the third of November, and D T C C went live on Canton. But Canton Coin barely reacted, and the network still creates more coin than it burns, about three for every two.",
+   "caption": "On the fundamentals, SEC staff issued a no-action letter on 3 November, and DTCC went live on Canton. But CC barely reacted, and the network still mints more than it burns, about 3 for every 2."
+  },
+  {
+   "scene": "guides",
+   "text": "Want to learn how to buy Canton Coin, or C N T N stock? Both step by step guides are waiting for you. Go to M T G tribe dot com slash C C, and M T G tribe dot com slash C N T N.",
+   "caption": "Want to learn how to buy Canton Coin, or CNTN stock? Both step-by-step guides are waiting for you: mtgtribe.com/cc and mtgtribe.com/cntn."
+  },
+  {
+   "scene": "outro",
+   "text": "Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto!"
+  }
+ ],
+ "video_vis": {
+  "price": 0.0927,
+  "tiles": [
+   [
+    "7 days",
+    "-5%",
+    "dn"
+   ],
+   [
+    "30 days",
+    "-24%",
+    "dn"
+   ],
+   [
+    "From the high",
+    "-52%",
+    "dn"
+   ],
+   [
+    "In rand",
+    "R1.53",
+    ""
+   ]
+  ],
+  "trend_h": "Lower highs, below the key averages",
+  "scenarios": [
+   [
+    "🟢 Bullish",
+    "Close above",
+    "$0.0995"
+   ],
+   [
+    "🟡 Base",
+    "Holds",
+    "$0.091 to $0.0995"
+   ],
+   [
+    "🔴 Bearish",
+    "Close below",
+    "$0.091"
+   ]
+  ],
+  "fundamentals": [
+   "📜 SEC staff no-action letter, 3 Nov",
+   "🔥 Burn about 70% of mint",
+   "🏦 DTCC live, CC barely used"
+  ]
+ },
+ "guides": {
+  "cc": {
+   "date": "2026-11-08",
+   "date_h": "8 November 2026",
+   "price": "<b>$0.0927</b>",
+   "chg": "About -5% / about -24%",
+   "mcap": "About $3.71 billion (top 30)",
+   "ath": "$0.1942 on 3 February 2026, about double today's price",
+   "supply": "40.02 billion CC, no maximum, still growing"
+  },
+  "cntn": {
+   "date": "2026-11-06",
+   "price": "$2.06",
+   "price_date": "6 November 2026",
+   "range": "$1.66 to $5.83"
+  }
+ },
+ "listing_alert": "Tokenized CNTN shares made their first trades on TSV LLC on 4 November. Access is limited to verified participants, so most people still buy CNTN through a normal broker. No new CC spot listing on Binance or VALR was found (Binance still has CC only as a perpetual futures contract)."
+}

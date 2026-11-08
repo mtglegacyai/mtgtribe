@@ -78,3 +78,5 @@ a cover. Details: `references/pipeline.md`.
 Send the video and the cover, with a short note: what is in it, what was checked, credits used, what is waiting on him.
 Never publish without his approval. On the website, each part plays in the slim phone frame: at the top of its part on the
 step-by-step page, and in a "Step-by-step videos, one per part" strip near the top of that page (`references/pipeline.md`).
+Every video gets a thumbnail in the series look with the **official JetUP logo, never MTG's photo** (MTG, 8 Nov 2026: "Do
+not put my profile picture on these videos, put the official JetUp logo"). His photo stays inside the video itself.

@@ -55,15 +55,18 @@ const CHIPS = () => [[C.t_drive - .1, C.t_copy - .1, '<span class="em">✋</span
   [C.t_copy - .1, C.d_sonic - .25, '<span class="em">🔁</span>Copy trading works the same way', ''],
   [C.k_track - .05, C.s_seat - .25, '<span class="em">📊</span>Track record public on Myfxbook', 'gold'],
   [C.g_login - .1, C.b_board - .25, '<span class="em">🔐</span>Log in yourself: see your own balance', ''],
-  [C.a_no1 - .1, C.y_you - .25, '<span class="em">❌</span>Does not trade · <span class="em">❌</span>Does not take your money', 'red']];
+  [C.a_no1 - .1, C.y_you - .25, '<span class="em">🔒</span>Your money stays in your name', ''],
+  [C.w_whole - .1, S.taxi[1], '<span class="em">✨</span>The whole picture', 'gold']];
 function taxi(t) {
   const [a, b] = S.taxi;
   const v = vis(t, a, b, .45, .35);
   st($('skyline'), v * .5); st($('road'), v);
   const th = rise(t, a + .05, b, 30); st($('thead'), th.o, 0, th.y);
   // drive in from the left, wheels turning, then idle
-  const kd = ez.out(lin(t, C.t_taxi - .35, C.t_taxi + 1.15)), dist = 1100 * kd, dx = -1100 + dist;
-  const tv = Math.min(vis(t, C.t_taxi - .35, b, .05, .35), v); const bob = kd >= 1 ? 1.6 * Math.sin(t * 9) : 2.5 * Math.sin(t * 22);
+  const kd = ez.out(lin(t, C.t_taxi - .35, C.t_taxi + 1.15)), dx = -1100 + 1100 * kd;
+  const roll = Math.max(0, t - C.w_whole + .2) * 260 * ez.out(lin(t, C.w_whole - .2, C.w_whole + .8)), dist = 1100 * kd + roll;
+  const tv = Math.min(vis(t, C.t_taxi - .35, b, .05, .35), v); const bob = (kd >= 1 && roll <= 0) ? 1.6 * Math.sin(t * 9) : 2.5 * Math.sin(t * 22);
+  $('skyline').style.transform = `translateX(${(-(roll * .25) % 600).toFixed(1)}px)`;
   st($('taxi'), tv, dx, bob);
   const ang = (dist / 44) * 180 / Math.PI;
   $('w1').setAttribute('transform', `rotate(${ang.toFixed(1)} 160 236)`); $('w2').setAttribute('transform', `rotate(${ang.toFixed(1)} 560 236)`);
@@ -94,13 +97,16 @@ function taxi(t) {
   [['o1', C.a_trains - .05], ['o2', C.a_trains + .3]].forEach(([id, c]) => { const k = ez.back(lin(t, c, c + .4)); $(id).style.display = 'inline-block'; $(id).style.opacity = lin(t, c, c + .15).toFixed(3); $(id).style.transform = `scale(${(.4 + .6 * k).toFixed(3)})`; });
   // you decide
   [['th1', C.y_which - .1], ['th2', C.y_much - .1]].forEach(([id, c]) => { const k = ez.out(lin(t, c, c + .35)); $(id).style.opacity = k.toFixed(3); $(id).style.transform = `translateX(${(-30 * (1 - k)).toFixed(1)}px)`; });
-  st($('think'), Math.min(vis(t, C.y_you - .1, b, .2, .35), v));
+  st($('think'), Math.min(vis(t, C.y_you - .1, C.w_whole - .1, .2, .35), v));
   // the picture, row by row
   const pv = Math.min(vis(t, C.d_sonic - .35, b, .45, .35), v); st($('panel'), pv, 0, 30 * (1 - pv));
-  const R = [['pr1', C.d_sonic, C.s_seat], ['pr2', C.s_seat, C.b_board], ['pr3', C.b_board, C.a_jet], ['pr4', C.a_jet, C.y_you], ['pr5', C.y_you, b + 1]];
-  R.forEach(([id, c0, c1]) => {
-    const el = $(id), k = ez.out(lin(t, c0 - .15, c0 + .3)); el.style.opacity = k.toFixed(3); el.style.transform = `translateX(${(36 * (1 - k)).toFixed(1)}px)`;
-    el.classList.toggle('on', t >= c0 - .1 && t < c1 - .15);
+  const R = [['pr1', C.d_sonic, C.s_seat, C.w_sonic, C.w_account], ['pr2', C.s_seat, C.b_board, C.w_account, C.w_copy], ['pr3', C.b_board, C.a_jet, C.w_copy, C.w_jet],
+             ['pr4', C.a_jet, C.y_you, C.w_jet, C.w_every], ['pr5', C.y_you, C.w_whole, 1e9, 1e9]];
+  R.forEach(([id, c0, c1, r0, r1]) => {
+    const el = $(id), k = ez.out(lin(t, c0 - .15, c0 + .3)); el.style.opacity = k.toFixed(3);
+    const pulse = 1 + .03 * Math.sin(Math.PI * lin(t, r0 - .1, r0 + .4)) + .03 * Math.sin(Math.PI * lin(t, C.w_every - .1, C.w_every + .4));
+    el.style.transform = `translateX(${(36 * (1 - k)).toFixed(1)}px) scale(${pulse.toFixed(3)})`;
+    el.classList.toggle('on', (t >= c0 - .1 && t < c1 - .15) || (t >= r0 - .1 && t < r1 - .15) || t >= C.w_every - .1);
   });
   const s1 = t >= C.k_track - .05 ? 'The driver · track record on Myfxbook' : 'The driver: it does the trading';
   if ($('pr1s').textContent !== s1) $('pr1s').textContent = s1;
@@ -108,25 +114,22 @@ function taxi(t) {
   if ($('pr2s').textContent !== s2) $('pr2s').textContent = s2;
 }
 
-/* ---------- where the picture stops ---------- */
-function stops(t) {
-  const [a, b] = S.stops, mid = C.r88 - .3;
-  const h = rise(t, a + .05, b, 30); st($('sh'), h.o, 0, h.y);
-  const g = pop(t, a + .15, mid, .45, .3); st($('sign'), g.o, 0, 0, g.s * (1 + .02 * Math.sin(t * 3)));
-  [['sa', C.p_taxi], ['sb', C.p_lose], ['sc', C.p_trip]].forEach(([id, c]) => { const r = rise(t, c - .15, mid, 0, .35, .3); st($(id), r.o, 40 * (1 - ez.out(lin(t, c - .15, c + .25))), 0); });
-  const r2 = rise(t, mid, b, 30); st($('rk88'), r2.o, 0, r2.y);
-  $('n88').textContent = Math.round(88 * ez.out(lin(t, C.r88 - .1, C.r88 + 1.0))) + '%';
-  const r3 = rise(t, C.r_learn - .2, b, 30); st($('rk3'), r3.o, 0, r3.y);
+/* ---------- now it's your turn: take your seat, tap any Join JetUP button ---------- */
+function turn(t) {
+  const [a, b] = S.turn, tt = C.i_join + .55;
+  const h = rise(t, a + .05, b, 40); st($('ut'), h.o, 0, h.y, .94 + .06 * ez.back(lin(t, a + .05, a + .5)));
+  const se = pop(t, C.u_turn - .15, b, .4, .3); st($('useat'), se.o, 0, 8 * Math.sin(t * 2), se.s * (1 + .08 * Math.sin(Math.PI * lin(t, C.u_seat - .05, C.u_seat + .5))));
+  const st_ = t >= C.u_seat - .05 ? '🙋' : '💺'; if ($('useat').textContent !== st_) $('useat').textContent = st_;
+  const u = rise(t, C.i_url - .3, b, 30); st($('uurl'), u.o, 0, u.y, 1 + .04 * Math.sin(Math.PI * lin(t, C.i_url, C.i_url + .6)));
+  const j = pop(t, C.i_go - .1, b, .4, .3); const press = t > tt - .04 && t < tt + .16 ? .95 : 1;
+  st($('ujoin'), j.o, 0, 0, j.s * press * (1 + .02 * Math.sin(t * 4)));
+  const hk = ez.out(lin(t, C.i_join - .45, tt)), hv = vis(t, C.i_join - .45, b, .25, .3);
+  st($('uhand'), hv, 260 * (1 - hk), 220 * (1 - hk) + (t > tt - .04 && t < tt + .16 ? 10 : 0));
+  const rk = lin(t, tt, tt + .65); $('uring').style.opacity = (t >= tt && t <= tt + .65 ? .9 * (1 - rk) : 0).toFixed(3);
+  $('uring').style.visibility = t >= tt && t <= tt + .65 ? 'visible' : 'hidden'; $('uring').style.transform = `scale(${(.4 + 1.6 * ez.out(rk)).toFixed(3)})`;
 }
 
-/* ---------- let's verify, together (the signature ending takes over at "Everything I showed you") ---------- */
-function next(t) {
-  const [a, b] = S.next;
-  const h = rise(t, a + .05, b, 40); st($('nx1'), h.o, 0, h.y, .94 + .06 * ez.back(lin(t, a + .05, a + .5)));
-  const s1 = rise(t, a + .55, b, 40), s2 = rise(t, a + .95, b, 40); st($('st1'), s1.o, 0, s1.y); st($('st2'), s2.o, 0, s2.y);
-}
-
-function scenes(t) { st($('top'), vis(t, S.hi[0], TL.T + 1, .5, 0)); hook(t); hi(t); taxi(t); stops(t); next(t); }
+function scenes(t) { st($('top'), vis(t, S.hi[0], TL.T + 1, .5, 0)); hook(t); hi(t); taxi(t); turn(t); }
 
 /* ---------- captions: the current line, the spoken word lit ---------- */
 const capbox = $('capbox'); let lastCap = null;

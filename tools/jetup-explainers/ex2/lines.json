@@ -234,5 +234,27 @@
   "file": "v_n_slog.wav",
   "dur": 2.595,
   "text": "It pays to pay attention, and take action."
+ },
+ "n_whole": {
+  "file": "v_n_whole.wav",
+  "src": "ex2v2",
+  "a": 0.27,
+  "b": 12.395,
+  "dur": 12.125,
+  "text": "So that's the whole picture. Sonic AI does the driving. Your account sits in your name, at TAG Markets. Copy X connects you to the driver. And Jet Up trains you, every step of the way."
+ },
+ "n_turn": {
+  "file": "v_n_turn.wav",
+  "src": "ex2v2",
+  "a": 13.05,
+  "b": 16.175,
+  "dur": 3.125,
+  "text": "Simple, right? Now it's your turn. Take your seat."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "tutorial/p1v3",
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
  }
 }

@@ -1,4 +1,4 @@
-# JetUP explainer #2, "Five names. One simple picture." (the minibus taxi): voice placement, captions, cues ->
+# JetUP explainer #2 v2, "Five names. One simple picture." (the minibus taxi): voice placement, captions, cues ->
 # stage/timeline.js, voice.wav, mixcues.json, kitcues.json (the 9:09 training's signature ending) and sfx_body.json.
 # MTG's 8 new taxi lines (8 Nov 2026, 2 credits) plus his banked lines. 16:9, 1920x1080, 25 fps.
 import json, os, re, sys, wave
@@ -8,11 +8,12 @@ sys.path.insert(0, os.path.join(HERE, '..', 'consist', 'kit'))
 import mtg_ending as ME
 FPS, SR = 25, 48000
 L = json.load(open(os.path.join(HERE, 'lines.json'))); WD = json.load(open(os.path.join(HERE, 'words.json')))
-ORDER = ['n_hook', 'hi', 'n_taxi', 'n_driver', 'track', 'n_seat', 'tag1', 'login', 'n_board', 'n_assoc', 'jet2', 'n_you', 'n_stops', 'r88', 'learn',
-         'verify', 'links', 'every', 'n_save', 'n_share', 'n_we', 'n_slog',
+# v2 (MTG, 8 Nov 2026): no 88%, no "where the picture stops", a positive close that ends on "tap any Join JetUP button"
+ORDER = ['n_hook', 'hi', 'n_taxi', 'n_driver', 'track', 'n_seat', 'tag1', 'login', 'n_board', 'n_assoc', 'jet2', 'n_you', 'n_whole', 'n_turn', 'l_ifme',
+         'every', 'n_save', 'n_share', 'n_we', 'n_slog',
          'o_fin', 'o_dyor', 'o_thanks', 'o_support', 'o_massive', 'o_best', 'o_im', 'o_see', 'o_lgtc']
 GAP = {'n_hook': .55, 'hi': .45, 'n_taxi': .45, 'n_driver': .3, 'track': .55, 'n_seat': .3, 'tag1': .3, 'login': .6, 'n_board': .55, 'n_assoc': .3,
-       'jet2': .55, 'n_you': .7, 'n_stops': .4, 'r88': .4, 'learn': .7, 'verify': .4, 'links': .35, 'every': .5, 'n_save': .3, 'n_share': .4,
+       'jet2': .55, 'n_you': .6, 'n_whole': .55, 'n_turn': .45, 'l_ifme': .5, 'every': .5, 'n_save': .3, 'n_share': .4,
        'n_we': .5, 'n_slog': .6, 'o_dyor': .35, 'o_massive': .35, 'o_best': .35, 'o_see': .2}
 VO, t = [], .5
 for k in ORDER:
@@ -61,10 +62,10 @@ for k, t0 in VO:
         b = round(chunks[j + 1][0]['a'] - .05 if j + 1 < len(chunks) else vend[k] + .22, 3)
         caps.append(dict(a=a, b=b, w=ch))
 allw = [w for c_ in caps for w in c_['w']]
-K = ME.find_cues(allw, links=True)
+K = ME.find_cues(allw, links=False)
 
-S = dict(hook=[0, vstart['hi'] - .15], hi=[vstart['hi'] - .25, vstart['n_taxi'] - .1], taxi=[vstart['n_taxi'] - .2, vstart['n_stops'] - .3],
-         stops=[vstart['n_stops'] - .35, vstart['verify'] - .25], next=[vstart['verify'] - .3, K['T_LINKS'] + .3], outro=[-10, -9])
+S = dict(hook=[0, vstart['hi'] - .15], hi=[vstart['hi'] - .25, vstart['n_taxi'] - .1], taxi=[vstart['n_taxi'] - .2, vstart['n_turn'] - .3],
+         turn=[vstart['n_turn'] - .35, K['T_LINKS'] + .3], outro=[-10, -9])
 S = {k: [round(a, 3), round(b, 3)] for k, (a, b) in S.items()}
 C = dict(h_jet=cue('n_hook', 'Jet'), h_tag=cue('n_hook', 'TAG'), h_copy=cue('n_hook', 'Copy'), h_sonic=cue('n_hook', 'Sonic'), h_you=cue('n_hook', 'you', 1),
          h_mix=cue('n_hook', 'Mix'), h_sense=cue('n_hook', 'nothing'), h_one=cue('n_hook', 'one'),
@@ -73,9 +74,10 @@ C = dict(h_jet=cue('n_hook', 'Jet'), h_tag=cue('n_hook', 'TAG'), h_copy=cue('n_h
          s_seat=vstart['n_seat'], s_name=cue('n_seat', 'name'), s_tag=cue('n_seat', 'TAG'), g_broker=vstart['tag1'], g_login=cue('login', 'Log'),
          b_board=vstart['n_board'], b_puts=cue('n_board', 'puts'), a_jet=vstart['n_assoc'], a_trains=cue('n_assoc', 'trains'),
          a_no1=vstart['jet2'], a_no2=cue('jet2', 'take'), y_you=vstart['n_you'], y_which=cue('n_you', 'which'), y_much=cue('n_you', 'much'),
-         p_stops=vstart['n_stops'], p_taxi=cue('n_stops', 'taxi'), p_lose=cue('n_stops', 'lose'), p_trip=cue('n_stops', 'good'),
-         r88=cue('r88', 'eighty'), r_learn=cue('learn', 'learn'), n_head=vstart['verify'])
-EMOS = [['youll never forget', '🧠'], ['see your own balance', '👀'], ['so learn first', '📚']]
+         w_whole=vstart['n_whole'], w_sonic=cue('n_whole', 'Sonic'), w_account=cue('n_whole', 'account'), w_copy=cue('n_whole', 'Copy'),
+         w_jet=cue('n_whole', 'Jet'), w_every=cue('n_whole', 'every'), u_simple=vstart['n_turn'], u_turn=cue('n_turn', 'turn'), u_seat=cue('n_turn', 'seat'),
+         i_go=cue('l_ifme', 'go'), i_url=cue('l_ifme', 'MTG'), i_join=cue('l_ifme', 'Join'))
+EMOS = [['youll never forget', '🧠'], ['see your own balance', '👀']]
 def S_body(phrase):
     toks = [(re.sub(r'[^a-z0-9]', '', w['w'].lower()), w['a']) for w in allw]; ph = phrase.split()
     for i in range(len(toks) - len(ph) + 1):
@@ -84,12 +86,12 @@ def S_body(phrase):
 TL = dict(fps=FPS, T=T, caps=caps, scenes=S, cues=C, emos=[[S_body(p), e] for p, e in EMOS], kit=[K['T_LINKS'], T], capoff=K['END_CARD'])
 os.makedirs(os.path.join(HERE, 'stage'), exist_ok=True)
 open(os.path.join(HERE, 'stage', 'timeline.js'), 'w').write('window.TL = ' + json.dumps(TL) + ';\n')
-json.dump(dict(cues=K, orient='h', nxt='Next: 5 checks before you try JetUP', links=True, T=T, fps=FPS), open(os.path.join(HERE, 'kitcues.json'), 'w'), indent=1)
+json.dump(dict(cues=K, orient='h', nxt='Next: 5 checks before you try JetUP', links=False, T=T, fps=FPS), open(os.path.join(HERE, 'kitcues.json'), 'w'), indent=1)
 kit0 = K['T_LINKS']
-body = dict(whoosh=[0.05, S['hi'][0] - .2, S['taxi'][0] - .2, C['t_taxi'] - .3, S['stops'][0] - .2, C['r88'] - .5, S['next'][0] - .2],
+body = dict(whoosh=[0.05, S['hi'][0] - .2, S['taxi'][0] - .2, C['t_taxi'] - .3, C['w_whole'] - .2, S['turn'][0] - .2],
             tick=[C[k] - .05 for k in ('h_jet', 'h_tag', 'h_copy', 'h_sonic', 'h_you', 'd_sonic', 's_seat', 'b_board', 'a_jet', 'y_you',
-                                         't_drive', 't_copy', 'k_myfx', 'g_login', 'a_no1', 'a_no2', 'p_taxi', 'p_lose', 'p_trip')] + [S['next'][0] + .5, S['next'][0] + .9],
-            pop=[C['h_one']], click=[])
+                                         't_drive', 't_copy', 'k_myfx', 'g_login', 'a_no1', 'w_sonic', 'w_account', 'w_copy', 'w_jet', 'i_url')],
+            pop=[C['h_one'], C['w_every'], C['u_seat']], click=[C['i_join'] + .55])
 json.dump({k: sorted(x for x in v if 0 <= x < kit0) for k, v in body.items()}, open(os.path.join(HERE, 'sfx_body.json'), 'w'))
 N = int(round(T * SR)); v = np.zeros(N, np.float32)
 for k, t0 in VO:

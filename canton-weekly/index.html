@@ -347,6 +347,22 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
 .up{color:#3ddc84}.dn{color:#ff8a7a}
 .vreal{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(242,173,60,.45);background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.12)}
 .vreal video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.vcover{position:absolute;inset:0;display:grid;place-items:end start;padding:0 0 6.5% 5%;border:0;cursor:pointer;background:none;color:#1b1102}
+.vcover[hidden]{display:none}
+.vcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcover:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+.vgo{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(10px,1.6vw,18px)}
+.vgo-btn{position:relative;display:grid;place-items:center;width:clamp(38px,7.2vw,92px);height:clamp(38px,7.2vw,92px);flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3d0 0%,#ffd47c 30%,#f2ad3c 62%,#c27a14 100%);box-shadow:0 0 0 6px rgba(242,173,60,.25),0 18px 50px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.55),inset 0 -6px 14px rgba(120,70,8,.45),inset 0 4px 10px rgba(255,255,255,.55);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.vgo-btn svg{width:40%;height:40%;margin-left:8%;filter:drop-shadow(0 2px 2px rgba(255,255,255,.4))}
+.vgo-btn:before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(255,212,124,.6)}
+.vgo-lab{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:rgba(6,6,7,.78);border:1px solid rgba(242,173,60,.55);color:#ffe2aa;font:800 13px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.vgo-lab b{color:#fff;font-weight:800}
+.vcover:hover .vgo-btn,.vcover:focus-visible .vgo-btn{transform:scale(1.08)}
+.vcover:focus-visible{outline:3px solid #f2ad3c;outline-offset:-3px}
+@media (prefers-reduced-motion:no-preference){.vgo-btn:before{animation:vring 2.2s ease-out infinite}}
+@keyframes vring{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vgo-short{display:none}
+@media (max-width:560px){.vgo-lab{font-size:10px;padding:6px 10px;letter-spacing:.1em}.vgo-long{display:none}.vgo-short{display:inline}.vcover{padding:0 0 4.5% 4.5%}.vgo-btn:before{inset:-6px}}
 .arch{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .arch a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-weight:700}
 .arch a:hover{border-color:rgba(242,173,60,.5)}
@@ -378,6 +394,7 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
 </div></section>
 <div class="content"><div class="wrap narrow">
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: 8 November 2026</h2><p>Canton Coin is at <b>$0.0927</b> (about R1.53), down about <b>5%</b> this week and <b>24%</b> this month. Price is back at the $0.091 to $0.094 support zone for the second week, even after good news: the <a class="tx" href="https://www.sec.gov/" target="_blank" rel="noopener">SEC</a> staff's no-action letter on 3 November and <a class="tx" href="https://www.dtcc.com/" target="_blank" rel="noopener">DTCC</a> going live on Canton. The network now burns about 70% as much CC as it mints, better than last week but still net new supply. CNTN stock rose about <b>6%</b> to <b>$2.06</b>, and tokenized CNTN shares made their first trades on 4 November.</p></section>
+ <div class="vstage" style="margin-top:0"><div class="vreal"><a class="vcover" style="position:relative;display:block" href="/canton-weekly/2026-11-08/#video" aria-label="Watch the video: Canton Coin weekly analysis, 8 November 2026, 1:50"><img src="/canton-weekly/2026-11-08/poster.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async" style="position:static;display:block;width:100%;height:auto"><span class="vgo" style="position:absolute;left:5%;bottom:6.5%"><span class="vgo-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .8.9 1.3 1.6.9l11.6-7.4c.6-.4.6-1.4 0-1.8L8.6 3.7C7.9 3.3 7 3.8 7 4.6z" fill="currentColor"/></svg></span><span class="vgo-lab"><span class="vgo-long">Watch the analysis</span><span class="vgo-short">Watch</span> · <b>1:50</b></span></span></a></div><div class="floor" aria-hidden="true"></div></div>
  <nav class="learn" aria-label="Learn how to buy">
   <a href="/cc/"><span class="k">Step-by-step guide</span><b>How to buy Canton Coin (CC)</b><span class="d">Buy USDT on Binance or VALR, buy CC, then keep it in your own Canton wallet. mtgtribe.com/cc</span><span class="go">Learn how to buy CC<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></a>
   <a href="/cntn/"><span class="k">Step-by-step guide</span><b>How to buy CNTN stock</b><span class="d">The Nasdaq company that holds Canton Coin, from almost anywhere. mtgtribe.com/cntn</span><span class="go">Learn how to buy CNTN<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></a>

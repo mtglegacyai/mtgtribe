@@ -347,6 +347,22 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
 .up{color:#3ddc84}.dn{color:#ff8a7a}
 .vreal{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(242,173,60,.45);background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.12)}
 .vreal video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.vcover{position:absolute;inset:0;display:grid;place-items:end start;padding:0 0 6.5% 5%;border:0;cursor:pointer;background:none;color:#1b1102}
+.vcover[hidden]{display:none}
+.vcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcover:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+.vgo{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(10px,1.6vw,18px)}
+.vgo-btn{position:relative;display:grid;place-items:center;width:clamp(38px,7.2vw,92px);height:clamp(38px,7.2vw,92px);flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3d0 0%,#ffd47c 30%,#f2ad3c 62%,#c27a14 100%);box-shadow:0 0 0 6px rgba(242,173,60,.25),0 18px 50px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.55),inset 0 -6px 14px rgba(120,70,8,.45),inset 0 4px 10px rgba(255,255,255,.55);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.vgo-btn svg{width:40%;height:40%;margin-left:8%;filter:drop-shadow(0 2px 2px rgba(255,255,255,.4))}
+.vgo-btn:before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(255,212,124,.6)}
+.vgo-lab{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:rgba(6,6,7,.78);border:1px solid rgba(242,173,60,.55);color:#ffe2aa;font:800 13px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.vgo-lab b{color:#fff;font-weight:800}
+.vcover:hover .vgo-btn,.vcover:focus-visible .vgo-btn{transform:scale(1.08)}
+.vcover:focus-visible{outline:3px solid #f2ad3c;outline-offset:-3px}
+@media (prefers-reduced-motion:no-preference){.vgo-btn:before{animation:vring 2.2s ease-out infinite}}
+@keyframes vring{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vgo-short{display:none}
+@media (max-width:560px){.vgo-lab{font-size:10px;padding:6px 10px;letter-spacing:.1em}.vgo-long{display:none}.vgo-short{display:inline}.vcover{padding:0 0 4.5% 4.5%}.vgo-btn:before{inset:-6px}}
 .arch{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .arch a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-weight:700}
 .arch a:hover{border-color:rgba(242,173,60,.5)}
@@ -376,7 +392,7 @@ ul.do li::before{content:"";position:absolute;left:11px;top:10px;width:8px;heigh
   <p class="kicker"><i class="dot" aria-hidden="true"></i>Weekly market report</p>
   <h1 id="h1"><span class="w">Canton Coin weekly</span>8 November 2026</h1>
   <p class="lede">Canton Coin (CC) price, chart levels and three scenarios for the week ahead, plus what's happening with CNTN stock. Plain English, no hype.</p>
-  <div class="vstage"><div class="vreal"><video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Canton Coin weekly analysis, 8 November 2026"><source src="video.mp4" type="video/mp4"></video></div><div class="floor" aria-hidden="true"></div></div>
+  <div class="vstage" id="video"><div class="vreal"><video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Canton Coin weekly analysis, 8 November 2026"><source src="video.mp4" type="video/mp4"></video><button class="vcover" type="button" hidden aria-label="Play the video: Canton Coin weekly analysis, 8 November 2026, 1:50"><img src="poster.jpg" alt="" width="1920" height="1080" decoding="async"><span class="vgo"><span class="vgo-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .8.9 1.3 1.6.9l11.6-7.4c.6-.4.6-1.4 0-1.8L8.6 3.7C7.9 3.3 7 3.8 7 4.6z" fill="currentColor"/></svg></span><span class="vgo-lab"><span class="vgo-long">Watch the analysis</span><span class="vgo-short">Watch</span> · <b>1:50</b></span></span></button></div><div class="floor" aria-hidden="true"></div></div><script>(function(){var s=document.currentScript.previousElementSibling,c=s&&s.querySelector('.vcover'),v=s&&s.querySelector('video');if(!c||!v)return;c.hidden=false;v.controls=false;c.addEventListener('click',function(){c.hidden=true;v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});v.focus()});v.addEventListener('ended',function(){if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen();v.load();v.controls=false;c.hidden=false})})();</script><p class="upd" style="margin:10px 0 0;font-size:12.5px">Canton and the Canton logo are trademarks of <a class="tx" href="https://www.digitalasset.com/" target="_blank" rel="noopener">Digital Asset</a> (Switzerland) GmbH. Digital Asset is not affiliated with, and has not sponsored or endorsed, this report.</p>
   <ul class="meta"><li><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>CC $0.0927</li><li><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>7 days: -5%</li><li><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg>CNTN $2.06</li><li><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Updated 8 Nov 2026</li></ul>
  </div>
 </section>

@@ -454,5 +454,10 @@
    "range": "$1.66 to $5.83"
   }
  },
- "listing_alert": "Tokenized CNTN shares made their first trades on TSV LLC on 4 November. Access is limited to verified participants, so most people still buy CNTN through a normal broker. No new CC spot listing on Binance or VALR was found (Binance still has CC only as a perpetual futures contract)."
+ "listing_alert": "Tokenized CNTN shares made their first trades on TSV LLC on 4 November. Access is limited to verified participants, so most people still buy CNTN through a normal broker. No new CC spot listing on Binance or VALR was found (Binance still has CC only as a perpetual futures contract).",
+ "thumb": {
+  "hook": "Holding support after the SEC letter",
+  "move": "-5%",
+  "move_label": "this week"
+ }
 }

@@ -47,6 +47,22 @@ EXTRA_CSS = """
 .up{color:#3ddc84}.dn{color:#ff8a7a}
 .vreal{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(242,173,60,.45);background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.12)}
 .vreal video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.vcover{position:absolute;inset:0;display:grid;place-items:end start;padding:0 0 6.5% 5%;border:0;cursor:pointer;background:none;color:#1b1102}
+.vcover[hidden]{display:none}
+.vcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcover:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35))}
+.vgo{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(10px,1.6vw,18px)}
+.vgo-btn{position:relative;display:grid;place-items:center;width:clamp(38px,7.2vw,92px);height:clamp(38px,7.2vw,92px);flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3d0 0%,#ffd47c 30%,#f2ad3c 62%,#c27a14 100%);box-shadow:0 0 0 6px rgba(242,173,60,.25),0 18px 50px rgba(0,0,0,.6),0 0 60px rgba(242,173,60,.55),inset 0 -6px 14px rgba(120,70,8,.45),inset 0 4px 10px rgba(255,255,255,.55);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.vgo-btn svg{width:40%;height:40%;margin-left:8%;filter:drop-shadow(0 2px 2px rgba(255,255,255,.4))}
+.vgo-btn:before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(255,212,124,.6)}
+.vgo-lab{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;background:rgba(6,6,7,.78);border:1px solid rgba(242,173,60,.55);color:#ffe2aa;font:800 13px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.vgo-lab b{color:#fff;font-weight:800}
+.vcover:hover .vgo-btn,.vcover:focus-visible .vgo-btn{transform:scale(1.08)}
+.vcover:focus-visible{outline:3px solid #f2ad3c;outline-offset:-3px}
+@media (prefers-reduced-motion:no-preference){.vgo-btn:before{animation:vring 2.2s ease-out infinite}}
+@keyframes vring{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vgo-short{display:none}
+@media (max-width:560px){.vgo-lab{font-size:10px;padding:6px 10px;letter-spacing:.1em}.vgo-long{display:none}.vgo-short{display:inline}.vcover{padding:0 0 4.5% 4.5%}.vgo-btn:before{inset:-6px}}
 .arch{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .arch a{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-weight:700}
 .arch a:hover{border-color:rgba(242,173,60,.5)}
@@ -121,7 +137,15 @@ def chart_svg(d):
 def video_block(d):
     v = d.get("video")
     if v and v.get("src"):
-        return f'''<div class="vstage"><div class="vreal"><video controls playsinline preload="metadata" poster="{esc(v["poster"])}" aria-label="{esc(v["title"])}"><source src="{esc(v["src"])}" type="video/mp4"></video></div><div class="floor" aria-hidden="true"></div></div>'''
+        m = re.match(r"PT(?:(\d+)M)?(?:(\d+)S)?", v.get("duration_iso", ""))
+        dur = f"{int(m.group(1) or 0)}:{int(m.group(2) or 0):02d}" if m and (m.group(1) or m.group(2)) else ""
+        lab = '<span class="vgo-long">Watch the analysis</span><span class="vgo-short">Watch</span>' + (f' · <b>{dur}</b>' if dur else '')
+        play = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .8.9 1.3 1.6.9l11.6-7.4c.6-.4.6-1.4 0-1.8L8.6 3.7C7.9 3.3 7 3.8 7 4.6z" fill="currentColor"/></svg>'
+        # Gold play cover (MTG, 8 Nov 2026): hidden until the script runs, so without JavaScript the normal player still works.
+        return (f'''<div class="vstage" id="video"><div class="vreal"><video controls playsinline preload="metadata" poster="{esc(v["poster"])}" aria-label="{esc(v["title"])}"><source src="{esc(v["src"])}" type="video/mp4"></video>'''
+                f'''<button class="vcover" type="button" hidden aria-label="Play the video: {esc(v["title"])}{(", " + dur) if dur else ""}"><img src="{esc(v["poster"])}" alt="" width="1920" height="1080" decoding="async"><span class="vgo"><span class="vgo-btn">{play}</span><span class="vgo-lab">{lab}</span></span></button></div><div class="floor" aria-hidden="true"></div></div>'''
+                '''<script>(function(){var s=document.currentScript.previousElementSibling,c=s&&s.querySelector('.vcover'),v=s&&s.querySelector('video');if(!c||!v)return;c.hidden=false;v.controls=false;c.addEventListener('click',function(){c.hidden=true;v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});v.focus()});v.addEventListener('ended',function(){if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen();v.load();v.controls=false;c.hidden=false})})();</script>'''
+                '<p class="upd" style="margin:10px 0 0;font-size:12.5px">Canton and the Canton logo are trademarks of Digital Asset (Switzerland) GmbH. Digital Asset is not affiliated with, and has not sponsored or endorsed, this report.</p>')
     return '''<div class="vstage">
    <div class="vph" id="tutorial" role="img" aria-label="Weekly technical analysis video coming soon">
     <span class="vbadge"><i aria-hidden="true"></i>Weekly analysis video</span>
@@ -204,6 +228,20 @@ def report(d, head, sprite, header, footer):
 # Dashboard button (MTG, 7 Nov 2026): on /cc/, /cntn/ and every report it opens Canton Weekly (the header is
 # copied from cntn/index.html, which already points there). The hub itself keeps the main MTG dashboard,
 # so its button never just reloads the page you are on.
+def hub_video(d):
+    """Latest report's thumbnail on the hub, with the gold play button; opens the report at its video."""
+    v = d.get("video")
+    if not (v and v.get("src")):
+        return ""
+    m = re.match(r"PT(?:(\d+)M)?(?:(\d+)S)?", v.get("duration_iso", ""))
+    dur = f"{int(m.group(1) or 0)}:{int(m.group(2) or 0):02d}" if m and (m.group(1) or m.group(2)) else ""
+    lab = '<span class="vgo-long">Watch the analysis</span><span class="vgo-short">Watch</span>' + (f' · <b>{dur}</b>' if dur else '')
+    play = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .8.9 1.3 1.6.9l11.6-7.4c.6-.4.6-1.4 0-1.8L8.6 3.7C7.9 3.3 7 3.8 7 4.6z" fill="currentColor"/></svg>'
+    href = f"/canton-weekly/{d['date']}/#video"
+    return (f'<div class="vstage" style="margin-top:0"><div class="vreal"><a class="vcover" style="position:relative;display:block" href="{href}" aria-label="Watch the video: {esc(v['title'])}{(', ' + dur) if dur else ''}">'
+            f'<img src="/canton-weekly/{d["date"]}/{esc(v["poster"])}" alt="" width="1920" height="1080" loading="lazy" decoding="async" style="position:static;display:block;width:100%;height:auto">'
+            f'<span class="vgo" style="position:absolute;left:5%;bottom:6.5%"><span class="vgo-btn">{play}</span><span class="vgo-lab">{lab}</span></span></a></div><div class="floor" aria-hidden="true"></div></div>')
+
 def HUB_HEADER(header):
     return header.replace('<a class="mn-btn mn-dash" href="/canton-weekly/">', '<a class="mn-btn mn-dash" href="/dashboard/">')
 
@@ -229,6 +267,7 @@ def hub(reports, head, sprite, header, footer):
 </div></section>
 <div class="content"><div class="wrap narrow">
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: {esc(latest["date_h"])}</h2><p>{latest["summary"]}</p></section>
+ {hub_video(latest)}
  {learn_cards()}
  <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}</section>
  <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>

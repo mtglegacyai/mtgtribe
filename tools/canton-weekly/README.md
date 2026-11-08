@@ -9,6 +9,14 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 3. Video: `python3 tools/canton-weekly/video.py tools/canton-weekly/data/DATE.json /tmp/narration.mp3 /tmp/they-call-me-mtg.mp3`
    (closing track: HeyGen asset aef5170534fa4430b6789ea5cd7335c0, download its url with get_asset; never commit it, it is MTG's own song).
    Then add `"video": {"src": "video.mp4", "poster": "poster.jpg", "title": "...", "duration_iso": "PT1M45S"}` to the JSON.
+3b. Thumbnail (MTG, 8 Nov 2026), always AFTER video.py, which writes a plain poster.jpg from a video frame (that frame
+   can catch the price mid-animation, so never keep it): add a `"thumb"` block to the JSON, for example
+   `"thumb": {"hook": "Holding support after the SEC letter", "move": "-5%", "move_label": "this week"}` (the hook is a
+   short, factual line from this week's report, no hype), then run
+   `python3 tools/canton-weekly/thumb.py tools/canton-weekly/data/DATE.json`. It overwrites canton-weekly/DATE/poster.jpg
+   with the designed cover: official Canton logo (unchanged file, assets/canton/), the price, the weekly move, the hook,
+   the week's chart and MTG's gold-ringed circle photo. Open the poster and check the price matches the report.
+   The page shows it under a gold play button (build.py `video_block`), with the Canton trademark note under the video.
 4. Pages: `python3 tools/canton-weekly/build.py tools/canton-weekly/data/DATE.json`
    (writes canton-weekly/DATE/, rebuilds the hub canton-weekly/index.html, updates sitemap-home.xml and, for the
    newest report only, refreshes the `data-snap` numbers on /cc/ and /cntn/ from the `guides` block).

@@ -25,10 +25,13 @@ right after his last word. Mix reference: `tools/jetup-explainers/ex1/mix_ex1.py
    actually sit?"). See mtg-hooks-standard.
 2. **The picture (most of the video):** one focal point at a time. Every important noun gets an object, every number
    moves, every relationship gets a connector. Build the picture piece by piece in the order he says it.
-3. **The everyday comparison** (minibus taxi, market stall, bus route, queue, seats): show it, connect it to the real
-   thing, and say **where the comparison stops**.
-4. **The risk or the rule** that matters, said plainly.
-5. **The next step:** one clear action, the matching button on the end card, and the page it lives on.
+3. **The everyday comparison** (minibus taxi, market stall, bus route, queue, seats): show it and connect it to the real
+   thing. Keep it positive: no "where the picture stops" scene (MTG, 8 Nov 2026).
+4. **The rule that matters**, said simply and positively (for example "your account sits in your name; log in and see
+   your own balance"). No loss statistics, no scary warnings: the signature ending's gentle reminder covers the risk.
+5. **The positive close and the next step:** a short recap of the whole picture, "now it's your turn", then one clear
+   action ("tap any Join JetUP button") with the button on screen, before the signature ending. Reference: explainer #2
+   v2 (`tools/jetup-explainers/ex2/`), the copy MTG asked for: "convert these people into action takers".
 
 ## Visual language
 

@@ -83,6 +83,14 @@ YOU ARE THE BEST, Crypto-Regards signature, end card with the site address), use
 click) at its level, and its motion (pop-ins, bursts, emoji pops on key words). Tools: `tools/video-signature/` (README);
 details in `.claude/skills/mtg-tutorial-video/` section 3a. Every video uses the JetUP logo disc where his photo was.
 
+## Standing rule: explainer copy converts, it does not intimidate (MTG, 8 Nov 2026)
+
+"Take it easy on the warnings and on the losses and negativity... I'm trying to build a business here... create videos
+that are going to convert these people into action takers." In explainers and promos: no loss statistics (no "88% of
+retail accounts lose money"), no "where the picture stops" scenes, no repeated warnings. Positive, encouraging copy, a
+warm recap, "now it's your turn", and one clear action (tap any Join JetUP button). The risk stays in his gentle
+signature reminder and the end card's small line. Still honest: no income promises, no fake balances, no "best ever".
+
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 
 When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated

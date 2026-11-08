@@ -36,7 +36,8 @@ thumbnail; the official JetUP logo takes its place** (MTG, 8 Nov 2026), and the 
    "Invited by someone else? Use their link. This video is for every team, so feel free to share it." Save and share lines.
 7. **Signature outro** (banked): financial advice reminder, do your own research, thank you for every like, share and
    comment, your support means everything, thank yourself for taking massive action, YOU are the best, I'm MTG, Your
-   Digital Architect, see you on the next one, Let's Get This Crypto! With the JetUP logo disc, brand line and slogan.
+   Digital Architect, see you on the next one, Let's Get This Crypto! With the JetUP logo disc, brand line and slogan, and
+   the site address (mtgtribe.com/jetup) as a large pill in the final signature, visible to the last frame (MTG, 8 Nov 2026).
 
 **Fair-play sign-up wording (MTG, 7 Nov 2026), in every video that sends people to sign up:** "If I invited you, go to MTG
 tribe dot com slash ..., and tap any Join ... button. If someone else invited you, use their Partner link instead, so you

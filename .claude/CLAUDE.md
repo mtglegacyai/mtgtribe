@@ -69,7 +69,9 @@ Every step-by-step tutorial video follows `.claude/skills/mtg-tutorial-video/`: 
 Digital Architect. Thank you for taking the time to watch this video", never "training"), "In this video" list, the
 steps, recap, next video, fair-play sign-up wording ("tap any Join JetUP button; invited by someone else? use their
 link"), signature outro. **No photo of MTG, neither inside the videos nor on the thumbnails: the official JetUP logo
-takes its place** (MTG, 8 Nov 2026), for his tutorials and for promo clips such as BIX and Sonic AI. His voice and name stay. Do not make MTG repeat any of this.
+takes its place** (MTG, 8 Nov 2026), for his tutorials and for promo clips such as BIX and Sonic AI. His voice and name stay. The final signature shows mtgtribe.com/jetup (or the site's
+address) to the last frame. **Closing track:** videos longer than 60 seconds get the full 51-second "They Call Me MTG" under the
+ending; videos of 60 seconds or less get only its last line, right after his last word (MTG, 8 Nov 2026). Do not make MTG repeat any of this.
 
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 

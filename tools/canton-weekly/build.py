@@ -154,7 +154,7 @@ def video_block(d):
     <div class="vbar" aria-hidden="true"><span></span>0:00</div>
    </div><div class="floor" aria-hidden="true"></div></div>'''
 
-def report(d, head, sprite, header, footer):
+def report(d, head, sprite, header, footer, nav_top="", nav_bottom=""):
     date = d["date"]; url = f"{SITE}/canton-weekly/{date}/"
     og = url + "og.jpg" if d.get("og") else SITE + "/cc/img/og-how-to-buy-canton-coin.jpg"
     s = d["snapshot"]
@@ -198,6 +198,7 @@ def report(d, head, sprite, header, footer):
  </div>
 </section>
 <div class="content"><div class="wrap narrow">
+ {nav_top}
  {alert}
  <section class="answer" aria-labelledby="qa"><h2 id="qa">This week in one paragraph</h2><p>{d["summary"]}</p></section>
  {learn_cards()}
@@ -213,6 +214,7 @@ def report(d, head, sprite, header, footer):
  <section class="sec" id="fundamentals" aria-labelledby="f-h"><h2 id="f-h">Fundamentals</h2><p class="score">Score: {esc(d["fund_score"])}</p><ul class="do">{fund}</ul>{INVESTORS_CARD}</section>
  <section class="sec" id="cntn" aria-labelledby="c-h"><h2 id="c-h">CNTN stock</h2>{cntn}<ul class="do">{cntn_notes}</ul><h3 class="part">CNTN right now</h3>{CNTN_CARD}</section>
  <section class="sec" id="bottom-line" aria-labelledby="b-h"><h2 id="b-h">Bottom line</h2><ul class="do">{bottom}</ul></section>
+ {nav_bottom}
  <section class="join" aria-labelledby="join-h">
   <div><h2 id="join-h">Want this every Sunday?</h2><p>Join the MTG TRIBE on WhatsApp. The new Canton report lands there first, and we learn and take action together.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></span>
@@ -228,6 +230,61 @@ def report(d, head, sprite, header, footer):
 # Dashboard button (MTG, 7 Nov 2026): on /cc/, /cntn/ and every report it opens Canton Weekly (the header is
 # copied from cntn/index.html, which already points there). The hub itself keeps the main MTG dashboard,
 # so its button never just reloads the page you are on.
+# Report navigation (MTG, 8 Nov 2026): back to the first report and forward to the latest, from every Canton page.
+# Styles: /assets/tribe/canton-nav.css (loaded from the master page head). main() rebuilds every report each run,
+# so last week's report gets its "Next week" link as soon as a new one is built.
+def short_date(dh):
+    return re.sub(r"(\d+) (\w{3})\w* (\d{4})", r"\1 \2 \3", dh)
+
+def series_strip(asc, i=None):
+    """Slim bar. On a report (i given): previous, all reports, next. Elsewhere: latest, first, all reports."""
+    url = lambda r: f"/canton-weekly/{r['date']}/"
+    if i is None:
+        latest, first = asc[-1], asc[0]
+        items = [f'<a href="{url(latest)}">Latest report: <b>{esc(short_date(latest["date_h"]))}</b></a>']
+        if first is not latest:
+            items.append(f'<a href="{url(first)}">First report: <b>{esc(short_date(first["date_h"]))}</b></a>')
+        items.append('<a href="/canton-weekly/#all">All reports</a>')
+    else:
+        prev = asc[i - 1] if i > 0 else None
+        nxt = asc[i + 1] if i + 1 < len(asc) else None
+        items = [(f'<a href="{url(prev)}" rel="prev">&#8592; Previous week: <b>{esc(short_date(prev["date_h"]))}</b></a>' if prev
+                  else '<span class="cwn-off">This is the first report</span>'),
+                 '<a href="/canton-weekly/#all">All reports</a>',
+                 (f'<a href="{url(nxt)}" rel="next">Next week: <b>{esc(short_date(nxt["date_h"]))}</b> &#8594;</a>' if nxt
+                  else '<span class="cwn-off">This is the latest report</span>')]
+    return '<nav class="cwn" aria-label="Canton Weekly reports" data-nolink><span class="cwn-k">&#128197; Canton Weekly</span>' + "".join(items) + '</nav>'
+
+def series_cards(asc, i):
+    """Bottom of a report: previous and next week cards, then first, all and latest."""
+    url = lambda r: f"/canton-weekly/{r['date']}/"
+    prev = asc[i - 1] if i > 0 else None
+    nxt = asc[i + 1] if i + 1 < len(asc) else None
+    def card(r, cls, k):
+        return (f'<a class="cwp-card {cls}" href="{url(r)}" rel="{"prev" if cls == "prev" else "next"}"><span class="cwp-k">{k}</span>'
+                f'<span class="cwp-d">{esc(r["date_h"])}</span><span class="cwp-h">{esc(r["headline"][:1].upper() + r["headline"][1:])}. CC {esc(r["price_short"])}</span></a>')
+    left = card(prev, "prev", "&#8592; Previous week") if prev else '<div class="cwp-card prev off"><span class="cwp-k">Previous week</span><span class="cwp-d">This is the first report</span><span class="cwp-h">Canton Weekly started here.</span></div>'
+    right = card(nxt, "next", "Next week &#8594;") if nxt else '<div class="cwp-card next off"><span class="cwp-k">Next week</span><span class="cwp-d">This is the latest report</span><span class="cwp-h">A new report lands every Sunday.</span></div>'
+    ends = []
+    if i > 0:
+        ends.append(f'<a href="{url(asc[0])}">&#9198; First report: <b>{esc(short_date(asc[0]["date_h"]))}</b></a>')
+    ends.append('<a href="/canton-weekly/#all">All reports</a>')
+    if i + 1 < len(asc):
+        ends.append(f'<a href="{url(asc[-1])}">Latest report: <b>{esc(short_date(asc[-1]["date_h"]))}</b> &#9197;</a>')
+    return (f'<nav class="cwp" aria-labelledby="cwp-h" data-nolink><h2 id="cwp-h">More Canton weekly reports</h2><div class="cwp-grid">{left}{right}</div>'
+            f'<div class="cwn cwp-ends" style="border:0;background:none;padding:0">{"".join(ends)}</div></nav>')
+
+GUIDE_NAV_RE = re.compile(r"<!-- canton-weekly-nav -->.*?<!-- /canton-weekly-nav -->", re.S)
+
+def refresh_guide_nav(asc):
+    """Keep the Latest / First / All reports strip on /cc/ and /cntn/ pointing at the right reports."""
+    block = "<!-- canton-weekly-nav -->" + series_strip(asc) + "<!-- /canton-weekly-nav -->"
+    for p in GUIDE_FILES.values():
+        s = open(p, encoding="utf-8").read()
+        s, n = GUIDE_NAV_RE.subn(lambda m: block, s)
+        assert n == 1, f"{p}: canton-weekly-nav markers missing"
+        open(p, "w", encoding="utf-8").write(s)
+
 def hub_video(d):
     """Latest report's thumbnail on the hub, with the gold play button; opens the report at its video."""
     v = d.get("video")
@@ -266,12 +323,13 @@ def hub(reports, head, sprite, header, footer):
   <p style="margin-top:28px"><span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/canton-weekly/{latest["date"]}/">Read this week's report{arrow}</a></span></p>
 </div></section>
 <div class="content"><div class="wrap narrow">
+ {series_strip(list(reversed(reports)))}
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: {esc(latest["date_h"])}</h2><p>{latest["summary"]}</p></section>
  {hub_video(latest)}
  {learn_cards()}
  <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}</section>
  <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>
- <section class="sec" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
+ <section class="sec" id="all" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
  <section class="join" aria-labelledby="join-h"><div><h2 id="join-h">Get it first every Sunday</h2><p>Join the MTG TRIBE on WhatsApp and the new report lands in the group first.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE{arrow}</a></span></section>
  <p class="disc">Education only, not financial advice. Always do your own research.</p>
@@ -332,19 +390,22 @@ def refresh_guides(d):
 
 def main():
     head, sprite, header, footer = master_parts()
-    paths = sys.argv[1:] or sorted(glob.glob(os.path.join(DATA_DIR, "*.json")))
-    latest = max(os.path.basename(p) for p in glob.glob(os.path.join(DATA_DIR, "*.json")))
-    for p in paths:
-        d = json.load(open(p, encoding="utf-8"))
+    files = sorted(glob.glob(os.path.join(DATA_DIR, "*.json")))
+    wanted = {os.path.basename(p) for p in sys.argv[1:]} or {os.path.basename(p) for p in files}
+    latest = os.path.basename(files[-1])
+    asc = [json.load(open(p, encoding="utf-8")) for p in files]
+    # Every report is rebuilt each run so its Previous / Next links always match the full list of weeks.
+    for i, (p, d) in enumerate(zip(files, asc)):
         out = os.path.join(ROOT, "canton-weekly", d["date"])
         os.makedirs(out, exist_ok=True)
-        page = link_html(report(d, head, sprite, header, footer))
-        assert "—" not in page and "–" not in page, "dash found"
+        page = link_html(report(d, head, sprite, header, footer, series_strip(asc, i), series_cards(asc, i)))
+        assert "\u2014" not in page and "\u2013" not in page, "dash found"
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page)
         print("built", out)
-        if os.path.basename(p) == latest:
+        if os.path.basename(p) == latest and latest in wanted:
             refresh_guides(d)
-    reports = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(os.path.join(DATA_DIR, "*.json")), reverse=True)]
+    refresh_guide_nav(asc)
+    reports = list(reversed(asc))
     os.makedirs(os.path.join(ROOT, "canton-weekly"), exist_ok=True)
     open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(link_html(hub(reports, head, sprite, HUB_HEADER(header), footer)))
     update_sitemap([SITE + "/canton-weekly/"] + [f"{SITE}/canton-weekly/{r['date']}/" for r in reports])

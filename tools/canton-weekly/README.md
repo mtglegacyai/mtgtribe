@@ -35,6 +35,10 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 - Bellver Card promo (MTG, 8 Nov 2026): one slim card-image promo just above the footer of every Canton page (it comes with the
   footer copied from cntn/index.html). MTG removed the big mid-page version: keep only the slim one. Styles:
   /assets/tribe/bellver-promo.css. The card, ORDER YOUR CRYPTO CARD and BECOME A PARTNER open bellveraffiliates.com.
+- Report navigation (MTG, 8 Nov 2026): every report has a Previous week / All reports / Next week bar near the top and
+  previous and next week cards plus First and Latest links at the bottom. The hub, /cc/ and /cntn/ show a Latest /
+  First / All reports strip (between the `canton-weekly-nav` markers on the guides). build.py rebuilds every report on
+  every run, so last week's report gets its Next week link as soon as the new one is built. Styles: canton-nav.css.
 - If the weekly task stops (cancelled, or out of Claude credits), nothing breaks: the guides keep the last numbers and
   the notices tell visitors to check a live price.
 

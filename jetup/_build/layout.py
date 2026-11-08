@@ -17,6 +17,8 @@ WA_PARTNER = WA_MTG + '?text=' + 'Hi%20MTG%2C%20I%20watched%20your%20JetUP%20tra
 GROUP = '/group/'
 # MTG's JetUP Partner link (sent by MTG 7 Nov 2026). Every "Join JetUP" button on the guide uses this one constant.
 JETUP_JOIN = 'https://jetup.ibportal.io/auth/register?e=y0ylqkMzz0m1XW_OPx2MYQWc4ZKJrNQWbP0Vz6aATbI&a=1'
+JETUP_LOGIN = 'https://jetup.ibportal.io/auth/login'          # MTG, 8 Nov 2026: official JetUP dashboard login
+TAG_LOGIN = 'https://portal.tagmarkets.com/login'                # MTG, 8 Nov 2026: official TAG Markets portal login
 JOIN_NOTE = ("Join JetUP opens JetUP's sign-up page with MTG's Partner link, so MTG becomes your sponsor. "
              "Invited by someone else? Use their Partner link instead, so you join their team.")
 YT = 'https://www.youtube.com/@mtgtribe'
@@ -132,6 +134,11 @@ def side_menu(path):
     out.append('  <a class="btn btn-pri btn-sm" href="%s" target="_blank" rel="sponsored noopener" data-join>%sJoin JetUP</a>' % (JETUP_JOIN, icon('i-rocket2')))
     out.append('  <a class="btn btn-lime btn-sm" href="%s"><span class="emo" aria-hidden="true">💬</span>Join the MTG TRIBE</a>' % GROUP)
     out.append('  <div class="row"><a class="slink" href="/jetup/"><span aria-hidden="true">🏡</span>JetUP home</a><a class="slink" href="/dashboard/"><span aria-hidden="true">📊</span>Dashboard</a></div>')
+    # official logins (MTG, 8 Nov 2026): the JetUP dashboard and the TAG Markets portal, bottom left of the menu
+    out.append('  <div class="slogin" role="group" aria-label="Member login"><p class="slabel">Member login</p><div class="row">'
+               '<a class="sbtn jet" href="%s" target="_blank" rel="noopener" title="Log in to your JetUP dashboard (jetup.ibportal.io)"><img src="/jetup/img/jetup-mark-64.webp" width="26" height="26" alt=""><span><b>JetUP</b><small>Dashboard</small></span><span class="sr">(opens in a new tab)</span></a>'
+               '<a class="sbtn tag" href="%s" target="_blank" rel="noopener" title="Log in to the TAG Markets portal (portal.tagmarkets.com)"><i aria-hidden="true">TAG</i><span><b>TAG Markets</b><small>Portal</small></span><span class="sr">(opens in a new tab)</span></a>'
+               '</div></div>' % (JETUP_LOGIN, TAG_LOGIN))
     out.append('  <a class="sfine" href="/jetup/disclaimer/">Disclaimer · Education only, not financial advice</a>')
     out.append(' </div>')
     out.append('</aside>')

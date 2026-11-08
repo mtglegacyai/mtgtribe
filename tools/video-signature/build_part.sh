@@ -16,5 +16,5 @@ echo "$D rendered $(ls frames_c | wc -l) of $N"
 python3 "$KIT/compose_kit.py" frames "$D" "$D/frames_c" 4 | tail -1
 python3 "$KIT/mix_consistent.py" "$D"
 FPS=$(python3 -c "import json;print(json.load(open('kitcues.json'))['fps'])")
-ffmpeg -v error -y -framerate $FPS -i frames_c/f%05d.jpg -i mix.wav -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart -shortest "$OUT"
+ffmpeg -v error -y -framerate $FPS -i frames_c/f%05d.jpg -i mix.wav -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -c:a aac -b:a 256k -movflags +faststart -shortest "$OUT"
 echo "$D encoded $OUT $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT")"

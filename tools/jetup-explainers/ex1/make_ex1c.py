@@ -84,7 +84,7 @@ K = ME.find_cues(allw, links=False)
 S['next'][1] = round(K['T_FAIR'] + 0.3, 3); S['outro'] = [-10, -9]
 C['n_every'] = 1e9
 for k_ in ('o_thanks', 'o_massive', 'o_best', 'o_im', 'o_lgtc', 'o_like', 'o_share', 'o_comment'): C[k_] = -5
-EMOS = [['hi im mtg', '👋'], ['in your own name', '🔐'], ['trades gold', '🥇'], ['70 is yours', '💵'], ['nobody charges you', '✅'],
+EMOS = [['hi im mtg', '👋'], ['in your own name', '🔐'], ['trades gold', '🥇'], ['70 is yours', '💵'],
         ['you can lose your whole deposit', '⚠️'], ['so learn first', '📚']]
 def S_body(phrase):
     toks = [(re.sub(r'[^a-z0-9]', '', w['w'].lower()), w['a']) for w in allw]; ph = phrase.split()

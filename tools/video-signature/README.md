@@ -21,8 +21,10 @@ with the JetUP logo disc wherever MTG's photo used to be.
 3. **The four sounds** (`sfx_bank()`): whoosh on scene and step changes, tick on list rows, tick-offs and chips, pop on
    engagement, click on taps; at the training's level relative to the voice (voice -16 LUFS, sounds +3.6 dB), never ducked.
    `mix_consistent.py` is the one mix: voice, sounds, the full 51.36 s closing track ending on the last frame, two-pass
-   loudnorm to -14 LUFS with true peak -2.8 dB.
+   loudnorm to -14 LUFS with true peak -2.8 dB. Encode the audio as AAC 256k: at 192k the native encoder put a
+   5-sample overshoot (+3.3 dBFS) into Part 2. `remux256.sh` and `reencode.sh` re-check loudness, peak and overshoots.
 4. **Emoji pops** above the captions on key words (2 s, ease-back), as in the training (`emos/*.json`, stage `emojis()`).
+   Check every pop on the finished video: none may cover a word on screen (two were dropped on 8 Nov 2026 for that reason).
 
 ## How to run it
 

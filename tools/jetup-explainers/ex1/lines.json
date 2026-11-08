@@ -214,5 +214,17 @@
   "b": 193.83,
   "dur": 1.065,
   "text": "Let's Get This Crypto!"
+ },
+ "n_turn2": {
+  "file": "v_n_turn2.wav",
+  "src": "explainers/ex2v2",
+  "dur": 2.255,
+  "text": "Simple, right? Now it's your turn."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "tutorial/p1v3",
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
  }
 }

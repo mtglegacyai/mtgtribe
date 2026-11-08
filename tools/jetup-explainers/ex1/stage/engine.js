@@ -83,6 +83,21 @@ function scenes(t) {
     const rk = rise(t, C.o_lgtc + .5, b, 20, .4, .01); st($('orisk'), rk.o, 0, rk.y); }
 }
 
+
+/* now it's your turn: tap any Join JetUP button (v3, MTG 8 Nov 2026) */
+function turn(t) {
+  const [a, b] = S.turn, tt = C.i_join + .55;
+  const h = rise(t, a + .05, b, 40); st($('ut'), h.o, 0, h.y, .94 + .06 * ez.back(lin(t, a + .05, a + .5)));
+  const se = pop(t, C.u_turn - .15, b, .4, .3); st($('useat'), se.o, 0, 8 * Math.sin(t * 2), se.s * (1 + .08 * Math.sin(Math.PI * lin(t, C.u_turn, C.u_turn + .5))));
+  const u = rise(t, C.i_url - .3, b, 30); st($('uurl'), u.o, 0, u.y, 1 + .04 * Math.sin(Math.PI * lin(t, C.i_url, C.i_url + .6)));
+  const j = pop(t, C.i_go - .1, b, .4, .3); const press = t > tt - .04 && t < tt + .16 ? .95 : 1;
+  st($('ujoin'), j.o, 0, 0, j.s * press * (1 + .02 * Math.sin(t * 4)));
+  const hk = ez.out(lin(t, C.i_join - .45, tt)), hv = vis(t, C.i_join - .45, b, .25, .3);
+  st($('uhand'), hv, 260 * (1 - hk), 220 * (1 - hk) + (t > tt - .04 && t < tt + .16 ? 10 : 0));
+  const rk = lin(t, tt, tt + .65); $('uring').style.opacity = (t >= tt && t <= tt + .65 ? .9 * (1 - rk) : 0).toFixed(3);
+  $('uring').style.visibility = t >= tt && t <= tt + .65 ? 'visible' : 'hidden'; $('uring').style.transform = `scale(${(.4 + 1.6 * ez.out(rk)).toFixed(3)})`;
+}
+
 /* captions: the current line, the spoken word lit */
 const capbox = $('capbox');
 let lastCap = null;
@@ -114,7 +129,7 @@ function emojis(t) {
 }
 const pend = [];
 window.R = function (t) {
-  pend.length = 0; scenes(t); captions(t); emojis(t);
+  pend.length = 0; scenes(t); turn(t); captions(t); emojis(t);
   return Promise.all([...document.images].map(i => i.decode().catch(() => {})));
 };
 })();

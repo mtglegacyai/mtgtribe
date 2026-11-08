@@ -12,10 +12,11 @@ NEWL = json.load(open('/tmp/claude-0/-home-user-mtgtribe/a6cc0db9-d96c-55e0-8645
 for k in ('save', 'share', 'we', 'slog'):
     L['n_' + k] = dict(file='v_n_' + k + '.wav', dur=NEWL[k]['dur'], text=NEWL[k]['text']); WD['n_' + k] = NEWL[k]['words']
 
-ORDER = ['hook', 'hi', 'simple', 'jet1', 'jet2', 'tag1', 'tag2', 'copyx', 'sonic', 'p70', 'p30', 'loss', 'lose', 'r88', 'learn',
-         'verify', 'every', 'n_save', 'n_share', 'n_we', 'n_slog', 'o_fin', 'o_dyor', 'o_thanks', 'o_support', 'o_massive', 'o_best', 'o_im', 'o_see', 'o_lgtc']
-GAP_AFTER = {'hook': .55, 'hi': .45, 'simple': .35, 'jet2': .45, 'tag2': .4, 'sonic': .75, 'loss': .75, 'r88': .4, 'learn': .7,
-             'verify': .5, 'every': .5, 'n_save': .3, 'n_share': .4, 'n_we': .5, 'n_slog': .6, 'o_dyor': .35, 'o_massive': .35, 'o_best': .35, 'o_see': .2}
+# v3 (MTG, 8 Nov 2026: "take it easy on the warnings and on the losses"): no "lose your whole deposit", no 88%, no
+# "learn first"; a positive close: "Simple, right? Now it's your turn." then "tap any Join JetUP button"
+ORDER = ['hook', 'hi', 'simple', 'jet1', 'jet2', 'tag1', 'tag2', 'copyx', 'sonic', 'p70', 'p30', 'loss', 'n_turn2', 'l_ifme', 'every', 'n_save', 'n_share', 'n_we', 'n_slog', 'o_fin', 'o_dyor', 'o_thanks', 'o_support', 'o_massive', 'o_best', 'o_im', 'o_see', 'o_lgtc']
+GAP_AFTER = {'hook': .55, 'hi': .45, 'simple': .35, 'jet2': .45, 'tag2': .4, 'sonic': .75, 'loss': .75, 'n_turn2': .45, 'l_ifme': .5,
+             'every': .5, 'n_save': .3, 'n_share': .4, 'n_we': .5, 'n_slog': .6, 'o_dyor': .35, 'o_massive': .35, 'o_best': .35, 'o_see': .2}
 VO, t = [], .5
 for k in ORDER:
     VO.append((k, round(t, 3)))
@@ -39,6 +40,9 @@ def fix(ws):
     out, i = [], 0
     while i < len(ws):
         w = ws[i]; nx = lambda n: ws[i + n]['w'] if i + n < len(ws) else ''
+        if w['w'] == 'MTG' and nx(1) == 'tribe' and nx(6).startswith('up'):
+            out.append(dict(w='mtgtribe.com/jetup' + (nx(6)[2:]), a=w['a'], b=ws[i + 6]['b'])); i += 7; continue
+        if w['w'] == 'Jet' and nx(1).startswith('Up'): out.append(dict(w='JetUP' + nx(1)[2:], a=w['a'], b=ws[i + 1]['b'])); i += 2; continue
         if w['w'] == 'X' and nx(1).startswith('A') and nx(2).startswith('U'):
             j = i + 2
             while j + 1 < len(ws) and ws[j + 1]['w'].rstrip('.,') in ('U', 'S', 'D') and j - i < 5: j += 1
@@ -58,8 +62,8 @@ for k, t0 in VO:
     caps.append(dict(a=round(t0 - .08, 3), b=round(vend[k] + .22, 3), w=ws))
 
 S = dict(hook=[0, vstart['hi'] - .15], hi=[vstart['hi'] - .25, vstart['simple'] - .1], pic=[vstart['simple'] - .2, vstart['p70'] - .25],
-         split=[vstart['p70'] - .3, vstart['lose'] - .3], risk=[vstart['lose'] - .35, vstart['verify'] - .25],
-         next=[vstart['verify'] - .3, vstart['o_fin'] - .3], outro=[vstart['o_fin'] - .35, T])
+         split=[vstart['p70'] - .3, vstart['n_turn2'] - .3], risk=[-10, -9], next=[-10, -9],
+         turn=[vstart['n_turn2'] - .35, vstart['o_fin'] - .3], outro=[vstart['o_fin'] - .35, T])
 S = {k: [round(a, 3), round(b, 3)] for k, (a, b) in S.items()}
 C = dict(
     h1=cue('hook', 'automated'), h2=cue('hook', 'really'), h3=cue('hook', 'before'), h4=cue('hook', 'cent'),
@@ -71,8 +75,8 @@ C = dict(
     p_coin=vstart['p70'], p70=cue('p70', 'seventy'), p_yours=cue('p70', 'yours'), p30=cue('p30', 'Thirty'),
     p_broker=cue('p30', 'broker'), p_strat=cue('p30', 'strategy'), p_partner=cue('p30', 'partner'),
     p_loss=cue('loss', 'loss'), p_nofee=cue('loss', 'nobody'),
-    r_lose=vstart['lose'], r88=cue('r88', 'eighty'), r_learn=cue('learn', 'learn'), r_decide=cue('learn', 'decide'),
-    n_head=vstart['verify'], n_every=vstart['every'], n_every_old=vstart['every'], n_share=cue('every', 'share'),
+    u_simple=vstart['n_turn2'], u_turn=cue('n_turn2', 'turn'), i_go=cue('l_ifme', 'go'), i_url=cue('l_ifme', 'MTG'), i_join=cue('l_ifme', 'Join'),
+    n_every=vstart['every'], n_every_old=vstart['every'], n_share=cue('every', 'share'),
     o_fin=vstart['o_fin'], o_thanks=vstart['o_thanks'], o_like=cue('o_thanks', 'like'), o_share=cue('o_thanks', 'share'),
     o_comment=cue('o_thanks', 'comment'), o_massive=vstart['o_massive'], o_best=vstart['o_best'], o_you=cue('o_best', 'YOU'),
     o_im=vstart['o_im'], o_lgtc=vstart['o_lgtc'], track=TRACK_AT)
@@ -81,11 +85,10 @@ import mtg_ending as ME
 allw = [w for c_ in caps for w in c_['w']]
 K = ME.find_cues(allw, links=False)
 # the stage keeps its background, top bar and captions; its "next" card hands over to the signature ending, its outro steps aside
-S['next'][1] = round(K['T_FAIR'] + 0.3, 3); S['outro'] = [-10, -9]
+S['turn'][1] = round(K['T_FAIR'] + 0.3, 3); S['outro'] = [-10, -9]
 C['n_every'] = 1e9
 for k_ in ('o_thanks', 'o_massive', 'o_best', 'o_im', 'o_lgtc', 'o_like', 'o_share', 'o_comment'): C[k_] = -5
-EMOS = [['hi im mtg', '👋'], ['in your own name', '🔐'], ['trades gold', '🥇'], ['70 is yours', '💵'],
-        ['you can lose your whole deposit', '⚠️'], ['so learn first', '📚']]
+EMOS = [['hi im mtg', '👋'], ['in your own name', '🔐'], ['trades gold', '🥇'], ['70 is yours', '💵']]
 def S_body(phrase):
     toks = [(re.sub(r'[^a-z0-9]', '', w['w'].lower()), w['a']) for w in allw]; ph = phrase.split()
     for i in range(len(toks) - len(ph) + 1):
@@ -94,11 +97,11 @@ def S_body(phrase):
 TL = dict(fps=FPS, T=T, caps=caps, scenes=S, cues=C, emos=[[S_body(p), e] for p, e in EMOS], kit=[K['T_LINKS'], T], capoff=K['END_CARD'])
 json.dump(dict(cues=K, orient='h', nxt='Next: 5 checks before you try JetUP', links=False, T=T, fps=FPS), open(os.path.join(HERE, 'kitcues.json'), 'w'), indent=1)
 kit0 = K['T_LINKS']
-body = dict(whoosh=[0.05] + [S[k][0] - .2 for k in ('hi', 'pic', 'split', 'risk', 'next')],
-            tick=[C[k] - .05 for k in ('j_card', 't_card', 'c_copy', 's_card', 'p_coin', 'p70', 'p30', 'n_head')] +
+body = dict(whoosh=[0.05] + [S[k][0] - .2 for k in ('hi', 'pic', 'split', 'turn')],
+            tick=[C[k] - .05 for k in ('j_card', 't_card', 'c_copy', 's_card', 'p_coin', 'p70', 'p30')] +
                  [C[k] - .02 for k in ('j_comm', 'j_train', 'j_ai', 't_acc', 't_name', 'c_cx', 's_gold', 'p_broker', 'p_strat', 'p_partner', 'n_every_old')] +
-                 [C[k] - .03 for k in ('j_x1', 'j_x2')] + [C['r_lose']],
-            pop=[C['p_yours'], C['p_nofee']], click=[])
+                 [C[k] - .03 for k in ('j_x1', 'j_x2')] + [C['i_url'] - .05],
+            pop=[C['p_yours'], C['p_nofee'], C['u_turn']], click=[C['i_join'] + .55])
 body = {k: sorted(t for t in v if 0 <= t < kit0) for k, v in body.items()}
 json.dump(body, open(os.path.join(HERE, 'sfx_body.json'), 'w'))
 os.makedirs(os.path.join(HERE, 'stage'), exist_ok=True)

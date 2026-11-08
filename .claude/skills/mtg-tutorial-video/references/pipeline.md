@@ -12,6 +12,10 @@ Reference builds: `tools/jetup-tutorial/part1/` and `tools/jetup-tutorial/part2/
   ffmpeg x264 CRF 18, AAC 192k, faststart. `mix_p2.py` filters by FFT: the old sample loop and direct convolution took
   over 15 minutes under load, the FFT version 25 seconds.
 For a new part: copy the folder, write the new shot list from the recording map, keep the scenes, change texts and lists.
+Since 8 Nov 2026 the ending and the mix come from `tools/video-signature/` (the 9:09 training's standard): run
+`retime_part.py <part dir> "<Next chip>" <emoji json>` after the timeline is built (inserts the two banked lines, hands the
+ending to the kit, adds the emoji pops), then `build_part.sh <part dir> <out.mp4>` (render, composite the ending, one mix
+with the training's four sounds, encode). The old `mix_p*.py` sound design (bed, chimes, impacts) is retired.
 
 Checks: OCR privacy scan (zero flags), contact sheet every 3 s, speech-to-text of the final audio (every line, in order),
 loudness, brightness jumps (only planned fades), the cover frame. A cut between a dark page (Cloudflare check) and a white

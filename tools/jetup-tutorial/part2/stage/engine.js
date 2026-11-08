@@ -288,6 +288,23 @@ TL.capOn = t => !TL.nocap.some(([a, b]) => t >= a && t < b);
 /* progress bar segments */
 for (let i = 0; i < TL.nsteps; i++) { const d = document.createElement('i'); d.innerHTML = '<b></b>'; $('prog').appendChild(d); }
 
+
+/* emoji pops on key words, as in the sign-up training: above the caption box, at its right edge, for 2 s */
+const emoEl = document.createElement('div'); emoEl.id = 'emo';
+emoEl.style.cssText = 'position:absolute;left:0;top:0;width:96px;height:96px;font:84px/96px "Noto Color Emoji";text-align:center;visibility:hidden;transform-origin:100% 100%;z-index:60';
+document.body.appendChild(emoEl);
+function emojis(t) {
+  const E = (TL.emos || []).filter(([t0]) => t >= t0 && t <= t0 + 2).pop();
+  if (!E || capbox.style.visibility !== 'visible' || (TL.kit && t >= TL.kit[0])) { emoEl.style.visibility = 'hidden'; return; }
+  const age = t - E[0];
+  if (emoEl.textContent !== E[1]) emoEl.textContent = E[1];
+  const a = Math.min(1, age / .15) * Math.min(1, (2 - age) / .3), s = .4 + .6 * ez.back(clamp(age / .4));
+  const r = capbox.getBoundingClientRect();
+  emoEl.style.left = (r.right + 6 - 96).toFixed(1) + 'px';
+  emoEl.style.top = (r.top - 96 - 14 - 8 * ez.out(clamp(age / 2))).toFixed(1) + 'px';
+  emoEl.style.transform = `scale(${s.toFixed(3)})`; emoEl.style.opacity = a.toFixed(3); emoEl.style.visibility = 'visible';
+}
+
 window.R = function (t) {
   pend.length = 0;
   steps(t);
@@ -295,6 +312,7 @@ window.R = function (t) {
   overlays(t, cur);
   cards(t);
   captions(t);
+  emojis(t);
   const pv = vis(t, (TL.scenes.prog || TL.scenes.link)[0], TL.scenes.recap[0] + .3, .4, .3);
   st($('prog'), pv);
   return Promise.all(pend);

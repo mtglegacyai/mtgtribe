@@ -20,7 +20,7 @@ const pop = (t, a, b, fi = .35, fo = .3) => { const v = vis(t, a, b, fi, fo); re
 function rowIn(el, t, a) { const k = ez.out(lin(t, a - .1, a + .3)); el.style.opacity = k.toFixed(3); el.style.transform = `translateX(${(24 * (1 - k)).toFixed(1)}px)`; }
 
 function scenes(t) {
-  st($('top'), vis(t, S.hi[0], S.next[1], .5, .4));
+  st($('top'), vis(t, S.hi[0], TL.T + 1, .5, 0));
   // hook
   { const [a, b] = S.hook;
     const r1 = rise(t, 0, b, 30, 0), r2 = rise(t, 0, b, 40, 0), r3 = rise(t, C.h2 - .15, b, 40), r4 = rise(t, C.h3 - .15, b, 30);
@@ -88,7 +88,7 @@ const capbox = $('capbox');
 let lastCap = null;
 function captions(t) {
   const c = TL.caps.find(c => t >= c.a && t < c.b);
-  if (!c) { capbox.style.visibility = 'hidden'; lastCap = null; return; }
+  if (!c || (TL.capoff && t >= TL.capoff)) { capbox.style.visibility = 'hidden'; lastCap = null; return; }
   if (c !== lastCap) { capbox.innerHTML = c.w.map(w => `<span>${w.w}</span>`).join(' '); lastCap = c; }
   const sp = capbox.children;
   c.w.forEach((w, i) => { const end = c.w[i + 1] ? c.w[i + 1].a : w.b + .25; sp[i].className = t >= w.a && t < end ? 'on' : t >= end ? '' : 'todo'; });
@@ -96,9 +96,25 @@ function captions(t) {
   capbox.style.opacity = Math.min(lin(t, c.a, c.a + .12), 1 - lin(t, c.b - .12, c.b)).toFixed(3);
 }
 
+
+/* emoji pops on key words, as in the sign-up training: above the caption box, at its right edge, for 2 s */
+const emoEl = document.createElement('div'); emoEl.id = 'emo';
+emoEl.style.cssText = 'position:absolute;left:0;top:0;width:96px;height:96px;font:84px/96px "Noto Color Emoji";text-align:center;visibility:hidden;transform-origin:100% 100%;z-index:60';
+document.body.appendChild(emoEl);
+function emojis(t) {
+  const E = (TL.emos || []).filter(([t0]) => t >= t0 && t <= t0 + 2).pop();
+  if (!E || capbox.style.visibility !== 'visible' || (TL.kit && t >= TL.kit[0])) { emoEl.style.visibility = 'hidden'; return; }
+  const age = t - E[0];
+  if (emoEl.textContent !== E[1]) emoEl.textContent = E[1];
+  const a = Math.min(1, age / .15) * Math.min(1, (2 - age) / .3), s = .4 + .6 * ez.back(clamp(age / .4));
+  const r = capbox.getBoundingClientRect();
+  emoEl.style.left = (r.right + 6 - 96).toFixed(1) + 'px';
+  emoEl.style.top = (r.top - 96 - 14 - 8 * ez.out(clamp(age / 2))).toFixed(1) + 'px';
+  emoEl.style.transform = `scale(${s.toFixed(3)})`; emoEl.style.opacity = a.toFixed(3); emoEl.style.visibility = 'visible';
+}
 const pend = [];
 window.R = function (t) {
-  pend.length = 0; scenes(t); captions(t);
+  pend.length = 0; scenes(t); captions(t); emojis(t);
   return Promise.all([...document.images].map(i => i.decode().catch(() => {})));
 };
 })();

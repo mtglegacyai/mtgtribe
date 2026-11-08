@@ -1,6 +1,6 @@
 ---
 name: mtg-tutorial-video
-description: "MTG's locked-in formula for step-by-step tutorial videos made from his own phone screen recordings (JetUP, TAG Markets, ALTRUVA, BIX, wallets, exchanges or any new platform). It covers receiving his recordings and notes, privacy masking in every frame, the fixed script structure (greeting with his circle photo, In this video, the steps, recap, next video, fair-play sign-up wording, signature outro), the vertical visual system, his approved voice with banked lines first, the build and render pipeline, the checks, and where the videos go on his websites. Use this whenever MTG (MusaTheGiant, mtgtribe.com) sends a screen recording, says 'create a tutorial video', 'part 2', 'next part', 'chop', 'step-by-step video', or gives narration notes for a recording, even if he does not name this skill. MTG: 'When I say create a tutorial video and give you everything you need, just create something that's already working perfectly.'"
+description: "MTG's locked-in formula for step-by-step tutorial videos made from his own phone screen recordings (JetUP, TAG Markets, ALTRUVA, BIX, wallets, exchanges or any new platform). It covers receiving his recordings and notes, privacy masking in every frame, the fixed script structure (greeting with the JetUP logo, In this video, the steps, recap, next video, fair-play sign-up wording, the signature ending of his 9:09 sign-up training with 'We learn best when we teach others'), the vertical visual system, his approved voice with banked lines first, the build and render pipeline, the checks, and where the videos go on his websites. Use this whenever MTG (MusaTheGiant, mtgtribe.com) sends a screen recording, says 'create a tutorial video', 'part 2', 'next part', 'chop', 'step-by-step video', or gives narration notes for a recording, even if he does not name this skill. MTG: 'When I say create a tutorial video and give you everything you need, just create something that's already working perfectly.'"
 ---
 
 # MTG's tutorial videos: the locked formula
@@ -33,11 +33,18 @@ thumbnail; the official JetUP logo takes its place** (MTG, 8 Nov 2026), and the 
 4. **Recap:** "Let's recap what we covered in this video." The same list ticks off item by item as it is said.
 5. **Next video:** "In the next video, part N, I'll show you how to ..." with its 2 or 3 actions on screen.
 6. **Links, fair play and sharing:** "Everything I showed you, plus my links, is at MTG tribe dot com slash ...", then
-   "Invited by someone else? Use their link. This video is for every team, so feel free to share it." Save and share lines.
-7. **Signature outro** (banked): financial advice reminder, do your own research, thank you for every like, share and
+   "Invited by someone else? Use their link. This video is for every team, so feel free to share it." Then "Save this video,
+   so it's here when you need it. Share it with someone who's ready to start."
+7. **"We learn best when we teach others."** then **"It pays to pay attention, and take action."** (MTG's favourite line and
+   his slogan, banked in the sign-up training's own take: `signup-training/t3.mp3`, 0 credits).
+8. **Signature outro** (banked): financial advice reminder, do your own research, thank you for every like, share and
    comment, your support means everything, thank yourself for taking massive action, YOU are the best, I'm MTG, Your
-   Digital Architect, see you on the next one, Let's Get This Crypto! With the JetUP logo disc, brand line and slogan, and
-   the site address (mtgtribe.com/jetup) as a large pill in the final signature, visible to the last frame (MTG, 8 Nov 2026).
+   Digital Architect, see you on the next one, Let's Get This Crypto! Then the end card, held about 3.4 s after his last
+   word, with the site address (mtgtribe.com/jetup) as a large pill visible to the last frame (MTG, 8 Nov 2026).
+
+**Steps 6 to 8 always play as the signature ending of the 9:09 sign-up training** (MTG, 8 Nov 2026: "the best transitions,
+sound effects, animations, and even my favourite line ... I want consistency, professionalism, and precision across all my
+videos"). See section 3a.
 
 **Fair-play sign-up wording (MTG, 7 Nov 2026), in every video that sends people to sign up:** "If I invited you, go to MTG
 tribe dot com slash ..., and tap any Join ... button. If someone else invited you, use their Partner link instead, so you
@@ -58,6 +65,29 @@ Full template and wording: `references/script-template.md`.
   `jetup-disc-small.png`): large in the greeting and outro, small with his name in the recap and next-video scenes.
 
 Details: `references/visual-system.md`.
+
+## 3a. The signature standard: the 9:09 sign-up training is the reference (MTG, 8 Nov 2026)
+
+Every MTG video (tutorial parts, explainers, any new video) ends, sounds and moves like the 9:09 JetUP + TAG Markets
+sign-up training. Do not invent a new ending, sound set or transition style per video.
+
+- **Ending, scene by scene, each on its spoken word:** links (big lime url pill pops on the address) and the fair-play scene
+  (Invited by someone else? / Use their link / THIS VIDEO IS FOR EVERY TEAM / Feel free to share it); HELP SOMEONE START
+  RIGHT (SAVE and SHARE ring icons with particle bursts); WE LEARN BEST / WHEN WE TEACH OTHERS; IT PAYS TO / PAY ATTENTION /
+  & TAKE / ACTION (kinetic, burst on ACTION, JetUP disc); Not financial advice (shield, research chip); THANK YOU with Like,
+  Share, Comment ring icons, bursts and floating hearts, "Your support means everything"; Thank yourself / MASSIVE ACTION;
+  I wish you nothing but the best / YOU ARE THE BEST with sparkles; Crypto-Regards, MTG, YOUR DIGITAL ARCHITECT, See you on
+  the next one; end card (logo disc, signature, Let's Get This Crypto! 💪, url pill, TikTok, YouTube, WhatsApp, Telegram and
+  Facebook badges, a "Next:" chip, risk line). Captions stop when the end card arrives.
+- **Sound effects: only the training's four synthesised sounds**, at the training's level relative to the voice (raised
+  3.6 dB with the voice at -16 LUFS), never ducked: whoosh on every scene or step change, tick on every list row, tick-off
+  and chip, pop on engagement (save, share, like, comment, the address, ACTION, MASSIVE, YOU), click on every demonstrated
+  tap. No music bed under the steps; the closing track comes in under the ending as usual.
+- **Motion:** pop-ins with ease-back, 0.3 s crossfades between scenes, particle bursts on engagement, and emoji pops above
+  the caption box on key words (about every 10 to 20 s, 2 s each, never over text or tap targets).
+- **Tools (copy, don't rebuild):** `tools/video-signature/` (README): `mtg_ending.py` draws the ending in 16:9 or 9:16 with
+  the training engine's own helpers; `retime_part.py` inserts the banked lines and re-times a part; `compose_kit.py`
+  composites the ending onto the stage frames; `mix_consistent.py` is the one mix for every video.
 
 ## 4. Voice
 

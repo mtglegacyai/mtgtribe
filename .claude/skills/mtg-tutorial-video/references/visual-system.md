@@ -12,7 +12,12 @@
 - Tip cards replace the window: "GOOD TO KNOW", the error message in quotes, two fixes with ticks.
 - Plan panel (In this video and recap): Anton title, 9 rows of 98 px, gold number circles that turn into lime ticks.
 - The JetUP logo disc (no MTG photo, MTG 8 Nov 2026): 576 px with a 9 px gold gradient ring and gold glow in the greeting;
-  200 px top left with his name beside it in the recap and next-video scenes; 516 px in the outro. Source:
+  200 px top left with his name beside it in the recap and next-video scenes; in the ending, the training's gold circle card (`logo_card()` in `tools/video-signature/mtg_ending.py`). Source:
   `tools/jetup-tutorial/jetup-disc.png` (made from `jetup/img/jetup-logo-480.webp`).
 - Captions y 1668: 50 px, the spoken word lime, numbers and addresses as people read them (12, mtgtribe.com/jetup, JetUP).
 - Closing track starts T minus 51.36 s and ends on the last frame (videos longer than 60 s; see the rule in voice.md).
+- Emoji pops (the training's): 84 px above the caption box at its right edge, 2 s, ease-back, on key words about every
+  10 to 20 s (`TL.emos`, list per part in `tools/video-signature/emos/`). None after the ending starts.
+- The ending (from "Everything I showed you" to the last frame) is the 9:09 sign-up training's, in Poppins with the
+  training's colours, drawn over the stage background, top bar and captions: see SKILL.md section 3a. Content stays
+  between y 170 and y 1640 so the captions (y 1668) are never covered.

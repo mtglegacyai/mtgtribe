@@ -15,4 +15,4 @@
   200 px top left with his name beside it in the recap and next-video scenes; 516 px in the outro. Source:
   `tools/jetup-tutorial/jetup-disc.png` (made from `jetup/img/jetup-logo-480.webp`).
 - Captions y 1668: 50 px, the spoken word lime, numbers and addresses as people read them (12, mtgtribe.com/jetup, JetUP).
-- Closing track starts T minus 51.36 s and ends on the last frame.
+- Closing track starts T minus 51.36 s and ends on the last frame (videos longer than 60 s; see the rule in voice.md).

@@ -8,3 +8,8 @@
 5. Measure word times per sentence (faster-whisper word timestamps, proportional fallback) for captions and cues.
 6. Add the file (mp3), the tagged text, the spans and words to the voice bank branch, with rows in `sentences.tsv` and the
    README table. Tell MTG the credits used (about 2 per 500 characters).
+
+**Closing track rule (MTG, 8 Nov 2026):** a video longer than 60 seconds gets the full 51.36 s track "They Call Me MTG",
+starting 51.36 s before the end, soft under speech (about -14 dB while he speaks) and ending on the last frame; a video of
+60 seconds or less gets only its last line ("Let's get this crypto, wherever I go!", 48.38 s to the end of the track)
+right after his last word.

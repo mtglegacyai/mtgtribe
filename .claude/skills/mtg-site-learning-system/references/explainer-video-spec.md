@@ -14,6 +14,11 @@ preview before release). This file adds what is specific to short website explai
   the ALTRUVA explainers are about 2 MB per minute at 720x1280), a poster image, a thumbnail, chapter times, and a short
   posting pack (title, description, hashtags) for YouTube and TikTok.
 
+**Closing track rule (MTG, 8 Nov 2026):** a video longer than 60 seconds gets the full 51.36 s track "They Call Me MTG",
+starting 51.36 s before the end, soft under speech (about -14 dB while he speaks) and ending on the last frame; a video of
+60 seconds or less gets only its last line ("Let's get this crypto, wherever I go!", 48.38 s to the end of the track)
+right after his last word. Mix reference: `tools/jetup-explainers/ex1/mix_ex1.py`.
+
 ## Story shape (60 to 90 seconds)
 
 1. **Hook (0 to 5 s):** the question the visitor already has, on screen and in his voice ("Where does your money
@@ -37,6 +42,10 @@ preview before release). This file adds what is specific to short website explai
   that carry private data). Footage from his own recordings needs no credits.
 
 ## End card and calls to action
+
+- **The site address in the final signature** (MTG, 8 Nov 2026): the end card shows the site's address as a large pill
+  (for JetUP: mtgtribe.com/jetup) under the slogan, from "I'm MTG, Your Digital Architect" to the very last frame, so it is
+  still on screen when the video stops.
 
 - The end card shows the one or two actions that fit the video (for example "Get my Partner link", "Watch the
   step-by-step training", "Join the tribe"), each with MTG's real link for that step written as a short readable

@@ -225,13 +225,13 @@ def ld_faq(qas, pid):
         {"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qas]}
 
 VIDEOS = {
- 'tut1': dict(src='/jetup/media/jetup-tutorial-part-1-create-account-v2.mp4', poster='/jetup/img/cover-tutorial-part-1-v3.webp', jpg='/jetup/img/cover-tutorial-part-1-v3.jpg', dur='3:38', iso='PT3M38S', orient='v',
+ 'tut1': dict(src='/jetup/media/jetup-tutorial-part-1-create-account-v3.mp4', poster='/jetup/img/cover-tutorial-part-1-v3.webp', jpg='/jetup/img/cover-tutorial-part-1-v3.jpg', dur='3:38', iso='PT3M38S', orient='v',
    title='JetUP step by step, part 1: create your JetUP account',
    desc="MTG's own recording, tap by tap: the Partner link, Individual, your real name, a password of 8 to 12 characters, country and phone, Register Now, verify your email, log in and check Account Type: Partner."),
- 'tut3': dict(src='/jetup/media/jetup-tutorial-part-3-verify-identity-v2.mp4', poster='/jetup/img/cover-tutorial-part-3-v2.webp', jpg='/jetup/img/cover-tutorial-part-3-v2.jpg', dur='3:29', iso='PT3M29S', orient='v',
+ 'tut3': dict(src='/jetup/media/jetup-tutorial-part-3-verify-identity-v3.mp4', poster='/jetup/img/cover-tutorial-part-3-v2.webp', jpg='/jetup/img/cover-tutorial-part-3-v2.jpg', dur='3:29', iso='PT3M29S', orient='v',
    title='JetUP step by step, part 3: verify your identity (KYC)',
    desc="MTG's own recording, tap by tap: upload documents on TAG Markets, Sumsub's check, your country, your Sumsub ID email and code, Create my account, Identity Card, double-sided, the tips, allow the camera, then the ID scan and the selfie."),
- 'tut2': dict(src='/jetup/media/jetup-tutorial-part-2-link-tag-markets-v2.mp4', poster='/jetup/img/cover-tutorial-part-2-v2.webp', jpg='/jetup/img/cover-tutorial-part-2-v2.jpg', dur='3:35', iso='PT3M35S', orient='v',
+ 'tut2': dict(src='/jetup/media/jetup-tutorial-part-2-link-tag-markets-v3.mp4', poster='/jetup/img/cover-tutorial-part-2-v2.webp', jpg='/jetup/img/cover-tutorial-part-2-v2.jpg', dur='3:35', iso='PT3M35S', orient='v',
    title='JetUP step by step, part 2: link JetUP to TAG Markets',
    desc="MTG's own recording, tap by tap: log in to JetUP, tap Register CopyX on the CopyX banner, enter your JetUP password, tick the boxes, Sync Account, wait for User Active, log in to TAG Markets and confirm your email."),
  'bix': dict(src='/jetup/media/bix-card-in-10-seconds.mp4', poster='/jetup/img/cover-bix-card.webp', jpg='/jetup/img/cover-bix-card.jpg', dur='0:10', iso='PT10S', orient='v',
@@ -240,6 +240,9 @@ VIDEOS = {
  'sonic': dict(src='/jetup/media/jetup-sonic-ai-gold-video.mp4', poster='/jetup/img/cover-sonic-ai-v2.webp', jpg='/jetup/img/cover-sonic-ai-v2.jpg', dur='1:04', iso='PT1M4S', orient='v',
    title="Sonic AI in 64 seconds: JetUP's own video",
    desc="JetUP's official short video: Sonic AI copy trades one market, gold (XAU/USD), into your own TAG Markets account in your name. JetUP's figures for May to October 2026: 196 trades, 171 closed in profit (87.2%). Getting started in three steps."),
+ 'simple': dict(src='/jetup/media/jetup-explainer-the-simple-picture.mp4', poster='/jetup/img/cover-explainer-simple-picture.webp', jpg='/jetup/img/cover-explainer-simple-picture.jpg', dur='1:32', iso='PT1M32S', orient='h',
+   title='JetUP and TAG Markets: the simple picture',
+   desc="MTG's 92-second explainer: JetUP is the community (it does not trade or take your money), TAG Markets is the broker where your account sits in your own name, CopyX copies the Sonic AI gold strategy, 70% of a profit is yours, and the risks to know first."),
  '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp', jpg='/jetup/img/cover-5-checks-v5.jpg', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),

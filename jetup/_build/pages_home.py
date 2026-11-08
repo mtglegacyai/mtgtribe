@@ -121,8 +121,9 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">Who does what</p><h2 class="h2 rv" style="--d:1" id="who-h">Five names. <span class="grad">One simple picture.</span></h2>
    <p class="lede rv" style="--d:2">Most confusion starts when these get mixed up. Tap each one and watch where it sits, from you to the strategy.</p></div>
-  <div class="rv" style="max-width:980px;margin:0 auto 34px">{laptop('simple', 'The simple picture, in 1:43')}</div>
+  <div class="rv" style="max-width:980px;margin:0 auto 34px">{laptop('simple', 'The simple picture, in 1:39')}</div>
   <div class="rv">{flow()}</div>
+  <div class="rv" style="max-width:980px;margin:34px auto 0">{laptop('who', 'Five names, one picture: the minibus taxi (2:08)')}</div>
   <div class="card pad block rv">
    <p class="eyebrow" style="margin-bottom:14px">An everyday picture</p>
    <div class="analogy">
@@ -283,7 +284,7 @@ def build_home():
 {tribe_cta()}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('Dashboard', '/dashboard/'), ('JetUP and TAG Markets', None)]
-    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple')]
+    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who')]
     ld[1]['@id'] = SITE + path + '#video-5-checks'
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',

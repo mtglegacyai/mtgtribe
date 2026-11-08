@@ -1,7 +1,8 @@
 # Notes for Claude: mtgtribe.com (MTG 👑 | Your Digital Architect)
 
 Brand rules live in MTG's "mtg-creative-standard" skill. No em or en dashes anywhere. Never publish or push live
-without MTG's approval. Slogan, exactly: Let's Get This Crypto! 💪
+without MTG's approval, except the weekly Canton report: since 8 November 2026 MTG wants it published automatically,
+then a notification that it is live (see `tools/canton-weekly/README.md`). Slogan, exactly: Let's Get This Crypto! 💪
 
 ## Reminder for MTG (saved 5 November 2026, at MTG's request)
 

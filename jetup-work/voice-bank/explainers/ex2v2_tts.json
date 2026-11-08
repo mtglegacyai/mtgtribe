@@ -1,0 +1,28 @@
+{
+ "request_id": "798ec1c748dd40189e3be7f09a55eac9",
+ "engine": "orca",
+ "voice_id": "3931c505632149ceb2bbfecf2778c09c",
+ "voice_name": "MTG Master Voice V2",
+ "speed": 1.0,
+ "duration": 16.274,
+ "credits": 1,
+ "date": "2026-11-08",
+ "lines": {
+  "n_whole": {
+   "file": "v_n_whole.wav",
+   "src": "ex2v2",
+   "a": 0.27,
+   "b": 12.395,
+   "dur": 12.125,
+   "text": "So that's the whole picture. Sonic AI does the driving. Your account sits in your name, at TAG Markets. Copy X connects you to the driver. And Jet Up trains you, every step of the way."
+  },
+  "n_turn": {
+   "file": "v_n_turn.wav",
+   "src": "ex2v2",
+   "a": 13.05,
+   "b": 16.175,
+   "dur": 3.125,
+   "text": "Simple, right? Now it's your turn. Take your seat."
+  }
+ }
+}

@@ -1,7 +1,7 @@
 # Visual system (vertical 1080 x 1920, every frame a pure function of time)
 
 - Background #0b0912 with soft violet and gold glows and a faint grid. Fonts: Anton (display), Manrope 600 to 800.
-- Top bar (y 58): face crop in a 60 px circle with a gold ring, "MTG" with "YOUR DIGITAL ARCHITECT" small in gold below it
+- Top bar (y 58): the small JetUP logo disc in a 60 px circle with a gold ring (never MTG's face), "MTG" with "YOUR DIGITAL ARCHITECT" small in gold below it
   (part 2 onwards: short, so the website phone frame's camera island never covers it); lime "PART N" chip on the right.
 - Step card (y 156 to 392): gold number tile, title 58 px with the exact on-screen label in a lime-outlined highlight,
   sub line 33 px, "STEP n OF N".
@@ -11,7 +11,8 @@
   edge, at the bottom of the window. Success chips start with the green tick emoji.
 - Tip cards replace the window: "GOOD TO KNOW", the error message in quotes, two fixes with ticks.
 - Plan panel (In this video and recap): Anton title, 9 rows of 98 px, gold number circles that turn into lime ticks.
-- His photo: a circle, 576 px with a 9 px gold gradient ring and gold glow in the greeting; 200 px top left with his name
-  beside it in the recap and next-video scenes; 516 px in the outro. Source: `assets/tribe/mtg-photo-round-1000.webp`.
+- The JetUP logo disc (no MTG photo, MTG 8 Nov 2026): 576 px with a 9 px gold gradient ring and gold glow in the greeting;
+  200 px top left with his name beside it in the recap and next-video scenes; 516 px in the outro. Source:
+  `tools/jetup-tutorial/jetup-disc.png` (made from `jetup/img/jetup-logo-480.webp`).
 - Captions y 1668: 50 px, the spoken word lime, numbers and addresses as people read them (12, mtgtribe.com/jetup, JetUP).
 - Closing track starts T minus 51.36 s and ends on the last frame.

@@ -23,6 +23,10 @@ CC_GUIDE = "/cc/"
 CNTN_GUIDE = "/cntn/"
 VALR = "https://www.valr.com/invite/VAKM6VZY"
 
+# Big Bellver Card promo (MTG, 8 Nov 2026): mid-page on every report and the hub. Styles: /assets/tribe/bellver-promo.css,
+# loaded from the master page head (cntn/index.html). The compact footer version comes with the copied footer.
+BELLVER_PROMO = '<aside class="bvp" aria-labelledby="bvp-h" data-nolink><a class="bvp-stage" href="https://bellveraffiliates.com/" target="_blank" rel="noopener" aria-label="See the Bellver Card on BellverAffiliates.com (opens in a new tab)"><img src="/assets/tribe/bellver-card-640.webp" alt="The black Bellver Visa card" width="640" height="385" loading="lazy" decoding="async"><span class="bvp-shine" aria-hidden="true"></span></a><div><p class="bvp-k">MTG\'s crypto card</p><h2 id="bvp-h">Spend your crypto with a <b>Bellver Card</b></h2><p>Turn your crypto into everyday spending with a Visa card. See the cards, prices and rewards, and how to get started, on MTG\'s Bellver Card site.</p><span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="https://bellveraffiliates.com/" target="_blank" rel="noopener">ORDER YOUR CRYPTO CARD<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></span><span class="bvp-small">Opens BellverAffiliates.com in a new tab. MTG may earn a commission at no extra cost to you.</span></div></aside>'
+
 # Live CC price card: same script, data-symbol picks Kraken's CC/USD market (the same card as on /cc/)
 CC_CARD = '<div class="cl" data-cntn-live data-symbol="KRAKEN:CCUSD" data-nolink><div class="cl-head"><span class="cl-t">CC live price<small>Canton Coin, CC/USD on Kraken</small></span><span class="cl-live"><i aria-hidden="true"></i>Live chart</span></div><div class="cl-body"></div><p class="cl-fb"><span class="cl-msg">Loading the live price.</span> You can also see <a href="https://www.coingecko.com/en/coins/canton-network" target="_blank" rel="noopener">Canton Coin on CoinGecko</a>.</p><p class="cl-foot">Price and chart by <a href="https://www.tradingview.com/symbols/CCUSD/?exchange=KRAKEN" target="_blank" rel="noopener nofollow">TradingView</a> (Kraken CC/USD market). Education only, not financial advice.</p></div>'
 
@@ -189,6 +193,7 @@ def report(d, head, sprite, header, footer):
  <section class="sec" id="fundamentals" aria-labelledby="f-h"><h2 id="f-h">Fundamentals</h2><p class="score">Score: {esc(d["fund_score"])}</p><ul class="do">{fund}</ul>{INVESTORS_CARD}</section>
  <section class="sec" id="cntn" aria-labelledby="c-h"><h2 id="c-h">CNTN stock</h2>{cntn}<ul class="do">{cntn_notes}</ul><h3 class="part">CNTN right now</h3>{CNTN_CARD}</section>
  <section class="sec" id="bottom-line" aria-labelledby="b-h"><h2 id="b-h">Bottom line</h2><ul class="do">{bottom}</ul></section>
+ {BELLVER_PROMO}
  <section class="join" aria-labelledby="join-h">
   <div><h2 id="join-h">Want this every Sunday?</h2><p>Join the MTG TRIBE on WhatsApp. The new Canton report lands there first, and we learn and take action together.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></span>
@@ -232,6 +237,7 @@ def hub(reports, head, sprite, header, footer):
  {learn_cards()}
  <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}</section>
  <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>
+ {BELLVER_PROMO}
  <section class="sec" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
  <section class="join" aria-labelledby="join-h"><div><h2 id="join-h">Get it first every Sunday</h2><p>Join the MTG TRIBE on WhatsApp and the new report lands in the group first.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE{arrow}</a></span></section>

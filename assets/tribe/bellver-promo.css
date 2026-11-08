@@ -1,0 +1,34 @@
+/* MTG's Bellver Card promo for the Canton pages (/cc/, /cntn/, Canton Weekly hub and reports).
+   Big version mid-page (.bvp), compact version in the footer (.bvp.bvp-sm). The card image and the
+   button both open bellveraffiliates.com. Image: /assets/tribe/bellver-card-640.webp (same as the dashboard). */
+.bvp{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:28px;margin:56px 0;padding:30px 30px 30px 18px;border-radius:26px;border:1px solid rgba(242,173,60,.45);background:radial-gradient(520px circle at 18% 40%,rgba(242,173,60,.16),transparent 62%),linear-gradient(160deg,#16120b 0%,#0b0c0f 55%,#08090b 100%);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03) inset;overflow:hidden;isolation:isolate}
+.bvp-stage{position:relative;display:grid;place-items:center;min-height:230px;perspective:1100px;border-radius:18px}
+.bvp-stage:before{content:"";position:absolute;left:50%;bottom:4%;width:72%;height:34px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse,rgba(242,173,60,.38),transparent 70%);z-index:-1}
+.bvp-stage img{display:block;width:min(400px,100%);height:auto;transform:rotateY(-16deg) rotateX(8deg) rotateZ(-4deg);filter:drop-shadow(26px 34px 40px rgba(0,0,0,.65)) drop-shadow(0 0 30px rgba(242,173,60,.18));transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.bvp-stage:hover img,.bvp-stage:focus-visible img{transform:rotateY(-5deg) rotateX(3deg) rotateZ(-1deg) translateY(-6px)}
+.bvp-stage:focus-visible{outline:2px solid #f2ad3c;outline-offset:4px}
+.bvp-shine{display:none} /* sheen removed: it lit the whole image box, not just the card */
+.bvp-k{display:inline-flex;align-items:center;gap:8px;margin:0 0 10px;color:#e8b862;font:800 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.bvp-k:before{content:"";width:22px;height:1px;background:currentColor}
+.bvp h2{margin:0 0 10px;color:#fff;font:800 clamp(1.45rem,3vw,2rem)/1.12 Outfit,'DM Sans',system-ui,sans-serif;letter-spacing:-.02em}
+.bvp h2 b{background:linear-gradient(180deg,#fff2d2 0%,#ffd47c 40%,#f2ad3c 72%,#c27a14 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bvp p{margin:0 0 20px;color:#c3c7cd;font-size:16px;line-height:1.6}
+.bvp .cta-w{display:inline-block}
+.bvp .cta{min-height:56px;padding:12px 22px;font-size:14.5px;letter-spacing:.06em}
+.bvp-small{display:block;margin-top:12px;color:#8a919b;font-size:12.5px;line-height:1.5}
+/* compact footer version */
+.bvp.bvp-sm{margin:0 0 30px;padding:20px 22px 20px 12px;gap:18px;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.bvp.bvp-sm .bvp-stage{min-height:150px}
+.bvp.bvp-sm .bvp-stage img{width:min(250px,100%)}
+.bvp.bvp-sm h2{font-size:clamp(1.15rem,2.2vw,1.4rem)}
+.bvp.bvp-sm p{margin-bottom:14px;font-size:15px}
+@media (prefers-reduced-motion:reduce){.bvp-stage img{transition:none}}
+@media (max-width:720px){
+ .bvp,.bvp.bvp-sm{grid-template-columns:minmax(0,1fr);text-align:center;justify-items:center;padding:22px 18px 24px;gap:10px}
+ .bvp-stage{min-height:0;width:100%;padding:6px 0 10px}
+ .bvp-stage img{width:min(320px,88%)}
+ .bvp.bvp-sm .bvp-stage img{width:min(220px,70%)}
+ .bvp-k{justify-content:center}
+ .bvp .cta-w,.bvp .cta{width:100%}
+ .bvp .cta{white-space:normal}
+}

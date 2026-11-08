@@ -63,13 +63,20 @@ def build_start():
       'the banner says "User Active" (with your CU number), and you are on your TAG Markets dashboard with your email confirmed.',
       extra_before='<div class="pvid">' + phone('tut2', "Watch MTG do part 2 (3:35)") + '</div>',
       extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Never register directly on the CopyX platform,</b> or your account won\'t be linked to your team.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Username and/or Password are incorrect"?</b> Use exactly the password you created on JetUP, with the same capitals, numbers and symbols.</span></p>' % (icon('i-alert'), icon('i-info2')))
-    p3 = part(3, 'Verify your identity', "TAG Markets asks a few questions, then checks your ID.", [
-        'Answer TAG Markets\' questions honestly: your income, your net worth, your investment goal, and whether you understand the risks.',
-        'Read their reminder: not for residents of the European Union, you may have fewer protections than with a local provider, and %s of retail investor accounts lose money when trading CFDs.' % RETAIL_LOSS,
-        'The identity check is by Sumsub. Tap ' + k('Continue') + ", scan your ID, driver's licence or passport, and do the face scan. Use your phone for this.",
+    p3 = part(3, 'Verify your identity', "Sumsub checks your ID and a selfie for TAG Markets.", [
+        'On your TAG Markets dashboard (<b>portal.tagmarkets.com</b>), tap ' + k('upload documents') + ' in "Please complete your KYC verification in order to make a deposit".',
+        'Sumsub runs the identity check for TAG Markets. You opened it from TAG Markets, so tap ' + k('Continue') + '.',
+        'Confirm your country of residence and tap ' + k('Agree and continue') + '.',
+        'Under "Get verified faster with Sumsub ID", enter <b>the same email you have used from the start</b> and tap ' + k('Start verification') + '. Type the 6-digit code Sumsub emails you (not in your inbox? check spam or junk). Never share this code with anyone.',
+        'Read the consent, tick the box and tap ' + k('Create my account') + '. You see "Sumsub ID account successfully created": tap ' + k('Continue verification') + '.',
+        'Choose your issuing country and your document (MTG chose ' + k('Identity Card') + '). If it has two sides, tick ' + k('My document is double-sided') + ' and tap ' + k('Continue') + '. Read the tips (a well lit room, no reflections, never edit the images) and tap ' + k('Continue') + '.',
+        'When the browser asks to use the camera, tap ' + k('Allow') + '. Hold your ID inside the frame: it takes the photo by itself (move the phone back a little if it does not). Front, then back.',
+        'Step 2 is a quick selfie: a well lit place, your face in the frame, no hat, glasses or mask. Hold still until you see ' + k('All set') + '.',
+        'TAG Markets may also ask a few questions (your income, net worth, investment goal and whether you understand the risks): answer honestly. Read their reminder: not for residents of the European Union, you may have fewer protections than with a local provider, and %s of retail investor accounts lose money when trading CFDs.' % RETAIL_LOSS,
       ], [('06', "TAG Markets' questions and reminder"), ('07', 'The Sumsub identity check')],
-      'your KYC is accepted and you can log in to TAG Markets.',
-      extra_after='<p class="call info" style="margin-top:12px">%s<span><b>CFD</b> means contract for difference: you trade a price movement without owning the asset.</span></p>' % icon('i-info2'))
+      'you see "All set". TAG Markets reviews your documents, and once you are verified you can make your deposit (part 4).',
+      extra_before='<div class="pvid">' + phone('tut3', "Watch MTG do part 3 (3:29)") + '</div>',
+      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>"This site can\'t ask for your permission"?</b> Close screen recorders and chat bubbles (for example WhatsApp), then tap Try again and Allow.</span></p><p class="call warn" style="margin-top:10px">%s<span><b>"Documents submitted on another profile"?</b> You already have a TAG Markets profile with these documents. One person, one profile: do not open a second account. Ask your sponsor or TAG Markets support.</span></p><p class="call info" style="margin-top:10px">%s<span><b>CFD</b> means contract for difference: you trade a price movement without owning the asset.</span></p>' % (icon('i-alert'), icon('i-alert'), icon('i-info2')))
     p4 = part(4, 'Fund your account', 'Send $155 from your exchange to your TAG Markets deposit address.', [
         'Log in at <b>portal.tagmarkets.com</b> with the same email and password.',
         'Under ' + k('My wallet balances') + ', tap ' + k('Deposit') + '.',
@@ -164,7 +171,8 @@ def build_start():
    <p class="small" style="margin:0 0 16px">MTG records each part on his phone, tap by tap. Each video also sits at the top of its part below.</p>
    <div class="vlist"><div class="vpart">{phone('tut1')}<b>Part 1</b><small>Create your JetUP account</small></div>
     <div class="vpart">{phone('tut2')}<b>Part 2</b><small>Link JetUP to TAG Markets</small></div>
-    <div class="vsoon"><b>Parts 3 to 6</b><small>KYC, deposit, Sonic AI and the promo: coming next.</small></div></div>
+    <div class="vpart">{phone('tut3')}<b>Part 3</b><small>Verify your identity (KYC)</small></div>
+    <div class="vsoon"><b>Parts 4 to 6</b><small>Deposit, Sonic AI and the promo: coming next.</small></div></div>
   </div>
   <div class="block rv" id="wallets">
    <p class="eyebrow" style="margin-bottom:14px">Need USDT or USDC? Start here</p>
@@ -228,7 +236,7 @@ def build_start():
     howto = {"@type": "HowTo", "name": "How to join JetUP and TAG Markets, connect Sonic AI and claim the Dennis Fast Start Promo",
              "totalTime": "PT45M", "step": [{"@type": "HowToStep", "position": i + 1, "name": n, "url": SITE + path + '#part-%d' % (i + 1)} for i, n in enumerate(
               ['Create your JetUP account', 'Link JetUP to TAG Markets', 'Verify your identity', 'Fund your TAG Markets account', 'Connect Sonic AI', 'Claim the Dennis Fast Start Promo'])]}
-    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), howto]
+    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
                 main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

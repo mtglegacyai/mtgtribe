@@ -136,6 +136,7 @@ def build_home():
    </div>
    <p class="stops">{icon('i-alert')}<span><b>Where the picture stops:</b> a taxi gets you there. A strategy can lose money, and a good last trip never promises the next one.</span></p>
   </div>
+  <div class="block">{sonic_card()}</div>
  </div>
 </section>
 
@@ -281,7 +282,7 @@ def build_home():
 {tribe_cta()}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('Dashboard', '/dashboard/'), ('JetUP and TAG Markets', None)]
-    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training')]
+    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic')]
     ld[1]['@id'] = SITE + path + '#video-5-checks'
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',

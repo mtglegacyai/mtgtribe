@@ -128,9 +128,10 @@ def build_videos():
    <div class="vpart">{phone('tut3')}<b>Part 3</b><small>Verify your identity (KYC)</small></div>
    <div class="vsoon"><b>Parts 4 to 6</b><small>Deposit, Sonic AI and the promo: coming next.</small></div></div>
  </div>
+ {sonic_card(eyebrow="4 · JetUP's own explainer · 1:04", title='Sonic AI <span class="grad">in 64 seconds</span>', cta=False)}
  <div class="card pad rv vrow" id="profit-share">
   <div>{phone('profitshare')}</div>
-  <div><p class="eyebrow">4 · JetUP's own explainer</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">Profit Share explained</h2>
+  <div><p class="eyebrow">5 · JetUP's own explainer</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">Profit Share explained</h2>
    <p class="lede">JetUP's official 74-second video on the 1.5% Profit Share across 10 levels. Read it with the <a href="/jetup/partner-plan/">partner plan rules</a>: what a partner earns can be zero.</p></div>
  </div>
  <p class="call info rv">{icon('i-info2')}<span>More short explainers are on the way, built from these pages. Follow <a href="{YT}" target="_blank" rel="noopener">YouTube @mtgtribe</a> or <a href="{TT}" target="_blank" rel="noopener">TikTok @joinmtgtribe</a> so the next one finds you first.</span></p>
@@ -138,7 +139,7 @@ def build_videos():
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Videos: Trainings by MTG | MTG',
                 'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the sign-up training with Sonic AI and the Dennis promo, MTG\'s step-by-step phone videos (create your JetUP account, link TAG Markets) and JetUP\'s own Profit Share explainer.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
 
 DOWNLOADS = [
  ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),

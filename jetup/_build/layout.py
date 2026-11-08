@@ -237,6 +237,9 @@ VIDEOS = {
  'bix': dict(src='/jetup/media/bix-card-in-10-seconds.mp4', poster='/jetup/img/cover-bix-card.webp', jpg='/jetup/img/cover-bix-card.jpg', dur='0:10', iso='PT10S', orient='v',
    title="The BIX Card in 10 seconds: BIX's own clip",
    desc="BIX's own short clip: the lime BIX Visa card and the BixPay app, the self-custody crypto wallet listed in the JetUP portal."),
+ 'sonic': dict(src='/jetup/media/jetup-sonic-ai-gold-video.mp4', poster='/jetup/img/cover-sonic-ai-v2.webp', jpg='/jetup/img/cover-sonic-ai-v2.jpg', dur='1:04', iso='PT1M4S', orient='v',
+   title="Sonic AI in 64 seconds: JetUP's own video",
+   desc="JetUP's official short video: Sonic AI copy trades one market, gold (XAU/USD), into your own TAG Markets account in your name. JetUP's figures for May to October 2026: 196 trades, 171 closed in profit (87.2%). Getting started in three steps."),
  '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5.mp4', poster='/jetup/img/cover-5-checks-v5.webp', jpg='/jetup/img/cover-5-checks-v5.jpg', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),
@@ -383,6 +386,24 @@ def join_btn(label='Join JetUP', cls='btn btn-pri'):
 
 def join_note(extra=''):
     return f'<p class="jnote">{icon("i-alert")}<span>{JOIN_NOTE}{extra}</span></p>'
+
+SONIC_NOTE = ("<b>The figures in the video are JetUP's own</b> (jet-up.ai/sonic, May to October 2026: 196 trades, 171 closed "
+              "in profit, 87.2%, checked 7 November 2026). That counts trades, not money: a few losing trades can cost more than many "
+              "winning ones, especially at 24x Amplify, and past results never promise future ones. Check the live trades yourself on "
+              "<a href=\"https://jet-up.ai/sonic\" target=\"_blank\" rel=\"noopener\">jet-up.ai/sonic</a>, and do "
+              "<a href=\"/jetup/five-checks/\">the 5 checks</a> first.")
+
+def sonic_card(eyebrow="JetUP's own video · 1:04", title='Meet the driver: <span class="grad">Sonic AI</span>', cta=True, framed=True):
+    """JetUP's Sonic AI video in the phone frame, with MTG's honest note and (optionally) the Join JetUP button."""
+    join = (f'<div class="joinrow" style="margin-top:14px">{join_btn()}<a class="btn btn-ghost" href="/jetup/how-it-works/#copy">'
+            f'{icon("i-copyx")}How copying works</a></div>{join_note()}') if cta else ''
+    box = 'class="card pad rv vrow" id="sonic-video"' if framed else 'class="vrow" id="sonic-video" style="margin-top:20px"'
+    return f'''<div {box}>
+  <div>{phone('sonic')}</div>
+  <div><p class="eyebrow">{eyebrow}</p><h2 class="h2" style="margin:10px 0 12px;font-size:clamp(1.7rem,3.4vw,2.3rem)">{title}</h2>
+   <p class="lede">Sonic AI copy trades one market: gold (XAU/USD). When it trades, your TAG Markets account copies it automatically, and your money stays in your own account, in your name.</p>
+   <p class="small" style="margin-top:12px">{SONIC_NOTE}</p>{join}</div>
+ </div>'''
 
 def join_cta(title='Ready to start? <span class="lime">Join JetUP.</span>', text='Learn first, then decide for yourself. When you are ready, create your account and follow the sign-up training one tap at a time.'):
     return f'''<section class="sec tight"><div class="wrap"><div class="card tribe joincta rv">

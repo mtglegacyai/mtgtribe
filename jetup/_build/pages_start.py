@@ -105,7 +105,7 @@ def build_start():
       ], [('14', 'Menu, CopyX, Sonic, Details, Connect'), ('15', 'Investment 50, then the community token'), ('16', '#9M, Verify, 9MPromo, Submit, the tick'), ('17', 'Copy Now, Success, then Profile')],
       'you see "Success". Your $50 Sonic account is connected.',
       extra_before=codes,
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Why it matters:</b> with 24x Amplify, a drop of about 4.2%% on the trading balance is the same size as your whole deposit.</span></p>' % icon('i-alert'))
+      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Why it matters:</b> with 24x Amplify, a drop of about 4.2%% on the trading balance is the same size as your whole deposit.</span></p><p class="call info" style="margin-top:10px">%s<span><b>New to Sonic AI?</b> Watch <a href="/jetup/how-it-works/#copy">JetUP\'s own 64-second Sonic AI video</a> first: what it trades, and why your money stays in your own account.</span></p>' % (icon('i-alert'), icon('i-film2')))
     p6 = part(6, 'Claim the Dennis Fast Start Promo', 'Your CU number unlocks the $100 promo bonus.', [
         'In TAG Markets open the menu, tap ' + k('Profile') + ' and write down your <b>CU number</b>.',
         'Go to <b>jet-up.ai</b> and tap the orange ' + k('Dennis Fast Start Promo') + ' tile.',

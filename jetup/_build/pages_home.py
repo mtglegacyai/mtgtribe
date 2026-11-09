@@ -223,7 +223,7 @@ def build_home():
 </section>
 
 <section class="sec tight" id="promo" aria-labelledby="promo-h">
- <div class="narrow"><div class="card lime-edge pad promo rv">
+ <div class="narrow"><div class="rv" style="margin:0 0 22px">{laptop('promo', 'The $100 Fast Start Promo, in 2:18')}</div><div class="card lime-edge pad promo rv">
   <span class="hourglass" aria-hidden="true">⏳</span>
   <div><p class="eyebrow">Dennis Fast Start Promo</p><h2 class="h2" style="margin-top:10px;font-size:clamp(1.9rem,4vw,2.8rem)" id="promo-h">A promo is <span class="lime">a promo.</span></h2>
    <ul class="plist">
@@ -284,7 +284,7 @@ def build_home():
 {tribe_cta()}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('Dashboard', '/dashboard/'), ('JetUP and TAG Markets', None)]
-    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who')]
+    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who'), ld_video('promo')]
     ld[1]['@id'] = SITE + path + '#video-5-checks'
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',

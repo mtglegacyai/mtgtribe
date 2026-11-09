@@ -115,6 +115,7 @@ def build_start():
         "You'll see two Sonic accounts: your $50 account ($50 × 24 = $1,200) and your $200 promo account ($200 × 24 = $4,800).",
       ], [('18', 'jet-up.ai: the orange Dennis Fast Start Promo tile and form'), ('20', 'Follower Hub, Strategies, both accounts (balances blurred)')],
       'both Sonic accounts show under Strategies.',
+      extra_before='<div style="margin:0 0 18px">' + laptop('promo', "Watch the promo explained (2:18)") + '</div>',
       extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Know the promo rules:</b> profits can be withdrawn any time. The $100 bonus is released after 12 months. Taking your own money out before then ends the promo. Rules can change, so check your dashboard. <a href="/jetup/promo/">All the promo rules</a></span></p>' % icon('i-info2'))
 
     AFTER = f'''<section class="sec tight" id="after" aria-labelledby="after-h">
@@ -236,7 +237,7 @@ def build_start():
     howto = {"@type": "HowTo", "name": "How to join JetUP and TAG Markets, connect Sonic AI and claim the Dennis Fast Start Promo",
              "totalTime": "PT45M", "step": [{"@type": "HowToStep", "position": i + 1, "name": n, "url": SITE + path + '#part-%d' % (i + 1)} for i, n in enumerate(
               ['Create your JetUP account', 'Link JetUP to TAG Markets', 'Verify your identity', 'Fund your TAG Markets account', 'Connect Sonic AI', 'Claim the Dennis Fast Start Promo'])]}
-    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), howto]
+    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('promo'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
                 main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training-v4-4.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

@@ -216,6 +216,7 @@ def build_promo():
        'New partners, once: your own $100 plus a $100 bonus open a Sonic AI account at TAG Markets that trades as $4,800 with 24x Amplify. Here are the rules, and how to claim it in part 6 of the training.',
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Dennis Fast Start Promo', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
+ <div class="rv">{laptop('promo', 'The $100 promo, explained by MTG (2:18)', eager=True)}</div>
  <div class="card ticket rv" data-in>
   <div class="tk-head"><span>The promo account</span><b>Sonic AI · Amplify 24x</b></div>
   <div class="tk-row rv-row"><span class="tki" aria-hidden="true">💵</span><p>Your own money<small>Left in your TAG Markets balance</small></p><span class="v">$100</span></div>
@@ -231,11 +232,12 @@ def build_promo():
  <li>👤 <b>For new partners, once.</b></li>
  <li>📲 <b>Rules can change,</b> so check your dashboard and jet-up.ai before you deposit.</li>
 </ul>''', 'i-info2', 'lime')}
- {section('claim', 'How to claim it', 'Three steps, in part 6', '''
+ {section('claim', 'How to claim it', 'Four steps, in part 6', '''
 <ol>
  <li>In TAG Markets open the menu, tap <kbd>Profile</kbd> and write down your CU number.</li>
- <li>On jet-up.ai, tap the orange <kbd>Dennis Fast Start Promo</kbd> tile. Enter your name, email and CU number exactly, then tap <kbd>Join the promo</kbd>.</li>
- <li>You'll see <kbd>Application received!</kbd> When the confirmation email arrives, check CopyX, Follower Hub, Strategies: you should see your $50 account and your $200 promo account.</li>
+ <li>Go to jet-up.ai and tap the orange <kbd>Dennis Fast Start Promo</kbd> tile.</li>
+ <li>Enter your name, email and CU number exactly, then tap <kbd>Join the promo</kbd>. You'll see <kbd>Application received!</kbd></li>
+ <li>When the confirmation email arrives, open CopyX, Follower Hub, Strategies: you'll see your $50 account and your $200 promo account.</li>
 </ol>
 <p><a href="/jetup/get-started/#part-6">Open part 6 with the screenshots</a></p>''', 'i-rocket2')}
  <div class="card lime-edge pad promo rv">
@@ -253,7 +255,7 @@ def build_promo():
 {tribe_cta()}'''
     return page(path, 'JetUP Dennis Fast Start Promo: $100 Bonus Rules | MTG',
                 'The JetUP Dennis Fast Start Promo explained: your $100 plus a $100 bonus, 24x Amplify on TAG Markets, the 12-month rule, how to claim it with your CU number on jet-up.ai, and the risks.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Dennis Fast Start Promo', None)])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Dennis Fast Start Promo', None)], [ld_video('promo')], og_img='/jetup/img/cover-explainer-100-promo.jpg', og_alt='The $100 Fast Start Promo, explained by MTG')
 
 def build_bix():
     path = '/jetup/bix-card/'

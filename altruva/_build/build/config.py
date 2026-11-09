@@ -20,7 +20,7 @@ MENU_EXT = {'card': CARD_GUIDE}   # menu items that open another website in a ne
 MTG_SITE = 'https://www.musathegiant.com'
 SHARE_MSG = ("I've been learning about ALTRUVA with this free guide. Short videos and plain-English pages "
              "show how it works, how to join safely and how money comes out, before you decide anything: "
-             "https://mtgtribe.com/altruva")
+             "https://mtgtribe.com/altruva/")
 
 # 13 approved videos (durations measured from the approved masters)
 VIDEOS = [

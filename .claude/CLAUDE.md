@@ -66,8 +66,8 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 
 ## 3D video studio (MTG, 7 November 2026)
 
-**Length (MTG, 7 November 2026): every video is a vertical Short of at most 60 seconds** ("I like the short videos
-more, up to 1 minute, and not longer"). No long videos unless he asks.
+**Length (MTG, 10 November 2026): vertical, 60 seconds or less when everything fits, up to 2 minutes when the topic
+needs it** ("They can go as long as 2 minutes if need be ... don't limit yourself"; on 7 November it was "up to 1 minute").
 **Music (MTG, 7 November 2026): only the last line of his theme "They Call Me MTG", "Let's get this crypto, wherever I go!" (about 3 s),
 right after his last word, ending with the video ("Don't play the entire theme song, just only play
 the very last few seconds"). No other music anywhere. Code: `ClosingTrack` plays it by default and `closingTail()` in
@@ -89,7 +89,7 @@ code (`scripts/make_sound.py`; `check` must say "all soft"; MTG: "soft, interest
 ear"), never louder than his voice and **chosen to fit each video's story** (new soft effects are designed when a moment
 needs one; MTG: "do not just use one and the same sound effects, even if they do not fit"), but **no background music
 under the video** (MTG, 7 November 2026: the music bed was "too loud, I don't like it. Remove it completely"): only his
-theme's last line at the end (see Music above). Videos are vertical Shorts of at most 60 seconds.
+theme's last line at the end (see Music above). Videos are vertical, up to 2 minutes (see Length above).
 **Every video invites people into the free MTG TRIBE at mtgtribe.com/group, then sends them to mtgtribe.com** (MTG,
 9 November 2026: "it drives traffic to my website, it drives traffic to my WhatsApp group, mtgtribe.com/group"). The
 /group address is a page on his own website that forwards to the WhatsApp group, so a suspended group never breaks a
@@ -100,6 +100,13 @@ hustles and making money online, multiple streams of income (money and banks at 
 person who wants to make money online; real tips, no guarantees; **grow the tribe first, then sell** (selling happens
 in the tribe and on the websites). The seven "notch" checks: `.claude/skills/mtg-scriptforge/references/daily-video.md`.
 The plan of the next videos: `tools/videos/PLAN.md`.
+**MTG's upgrades (10 November 2026: "keep improving ... a gold mine of information"):** also trading, gold, stocks,
+smart contracts and every term of his Crypto 101 crash course (musathegiant.com/101); some videos speak to full-time
+employees (questions and pain points leading to multiple streams of income); the end of every video is `EndScreen`
+(`tools/video3d/src/components/EndScreen.tsx`: tribe pill, 3 to 7 big pills of what is on mtgtribe.com, then the
+signature with mtgtribe.com in a big solid gold pill under it, JetUp explainer style in gold); two or three free CSS 3D
+moments per video (`src/three/css3d.tsx`) and no HeyGen credits for visuals (he is running low); a share prompt to one
+specific person and a save prompt in every video. Details: `.claude/skills/mtg-scriptforge/references/daily-video.md`.
 **The greeting names the real type of each video** (MTG, 7 November 2026): "Thank you for taking the time to watch this
 video / tutorial / explainer video / guide / training ...", chosen per video ("training" only for a real training); reuse
 the voice bank's recorded greeting with the right word before spending credits.

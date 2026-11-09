@@ -60,6 +60,12 @@ purpose would be to recruit into a program, it does not go on a social platform.
   honest steps, never income claims: no amounts people "can make", no "easy", "fast", "passive" or "from your phone in
   minutes", no earnings screenshots. Show the work, time, costs and risks, and say results vary. YouTube treats
   misleading get-rich-quick claims as spam and scams.
+- **Trading, gold and stocks (MTG, 10 November 2026):** education only. No signals, no "buy now" or "sell now", no
+  price targets or predictions, no profit screenshots, no "easy money". Leveraged trading (forex, CFDs, futures) says
+  plainly that it can lose money fast and that most beginners lose money (quote a percentage only with its source, for
+  example a broker's own published risk warning). Past prices of gold or stocks are fine with date and source, never as
+  a promise. MTG's trading opportunities (for example TAG Markets) are promoted on his websites and in the tribe with the
+  broker's risk warning, never pitched in a social video.
 - **No recruitment pitches** on social platforms: no "join my team", "build your downline", "earn from the people
   below you".
 - **Metadata tells the truth:** the title and thumbnail must match what the video delivers (misleading metadata counts

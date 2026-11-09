@@ -56,18 +56,58 @@ take it up a notch ... be more compelling."
   together. Never promise anything the tribe does not do.
 - **The plan of the next videos** lives in `tools/videos/PLAN.md`; follow it unless research or MTG says otherwise.
 
+## MTG's upgrades (10 November 2026): keep improving, a gold mine of information
+
+MTG: "You've been doing a great job ... just keep improving." The mix so far (keys, banks, Bitcoin) is what he wants.
+His additions, in his words: "a wealth, a gold mine of information, of training, of just opening people's eyes to
+what is possible online these days".
+
+- **More topics:** trading (what trading is, demo accounts, risk per trade, leverage, emotions; MTG promotes trading
+  opportunities, which stay on his websites and in the tribe), gold (why people hold it, how much exists, gold and
+  Bitcoin), stock markets (what a stock is, indexes, dividends), smart contracts (what they are, how they work), and
+  every term in his **Crypto 101 crash course** (musathegiant.com/101: 21 lessons and a 222-term glossary, from
+  wallets, exchanges, CEX and DEX, custodial and non-custodial, hot and cold, scams, wallet drainers and token approvals,
+  DYOR, tokenomics, market cap and FDV, unlocks and vesting, whitepapers, on-chain detective work, AI agents and
+  narratives to portfolios, market cycles, crypto debit cards and tax). Read the course page before a crypto basics
+  video and teach the idea fresh, never copy its text. The topics also include diversifying: income streams,
+  investment portfolios and crypto portfolios.
+- **Talk to full-time employees too:** some videos speak straight to people with a job. Ask compelling questions and
+  touch real pain points (one income, a salary that runs out before the month, no time, no raise, job security), then
+  lead to the idea of multiple streams of income, the tribe and what is on mtgtribe.com. Respect people's jobs: never
+  shame them, never promise an escape.
+- **Length:** 60 seconds or less when everything fits; up to 2 minutes when the topic has more that opens people's
+  eyes ("They can go as long as 2 minutes if need be ... don't limit yourself"). Always vertical 9:16. Voice credits:
+  about 2 for a 50 second Short (video 03), so a 2 minute video needs about 5, the top of the daily approval; check the
+  balance first and say it in the preview message.
+- **The end of every video** (`EndScreen` in `tools/video3d/src/components/EndScreen.tsx`): the tribe invite with
+  mtgtribe.com/group in a gold pill; what people find on mtgtribe.com as **3 to 7 big pills** chosen for the topic
+  (`SITE_PILLS` in `Pills.tsx`: MTG, "4 or 5, but definitely not more than 7"; only lines the site really delivers);
+  then his photo, the signature and **mtgtribe.com in a big solid gold pill under it** (MTG: "make it a little bit
+  bigger and maybe even put it in a pill shape, just like ... the explainer videos explaining JetUp"), plus the tribe
+  address.
+- **3D touches in every video, with no HeyGen credits** (MTG is running low): the CSS 3D kit
+  (`tools/video3d/src/three/css3d.tsx`: `Coin3D`, a thick gold coin; `Block3D`, solid blocks, bars and data) plus the 3D
+  card and pill entrances; two or three real 3D moments per video, each fitted to the story (no arbitrary spinning).
+  Reuse Leo's clips; make everything else in code. Never spend credits on visuals without MTG's yes.
+- **Made to be shared (MTG: "I want my videos to go viral ... shared ... liking ... saving ... getting in touch with
+  me, joining my tribe ... impact worldwide"):** every video has a share prompt aimed at one specific person ("Send
+  this to a friend who still doesn't get Bitcoin"), a save prompt when it is full of tips ("Save this for later"), the
+  question for the comments, then the tribe. Natural asks only: no rewards, no "share with 10 friends", no "comment
+  YES" (`compliance.md`).
+
 ## 3. Pick a fresh topic from MTG's niche
 
-Topic families: see MTG's direction above (Bitcoin, crypto and blockchain, AI, side hustles and making money online,
-multiple streams of income, scam awareness, money at most one video in four), plus bridge topics from the niche menu
+Topic families: see MTG's direction and upgrades above (Bitcoin, crypto and blockchain, smart contracts and the Crypto
+101 terms, AI, side hustles and making money online, multiple streams of income, trading, gold, stocks, scam awareness,
+money at most one video in four), plus bridge topics from the niche menu
 (self-improvement, psychology, science, history) now and then. Never repeat a topic and angle already in the log.
 Prefer topics where research shows big interest and a gap (strong long videos, weak or no Shorts).
 
 ## 4. Length and layout
 
-Always a vertical Short (9:16) of **at most 60 seconds, never longer** (MTG, 7 November 2026: "I like the short
-videos more, up to 1 minute, and not longer"). About 130 to 145 spoken words for 50 to 55 seconds, plus about 3 seconds
-for the theme's last line at the end. Shorts skip the greeting: hook, one idea in 3 or 4 beats, one prompt, one call to
+Always vertical (9:16): **60 seconds or less when everything fits, up to 2 minutes when the topic needs it** (MTG,
+10 November 2026; on 7 November it was "up to 1 minute"). About 130 to 160 spoken words for a Short of about 55 seconds,
+about 300 words for 2 minutes, plus about 3 seconds for the theme's last line at the end. Shorts skip the greeting: hook, one idea in 3 or 4 beats, one prompt, one call to
 action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!").
 
 ## 5. Make it (same rules as every video)

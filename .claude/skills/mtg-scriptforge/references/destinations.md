@@ -25,6 +25,12 @@ suspends a group he changes where it points and every video still works (the wor
 allowed mtgtribe.com only). Never show or say the raw chat.whatsapp.com link. On screen: the tribe and website card in
 the 3D studio.
 
+## Topic source: MTG's free Crypto 101 crash course
+
+musathegiant.com/101 (21 lessons, 63 quiz questions, a 222-term glossary, 5 setup guides, a certificate; free sign-up
+with first name and email). A source of topics for crypto basics videos (MTG, 10 November 2026). Videos still send
+people to the tribe and mtgtribe.com; name the course on screen only if MTG says so.
+
 ## MTG's websites
 
 | Site | What it is | Status (7 Nov 2026) |

@@ -29,6 +29,12 @@ money online, give real tips with no guarantees, take every script up a notch (t
 `references/daily-video.md`), and **grow the tribe first, then sell**: every video invites people into the free MTG
 TRIBE at mtgtribe.com/group, then mtgtribe.com; selling happens in the tribe and on the websites.
 
+**MTG's upgrades on 10 November 2026** ("keep improving ... a gold mine of information"): also trading, gold, stock
+markets, smart contracts and every term of his Crypto 101 crash course (musathegiant.com/101); some videos speak to
+full-time employees (real questions and pain points, leading to multiple streams of income); up to 2 minutes when a
+topic needs it; the new `EndScreen` with pills; two or three free CSS 3D moments per video (no HeyGen credits for
+visuals); a share prompt and a save prompt in every video. Details: `references/daily-video.md`.
+
 ## This is MTG's business
 
 MTG, 7 November 2026: "This is not a hobby. This is the serious business to me." Every video must be fun, helpful,
@@ -137,9 +143,10 @@ prompts, main address). Save the brief with the video's files and show MTG the s
 
 ## Step 3: the full script
 
-**MTG's videos are Shorts of at most 60 seconds** (7 November 2026): about 130 to 145 spoken words, no greeting,
-hook in the first 3 seconds, one idea in 3 or 4 beats, one prompt, the mtgtribe.com call to action, the short sign-off
-and his theme's last line. The longer structure below is kept for when he asks for a long video.
+**MTG's videos are vertical, 60 seconds or less when everything fits, up to 2 minutes when the topic needs it**
+(10 November 2026): about 130 to 160 spoken words for a Short (about 300 for 2 minutes), no greeting, hook in the
+first 3 seconds, one idea in numbered beats, one tip, one question, a share prompt, the tribe and mtgtribe.com, the
+short sign-off and his theme's last line. The longer structure below is kept for when he asks for a long video.
 
 Fit the length to the video's job (playbook section 3). For a 3 to 4 minute What If or bridge video, write a
 narration script of 450 to 600 words for the main body (about 150 words per minute), plus MTG's greeting and
@@ -281,8 +288,9 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      That line (48.46 s to the end of "They Call Me MTG", about 3 s) plays right after his last word and ends with the
      video; the studio's `ClosingTrack` does this by default and `closingTail()` sizes the end card. Before rendering,
      check his mp3 is in `public/music/` (it is not in git): no track, no final render.
-   - **Length:** every video is a vertical Short of at most 60 seconds (MTG, 7 November 2026: "I like the short
-     videos more, up to 1 minute, and not longer"). No long videos unless he asks. Text sized for phones; movement in every shot (3D entrances, slow camera push-in).
+   - **Length:** vertical, 60 seconds or less when everything fits, up to 2 minutes when the topic needs it (MTG,
+     10 November 2026). Text sized for phones; movement in every shot (3D entrances, slow camera push-in, the CSS 3D
+     kit), and the `EndScreen` (tribe pill, 3 to 7 website pills, the big gold mtgtribe.com pill under the signature).
 5. Check frames in both layouts before the full render (`scripts/qc-stills.mjs`), preview to MTG, fix, render the
    Shorts cut-downs, and only publish after his approval.
 6. Run the final compliance check (`references/compliance.md` section 5: video, thumbnail, title, description, links,

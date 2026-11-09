@@ -380,6 +380,48 @@ def door():
     return lowpass(x * env(len(x), 0.02, 0.8, hold=0.8), 1200)
 
 
+def vault():
+    """A vault wheel turning (soft muted ticks slowing down), then a heavy, padded clunk and the door's air."""
+    d = 2.2
+    x = np.zeros(int(d * SR))
+    at, gap, k = 0.0, 0.07, 0
+    while at < 0.95:
+        tk = band(noise(0.07), 300, 1100) * env(int(0.07 * SR), 0.01, 0.02)
+        tk += sine(520 - 6 * k, 0.07) * env(int(0.07 * SR), 0.01, 0.025) * 0.35
+        i = int(at * SR)
+        x[i:i + len(tk)] += tk * 0.45
+        at += gap
+        gap *= 1.12
+        k += 1
+    i = int(1.05 * SR)
+    clunk = sum(sine(lambda u, m=m: m * (48 + 40 * np.exp(-u * 22)), 0.9) * a for m, a in ((1, 1), (2, 0.5), (3, 0.2)))
+    clunk *= env(len(clunk), 0.014, 0.35)
+    clunk += band(noise(0.9), 90, 500) * env(int(0.9 * SR), 0.012, 0.08) * 0.4
+    x[i:i + len(clunk)] += clunk[:len(x) - i]
+    tt = t(d)
+    x += band(noise(d), 100, 700) * np.clip((tt - 1.2) / 0.3, 0, 1) * np.exp(-np.clip(tt - 1.5, 0, None) * 2.2) * 0.25
+    return lowpass(x, 1100)
+
+
+def murmur():
+    """A soft crowd murmur, voices without words: many low formant-like bursts that build and fade."""
+    d = 3.2
+    tt = t(d)
+    x = np.zeros(len(tt))
+    rng = np.random.default_rng(51)
+    for _ in range(70):
+        dur = rng.uniform(0.12, 0.35)
+        f1 = rng.uniform(300, 700)
+        b = band(noise(dur), f1 * 0.7, f1 * 1.5)
+        b += sine(rng.uniform(110, 220), dur) * 0.25
+        b *= np.sin(np.pi * t(dur) / dur) ** 2
+        i = int(rng.random() * (d - dur) * SR)
+        x[i:i + len(b)] += b * rng.uniform(0.3, 1.0)
+    x += band(noise(d), 150, 900) * 0.25
+    swell = np.sin(np.pi * np.clip(tt / d, 0, 1)) ** 0.8
+    return lowpass(x * swell, 1300)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -393,6 +435,8 @@ PALETTE = {
     'sink': (sink, 0.35), 'link': (link, 0.2),
     # made for video 03 (the 12 words)
     'key': (key, 0.3), 'door': (door, 0.3),
+    # made for video 04 (myth or fact: is your money in a vault?)
+    'vault': (vault, 0.3), 'murmur': (murmur, 0.25),
 }
 
 

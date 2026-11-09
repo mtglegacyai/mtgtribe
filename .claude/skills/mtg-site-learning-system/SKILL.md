@@ -73,6 +73,11 @@ videos page and downloads list, give it a poster and structured data (VideoObjec
 explainer. Then run the site's checks, including the sideways-scroll check (`tools/qa/hscroll.js` in mtgtribe.com):
 nothing on the site may scroll sideways on a phone.
 
+### 4b. Every page gets its own social preview (MTG, 9 Nov 2026)
+Read `references/social-previews.md`. When a link is pasted on WhatsApp, Facebook, X or Telegram, the page's own
+1200x630 preview shows: a big headline that says what the page gives you, one clear visual of its subject and the exact
+address. Never let pages share one image. Check every page's tags before publishing (`tools/og/check_og.py` in mtgtribe.com).
+
 ### 5. The site tour at the top of the dashboard (standard on every website)
 Read `references/site-tour-video.md`. Once the pages are finished, record the real site and make the click-by-click
 tour: landing page, dashboard, menu (laptop and phone), every page and its key button, how to get back, and the first

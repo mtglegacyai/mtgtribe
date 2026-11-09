@@ -296,8 +296,30 @@ def phone(k, caption=None):
         out += '<p class="vcap">%s%s</p>' % (icon('i-film2'), caption)
     return out
 
+# Social previews (MTG, 9 Nov 2026): one designed 1200x630 image per page, made by tools/og/make_og.py.
+OG = {
+ '/jetup/': ('/assets/og/jetup-home.jpg', 'JetUP and TAG Markets guide by MTG: check first, then start'),
+ '/jetup/get-started/': ('/assets/og/jetup-get-started.jpg', 'How to join JetUP and TAG Markets in 6 parts, every tap shown'),
+ '/jetup/how-it-works/': ('/assets/og/jetup-how-it-works.jpg', 'How JetUP, TAG Markets, CopyX and Sonic AI fit together'),
+ '/jetup/partner-plan/': ('/assets/og/jetup-partner-plan.jpg', 'The JetUP partner plan explained in plain English'),
+ '/jetup/promo/': ('/assets/og/jetup-promo.jpg', 'The $100 Fast Start Promo: how it works and how to claim it'),
+ '/jetup/bix-card/': ('/assets/og/jetup-bix-card.jpg', 'The BIX Card with JetUP: setup, fees and linking'),
+ '/jetup/five-checks/': ('/assets/og/jetup-five-checks.jpg', 'JetUP and TAG Markets review: 5 checks before you start'),
+ '/jetup/videos/': ('/assets/og/jetup-videos.jpg', 'Every JetUP and TAG Markets video by MTG in one place'),
+ '/jetup/faq/': ('/assets/og/jetup-faq.jpg', 'JetUP and TAG Markets questions answered'),
+ '/jetup/glossary/': ('/assets/og/jetup-glossary.jpg', 'JetUP and TAG Markets glossary in plain English'),
+ '/jetup/downloads/': ('/assets/og/jetup-downloads.jpg', 'JetUP and TAG Markets PDF guides to download'),
+ '/jetup/disclaimer/': ('/assets/og/jetup-disclaimer.jpg', 'Disclaimer for the independent JetUP and TAG Markets guide'),
+ '/jetup/tools/exposure-calculator/': ('/assets/og/jetup-exposure-calculator.jpg', 'Exposure Calculator: what 24x Amplify does to a deposit'),
+ '/jetup/tools/profit-split-calculator/': ('/assets/og/jetup-profit-split-calculator.jpg', 'Profit Split Calculator: the 70/30 on TAG Markets CopyX'),
+}
+
 def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='JetUP and TAG Markets guide by MTG', lightbox=False, keywords=None):
     url = SITE + path
+    if path in OG:
+        og_img, og_alt = OG[path]
+    og_w, og_h = (1200, 630) if og_img.startswith('/assets/og/') else (1280, 720)
+    og_src = f'{SITE}{og_img}?v={ver(og_img)}'
     kw = keywords or 'JetUP, JetUp, TAG Markets, JetUp TAG Markets, TAG Markets copy trading, JetUp review, TAG Markets review, TAG Markets South Africa, how to join JetUp, CopyX, Sonic AI, MTG TRIBE'
     graph = [{"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "description": desc, "inLanguage": "en-ZA",
               "isPartOf": {"@id": SITE + "/#website"}, "author": {"@id": SITE + "/altruva/#mtg"}, "datePublished": TODAY, "dateModified": TODAY,
@@ -331,8 +353,8 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <meta property="og:type" content="website"><meta property="og:site_name" content="MTG TRIBE">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}"><meta property="og:locale" content="en_ZA">
-<meta property="og:image" content="{SITE}{og_img}"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="{og_alt}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{title}"><meta name="twitter:description" content="{desc}"><meta name="twitter:image" content="{SITE}{og_img}">
+<meta property="og:image" content="{og_src}"><meta property="og:image:secure_url" content="{og_src}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="{og_w}"><meta property="og:image:height" content="{og_h}"><meta property="og:image:alt" content="{og_alt}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{title}"><meta name="twitter:description" content="{desc}"><meta name="twitter:image" content="{og_src}"><meta name="twitter:image:alt" content="{og_alt}">
 <link rel="icon" type="image/png" sizes="32x32" href="/jetup/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/jetup/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

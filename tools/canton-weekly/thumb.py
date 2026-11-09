@@ -4,7 +4,9 @@
 Usage (from the repo root, after video.py, before build.py):
     python3 tools/canton-weekly/thumb.py tools/canton-weekly/data/<DATE>.json
 
-Writes canton-weekly/<date>/poster.jpg (the cover shown before the video plays) and poster-preview.png is not kept.
+Writes canton-weekly/<date>/poster.jpg (the cover shown before the video plays) and canton-weekly/<date>/og.jpg, the
+1200x630 social preview that WhatsApp, Facebook, X and Telegram show when the report link is shared (MTG, 9 Nov 2026:
+every page gets its own preview). A week without a video: add --og-only to write only og.jpg.
 
 Reads from the JSON: date_h, price_short, closes, chart_lines, and the optional "thumb" block:
     "thumb": {"hook": "Holding support after the SEC letter", "move": "-5%", "move_label": "this week"}
@@ -46,14 +48,14 @@ def hook_from(d):
     return h[:1].upper() + h[1:]
 
 
-def chart(d):
+def chart(d, W=W, H=H, box=None):
     closes = [c[1] for c in d["closes"]]
     lines = d.get("chart_lines", [])
     vals = closes + [l["v"] for l in lines]
     lo, hi = min(vals), max(vals)
     pad = (hi - lo) * 0.18
     lo, hi = lo - pad, hi + pad
-    x0, x1, y0, y1 = 60, W - 170, 600, 1000
+    x0, x1, y0, y1 = box or (60, W - 170, 600, 1000)
     def X(i): return x0 + (x1 - x0) * i / (len(closes) - 1)
     def Y(v): return y1 - (y1 - y0) * (v - lo) / (hi - lo)
     pts = " ".join(f"{X(i):.1f},{Y(v):.1f}" for i, v in enumerate(closes))
@@ -122,26 +124,81 @@ def page(d):
 </body></html>'''
 
 
-def main():
-    data = sys.argv[1]
-    d = json.load(open(data, encoding="utf-8"))
-    out = os.path.join(ROOT, "canton-weekly", d["date"])
-    os.makedirs(out, exist_ok=True)
-    h = page(d)
-    assert "—" not in h and "–" not in h, "dash in thumbnail text"
+def og_page(d):
+    """Social preview for the report page (og:image, 1200x630, MTG 9 Nov 2026): the week's price, move and hook."""
+    OW, OH = 1200, 630
+    move, move_label = move_from(d)
+    down = move.startswith("-")
+    mv = move.lstrip("+-")
+    hook = hook_from(d)
+    date_short = re.sub(r"(\d+) (\w{3})\w* (\d{4})", lambda m: f"{m.group(1)} {m.group(2).upper()} {m.group(3)}", d["date_h"])
+    mvh = f'<span class="move {"dn" if down else "up"}">{"▼" if down else "▲"} {esc(mv)}<small>{esc(move_label.upper())}</small></span>' if move else ""
+    return f'''<!doctype html><html><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&family=Outfit:wght@700;800;900&display=block');
+*{{box-sizing:border-box;margin:0;padding:0}}html,body{{width:{OW}px;height:{OH}px;overflow:hidden;background:#040506;color:#fff;font-family:'DM Sans',sans-serif}}
+.bg{{position:absolute;inset:0;background:radial-gradient(700px 480px at 6% -8%,rgba(242,173,60,.30),transparent 62%),radial-gradient(600px 440px at 94% 92%,rgba(242,173,60,.20),transparent 64%),linear-gradient(180deg,#0a0b0d,#050607)}}
+.chart{{position:absolute;inset:0;width:100%;height:100%}}
+.vig{{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,5,6,.94) 0%,rgba(4,5,6,.6) 50%,rgba(4,5,6,.05) 80%)}}
+.frame{{position:absolute;inset:14px;border-radius:30px;box-shadow:inset 0 0 0 2px rgba(242,173,60,.4)}}
+.logo{{position:absolute;left:56px;top:48px;height:44px;width:auto}}
+.pill{{position:absolute;top:50px;right:56px;display:flex;align-items:center;gap:10px;height:42px;padding:0 20px;border-radius:999px;border:2px solid rgba(242,173,60,.7);background:rgba(10,8,4,.75);color:#ffe2aa;font:800 17px/1 'DM Sans';letter-spacing:.14em}}
+.pill i{{width:10px;height:10px;border-radius:50%;background:#f2ad3c;box-shadow:0 0 12px #f2ad3c}}
+.k{{position:absolute;left:56px;top:128px;color:#e8b862;font:800 22px/1 'DM Sans';letter-spacing:.2em}}
+.row{{position:absolute;left:52px;top:160px;display:flex;align-items:flex-end;gap:22px}}
+.price{{font:900 150px/.92 'Outfit';letter-spacing:-.045em;background:linear-gradient(180deg,#fff6dd,#ffd47c 38%,#f2ad3c 70%,#c27a14);-webkit-background-clip:text;background-clip:text;color:transparent}}
+.move{{margin-bottom:16px;display:inline-flex;flex-direction:column;gap:6px;padding:12px 18px;border-radius:16px;font:900 38px/1 'Outfit';white-space:nowrap}}
+.move small{{font:800 14px/1 'DM Sans';letter-spacing:.16em}}
+.move.dn{{color:#ffb4a2;background:rgba(255,110,90,.14);border:2px solid rgba(255,138,122,.55)}}
+.move.up{{color:#9ff5c6;background:rgba(61,220,132,.13);border:2px solid rgba(61,220,132,.5)}}
+.hook{{position:absolute;left:56px;top:330px;width:700px;font:900 48px/1.04 'Outfit';letter-spacing:-.015em;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.6)}}
+.url{{position:absolute;left:56px;bottom:50px;display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 24px 0 10px;border-radius:999px;background:linear-gradient(180deg,#ffe2aa,#f2ad3c);color:#1a1205;font:800 22px/1 'DM Sans';white-space:nowrap;box-shadow:0 10px 30px rgba(242,173,60,.28)}}
+.url i{{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#1a1205;color:#ffe2aa;font:900 16px/1 'DM Sans';font-style:normal}}
+.mtg{{position:absolute;right:70px;top:150px;display:flex;flex-direction:column;align-items:center;gap:14px}}
+.ring{{width:250px;height:250px;border-radius:50%;padding:8px;background:conic-gradient(from 210deg,#7a4a0c,#ffe2aa,#f2ad3c,#c27a14,#ffe2aa,#7a4a0c);box-shadow:0 0 0 5px rgba(4,5,6,.9),0 0 60px rgba(242,173,60,.45),0 24px 60px rgba(0,0,0,.7)}}
+.ring img{{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}}
+.who{{padding:10px 18px;border-radius:12px;background:rgba(6,6,7,.85);border:2px solid rgba(242,173,60,.45);font:800 19px/1 'Outfit';white-space:nowrap}}
+.who span{{color:#e8b862}}
+</style></head><body>
+<div class="bg"></div>{chart(d, OW, OH, (40, OW - 60, 400, 600))}<div class="vig"></div><div class="frame"></div>
+<img class="logo" src="file://{LOGO}" alt="">
+<div class="pill"><i></i>WEEKLY REPORT · {esc(date_short)}</div>
+<p class="k">CANTON COIN (CC)</p>
+<div class="row"><p class="price">{esc(d["price_short"])}</p>{mvh}</div>
+<p class="hook">{esc(hook)}</p>
+<div class="url"><i>▶</i>mtgtribe.com/canton-weekly/{esc(d["date"])}</div>
+<div class="mtg"><div class="ring"><img src="file://{PHOTO}" alt=""></div><div class="who">MTG 👑 <span>| Your Digital Architect</span></div></div>
+</body></html>'''
+
+
+def shoot(h, w, hh, out):
+    """Render one HTML page with Playwright and save it as a JPEG."""
+    assert "\u2014" not in h and "\u2013" not in h, "dash in image text"
     tmp = tempfile.mkdtemp()
-    f = os.path.join(tmp, "thumb.html")
+    f = os.path.join(tmp, "t.html")
     open(f, "w", encoding="utf-8").write(h)
-    png = os.path.join(tmp, "thumb.png")
-    js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{W},height:{H}}}}});
+    png = os.path.join(tmp, "t.png")
+    js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:{w},height:{hh}}}}});
 await p.goto('file://{f}');await p.waitForLoadState('networkidle');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(600);
 await p.screenshot({{path:'{png}'}});await b.close()}})();"""
     jsf = os.path.join(tmp, "r.js")
     open(jsf, "w").write(js)
     subprocess.run(["node", jsf], check=True)
-    jpg = os.path.join(out, "poster.jpg")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", png, "-q:v", "2", jpg], check=True)
-    print(json.dumps({"poster": jpg}))
+    q = "2" if w > 1500 else "4"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", png, "-q:v", q, out], check=True)
+    return out
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    og_only = "--og-only" in sys.argv
+    d = json.load(open(args[0], encoding="utf-8"))
+    out = os.path.join(ROOT, "canton-weekly", d["date"])
+    os.makedirs(out, exist_ok=True)
+    res = {}
+    if not og_only:
+        res["poster"] = shoot(page(d), W, H, os.path.join(out, "poster.jpg"))
+    res["og"] = shoot(og_page(d), 1200, 630, os.path.join(out, "og.jpg"))
+    print(json.dumps(res))
 
 
 if __name__ == "__main__":

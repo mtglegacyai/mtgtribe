@@ -1,0 +1,442 @@
+{
+ "p1": {
+  "file": "v_p1.wav",
+  "src": "t1",
+  "a": 131.155,
+  "b": 131.87,
+  "dur": 0.715,
+  "text": "Part one."
+ },
+ "create": {
+  "file": "v_create.wav",
+  "src": "t1",
+  "a": 132.39,
+  "b": 133.99,
+  "dur": 1.6,
+  "text": "Create your JetUP account."
+ },
+ "open": {
+  "file": "v_open.wav",
+  "src": "t1",
+  "a": 134.365,
+  "b": 136.315,
+  "dur": 1.95,
+  "text": "Open the Partner link from your sponsor."
+ },
+ "partner": {
+  "file": "v_partner.wav",
+  "src": "t1",
+  "a": 137.145,
+  "b": 139.815,
+  "dur": 2.67,
+  "text": "Make sure it's the Partner link, not the Client link."
+ },
+ "ifme": {
+  "file": "v_ifme.wav",
+  "src": "t1",
+  "a": 45.79,
+  "b": 50.955,
+  "dur": 5.165,
+  "text": "If that's me, you'll find it at MTG tribe dot com slash jet up."
+ },
+ "indiv": {
+  "file": "v_indiv.wav",
+  "src": "t1",
+  "a": 140.285,
+  "b": 142.665,
+  "dur": 2.38,
+  "text": "On the sign up form, choose Individual."
+ },
+ "type": {
+  "file": "v_type.wav",
+  "src": "t1",
+  "a": 143.45,
+  "b": 149.31,
+  "dur": 5.86,
+  "text": "Type your first name, last name, email and a password, using English letters only."
+ },
+ "pw": {
+  "file": "v_pw.wav",
+  "src": "t1",
+  "a": 156.71,
+  "b": 163.4,
+  "dur": 6.69,
+  "text": "Your password needs an uppercase letter, a lowercase letter, a number and a special character, with no spaces."
+ },
+ "country": {
+  "file": "v_country.wav",
+  "src": "t1",
+  "a": 150.165,
+  "b": 153.875,
+  "dur": 3.71,
+  "text": "Choose your country, then type your cell number without the first zero."
+ },
+ "code": {
+  "file": "v_code.wav",
+  "src": "t1",
+  "a": 154.025,
+  "b": 155.905,
+  "dur": 1.88,
+  "text": "The country code is already there."
+ },
+ "reg": {
+  "file": "v_reg.wav",
+  "src": "t1",
+  "a": 174.375,
+  "b": 177.775,
+  "dur": 3.4,
+  "text": "Then pass the security check, and tap Register Now."
+ },
+ "mail": {
+  "file": "v_mail.wav",
+  "src": "t1",
+  "a": 178.57,
+  "b": 181.185,
+  "dur": 2.615,
+  "text": "Check your email, and tap the verification link."
+ },
+ "inbox": {
+  "file": "v_inbox.wav",
+  "src": "t1",
+  "a": 181.53,
+  "b": 182.495,
+  "dur": 0.965,
+  "text": "Not in your inbox?"
+ },
+ "spam": {
+  "file": "v_spam.wav",
+  "src": "t1",
+  "a": 182.63,
+  "b": 184.29,
+  "dur": 1.66,
+  "text": "Check spam or junk mail."
+ },
+ "links": {
+  "file": "v_links.wav",
+  "src": "t3",
+  "a": 150.255,
+  "b": 157.12,
+  "dur": 6.865,
+  "text": "Everything I showed you, plus my links, is at MTG tribe dot com slash jet up."
+ },
+ "save": {
+  "file": "v_save.wav",
+  "src": "t3",
+  "a": 137.975,
+  "b": 140.56,
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it."
+ },
+ "pays": {
+  "file": "v_pays.wav",
+  "src": "t3",
+  "a": 165.28,
+  "b": 167.875,
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action."
+ },
+ "hi": {
+  "file": "v_hi.wav",
+  "src": "t1",
+  "a": 17.61,
+  "b": 21.215,
+  "dur": 3.605,
+  "text": "Hi, my name is MTG, Your Digital Architect."
+ },
+ "takeyour": {
+  "file": "v_takeyour.wav",
+  "src": "t1",
+  "a": 35.595,
+  "b": 36.505,
+  "dur": 0.91,
+  "text": "Take your time."
+ },
+ "pause": {
+  "file": "v_pause.wav",
+  "src": "t1",
+  "a": 36.475,
+  "b": 39.04,
+  "dur": 2.565,
+  "text": "You can pause any step and follow along with me."
+ },
+ "grab": {
+  "file": "v_grab.wav",
+  "src": "t1",
+  "a": 5.61,
+  "b": 6.525,
+  "dur": 0.915,
+  "text": "Grab your phone."
+ },
+ "together": {
+  "file": "v_together.wav",
+  "src": "t1",
+  "a": 6.85,
+  "b": 9.875,
+  "dur": 3.025,
+  "text": "We're going to do this together, one tap at a time."
+ },
+ "share": {
+  "file": "v_share.wav",
+  "src": "t3",
+  "a": 141.43,
+  "b": 143.495,
+  "dur": 2.065,
+  "text": "Share it with someone who's ready to start."
+ },
+ "o_fin": {
+  "file": "v_o_fin.wav",
+  "src": "t3",
+  "a": 168.725,
+  "b": 171.415,
+  "dur": 2.69,
+  "text": "Quick reminder: none of this is financial advice."
+ },
+ "o_dyor": {
+  "file": "v_o_dyor.wav",
+  "src": "t3",
+  "a": 171.455,
+  "b": 173.115,
+  "dur": 1.66,
+  "text": "Always do your own research."
+ },
+ "o_thanks": {
+  "file": "v_o_thanks.wav",
+  "src": "t3",
+  "a": 173.68,
+  "b": 178.055,
+  "dur": 4.375,
+  "text": "Thank you for tuning in, and for every like, share, and comment."
+ },
+ "o_support": {
+  "file": "v_o_support.wav",
+  "src": "t3",
+  "a": 178.385,
+  "b": 180.005,
+  "dur": 1.62,
+  "text": "Your support means everything."
+ },
+ "o_massive": {
+  "file": "v_o_massive.wav",
+  "src": "t3",
+  "a": 180.46,
+  "b": 184.12,
+  "dur": 3.66,
+  "text": "And thank yourself for taking massive action today to change your future!"
+ },
+ "o_best": {
+  "file": "v_o_best.wav",
+  "src": "t3",
+  "a": 184.355,
+  "b": 188.005,
+  "dur": 3.65,
+  "text": "I wish you nothing but the best, because YOU are the best."
+ },
+ "o_im": {
+  "file": "v_o_im.wav",
+  "src": "t3",
+  "a": 188.175,
+  "b": 191.26,
+  "dur": 3.085,
+  "text": "I'm MTG, Your Digital Architect."
+ },
+ "o_see": {
+  "file": "v_o_see.wav",
+  "src": "t3",
+  "a": 191.495,
+  "b": 192.565,
+  "dur": 1.07,
+  "text": "See you on the next one."
+ },
+ "o_lgtc": {
+  "file": "v_o_lgtc.wav",
+  "src": "t3",
+  "a": 192.765,
+  "b": 193.83,
+  "dur": 1.065,
+  "text": "Let's Get This Crypto!"
+ },
+ "n_thanks": {
+  "file": "v_n_thanks.wav",
+  "src": "v2",
+  "a": 0.28,
+  "b": 2.385,
+  "dur": 2.105,
+  "text": "Thank you for taking the time to watch this video."
+ },
+ "n_inthis": {
+  "file": "v_n_inthis.wav",
+  "src": "v2",
+  "a": 2.695,
+  "b": 8.16,
+  "dur": 5.465,
+  "text": "In this video, I'll show you how to create your Jet Up account, step by step, on your phone."
+ },
+ "n_ov1": {
+  "file": "v_n_ov1.wav",
+  "src": "v2",
+  "a": 9.02,
+  "b": 13.595,
+  "dur": 4.575,
+  "text": "You'll open the Partner link, choose Individual, and type your real name and email."
+ },
+ "n_ov2": {
+  "file": "v_n_ov2.wav",
+  "src": "v2",
+  "a": 13.905,
+  "b": 18.625,
+  "dur": 4.72,
+  "text": "Then you'll create a password, add your country and phone number, and tap Register Now."
+ },
+ "n_ov3": {
+  "file": "v_n_ov3.wav",
+  "src": "v2",
+  "a": 19.37,
+  "b": 23.625,
+  "dur": 4.255,
+  "text": "Finally, you'll verify your email, log in, and check your profile."
+ },
+ "s_name": {
+  "file": "v_s_name.wav",
+  "src": "v2",
+  "a": 24.01,
+  "b": 27.575,
+  "dur": 3.565,
+  "text": "Use your real first and last name, exactly as on your ID."
+ },
+ "s_pw12": {
+  "file": "v_s_pw12.wav",
+  "src": "v2",
+  "a": 28.43,
+  "b": 32.625,
+  "dur": 4.195,
+  "text": "Your password can have up to twelve characters, so write it down somewhere safe."
+ },
+ "s_tip": {
+  "file": "v_s_tip.wav",
+  "src": "v2",
+  "a": 32.77,
+  "b": 37.9,
+  "dur": 5.13,
+  "text": "If it says the email is already registered, use another email, or log in with that one."
+ },
+ "s_regok": {
+  "file": "v_s_regok.wav",
+  "src": "v2",
+  "a": 38.85,
+  "b": 42.12,
+  "dur": 3.27,
+  "text": "Registration successful! Now check your email."
+ },
+ "s_open": {
+  "file": "v_s_open.wav",
+  "src": "v2",
+  "a": 42.225,
+  "b": 45.915,
+  "dur": 3.69,
+  "text": "Open the email from I B Portal, and tap Verify Account."
+ },
+ "s_verified": {
+  "file": "v_s_verified.wav",
+  "src": "v2",
+  "a": 46.135,
+  "b": 49.285,
+  "dur": 3.15,
+  "text": "Your email is verified. Tap Continue to Login."
+ },
+ "s_login": {
+  "file": "v_s_login.wav",
+  "src": "v2",
+  "a": 50.13,
+  "b": 52.59,
+  "dur": 2.46,
+  "text": "Log in with the email and password you just created."
+ },
+ "s_in": {
+  "file": "v_s_in.wav",
+  "src": "v2",
+  "a": 52.77,
+  "b": 56.075,
+  "dur": 3.305,
+  "text": "And you're in! Your profile shows Account Type: Partner."
+ },
+ "r_intro": {
+  "file": "v_r_intro.wav",
+  "src": "v2",
+  "a": 56.375,
+  "b": 58.175,
+  "dur": 1.8,
+  "text": "Let's recap what we covered in this video."
+ },
+ "r1": {
+  "file": "v_r1.wav",
+  "src": "v2",
+  "a": 58.94,
+  "b": 61.605,
+  "dur": 2.665,
+  "text": "You opened the Partner link and chose Individual."
+ },
+ "r2": {
+  "file": "v_r2.wav",
+  "src": "v2",
+  "a": 61.665,
+  "b": 66.69,
+  "dur": 5.025,
+  "text": "You typed your real name and email, and created a password of up to twelve characters."
+ },
+ "r3": {
+  "file": "v_r3.wav",
+  "src": "v2",
+  "a": 67.555,
+  "b": 71.36,
+  "dur": 3.805,
+  "text": "You added your country and phone number, and tapped Register Now."
+ },
+ "r4": {
+  "file": "v_r4.wav",
+  "src": "v2",
+  "a": 71.845,
+  "b": 77.015,
+  "dur": 5.17,
+  "text": "Then you verified your email, logged in, and saw Account Type: Partner on your profile."
+ },
+ "x1": {
+  "file": "v_x1.wav",
+  "src": "v2",
+  "a": 77.96,
+  "b": 82.27,
+  "dur": 4.31,
+  "text": "In the next video, part two, I'll show you how to link Jet Up to TAG Markets."
+ },
+ "x2": {
+  "file": "v_x2.wav",
+  "src": "v2",
+  "a": 82.37,
+  "b": 89.29,
+  "dur": 6.92,
+  "text": "You'll sync your account through Copy X, confirm your TAG Markets email, and log in to your TAG Markets dashboard."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "v3",
+  "a": 0.275,
+  "b": 6.925,
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
+ },
+ "l_other": {
+  "file": "v_l_other.wav",
+  "src": "v3",
+  "a": 7.28,
+  "b": 11.92,
+  "dur": 4.64,
+  "text": "If someone else invited you, use their Partner link instead, so you join their team."
+ },
+ "l_every": {
+  "file": "v_l_every.wav",
+  "src": "v3",
+  "a": 12.195,
+  "b": 18.075,
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it."
+ }
+}

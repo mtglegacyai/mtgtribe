@@ -68,7 +68,7 @@ JetUP tour sits at the top of /jetup/.
 | 2 | Who does what: five names, one picture (minibus taxi), 2:08 | home "Five names", How it works "Who does what" | recorded + 10 new lines (3 credits, 8 Nov 2026) | live 8 Nov 2026 (v2: positive close, no loss statistics) |
 | 3 | Amplify 24x: exposure is not money you own (market stall) | home "$155 in", How it works "Exposure", Exposure Calculator, check 4 | recorded; stall lines new or on screen only | planned |
 | 4 | The 70/30 split: where every profit goes (+ calculator demo) | home "70%", How it works "70/30", Profit Split Calculator, check 3 | recorded lines | planned |
-| 5 | The $100 promo, rules first | Promo page top, home "A promo is a promo", part 6 | recorded lines | planned |
+| 5 | The $100 Fast Start Promo: the money plan, claim it in 4 steps, the rules, "a promo is a promo", 2:18 | Promo page top, home "A promo is a promo", get-started part 6, Videos page | recorded lines only, 0 credits | built 9 Nov 2026, preview with MTG |
 | 6 | The partner plan: the rule most people miss | Partner plan top | new lines (about 4 to 6 credits) | planned |
 
 ## Next six

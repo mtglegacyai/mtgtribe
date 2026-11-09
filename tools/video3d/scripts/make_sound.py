@@ -422,6 +422,55 @@ def murmur():
     return lowpass(x * swell, 1300)
 
 
+def aha():
+    """Now I get it: two soft rising notes with a faint warm shimmer (the light bulb moment)."""
+    d = 1.6
+    x = np.zeros(int(d * SR))
+    for at, f, a in ((0.0, 523.3, 0.8), (0.14, 784.0, 1.0)):
+        tt = t(1.3)
+        n = (np.sin(2 * np.pi * f * tt) + 0.2 * np.sin(2 * np.pi * f * 2 * tt)) * env(len(tt), 0.025, 0.5, curve=0.9)
+        i = int(at * SR)
+        x[i:i + len(n)] += n * a
+    x += band(noise(d), 700, 1700) * env(int(d * SR), 0.2, 0.6, hold=0.2) * 0.06
+    return lowpass(x, 1900)
+
+
+def exhale():
+    """Relief, now I can breathe again: a soft, warm breath out that settles."""
+    d = 1.8
+    tt = t(d)
+    x = band(noise(d), 160, 900) * env(len(tt), 0.35, 0.9, hold=0.25)
+    x += sine(lambda u: 220 - 30 * u / d, d) * env(len(tt), 0.4, 1.0, hold=0.3) * 0.18
+    return lowpass(x, 1000)
+
+
+def scribble():
+    """Taking notes: a soft pencil on paper, a few short strokes."""
+    d = 1.4
+    x = np.zeros(int(d * SR))
+    rng = np.random.default_rng(61)
+    at = 0.0
+    while at < 1.15:
+        dur = rng.uniform(0.07, 0.16)
+        s_ = band(noise(dur), 500, 1800) * np.sin(np.pi * t(dur) / dur) ** 1.5
+        i = int(at * SR)
+        x[i:i + len(s_)] += s_ * rng.uniform(0.5, 1.0)
+        at += dur + rng.uniform(0.03, 0.09)
+    return lowpass(x, 1900)
+
+
+def laptop():
+    """Let me get started: a soft hinge as a laptop opens, then a gentle two-note start-up."""
+    d = 1.9
+    x = band(noise(d), 120, 700) * env(int(d * SR), 0.15, 0.25, hold=0.25) * 0.5
+    for at, f in ((0.62, 392.0), (0.78, 587.3)):
+        tt = t(1.0)
+        n = np.sin(2 * np.pi * f * tt) * env(len(tt), 0.03, 0.45, curve=0.9)
+        i = int(at * SR)
+        x[i:i + len(n)] += n[:len(x) - i] * 0.8
+    return lowpass(x, 1600)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -437,6 +486,8 @@ PALETTE = {
     'key': (key, 0.3), 'door': (door, 0.3),
     # made for video 04 (myth or fact: is your money in a vault?)
     'vault': (vault, 0.3), 'murmur': (murmur, 0.25),
+    # made for Leo's moments (10 November 2026): aha, relief, taking notes, getting started
+    'aha': (aha, 0.35), 'exhale': (exhale, 0.3), 'scribble': (scribble, 0.15), 'laptop': (laptop, 0.25),
 }
 
 

@@ -75,10 +75,21 @@ what is possible online these days".
   touch real pain points (one income, a salary that runs out before the month, no time, no raise, job security), then
   lead to the idea of multiple streams of income, the tribe and what is on mtgtribe.com. Respect people's jobs: never
   shame them, never promise an escape.
-- **Length:** 60 seconds or less when everything fits; up to 2 minutes when the topic has more that opens people's
-  eyes ("They can go as long as 2 minutes if need be ... don't limit yourself"). Always vertical 9:16. Voice credits:
-  about 2 for a 50 second Short (video 03), so a 2 minute video needs about 5, the top of the daily approval; check the
-  balance first and say it in the preview message.
+- **Length (updated the same day: "videos can be up to 3 minutes long"):** 60 seconds or less when everything fits;
+  up to 3 minutes when the topic is bigger, as long as it stays compelling from start to finish. Always vertical 9:16.
+  Voice credits: about 2 for a 50 second Short (video 03), about 5 for 2 minutes and about 7 for 3 minutes; the daily
+  approval covers 5, so a video over about 2 minutes needs MTG's yes for the extra credits. Check the balance first and
+  say it in the preview message.
+- **Compelling from start to finish:** in longer videos renew the open loop every 20 to 30 seconds ("and the next one
+  surprised me most"), change the picture every 2 to 3 seconds, and put emphasis on the most important things (a short
+  pause before them, bigger text, a pill, Leo's point). Plan the aha and wow moments in the script.
+- **Leo more often, with precise emotions** (MTG, 10 November 2026): a Leo moment at every emotional beat, about every
+  6 to 12 seconds, from his existing clips by the second (`LEO_MOMENTS`), with accents, soft sounds and the action props
+  (notepad, laptop). Rules and the full table: `mascot.md` ("Leo's heart", "Leo's moments", "How often and how
+  precisely"). New clips only with MTG's yes.
+- **Write for his voice** (MTG: "I want people to fall in love with my voice"): short warm sentences, words he would
+  say to family, a pause (`<break time="0.4s"/>`) before every reveal and after every big number, questions to the
+  viewer, no tongue-twisters or long lists in one breath.
 - **The end of every video** (`EndScreen` in `tools/video3d/src/components/EndScreen.tsx`): the tribe invite with
   mtgtribe.com/group in a gold pill; what people find on mtgtribe.com as **3 to 7 big pills** chosen for the topic
   (`SITE_PILLS` in `Pills.tsx`: MTG, "4 or 5, but definitely not more than 7"; only lines the site really delivers);
@@ -105,9 +116,9 @@ Prefer topics where research shows big interest and a gap (strong long videos, w
 
 ## 4. Length and layout
 
-Always vertical (9:16): **60 seconds or less when everything fits, up to 2 minutes when the topic needs it** (MTG,
+Always vertical (9:16): **60 seconds or less when everything fits, up to 3 minutes when the topic is bigger** (MTG,
 10 November 2026; on 7 November it was "up to 1 minute"). About 130 to 160 spoken words for a Short of about 55 seconds,
-about 300 words for 2 minutes, plus about 3 seconds for the theme's last line at the end. Shorts skip the greeting: hook, one idea in 3 or 4 beats, one prompt, one call to
+about 300 for 2 minutes, about 450 for 3 minutes, plus about 3 seconds for the theme's last line at the end. Shorts skip the greeting: hook, one idea in 3 or 4 beats, one prompt, one call to
 action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!").
 
 ## 5. Make it (same rules as every video)

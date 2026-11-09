@@ -66,8 +66,9 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 
 ## 3D video studio (MTG, 7 November 2026)
 
-**Length (MTG, 10 November 2026): vertical, 60 seconds or less when everything fits, up to 2 minutes when the topic
-needs it** ("They can go as long as 2 minutes if need be ... don't limit yourself"; on 7 November it was "up to 1 minute").
+**Length (MTG, 10 November 2026): vertical, 60 seconds or less when everything fits, up to 3 minutes when the topic is
+bigger** ("videos can be up to 3 minutes long"), compelling from start to finish; on 7 November it was "up to 1 minute".
+A video over about 2 minutes needs more voice credits than the daily 5: ask MTG first.
 **Music (MTG, 7 November 2026): only the last line of his theme "They Call Me MTG", "Let's get this crypto, wherever I go!" (about 3 s),
 right after his last word, ending with the video ("Don't play the entire theme song, just only play
 the very last few seconds"). No other music anywhere. Code: `ClosingTrack` plays it by default and `closingTail()` in
@@ -89,7 +90,7 @@ code (`scripts/make_sound.py`; `check` must say "all soft"; MTG: "soft, interest
 ear"), never louder than his voice and **chosen to fit each video's story** (new soft effects are designed when a moment
 needs one; MTG: "do not just use one and the same sound effects, even if they do not fit"), but **no background music
 under the video** (MTG, 7 November 2026: the music bed was "too loud, I don't like it. Remove it completely"): only his
-theme's last line at the end (see Music above). Videos are vertical, up to 2 minutes (see Length above).
+theme's last line at the end (see Music above). Videos are vertical, up to 3 minutes (see Length above).
 **Every video invites people into the free MTG TRIBE at mtgtribe.com/group, then sends them to mtgtribe.com** (MTG,
 9 November 2026: "it drives traffic to my website, it drives traffic to my WhatsApp group, mtgtribe.com/group"). The
 /group address is a page on his own website that forwards to the WhatsApp group, so a suspended group never breaks a
@@ -154,3 +155,10 @@ tribe. MTG's HeyGen voice is synthetic: switch on the AI label on YouTube, TikTo
 watch, in a black-and-gold studio. Design rules, HeyGen asset IDs and the clip recipe: `.claude/skills/mtg-scriptforge/
 references/mascot.md` (reference picture in the skill's `assets/`). About 15 credits per 8-second clip: 4 to 6 per
 long video, ask MTG before a batch. Never the spiky orange tuft (too close to a famous film lion).
+**Leo's heart and moments (MTG, 10 November 2026):** smart, wise, sharp, warm, friendly, loving, caring; people should
+feel warmth, relief, hope, "it's going to be okay", "now I get it", "let me get started now". He never speaks: his
+expressions, movements and soft sounds speak louder than words. He appears at every emotional beat (about every 6 to 12
+seconds), each moment an exact stretch of his existing clips (`LEO_MOMENTS` and `<LeoMoment>` in
+`tools/video3d/src/components/Leo.tsx`), with accents, sounds and the action props (`Notepad3D`, `Laptop3D`), timed to
+the word, never overdone. The emotion pack of new clips (notes, laptop, relief, inner peace, caring, "yes, you can")
+waits for MTG's yes. Details: `.claude/skills/mtg-scriptforge/references/mascot.md`.

@@ -64,6 +64,25 @@ of income, Crypto portfolio basics, AI skills and tutorials); on "I'm MTG" his f
 photo large, "Let's Get This Crypto! 💪", mtgtribe.com in a big solid gold pill, "Join the tribe: mtgtribe.com/group",
 and the theme's last line.
 
+## Leo's moments (cue sheet, MTG 10 Nov 2026: Leo at every emotional beat; existing clips, no credits)
+
+Times follow the words; the exact seconds come from HeyGen's word timings when the voice is made.
+
+| On the words | [LEO] moment, frame, accent | Feeling | Sound |
+|---|---|---|---|
+| "If Bitcoin still confuses you" | think, face | "that's me" | soft air |
+| "over twenty million are already out" | wow, face, wow | surprise | reveal |
+| "Number three is how people lose it all" | worried, face, alert | careful (the open loop) | drop |
+| "No bank or government runs it" | point, bust | this part is important | pluck |
+| "That's why it stops at twenty-one million" | aha, bust, aha | now I get it | aha |
+| "Lose the keys, lose the coins. Forever." | mindblown, face | that changes everything | soft melt |
+| "My tip: learn before you buy" | reassure, bust, relief + Notepad3D ("Learn first ✓", "Guaranteed profits = walk away ✓") | it's going to be okay, taking notes | exhale, scribble |
+| "What confuses you about Bitcoin?" | ask, tall | your turn | chime |
+| "send this to a friend" | wink, face | between friends | soft pluck |
+
+Nine moments in about 45 seconds, no two the same in a row, none over a key number or the captions; the EndScreen
+carries the last 10 seconds on its own.
+
 ## Spoken text for HeyGen (one call when MTG says go)
 
 If Bitcoin still confuses you, give me fifty seconds. <break time="0.3s"/> Only twenty-one million Bitcoin will ever

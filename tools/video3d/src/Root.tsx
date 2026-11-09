@@ -8,6 +8,7 @@ import {Cover02, DYK02_FPS, DYK02_FRAMES, StoneMoney} from './compositions/dyk02
 import {Cover03, DKO03_FPS, DKO03_FRAMES, TwelveWords} from './compositions/dko03/TwelveWords';
 import {Cover04, MOF04_FPS, MOF04_FRAMES, VaultMyth} from './compositions/mof04/VaultMyth';
 import {NEWLOOK_FRAMES, NewLook} from './compositions/preview/NewLook';
+import {LEOMOMENTS_FRAMES, LeoMoments} from './compositions/preview/LeoMoments';
 import {Hook3D, HOOK3D_FRAMES} from './compositions/whatif01/Hook3D';
 import {WHATIF01_3D_FRAMES, WhatIf01_3D} from './compositions/whatif01/WhatIf01_3D';
 import {WHATIF01_FPS, WHATIF01_FRAMES, WhatIf01} from './compositions/whatif01/WhatIf01';
@@ -41,6 +42,7 @@ export const RemotionRoot: React.FC = () => (
 		<Composition id="Hook3D-9x16" component={Hook3D} width={1080} height={1920} fps={30} durationInFrames={HOOK3D_FRAMES} />
 	</Folder>
 	<Folder name="Proofs">
+		<Composition id="LeoMoments-9x16" component={LeoMoments} width={1080} height={1920} fps={30} durationInFrames={LEOMOMENTS_FRAMES} />
 		<Composition id="NewLook-9x16" component={NewLook} width={1080} height={1920} fps={30} durationInFrames={NEWLOOK_FRAMES} />
 		<Composition id="DoublingProof-9x16" component={DoublingProof} width={1080} height={1920} fps={30} durationInFrames={DOUBLING_PROOF_FRAMES} />
 		<Composition id="DoublingProof-16x9" component={DoublingProof} width={1920} height={1080} fps={30} durationInFrames={DOUBLING_PROOF_FRAMES} />

@@ -26,10 +26,16 @@ export const COLORS = {
 	frameGlow: 'rgba(232, 194, 90, 0.66)',
 } as const;
 
-// Files in public/. MTG's photos are fetched by scripts/fetch-brand.mjs.
+// Files in public/.
+// MTG, 9 November 2026: from video 05 on, every video uses his formal photo (navy blazer, white t-shirt, office view):
+// "swap the image you've been using on the previous videos with this one going forward". It is a square crop of the
+// photo he sent, centred on his face, in public/photos/. The earlier t-shirt photo (fetched from the brand-assets
+// branch by scripts/fetch-brand.mjs) stays available as photoTshirt for re-renders of videos 01 to 04.
 export const FILES = {
-	photo: 'brand/mtg-profile-photo.png',
-	faceCrop: 'brand/mtg-profile-face-crop.png',
+	photo: 'photos/mtg-photo-formal.jpg',
+	faceCrop: 'photos/mtg-photo-formal-face.jpg',
+	photoTshirt: 'brand/mtg-profile-photo.png',
+	faceCropTshirt: 'brand/mtg-profile-face-crop.png',
 	// MTG's approved 51 second closing track. Place the mp3 he supplies here (see public/music/README.md).
 	closingTrack: 'music/they-call-me-mtg.mp3',
 } as const;

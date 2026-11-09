@@ -12,14 +12,22 @@ CTAs, tribe growth). When a website section needs a short explainer, **mtg-site-
 that site needs; this skill writes and produces them. MTG's latest instruction in the chat always wins.
 
 **MTG's photo is always shown in a circle** with a gold gradient ring and a soft gold glow (his rule since
-7 November 2026). The whole photo fills the circle so his face, the t-shirt print and the sign stay visible; never a
-zoomed face-only crop. This replaces the rounded square in older copies of mtg-creative-standard section 10a.
+7 November 2026). The whole photo fills the circle; never a zoomed face-only crop. This replaces the rounded square in
+older copies of mtg-creative-standard section 10a. **Since 9 November 2026 videos use his formal photo** (navy blazer,
+white t-shirt, office view; `kit/video3d/public/photos/` or the project's `public/photos/`): "swap the image you've been
+using on the previous videos with this one going forward". Finished videos keep the photo they had.
 
 ## Today's video (the daily routine)
 
 When MTG says "let's create today's video" (or anything like it), do the whole job without asking what to make: next
 hook format in the rotation, a fresh topic from his niche, research, script, voice, build in the house format, cover,
 posting pack, preview. Full routine, the hook rotation and the credit rule: `references/daily-video.md`.
+
+**MTG's direction since 9 November 2026:** mix it up (Bitcoin, crypto, blockchain, AI, side hustles and making money
+online, multiple streams of income; money and banks at most one video in four), speak to one person who wants to make
+money online, give real tips with no guarantees, take every script up a notch (the seven checks in
+`references/daily-video.md`), and **grow the tribe first, then sell**: every video invites people into the free MTG
+TRIBE at mtgtribe.com/group, then mtgtribe.com; selling happens in the tribe and on the websites.
 
 ## This is MTG's business
 
@@ -63,7 +71,8 @@ angled toward money, crypto, safety or digital life, so its natural next step is
 his own niche and send people to the exact page that helps them.
 
 - **Bridge videos** (menu 1 to 5): story first, value first. One honest sentence near the end connects the topic to a
-  destination. Main CTA: mtgtribe.com, never the WhatsApp group link (WhatsApp can suspend accounts), with what they will find there. Never bolt an income pitch onto a
+  destination. CTAs: the free MTG TRIBE at mtgtribe.com/group (MTG's own address that forwards to the WhatsApp group;
+  never the raw WhatsApp link), then mtgtribe.com with what they will find there. Never bolt an income pitch onto a
   story video.
 - **Direct videos** (menu 6 to 11): explainers, tutorials, honest reviews, tool trainings, myth busters, site tours.
   CTA: the one page that answers the viewer's next question, then the tribe.

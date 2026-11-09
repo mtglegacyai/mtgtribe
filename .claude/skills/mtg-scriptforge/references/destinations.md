@@ -9,7 +9,7 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | Destination | Address |
 |---|---|
 | MTG TRIBE hub | mtgtribe.com |
-| WhatsApp tribe | mtgtribe.com/group (on the website only: never the CTA in a video) |
+| WhatsApp tribe | mtgtribe.com/group (the tribe CTA in every video since 9 Nov 2026; never the raw chat.whatsapp.com link) |
 | Tribe dashboard (income streams, playbook, prices, tools) | mtgtribe.com/dashboard |
 | YouTube | youtube.com/@mtgtribe |
 | TikTok | tiktok.com/@joinmtgtribe |
@@ -17,11 +17,13 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | Facebook | facebook.com/Musa.TheMTG |
 | WhatsApp MTG directly (messages and voice notes, no calls) | wa.me/27721714626 |
 
-**Main CTA in every video: mtgtribe.com, never the WhatsApp group link** (MTG, 7 November 2026: WhatsApp sometimes
-suspends accounts, and a video would then send people to a dead link; the website is always there and shows his socials
-and the tribe). Say what they will find there, education first: step-by-step tutorial videos, explainer videos, honest
-guides to multiple income streams with the risks named. On screen: the website card (`SiteCard` in the 3D studio).
-Hooks, CTAs and sign-offs name mtgtribe.com (mtg-hooks-standard). The WhatsApp tribe link stays on the website.
+**CTAs in every video (MTG, 9 November 2026): the tribe first, then the website.** Spoken: "Join the free MTG TRIBE
+at MTG tribe dot com slash group". On screen: mtgtribe.com/group and mtgtribe.com with what they will find there,
+education first: step-by-step tutorial videos, explainer videos, honest guides to multiple income streams with the
+risks named. mtgtribe.com/group is a page on MTG's own website that forwards to the WhatsApp group, so if WhatsApp ever
+suspends a group he changes where it points and every video still works (the worry behind the 7 November rule, which
+allowed mtgtribe.com only). Never show or say the raw chat.whatsapp.com link. On screen: the tribe and website card in
+the 3D studio.
 
 ## MTG's websites
 

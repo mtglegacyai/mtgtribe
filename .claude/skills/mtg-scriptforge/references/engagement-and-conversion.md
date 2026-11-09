@@ -110,7 +110,7 @@ screenshots. Remind them often: "Never share your 12 words with anyone, not even
   comment, end screen, chapters. WhatsApp: the full link in the message.
 - **Links:** exact live links with referral parameters unchanged (such as `?ref=mtg`). When MTG can earn from a link,
   say so: "If you join through my link, I may earn a reward." Sites still being built: send people to the tribe.
-- **Social-safe links:** from social platforms, link to mtgtribe.com (the main CTA, never the WhatsApp group link) and education pages (see
+- **Social-safe links:** from social platforms, link to mtgtribe.com/group (the free tribe, MTG's own forwarding address; never the raw WhatsApp link), mtgtribe.com and education pages (see
   the social-safe list in `destinations.md`), never straight into a recruitment program's plan, sign-up or promo page.
 - **Short paths that exist:** mtgtribe.com, mtgtribe.com/dashboard, mtgtribe.com/altruva,
   mtgtribe.com/jetup, mtgtribe.com/cntn, bellveraffiliates.com.

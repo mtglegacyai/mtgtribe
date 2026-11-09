@@ -40,7 +40,9 @@ publish without approval.
 MTG's profile photo is shown in a circle with a gold gradient ring and a soft gold glow. This replaces the square with
 rounded corners in section 10a of the mtg-creative-standard skill. Everything else in 10a still applies: use the whole
 photo (face, mtgTribe.com t-shirt print and sign visible, never a zoomed face-only crop), show it large and make room
-in the layout, and use the small face crop only for the tiny brand bar icon. Reference code: `PhotoCard` in
+in the layout, and use the small face crop only for the tiny brand bar icon. **Since 9 November 2026 videos use his
+formal photo** (navy blazer, white t-shirt, office view: `tools/video3d/public/photos/`, wired in `FILES.photo`), from
+video 05 on; finished videos keep their photo. Reference code: `PhotoCard` in
 `tools/video3d/src/components/PhotoCard.tsx`. Python pipelines that use `brand/photo_card.py` (brand-assets branch)
 need the same circle before their next render.
 
@@ -88,9 +90,16 @@ ear"), never louder than his voice and **chosen to fit each video's story** (new
 needs one; MTG: "do not just use one and the same sound effects, even if they do not fit"), but **no background music
 under the video** (MTG, 7 November 2026: the music bed was "too loud, I don't like it. Remove it completely"): only his
 theme's last line at the end (see Music above). Videos are vertical Shorts of at most 60 seconds.
-**Every video sends people to mtgtribe.com, never to the WhatsApp group link** (MTG, 7 November 2026: WhatsApp can
-suspend accounts, the website is always there and links to his socials and the tribe); say what they will find there
+**Every video invites people into the free MTG TRIBE at mtgtribe.com/group, then sends them to mtgtribe.com** (MTG,
+9 November 2026: "it drives traffic to my website, it drives traffic to my WhatsApp group, mtgtribe.com/group"). The
+/group address is a page on his own website that forwards to the WhatsApp group, so a suspended group never breaks a
+video (the reason for the 7 November rule); never show or say the raw chat.whatsapp.com link. Say what they will find
 (tutorials, explainers, honest guides to multiple income streams, risks included).
+**MTG's direction (9 November 2026): mix it up and take it up a notch.** More Bitcoin, crypto, blockchain, AI, side
+hustles and making money online, multiple streams of income (money and banks at most one video in four); speak to one
+person who wants to make money online; real tips, no guarantees; **grow the tribe first, then sell** (selling happens
+in the tribe and on the websites). The seven "notch" checks: `.claude/skills/mtg-scriptforge/references/daily-video.md`.
+The plan of the next videos: `tools/videos/PLAN.md`.
 **The greeting names the real type of each video** (MTG, 7 November 2026): "Thank you for taking the time to watch this
 video / tutorial / explainer video / guide / training ...", chosen per video ("training" only for a real training); reuse
 the voice bank's recorded greeting with the right word before spending credits.

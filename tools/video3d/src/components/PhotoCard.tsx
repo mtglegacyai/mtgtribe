@@ -3,8 +3,8 @@ import {Img, staticFile} from 'remotion';
 import {COLORS, FILES} from '../brand';
 
 // MTG's profile photo, always in a CIRCLE (MTG, 7 November 2026: "always put my profile picture in a circle").
-// The whole square photo fills the circle, so his face, the full mtgTribe.com t-shirt print and the sign stay visible.
-// Never zoom in to a face-only crop, and never shrink it: make room in the layout instead.
+// The whole square photo fills the circle (since 9 November 2026 his formal photo: face, navy blazer and the office
+// view all visible). Never zoom in to a face-only crop, and never shrink it: make room in the layout instead.
 // Gold gradient ring and a soft gold glow, same colours as brand/photo_card.py.
 // Reference sizes (diameter) on 1920x1080: intro about 600 px, signature about 580 px,
 // slogan scene about 330 px, end card 300 to 400 px.

@@ -56,6 +56,10 @@ purpose would be to recruit into a program, it does not go on a social platform.
 - **No money promises:** never "guaranteed", "risk-free", "double your money", "passive income for life", "quick
   returns", "get rich", "financial freedom in 30 days" or results figures for an opportunity. Show risk next to every
   mention of reward. Say "education only, not financial advice".
+- **Side hustles and making money online (MTG, 9 November 2026: tips "without any guarantees"):** skills, tools and
+  honest steps, never income claims: no amounts people "can make", no "easy", "fast", "passive" or "from your phone in
+  minutes", no earnings screenshots. Show the work, time, costs and risks, and say results vary. YouTube treats
+  misleading get-rich-quick claims as spam and scams.
 - **No recruitment pitches** on social platforms: no "join my team", "build your downline", "earn from the people
   below you".
 - **Metadata tells the truth:** the title and thumbnail must match what the video delivers (misleading metadata counts

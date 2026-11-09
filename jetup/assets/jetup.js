@@ -239,8 +239,8 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
     $('#exp-ofown').textContent=(ofOwn>0?'+':'')+fmt(ofOwn,1)+'%';
     $('#exp-eqown').textContent=fmt(eqOwn,2)+'%';$('#exp-eqbal').textContent=fmt(eqBal,2)+'%';
     var lossShare=pl<0?Math.min(100,-ofOwn):0;$('#exp-needle').style.left=lossShare+'%';
-    $('#exp-meter-t').textContent=pl<0?(-ofOwn>=100?'This move is bigger than all of your own money.':'This move costs '+fmt(-ofOwn,1)+'% of your own money.'):(pl>0?'A move your way. The same size against you costs the same amount.':'No move, no profit or loss.');
-    $('#exp-how').innerHTML='<b>Balance</b> '+money(o)+' + '+money(b)+' = '+money(bal)+'<br><b>Exposure</b> '+money(bal)+' × '+fmt(m,0)+' = '+money(ex)+'<br><b>Result</b> '+money(ex)+' × '+fmt(p,1)+'% = '+money(pl)+'<br><b>Move that equals your own money</b> '+money(o)+' ÷ '+money(ex)+' = '+fmt(eqOwn,2)+'%<br><b>Move that equals the whole balance</b> 100% ÷ '+fmt(m,0)+' = '+fmt(eqBal,2)+'%';
+    $('#exp-meter-t').textContent=pl<0?(-ofOwn>=100?'This move is bigger than your deposit.':'This move costs '+fmt(-ofOwn,1)+'% of your own money.'):(pl>0?'A move your way. The same size against you costs the same amount.':'No move, no profit or loss.');
+    $('#exp-how').innerHTML='<b>Balance</b> '+money(o)+' + '+money(b)+' = '+money(bal)+'<br><b>Exposure</b> '+money(bal)+' × '+fmt(m,0)+' = '+money(ex)+'<br><b>Result</b> '+money(ex)+' × '+fmt(p,1)+'% = '+money(pl)+'<br><b>Move that equals your deposit</b> '+money(o)+' ÷ '+money(ex)+' = '+fmt(eqOwn,2)+'%<br><b>Move that equals the whole balance</b> 100% ÷ '+fmt(m,0)+' = '+fmt(eqBal,2)+'%';
   }
   [own,bon,mul].forEach(function(i){i.addEventListener('input',calc)});mv.addEventListener('input',calc);
   $$('[data-preset]',f).forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-preset').split(',');own.value=v[0];bon.value=v[1];mul.value=v[2];$$('[data-preset]',f).forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});calc()})});
@@ -259,7 +259,7 @@ function money(v){v=r2(v);var s=v<0?'-':'';return s+'$'+fmt(Math.abs(v),2)}
     $('#ps-gross').textContent=(gross>0?'+':'')+money(gross);$('#ps-you').textContent=(you>0?'+':'')+money(you);$('#ps-fee').textContent=money(fee);
     $('#ps-net').textContent=(net>0?'+':'')+fmt(net,2)+'%';$('#ps-end').textContent=money(a+you);
     var youRow=$('#ps-you').parentNode.parentNode;youRow.classList.toggle('red',you<0);
-    $('#ps-note').textContent=gross>0?'Your share is '+share+'% of the profit. The performance fee is '+(100-share)+'%, and it comes from profit only.':(gross<0?'A loss: no performance fee is charged, and the whole loss is yours.':'No profit and no loss: no fee.');
+    $('#ps-note').textContent=gross>0?'Your share is '+share+'% of the profit. The performance fee is '+(100-share)+'%, and it comes from profit only.':(gross<0?'On a loss, no performance fee is charged.':'No profit and no loss: no fee.');
     $('#ps-how').innerHTML='<b>Strategy result</b> '+money(a)+' × '+fmt(g,2)+'% = '+money(gross)+'<br>'+(gross>0?'<b>Your '+share+'%</b> '+money(gross)+' × '+share+'% = '+money(you)+'<br><b>Fee '+(100-share)+'%</b> '+money(gross)+' × '+(100-share)+'% = '+money(fee)+'<br><b>Your return</b> '+fmt(g,2)+'% × '+share+'% = '+fmt(net,2)+'%':'<b>Fee</b> $0.00 (no fee on a loss)<br><b>Your result</b> '+money(you));
   }
   [amt,pct].forEach(function(i){i.addEventListener('input',calc)});

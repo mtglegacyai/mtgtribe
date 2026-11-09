@@ -62,7 +62,7 @@ def build_start():
       ], [('04', 'The CopyX banner in your JetUP profile'), ('05', 'Syncing with Copy X')],
       'the banner says "User Active" (with your CU number), and you are on your TAG Markets dashboard with your email confirmed.',
       extra_before='<div class="pvid">' + phone('tut2', "Watch MTG do part 2 (3:42)") + '</div>',
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Never register directly on the CopyX platform,</b> or your account won\'t be linked to your team.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Username and/or Password are incorrect"?</b> Use exactly the password you created on JetUP, with the same capitals, numbers and symbols.</span></p>' % (icon('i-alert'), icon('i-info2')))
+      extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Register through JetUP, not directly on CopyX,</b> so your account links to your team.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Username and/or Password are incorrect"?</b> Use exactly the password you created on JetUP, with the same capitals, numbers and symbols.</span></p>' % (icon('i-alert'), icon('i-info2')))
     p3 = part(3, 'Verify your identity', "Sumsub checks your ID and a selfie for TAG Markets.", [
         'On your TAG Markets dashboard (<b>portal.tagmarkets.com</b>), tap ' + k('upload documents') + ' in "Please complete your KYC verification in order to make a deposit".',
         'Sumsub runs the identity check for TAG Markets. You opened it from TAG Markets, so tap ' + k('Continue') + '.',
@@ -72,11 +72,11 @@ def build_start():
         'Choose your issuing country and your document (MTG chose ' + k('Identity Card') + '). If it has two sides, tick ' + k('My document is double-sided') + ' and tap ' + k('Continue') + '. Read the tips (a well lit room, no reflections, never edit the images) and tap ' + k('Continue') + '.',
         'When the browser asks to use the camera, tap ' + k('Allow') + '. Hold your ID inside the frame: it takes the photo by itself (move the phone back a little if it does not). Front, then back.',
         'Step 2 is a quick selfie: a well lit place, your face in the frame, no hat, glasses or mask. Hold still until you see ' + k('All set') + '.',
-        'TAG Markets may also ask a few questions (your income, net worth, investment goal and whether you understand the risks): answer honestly. Read their reminder: not for residents of the European Union, you may have fewer protections than with a local provider, and %s of retail investor accounts lose money when trading CFDs.' % RETAIL_LOSS,
+        'TAG Markets may also ask a few questions (your income, net worth, investment goal and whether you understand the risks): answer honestly. Read TAG Markets\' short reminder (for example, the service is not for residents of the European Union), then continue.',
       ], [('06', "TAG Markets' questions and reminder"), ('07', 'The Sumsub identity check')],
       'you see "All set". TAG Markets reviews your documents, and once you are verified you can make your deposit (part 4).',
       extra_before='<div class="pvid">' + phone('tut3', "Watch MTG do part 3 (3:37)") + '</div>',
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>"This site can\'t ask for your permission"?</b> Close screen recorders and chat bubbles (for example WhatsApp), then tap Try again and Allow.</span></p><p class="call warn" style="margin-top:10px">%s<span><b>"Documents submitted on another profile"?</b> You already have a TAG Markets profile with these documents. One person, one profile: do not open a second account. Ask your sponsor or TAG Markets support.</span></p><p class="call info" style="margin-top:10px">%s<span><b>CFD</b> means contract for difference: you trade a price movement without owning the asset.</span></p>' % (icon('i-alert'), icon('i-alert'), icon('i-info2')))
+      extra_after='<p class="call info" style="margin-top:12px">%s<span><b>"This site can\'t ask for your permission"?</b> Close screen recorders and chat bubbles (for example WhatsApp), then tap Try again and Allow.</span></p><p class="call info" style="margin-top:10px">%s<span><b>"Documents submitted on another profile"?</b> You already have a TAG Markets profile with these documents. One person, one profile: do not open a second account. Ask your sponsor or TAG Markets support.</span></p><p class="call info" style="margin-top:10px">%s<span><b>CFD</b> means contract for difference: you trade a price movement without owning the asset.</span></p>' % (icon('i-info2'), icon('i-info2'), icon('i-info2')))
     p4 = part(4, 'Fund your account', 'Send $155 from your exchange to your TAG Markets deposit address.', [
         'Log in at <b>portal.tagmarkets.com</b> with the same email and password.',
         'Under ' + k('My wallet balances') + ', tap ' + k('Deposit') + '.',
@@ -89,7 +89,7 @@ def build_start():
         'Open the email VALR sends you and tap ' + k('Authorize Transaction') + '.',
       ], [('08', 'Log in to TAG Markets, tap Deposit'), ('09', 'Other, 155, Crypto, Submit'), ('11', 'In VALR: withdraw on the same network'), ('12', 'Self-hosted wallet, confirm, authorise'), ('13', 'Payment found, then payment successful')],
       'back in TAG Markets you see "Payment found!", then "Payment successful." In the example it took about 3 minutes.',
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Wrong network = lost funds.</b> Check twice, on both sides.</span></p>' % icon('i-alert'))
+      extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Match the network on both sides</b> (for example BEP20 to BEP20), so your funds arrive safely.</span></p>' % icon('i-info2'))
     codes = f'''<div class="codes">
      <div class="code"><small>Code 1, then Verify</small><b>#9M</b><span class="then">Hashtag, nine, capital M</span><button type="button" class="copy" data-copy="#9M">{icon('i-copy2')}<span class="lbl">Copy #9M</span><span class="done">Copied ✓</span></button></div>
      <div class="code"><small>Code 2, then Submit</small><b>9MPromo</b><span class="then">Capital M, capital P</span><button type="button" class="copy" data-copy="9MPromo">{icon('i-copy2')}<span class="lbl">Copy 9MPromo</span><span class="done">Copied ✓</span></button></div>
@@ -98,14 +98,14 @@ def build_start():
         'Open the menu, tap ' + k('CopyX') + ', find <b>SONIC</b> (the first one in the list) and tap ' + k('Details') + ', then ' + k('Connect') + '. <b>Don\'t pick any other trader.</b>',
         'Read the terms: a 30% performance fee taken from profits only, no management fee, no join fee, a one month minimum, and an Amplify account.',
         'In ' + k('Investment') + ' type ' + k('50') + '. <b>Only 50.</b> The screen shows a $10 minimum, but 50 is the plan. Leave the other $100 in your balance for the promo.',
-        '<b>Read the screen most people skip:</b> if the trader loses more than 10% of the starting balance, your account will be liquidated (closed). With a community token, that limit becomes 5%.',
+        '<b>Read the account rules on this screen:</b> the account closes if the trader\'s loss passes 10% of the starting balance. With a community token, that limit becomes 5%.',
         'Tap the arrow next to ' + k('Community Token') + '. Enter code 1, ' + k('#9M') + ', and tap ' + k('Verify') + '.',
         'A second field opens. Enter code 2, ' + k('9MPromo') + ', tap ' + k('Submit') + ' and wait for the tick.',
         'Tick both agreements. The second one says CopyX trades come from traders who are not part of TAG Markets. Then tap ' + k('Copy Now') + '.',
       ], [('14', 'Menu, CopyX, Sonic, Details, Connect'), ('15', 'Investment 50, then the community token'), ('16', '#9M, Verify, 9MPromo, Submit, the tick'), ('17', 'Copy Now, Success, then Profile')],
       'you see "Success". Your $50 Sonic account is connected.',
       extra_before=codes,
-      extra_after='<p class="call warn" style="margin-top:12px">%s<span><b>Why it matters:</b> with 24x Amplify, a drop of about 4.2%% on the trading balance is the same size as your whole deposit.</span></p><p class="call info" style="margin-top:10px">%s<span><b>New to Sonic AI?</b> Watch <a href="/jetup/how-it-works/#copy">JetUP\'s own 64-second Sonic AI video</a> first: what it trades, and why your money stays in your own account.</span></p>' % (icon('i-alert'), icon('i-film2')))
+      extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Why the plan starts with $50:</b> 24x Amplify makes every move bigger, in both directions, so a small start lets you learn how it moves.</span></p><p class="call info" style="margin-top:10px">%s<span><b>New to Sonic AI?</b> Watch <a href="/jetup/how-it-works/#copy">JetUP\'s own 64-second Sonic AI video</a> first: what it trades, and why your money stays in your own account.</span></p>' % (icon('i-info2'), icon('i-film2')))
     p6 = part(6, 'Claim the Dennis Fast Start Promo', 'Your CU number unlocks the $100 promo bonus.', [
         'In TAG Markets open the menu, tap ' + k('Profile') + ' and write down your <b>CU number</b>.',
         'Go to <b>jet-up.ai</b> and tap the orange ' + k('Dennis Fast Start Promo') + ' tile.',
@@ -204,7 +204,7 @@ def build_start():
      <div class="card net n2" style="background:rgba(255,255,255,.03)"><div class="top2"><b>USDT · TRC20</b><span class="medal">2</span></div><p>The Tron network. Second choice.</p><span class="fee lo">Low fees</span></div>
      <div class="card net n3" style="background:rgba(255,255,255,.03)"><div class="top2"><b>USDC · ERC20</b><span class="medal">3</span></div><p>The Ethereum network. Fine if you prefer it, but the most expensive of the three.</p><span class="fee hi">Highest fees</span></div>
     </div>
-    <p class="call warn" style="margin-top:14px">{icon('i-alert')}<span><b>The wrong network means lost funds.</b> Check twice.</span></p>
+    <p class="call info" style="margin-top:14px">{icon('i-info2')}<span><b>Use the same network on both sides,</b> and your funds arrive safely.</span></p>
    </div>
    <div class="card pad rv" style="--d:2">
     <p class="eyebrow">You'll use three websites</p>

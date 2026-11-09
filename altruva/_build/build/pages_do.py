@@ -35,7 +35,7 @@ def p_first72(here):
 </div>
 <div class="grid2 tick-grid" style="margin-top:16px"><figure class="ticket"><img src="{A("img/mtg-lucky-ticket-won.webp", here)}" width="529" height="342" loading="lazy" alt="MTG's own Lucky Ticket card showing WON 25.00 USDT in Draw 16, ticket ID hidden"></figure>
 <div class="stack"><p>My own example: Elite gave me two tickets. The first didn't win. The second won 25 USDT, paid to my wallet in full. With one ticket, there's no second chance.</p>
-<div class="honest">{ic("triangle-alert")}<div><b>Be honest with yourself:</b> most tickets don't win, so never count on a prize. A bigger package also puts more money at risk. Only use money you can afford to lose.</div></div></div></div>""",
+<div class="honest">{ic("triangle-alert")}<div><b>Be honest with yourself:</b> most tickets don't win, so never count on a prize. A bigger package also puts more money at risk. Start with an amount you're comfortable with.</div></div></div></div>""",
     "Why the $100 position", id="why-100")}
 {sec(table(["Your package", "Two directs of", "What it opens"], [["Elite, $100", "$100 or more", "<b>Legacy Crown</b> rank"], ["Builder, $50", "$50 or more", "<b>Nexus</b> rank"], ["Starter, $25", "$25 or more", "Your <b>Lucky Ticket</b>"]], caption="What two directs inside 72 hours open")
     + '<p class="fine" style="margin-top:12px">Rank and ticket rules from the ALTRUVA presentation and the app. On any package, two directs also give you both sides for level matching and open working levels 1 to 6.</p>',
@@ -357,7 +357,7 @@ def p_safe(here):
     "<b>Copy links only from the person who introduced you,</b> and check it opens altruva.io. Then reopen ALTRUVA from your wallet's history.",
     "<b>Read every wallet screen before you tap Confirm.</b> The approval should match your package.",
     "<b>Keep at least $3 to $5 of BNB</b> for fees, so you're never stuck.",
-    "<b>Only use money you can afford to lose,</b> and withdraw regularly.",
+    "<b>Start with an amount you're comfortable with,</b> and withdraw regularly.",
     "<b>Hide your balances and addresses</b> before you share a screenshot.",
 ]), "Six safety habits")}
 {sec(checks([
@@ -447,7 +447,7 @@ def p_disc(here):
 <h2 class="h3">An independent guide</h2><p>This is not an official ALTRUVA website. It's made by MTG, an ALTRUVA member, to help people understand ALTRUVA before they decide anything.</p>
 <h2 class="h3">Education, not advice</h2><p>Nothing here is financial, legal or tax advice, and nothing here is a recommendation to join or not to join. Always do your own research.</p>
 <h2 class="h3">Affiliate links</h2><p>The Sign Up button copies MTG's ALTRUVA referral link. If you join through it, MTG becomes your sponsor and earns by the plan explained on these pages. The crypto card guide is MTG's own crypto card website and may include his referral links too.</p>
-<h2 class="h3">Risk</h2><p>Earnings come from members' deposits and are not guaranteed. You can lose the money you put in. The top package is $100. Some people open more than one account: that's their own strategy and their own risk. Only use money you can afford to lose.</p>
+<h2 class="h3">Risk</h2><p>Earnings come from members' deposits and are not guaranteed. You can lose the money you put in. The top package is $100. Some people open more than one account: that's their own strategy and their own risk. Start with an amount you're comfortable with.</p>
 <h2 class="h3">Facts and figures</h2><p>Figures were checked against the live ALTRUVA app on 24 Oct 2026. Apps change, so the app on your screen is always the final word. Examples are illustrations, not forecasts.</p>
 <h2 class="h3">Your privacy</h2><p>This site has no sign-up, no cookies and no tracking. It remembers two things on your own device only: which videos you've watched, and whether you closed the menu. Fonts load from Google Fonts, and the rand converter asks CoinGecko for the live rate.</p>
 <h2 class="h3">Names and logos</h2><p>The ALTRUVA name and logo belong to their owners and are used here only to identify what this guide is about. The videos and pages are MTG's own work.</p>

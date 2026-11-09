@@ -222,7 +222,7 @@ def report(d, head, sprite, header, footer, nav_top="", nav_bottom=""):
  </section>
  <section class="sec" id="sources" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="src">{src}{INVESTORS_SRC if INVESTORS_URL not in src else ""}</ul>
   <p class="upd" style="margin-top:20px"><a class="tx" href="/canton-weekly/">All Canton weekly reports</a></p></section>
- <p class="disc">Education only, not financial advice. MTG is not a financial adviser. Crypto and small-company shares are high risk: only use money you can afford to lose and always do your own research. The VALR and Bellver Card links are MTG's referral links: MTG may earn a commission at no extra cost to you.</p>
+ <p class="disc">Education only, not financial advice. MTG is not a financial adviser. Crypto and small-company shares move a lot, so start small and always do your own research. The VALR and Bellver Card links are MTG's referral links: MTG may earn a commission at no extra cost to you.</p>
 </div></div>
 </main>
 {footer}'''

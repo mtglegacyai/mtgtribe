@@ -331,8 +331,8 @@ def overlays(here):
 DISCLAIMER = ('<b>Independent guide.</b> This is not an official ALTRUVA website. MTG is an ALTRUVA member and made this guide '
               'to educate, not to advise: it is not financial advice and not a recommendation to join or not to join. '
               'The sign-up button carries MTG\'s referral link, so if you join through it, MTG becomes your sponsor and earns '
-              'by the plan explained here. The top package is $100. Crypto and smart contracts carry real risk: only use money '
-              'you can afford to lose. Figures were checked against the live app on 24 Oct 2026 and can change.')
+              'by the plan explained here. The top package is $100. Crypto and smart contracts carry risk, so start '
+              'with an amount you\'re comfortable with. Figures were checked against the live app on 24 Oct 2026 and can change.')
 
 
 def disc_block(here):

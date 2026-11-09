@@ -166,9 +166,9 @@ def footer():
   <a class="soc" href="%s" target="_blank" rel="noopener">%sFacebook</a>
  </div>
  <div class="flinks"><a href="/jetup/">JetUP guide</a><a href="/jetup/get-started/">Sign-up training</a><a href="/jetup/five-checks/">The 5 checks</a><a href="/jetup/faq/">FAQ</a><a href="/jetup/disclaimer/">Disclaimer</a><a href="/dashboard/">Dashboard</a><a href="/">mtgtribe.com</a></div>
- <p class="fine">Independent guide by MTG. Not official JetUP or TAG Markets material. Education only, not financial advice: always do your own research. Trading forex, CFDs and copy trading is high risk, and you can lose all the money you deposit. TAG Markets' own reminder says %s of retail investor accounts lose money when trading CFDs. Past results never promise future ones. The VALR and Binance buttons are MTG's referral links.</p>
+ <p class="fine">Independent guide by MTG. Not official JetUP or TAG Markets material. Education only, not financial advice: always do your own research. Trading carries risk and results change over time, so start with an amount you're comfortable with. The VALR and Binance buttons are MTG's referral links.</p>
  <p class="made">Made with ❤️ by MTG 👑 | Your Digital Architect · © 2026 MTG</p>
-</div></footer>''' % (GROUP, icon('i-whatsapp'), YT, icon('i-youtube'), TT, icon('i-tiktok'), TG, icon('i-telegram'), FB, icon('i-facebook'), RETAIL_LOSS)
+</div></footer>''' % (GROUP, icon('i-whatsapp'), YT, icon('i-youtube'), TT, icon('i-tiktok'), TG, icon('i-telegram'), FB, icon('i-facebook'))
 
 # Previous and next page, in menu order, then the disclaimer (MTG, 6 Nov 2026)
 ORDER = [it[:4] for _, items in MENU for it in items] + [('/jetup/disclaimer/', 'i-scale2', 'Disclaimer', 'Education only, and the risks')]
@@ -423,11 +423,11 @@ def join_btn(label='Join JetUP', cls='btn btn-pri'):
     return f'<a class="{cls}" href="{JETUP_JOIN}" target="_blank" rel="sponsored noopener" data-join>{icon("i-rocket2")}{label}</a>'
 
 def join_note(extra=''):
-    return f'<p class="jnote">{icon("i-alert")}<span>{JOIN_NOTE}{extra}</span></p>'
+    return f'<p class="jnote">{icon("i-info2")}<span>{JOIN_NOTE}{extra}</span></p>'
 
 SONIC_NOTE = ("<b>The figures in the video are JetUP's own</b> (jet-up.ai/sonic, May to October 2026: 196 trades, 171 closed "
-              "in profit, 87.2%, checked 7 November 2026). That counts trades, not money: a few losing trades can cost more than many "
-              "winning ones, especially at 24x Amplify, and past results never promise future ones. Check the live trades yourself on "
+              "in profit, 87.2%, checked 7 November 2026). That counts trades, not dollars, so look at the full record too. "
+              "Check the live trades yourself on "
               "<a href=\"https://jet-up.ai/sonic\" target=\"_blank\" rel=\"noopener\">jet-up.ai/sonic</a>, and do "
               "<a href=\"/jetup/five-checks/\">the 5 checks</a> first.")
 
@@ -446,7 +446,7 @@ def sonic_card(eyebrow="JetUP's own video · 1:04", title='Meet the driver: <spa
 def join_cta(title='Ready to start? <span class="lime">Join JetUP.</span>', text='Learn first, then decide for yourself. When you are ready, create your account and follow the sign-up training one tap at a time.'):
     return f'''<section class="sec tight"><div class="wrap"><div class="card tribe joincta rv">
  <span class="wa jw" aria-hidden="true"><img src="/jetup/img/jetup-mark-128.webp" width="54" height="54" alt=""></span>
- <div><h2>{title}</h2><p>{text}</p>{join_note(' Trading is risky: ' + RETAIL_LOSS + ' of retail investor accounts lose money when trading CFDs.')}</div>
+ <div><h2>{title}</h2><p>{text}</p>{join_note()}</div>
  {join_btn()}
 </div></div></section>'''
 

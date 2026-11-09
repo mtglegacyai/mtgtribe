@@ -166,7 +166,7 @@ def footer():
   <a class="soc" href="%s" target="_blank" rel="noopener">%sTelegram</a>
   <a class="soc" href="%s" target="_blank" rel="noopener">%sFacebook</a>
  </div>
- <div class="flinks"><a href="/jetup/">JetUP guide</a><a href="/jetup/get-started/">Sign-up training</a><a href="/jetup/five-checks/">The 5 checks</a><a href="/jetup/faq/">FAQ</a><a href="/jetup/disclaimer/">Disclaimer</a><a href="/dashboard/">Dashboard</a><a href="/">mtgtribe.com</a></div>
+ <div class="flinks"><a href="/jetup/">JetUP Guide</a><a href="/jetup/get-started/">Sign-Up Training</a><a href="/jetup/five-checks/">The 5 Checks</a><a href="/jetup/faq/">FAQ</a><a href="/jetup/disclaimer/">Disclaimer</a><a href="/dashboard/">Dashboard</a><a href="/">mtgtribe.com</a></div>
  <p class="fine">Independent guide by MTG. Not official JetUP or TAG Markets material. Education only, not financial advice: always do your own research. Trading carries risk and results change over time, so start with an amount you're comfortable with. The VALR and Binance buttons are MTG's referral links.</p>
  <p class="made">Made with ❤️ by MTG 👑 | Your Digital Architect · © 2026 MTG</p>
 </div></footer>''' % (GROUP, icon('i-whatsapp'), YT, icon('i-youtube'), TT, icon('i-tiktok'), TG, icon('i-telegram'), FB, icon('i-facebook'))

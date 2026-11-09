@@ -73,7 +73,7 @@ def build_checks():
     main = f'''
 {phead('i-shield2', 'Burned before? Start here', 'The 5 checks <span class="grad">before you try JetUP</span>',
        "If you've lost money in a trading platform, a copy trading app, or a program that promised you the world, this page is for you. You are not foolish for trying. The lesson is not to stop trying. The lesson is to verify first. So let's verify JetUP and TAG Markets, together.",
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('The 5 checks', None)],
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('The 5 Checks', None)],
        [icon('i-film2') + '5:25 video', icon('i-search') + 'Sources included', icon('i-check2') + 'Tick as you check'])}
 <section class="sec tight" style="padding-top:0"><div class="wrap">
  <div style="max-width:980px;margin:0 auto" class="rv">{laptop('5checks', 'Watch the 5 checks (5:25), then tick each one below as you check it', eager=True)}</div>
@@ -88,7 +88,7 @@ def build_checks():
 {tribe_cta('Share this with someone <span class="lime">who got burned.</span>', 'Save this page, so you have the five checks when you need them. We learn best when we teach others. And if you believe in multiple streams of income and learning before you earn, join the MTG TRIBE.')}
 '''
     # the five tick boxes live in separate cards: one shared store, so each card gets its own [data-ticks] wrapper with the same key
-    crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('The 5 checks', None)]
+    crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('The 5 Checks', None)]
     faq = [('Is TAG Markets regulated?', 'TAG Markets\' trading company, T.M. Financials Ltd, holds FSC Mauritius licence GB21026474, and TM Financials SA (Pty) Ltd is FSCA authorised, FSP 55237, for marketing services. If you live outside its licence area, check your local rules first.'),
            ('Are Sonic AI results real?', 'Sonic AI publishes its track record on Myfxbook: +30.1% gross from 3 Nov 2024 to 4 Oct 2026. After the 70/30 split that is about 21% to the client over about 23 months: a real track record, with ups and downs.'),
            ('How big are the moves with 24x Amplify?', '24x Amplify makes every move bigger, in both directions. A built-in loss limit closes the account at a 10% loss of the starting balance (5% with a community token), and the broker\'s insolvency cover is $1,000,000 for all clients together.')]
@@ -101,7 +101,7 @@ def build_how():
     main = f'''
 {phead('i-layers2', 'How it works', 'How JetUP and TAG Markets <span class="grad">fit together</span>',
        'One picture at a time: who holds what, how copy trading works, where the 70/30 split goes, what Amplify does, and the built-in loss limit.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('How it works', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('How It Works', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  {section('who', 'The simple picture', 'Who does what', '''
 <div style="margin:4px 0 18px">''' + laptop('who', 'Five names, one picture: the minibus taxi (2:08)') + '''</div>
@@ -141,7 +141,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How it works', None)], [ld_video('who'), ld_video('split'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'
@@ -154,7 +154,7 @@ def build_plan():
     main = f'''
 {phead('i-users2', "JetUP's partner program", "The partner plan, <span class=\"grad\">in plain English</span>",
        "JetUP pays partners four ways, all tied to trading at TAG Markets. Here they are, with JetUP's own figures, and with the rules most people miss. Read this as information, not a promise: what a partner earns can be zero.",
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Partner plan', None)],
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Partner Plan', None)],
        [icon('i-file') + "JetUP's figures, as of 4 Oct 2026", icon('i-info2') + 'Check current terms in your partner account'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="call info rv">{icon('i-info2')}<p><b>Before any number:</b> these are JetUP's own figures. JetUP's plan says there is no fixed, daily or guaranteed return and no guaranteed income, so results depend on the market and on the work you put in. New to the trading side? See how 24x Amplify and the 70/30 split work in <a href="/jetup/how-it-works/">How it works</a>.</p></div>
@@ -208,14 +208,14 @@ def build_plan():
            ('How do I qualify as a JetUP partner?', "JetUP's plan says everyone needs at least $250 of active trading. A $250 own deposit opens 3 levels; from the 4th direct partner each new direct partner opens one more level, and 10 direct partners open all 10.")]
     return page(path, 'JetUP Partner Plan Explained: Lot Commission, Profit Share | MTG',
                 "JetUP's partner plan in plain English: Lot Commission over 10 levels, 1.5% Profit Share on Sonic AI at TAG Markets, the Infinity Bonus, the Global Pool, rewards and the $250 qualification rule.",
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner plan', None)], [ld_faq(faq, SITE + path), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('profitshare')])
 
 def build_promo():
     path = '/jetup/promo/'
     main = f'''
 {phead('i-gift', 'Dennis Fast Start Promo', 'The $100 promo, <span class="grad">rules first</span>',
        'New partners, once: your own $100 plus a $100 bonus open a Sonic AI account at TAG Markets that trades as $4,800 with 24x Amplify. Here are the rules, and how to claim it in part 6 of the training.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Dennis Fast Start Promo', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Dennis Fast Start Promo', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="rv">{laptop('promo', 'The $100 promo, explained by MTG (2:18)', eager=True)}</div>
  <div class="card ticket rv" data-in>
@@ -263,7 +263,7 @@ def build_bix():
     main = f'''
 {phead('i-card2', 'BIX Card', 'A crypto wallet <span class="grad">with a Visa card</span>',
        'BIX is a non-custodial (self-custody) crypto wallet paired with a Visa card. You spend against your USDT or USDC while you keep control of your keys. It is listed inside the JetUP portal, and linking it takes a QR code and the same email.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('BIX Card', None)],
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('BIX Card', None)],
        [icon('i-phone') + 'The BixPay app', icon('i-lock') + 'Self-custody', icon('i-info2') + 'Optional'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="card pad rv vrow" id="bix-video">

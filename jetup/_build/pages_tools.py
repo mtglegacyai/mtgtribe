@@ -17,7 +17,7 @@ def build_exposure():
     main = f'''
 {phead('i-candle2', 'Tool', 'Exposure <span class="grad">Calculator</span>',
        'Type your own money, any bonus and the Amplify multiplier, then drag a price move. See the exposure, the profit or loss, and what that move means for your own money.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Exposure Calculator', None)], ped='lime')}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Exposure Calculator', None)], ped='lime')}
 <section class="sec tight" style="padding-top:0"><div class="wrap toolgrid">
  <form class="card pad" id="exp-form" novalidate aria-label="Exposure Calculator inputs">
   <p class="eyebrow" style="margin-bottom:12px">Start from an example</p>
@@ -71,7 +71,7 @@ def build_split():
     main = f'''
 {phead('i-split', 'Tool', 'Profit Split <span class="grad">Calculator</span>',
        'Type the amount in the strategy and the strategy result. See your 70%, the 30% performance fee, and what happens when the result is a loss.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Profit Split Calculator', None)], ped='lime')}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Profit Split Calculator', None)], ped='lime')}
 <section class="sec tight" style="padding-top:0"><div class="wrap toolgrid">
  <form class="card pad" id="ps-form" novalidate aria-label="Profit Split Calculator inputs">
   <p class="eyebrow" style="margin-bottom:12px">Start from an example</p>
@@ -115,7 +115,7 @@ def build_videos():
     main = f'''
 {phead('i-film2', 'Library', 'JetUP and TAG Markets <span class="grad">videos</span>',
        'Watch first, then do. Every video opens on its own cover, plays in its own frame and closes itself when it ends.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Videos', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Videos', None)])}
 <section class="sec tight" style="padding-top:0"><div class="wrap stack" style="gap:30px">
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Start here</p>{laptop('simple', 'JetUP and TAG Markets: the simple picture (1:39)')}<p class="small center" style="margin:8px 0 0">Who does what, where your money sits, the 70/30 split and how to start, in 99 seconds.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The minibus taxi</p>{laptop('who', 'Five names, one simple picture (2:08)')}<p class="small center" style="margin:8px 0 0">JetUP, TAG Markets, CopyX, Sonic AI and you, as one minibus taxi.</p></div>
@@ -167,7 +167,7 @@ def build_downloads():
     main = f'''
 {phead('i-dl2', 'Library', 'Downloads: <span class="grad">guides, decks and videos</span>',
        'Everything worth keeping, in one place. Save it, read it offline and share it with someone who is ready to learn.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Downloads', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Downloads', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack">
  <p class="call info rv">{icon('i-info2')}<span><b>Read the official decks as JetUP's own marketing.</b> Some figures (for example "up to 1% to 1.5% daily trading profit") are JetUP's claims, not promises, so check every number against your own dashboard.</span></p>
  <p class="eyebrow rv" style="margin-top:10px">Guides and decks</p>
@@ -225,7 +225,7 @@ def build_faq():
     main = f'''
 {phead('i-help', 'Straight answers', 'JetUP and TAG Markets <span class="grad">FAQ</span>',
        'The questions people ask before they start, answered plainly, with the risks left in.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('FAQ', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('FAQ', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow">{blocks}
  <div class="card pad block rv center" style="display:grid;justify-items:center;gap:12px"><h2 class="h2" style="font-size:clamp(1.7rem,3.4vw,2.3rem)">Still have a question?</h2><p class="lede">Ask in the MTG TRIBE. The question most of you ask becomes the next video.</p><a class="btn btn-lime" href="{GROUP}">{icon('i-whatsapp')}Ask the tribe</a></div>
 </div></section>
@@ -237,7 +237,7 @@ def build_faq():
 def build_disclaimer():
     path = '/jetup/disclaimer/'
     main = f'''
-{phead('i-info2', 'Please read', 'Disclaimer', 'The small print, in plain English.', [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Disclaimer', None)])}
+{phead('i-info2', 'Please read', 'Disclaimer', 'The small print, in plain English.', [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Disclaimer', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow"><div class="card pad prose rv">
  <h2>Independent, education only</h2>
  <p>This is an independent guide by MTG. It is not official JetUP, TAG Markets, CopyX, Sonic AI or BIX material, and none of these companies has reviewed it. It is education only, not financial, investment, tax or legal advice. Always do your own research.</p>
@@ -263,7 +263,7 @@ def build_glossary():
     main = f'''
 {phead('i-book', 'Every word, explained', 'The JetUP and TAG Markets <span class="grad">glossary</span>',
        'The words you will meet in this guide, in plain English. Tap any underlined word on the other pages to see its meaning right there.',
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Glossary', None)])}
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Glossary', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow"><div class="card pad rv glist">{rows}</div></div></section>
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Glossary: CFD, KYC, Amplify, XAU/USD | MTG',

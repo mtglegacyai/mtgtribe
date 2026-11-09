@@ -161,7 +161,7 @@ def build_start():
     main = f'''
 {phead('i-rocket2', 'Sign-up training', 'JetUP + TAG Markets, <span class="grad">one tap at a time</span>',
        "Grab your phone. We're going to do this together: your JetUP account, your TAG Markets account, your first deposit, the Sonic AI strategy and the Dennis Fast Start Promo. Take your time. You can pause any step and follow along.",
-       [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Sign-up training', None)],
+       [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Sign-Up Training', None)],
        [icon('i-film2') + '9:09 training', icon('i-layers2') + '6 parts', icon('i-phone') + 'Phone friendly'])}
 
 <section class="sec tight" style="padding-top:0" aria-label="The training video">
@@ -233,7 +233,7 @@ def build_start():
 {AFTER}
 {tribe_cta('Comment <span class="lime">DONE</span> when you\'re set up.', 'Stuck on a step? Comment the part number under the video on YouTube or TikTok, and the step most of you ask about becomes my next video. Or ask the tribe on WhatsApp.')}
 '''
-    crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Sign-up training', None)]
+    crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Sign-Up Training', None)]
     howto = {"@type": "HowTo", "name": "How to join JetUP and TAG Markets, connect Sonic AI and claim the Dennis Fast Start Promo",
              "totalTime": "PT45M", "step": [{"@type": "HowToStep", "position": i + 1, "name": n, "url": SITE + path + '#part-%d' % (i + 1)} for i, n in enumerate(
               ['Create your JetUP account', 'Link JetUP to TAG Markets', 'Verify your identity', 'Fund your TAG Markets account', 'Connect Sonic AI', 'Claim the Dennis Fast Start Promo'])]}

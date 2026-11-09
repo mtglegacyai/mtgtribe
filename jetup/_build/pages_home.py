@@ -208,7 +208,7 @@ def build_home():
  <span class="seam" aria-hidden="true"></span>
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">Ready? One tap at a time</p><h2 class="h2 rv" style="--d:1" id="start-h">Six parts. <span class="grad">Every tap shown.</span></h2>
-   <p class="lede rv" style="--d:2">Grab your phone and follow along. In part five there's one screen most people skip, and you need to read it.</p></div>
+   <p class="lede rv" style="--d:2">Grab your phone and follow along, one tap at a time. In part five, take a moment on the account rules screen: it shows the built-in loss limit.</p></div>
   <div class="grid2" style="align-items:center;gap:clamp(20px,4vw,44px)">
    <div class="rv">{laptop('training', 'The full sign-up training (9:09)')}</div>
    <div class="stack">

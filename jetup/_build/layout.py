@@ -92,14 +92,14 @@ def icon(name, cls='ic'):
 
 # ---------------------------------------------------------------- the menu
 MENU = [
- ('Start here', [
+ ('Start Here', [
    ('/jetup/', 'i-compass2', 'Overview', 'The whole picture, in one page'),
-   ('/jetup/five-checks/', 'i-shield2', 'The 5 checks', 'Burned before? Start here'),
-   ('/jetup/get-started/', 'i-rocket2', 'Sign-up training', 'Every tap, in 6 parts'),
+   ('/jetup/five-checks/', 'i-shield2', 'The 5 Checks', 'Burned before? Start here'),
+   ('/jetup/get-started/', 'i-rocket2', 'Sign-Up Training', 'Every tap, in 6 parts'),
  ]),
- ('Understand it', [
-   ('/jetup/how-it-works/', 'i-layers2', 'How it works', 'Who holds what, 70/30, Amplify'),
-   ('/jetup/partner-plan/', 'i-users2', 'Partner plan', "JetUP's four incomes, honestly"),
+ ('Understand It', [
+   ('/jetup/how-it-works/', 'i-layers2', 'How It Works', 'Who holds what, 70/30, Amplify'),
+   ('/jetup/partner-plan/', 'i-users2', 'Partner Plan', "JetUP's four incomes, honestly"),
    ('/jetup/promo/', 'i-gift', 'Dennis Fast Start Promo', 'The rules, and how to claim'),
    ('/jetup/bix-card/', 'i-card2', 'BIX Card', 'Crypto wallet and Visa card'),
  ]),
@@ -132,11 +132,11 @@ def side_menu(path):
     out.append(' </nav>')
     out.append(' <div class="side-bot">')
     out.append('  <a class="btn btn-pri btn-sm" href="%s" target="_blank" rel="sponsored noopener" data-join>%sJoin JetUP</a>' % (JETUP_JOIN, icon('i-rocket2')))
-    out.append('  <a class="btn btn-lime btn-sm" href="%s"><span class="emo" aria-hidden="true">💬</span>Join the MTG TRIBE</a>' % GROUP)
+    out.append('  <a class="btn btn-lime btn-sm" href="%s"><span class="emo" aria-hidden="true">💬</span>Join The MTG TRIBE</a>' % GROUP)
     # the JetUP home and Dashboard buttons were removed (MTG, 9 Nov 2026: the menu was too tall on small phones);
     # JetUP home stays one tap away on the logo, the top bar and the phone thumb bar, the Dashboard in the footer
     # official logins (MTG, 8 Nov 2026): the JetUP dashboard and the TAG Markets portal, bottom left of the menu
-    out.append('  <div class="slogin" role="group" aria-label="Member login"><p class="slabel">Member login</p><div class="row">'
+    out.append('  <div class="slogin" role="group" aria-label="Member Login"><p class="slabel">Member Login</p><div class="row">'
                '<a class="sbtn jet" href="%s" target="_blank" rel="noopener" title="Log in to your JetUP dashboard (jetup.ibportal.io)"><img src="/jetup/img/jetup-mark-64.webp" width="26" height="26" alt=""><span><b>JetUP</b><small>Dashboard</small></span><span class="sr">(opens in a new tab)</span></a>'
                '<a class="sbtn tag" href="%s" target="_blank" rel="noopener" title="Log in to the TAG Markets portal (portal.tagmarkets.com)"><i aria-hidden="true">TAG</i><span><b>TAG Markets</b><small>Portal</small></span><span class="sr">(opens in a new tab)</span></a>'
                '</div></div>' % (JETUP_LOGIN, TAG_LOGIN))

@@ -146,6 +146,7 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">Where the money comes from</p><h2 class="h2 rv" style="--d:1" id="split-h">From every profit, <span class="grad">70% is yours.</span></h2>
    <p class="lede rv" style="--d:2">When the strategy makes a profit, you keep 70%. The other 30% is the performance fee: it pays the broker, the strategy provider and the partner program. Drag the slider and watch it split.</p></div>
+  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('split', 'Where every profit goes, in 2:09')}</div>
   <div class="card pad split rv">
    <div>
     <label for="split-range" class="small" style="font-weight:800">If Sonic AI makes a profit of</label>
@@ -280,7 +281,7 @@ def build_home():
 {tribe_cta()}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('Dashboard', '/dashboard/'), ('JetUP and TAG Markets', None)]
-    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who'), ld_video('promo')]
+    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who'), ld_video('promo'), ld_video('split')]
     ld[1]['@id'] = SITE + path + '#video-5-checks'
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',

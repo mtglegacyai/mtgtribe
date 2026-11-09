@@ -122,6 +122,7 @@ def build_how():
  <li>The second agreement you tick says CopyX trades come from traders who are not part of TAG Markets, and TAG Markets bears no responsibility for them.</li>
 </ul>''' + sonic_card(eyebrow="Watch it · JetUP's own video · 1:04", title='Sonic AI <span class="grad">in 64 seconds</span>', framed=False), 'i-copyx')}
  {section('split', 'Where the money goes', 'The 70/30 split', f'''
+<div style="margin:4px 0 18px">{laptop('split', 'The 70/30 split, explained by MTG (2:09)')}</div>
 <p>When the strategy makes a profit, <b>70% is yours</b>. <b>30% pays the broker, the strategy provider and the partner program</b>. So if the strategy makes $10, $7 is yours. And if it makes a loss, nobody charges you a performance fee on that loss.</p>
 <p>JetUP's own one-pager says the Lot Commission and the Global Pool are paid from broker margin, and the Profit Share comes from the 30% share of strategy profit, never from client deposits.</p>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/profit-split-calculator/">{icon('i-split')}Open the Profit Split Calculator</a></p>''', 'i-split')}
@@ -140,7 +141,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How it works', None)], [ld_video('who'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How it works', None)], [ld_video('who'), ld_video('split'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'

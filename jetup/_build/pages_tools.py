@@ -97,6 +97,7 @@ def build_split():
   <p class="small" style="margin:0">Illustration, not a forecast. The +30.1% is Sonic AI's published Myfxbook result from 3 Nov 2024 to 4 Oct 2026, gross. Results change over time. It leaves out network and exchange fees. Education only, not financial advice.</p>
  </div>
 </div></section>
+<section class="sec tight" style="padding-bottom:0"><div class="narrow rv"><p class="eyebrow" style="margin-bottom:14px">Watch it explained</p>{laptop('split', 'The 70/30 split, explained by MTG (2:09)')}</div></section>
 <section class="sec tight"><div class="narrow"><div class="card pad prose rv">
  <h2>Where the 30% goes</h2>
  <p>The 30% performance fee pays the broker, the strategy provider and the partner program, and it is taken from profits only. JetUP's one-pager says the Profit Share to partners comes out of this 30%, never from client deposits.</p>
@@ -106,7 +107,7 @@ def build_split():
     app = {"@type": "WebApplication", "name": "Profit Split Calculator (JetUP and TAG Markets 70/30)", "url": SITE + path, "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
     return page(path, 'Profit Split Calculator: the 70/30 on TAG Markets CopyX | MTG',
                 'Free Profit Split Calculator for JetUP and TAG Markets CopyX: see your 70% of a Sonic AI profit, the 30% performance fee, your return, and why a loss carries no fee.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Profit Split Calculator', None)], [app],
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Profit Split Calculator', None)], [app, ld_video('split')],
                 keywords='profit split calculator, 70/30, TAG Markets CopyX, Sonic AI, performance fee, JetUp, MTG TRIBE')
 
 def build_videos():
@@ -119,6 +120,7 @@ def build_videos():
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Start here</p>{laptop('simple', 'JetUP and TAG Markets: the simple picture (1:39)')}<p class="small center" style="margin:8px 0 0">Who does what, where your money sits, the 70/30 split and how to start, in 99 seconds.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The minibus taxi</p>{laptop('who', 'Five names, one simple picture (2:08)')}<p class="small center" style="margin:8px 0 0">JetUP, TAG Markets, CopyX, Sonic AI and you, as one minibus taxi.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The $100 promo</p>{laptop('promo', 'The $100 Fast Start Promo (2:18)')}<p class="small center" style="margin:8px 0 0">The money plan, how to claim it in 4 steps, and the promo rules.</p></div>
+ <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The 70/30 split</p>{laptop('split', 'The 70/30 split (2:09)')}<p class="small center" style="margin:8px 0 0">Where every profit goes, no fee on a losing trade, and the calculator, tap by tap.</p></div>
  <div class="grid2" style="align-items:start">
   <div class="rv"><p class="eyebrow" style="margin-bottom:14px">1 · Watch first</p>{laptop('5checks', 'JetUP 5 Checks, by MTG (5:25)')}<p class="small center" style="margin:8px 0 0">Lost money before? Five things to check before you try again.</p></div>
   <div class="rv" style="--d:1"><p class="eyebrow" style="margin-bottom:14px">2 · Then do</p>{laptop('training', 'Sign-up training, by MTG (9:09)')}<p class="small center" style="margin:8px 0 0">Every tap: sign up, KYC, deposit, Sonic AI and the $100 promo.</p></div>
@@ -142,7 +144,7 @@ def build_videos():
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Videos: Trainings by MTG | MTG',
                 'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the sign-up training with Sonic AI and the Dennis promo, MTG\'s step-by-step phone videos (create your JetUP account, link TAG Markets) and JetUP\'s own Profit Share explainer.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('simple'), ld_video('who'), ld_video('promo'), ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('simple'), ld_video('who'), ld_video('promo'), ld_video('split'), ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
 
 DOWNLOADS = [
  ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),

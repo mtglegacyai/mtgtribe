@@ -22,7 +22,8 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
    `python3 tools/canton-weekly/thumb.py tools/canton-weekly/data/DATE.json --og-only` so the report still gets its preview.
    build.py uses og.jpg when it exists, otherwise the hub's preview (`assets/og/canton-weekly.jpg`).
 4. Pages: `python3 tools/canton-weekly/build.py tools/canton-weekly/data/DATE.json`
-   (writes canton-weekly/DATE/, rebuilds the hub canton-weekly/index.html, updates sitemap-home.xml and, for the
+   (writes canton-weekly/DATE/, rebuilds the hub canton-weekly/index.html, updates sitemap-home.xml (adds the new report and gives today's date,
+   South African time, as `<lastmod>` to every page the run changed, so Google knows to crawl them again) and, for the
    newest report only, refreshes the `data-snap` numbers on /cc/ and /cntn/ from the `guides` block).
 5. Commit to a `claude/canton-weekly-DATE` branch. Push to `main` only after MTG says "publish".
 

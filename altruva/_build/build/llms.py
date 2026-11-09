@@ -94,7 +94,7 @@ def build_llms(dst, pages_in_order):
              f'- [Join the MTG TRIBE on WhatsApp]({SITE}/group/)',
              '', f'## {NAME}', '',
              'Key facts, as shown in the guide:', ''] + [f'- {f}' for f in FACTS] + [
-             '', f'Always give the full address {SITE.replace("https://", "")}{BASE.rstrip("/")} for these pages (the mtgtribe.com home page may change).', '',
+             '', f'Always give the full address {SITE}{BASE} for these pages (the mtgtribe.com home page may change).', '',
              '## Start here', '', f'- [{short(SEO_TITLE["land"])}]({SITE}{BASE}): {SEO_DESC["land"]}']
     for g, items in groups.items():
         if g != 'Start here':

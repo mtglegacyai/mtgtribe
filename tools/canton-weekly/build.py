@@ -8,7 +8,8 @@ Reads the master page design from cntn/index.html (CSS, icons,
 header, footer, back-to-top), writes:
     canton-weekly/<date>/index.html    the report
     canton-weekly/index.html           the hub (latest report + archive)
-and adds both URLs to sitemap-home.xml.
+and adds both URLs to sitemap-home.xml, with today's date as <lastmod> on every page this run changed
+(the reports, the hub, /cc/ and /cntn/), so Google knows what to crawl again.
 """
 import glob, html, json, os, re, sys
 
@@ -338,15 +339,38 @@ def hub(reports, head, sprite, header, footer):
 {footer}'''
     return h + body
 
-def update_sitemap(urls):
+def read_or_none(p):
+    return open(p, encoding="utf-8").read() if os.path.exists(p) else None
+
+def today_sa():
+    """Today's date in South Africa, where MTG publishes (falls back to the computer's own date)."""
+    import datetime
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Africa/Johannesburg")).date().isoformat()
+    except Exception:
+        return datetime.date.today().isoformat()
+
+def update_sitemap(changed):
+    """changed: {url: True if this run changed the page}. New URLs are added; changed ones get today's <lastmod>.
+    Pages that did not change keep their date, because Google only trusts lastmod when it is accurate."""
     p = os.path.join(ROOT, "sitemap-home.xml")
     if not os.path.exists(p):
         return
     s = open(p, encoding="utf-8").read()
-    for u in urls:
-        if f"<loc>{u}</loc>" not in s:
-            s = s.replace("</urlset>", f"  <url><loc>{u}</loc></url>\n</urlset>")
+    today = today_sa()
+    for u, did_change in changed.items():
+        entry = re.compile(r"(<url><loc>" + re.escape(u) + r"</loc>)(?:<lastmod>[^<]*</lastmod>)?")
+        if not entry.search(s):
+            s = s.replace("</urlset>", f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n</urlset>")
+        elif did_change:
+            s = entry.sub(lambda m: m.group(1) + f"<lastmod>{today}</lastmod>", s, count=1)
     open(p, "w", encoding="utf-8").write(s)
+    idx = os.path.join(ROOT, "sitemap.xml")
+    if any(changed.values()) and os.path.exists(idx):
+        x = open(idx, encoding="utf-8").read()
+        x = re.sub(r"(<loc>" + re.escape(SITE) + r"/sitemap-home\.xml</loc><lastmod>)[^<]*", lambda m: m.group(1) + today, x)
+        open(idx, "w", encoding="utf-8").write(x)
 
 GUIDE_FILES = {"cc": os.path.join(ROOT, "cc", "index.html"), "cntn": os.path.join(ROOT, "cntn", "index.html")}
 GUIDE_KEYS = {"cc": ("date", "date_h", "price", "chg", "mcap", "ath", "supply"), "cntn": ("date", "price", "price_date", "range")}
@@ -394,6 +418,11 @@ def main():
     wanted = {os.path.basename(p) for p in sys.argv[1:]} or {os.path.basename(p) for p in files}
     latest = os.path.basename(files[-1])
     asc = [json.load(open(p, encoding="utf-8")) for p in files]
+    # Remember every page this run can touch, so only pages that really change get a new sitemap date.
+    pages = {f"{SITE}/canton-weekly/{d['date']}/": os.path.join(ROOT, "canton-weekly", d["date"], "index.html") for d in asc}
+    pages[SITE + "/canton-weekly/"] = os.path.join(ROOT, "canton-weekly", "index.html")
+    pages.update({f"{SITE}/{name}/": p for name, p in GUIDE_FILES.items()})
+    before = {u: read_or_none(p) for u, p in pages.items()}
     # Every report is rebuilt each run so its Previous / Next links always match the full list of weeks.
     for i, (p, d) in enumerate(zip(files, asc)):
         out = os.path.join(ROOT, "canton-weekly", d["date"])
@@ -408,7 +437,7 @@ def main():
     reports = list(reversed(asc))
     os.makedirs(os.path.join(ROOT, "canton-weekly"), exist_ok=True)
     open(os.path.join(ROOT, "canton-weekly", "index.html"), "w", encoding="utf-8").write(link_html(hub(reports, head, sprite, HUB_HEADER(header), footer)))
-    update_sitemap([SITE + "/canton-weekly/"] + [f"{SITE}/canton-weekly/{r['date']}/" for r in reports])
+    update_sitemap({u: read_or_none(p) != before[u] for u, p in pages.items()})
     print("hub built,", len(reports), "reports")
 
 if __name__ == "__main__":

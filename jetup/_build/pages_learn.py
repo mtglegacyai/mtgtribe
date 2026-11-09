@@ -14,7 +14,7 @@ def build_checks():
     c1 = section('check-1', 'Check 1 of 5', 'Who holds my money?', f'''
 <p>Your deposit goes into an <b>MT5 account at TAG Markets, in your own name</b>. MT5 means MetaTrader 5, the trading app many brokers use. JetUP is the community: it does not trade, and it does not take your money.</p>
 <p><b>Check it yourself:</b> don't take my word for it. Log in at portal.tagmarkets.com and see your own balance.</p>
-<div class="call info">{icon('i-search')}<p>JetUP's own one-pager says: your money does not sit with JetUP, it sits in your own account at TAG Markets.</p></div>
+<div class="call info">{icon('i-search')}<p>JetUP's own one-pager says: your money does not sit with JetUP, it sits in your own account at TAG Markets. <a href="/jetup/downloads/">Download the one-pager</a>.</p></div>
 <div data-ticks="checks">{tick(1)}</div>''', 'i-wallet2')
     c2 = section('check-2', 'Check 2 of 5', 'Who regulates the broker?', f'''
 <div class="grid2" style="margin-bottom:14px">
@@ -36,7 +36,7 @@ def build_checks():
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="eyebrow" style="justify-content:center">Published result</p><p class="amt up" style="margin:12px 0 6px">+30.1%</p><p class="small" style="margin:0">3 Nov 2024 to 4 Oct 2026. Gross, before the 70/30 split</p></div>
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="eyebrow" style="justify-content:center">Your share</p><p class="amt" style="margin:12px 0 6px">≈ 21%</p><p class="small" style="margin:0">30.1% × 70% = 21.07%, over about 23 months. Not a forecast</p></div>
 </div>
-<p>So that's about 21% to you over about 23 months. <b>Not 40% a month. Not a fixed return.</b> And past results never guarantee the future.</p>
+<p>So that's about 21% to you over about 23 months. <b>Not 40% a month. Not a fixed return.</b> And past results never guarantee the future. <a href="/jetup/how-it-works/#split">See how the 70/30 split works</a>.</p>
 <p><b>Check it yourself:</b> search "Sonic AI" on <a href="https://www.myfxbook.com/" target="_blank" rel="noopener">myfxbook.com</a> and look at the dates, the growth and the drawdown (the biggest drop).</p>
 <div data-ticks="checks">{tick(3)}</div>''', 'i-chart')
     c4 = section('check-4', 'Check 4 of 5 · the one most people skip', 'What can go wrong?', f'''
@@ -68,7 +68,7 @@ def build_checks():
  <li><span class="e" aria-hidden="true">✅</span>Because the account is in your name.</li>
  <li><span class="e" aria-hidden="true">✅</span>Because the company writes down, in its own risk warning, that what a partner earns can be zero. That kind of honesty is worth noticing.</li>
 </ul>
-<p class="call info" style="margin-top:16px">{icon('i-info2')}<span><b>One more truth, from JetUP's own founder:</b> the big money comes from building a team, not from the trading percentage. Know that going in.</span></p>
+<p class="call info" style="margin-top:16px">{icon('i-info2')}<span><b>One more truth, from JetUP's own founder:</b> the big money comes from building a team, not from the trading percentage. Know that going in. <a href="/jetup/partner-plan/">See how the partner plan pays</a>.</span></p>
 <p class="lede" style="margin-top:16px">If you check all five and it still feels right, start small, with money you can afford to lose. And if it doesn't feel right? That's a good decision too.</p></div>'''
     main = f'''
 {phead('i-shield2', 'Burned before? Start here', 'The 5 checks <span class="grad">before you try JetUP</span>',

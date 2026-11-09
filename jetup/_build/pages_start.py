@@ -146,7 +146,7 @@ def build_start():
    </article>
    <article class="card pad rv" id="earnings" aria-labelledby="earn-h">
     <span class="ped" style="display:inline-grid;margin-bottom:12px"><b>{icon('i-wallet2')}</b></span><h3 id="earn-h" style="margin:0 0 6px;font:800 1.3rem/1.25 var(--f-b)">Withdraw or reinvest</h3>
-    <p class="muted">Profits, and partner earnings if you share JetUP.</p>
+    <p class="muted">Profits, and partner earnings if you share JetUP. <a href="/jetup/partner-plan/">See how the partner plan pays</a>.</p>
     <ol class="steps">
      <li><span>In the JetUP portal (jetup.ibportal.io) open your <b>Wallet</b> to see partner earnings. Tap {k('Withdraw')} and choose your <b>TAG wallet</b> or one of your MT5 accounts.</span></li>
      <li><span>To send money out, first add your own crypto wallet address under {k('Wallets')} (for example VALR, Binance, SafePal or your BIX wallet), then choose it when you withdraw.</span></li>

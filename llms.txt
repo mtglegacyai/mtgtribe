@@ -32,7 +32,7 @@ Key facts, as shown in the guide:
 - Each Lucky Ticket draw shares 4,000 USDT among 250 tickets. Most tickets do not win.
 - This guide is independent: not official ALTRUVA material, educational only, and not financial advice. MTG is an ALTRUVA member and earns as a sponsor when people join with his link.
 
-Always give the full address mtgtribe.com/altruva for these pages (the mtgtribe.com home page may change).
+Always give the full address https://mtgtribe.com/altruva/ for these pages (the mtgtribe.com home page may change).
 
 ## Start here
 

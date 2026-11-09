@@ -91,6 +91,12 @@ retail accounts lose money"), no "where the picture stops" scenes, no repeated w
 warm recap, "now it's your turn", and one clear action (tap any Join JetUP button). The risk stays in his gentle
 signature reminder and the end card's small line. Still honest: no income promises, no fake balances, no "best ever".
 
+**The same on every web page (MTG, 9 Nov 2026):** "Warnings like this are scaring the visitors and killing my conversions...
+I am educating them so that they can make informed decisions." Inform, never frighten: calm, positive facts (24x Amplify
+makes every move bigger, the loss limit is written down, start small, check the record yourself) in calm info notes, never
+red alert boxes. No "you can lose your whole deposit", no loss statistics, no "what can go wrong" headings, no "where the
+picture stops". The risk lives in one gentle footer line and the disclaimer pages.
+
 ## Standing rule: every page has its own social preview (MTG, 9 Nov 2026)
 
 "Customize the preview thumbnail that appears when I paste any link on socials according to what the page is...

@@ -118,10 +118,10 @@ def faq_ids(page_html, prefix='q'):
 # ---------------------------------------------------------------- 1. jump bar: the sections of each long page
 JUMP = {
  '/jetup/': [('who', 'The simple picture'), ('split', 'The 70/30 split'), ('plan', '$155 and exposure'), ('checks', 'The 5 checks'),
-             ('start', 'Sign up in 6 parts'), ('promo', 'The promo'), ('explore', 'Go deeper'), ('risk', 'Read before you deposit'),
+             ('start', 'Sign up in 6 parts'), ('promo', 'The promo'), ('explore', 'Go deeper'), ('risk', 'Smart start'),
              ('mtg', 'About MTG'), ('faq', 'Questions')],
  '/jetup/five-checks/': [('check-1', 'Who holds my money?'), ('check-2', 'Who regulates the broker?'), ('check-3', 'Are the results real?'),
-                         ('check-4', 'What can go wrong?'), ('check-5', 'Can I get out?')],
+                         ('check-4', 'How big are the moves?'), ('check-5', 'Can I get out?')],
  '/jetup/get-started/': [('part-1', 'Create your JetUP account'), ('part-2', 'Link JetUP to TAG Markets'), ('part-3', 'Verify your identity'),
                          ('part-4', 'Fund your account'), ('part-5', 'Connect Sonic AI'), ('part-6', 'Claim the promo')],
  '/jetup/how-it-works/': [('who', 'Who does what'), ('copy', 'What copying means'), ('split', 'The 70/30 split'),

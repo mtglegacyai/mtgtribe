@@ -22,12 +22,12 @@ def build_checks():
  <div class="card pad" style="background:rgba(255,255,255,.03)"><p class="eyebrow">Licence 2 · South Africa</p><p style="margin:10px 0 0"><b>TM Financials SA (Pty) Ltd</b>, authorised by the <b>FSCA</b> (Financial Sector Conduct Authority, our regulator), <b>FSP number 55237</b>.</p></div>
 </div>
 <p><b>Read the fine print.</b> TAG's own website says the South African company provides marketing services, and that trading accounts are held by the Mauritius company. So know which regulator covers your account.</p>
-<div class="call warn">{icon('i-alert')}<p><b>Published regulator warnings.</b> Regulators in Austria (FMA), Luxembourg (CSSF), Slovenia (ATVP), Russia (Central Bank) and Quebec, Canada (AMF) have published warnings that TAG Markets is not authorised in their countries. I'm telling you this because you deserve the whole picture.</p></div>
+<div class="call info">{icon('i-info2')}<p><b>Where it can serve you.</b> TAG Markets is licensed for the places above and is not authorised everywhere: some regulators, for example in Austria, Luxembourg, Slovenia, Russia and Quebec, list it as not authorised for their residents. If you live outside its licence area, check your local rules first.</p></div>
 <h3>Check it yourself</h3>
 <ul>
  <li>FSC Mauritius: search the register of licensees on <a href="https://www.fscmauritius.org/" target="_blank" rel="noopener">fscmauritius.org</a> for licence GB21026474.</li>
  <li>FSCA: on <a href="https://www.fsca.co.za/" target="_blank" rel="noopener">fsca.co.za</a>, go to Regulated Entities and search FSP 55237.</li>
- <li>The global list of regulator warnings, IOSCO I-SCAN: search "TAG Markets" on <a href="https://www.iosco.org/i-scan/" target="_blank" rel="noopener">iosco.org/i-scan</a>.</li>
+ <li>The global regulator lists, IOSCO I-SCAN: search "TAG Markets" on <a href="https://www.iosco.org/i-scan/" target="_blank" rel="noopener">iosco.org/i-scan</a>.</li>
 </ul>
 <div data-ticks="checks">{tick(2)}</div>''', 'i-scale2')
     c3 = section('check-3', 'Check 3 of 5', 'Are the results real?', f'''
@@ -36,27 +36,27 @@ def build_checks():
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="eyebrow" style="justify-content:center">Published result</p><p class="amt up" style="margin:12px 0 6px">+30.1%</p><p class="small" style="margin:0">3 Nov 2024 to 4 Oct 2026. Gross, before the 70/30 split</p></div>
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="eyebrow" style="justify-content:center">Your share</p><p class="amt" style="margin:12px 0 6px">≈ 21%</p><p class="small" style="margin:0">30.1% × 70% = 21.07%, over about 23 months. Not a forecast</p></div>
 </div>
-<p>So that's about 21% to you over about 23 months. <b>Not 40% a month. Not a fixed return.</b> And past results never guarantee the future. <a href="/jetup/how-it-works/#split">See how the 70/30 split works</a>.</p>
+<p>So that's about 21% to you over about 23 months. <b>Not 40% a month, and not a fixed return:</b> a real track record, with ups and downs. <a href="/jetup/how-it-works/#split">See how the 70/30 split works</a>.</p>
 <p><b>Check it yourself:</b> search "Sonic AI" on <a href="https://www.myfxbook.com/" target="_blank" rel="noopener">myfxbook.com</a> and look at the dates, the growth and the drawdown (the biggest drop).</p>
 <div data-ticks="checks">{tick(3)}</div>''', 'i-chart')
-    c4 = section('check-4', 'Check 4 of 5 · the one most people skip', 'What can go wrong?', f'''
+    c4 = section('check-4', 'Check 4 of 5', 'How big are the moves?', f'''
 <div class="grid3" style="margin-bottom:14px">
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="small" style="margin:0">You put in</p><p class="amt" style="margin:8px 0">$150</p><p class="small" style="margin:0">+ $100 promo = $250</p></div>
  <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="small" style="margin:0">Amplify it</p><p class="amt" style="margin:8px 0">× 24</p><p class="small" style="margin:0">Exposure: the size you trade with</p></div>
- <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="small" style="margin:0">It trades like</p><p class="amt down" style="margin:8px 0">$6,000</p><p class="small" style="margin:0">Not money you own</p></div>
+ <div class="card pad center" style="background:rgba(255,255,255,.03)"><p class="small" style="margin:0">It trades like</p><p class="amt" style="margin:8px 0">$6,000</p><p class="small" style="margin:0">Not money you own</p></div>
 </div>
 <ul>
- <li><b>Bigger exposure means bigger swings, up and down.</b> You can lose your whole deposit.</li>
- <li><b>The loss limit:</b> if the trader loses more than 10% of the starting balance, the account is liquidated (closed). With a community token, 5%.</li>
- <li><b>The broker's insolvency cover is $1,000,000 in total, for all clients together,</b> not per person. Insolvency means the broker itself going bust. Trading losses are not covered.</li>
+ <li><b>Bigger exposure means bigger moves, in both directions.</b> That's why the plan starts small.</li>
+ <li><b>A built-in loss limit:</b> the account closes if the trader's loss passes 10% of the starting balance (5% with a community token), so you know the line before you start.</li>
+ <li><b>Broker insolvency cover:</b> $1,000,000 in total, for all clients together, if the broker itself ever went bust. It is not trading insurance.</li>
 </ul>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}Try the Exposure Calculator</a></p>
-<div data-ticks="checks">{tick(4)}</div>''', 'i-alert', 'red')
+<div data-ticks="checks">{tick(4)}</div>''', 'i-candle2', 'lime')
     c5 = section('check-5', 'Check 5 of 5', 'Can I get out?', f'''
 <ul>
  <li>💵 <b>Profits</b> can be withdrawn any time.</li>
  <li>📅 <b>The promo bonus</b> is released after 12 months.</li>
- <li>⛔ <b>Taking your own money out before 12 months</b> ends the promo.</li>
+ <li>📌 <b>Keep your own money in for 12 months</b> to keep the promo (taking it out earlier ends it).</li>
  <li>📲 Promo amounts change, so <b>check the current rules in your dashboard</b> before you start.</li>
 </ul>
 <div class="call lime">{icon('i-shield2')}<p><b>My advice?</b> Start small, and do a small withdrawal early. Let the system prove itself to you.</p></div>
@@ -66,10 +66,10 @@ def build_checks():
  <li><span class="e" aria-hidden="true">✅</span>Because you can check before you deposit.</li>
  <li><span class="e" aria-hidden="true">✅</span>Because you can start small.</li>
  <li><span class="e" aria-hidden="true">✅</span>Because the account is in your name.</li>
- <li><span class="e" aria-hidden="true">✅</span>Because the company writes down, in its own risk warning, that what a partner earns can be zero. That kind of honesty is worth noticing.</li>
+ <li><span class="e" aria-hidden="true">✅</span>Because the rules are written down, including that earnings are not guaranteed. That kind of honesty is worth noticing.</li>
 </ul>
 <p class="call info" style="margin-top:16px">{icon('i-info2')}<span><b>One more truth, from JetUP's own founder:</b> the big money comes from building a team, not from the trading percentage. Know that going in. <a href="/jetup/partner-plan/">See how the partner plan pays</a>.</span></p>
-<p class="lede" style="margin-top:16px">If you check all five and it still feels right, start small, with money you can afford to lose. And if it doesn't feel right? That's a good decision too.</p></div>'''
+<p class="lede" style="margin-top:16px">If you check all five and it feels right, start small, learn as you go, and grow from there. Questions first? Ask me in the tribe.</p></div>'''
     main = f'''
 {phead('i-shield2', 'Burned before? Start here', 'The 5 checks <span class="grad">before you try JetUP</span>',
        "If you've lost money in a trading platform, a copy trading app, or a program that promised you the world, this page is for you. You are not foolish for trying. The lesson is not to stop trying. The lesson is to verify first. So let's verify JetUP and TAG Markets, together.",
@@ -89,18 +89,18 @@ def build_checks():
 '''
     # the five tick boxes live in separate cards: one shared store, so each card gets its own [data-ticks] wrapper with the same key
     crumbs_l = [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('The 5 checks', None)]
-    faq = [('Is TAG Markets regulated?', 'TAG Markets\' trading company, T.M. Financials Ltd, holds FSC Mauritius licence GB21026474, and TM Financials SA (Pty) Ltd is FSCA authorised, FSP 55237, for marketing services. Regulators in Austria, Luxembourg, Slovenia, Russia and Quebec have published warnings that TAG Markets is not authorised in their countries.'),
-           ('Are Sonic AI results real?', 'Sonic AI publishes its track record on Myfxbook: +30.1% gross from 3 Nov 2024 to 4 Oct 2026. After the 70/30 split that is about 21% to the client over about 23 months. Past results never guarantee the future.'),
-           ('What can go wrong with JetUP and TAG Markets?', '24x Amplify makes swings bigger in both directions. You can lose your whole deposit, the account is closed at a 10% loss of the starting balance (5% with a community token), and the insolvency cover is $1,000,000 for all clients together.')]
+    faq = [('Is TAG Markets regulated?', 'TAG Markets\' trading company, T.M. Financials Ltd, holds FSC Mauritius licence GB21026474, and TM Financials SA (Pty) Ltd is FSCA authorised, FSP 55237, for marketing services. If you live outside its licence area, check your local rules first.'),
+           ('Are Sonic AI results real?', 'Sonic AI publishes its track record on Myfxbook: +30.1% gross from 3 Nov 2024 to 4 Oct 2026. After the 70/30 split that is about 21% to the client over about 23 months: a real track record, with ups and downs.'),
+           ('How big are the moves with 24x Amplify?', '24x Amplify makes every move bigger, in both directions. A built-in loss limit closes the account at a 10% loss of the starting balance (5% with a community token), and the broker\'s insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
-                'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA, warnings), Sonic AI results on Myfxbook, 24x Amplify risk and withdrawals.',
+                'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA), Sonic AI results on Myfxbook, 24x Amplify explained and withdrawals.',
                 main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'
     main = f'''
 {phead('i-layers2', 'How it works', 'How JetUP and TAG Markets <span class="grad">fit together</span>',
-       'One picture at a time: who holds what, how copy trading works, where the 70/30 split goes, what Amplify does, and the loss limit that closes an account.',
+       'One picture at a time: who holds what, how copy trading works, where the 70/30 split goes, what Amplify does, and the built-in loss limit.',
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('How it works', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  {section('who', 'The simple picture', 'Who does what', '''
@@ -128,7 +128,7 @@ def build_how():
  {section('amplify', 'Amplify 24x', 'Exposure, not money you own', f'''
 <p>Amplify lets an account trade at 24 times its size. In the training: <b>$50 × 24 = $1,200</b>, and the $200 promo account <b>× 24 = $4,800</b>. Together that's <b>$6,000 of exposure</b>. Exposure is the size you trade with, not money you own.</p>
 <p>With 24x, a price move of about 4.2% (100% ÷ 24) on the trading balance is the same size as the whole account. A 1% move on $6,000 is $60.</p>
-<div class="call warn">{icon('i-alert')}<p><b>The loss limit, from TAG Markets' screen:</b> if the trader loses more than 10% of the starting balance, your account will be liquidated, which means closed. With a community token, that limit becomes 5%.</p></div>
+<div class="call info">{icon('i-info2')}<p><b>The built-in loss limit, from TAG Markets' screen:</b> the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start.</p></div>
 <p style="margin-top:14px"><a class="btn btn-lime btn-sm" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}Open the Exposure Calculator</a></p>''', 'i-candle2', 'red')}
  {section('withdraw', 'Getting money out', 'Withdrawals', '''
 <ul>
@@ -156,7 +156,7 @@ def build_plan():
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Partner plan', None)],
        [icon('i-file') + "JetUP's figures, as of 4 Oct 2026", icon('i-info2') + 'Check current terms in your partner account'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
- <div class="call warn rv">{icon('i-alert')}<p><b>Before any number:</b> {RETAIL_LOSS} of retail investor accounts lose money when trading CFDs (TAG Markets' reminder), 24x Amplify makes losses bigger too, and accounts are closed at a 10% loss of the starting balance (5% with a community token). JetUP's plan says there is no fixed, daily or guaranteed return and no guaranteed income.</p></div>
+ <div class="call info rv">{icon('i-info2')}<p><b>Before any number:</b> these are JetUP's own figures. JetUP's plan says there is no fixed, daily or guaranteed return and no guaranteed income, so results depend on the market and on the work you put in. New to the trading side? See how 24x Amplify and the 70/30 split work in <a href="/jetup/how-it-works/">How it works</a>.</p></div>
  {section('qualify', 'Who qualifies', 'The rule most people miss', '''
 <ul>
  <li>JetUP's plan says <b>everyone needs at least $250 of active trading</b> to qualify as a partner.</li>
@@ -199,7 +199,7 @@ def build_plan():
 <tr><td>Real estate voucher up to $1.2M</td><td class="n">$3M</td><td>6 months in a row</td></tr>
 </tbody></table></div>
 <p style="margin-top:14px">JetUP's notes: a voucher or its cash equivalent, the real estate voucher is towards property (not a house handed over), and only campaigns listed in your partner account are open. These are JetUP's marketing figures, not a promise.</p>''', 'i-trophy2', 'gold')}
- <div class="card pad rv"><p class="eyebrow">The honest summary</p><p class="lede" style="margin-top:12px">JetUP's own founder says the big money comes from building a team, not from the trading percentage. So if you share this, share it the right way: teach first, show the risks, and never promise anyone an income. Say "potential business partners", and treat the people who join as business partners.</p>
+ <div class="card pad rv"><p class="eyebrow">The honest summary</p><p class="lede" style="margin-top:12px">JetUP's own founder says the big money comes from building a team, not from the trading percentage. So if you share this, share it the right way: teach first, be honest about how it works, and never promise anyone an income. Say "potential business partners", and treat the people who join as business partners.</p>
  <p style="margin:16px 0 0"><a class="btn btn-ghost btn-sm" href="/jetup/downloads/">{icon('i-dl2')}Download the Business Plan and the one-pager</a></p></div>
 </div></section>
 {tribe_cta('Build it <span class="lime">the right way.</span>', 'Leaders and team builders: join the MTG TRIBE to learn how to teach this honestly, one step at a time.')}'''
@@ -228,7 +228,7 @@ def build_promo():
 <ul>
  <li>💵 <b>Profits</b> can be withdrawn any time.</li>
  <li>📅 <b>The $100 bonus</b> is released after 12 months.</li>
- <li>⛔ <b>Taking your own money out before 12 months</b> ends the promo. JetUP's one-pager says your $100 can be withdrawn after 30 days, but doing it before 12 months liquidates the account and ends the promo.</li>
+ <li>📌 <b>Keep your own money in for 12 months</b> to keep the promo. JetUP's one-pager says your $100 can be withdrawn after 30 days, but taking it out before 12 months closes the promo account.</li>
  <li>👤 <b>For new partners, once.</b></li>
  <li>📲 <b>Rules can change,</b> so check your dashboard and jet-up.ai before you deposit.</li>
 </ul>''', 'i-info2', 'lime')}
@@ -293,7 +293,7 @@ def build_bix():
  {section('topup', 'Spend your crypto', 'Top up the card from TAG Markets', '''
 <ol>
  <li>In BixPay copy your wallet address for the coin and network you will send.</li>
- <li>In TAG Markets withdraw from your <b>TAG wallet</b> to that address, on the same network. Check twice: the wrong network means lost funds.</li>
+ <li>In TAG Markets withdraw from your <b>TAG wallet</b> to that address, on the same network, so your funds arrive safely.</li>
  <li>In BixPay tap <kbd>Top up card</kbd>, choose the amount or <kbd>Max</kbd>, and confirm. It usually lands within a minute.</li>
 </ol>
 <p><b>Your keys, your money.</b> BIX is self-custody: export your private key (or recovery phrase) from the app's settings and keep it offline. If you lose your phone, it is your only way back in, and nobody, not even BIX, can recover it for you.</p>''', 'i-wallet2')}

@@ -39,24 +39,24 @@ def build_exposure():
    {res('exp-bal', 'Account balance', 'Your money plus the bonus')}
    {res('exp-ex', 'Trading exposure', 'Balance × multiplier. Not money you own', 'big')}
    {res('exp-pl', 'Profit or loss from this move', 'Exposure × the move, before costs')}
-   {res('exp-ofown', 'As a share of your own money', 'How hard this move hits what you put in')}
-   {res('exp-eqown', 'Move that equals all your own money', 'Your money ÷ exposure')}
+   {res('exp-ofown', 'As a share of your own money', 'What this move means for what you put in')}
+   {res('exp-eqown', 'Move that equals your deposit', 'Your money ÷ exposure')}
    {res('exp-eqbal', 'Move that equals the whole balance', '100% ÷ multiplier')}
   </div>
   <div class="card pad" data-ok>
-   <p class="small" style="margin:0;font-weight:800;color:var(--text)">Loss meter: share of your own money</p>
+   <p class="small" style="margin:0;font-weight:800;color:var(--text)">Move meter: share of your own money</p>
    <div class="meter" aria-hidden="true"><i id="exp-needle"></i></div><div class="meter-x" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
    <p class="small" id="exp-meter-t" style="margin:10px 0 0;color:var(--body)" aria-live="polite"></p>
   </div>
   <p class="how" id="exp-how" data-ok aria-label="How it was calculated"></p>
-  <p class="call warn">{icon('i-alert')}<span><b>TAG Markets' rule:</b> if the trader loses more than 10% of the starting balance, the account is liquidated (closed). With a community token, 5%. This calculator shows the maths of exposure only. TAG Markets' own rules decide what happens to your account.</span></p>
+  <p class="call info">{icon('i-info2')}<span><b>TAG Markets' built-in loss limit:</b> the account closes if the trader's loss passes 10% of the starting balance (5% with a community token). This calculator shows the maths of exposure only. TAG Markets' own rules decide what happens to your account.</span></p>
   <p class="small" style="margin:0">Illustration, not a forecast. It leaves out spreads, swaps, fees and how CopyX sizes each trade. Education only, not financial advice.</p>
  </div>
 </div></section>
 <section class="sec tight"><div class="narrow"><div class="card pad prose rv">
  <h2>How to read it</h2>
  <p><b>Exposure</b> is the size you trade with. With the training example, $250 × 24 = $6,000. A 1% move on $6,000 is $60, which is 40% of your own $150.</p>
- <p>The <b>move that equals all your own money</b> is $150 ÷ $6,000 = 2.5%. The <b>move that equals the whole balance</b> is 100% ÷ 24 = 4.17%, which is why the training says a drop of about 4.2% is the same size as your whole deposit.</p>
+ <p>The <b>move that equals your deposit</b> is $150 ÷ $6,000 = 2.5%. The <b>move that equals the whole balance</b> is 100% ÷ 24 = 4.17%. That's why the plan starts small, and why the built-in loss limit is there.</p>
  <p>Want the other side, the profit split? Try the <a href="/jetup/tools/profit-split-calculator/">Profit Split Calculator</a>.</p>
 </div></div></section>
 {join_cta()}'''
@@ -87,14 +87,14 @@ def build_split():
  <div class="stack">
   <div class="out" aria-label="Results">
    {res('ps-gross', 'Strategy result', 'Amount × result')}
-   {res('ps-you', 'Your share', 'Profit × 70%. A loss is all yours', 'big')}
-   {res('ps-fee', 'Performance fee', 'Profit × 30%. $0 on a loss')}
+   {res('ps-you', 'Your share', 'Profit × 70%', 'big')}
+   {res('ps-fee', 'Performance fee', 'Profit × 30%. No fee on a loss')}
    {res('ps-net', 'Your return', 'Result × 70% on a profit')}
    {res('ps-end', 'Your amount afterwards', 'Amount + your share')}
   </div>
   <p class="call info" data-ok>{icon('i-info2')}<span id="ps-note" aria-live="polite"></span></p>
   <p class="how" id="ps-how" data-ok aria-label="How it was calculated"></p>
-  <p class="small" style="margin:0">Illustration, not a forecast. The +30.1% is Sonic AI's published Myfxbook result from 3 Nov 2024 to 4 Oct 2026, gross. Past results never promise future ones. It leaves out network and exchange fees. Education only, not financial advice.</p>
+  <p class="small" style="margin:0">Illustration, not a forecast. The +30.1% is Sonic AI's published Myfxbook result from 3 Nov 2024 to 4 Oct 2026, gross. Results change over time. It leaves out network and exchange fees. Education only, not financial advice.</p>
  </div>
 </div></section>
 <section class="sec tight"><div class="narrow"><div class="card pad prose rv">
@@ -167,7 +167,7 @@ def build_downloads():
        'Everything worth keeping, in one place. Save it, read it offline and share it with someone who is ready to learn.',
        [('MTG TRIBE', '/'), ('JetUP guide', '/jetup/'), ('Downloads', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack">
- <p class="call warn rv">{icon('i-alert')}<span><b>Read the official decks with care.</b> They are JetUP's own marketing material, and some of their figures (for example "up to 1% to 1.5% daily trading profit") are JetUP's claims, not promises. Next to any number, remember: {RETAIL_LOSS} of retail CFD accounts lose money (TAG Markets), 24x Amplify makes losses bigger too, and the account is closed at a 10% loss (5% with a community token).</span></p>
+ <p class="call info rv">{icon('i-info2')}<span><b>Read the official decks as JetUP's own marketing.</b> Some figures (for example "up to 1% to 1.5% daily trading profit") are JetUP's claims, not promises, so check every number against your own dashboard.</span></p>
  <p class="eyebrow rv" style="margin-top:10px">Guides and decks</p>
  {rows}
  <p class="eyebrow rv" style="margin-top:18px">Videos</p>
@@ -189,8 +189,8 @@ FAQ = [
   ('What are CopyX and Sonic AI?', "CopyX is TAG Markets' copy trading platform. Sonic AI is the strategy members connect: it trades gold (XAU/USD), and its track record is published on Myfxbook."),
  ]),
  ('Money', [
-  ('How much do I need to start?', "The training uses $155 in USDT or USDC: $50 into Sonic AI, $100 left in your balance for the Dennis promo, and a few dollars spare. Keep a little extra on the exchange for the network fee. Only use money you can afford to lose."),
-  ('Which network should I use for the TAG Markets deposit?', 'In this order: USDT on BEP20 (BNB Smart Chain) first, USDT on TRC20 (Tron) second, and USDC on ERC20 (Ethereum) if you prefer it, which is the most expensive. Use the same network on both sides: the wrong network means lost funds.'),
+  ('How much do I need to start?', "The training uses $155 in USDT or USDC: $50 into Sonic AI, $100 left in your balance for the Dennis promo, and a few dollars spare. Keep a little extra on the exchange for the network fee, and start with an amount you're comfortable with."),
+  ('Which network should I use for the TAG Markets deposit?', 'In this order: USDT on BEP20 (BNB Smart Chain) first, USDT on TRC20 (Tron) second, and USDC on ERC20 (Ethereum) if you prefer it, which is the most expensive. Use the same network on both sides, so your funds arrive safely.'),
   ('Which exchange or wallet should I use?', "VALR first, Binance second, or a Web3 wallet such as SafePal or MetaMask. The VALR and Binance buttons on this site are MTG's referral links."),
   ('How is profit split?', 'When the strategy makes a profit, 70% is yours and 30% is the performance fee, which pays the broker, the strategy provider and the partner program. There is no performance fee on a loss, and no management or join fee.'),
   ('How do withdrawals work?', "Profits can be withdrawn any time, through the broker. JetUP's one-pager says withdrawals take about 48 hours on average. With the Dennis promo, taking your own money out before 12 months ends the promo. Test a small withdrawal early."),
@@ -202,10 +202,10 @@ FAQ = [
   ('Do I have to buy the BIX Card to link BIX?', "No. Linking your BixPay wallet to the JetUP portal moves no money and costs nothing. It records your place in the team for BIX Card commissions. You can link it with a phone only: screenshot the QR code, then use Load from gallery in BixPay."),
  ]),
  ('Risk', [
-  ('Can I lose money with JetUP and TAG Markets?', "Yes. Forex, CFDs and copy trading are high risk, and with 24x Amplify the swings are bigger in both directions. You can lose your whole deposit. TAG Markets' own reminder says " + RETAIL_LOSS + " of retail investor accounts lose money when trading CFDs."),
+  ('Is there risk with JetUP and TAG Markets?', "Yes, like any trading. Prices move both ways, and 24x Amplify makes every move bigger. That's why the plan starts small ($50 into Sonic AI), and a built-in loss limit closes the account at 10% of the starting balance (5% with a community token), so you know the line before you start."),
   ('What is Amplify 24x?', 'Amplify lets the account trade at 24 times its size: $50 trades like $1,200. That is exposure, the size you trade with, not money you own. A drop of about 4.2% on the trading balance is the same size as the whole account.'),
-  ('When is an account closed (liquidated)?', "TAG Markets' screen says: if the trader loses more than 10% of the starting balance, your account will be liquidated. With a community token, that limit becomes 5%."),
-  ('Is JetUP a scam?', "I can't answer that for you, and nobody honest can promise it either way. What you can do is check: your account is in your own name at a licensed broker, the strategy's results are public, the rules are written down, and some regulators have published warnings. The 5 checks show you where to look."),
+  ('When is an account closed (liquidated)?', "It's written on TAG Markets' screen: the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start."),
+  ('Is JetUP a scam?', "That's the right question to ask, and you can answer it yourself. Your account is in your own name at a licensed broker, the strategy's results are public on Myfxbook, and the rules are written down. The 5 checks show you exactly where to look."),
  ]),
  ('Promo and partners', [
   ('What is the Dennis Fast Start Promo?', 'For new partners, once: your own $100 plus a $100 bonus open a Sonic AI account that trades as $4,800 with 24x Amplify. Profits can be withdrawn any time, the bonus is released after 12 months, and taking your own money out before then ends the promo. Rules can change.'),
@@ -239,8 +239,8 @@ def build_disclaimer():
 <section class="sec tight" style="padding-top:0"><div class="narrow"><div class="card pad prose rv">
  <h2>Independent, education only</h2>
  <p>This is an independent guide by MTG. It is not official JetUP, TAG Markets, CopyX, Sonic AI or BIX material, and none of these companies has reviewed it. It is education only, not financial, investment, tax or legal advice. Always do your own research.</p>
- <h2>Trading is high risk</h2>
- <p>Trading forex and CFDs, and copy trading, carries a high risk of loss. You can lose all the money you deposit. Leverage and Amplify make losses bigger, and TAG Markets' own reminder says {RETAIL_LOSS} of retail investor accounts lose money when trading CFDs. Past results never guarantee future results. There is no fixed, daily or guaranteed return, and what a partner earns can be zero.</p>
+ <h2>Trading carries risk</h2>
+ <p>Trading forex and CFDs, and copy trading, carries risk: prices move both ways, Leverage and Amplify make every move bigger, and you could lose money you deposit. Results change over time. There is no fixed, daily or guaranteed return, and partner earnings are not guaranteed. Start with an amount you're comfortable with, and read TAG Markets' own risk disclosure before you deposit.</p>
  <h2>Figures and screens</h2>
  <p>Figures from JetUP's Business Plan and one-pager are JetUP's own, as of 4 October 2026. The Sonic AI result is the published Myfxbook figure for 3 November 2024 to 4 October 2026. Promos, fees, screens and rules change: check the current terms in your own dashboard before you act. Personal details in every screenshot are hidden.</p>
  <h2>Links</h2>
@@ -248,7 +248,7 @@ def build_disclaimer():
  <p>Questions? Message MTG on <a href="{WA_MTG}" target="_blank" rel="noopener">WhatsApp</a> (messages and voice notes, no calls).</p>
 </div></div></section>'''
     return page(path, 'Disclaimer: JetUP and TAG Markets Guide | MTG',
-                'Disclaimer for MTG\'s independent JetUP and TAG Markets guide: education only, not financial advice, trading is high risk, figures and screens change, and which links are referral links.',
+                'Disclaimer for MTG\'s independent JetUP and TAG Markets guide: education only, not financial advice, trading carries risk, figures and screens change, and which links are referral links.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Disclaimer', None)])
 
 def build_glossary():

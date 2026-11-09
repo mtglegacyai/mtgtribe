@@ -79,7 +79,7 @@ the voice bank).
 - Say "Jet Up" (two clear words) in every script; write "JetUP" on screen. MTG, 7 Nov 2026.
 - "TAG Markets", "CopyX", "Sonic AI", "BixPay", "TM Financials" (T.M. Financials Ltd).
 - Say "potential business partners" and "business partners", never "downline" or "recruits".
-- TAG Markets' reminder: 88% of retail investor accounts lose money when trading CFDs.
+- TAG Markets' reminder: 88% of retail investor accounts lose money when trading CFDs. A fact for reference only: since 9 Nov 2026 (MTG) the site and the videos do not show loss statistics.
 
 ## Open questions for MTG (do not publish an answer until he confirms)
 

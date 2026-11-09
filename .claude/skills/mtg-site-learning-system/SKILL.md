@@ -28,6 +28,13 @@ latest instruction in the chat wins, then mtg-creative-standard.
   picture stops" scenes, no repeated warnings; the risk lives in his gentle signature reminder ("none of this is financial
   advice, always do your own research") and the end card's small risk line. Still no income promises, no fake balances,
   no "best ever". Hide personal data in every frame.
+  **The same on every web page** (MTG, 9 Nov 2026: "Warnings like this are scaring the visitors and killing my
+  conversions... I am educating them so that they can make informed decisions"). Inform, never frighten: say the facts
+  people need calmly and positively (24x Amplify makes every move bigger, the loss limit is written down, start small,
+  check the record yourself), as calm info notes, never red alert boxes. No "you can lose your whole deposit", no loss
+  statistics, no "can go wrong" headings, no "where the picture stops". One gentle line in the footer and the disclaimer
+  page carry the risk; practical safety tips (match the network, keep your recovery phrase safe) are phrased as how to
+  do it right.
 - **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". No em or en dashes anywhere,
   including inside videos, PDFs and file names. Follow each site's own content rules (names or brands MTG has ruled out).
 - **Every dashboard opens with a site tour.** Each opportunity has a landing page whose **Dashboard** button (sometimes

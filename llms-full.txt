@@ -110,7 +110,7 @@ The top package is Elite at $100, and the app itself says there's nothing more t
 Can I open more than one account?
 Some people do. That's their own strategy and their own risk. This guide explains one account.
 So should I join?
-That's your decision, and this guide won't make it for you. If it fits, the fairest test is from the inside: learn first, then try it with an amount you can afford to lose, and judge it by what your own dashboard shows. Not by what anyone promises, me included.
+That's your decision, and this guide won't make it for you. If it fits, the fairest test is from the inside: learn first, then try it with an amount you're comfortable with, and judge it by what your own dashboard shows. Not by what anyone promises, me included.
 
 ---
 
@@ -399,7 +399,7 @@ Only claimed income is in your balance. Lucky Ticket prizes are the exception: t
 Is the reinvested part a fee?
 No. It goes back in as new business: it grows your total deposit and pays working levels and matching to your uplines, like fresh money. But it never changes your package, it gives no Lucky Tickets, and you can't take it back out.
 How often should I withdraw?
-That's up to you. My own tip from Tutorial 5: withdraw regularly, because taking your profits out lowers your risk. Only use money you can afford to lose.
+That's up to you. My own tip from Tutorial 5: withdraw regularly, because taking your profits out lowers your risk. Start with an amount you're comfortable with.
 
 ---
 
@@ -810,7 +810,7 @@ Six habits that protect your wallet, the scams to walk away from, and how to che
 - Copy links only from the person who introduced you, and check it opens altruva.io. Then reopen ALTRUVA from your wallet's history.
 - Read every wallet screen before you tap Confirm. The approval should match your package.
 - Keep at least $3 to $5 of BNB for fees, so you're never stuck.
-- Only use money you can afford to lose, and withdraw regularly.
+- Start with an amount you're comfortable with, and withdraw regularly.
 - Hide your balances and addresses before you share a screenshot.
 
 #### Walk away if you hear
@@ -940,7 +940,7 @@ Nothing here is financial, legal or tax advice, and nothing here is a recommenda
 The Sign Up button copies MTG's ALTRUVA referral link. If you join through it, MTG becomes your sponsor and earns by the plan explained on these pages. The crypto card guide is MTG's own crypto card website and may include his referral links too.
 
 #### Risk
-Earnings come from members' deposits and are not guaranteed. You can lose the money you put in. The top package is $100. Some people open more than one account: that's their own strategy and their own risk. Only use money you can afford to lose.
+Earnings come from members' deposits and are not guaranteed. You can lose the money you put in. The top package is $100. Some people open more than one account: that's their own strategy and their own risk. Start with an amount you're comfortable with.
 
 #### Facts and figures
 Figures were checked against the live ALTRUVA app on 24 Oct 2026. Apps change, so the app on your screen is always the final word. Examples are illustrations, not forecasts.

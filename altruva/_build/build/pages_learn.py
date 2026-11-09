@@ -82,7 +82,7 @@ def p_fit(here):
 {sec(f"""<div class="stack">
 {think("What's the most I can put in?", "<p>The top package is Elite at $100, and the app itself says there's nothing more to buy. Go straight to Elite and your package costs $100, plus a few cents of BNB per action for network fees.</p>")}
 {think("Can I open more than one account?", "<p>Some people do. That's their own strategy and their own risk. This guide explains one account.</p>", alt=True)}
-{think("So should I join?", "<p>That's your decision, and this guide won't make it for you. If it fits, the fairest test is from the inside: learn first, then try it with an amount you can afford to lose, and judge it by what your own dashboard shows. Not by what anyone promises, me included.</p>", icon="flag")}
+{think("So should I join?", "<p>That's your decision, and this guide won't make it for you. If it fits, the fairest test is from the inside: learn first, then try it with an amount you're comfortable with, and judge it by what your own dashboard shows. Not by what anyone promises, me included.</p>", icon="flag")}
 </div>""")}
 '''
 
@@ -312,6 +312,6 @@ def p_wd(here):
 ]), "Claim first, then withdraw", "Only claimed income is in your balance. Lucky Ticket prizes are the exception: they go to your wallet in full.")}
 {sec(f"""<div class="stack">
 {think("Is the reinvested part a fee?", "<p>No. It goes back in as new business: it grows your total deposit and pays working levels and matching to your uplines, like fresh money. But it never changes your package, it gives no Lucky Tickets, and you can't take it back out.</p>")}
-{think("How often should I withdraw?", "<p>That's up to you. My own tip from Tutorial 5: withdraw regularly, because taking your profits out lowers your risk. Only use money you can afford to lose.</p>", alt=True)}
+{think("How often should I withdraw?", "<p>That's up to you. My own tip from Tutorial 5: withdraw regularly, because taking your profits out lowers your risk. Start with an amount you're comfortable with.</p>", alt=True)}
 </div>""")}
 '''

@@ -172,7 +172,7 @@ ol,ul{{margin:0;padding-left:5mm}}li{{margin:0.9mm 0}}b{{color:#fff}}
 <li>Copy links only from the person who introduced you, and check it opens altruva.io.</li>
 <li>Read every wallet screen before you tap Confirm.</li>
 <li>Keep at least $3 to $5 of BNB for fees.</li>
-<li>Only use money you can afford to lose, and withdraw regularly.</li>
+<li>Start with an amount you're comfortable with, and withdraw regularly.</li>
 <li>Hide balances and addresses before you share a screenshot.</li></ul></div>
 <div class="card honest"><h2>The honest part</h2><p style="margin:0">Payouts come from members' packages and reinvestments. No outside revenue is named, so earnings depend on new deposits and are not guaranteed. You can lose what you put in. Learn first, start small if it fits, and judge it by what your own dashboard shows.</p></div>
 <div class="card"><h2>Keep learning</h2><table class="links">

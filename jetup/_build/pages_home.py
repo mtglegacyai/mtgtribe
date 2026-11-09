@@ -5,11 +5,11 @@ HOME_FAQ = [
  ('What is JetUP, and how is it linked to TAG Markets?',
   "JetUP is a community and partner program with training and AI tools. TAG Markets is the broker. JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets. Your money sits in your own account at TAG Markets, not with JetUP."),
  ('Is JetUP with TAG Markets safe?',
-  "Nobody can promise that. What you can do is check: who holds your money, who regulates the broker, whether the strategy's results are public, what can go wrong and how to get out. MTG's 5 checks walk you through each one, with the sources, so you decide with your eyes open."),
+  "Nobody can promise that. What you can do is check: who holds your money, who regulates the broker, whether the strategy's results are public, how big the moves are and how to get out. MTG's 5 checks walk you through each one, with the sources, so you decide with your eyes open."),
  ('How much do I need to start?',
-  "The sign-up training uses $155 in USDT or USDC: $50 goes into the Sonic AI strategy, $100 stays in your balance for the Dennis Fast Start Promo, and a few dollars stay spare. Only use money you can afford to lose."),
- ('Can I lose money?',
-  "Yes. Copy trading and CFDs are high risk, and with 24x Amplify the swings are bigger in both directions. You can lose your whole deposit. TAG Markets' own reminder says " + RETAIL_LOSS + " of retail investor accounts lose money when trading CFDs."),
+  "The sign-up training uses $155 in USDT or USDC: $50 goes into the Sonic AI strategy, $100 stays in your balance for the Dennis Fast Start Promo, and a few dollars stay spare. Start with an amount you're comfortable with, and grow from there."),
+ ('Is there risk?',
+  "Yes, like any trading. Prices move both ways, and 24x Amplify makes every move bigger. That's why the plan starts small ($50 into Sonic AI), and a built-in loss limit closes the account at 10% of the starting balance (5% with a community token), so you know the line before you start."),
  ('Is this official JetUP or TAG Markets material?',
   "No. This is an independent guide by MTG. It quotes JetUP and TAG Markets where it uses their figures, and it shows you where to check them yourself."),
 ]
@@ -19,9 +19,9 @@ TAPE = [
  ('▲', 'u', '70%', 'of strategy profit is yours'),
  ('●', '', '30%', 'performance fee, from profits only'),
  ('▲', 'u', '$0', 'join fee, 0% management fee'),
- ('▼', 'd', '24x', 'Amplify: bigger swings, both ways'),
- ('▼', 'd', RETAIL_LOSS, 'of retail CFD accounts lose money (TAG Markets)'),
- ('●', '', '10% / 5%', 'loss limit before the account is closed'),
+ ('●', '', '24x', 'Amplify: every move is bigger'),
+ ('▲', 'u', 'Myfxbook', 'results you can check yourself'),
+ ('●', '', '10% / 5%', 'built-in loss limit, written down'),
  ('▲', 'u', 'MT5', 'account in your own name'),
  ('●', '', '1 month', 'minimum period on Sonic AI'),
 ]
@@ -65,7 +65,7 @@ def build_home():
      ('1', 'Who holds my money?', 'An MT5 (MetaTrader 5) account at TAG Markets, in your own name. Log in yourself and see your own balance.'),
      ('2', 'Who regulates the broker?', 'T.M. Financials Ltd holds FSC Mauritius licence GB21026474. Its South African company is FSCA authorised, FSP 55237, for marketing services.'),
      ('3', 'Are the results real?', 'Sonic AI publishes on Myfxbook: +30.1% gross from 3 Nov 2024 to 4 Oct 2026. Your 70% of that is about 21%. Not a forecast.'),
-     ('4', 'What can go wrong?', 'The one most people skip. $250 × 24 = $6,000 of exposure: bigger swings, up and down. You can lose your whole deposit.'),
+     ('4', 'How big are the moves?', '$250 × 24 = $6,000 of exposure, so every move is bigger, in both directions. A built-in loss limit sets the line in advance.'),
      ('5', 'Can I get out?', 'Profits can be withdrawn any time. The promo bonus comes after 12 months. Start small and test a small withdrawal early.'),
     ]
     chk_html = ''.join('''<article class="card chk rv" style="--d:%d"><span class="num">%s</span><h3>%s</h3><p>%s</p>
@@ -97,7 +97,7 @@ def build_home():
   <div>
    <p class="pill rv"><i aria-hidden="true"></i>Independent guide by MTG 👑</p>
    <h1 class="display rv" style="--d:1;margin-top:22px" id="h1"><span>Trade smarter.</span><br><span class="grad">Check first.</span></h1>
-   <p class="lede rv" style="--d:2">JetUP and TAG Markets, explained in plain English: who holds your money, how copy trading works, what it costs, what can go wrong, and every tap to get started. See it all before you put in a cent.</p>
+   <p class="lede rv" style="--d:2">JetUP and TAG Markets, explained in plain English: who holds your money, how copy trading works, what it costs, the rules to know, and every tap to get started. See it all before you put in a cent.</p>
    <div class="ctas rv" style="--d:3">
     {video_btn('5checks', 'btn btn-pri', '<span class="play">' + icon('i-play2', '') + '</span>Watch the 5 checks first')}
     <a class="btn btn-ghost" href="/jetup/get-started/">{icon('i-rocket2')}Start the sign-up training</a>
@@ -136,7 +136,6 @@ def build_home():
      <li><span class="e" aria-hidden="true">👥</span><span><b>JetUP is the association.</b> It trains and organises the passengers.</span></li>
     </ul>
    </div>
-   <p class="stops">{icon('i-alert')}<span><b>Where the picture stops:</b> a taxi gets you there. A strategy can lose money, and a good last trip never promises the next one.</span></p>
   </div>
   <div class="block">{sonic_card()}</div>
  </div>
@@ -158,7 +157,7 @@ def build_home():
     <div class="bar you"><div class="lab"><span>You keep 70%</span><span class="up" id="split-you">$7.00</span></div><div class="trk"><div class="fill" id="fill-you" style="width:70%"></div></div></div>
     <div class="bar cut"><div class="lab"><span>Performance fee 30%</span><span id="split-fee">$3.00</span></div><div class="trk"><div class="fill" id="fill-fee" style="width:30%"></div></div>
      <div class="fee-who"><span class="chip">Broker</span><span class="chip">Strategy provider</span><span class="chip">Partner program</span></div></div>
-    <p class="call ok" style="margin:4px 0 0">{icon('i-shield2')}<span><b>And if it makes a loss?</b> Nobody charges a performance fee on that loss. The loss itself is yours.</span></p>
+    <p class="call ok" style="margin:4px 0 0">{icon('i-shield2')}<span><b>And on a losing trade?</b> No performance fee at all. You only share when there is a profit.</span></p>
    </div>
   </div>
   <p class="center rv" style="margin-top:22px"><a class="btn btn-ghost" href="/jetup/tools/profit-split-calculator/">{icon('i-split')}Try the Profit Split Calculator</a></p>
@@ -184,11 +183,9 @@ def build_home():
    <div class="stack">
     <div class="card pad rv" style="--d:1">
      <h3 class="h3">In everyday terms: a market stall 🛒</h3>
-     <p class="small" style="margin:8px 0 0;line-height:1.7;color:var(--body)">You pay for one stall, but Amplify lets you trade as if you had 24 stalls. A good day is 24 times bigger. So is a bad day.</p>
-     <p class="stops" style="margin-top:12px">{icon('i-alert')}<span><b>Where the picture stops:</b> a stall owner can ride out a bad week. Here, the account is closed at a set loss limit, as the next box shows.</span></p>
+     <p class="small" style="margin:8px 0 0;line-height:1.7;color:var(--body)">You pay for one stall, but Amplify lets you trade as if you had 24 stalls. Every move is 24 times bigger, in both directions.</p>
     </div>
-    <p class="call warn rv" style="--d:2">{icon('i-alert')}<span><b>With 24x Amplify, a drop of about 4.2% on the trading balance is the same size as your whole deposit.</b> (100% ÷ 24 = 4.17%)</span></p>
-    <p class="call warn rv" style="--d:3">{icon('i-alert')}<span><b>TAG Markets' own screen:</b> if the trader loses more than 10% of the starting balance, your account will be liquidated (closed). With a community token, that limit becomes 5%.</span></p>
+    <p class="call info rv" style="--d:2">{icon('i-info2')}<span><b>Good to know:</b> a built-in loss limit closes the account if the trader's loss passes 10% of the starting balance (5% with a community token), so you always know the line in advance.</span></p>
     <a class="btn btn-lime rv" style="--d:4" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}See it in the Exposure Calculator</a>
    </div>
   </div>
@@ -246,15 +243,14 @@ def build_home():
 </section>
 
 <section class="sec tight" id="risk" aria-labelledby="risk-h">
- <div class="narrow"><div class="card red-edge pad riskbox rv">
-  <span class="ped red"><b>{icon('i-alert')}</b></span>
-  <div><p class="eyebrow" style="color:#ff9aac">The honest risk box</p><h2 class="h2" style="margin-top:10px;font-size:clamp(1.8rem,3.6vw,2.5rem)" id="risk-h">Read this before you deposit</h2>
+ <div class="narrow"><div class="card lime-edge pad riskbox smart rv">
+  <span class="ped lime"><b>{icon('i-shield2')}</b></span>
+  <div><p class="eyebrow">Smart start</p><h2 class="h2" style="margin-top:10px;font-size:clamp(1.8rem,3.6vw,2.5rem)" id="risk-h">Know these 4 things, <span class="lime">then go</span></h2>
    <ul>
-    <li><span><b>{RETAIL_LOSS} of retail investor accounts lose money when trading CFDs.</b> That's TAG Markets' own reminder. A CFD, or contract for difference, lets you trade a price movement without owning the asset.</span></li>
-    <li><span><b>Leverage can amplify losses beyond your initial investment.</b> You tick a box that says so when you sign up.</span></li>
-    <li><span><b>Not for residents of the European Union,</b> and you may have fewer protections than with a local provider.</span></li>
-    <li><span><b>Regulators in Austria, Luxembourg, Slovenia, Russia and Quebec</b> have published warnings that TAG Markets is not authorised in their countries.</span></li>
-    <li><span><b>Past results never promise future ones,</b> and JetUP's own risk warning says what a partner earns can be zero.</span></li>
+    <li><span><b>Start small.</b> The plan puts $50 into Sonic AI, so you see how it moves before you add more.</span></li>
+    <li><span><b>Every move is 24 times bigger, both ways.</b> That's 24x Amplify. Try it with your own numbers in the <a href="/jetup/tools/exposure-calculator/">Exposure Calculator</a>.</span></li>
+    <li><span><b>The loss limit is written down:</b> 10% of the starting balance, 5% with a community token.</span></li>
+    <li><span><b>Check the record yourself.</b> Sonic AI's results are public on Myfxbook, and the current rules are in your dashboard.</span></li>
    </ul></div>
  </div></div>
 </section>

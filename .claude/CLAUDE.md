@@ -68,7 +68,7 @@ click-by-click site tour video, replacing MTG's photo card where there is one (m
 
 **Length (MTG, 10 November 2026): vertical, 60 seconds or less when everything fits, up to 3 minutes when the topic is
 bigger** ("videos can be up to 3 minutes long"), compelling from start to finish; on 7 November it was "up to 1 minute".
-A video over about 2 minutes needs more voice credits than the daily 5: ask MTG first.
+MTG approved up to 8 voice credits for a longer video of 2 to 3 minutes (10 November 2026); the daily 5 covers the rest.
 **Music (MTG, 7 November 2026): only the last line of his theme "They Call Me MTG", "Let's get this crypto, wherever I go!" (about 3 s),
 right after his last word, ending with the video ("Don't play the entire theme song, just only play
 the very last few seconds"). No other music anywhere. Code: `ClosingTrack` plays it by default and `closingTail()` in
@@ -121,7 +121,8 @@ and walk him through uploading it to his claude.ai account, one step at a time.
 `.claude/skills/mtg-scriptforge/references/daily-video.md` end to end: next hook format in the rotation (Did You Know,
 What If, What Everyone Ought to Know About, ...), a fresh topic from his niche, research, script, voice, house format,
 cover, posting pack, preview. The log of videos is `tools/videos/README.md`. MTG pre-approved up to 5 HeyGen credits per
-daily video for the voice (7 November 2026); new Leo clips and anything more still need his yes.
+daily video for the voice (7 November 2026), and up to 8 for a longer video of 2 to 3 minutes (10 November 2026); new Leo
+clips and anything more still need his yes.
 
 MTG's ScriptForge prompt, adapted to his niche, is the skill `.claude/skills/mtg-scriptforge/`: niche menu, 10 ideas,
 full script with visual and build cues, Shorts plan. Bridge topics (self-improvement, psychology, What If, science,

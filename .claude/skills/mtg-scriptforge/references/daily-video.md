@@ -77,8 +77,8 @@ what is possible online these days".
   shame them, never promise an escape.
 - **Length (updated the same day: "videos can be up to 3 minutes long"):** 60 seconds or less when everything fits;
   up to 3 minutes when the topic is bigger, as long as it stays compelling from start to finish. Always vertical 9:16.
-  Voice credits: about 2 for a 50 second Short (video 03), about 5 for 2 minutes and about 7 for 3 minutes; the daily
-  approval covers 5, so a video over about 2 minutes needs MTG's yes for the extra credits. Check the balance first and
+  Voice credits: about 2 for a 50 second Short (video 03), about 5 for 2 minutes and about 7 for 3 minutes; MTG
+  approved up to 8 for a longer video (10 November 2026, see the standing approval below). Check the balance first and
   say it in the preview message.
 - **Compelling from start to finish:** in longer videos renew the open loop every 20 to 30 seconds ("and the next one
   surprised me most"), change the picture every 2 to 3 seconds, and put emphasis on the most important things (a short
@@ -141,5 +141,7 @@ action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!
 ## Standing approval for credits
 
 **Approved by MTG on 7 November 2026:** up to 5 HeyGen credits per daily video for the voice recording, without
-asking. New Leo clips (about 15 credits each) and anything above 5 credits still need his yes. Check the balance with
+asking. **Approved by MTG on 10 November 2026:** up to 8 HeyGen credits for the voice of a longer video (over about
+2 minutes, up to 3 minutes), without asking. New Leo clips (about 15 credits each) and anything above these limits
+still need his yes. Check the balance with
 `get_current_user` first; if a generation fails, ask before trying again.

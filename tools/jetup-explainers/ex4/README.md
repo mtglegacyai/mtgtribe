@@ -20,3 +20,11 @@ one tap."). HeyGen's connection had expired on 9 Nov 2026, so the first preview 
 - Build: `tools/video-signature/build_part.sh <dir> <out.mp4>`; QA: `tools/video-signature/qa_new.py <dir> <out.mp4>`.
 - Facts checked against `tools/learning-system/jetup-facts.md` (70/30, fee only on profit, no management or join fee,
   Myfxbook +30.1% from 3 Nov 2024 to 4 Oct 2026).
+
+## Next step: add the two new lines (open on 9 Nov 2026)
+
+HeyGen was reconnected on 9 Nov 2026, but the session that built this video still held the old login, so the speech call
+kept failing (nothing was charged). In a new session: check out branch `jetup-video-work`, take the working pack in
+`jetup-work/voice-bank/explainers/ex4-pack/` (every cut line as FLAC, `lines.json`, `words.json`, and its README with the
+exact speech request), record the two lines in one call, rebuild with `make_ex4.py` and `build_part.sh`, QA, show MTG the
+preview, then swap `jetup/media/jetup-explainer-the-70-30-split.mp4` (new file name, so caches refresh) once he approves.

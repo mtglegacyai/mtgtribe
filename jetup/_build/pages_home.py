@@ -80,8 +80,8 @@ def build_home():
     ]
     parts_html = ''.join('<a class="card part rv" style="--d:%d" href="/jetup/get-started/#part-%s"><span class="pn">%s</span><span><h3>%s</h3><p>%s</p></span></a>' % (i % 3, n, n, h, p) for i, (n, h, p) in enumerate(parts))
     explore = [
-     ('/jetup/how-it-works/', 'i-layers2', '', 'How it works', 'Who holds what, the 70/30 split, Amplify and the loss limit, one picture at a time.'),
-     ('/jetup/partner-plan/', 'i-users2', '', 'The partner plan', "JetUP's four incomes and rewards, in plain English, with the rules most people miss."),
+     ('/jetup/how-it-works/', 'i-layers2', '', 'How It Works', 'Who holds what, the 70/30 split, Amplify and the loss limit, one picture at a time.'),
+     ('/jetup/partner-plan/', 'i-users2', '', 'The Partner Plan', "JetUP's four incomes and rewards, in plain English, with the rules most people miss."),
      ('/jetup/tools/exposure-calculator/', 'i-candle2', 'lime', 'Exposure Calculator', 'Type your amount and a price move. See what 24x Amplify does to your own money.'),
      ('/jetup/tools/profit-split-calculator/', 'i-split', 'lime', 'Profit Split Calculator', 'See your 70% and the 30% fee on any profit, and why a loss carries no fee.'),
      ('/jetup/bix-card/', 'i-card2', '', 'BIX Card', 'The crypto wallet and Visa card inside the JetUP portal, and how to link it.'),

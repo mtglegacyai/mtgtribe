@@ -91,6 +91,13 @@ retail accounts lose money"), no "where the picture stops" scenes, no repeated w
 warm recap, "now it's your turn", and one clear action (tap any Join JetUP button). The risk stays in his gentle
 signature reminder and the end card's small line. Still honest: no income promises, no fake balances, no "best ever".
 
+## Standing rule: every page has its own social preview (MTG, 9 Nov 2026)
+
+"Customize the preview thumbnail that appears when I paste any link on socials according to what the page is...
+optimized for click-through rate." Every page gets its own 1200x630 `og:image`: one big headline that says what the
+page gives you, one clear visual of its subject, the exact address in a pill, under 200 KB. Tools and the formula:
+`tools/og/` (README). Run `python3 tools/og/check_og.py` before publishing. A new page is not finished without its preview.
+
 ## Skills: keep them growing (MTG, 7 Nov 2026)
 
 When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated

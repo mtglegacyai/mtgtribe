@@ -17,6 +17,10 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
    with the designed cover: official Canton logo (unchanged file, assets/canton/), the price, the weekly move, the hook,
    the week's chart and MTG's gold-ringed circle photo. Open the poster and check the price matches the report.
    The page shows it under a gold play button (build.py `video_block`), with the Canton trademark note under the video.
+   thumb.py also writes `canton-weekly/DATE/og.jpg`, the report's own social preview (1200x630: the price, the weekly
+   move, the hook, the address; MTG, 9 Nov 2026). Open it and check the price too. A week without a video: run
+   `python3 tools/canton-weekly/thumb.py tools/canton-weekly/data/DATE.json --og-only` so the report still gets its preview.
+   build.py uses og.jpg when it exists, otherwise the hub's preview (`assets/og/canton-weekly.jpg`).
 4. Pages: `python3 tools/canton-weekly/build.py tools/canton-weekly/data/DATE.json`
    (writes canton-weekly/DATE/, rebuilds the hub canton-weekly/index.html, updates sitemap-home.xml and, for the
    newest report only, refreshes the `data-snap` numbers on /cc/ and /cntn/ from the `guides` block).

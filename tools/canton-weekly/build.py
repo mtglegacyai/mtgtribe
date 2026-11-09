@@ -156,7 +156,7 @@ def video_block(d):
 
 def report(d, head, sprite, header, footer, nav_top="", nav_bottom=""):
     date = d["date"]; url = f"{SITE}/canton-weekly/{date}/"
-    og = url + "og.jpg" if d.get("og") else SITE + "/cc/img/og-how-to-buy-canton-coin.jpg"
+    og = url + "og.jpg" if os.path.exists(os.path.join(ROOT, "canton-weekly", date, "og.jpg")) else SITE + "/assets/og/canton-weekly.jpg"
     s = d["snapshot"]
     title = f"Canton Coin (CC) Price Analysis {d['date_h']}: Weekly Report | MTG"
     desc = d["summary_plain"][:158]
@@ -308,7 +308,7 @@ def hub(reports, head, sprite, header, footer):
     title = "Canton Coin (CC) Weekly Analysis and Price Report | MTG"
     desc = "Every Sunday: Canton Coin price, chart levels, three scenarios, fundamentals and CNTN stock news, in plain English. By MTG."
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#page", "url": url, "name": "Canton Weekly", "description": desc, "inLanguage": "en-ZA", "hasPart": [{"@type": "Article", "headline": f"Canton Coin weekly report: {r['date_h']}", "url": f"{SITE}/canton-weekly/{r['date']}/", "datePublished": r["date"]} for r in reports]}
-    h = set_head(head, url, title, desc, "Canton Coin weekly report by MTG", desc, SITE + "/cc/img/og-how-to-buy-canton-coin.jpg", "Canton Coin weekly reports by MTG", ld, latest["date"])
+    h = set_head(head, url, title, desc, "Canton Coin weekly report by MTG", desc, SITE + "/assets/og/canton-weekly.jpg", "Canton Coin weekly reports by MTG", ld, latest["date"])
     arch = "".join(f'<li><a href="/canton-weekly/{r["date"]}/"><span>{esc(r["date_h"])}: {esc(r["headline"])}</span><small>CC {esc(r["price_short"])}</small></a></li>' for r in reports)
     arrow = '<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>'
     body = f'''<body>

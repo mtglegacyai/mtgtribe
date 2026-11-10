@@ -18,8 +18,10 @@ documentation says instant voices made before it "must be cloned again before th
 similarity "max", expressiveness 0.5). Break tags are not supported for instant voices there either: send plain
 paragraphs and cut on the pauses with the word times.
 
-Do not retry, do not pass a model, do not use another voice, do not clone anything until MTG has decided how his voice
-is produced (his options are in `tools/learning-system/PLAN.md`, "Voice", on the working branch and main).
+Do not retry, do not pass a model, do not use another voice, do not clone anything. MTG decided on 10 Nov 2026: "Go
+with the same voice I've been on all videos", so the voice stays MTG Master Voice V2 and the six lines wait for audio he
+makes himself in the HeyGen app with that voice (see `tools/learning-system/PLAN.md`, "Voice", on main). The video is
+live since 10 Nov 2026 with his recorded lines.
 
 The exact text, one paragraph per line:
 

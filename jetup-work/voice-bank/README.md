@@ -53,5 +53,9 @@ and the calculator walkthroughs.
 
 HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
 voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there, so for now this
-bank is the only source of his approved voice: every line in it stays usable. Do not retry, substitute or clone until
-MTG has decided. Details: `explainers/ex3-pack/README.md`.
+bank is the only source of his approved voice: every line in it stays usable. Details: `explainers/ex3-pack/README.md`.
+
+**MTG's decision, 10 Nov 2026: "Go with the same voice I've been on all videos".** The voice stays MTG Master Voice V2:
+no new clone, no other voice. New lines can only come from audio MTG makes himself in the HeyGen app with that voice
+(the ready-to-paste text is in `explainers/ex3-pack/README.md` and `explainers/ex4-pack/README.md`). Explainer #3 went
+live on 10 Nov 2026 with his recorded lines.

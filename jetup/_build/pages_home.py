@@ -260,7 +260,7 @@ def build_home():
 <section class="sec" id="mtg" aria-labelledby="mtg-h">
  <span class="seam" aria-hidden="true"></span>
  <div class="wrap mtg">
-  <div class="photo rv"><img src="/jetup/img/mtg-photo-800.webp" width="800" height="800" alt="MTG in his white mtgTribe.com Let's Get This Crypto t-shirt, hand at his chin, in front of the gold mtgTribe.com sign" loading="lazy"></div>
+  <div class="photo rv"><img src="/jetup/img/mtg-photo-800.webp?v=2" width="800" height="800" alt="MTG, Your Digital Architect, in a navy blazer and white t-shirt, in a glass office above the city skyline" loading="lazy"></div>
   <div class="rv" style="--d:1">
    <p class="eyebrow">Your guide</p>
    <h2 class="h2" style="margin-top:12px" id="mtg-h">Hi, I'm <span class="mtg-gold">MTG,</span> Your Digital Architect.</h2>

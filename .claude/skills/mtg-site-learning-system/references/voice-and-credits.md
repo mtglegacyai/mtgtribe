@@ -2,8 +2,11 @@
 
 ## The facts to state plainly
 
-- MTG's only approved voice is HeyGen **MTG Master Voice V2** (voice ID `3931c505632149ceb2bbfecf2778c09c`) on its saved
-  default engine HeyGen Voice ("orca"). Never another voice, never ElevenLabs, never a stand-in.
+- MTG's only approved voice is HeyGen **MTG Master Voice V3** (voice ID `65f1b9ff3f1e418496de5715a801e7dd`), his voice since 10 Nov 2026
+  ("V3 sounds better, sounds exactly like me"). Call it with no model and no engine override, and no break tags (one
+  paragraph per pause). The older V2 (`3931c505632149ceb2bbfecf2778c09c`) is retired because HeyGen's new voice model
+  refuses it; its banked recordings stay usable. Never another voice, never ElevenLabs, never a stand-in.
+- Measured on V3 (10 Nov 2026): 1 credit for 51 seconds of speech (about 900 characters).
 - There is no stored copy of his voice that can say new words. What exists is a **voice bank**: the real recordings he
   has already approved, with word timings. Any sentence in the bank can be reused for free. Any new sentence needs a new
   HeyGen speech request, which costs credits, so it needs MTG's approval first.

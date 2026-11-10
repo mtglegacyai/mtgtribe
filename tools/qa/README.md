@@ -31,3 +31,16 @@ ALTRUVA video titles that end in "..." (`.vt`).
   Tables that fit stay normal tables, so desktop looks the same as before.
 - Canton guides and weekly reports: their own stacked layout now applies up to 640 px (the weekly builder copies it
   from `cntn/index.html`).
+
+# Back to the video when it ends (MTG, 10 Nov 2026)
+
+`/assets/video-return.js` brings the page back to exactly where the visitor pressed play when a video ends (pop-up,
+inline and playlist players, phone and computer, full screen too). Every page with a video loads it. Check it with:
+
+```bash
+node tools/qa/video-return-test.js http://127.0.0.1:8766
+```
+
+It needs a static server that answers range requests (videos must seek), for example `npx http-server . -p 8766`.
+Each case runs without and with the script; with it, every video's cover must come back to the same place on screen.
+

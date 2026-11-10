@@ -50,7 +50,7 @@ def build_checks():
  <li><b>A built-in loss limit:</b> the account closes if the trader's loss passes 10% of the starting balance (5% with a community token), so you know the line before you start.</li>
  <li><b>Broker insolvency cover:</b> $1,000,000 in total, for all clients together, if the broker itself ever went bust. It is not trading insurance.</li>
 </ul>
-<div style="margin:16px 0 18px">{laptop('amplify', 'Watch it: Amplify 24x made simple (2:01)')}</div>
+<div style="margin:16px 0 18px">{laptop('amplify', 'Watch it: Amplify 24x made simple (2:13)')}</div>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}Try the Exposure Calculator</a></p>
 <div data-ticks="checks">{tick(4)}</div>''', 'i-candle2', 'lime')
     c5 = section('check-5', 'Check 5 of 5', 'Can I get out?', f'''
@@ -123,12 +123,12 @@ def build_how():
  <li>The second agreement you tick says CopyX trades come from traders who are not part of TAG Markets, and TAG Markets bears no responsibility for them.</li>
 </ul>''' + sonic_card(eyebrow="Watch it · JetUP's own video · 1:04", title='Sonic AI <span class="grad">in 64 seconds</span>', framed=False), 'i-copyx')}
  {section('split', 'Where the money goes', 'The 70/30 split', f'''
-<div style="margin:4px 0 18px">{laptop('split', 'The 70/30 split, explained by MTG (2:09)')}</div>
+<div style="margin:4px 0 18px">{laptop('split', 'The 70/30 split, explained by MTG (2:16)')}</div>
 <p>When the strategy makes a profit, <b>70% is yours</b>. <b>30% pays the broker, the strategy provider and the partner program</b>. So if the strategy makes $10, $7 is yours. And if it makes a loss, nobody charges you a performance fee on that loss.</p>
 <p>JetUP's own one-pager says the Lot Commission and the Global Pool are paid from broker margin, and the Profit Share comes from the 30% share of strategy profit, never from client deposits.</p>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/profit-split-calculator/">{icon('i-split')}Open the Profit Split Calculator</a></p>''', 'i-split')}
  {section('amplify', 'Amplify 24x', 'Exposure, not money you own', f'''
-<div style="margin:4px 0 18px">{laptop('amplify', 'Amplify 24x, explained by MTG (2:01)')}</div>
+<div style="margin:4px 0 18px">{laptop('amplify', 'Amplify 24x, explained by MTG (2:13)')}</div>
 <p>Amplify lets an account trade at 24 times its size. In the training: <b>$50 × 24 = $1,200</b>, and the $200 promo account <b>× 24 = $4,800</b>. Together that's <b>$6,000 of exposure</b>. Exposure is the size you trade with, not money you own.</p>
 <p>With 24x, a price move of about 4.2% (100% ÷ 24) on the trading balance is the same size as the whole account. A 1% move on $6,000 is $60.</p>
 <div class="call info">{icon('i-info2')}<p><b>The built-in loss limit, from TAG Markets' screen:</b> the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start.</p></div>

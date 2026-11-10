@@ -28,7 +28,7 @@ The build stops if any page contains an em dash or an en dash, or mentions Luno.
 
 - 16:9 videos play in the laptop frame, 9:16 videos in the slim gold phone frame, and the player closes itself
   (leaving full screen first) when a video ends.
-- MTG's profile photo is always shown whole (face, t-shirt print and the sign), in a rounded gold frame.
+- MTG's profile photo (navy blazer, office skyline; MTG, 10 Nov 2026) is always shown in a circle with a gold ring.
 - Every tool has its own page and menu item. The candle chart in the hero is labelled as an illustration.
 - Personal details are hidden in every screenshot. Guide page 20 has another member's balances blurred.
   Guide pages 10, 19 and 21 are left out (10 and 19 mention an exchange MTG does not use).

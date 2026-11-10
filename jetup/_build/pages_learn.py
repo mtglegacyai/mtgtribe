@@ -266,7 +266,8 @@ def build_bix():
 {phead('i-card2', 'BIX Card', 'A crypto wallet <span class="grad">with a Visa card</span>',
        'BIX is a non-custodial (self-custody) crypto wallet paired with a Visa card. You spend against your USDT or USDC while you keep control of your keys. It is listed inside the JetUP portal, and linking it takes a QR code and the same email.',
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('BIX Card', None)],
-       [icon('i-phone') + 'The BixPay app', icon('i-lock') + 'Self-custody', icon('i-info2') + 'Optional'])}
+       [icon('i-phone') + 'The BixPay app', icon('i-lock') + 'Self-custody', icon('i-info2') + 'Optional'],
+       extra='<div class="gcards" aria-hidden="true"><span class="gc c3"></span><span class="gc c2"></span><span class="gc c1"><span class="sheen"></span><span class="chip"></span><svg class="nfc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8.5a5 5 0 0 1 0 7"/><path d="M9.5 6a9 9 0 0 1 0 12"/><path d="M13 3.5a13 13 0 0 1 0 17"/></svg></span></div>')}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="card pad rv vrow" id="bix-video">
   <div>{phone('bix')}</div>

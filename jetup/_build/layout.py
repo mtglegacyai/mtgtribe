@@ -452,11 +452,11 @@ def sonic_card(eyebrow="JetUP's own video · 1:04", title='Meet the driver: <spa
  </div>'''
 
 def join_cta(title='Ready to start? <span class="lime">Join JetUP.</span>', text='Learn first, then decide for yourself. When you are ready, create your account and follow the sign-up training one tap at a time.'):
-    return f'''<section class="sec tight"><div class="wrap"><div class="card tribe joincta rv">
+    return f'''<section class="sec tight"><div class="wrap"><div class="glass-stack rv"><span class="gl-layer l2" aria-hidden="true"></span><span class="gl-layer l1" aria-hidden="true"></span><div class="card tribe joincta glass">
  <span class="wa jw" aria-hidden="true"><img src="/jetup/img/jetup-mark-128.webp" width="54" height="54" alt=""></span>
  <div><h2>{title}</h2><p>{text}</p>{join_note()}</div>
  {join_btn()}
-</div></div></section>'''
+</div></div></div></section>'''
 
 def tribe_cta(title='Don\'t learn this <span class="lime">alone.</span>', text='Action takers learn together. Join the MTG TRIBE on WhatsApp for new trainings, straight answers and the next step, the moment it lands.', join=True):
     return (join_cta() if join else '') + f'''<section class="sec tight"><div class="wrap"><div class="card tribe rv">

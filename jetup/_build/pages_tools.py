@@ -37,7 +37,7 @@ def build_exposure():
  <div class="stack">
   <div class="out" aria-label="Results">
    {res('exp-bal', 'Account balance', 'Your money plus the bonus')}
-   {res('exp-ex', 'Trading exposure', 'Balance × multiplier. Not money you own', 'big')}
+   {res('exp-ex', 'Trading exposure', 'Balance × multiplier. Not money you own', 'big glass')}
    {res('exp-pl', 'Profit or loss from this move', 'Exposure × the move, before costs')}
    {res('exp-ofown', 'As a share of your own money', 'What this move means for what you put in')}
    {res('exp-eqown', 'Move that equals your deposit', 'Your money ÷ exposure')}
@@ -88,7 +88,7 @@ def build_split():
  <div class="stack">
   <div class="out" aria-label="Results">
    {res('ps-gross', 'Strategy result', 'Amount × result')}
-   {res('ps-you', 'Your share', 'Profit × 70%', 'big')}
+   {res('ps-you', 'Your share', 'Profit × 70%', 'big glass')}
    {res('ps-fee', 'Performance fee', 'Profit × 30%. No fee on a loss')}
    {res('ps-net', 'Your return', 'Result × 70% on a profit')}
    {res('ps-end', 'Your amount afterwards', 'Amount + your share')}

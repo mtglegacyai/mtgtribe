@@ -303,3 +303,54 @@ body.dash{background:#050403}
   .lvup.show{transform:none}
 }
 @media (prefers-reduced-motion:reduce){.cardstage img,.scard,.ptile,.ltile{transition:none}.coin.sk .px,.coin.sk .ch{animation:none}}
+
+/* ---------- gold edge-lit glass (MTG, 10 Nov 2026: "I like this glass style... it can enhance the design,
+   presentation, look, feel, style, and conversions"; approved on JetUP, then "Let's see how it looks on MTG TRIBE
+   dashboard"). Gold on MTG TRIBE, lime on JetUP. Used on a few hero places only, never on long text or tables:
+   stream #1, the stream cards, the five-stream stack and the Tribe Path rank card. ---------- */
+.glass.edge{border:1.5px solid rgba(var(--gold-rgb),.85);
+  box-shadow:0 0 26px rgba(var(--gold-rgb),.24),0 0 2px rgba(var(--gold-rgb),.9),inset 0 0 22px rgba(var(--gold-rgb),.12),inset 0 1px 0 rgba(255,255,255,.26),0 34px 80px -20px rgba(0,0,0,.7)}
+.glass.edge:before{inset:6px;padding:0;border-radius:calc(24px - 6px);background:none;border:1px solid rgba(var(--gold-rgb),.3);-webkit-mask:none;mask:none;z-index:0}
+.glass.edge.soft{border-color:rgba(var(--gold-rgb),.5);box-shadow:0 0 16px rgba(var(--gold-rgb),.12),inset 0 0 18px rgba(var(--gold-rgb),.07),inset 0 1px 0 rgba(255,255,255,.18),0 30px 70px -20px rgba(0,0,0,.6)}
+.glass.edge.soft:before{border-color:rgba(var(--gold-rgb),.16)}
+.glass.edge.soft:hover,.glass.edge.soft:focus-within{border-color:rgba(var(--gold-rgb),.9);box-shadow:0 0 28px rgba(var(--gold-rgb),.26),0 0 2px rgba(var(--gold-rgb),.9),inset 0 0 22px rgba(var(--gold-rgb),.12),inset 0 1px 0 rgba(255,255,255,.26),0 40px 90px -20px rgba(0,0,0,.7)}
+.glass.edge.soft:hover:before,.glass.edge.soft:focus-within:before{border-color:rgba(var(--gold-rgb),.32)}
+.scard.edge .no{text-shadow:0 0 18px rgba(var(--gold-rgb),.35)}
+/* a slow light sweep across the glass */
+.sweep{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,236,190,.075) 47%,rgba(255,250,235,.12) 50%,rgba(255,236,190,.075) 53%,transparent 62%) no-repeat;
+  background-size:260% 100%;background-position:120% 0;animation:gSweep 8s cubic-bezier(.45,.05,.25,1) 1.4s infinite}
+@keyframes gSweep{0%{background-position:120% 0}36%,100%{background-position:-60% 0}}
+/* stream #1: two glass sheets peek out below it */
+.gstack{position:relative;isolation:isolate;margin-bottom:22px}
+.gstack>.glass{background-color:#0b0906}
+.gstack>.sheet{position:absolute;inset:0;border-radius:24px;pointer-events:none;z-index:-1;border:1.5px solid rgba(var(--gold-rgb),.5);background:rgba(12,9,5,.7);box-shadow:0 0 18px rgba(var(--gold-rgb),.12)}
+.gstack>.sheet.s1{transform:translateY(12px) scale(.978);opacity:.75}
+.gstack>.sheet.s2{transform:translateY(24px) scale(.956);opacity:.42}
+.feat.edge .rank{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 4px 0 #8a5208,0 14px 30px rgba(0,0,0,.4),0 0 46px rgba(var(--gold-rgb),.42)}
+/* the five streams as a stack of glass, #1 on top (also a quick menu to each stream) */
+.sstack{--pw:150px;--sp:34px;display:flex;align-items:flex-start;gap:16px;margin-left:auto}
+.sstack .plates{position:relative;flex:none;width:calc(var(--pw)*1.415 + 6px);height:calc(var(--pw)*.7075 + var(--sp)*4 + 4px)}
+.sstack .pl{position:absolute;left:50%;top:calc(var(--i)*var(--sp) - var(--pw)*.1463 + 2px);width:var(--pw);height:var(--pw);margin-left:calc(var(--pw)/-2);
+  z-index:calc(10 - var(--i));border-radius:16px;transform:rotateX(60deg) rotateZ(-45deg);
+  border:1.5px solid rgba(var(--gold-rgb),calc(.85 - var(--i)*.12));
+  background:linear-gradient(135deg,rgba(var(--gold-rgb),.14),rgba(12,9,5,.72) 45%,rgba(12,9,5,.82));
+  box-shadow:0 0 calc(22px - var(--i)*3px) rgba(var(--gold-rgb),calc(.32 - var(--i)*.05)),inset 0 0 18px rgba(var(--gold-rgb),.1)}
+.sstack .pl:before{content:"";position:absolute;inset:7px;border-radius:10px;border:1px solid rgba(var(--gold-rgb),calc(.32 - var(--i)*.05))}
+.sstack .pl.top{border-color:rgba(255,217,142,.95);background:linear-gradient(135deg,rgba(255,217,142,.28),rgba(var(--gold-rgb),.08) 40%,rgba(12,9,5,.8));
+  box-shadow:0 0 30px rgba(var(--gold-rgb),.45),0 0 2px rgba(255,217,142,.9),inset 0 0 24px rgba(var(--gold-rgb),.2);animation:plFloat 6s ease-in-out infinite}
+.sstack .pl .crown{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold-hi);transform:rotateZ(45deg)}
+.sstack .pl .crown svg{width:34%;height:34%;filter:drop-shadow(0 0 8px rgba(var(--gold-rgb),.7))}
+@keyframes plFloat{0%,100%{transform:rotateX(60deg) rotateZ(-45deg) translateZ(0)}50%{transform:rotateX(60deg) rotateZ(-45deg) translateZ(7px)}}
+.slabels{list-style:none;margin:0;padding:calc(var(--pw)*.354 - var(--sp)/2 + 2px) 0 0;display:grid;grid-auto-rows:var(--sp)}
+.slabels li{display:flex;align-items:center}
+.slabels a{position:relative;display:inline-flex;align-items:center;gap:9px;min-height:var(--sp);padding:0 4px;color:var(--body);font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap;transition:color .2s}
+.slabels a:before{content:"";position:absolute;right:100%;top:50%;width:14px;height:1px;background:linear-gradient(90deg,rgba(var(--gold-rgb),.15),rgba(var(--gold-rgb),.75))}
+.slabels b{display:grid;place-items:center;width:22px;height:22px;border-radius:7px;font:700 11px/1 var(--f-m);color:var(--gold-hi);box-shadow:inset 0 0 0 1px rgba(var(--gold-rgb),.5)}
+.slabels li:first-child a{color:var(--text)}
+.slabels li:first-child b{color:#1a1002;background:linear-gradient(180deg,#ffd98e,#f2ad3c);box-shadow:0 0 14px rgba(var(--gold-rgb),.5)}
+.slabels a:hover,.slabels a:focus-visible{color:var(--gold-hi)}
+@media (max-width:1180px){.sstack{--pw:128px;--sp:32px}}
+@media (max-width:900px){.sstack{margin-left:0}}
+@media (max-width:640px){.sstack{--pw:96px;--sp:34px;gap:12px;width:100%}.slabels a{font-size:13px;white-space:normal}}
+@media (prefers-reduced-motion:reduce){.sweep,.sstack .pl.top{animation:none}}

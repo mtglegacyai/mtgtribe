@@ -21,3 +21,7 @@ Font: `jetup-work/engine/fonts/Anton-Regular.ttf`. JetUP disc and logo: `tools/j
 compatible with heygen-voice-1. Create a new instant voice."). See `../ex3-pack/README.md` and
 `tools/learning-system/PLAN.md`, "Voice". Do not retry or substitute until MTG has decided. Break tags are not supported
 for instant voices on the new model: send the two lines as two plain paragraphs.
+
+**Recorded 10 Nov 2026 in MTG Master Voice V3** (MTG's voice from now on): `v_nhook.flac` and `v_ncalc.flac`, from the
+same request as explainer #3's six lines (`../ex3ex4v3.flac`, 1 credit). `lines.json` and `words.json` here include them,
+so `make_ex4.py` builds the version with the spoken hook and calculator line (2:16).

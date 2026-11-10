@@ -49,13 +49,10 @@ Leave about 0.05 s before the first word and 0.15 s after the last one, and join
 Not covered yet (needs new lines): the partner plan (levels, lot commission, Infinity, Global Pool, rewards), the BIX Card,
 and the calculator walkthroughs.
 
-## HeyGen voice status, 10 Nov 2026
+## MTG's voice since 10 Nov 2026: MTG Master Voice V3
 
-HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
-voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there, so for now this
-bank is the only source of his approved voice: every line in it stays usable. Details: `explainers/ex3-pack/README.md`.
-
-**MTG's decision, 10 Nov 2026: "Go with the same voice I've been on all videos".** The voice stays MTG Master Voice V2:
-no new clone, no other voice. New lines can only come from audio MTG makes himself in the HeyGen app with that voice
-(the ready-to-paste text is in `explainers/ex3-pack/README.md` and `explainers/ex4-pack/README.md`). Explainer #3 went
-live on 10 Nov 2026 with his recorded lines.
+HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1"). MTG made
+**MTG Master Voice V3** (`65f1b9ff3f1e418496de5715a801e7dd`), listened to both and decided: "V3 sounds better, sounds
+exactly like me", V3 from now on. Every new line is V3 (no model or engine override, no break tags: one paragraph per
+pause). Every V2 line in this bank stays usable. First V3 file: `explainers/ex3ex4v3.flac` (explainer #3's six lines and
+explainer #4's two, 1 credit).

@@ -75,7 +75,12 @@ address bar shown on every new site, mistakes turned into tip cards, banked voic
 
 ### 4. Put it on the website
 Horizontal videos play in the laptop frame, vertical ones in the slim phone frame, and the player closes itself when
-the video ends (MTG's standing video rule). Place each explainer beside the section it explains, add it to the site's
+the video ends (MTG's standing video rule). **Then the page goes back to exactly where the visitor pressed play**
+(MTG, 10 Nov 2026: "as soon as the video finishes playing, the visitor must be automatically scrolled to the exact
+section where the video is at", on every website, new ones too): load `assets/video-return.js` from this skill (one
+line, `<script src="/assets/video-return.js?v=1" defer></script>`, no setup) on every page with a video. It works with
+pop-up, inline and playlist players; a YouTube pop-up needs the same idea in its own close code (save the card's place
+on screen when it opens, put it back when it closes, as ClickBaitPays does in `assets/app.js`). Place each explainer beside the section it explains, add it to the site's
 videos page and downloads list, give it a poster and structured data (VideoObject), and link each FAQ answer to its
 explainer. Then run the site's checks, including the sideways-scroll check (`tools/qa/hscroll.js` in mtgtribe.com):
 nothing on the site may scroll sideways on a phone.

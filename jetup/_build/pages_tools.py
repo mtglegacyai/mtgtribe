@@ -247,6 +247,8 @@ def build_disclaimer():
  <p>Trading forex and CFDs, and copy trading, carries risk: prices move both ways, Leverage and Amplify make every move bigger, and you could lose money you deposit. Results change over time. There is no fixed, daily or guaranteed return, and partner earnings are not guaranteed. Start with an amount you're comfortable with, and read TAG Markets' own risk disclosure before you deposit.</p>
  <h2>Figures and screens</h2>
  <p>Figures from JetUP's Business Plan and one-pager are JetUP's own, as of 4 October 2026. The Sonic AI result is the published Myfxbook figure for 3 November 2024 to 4 October 2026. Promos, fees, screens and rules change: check the current terms in your own dashboard before you act. Personal details in every screenshot are hidden.</p>
+ <h2>Background video</h2>
+ <p>The Earth at night behind the top of the guide uses NASA Earth Observatory's city lights image (public domain), animated for this guide. It is a picture, not live data.</p>
  <h2>Links</h2>
  <p>The VALR and Binance buttons are MTG's referral links. If you sign up through them, MTG may receive a reward, at no extra cost to you. Other links go to official websites.</p>
  <p>Questions? Message MTG on <a href="{WA_MTG}" target="_blank" rel="noopener">WhatsApp</a> (messages and voice notes, no calls).</p>

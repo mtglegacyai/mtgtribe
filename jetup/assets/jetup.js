@@ -1,5 +1,5 @@
 /* JetUP and TAG Markets guide by MTG | page behaviour
-   Menu, reveals, the illustrative candle chart, the who-is-who flow, the 70/30 slider,
+   Menu, reveals, the background video behind the hero, the who-is-who flow, the 70/30 slider,
    tick lists, copy buttons, the device-frame video player, the screenshot zoom and the two calculators.
    Everything works without it: it only adds movement and interaction. */
 (function(){
@@ -54,91 +54,25 @@ function fmt(n,dec){return Number(n).toLocaleString('en-US',{minimumFractionDigi
   if('IntersectionObserver'in w){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);o.unobserve(e.target)}})},{threshold:.4});els.forEach(function(el){o.observe(el)})}else els.forEach(run);
 })();
 
-/* ---- the chart behind the hero (MTG, 9 Nov 2026: premium, and always moving forward) ----
-   An illustration, clearly labelled, never live prices. A rising series draws itself from left to right: on wide
-   screens it runs under the laptop, climbs behind it and carries on above it to a glowing price line at the top right.
-   The newest candle keeps forming, a light sweeps forward, then a fresh series draws again. Nothing scrolls backwards,
-   the scale never jumps, and it pauses when it is off screen. */
+/* ---- the background behind the hero (MTG, 10 Nov 2026: "a similar video, no audio, HD, as the background of
+   mtgtribe.com/jetup, replacing the candlestick chart") ----
+   A silent 20-second loop made for this page: a night Earth (city lights: NASA Earth Observatory, public domain),
+   purple network arcs and a gold beam. The still image shows straight away; the video loads after the page, HD on
+   big screens and 720p on phones, never with reduced motion or data saver, and it pauses when off screen. */
 (function(){
-  var cv=$('canvas.candles');if(!cv||!cv.getContext)return;
-  var cx=cv.getContext('2d'),W=0,H=0,dpr=1,G={},S=null,cyc=11,seed=11,run=false,t0=0,tNow=0,BUILD=5.6,LIVE=17,FADE=1.2;
-  function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
-  function cl(x){return x<0?0:x>1?1:x}
-  function eio(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
-  function eob(x){var c=1.7;x=cl(x);return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)}
-  function route(){var r=cv.getBoundingClientRect(),v=$('.hero .vcard'),L=v&&v.getBoundingClientRect();
-    if(L&&L.width&&L.left-r.left>W*.4){var ly=Math.max(160,L.top-r.top);   // laptop on the right: the chart rises across the space above it
-      return {wide:true,x0:W*.45,x1:W-190,y0:ly*.93,y1:ly*.15,floor:ly-4}}
-    return {wide:false,x0:W*.04,x1:W*.88,y0:H*.56,y1:H*.15,floor:H*.6}}
-  function along(R,x){var u=(x-R.x0)/(R.x1-R.x0);return R.y0+(R.y1-R.y0)*(.8*u+.2*u*u)}
-  function build(){var R=route(),x0=R.x0,x1=R.x1,step=R.wide?Math.max(26,Math.min(40,W/42)):Math.max(15,W/22),n=Math.max(12,Math.round((x1-x0)/step));
-    step=(x1-x0)/n;seed=cyc;var A=(R.y0-R.y1)*.085,p1=rnd()*6.283,p2=rnd()*6.283,cs=[],prev=null,e=null;
-    for(var i=0;i<=n;i++){var x=x0+i*step,t=i/n,yv=along(R,x)+A*Math.sin(t*12.5+p1)+A*.45*Math.sin(t*29+p2)+(rnd()-.5)*A*1.25;
-      if(i===n)yv=Math.min(yv,along(R,x));
-      if(prev!==null){var o=prev,c=yv,mb=(R.y0-R.y1)/n*.5;if(Math.abs(c-o)<mb){c=o+(c<o||rnd()<.72?-mb:mb)*(.8+rnd()*.5)}yv=c;var r=Math.abs(c-o)+3;e=e===null?o:e+(c-e)*.34;
-        cs.push({x:x-step/2,o:o,c:c,h:Math.min(o,c)-rnd()*r*.45,l:Math.max(o,c)+rnd()*r*.45,e:e,vol:.25+rnd()*.75})}prev=yv}
-    G={wide:R.wide,step:step,bw:Math.max(5,step*.58),gy0:Math.max(8,R.y1-24),gy1:R.floor,vb:R.floor,vh:(R.y0-R.y1)*.09};S=cs}
-  function layout(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(w.devicePixelRatio||1,2);cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);build()}
-  function rr(x,y,ww,hh,r){r=Math.min(r,ww/2,hh/2);cx.beginPath();cx.moveTo(x+r,y);cx.arcTo(x+ww,y,x+ww,y+hh,r);cx.arcTo(x+ww,y+hh,x,y+hh,r);cx.arcTo(x,y+hh,x,y,r);cx.arcTo(x,y,x+ww,y,r);cx.closePath()}
-  function curve(pts){cx.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length-1;i++){cx.quadraticCurveTo(pts[i][0],pts[i][1],(pts[i][0]+pts[i+1][0])/2,(pts[i][1]+pts[i+1][1])/2)}var l=pts[pts.length-1];cx.lineTo(l[0],l[1])}
-  function draw(t){
-    var N=S.length,live=Math.max(0,t-BUILD),reveal=eio(cl(t/BUILD))*N,full=Math.floor(reveal),part=reveal-full,bw=G.bw;
-    var a=t>BUILD+LIVE?cl(1-(t-BUILD-LIVE)/FADE):1;
-    cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);cx.globalAlpha=a;
-    var cs=[],i,k,last=null;
-    for(i=0;i<N&&i<=full;i++){k=S[i];var c=k.c,h=k.h,l=k.l,e=k.e;
-      if(i===full&&t<BUILD){c=k.o+(k.c-k.o)*part;h=Math.min(k.o,c)-(Math.min(k.o,k.c)-k.h)*part;l=Math.max(k.o,c)+(k.l-Math.max(k.o,k.c))*part;e=(i?S[i-1].e:k.o)+(k.e-(i?S[i-1].e:k.o))*part}
-      if(i===N-1&&t>=BUILD){var wv=Math.sin(live*1.9)*.6+Math.sin(live*3.7)*.4,amp=Math.abs(k.c-k.o)*.35+2;c=k.c+wv*amp;h=Math.min(h,c);l=Math.max(l,c)}
-      cs.push({x:k.x,o:k.o,c:c,h:h,l:l,e:e,vol:k.vol,pop:cl((reveal-i)/1.6)});last=cs[cs.length-1]}
-    if(!cs.length)return;
-    var pts=cs.map(function(q){return [q.x,q.e]}),bot=G.gy1+(G.wide?90:60);
-    // glow under the average line
-    if(pts.length>1){var ag=cx.createLinearGradient(0,G.gy0,0,bot);ag.addColorStop(0,'rgba(155,124,255,.30)');ag.addColorStop(.6,'rgba(155,124,255,.10)');ag.addColorStop(1,'rgba(155,124,255,0)');
-      var ex=pts[pts.length-1][0]+G.step*1.2;cx.beginPath();curve(pts);cx.lineTo(ex,pts[pts.length-1][1]);cx.lineTo(ex,bot);cx.lineTo(pts[0][0],bot);cx.closePath();cx.fillStyle=ag;cx.fill();
-      cx.globalCompositeOperation='destination-out';var fx=cx.createLinearGradient(ex-G.step*3,0,ex,0);fx.addColorStop(0,'rgba(0,0,0,0)');fx.addColorStop(1,'rgba(0,0,0,1)');cx.fillStyle=fx;cx.fillRect(ex-G.step*3,0,G.step*3+2,H);
-      var fl=cx.createLinearGradient(pts[0][0],0,pts[0][0]+G.step*4,0);fl.addColorStop(0,'rgba(0,0,0,1)');fl.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=fl;cx.fillRect(pts[0][0]-2,0,G.step*4+2,H);cx.globalCompositeOperation='source-over'}
-    // grid: a quiet trading-terminal frame
-    cx.lineWidth=1;cx.setLineDash([2,7]);cx.strokeStyle='rgba(255,255,255,.06)';
-    for(var g=0;g<=5;g++){var gy=G.gy0+(G.gy1-G.gy0)*g/5;cx.beginPath();cx.moveTo(S[0].x-G.step,gy);cx.lineTo(W,gy);cx.stroke()}
-    cx.setLineDash([]);
-    // volume along the floor
-    cs.forEach(function(q){var up=q.c<=q.o,vh=G.vh*q.vol*cl(q.pop*1.4);cx.fillStyle=up?'rgba(203,251,97,.10)':'rgba(227,113,252,.08)';rr(q.x-bw/2,G.vb-vh,bw,vh,2);cx.fill()});
-    // candles: soft glow, gradient body, fine wick, a little pop as each one lands
-    cs.forEach(function(q){var up=q.c<=q.o,sc=.35+.65*eob(q.pop),top=Math.min(q.o,q.c),bt=Math.max(q.o,q.c),mid=(top+bt)/2,hh=Math.max(2,(bt-top)*sc);
-      var ty=mid-hh/2,by=mid+hh/2,wt=mid-(mid-q.h)*sc,wb=mid+(q.l-mid)*sc;cx.globalAlpha=a*cl(q.pop*1.6);
-      cx.strokeStyle=up?'rgba(203,251,97,.8)':'rgba(227,113,252,.6)';cx.lineWidth=1.5;cx.beginPath();cx.moveTo(q.x,wt);cx.lineTo(q.x,wb);cx.stroke();
-      if(up){var bg=cx.createLinearGradient(0,ty,0,by);bg.addColorStop(0,'#f0ffb8');bg.addColorStop(.45,'#cbfb61');bg.addColorStop(1,'#2fe0a0');cx.fillStyle=bg;cx.shadowColor='rgba(203,251,97,.55)';cx.shadowBlur=16}
-      else{var rg=cx.createLinearGradient(0,ty,0,by);rg.addColorStop(0,'rgba(240,140,255,.85)');rg.addColorStop(1,'rgba(155,124,255,.7)');cx.fillStyle=rg;cx.shadowColor='rgba(227,113,252,.35)';cx.shadowBlur=10}
-      rr(q.x-bw/2,ty,bw,hh,Math.min(4,bw/3.2));cx.fill();cx.shadowBlur=0;
-      cx.fillStyle='rgba(255,255,255,'+(up?.35:.18)+')';rr(q.x-bw/2+2,ty+1.5,Math.max(1.5,bw*.18),Math.max(1,hh-3),1);cx.fill()});
-    cx.globalAlpha=a;
-    // the average line: violet into pink into lime, with a glow
-    if(pts.length>1){var lg=cx.createLinearGradient(S[0].x,0,S[N-1].x,0);lg.addColorStop(0,'rgba(155,124,255,.85)');lg.addColorStop(.5,'rgba(227,113,252,.95)');lg.addColorStop(1,'#cbfb61');
-      cx.lineJoin='round';cx.lineCap='round';cx.beginPath();curve(pts);cx.strokeStyle=lg;cx.lineWidth=3;cx.shadowColor='rgba(227,113,252,.6)';cx.shadowBlur=14;cx.stroke();cx.shadowBlur=0}
-    // a light that sweeps forward across the chart
-    if(t>=BUILD){var sp=(live%6)/2;if(sp<1){var sx=S[0].x-200+(S[N-1].x-S[0].x+400)*eio(sp),sg=cx.createLinearGradient(sx-160,0,sx+160,0);
-      sg.addColorStop(0,'rgba(255,255,255,0)');sg.addColorStop(.5,'rgba(255,255,255,.18)');sg.addColorStop(1,'rgba(255,255,255,0)');
-      cx.globalCompositeOperation='source-atop';cx.fillStyle=sg;cx.fillRect(sx-160,0,320,H);cx.globalCompositeOperation='source-over'}}
-    // the head: the pen while it draws, then the price line with a pulse and the illustration tag
-    var hx=pts[pts.length-1][0],hy=pts[pts.length-1][1];
-    if(t>=BUILD){var py=last.c;cx.setLineDash([4,6]);cx.strokeStyle='rgba(203,251,97,.6)';cx.lineWidth=1.2;cx.beginPath();cx.moveTo(last.x+bw/2+6,py);cx.lineTo(W,py);cx.stroke();cx.setLineDash([]);
-      if(G.wide){cx.font='700 10px "JetBrains Mono",ui-monospace,monospace';var tw=cx.measureText('ILLUSTRATION').width+20,tx=W-tw-18;
-        cx.fillStyle='#cbfb61';cx.shadowColor='rgba(203,251,97,.5)';cx.shadowBlur=12;rr(tx,py-11,tw,22,11);cx.fill();cx.shadowBlur=0;cx.fillStyle='#14110b';cx.textBaseline='middle';cx.fillText('ILLUSTRATION',tx+10,py+.5)}}
-    var pr=(live%1.8)/1.8;cx.fillStyle='rgba(203,251,97,'+(.45*(1-pr)).toFixed(3)+')';cx.beginPath();cx.arc(hx,hy,6+20*eio(pr),0,6.283);cx.fill();
-    cx.fillStyle='rgba(203,251,97,.28)';cx.beginPath();cx.arc(hx,hy,11,0,6.283);cx.fill();
-    cx.fillStyle='#f0ffc4';cx.beginPath();cx.arc(hx,hy,5,0,6.283);cx.fill();
-    cx.globalAlpha=1}
-  function frame(now){if(!run)return;if(!t0)t0=now-tNow*1000;tNow=(now-t0)/1000;
-    if(tNow>BUILD+LIVE+FADE){cyc=(cyc*48271)%2147483647;build();t0=now;tNow=0}
-    draw(tNow);requestAnimationFrame(frame)}
-  function start(){if(!run&&!reduce){run=true;t0=0;requestAnimationFrame(frame)}}
-  function stop(){run=false}
-  layout();draw(reduce?BUILD:0);
-  w.addEventListener('resize',function(){layout();draw(reduce?BUILD:tNow)});
-  w.__jetupChart={draw:function(t){tNow=t;draw(t)},stop:stop,relayout:function(){layout()},next:function(){cyc=(cyc*48271)%2147483647;build()},cycle:BUILD+LIVE+FADE};
-  if(reduce)return;
-  if('IntersectionObserver'in w)new IntersectionObserver(function(e){e[0].isIntersecting?start():stop()}).observe(cv);else start();
-  d.addEventListener('visibilitychange',function(){d.hidden?stop():start()});
+  var box=$('.hero-bg'),v=box&&$('video',box);if(!v||!v.canPlayType||!v.canPlayType('video/mp4'))return;
+  var save=navigator.connection&&navigator.connection.saveData;
+  if(reduce||save)return;
+  var started=false,vis=true,cur='';
+  function pick(){if(innerHeight>innerWidth)return 'data-pt';             // phones and tablets held upright: the upright film
+    return Math.max(screen.width,screen.height)*(w.devicePixelRatio||1)>=1600&&innerWidth>=900?'data-hd':'data-sd'}
+  function go(){var k=pick();if(!started||k!==cur){started=true;cur=k;v.classList.remove('on');v.src=v.getAttribute(k);v.load()}
+    if(vis&&!d.hidden){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+  var rt;w.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(started&&pick()!==cur)go()},400)});
+  v.addEventListener('playing',function(){v.classList.add('on')});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)go();else if(started)v.pause()},{rootMargin:'120px'}).observe(box)}
+  d.addEventListener('visibilitychange',function(){if(d.hidden)v.pause();else if(vis&&started)go()});
+  if(d.readyState==='complete')setTimeout(go,300);else window.addEventListener('load',function(){setTimeout(go,300)});
 })();
 
 /* ---- who is who: tap a step, a dot travels to it ---- */

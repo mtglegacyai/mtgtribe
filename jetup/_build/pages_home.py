@@ -92,7 +92,7 @@ def build_home():
 
     main = f'''
 <section class="hero" aria-labelledby="h1">
- <canvas class="candles" aria-hidden="true"></canvas>
+ <div class="hero-bg" aria-hidden="true"><picture><source media="(orientation: portrait)" srcset="/jetup/img/jetup-hero-earth-portrait.webp"><img src="/jetup/img/jetup-hero-earth.webp" srcset="/jetup/img/jetup-hero-earth-720.webp 1280w, /jetup/img/jetup-hero-earth.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high"></picture><video muted loop playsinline preload="none" data-hd="/jetup/media/jetup-hero-earth-1080.mp4" data-sd="/jetup/media/jetup-hero-earth-720.mp4" data-pt="/jetup/media/jetup-hero-earth-portrait.mp4" tabindex="-1"></video></div>
  <div class="wrap hero-in">
   <div>
    <p class="pill rv"><i aria-hidden="true"></i>Independent guide by MTG 👑</p>
@@ -113,7 +113,6 @@ def build_home():
    {laptop('5checks', 'Watch first: 5 checks before you try JetUP (5:25)', eager=True)}
   </div>
  </div>
- <p class="illus" aria-hidden="true">Chart: illustration only, not live prices</p>
 </section>
 {tape()}
 

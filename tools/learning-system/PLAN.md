@@ -49,6 +49,18 @@ Voice bank: branch `jetup-video-work`, folder `jetup-work/voice-bank/` (saved 6 
 5 Checks and sign-up training narration, about 15 minutes, 262 sentences in `sentences.tsv`.
 Check the HeyGen credit balance before any speech request.
 
+**HeyGen voice status, 10 Nov 2026 (read before any speech request).** HeyGen's connector now speaks only with its new
+model ("heygen-voice-1"). One request with MTG Master Voice V2 (3931c505632149ceb2bbfecf2778c09c) was refused: "This
+voice is not compatible with heygen-voice-1. Create a new instant voice." (400, not retryable, nothing charged, 54
+credits left). HeyGen's documentation: instant voices made before the new model "must be cloned again before they can
+speak here"; for the closest match it suggests similarity "max" and expressiveness 0.5. The voice is still listed as
+active, and every banked line stays usable. Do not retry, do not pass a model, do not use another voice ("MTG Real
+Voice", "Musa Dumakude" and "Dr RaShon" are in the account but are not approved), and do not clone anything until MTG
+says which way he wants: (a) he makes the audio himself in the HeyGen app with MTG Master Voice V2, if the app still
+offers it, and sends the file; (b) a new clone of his own voice from a clean recording he supplies, tested against the
+bank on one short line before any video uses it, and approved by his ear; (c) recorded lines only.
+Waiting for new lines: explainer #3 (six lines, approved 10 Nov 2026) and explainer #4 (two lines, approved 9 Nov 2026).
+
 ## Standard: the site tour (video 0)
 
 | # | Video | Where | Voice | Status |
@@ -66,8 +78,8 @@ JetUP tour sits at the top of /jetup/.
 |---|---|---|---|---|
 | 1 | JetUP and TAG Markets: the simple picture (1:39, v3: positive close, no loss statistics) | home "Who does what", Videos page "Start here" | recorded lines only, 0 credits | live 8 Nov 2026 (v3 the same day) |
 | 2 | Who does what: five names, one picture (minibus taxi), 2:08 | home "Five names", How it works "Who does what" | recorded + 10 new lines (3 credits, 8 Nov 2026) | live 8 Nov 2026 (v2: positive close, no loss statistics) |
-| 3 | Amplify 24x made simple: exposure is the size you trade with, not money you own (market stall, + calculator demo), 2:01 | home "$155 in", How it works "Amplify 24x", Exposure Calculator, check 4, Videos page | recorded lines, 0 credits; 6 new lines proposed (hook, stall, move, loss limit, calculator, recap: about 3 credits), waiting for MTG | preview sent 9 Nov 2026 (recorded lines; the hook, stall, calculator and loss limit play on screen only); not on the site until MTG approves. Sources: `tools/jetup-explainers/ex3/` |
-| 4 | The 70/30 split: where every profit goes (+ calculator demo), about 2:09 | home "70%", How it works "70/30", Profit Split Calculator, Videos page | recorded lines; 2 new lines approved (about 1 credit), waiting for HeyGen to be reconnected | live 9 Nov 2026 with recorded lines; the 2 new lines can be added when HeyGen is reconnected |
+| 3 | Amplify 24x made simple: exposure is the size you trade with, not money you own (market stall, + calculator demo), 2:01 | home "$155 in", How it works "Amplify 24x", Exposure Calculator, check 4, Videos page | recorded lines, 0 credits; 6 new lines (hook, stall, move, loss limit, calculator, recap: about 3 credits) approved by MTG on 10 Nov 2026, not recorded: HeyGen refused his voice (see "Voice") | preview sent 9 Nov 2026 (recorded lines; the hook, stall, calculator and loss limit play on screen only); not on the site until MTG approves. Sources: `tools/jetup-explainers/ex3/` |
+| 4 | The 70/30 split: where every profit goes (+ calculator demo), about 2:09 | home "70%", How it works "70/30", Profit Split Calculator, Videos page | recorded lines; 2 new lines approved (about 1 credit), not recorded: HeyGen refused his voice on 10 Nov 2026 (see "Voice") | live 9 Nov 2026 with recorded lines; the 2 new lines can be added once MTG has decided how his voice is produced |
 | 5 | The $100 Fast Start Promo: the money plan, claim it in 4 steps, the rules, "a promo is a promo", 2:18 | Promo page top, home "A promo is a promo", get-started part 6, Videos page | recorded lines only, 0 credits | live 9 Nov 2026 (Promo page claim list now 4 steps, like the video) |
 | 6 | The partner plan: the rule most people miss | Partner plan top | new lines (about 4 to 6 credits) | planned |
 

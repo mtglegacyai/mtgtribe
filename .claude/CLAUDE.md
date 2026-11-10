@@ -109,3 +109,10 @@ page gives you, one clear visual of its subject, the exact address in a pill, un
 When something takes MTG's work to the next level, update the relevant skill in `.claude/skills/` (and give MTG the updated
 package to install in his account), or create a new skill and tell him. Use the skills whenever they fit, without waiting
 to be asked.
+
+## HeyGen voice status (10 Nov 2026): read before any speech request
+
+HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
+voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there. Do not retry,
+do not pass a model, do not use another voice, do not clone anything: MTG decides. His banked lines stay usable.
+Details and his options: `tools/learning-system/PLAN.md`, "Voice". Remove this note once he has decided and it works.

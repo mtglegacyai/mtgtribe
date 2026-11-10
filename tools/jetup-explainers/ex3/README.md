@@ -7,7 +7,8 @@ close from explainer #1, and save, share, "We learn best when we teach others" a
 
 About 22 seconds of the body have no voice yet and play on screen only, with the four signature sounds: the hook
 (0 to 3.3 s), the market stall (8.5 to 15.5 s), the calculator demo (42.3 to 50.5 s) and the loss limit (53.6 to 59.2 s).
-Six new lines in his voice would cover them (see "Next step"). **Not approved yet: do not record before MTG says so.**
+Six new lines in his voice would cover them (see "Next step"). MTG approved them on 10 Nov 2026, but HeyGen refused his
+voice that day, so they are **not recorded yet**.
 
 Copy that converts (MTG's standing rules, 8 and 9 Nov 2026): inform, never frighten. No loss statistics, no warnings
 beyond his gentle signature reminder and the end card's small line, a warm "Simple, right? Now it's your turn" and one
@@ -34,10 +35,9 @@ action, tap any Join JetUP button.
   ($50 + $100 + $100) x 24. No return figures are shown.
 - No photo of MTG: the JetUP logo disc takes its place. Series style kept (as explainers #1, #2, #4, #5).
 
-## Next step: the six new lines (waiting for MTG's approval, about 3 credits)
+## Next step: the six new lines (approved by MTG on 10 Nov 2026, about 3 credits, NOT recorded yet)
 
-Proposed on 9 Nov 2026, about 700 characters, plain text, voice "MTG Master Voice V2"
-(3931c505632149ceb2bbfecf2778c09c), no engine parameter (the reply must say engine "orca"):
+About 700 characters, plain text, voice "MTG Master Voice V2" (3931c505632149ceb2bbfecf2778c09c):
 
 1. `nhook`: Fifty dollars that trades like twelve hundred. How? One word: Amplify. Let me show you.
 2. `nstall`: Think of a market stall. You pay for one stall, but Amplify lets you trade as if you had twenty-four.
@@ -48,13 +48,19 @@ Proposed on 9 Nov 2026, about 700 characters, plain text, voice "MTG Master Voic
    trading size in one tap.
 6. `nrecap`: So that's Amplify: a bigger trading size, not extra money. Start small, and learn how it moves.
 
-HeyGen's speech access returned "Bearer token expired/revoked" in the session that built this video (9 Nov 2026), so
-recording needs a new session after MTG reconnects HeyGen. Then: check out branch `jetup-video-work`, take the working
-pack in `jetup-work/voice-bank/explainers/ex3-pack/` (every cut line as FLAC, `lines.json`, `words.json`, and its README
-with the exact speech request), record the six lines in one call, cut them into `v_nhook.wav`, `v_nstall.wav`,
-`v_nmove.wav`, `v_nlimit.wav`, `v_ncalc.wav`, `v_nrecap.wav`, add them to `lines.json` and `words.json`, rebuild with
-`make_ex3.py` and `build_part.sh`, QA, and show MTG the preview. With the new lines the video opens on the spoken hook,
-"Here is the simple picture" and the two 5 Checks lines step aside for the new ones, and the length changes a little.
+**Blocked on 10 Nov 2026.** HeyGen was connected again (54 credits), but the one speech request was refused: "This voice
+is not compatible with heygen-voice-1. Create a new instant voice." (400, not retryable, nothing charged: 54 credits
+before and after). HeyGen's connector now speaks with its new model, and its documentation says instant voices made
+before it "must be cloned again before they can speak here". So MTG Master Voice V2 cannot speak through the connector
+any more. Not retried, no other voice or model tried: that is MTG's decision (see `tools/learning-system/PLAN.md`,
+"Voice"). Never stand in with another voice.
+
+Once MTG has decided how his voice is produced: check out branch `jetup-video-work`, take the working pack in
+`jetup-work/voice-bank/explainers/ex3-pack/` (every cut line as FLAC, `lines.json`, `words.json`, and its README with
+the exact text), get the six lines in one go, cut them into `v_nhook.wav`, `v_nstall.wav`, `v_nmove.wav`,
+`v_nlimit.wav`, `v_ncalc.wav`, `v_nrecap.wav`, add them to `lines.json` and `words.json`, rebuild with `make_ex3.py`
+and `build_part.sh`, QA, and show MTG the preview. With the new lines the video opens on the spoken hook, "Here is the
+simple picture" and the two 5 Checks lines step aside for the new ones, and the length changes a little.
 
 ## When MTG approves it for the site
 

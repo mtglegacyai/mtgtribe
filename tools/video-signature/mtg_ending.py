@@ -111,6 +111,7 @@ def url_pill(url, size, bg=LIME, fg=DARK, glow_col=LIME):
     im = rrect((w, h), h // 2, bg + (255,)); ImageDraw.Draw(im).text((w / 2, h / 2), url, font=f, fill=fg, anchor='mm')
     return glow(im, 22, glow_col, 0.6)
 
+# End card addresses: Telegram @mtgtribe and Facebook facebook.com/mtgtribe were confirmed by MTG on 10 Nov 2026.
 PLAT = {'tiktok': ('TikTok', '@joinmtgtribe', '🎵', (37, 244, 238)), 'youtube': ('YouTube', '@mtgtribe', '▶️', (255, 48, 48)),
         'whatsapp': ('WhatsApp', 'mtgtribe.com/group', '💬', (37, 211, 102)), 'telegram': ('Telegram', '@mtgtribe', '✈️', (34, 158, 217)),
         'facebook': ('Facebook', 'facebook.com/mtgtribe', '📘', (24, 119, 242))}

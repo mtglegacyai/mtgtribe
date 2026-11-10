@@ -46,3 +46,9 @@ between a JetUP-logo render and the original square-photo render of the same fra
 endings already are the reference.
 
 `consist_site_edits.py` is the site update that published the 8 Nov 2026 versions (new file names so caches refresh).
+
+## End card addresses (confirmed by MTG, 10 Nov 2026)
+
+The end card shows TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp mtgtribe.com/group, **Telegram @mtgtribe** and
+**Facebook facebook.com/mtgtribe**. MTG was asked on 10 Nov 2026 because the website links to t.me/mtgtribez and
+facebook.com/Musa.TheMTG, and he confirmed the end card's two. Leave `PLAT` in `mtg_ending.py` as it is.

@@ -4,9 +4,10 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 1. Researches the week and writes `tools/canton-weekly/data/YYYY-MM-DD.json` (copy the previous week's file as the shape).
    Fill in its `guides` block too: it refreshes the snapshot numbers on /cc/ and /cntn/ in step 4.
    Do step 4 even if HeyGen is out of credits: skip steps 2 and 3, leave out `"video"` and the page shows "Video coming soon".
-2. Narration: HeyGen voice "MTG Master Voice V2" (3931c505632149ceb2bbfecf2778c09c), one create_speech call with the
-   `video_script` texts joined by `<break time="0.4s"/>`. Save it as `/tmp/narration.mp3` (do not commit it).
-3. Video: `python3 tools/canton-weekly/video.py tools/canton-weekly/data/DATE.json /tmp/narration.mp3 /tmp/they-call-me-mtg.mp3`
+2. Narration: HeyGen voice "MTG Master Voice V3" (65f1b9ff3f1e418496de5715a801e7dd, MTG's voice since 10 Nov 2026; V2 is
+   retired), one create_speech call with the `video_script` texts joined by a blank line (no break tags: V3 does not
+   support them). HeyGen returns WAV: save it as `/tmp/narration.wav` and pass that path to video.py (do not commit it).
+3. Video: `python3 tools/canton-weekly/video.py tools/canton-weekly/data/DATE.json /tmp/narration.wav /tmp/they-call-me-mtg.mp3`
    (closing track: HeyGen asset aef5170534fa4430b6789ea5cd7335c0, download its url with get_asset; never commit it, it is MTG's own song).
    Then add `"video": {"src": "video.mp4", "poster": "poster.jpg", "title": "...", "duration_iso": "PT1M45S"}` to the JSON.
 3b. Thumbnail (MTG, 8 Nov 2026), always AFTER video.py, which writes a plain poster.jpg from a video frame (that frame

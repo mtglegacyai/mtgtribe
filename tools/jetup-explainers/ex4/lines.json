@@ -238,5 +238,21 @@
   "file": "v_n_slog.wav",
   "dur": 2.595,
   "text": "It pays to pay attention, and take action."
+ },
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 37.245,
+  "b": 42.755,
+  "dur": 5.51,
+  "text": "Seventy, thirty. Two numbers that decide where every profit goes. Let me show you."
+ },
+ "ncalc": {
+  "file": "v_ncalc.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 42.93,
+  "b": 50.7,
+  "dur": 7.77,
+  "text": "Want to try it with your own numbers? Open the Profit Split Calculator on my page, type an amount and a result, and see your share in one tap."
  }
 }

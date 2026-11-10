@@ -21,7 +21,7 @@ guide it mentions today. Follow the dashboard order: 1 Bellver Affiliates, 2 Jet
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
 Planning note: today the only stream MTG names out loud is ALTRUVA. Naming the others in his voice needs new lines in
-his approved HeyGen voice "MTG Master Voice V2", which costs HeyGen credits:
+his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
@@ -110,14 +110,13 @@ When something takes MTG's work to the next level, update the relevant skill in 
 package to install in his account), or create a new skill and tell him. Use the skills whenever they fit, without waiting
 to be asked.
 
-## HeyGen voice status (10 Nov 2026): read before any speech request
+## MTG's voice: MTG Master Voice V3 (MTG, 10 Nov 2026)
 
-HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
-voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there. Do not retry,
-do not pass a model, do not use another voice, do not clone anything. His banked lines stay usable.
-**MTG's decision (10 Nov 2026): "Go with the same voice I've been on all videos".** The voice stays MTG Master Voice V2:
-no new clone, no other voice. Until HeyGen accepts that voice again, new lines come only from audio MTG makes himself in
-the HeyGen app with it; otherwise build from his recorded lines. Details: `tools/learning-system/PLAN.md`, "Voice".
+"V3 sounds better, sounds exactly like me": from 10 Nov 2026 every new line is HeyGen **MTG Master Voice V3**, voice ID
+`65f1b9ff3f1e418496de5715a801e7dd` (MTG made it himself). Call create_speech with no model and no engine override, and no break
+tags (V3 does not support them: one paragraph per pause, cut with the word timestamps). The older V2
+(`3931c505632149ceb2bbfecf2778c09c`) is retired: HeyGen's new voice model refuses it. Everything already recorded in V2
+(the voice bank, every live video) stays usable. Still ask MTG before spending credits, never use any other voice.
 
 ## MTG's social addresses (confirmed by MTG, 10 Nov 2026)
 

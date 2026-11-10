@@ -36,9 +36,12 @@ action, tap any Join JetUP button.
   ($50 + $100 + $100) x 24. No return figures are shown.
 - No photo of MTG: the JetUP logo disc takes its place. Series style kept (as explainers #1, #2, #4, #5).
 
-## Next step: the six new lines (approved by MTG on 10 Nov 2026, about 3 credits, NOT recorded yet)
+## Version 2: the six new lines in MTG's voice (10 Nov 2026, preview)
 
-About 700 characters, plain text, voice "MTG Master Voice V2" (3931c505632149ceb2bbfecf2778c09c):
+MTG chose **MTG Master Voice V3** (`65f1b9ff3f1e418496de5715a801e7dd`) as his voice from now on ("V3 sounds better, sounds
+exactly like me") after HeyGen's connector refused V2. One request with explainer #4's two lines, 1 credit, banked on
+`jetup-video-work` as `jetup-work/voice-bank/explainers/ex3ex4v3.flac`; the cut lines are in `ex3-pack/`. Lines levelled to
+-18.5 LUFS like the recorded lines around them, checked word for word.
 
 1. `nhook`: Fifty dollars that trades like twelve hundred. How? One word: Amplify. Let me show you.
 2. `nstall`: Think of a market stall. You pay for one stall, but Amplify lets you trade as if you had twenty-four.
@@ -49,19 +52,11 @@ About 700 characters, plain text, voice "MTG Master Voice V2" (3931c505632149ceb
    trading size in one tap.
 6. `nrecap`: So that's Amplify: a bigger trading size, not extra money. Start small, and learn how it moves.
 
-**Blocked on 10 Nov 2026.** HeyGen was connected again (54 credits), but the one speech request was refused: "This voice
-is not compatible with heygen-voice-1. Create a new instant voice." (400, not retryable, nothing charged: 54 credits
-before and after). HeyGen's connector now speaks with its new model, and its documentation says instant voices made
-before it "must be cloned again before they can speak here". So MTG Master Voice V2 cannot speak through the connector
-any more. Not retried, no other voice or model tried: that is MTG's decision (see `tools/learning-system/PLAN.md`,
-"Voice"). Never stand in with another voice.
-
-Once MTG has decided how his voice is produced: check out branch `jetup-video-work`, take the working pack in
-`jetup-work/voice-bank/explainers/ex3-pack/` (every cut line as FLAC, `lines.json`, `words.json`, and its README with
-the exact text), get the six lines in one go, cut them into `v_nhook.wav`, `v_nstall.wav`, `v_nmove.wav`,
-`v_nlimit.wav`, `v_ncalc.wav`, `v_nrecap.wav`, add them to `lines.json` and `words.json`, rebuild with `make_ex3.py`
-and `build_part.sh`, QA, and show MTG the preview. With the new lines the video opens on the spoken hook, "Here is the
-simple picture" and the two 5 Checks lines step aside for the new ones, and the length changes a little.
+`lines.json` and `words.json` here hold all 35 lines, so `make_ex3.py` builds version 2 (133.04 s, cover "2:13"): the
+spoken hook opens the video, "Here is the simple picture" and the two 5 Checks lines step aside for the new ones.
+QA: -14.0 LUFS, true peak -2.7 dBFS, full closing track from 81.7 s. To publish once MTG approves: new file name
+`jetup/media/jetup-explainer-amplify-24x-v2.mp4` (so caches refresh), new covers, `dur='2:13'`, `iso='PT2M13S'` and the
+"2:01" captions in the page builders become "2:13".
 
 ## On the site (10 Nov 2026)
 

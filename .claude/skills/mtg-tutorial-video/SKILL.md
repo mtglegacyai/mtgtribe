@@ -91,7 +91,7 @@ sign-up training. Do not invent a new ending, sound set or transition style per 
 
 ## 4. Voice
 
-Only MTG Master Voice V2 (`3931c505632149ceb2bbfecf2778c09c`, engine orca). Build from the voice bank first (branch
+Only MTG Master Voice V3 (`65f1b9ff3f1e418496de5715a801e7dd`, MTG's voice since 10 Nov 2026; no model or engine override, no break tags: one paragraph per pause). The older V2 is retired, but its banked lines stay usable. Build from the voice bank first (branch
 `jetup-video-work`, `jetup-work/voice-bank/`, `sentences.tsv`). Write the new lines for the part (In this video, step
 lines, recap, next video) as one script and generate them in **one** request; MTG's request for the part is the approval.
 Write "Jet Up" as two words. Cut at real silences, measure word times, save the new file to the voice bank with its

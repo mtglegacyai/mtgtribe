@@ -214,5 +214,53 @@
   "file": "v_n_slog.wav",
   "dur": 2.595,
   "text": "It pays to pay attention, and take action."
+ },
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 0.205,
+  "b": 6.09,
+  "dur": 5.885,
+  "text": "Fifty dollars that trades like twelve hundred. How? One word: Amplify. Let me show you."
+ },
+ "nstall": {
+  "file": "v_nstall.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 6.345,
+  "b": 11.565,
+  "dur": 5.22,
+  "text": "Think of a market stall. You pay for one stall, but Amplify lets you trade as if you had twenty-four."
+ },
+ "nmove": {
+  "file": "v_nmove.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 11.825,
+  "b": 17.094,
+  "dur": 5.269,
+  "text": "Same market, same prices. Every move is twenty-four times bigger, in both directions."
+ },
+ "nlimit": {
+  "file": "v_nlimit.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 17.255,
+  "b": 23.685,
+  "dur": 6.43,
+  "text": "And the loss limit is written down before you start: ten percent of the starting balance, or five percent with a community token."
+ },
+ "ncalc": {
+  "file": "v_ncalc.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 24.08,
+  "b": 31.2,
+  "dur": 7.12,
+  "text": "Want to try it with your own numbers? Open the Exposure Calculator on my page, type an amount, and see your trading size in one tap."
+ },
+ "nrecap": {
+  "file": "v_nrecap.wav",
+  "src": "explainers/ex3-ex4-v3",
+  "a": 31.31,
+  "b": 37.295,
+  "dur": 5.985,
+  "text": "So that's Amplify: a bigger trading size, not extra money. Start small, and learn how it moves."
  }
 }

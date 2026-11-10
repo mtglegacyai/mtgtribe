@@ -21,10 +21,10 @@ one tap."). HeyGen's connection had expired on 9 Nov 2026, so the first preview 
 - Facts checked against `tools/learning-system/jetup-facts.md` (70/30, fee only on profit, no management or join fee,
   Myfxbook +30.1% from 3 Nov 2024 to 4 Oct 2026).
 
-## Next step: add the two new lines (open on 9 Nov 2026)
+## Version 2: the two new lines in MTG's voice (10 Nov 2026, preview)
 
-HeyGen was reconnected on 9 Nov 2026, but the session that built this video still held the old login, so the speech call
-kept failing (nothing was charged). In a new session: check out branch `jetup-video-work`, take the working pack in
-`jetup-work/voice-bank/explainers/ex4-pack/` (every cut line as FLAC, `lines.json`, `words.json`, and its README with the
-exact speech request), record the two lines in one call, rebuild with `make_ex4.py` and `build_part.sh`, QA, show MTG the
-preview, then swap `jetup/media/jetup-explainer-the-70-30-split.mp4` (new file name, so caches refresh) once he approves.
+Recorded in **MTG Master Voice V3** (`65f1b9ff3f1e418496de5715a801e7dd`, MTG's voice from now on) in the same request as
+explainer #3's six lines (1 credit), banked on `jetup-video-work` (`explainers/ex3ex4v3.flac`, cut lines in `ex4-pack/`).
+`lines.json` and `words.json` here include `nhook` and `ncalc`, so `make_ex4.py` builds version 2 (2:16) with the spoken
+hook and calculator line. To publish once MTG approves: new file name `jetup/media/jetup-explainer-the-70-30-split-v2.mp4`,
+new covers, and the "2:09" in the page builders becomes the new length.

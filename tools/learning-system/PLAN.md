@@ -49,23 +49,11 @@ Voice bank: branch `jetup-video-work`, folder `jetup-work/voice-bank/` (saved 6 
 5 Checks and sign-up training narration, about 15 minutes, 262 sentences in `sentences.tsv`.
 Check the HeyGen credit balance before any speech request.
 
-**HeyGen voice status, 10 Nov 2026 (read before any speech request).** HeyGen's connector now speaks only with its new
-model ("heygen-voice-1"). One request with MTG Master Voice V2 (3931c505632149ceb2bbfecf2778c09c) was refused: "This
-voice is not compatible with heygen-voice-1. Create a new instant voice." (400, not retryable, nothing charged, 54
-credits left). HeyGen's documentation: instant voices made before the new model "must be cloned again before they can
-speak here"; for the closest match it suggests similarity "max" and expressiveness 0.5. The voice is still listed as
-active, and every banked line stays usable. Do not retry, do not pass a model, do not use another voice ("MTG Real
-Voice", "Musa Dumakude" and "Dr RaShon" are in the account but are not approved), and do not clone anything until MTG
-says which way he wants: (a) he makes the audio himself in the HeyGen app with MTG Master Voice V2, if the app still
-offers it, and sends the file; (b) a new clone of his own voice from a clean recording he supplies, tested against the
-bank on one short line before any video uses it, and approved by his ear; (c) recorded lines only.
-Waiting for new lines: explainer #3 (six lines, approved 10 Nov 2026) and explainer #4 (two lines, approved 9 Nov 2026).
-
-**MTG's decision, 10 Nov 2026: "Go with the same voice I've been on all videos".** The voice stays MTG Master Voice V2
-on every video. No new clone, no other voice. So until HeyGen's connector accepts that voice again, new lines can only
-come from audio MTG makes himself in the HeyGen app with that voice (the ready-to-paste text is in the voice bank,
-`explainers/ex3-pack/README.md` and `explainers/ex4-pack/README.md`), and videos are built from his recorded lines.
-Before any future speech request: one check that the connector accepts the voice is fine only if MTG asks for it.
+**MTG's voice since 10 Nov 2026: MTG Master Voice V3** (`65f1b9ff3f1e418496de5715a801e7dd`). HeyGen's connector refused V2 that morning
+("not compatible with heygen-voice-1"); MTG made V3 himself, listened to both and decided: "V3 sounds better, sounds
+exactly like me", V3 from now on. No model or engine override, no break tags (one paragraph per pause). Measured: 1 credit
+for 51 seconds of speech. V2's recordings in the voice bank stay usable. The first V3 lines (10 Nov 2026): explainer #3's
+six lines and explainer #4's two lines, one request, banked as `explainers/ex3ex4v3.flac`.
 
 ## Standard: the site tour (video 0)
 

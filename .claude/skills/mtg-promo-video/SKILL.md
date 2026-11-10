@@ -30,7 +30,7 @@ Never reuse old explainer lines as a promo: they explain but don't invite.
 
 ## 2. Voice, pronunciation and pace
 
-- Only MTG Master Voice V2 (see mtg-creative-standard). Reuse banked lines only when they fit the invitation; new lines
+- Only MTG Master Voice V3 (see mtg-creative-standard; V3 since 10 Nov 2026, V2 is retired). Reuse banked lines only when they fit the invitation; new lines
   cost credits, so state the estimate (about 2 credits per 500 characters) and generate the agreed script once.
 - **Pronunciation:** write names the way they must be said. "Jet Up" as two words (screens show JetUP), "MTG tribe dot com
   slash jet up zoom", "P M", numbers in words.

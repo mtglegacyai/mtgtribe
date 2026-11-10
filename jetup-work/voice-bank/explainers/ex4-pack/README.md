@@ -16,3 +16,8 @@ Save it here as `../ex4v1.mp3` (+ `_tagged.txt`, `_tts.json`), cut it at the 0.8
 `v_ncalc.wav`, add both to `lines.json` (keys `nhook`, `ncalc`) and their word times to `words.json` (the `words_for`
 helper in `lines_ex4.py`), then run `make_ex4.py`: it switches to the new hook and the spoken calculator line by itself.
 Font: `jetup-work/engine/fonts/Anton-Regular.ttf`. JetUP disc and logo: `tools/jetup-tutorial/` and `jetup/img/` on main.
+
+**10 Nov 2026: still not recorded.** HeyGen now refuses MTG Master Voice V2 through its connector ("This voice is not
+compatible with heygen-voice-1. Create a new instant voice."). See `../ex3-pack/README.md` and
+`tools/learning-system/PLAN.md`, "Voice". Do not retry or substitute until MTG has decided. Break tags are not supported
+for instant voices on the new model: send the two lines as two plain paragraphs.

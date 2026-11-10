@@ -48,3 +48,10 @@ Leave about 0.05 s before the first word and 0.15 s after the last one, and join
 
 Not covered yet (needs new lines): the partner plan (levels, lot commission, Infinity, Global Pool, rewards), the BIX Card,
 and the calculator walkthroughs.
+
+## HeyGen voice status, 10 Nov 2026
+
+HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
+voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there, so for now this
+bank is the only source of his approved voice: every line in it stays usable. Do not retry, substitute or clone until
+MTG has decided. Details: `explainers/ex3-pack/README.md`.

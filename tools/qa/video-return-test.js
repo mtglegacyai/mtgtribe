@@ -21,7 +21,7 @@ const CASES = [
     for (const withFix of [false, true]) {
       const ctx = await b.newContext(ctxOpt);
       await ctx.route(/coingecko|binance|googletagmanager|google-analytics|fonts\.g/, r => r.abort());
-      if (!withFix) await ctx.route(/video-return\.js/, r => r.abort());
+      if (!withFix) await ctx.route(/video-return\.js/, r => r.abort()); await ctx.route(/\.(html?)?(\?|$)|\/(\?|$)/, r => r.continue({ headers: { ...r.request().headers(), 'cache-control': 'no-cache' } }));
       for (const [name, url, sel, which] of CASES) {
         const p = await ctx.newPage();
         try {

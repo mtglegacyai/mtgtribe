@@ -258,7 +258,9 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
 1. MTG approves the research brief and the script (and picks the build). Before he sees them, do the craft passes in
    `references/research.md` section 6 (5 hooks, 3 titles, 2 thumbnail concepts, read aloud, visual plan, fact check).
 2. Storyboard the beats (mtg-creative-standard section 6).
-3. Voice: reuse recorded lines first, new lines only with MTG's go-ahead (HeyGen "MTG Master Voice V2").
+3. Voice: HeyGen "MTG Master Voice V3" only (voice ID `65f1b9ff3f1e418496de5715a801e7dd`, his approved voice since
+   10 November 2026, when HeyGen's new engine stopped speaking V2; no pause tags, pauses are added afterwards: see
+   `references/daily-video.md`, "MTG's voice"). New lines only with MTG's go-ahead.
 4. Build:
    - **3D:** the studio in `tools/video3d/` of the site's project. If it is not there yet, install it from this skill's
      `kit/video3d/` (see `references/3d-studio.md`). It makes word synced captions from the final audio, places MTG's

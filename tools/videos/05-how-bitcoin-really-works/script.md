@@ -1,5 +1,11 @@
 # Script v1: How Bitcoin Really Works (in 50 Seconds)
 
+**Made on 10 November 2026** as "How Bitcoin Really Works: 3 Things Nobody Explained": 1:05 in all (the teaching ends
+at 0:50, then the tribe invite). Recorded in "MTG Master Voice V3" (MTG approved it that day; HeyGen's new engine no
+longer speaks V2 and refuses pause tags, so the text was sent plain and the pauses were added afterwards). What was
+built and what it cost: `production.md`. The times in the headings below were the plan; the real ones come from the
+voice's word timings (`tools/video3d/public/videos/05/cues.json`).
+
 Status: prepared 9 November 2026, upgraded 10 November 2026 (share prompt, 3D touches, the new EndScreen), for MTG's
 next "let's create today's video". Research: `research.md`.
 Hook format: How ... Really Works (slot 5). Family: Bitcoin. Job: reach + tribe growth + shares. 9:16 Short, about

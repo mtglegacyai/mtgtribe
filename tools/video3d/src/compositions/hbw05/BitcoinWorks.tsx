@@ -13,7 +13,7 @@ import {LeoMoment} from '../../components/Leo';
 import {PhotoCard} from '../../components/PhotoCard';
 import {HintPill, UrlPill} from '../../components/Pills';
 import {BODY, DISPLAY, MONO} from '../../fonts';
-import {Block3D, Coin3D, Notepad3D} from '../../three/css3d';
+import {Block3D, Coin3D, Laptop3D, Notepad3D} from '../../three/css3d';
 import {Backdrop, Chip, clamp, Cue, Cues, ease, fadeOut, Flip, GOLD_TEXT, Panel, usePop, useT} from '../whatif01/ui';
 
 // Video 05 (10 Nov 2026, daily video): How Bitcoin Really Works. A 9:16 Short, the first with MTG's upgrades: Leo at every
@@ -227,7 +227,7 @@ export const BitcoinWorks: React.FC<{closingTrack: string | null}> = ({closingTr
 					);
 				})}
 				<div style={{position: 'absolute', top: 1032, width: '100%', textAlign: 'center', fontFamily: BODY, fontWeight: 700, fontSize: 26, color: COLORS.muted, opacity: ease(t, C.fourYears + 0.6)}}>new Bitcoin per block</div>
-				<div style={{position: 'absolute', top: 1078, width: '100%', textAlign: 'center', opacity: ease(t, C.max21 - 0.1, 0.2), transform: `scale(${interpolate(usePop(C.max21 - 0.1, 11), [0, 1], [1.5, 1])})`}}>
+				<div style={{position: 'absolute', top: 1078, width: '100%', textAlign: 'center', opacity: ease(t, C.max21 - 0.1, 0.2), transform: `scale(${interpolate(usePop(C.max21 - 0.1, 13), [0, 1], [1.2, 1])})`}}>
 					<span style={{fontFamily: DISPLAY, fontSize: 96, lineHeight: 1, ...GOLD_TEXT}}>21,000,000 MAX</span>
 					<div style={{fontFamily: BODY, fontWeight: 800, fontSize: 30, color: COLORS.champagne}}>the last one: around the year 2140</div>
 				</div>
@@ -275,7 +275,7 @@ export const BitcoinWorks: React.FC<{closingTrack: string | null}> = ({closingTr
 					<span style={{display: 'inline-block', transform: `rotate(-7deg) scale(${interpolate(usePop(C.forever - 0.05, 11), [0, 1], [1.7, 1])})`, border: `8px solid ${RED}`, color: '#ff8a4c', fontFamily: DISPLAY, fontSize: 124, lineHeight: 1.15, padding: '0 34px', borderRadius: 14, background: 'rgba(5,4,3,0.8)'}}>FOREVER</span>
 				</div>
 			</AbsoluteFill>
-			<LeoMoment m="mindblown" at={C.forever + 0.2} seconds={Math.min(2.0, C.tip - C.forever - 0.5)} style={{left: 60, top: 960, width: 380, height: 270}} focus="50% 4%" />
+			<LeoMoment m="mindblown" at={C.lose2 + 0.45} seconds={Math.min(2.0, C.tip - C.lose2 - 0.75)} style={{left: 60, top: 960, width: 380, height: 270}} focus="50% 4%" />
 
 			{/* MTG'S TIP: learn before you buy; never trust anyone who guarantees profits */}
 			<AbsoluteFill style={{opacity: tip, transform: push(t, C.tip, C.q)}}>
@@ -291,7 +291,7 @@ export const BitcoinWorks: React.FC<{closingTrack: string | null}> = ({closingTr
 				<div style={{position: 'absolute', top: 1140, width: '100%', textAlign: 'center', fontFamily: BODY, fontWeight: 700, fontSize: 28, color: COLORS.muted, opacity: ease(t, C.tip + 0.6)}}>Education only, not financial advice</div>
 			</AbsoluteFill>
 			<LeoMoment m="reassure" at={C.tip} style={{left: 60, top: 440, width: 410, height: 520}} accent="relief" focus="50% 10%" />
-			<LeoMoment m="point" at={C.never} seconds={Math.min(2.6, C.q - C.never - 0.4)} style={{left: 60, top: 440, width: 410, height: 520}} focus="50% 10%" sound={null} />
+			<LeoMoment m="point" at={C.tip + 1.35} seconds={Math.min(2.9, C.q - C.tip - 1.75)} style={{left: 60, top: 440, width: 410, height: 520}} focus="50% 10%" sound={null} />
 
 			{/* THE QUESTION, then the share prompt */}
 			<LeoMoment m="ask" at={C.q} seconds={Math.min(4.2, C.send - C.q - 0.1)} frame="tall" sound="chime" accent="none" />
@@ -310,7 +310,14 @@ export const BitcoinWorks: React.FC<{closingTrack: string | null}> = ({closingTr
 			<LeoMoment m="winkup" at={C.send + 0.15} seconds={Math.min(2.05, C.join - C.send - 0.45)} style={{left: 290, top: 540, width: 500, height: 640}} accent="warm" focus="50% 10%" />
 
 			{/* THE TRIBE, THE WEBSITE AND THE SIGN-OFF, then the theme's last line */}
-			<EndScreen t={t} cardAt={C.join - 0.15} photoAt={C.im - 0.1} sloganAt={C.slogan - 0.05} pills={['tutorials', 'explainers', 'streams', 'crypto', 'ai']} />
+			<EndScreen t={t} cardAt={C.join - 0.15} photoAt={C.im - 0.1} sloganAt={C.slogan - 0.05} pillsAt={C.weLearn - 0.35} pills={['crypto', 'ai', 'streams', 'tutorials', 'explainers']} />
+			{/* "let me get started now": Leo welcomes people in, and a laptop opens on the tribe's address */}
+			<LeoMoment m="welcome" at={C.site - 0.2} seconds={Math.min(2.1, C.weLearn - C.site - 0.6)} style={{left: 50, top: 650, width: 400, height: 520}} focus="50% 10%" sound={null} />
+			<div style={{position: 'absolute', left: 470, top: 690, opacity: win(t, C.site - 0.3, C.weLearn - 0.75, 0.3)}}>
+				<Laptop3D w={540} open={interpolate(t, [C.site - 0.1, C.site + 0.9], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)})}>
+					<UrlPill text="mtgtribe.com/group" size={32} />
+				</Laptop3D>
+			</div>
 
 			{/* sound, fitted to this story and soft (Leo's accents bring their own); the theme plays only its last line */}
 			<Cues
@@ -322,7 +329,7 @@ export const BitcoinWorks: React.FC<{closingTrack: string | null}> = ({closingTr
 					[C.three, 'pluck3', 0.35], [C.noCoins + 0.1, 'drop', 0.28], [C.keys - 0.1, 'key', 0.45], [C.lose1 + 0.15, 'melt', 0.35], [C.lose2 + 0.1, 'thud', 0.42], [C.forever - 0.05, 'thud', 0.5],
 					[C.tip - 0.1, 'glow', 0.32], [C.learn, 'scribble', 0.42], [C.never + 0.4, 'scribble', 0.42], [C.guarantees - 0.2, 'drop', 0.3],
 					[C.askBelow, 'pluck2', 0.3], [C.send, 'pluck3', 0.32],
-					[C.join - 0.15, 'glow', 0.35], [C.im - 0.1, 'air', 0.25],
+					[C.join - 0.15, 'glow', 0.35], [C.site - 0.1, 'laptop', 0.42], [C.weLearn - 0.35, 'pluck1', 0.28], [C.im - 0.1, 'air', 0.25],
 				]}
 			/>
 			<Html5Audio src={staticFile('videos/05/voice/s01.wav')} />
@@ -338,7 +345,7 @@ export const Cover05: React.FC = () => (
 	<AbsoluteFill style={{background: COLORS.bg}}>
 		<AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 40%, #2b1e0c 0%, ${COLORS.bgLift} 45%, ${COLORS.bg} 85%)`}} />
 		<div style={{position: 'absolute', top: 270, width: '100%', textAlign: 'center'}}>
-			<Chip size={46}>IN 50 SECONDS</Chip>
+			<Chip size={46}>3 THINGS TO KNOW</Chip>
 		</div>
 		<div style={{position: 'absolute', top: 372, width: '100%', textAlign: 'center', fontFamily: DISPLAY, fontSize: 150, lineHeight: 1.0, color: '#fff', textShadow: '0 8px 30px rgba(0,0,0,0.9)'}}>
 			HOW BITCOIN<br /><span style={{...GOLD_TEXT, textShadow: 'none', filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.8))'}}>REALLY WORKS</span>
@@ -351,7 +358,7 @@ export const Cover05: React.FC = () => (
 		</div>
 		<div style={{position: 'absolute', top: 1262, width: '100%', textAlign: 'center'}}>
 			<div style={{fontFamily: DISPLAY, fontSize: 116, lineHeight: 1, ...GOLD_TEXT}}>21,000,000 MAX</div>
-			<div style={{fontFamily: BODY, fontWeight: 800, fontSize: 42, color: '#fff', marginTop: 8}}>3 things nobody explained to you</div>
+			<div style={{fontFamily: BODY, fontWeight: 800, fontSize: 42, color: '#fff', marginTop: 8}}>and how people lose it all</div>
 		</div>
 		<div style={{position: 'absolute', top: 1470, left: 80, right: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 36}}>
 			<PhotoCard size={180} />

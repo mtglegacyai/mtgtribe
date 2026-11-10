@@ -77,7 +77,7 @@ graphics card, the default (`angle`) is much faster.
 
 ## Make a new video, step by step
 
-1. **Voice.** Put the final narration in `public/voice/` (MTG's approved HeyGen voice "MTG Master Voice V2" only, or
+1. **Voice.** Put the final narration in `public/voice/` (MTG's approved HeyGen voice "MTG Master Voice V3" only, or
    lines he already recorded). Never a different voice.
 2. **Captions from the real audio:**
    ```bash

@@ -20,7 +20,7 @@ guide it mentions today. Follow the dashboard order: 1 Bellver Affiliates, 2 Jet
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
 Planning note: today the only stream MTG names out loud is ALTRUVA. Naming the others in his voice needs new lines in
-his approved HeyGen voice "MTG Master Voice V2", which costs HeyGen credits:
+his approved HeyGen voice "MTG Master Voice V3" (see the voice rule below), which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
@@ -45,6 +45,26 @@ formal photo** (navy blazer, white t-shirt, office view: `tools/video3d/public/p
 video 05 on; finished videos keep their photo. Reference code: `PhotoCard` in
 `tools/video3d/src/components/PhotoCard.tsx`. Python pipelines that use `brand/photo_card.py` (brand-assets branch)
 need the same circle before their next render.
+
+## Standing rule: MTG's voice is "MTG Master Voice V3" (MTG, 10 November 2026)
+
+**The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd`.** Never another voice.
+HeyGen's new speech engine (HeyGen Voice 1, in use since 10 November 2026) refuses "MTG Master Voice V2"
+(`3931c505632149ceb2bbfecf2778c09c`): instant voices made before it "must be cloned again". With MTG's approval that day
+("V3 approved", after hearing a test next to V2), V3 was cloned from about 3 minutes of his own V2 narration (videos 01
+to 04). Facts of the new engine, measured on 10 November 2026:
+- `<break>` tags are refused on instant voices (error 400). Send plain text, then add the pauses afterwards, for free:
+  `tools/video3d/scripts/voice_timing.py` stretches the gap wherever the script file has a `//` line (`// 1.0` for a
+  longer beat) and writes the voice file, words, captions and timeline.
+- Ask for timestamps (`withTimestamps: true`): the result has a time for every character and word. Omit the model and
+  the output format (the file is a 44.1 kHz WAV; the tools resample to 48 kHz).
+- Scenes are timed by named cues from the words (`scripts/make_cues.py` with an `anchors.json`), never guessed seconds.
+- Cost: 1 credit for a 7 second line and 1 credit for a 61 second script (982 characters). Check the balance before
+  and after every call and report it.
+- V3 speaks a little slower than V2 (about 2.8 words a second; V2 about 3.1): about 150 words for 60 seconds.
+- V2's old voice-bank lines and new V3 lines sound slightly different: never mix them inside one video without telling
+  MTG. A failed call (error 400) costs nothing, but ask MTG before any retry.
+Wherever an older note or skill says "MTG Master Voice V2", read V3.
 
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 

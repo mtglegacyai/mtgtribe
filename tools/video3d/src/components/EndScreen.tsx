@@ -17,9 +17,11 @@ import {DEFAULT_PILLS, HintPill, SITE_PILLS, SitePillId, UrlPill} from './Pills'
  *
  * Everything stays above y 1230, clear of the captions. The theme's last line plays over step 3 (ClosingTrack).
  */
-export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sloganAt: number; pills?: SitePillId[]}> = ({t, cardAt, photoAt, sloganAt, pills = DEFAULT_PILLS}) => {
+export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sloganAt: number; pills?: SitePillId[]; pillsAt?: number}> = ({t, cardAt, photoAt, sloganAt, pills = DEFAULT_PILLS, pillsAt}) => {
 	const list = pills.slice(0, 7);
-	const step = Math.min(0.45, Math.max(0.22, (photoAt - cardAt - 1.0) / Math.max(1, list.length)));
+	// pillsAt: when the pills start (default: right after the tribe card); set it to the words that name them
+	const firstPill = pillsAt ?? cardAt + 0.9;
+	const step = Math.min(0.55, Math.max(0.22, (photoAt - firstPill - 0.4) / Math.max(1, list.length)));
 	const size = list.length <= 4 ? 42 : list.length === 5 ? 40 : list.length === 6 ? 36 : 34;
 	const top = fadeOut(t, photoAt - 0.2, 0.3);
 	return (
@@ -45,11 +47,11 @@ export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sl
 
 			{/* 1 and 2: what people find on mtgtribe.com, as pills (y 610 to 1230, clear of the captions) */}
 			<div style={{position: 'absolute', top: 610, left: 40, right: 40, opacity: fadeOut(t, sloganAt - 0.15, 0.3)}}>
-				<div style={{textAlign: 'center', fontFamily: MONO, fontWeight: 700, fontSize: 28, letterSpacing: 3, color: COLORS.goldHi, opacity: ease(t, cardAt + 0.7), marginBottom: 16}}>ON MTGTRIBE.COM YOU'LL FIND</div>
+				<div style={{textAlign: 'center', fontFamily: MONO, fontWeight: 700, fontSize: 28, letterSpacing: 3, color: COLORS.goldHi, opacity: ease(t, firstPill - 0.2), marginBottom: 16}}>ON MTGTRIBE.COM YOU'LL FIND</div>
 				<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `${size > 36 ? 16 : 12}px 14px`}}>
 					{list.map((id, i) => {
 						const [icon, text] = SITE_PILLS[id];
-						return <HintPill key={id} icon={icon} text={text} size={size} t={t} at={cardAt + 0.9 + i * step} />;
+						return <HintPill key={id} icon={icon} text={text} size={size} t={t} at={firstPill + i * step} />;
 					})}
 				</div>
 			</div>

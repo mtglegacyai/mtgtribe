@@ -11,7 +11,7 @@ topic. Facts marked "to verify" are checked during that video's research, never 
 
 | # | Hook format (slot) | Family | Working title | Opening line (one person, first second) | Notes |
 |---|---|---|---|---|---|
-| 05 | How ... Really Works (5) | Bitcoin | How Bitcoin Really Works (in 50 Seconds) | "If Bitcoin still confuses you, give me fifty seconds." | Ready: research and script in `05-how-bitcoin-really-works/` |
+| 05 | How ... Really Works (5) | Bitcoin | How Bitcoin Really Works: 3 Things Nobody Explained | "If Bitcoin still confuses you, give me fifty seconds." | Made 10 Nov 2026 (`05-how-bitcoin-really-works/`) |
 | 06 | The Hidden Cost of (6) | AI + trading + scams | The Hidden Cost of "AI Trading Bots" That Promise Daily Profits | "Someone sent you an AI bot that makes money while you sleep? Watch this first." | Regulator warnings to verify (for example the US CFTC advisory on AI trading bot scams) |
 | 07 | Before You ... (7) | Employees + side hustles | Before You Quit Your Job for a Side Hustle, Do These 3 Things | "Thinking of quitting your job to make money online? Don't. Not yet." | Talks to full-time employees: keep the salary, build the second stream on the side; no income claims |
 | 08 | The Story of ... (8) | Bitcoin history | The Story of the Two Pizzas That Cost 10,000 Bitcoin | "In 2010, a man paid ten thousand Bitcoin for two pizzas." | Bitcoin Pizza Day (22 May 2010) to verify; lesson: learn early, no "you missed out" pressure |

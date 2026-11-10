@@ -126,8 +126,9 @@ action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!
 1. Research brief (`scripts/yt_research.py`, at least five comparable videos with real numbers, the gap, "better than"
    points, verified facts with sources).
 2. Script in MTG's voice, compliance scan (`scripts/compliance_scan.py`) and human check.
-3. Voice: reuse the voice bank first. Otherwise one HeyGen speech call for the finished script, in "MTG Master Voice V2"
-   only. Credits follow MTG's standing approval below; anything above it (or any Leo clip) waits for his yes.
+3. Voice: one HeyGen speech call for the finished script, in "MTG Master Voice V3" only (voice ID
+   `65f1b9ff3f1e418496de5715a801e7dd`; see "MTG's voice" below). Credits follow MTG's standing approval below; anything
+   above it (or any Leo clip) waits for his yes.
 4. Leo: reuse his existing clips first (video 01: V2 asks a question, V3 amazed, V5 thinking, V6 laughs in disbelief,
    V7 makes a point, L2 open paw); new clips only with MTG's go-ahead.
 5. Build in the house format (video 01 as posted): gold-and-black 2.5D scenes, 3D card entrances, slow push-in, Leo in
@@ -137,6 +138,25 @@ action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!
 6. QC frames, render, loudness -14 LUFS, checks, cover embedded, posting pack (`references/posting-pack.md`).
 7. Send MTG the preview, the cover and the posting texts. He posts it himself. Never publish.
 8. Add the video to the log.
+
+## MTG's voice: "MTG Master Voice V3" (since 10 November 2026)
+
+The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd`.
+HeyGen's new speech engine (HeyGen Voice 1, in use since 10 November 2026) refuses "MTG Master Voice V2"
+(`3931c505632149ceb2bbfecf2778c09c`): instant voices made before it "must be cloned again". With MTG's approval that day
+("V3 approved", after hearing a test next to V2), V3 was cloned from about 3 minutes of his own V2 narration (videos 01
+to 04). Facts of the new engine, measured on 10 November 2026:
+- `<break>` tags are refused on instant voices (error 400). Send plain text, then add the pauses afterwards, for free:
+  `tools/video3d/scripts/voice_timing.py` stretches the gap wherever the script file has a `//` line (`// 1.0` for a
+  longer beat) and writes the voice file, words, captions and timeline.
+- Ask for timestamps (`withTimestamps: true`): the result has a time for every character and word. Omit the model and
+  the output format (the file is a 44.1 kHz WAV; the tools resample to 48 kHz).
+- Scenes are timed by named cues from the words (`scripts/make_cues.py` with an `anchors.json`), never guessed seconds.
+- Cost: 1 credit for a 7 second line and 1 credit for a 61 second script (982 characters). Check the balance before
+  and after every call and report it.
+- V3 speaks a little slower than V2 (about 2.8 words a second; V2 about 3.1): about 150 words for 60 seconds.
+- V2's old voice-bank lines and new V3 lines sound slightly different: never mix them inside one video without telling
+  MTG. A failed call (error 400) costs nothing, but ask MTG before any retry.
 
 ## Standing approval for credits
 

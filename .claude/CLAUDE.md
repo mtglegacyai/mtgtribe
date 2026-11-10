@@ -32,6 +32,10 @@ publish without approval.
 - **Horizontal (16:9) videos** play inside a laptop frame, like the tutorials and explainers on bellveraffiliates.com.
 - **When a video plays to the end, the player closes itself** (leaves full screen first) and goes back to its cover,
   like the Bellver players. Never make the viewer press close after watching the whole video.
+- **And the page goes back to exactly where the visitor pressed play** (MTG, 10 Nov 2026: "as soon as the video finishes
+  playing, the visitor must be automatically scrolled to the exact section where the video is at", on every website,
+  new ones too). Every page with a video loads `/assets/video-return.js` (one line, no setup: it works with pop-up,
+  inline and playlist players). Copy that file to any new site. Check with `tools/qa/video-return-test.js`.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 

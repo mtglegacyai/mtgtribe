@@ -146,7 +146,7 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">Where the money comes from</p><h2 class="h2 rv" style="--d:1" id="split-h">From every profit, <span class="grad">70% is yours.</span></h2>
    <p class="lede rv" style="--d:2">When the strategy makes a profit, you keep 70%. The other 30% is the performance fee: it pays the broker, the strategy provider and the partner program. Drag the slider and watch it split.</p></div>
-  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('split', 'Where every profit goes, in 2:09')}</div>
+  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('split', 'Where every profit goes, in 2:16')}</div>
   <div class="card pad split rv">
    <div>
     <label for="split-range" class="small" style="font-weight:800">If Sonic AI makes a profit of</label>
@@ -170,7 +170,7 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">The money plan in the training</p><h2 class="h2 rv" style="--d:1" id="plan-h">$155 in. <span class="grad">$6,000 of exposure.</span></h2>
    <p class="lede rv" style="--d:2">Here's what happens to the deposit in the sign-up training, line by line. And here's the twist most people miss: exposure is the size you trade with, not money you own.</p></div>
-  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('amplify', 'Amplify 24x made simple, in 2:01')}</div>
+  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('amplify', 'Amplify 24x made simple, in 2:13')}</div>
   <div class="grid2" style="align-items:start">
    <div class="card ticket rv" data-in>
     <div class="tk-head"><span>Order ticket</span><b>Sonic AI · Amplify 24x</b></div>

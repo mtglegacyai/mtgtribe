@@ -325,7 +325,8 @@ def overlays(here):
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <button type="button" class="totop" id="totop" aria-label="Back to top"><svg class="tr" viewBox="0 0 52 52" aria-hidden="true"><circle class="bg" cx="26" cy="26" r="24"/><circle class="fg" cx="26" cy="26" r="24"/></svg>{ic('arrow-up')}</button>
 <script>window.ALT={json.dumps(dict(ref=REF, login=LOGIN, join=L('dashboard/join/', here), t3=L('dashboard/tutorials/#t3', here), tut=L('dashboard/tutorials/', here)))};window.ALTV={video_data(here)};</script>
-<script src="{A('assets/altruva.js', here)}" defer></script>'''
+<script src="{A('assets/altruva.js', here)}" defer></script>
+<script src="/assets/video-return.js?v=1" defer></script>'''
 
 
 DISCLAIMER = ('<b>Independent guide.</b> This is not an official ALTRUVA website. MTG is an ALTRUVA member and made this guide '

@@ -53,7 +53,7 @@ def build_exposure():
   <p class="small" style="margin:0">Illustration, not a forecast. It leaves out spreads, swaps, fees and how CopyX sizes each trade. Education only, not financial advice.</p>
  </div>
 </div></section>
-<section class="sec tight" style="padding-bottom:0"><div class="narrow rv"><p class="eyebrow" style="margin-bottom:14px">Watch it explained</p>{laptop('amplify', 'Amplify 24x, explained by MTG (2:01)')}</div></section>
+<section class="sec tight" style="padding-bottom:0"><div class="narrow rv"><p class="eyebrow" style="margin-bottom:14px">Watch it explained</p>{laptop('amplify', 'Amplify 24x, explained by MTG (2:13)')}</div></section>
 <section class="sec tight"><div class="narrow"><div class="card pad prose rv">
  <h2>How to read it</h2>
  <p><b>Exposure</b> is the size you trade with. With the training example, $250 × 24 = $6,000. A 1% move on $6,000 is $60, which is 40% of your own $150.</p>
@@ -98,7 +98,7 @@ def build_split():
   <p class="small" style="margin:0">Illustration, not a forecast. The +30.1% is Sonic AI's published Myfxbook result from 3 Nov 2024 to 4 Oct 2026, gross. Results change over time. It leaves out network and exchange fees. Education only, not financial advice.</p>
  </div>
 </div></section>
-<section class="sec tight" style="padding-bottom:0"><div class="narrow rv"><p class="eyebrow" style="margin-bottom:14px">Watch it explained</p>{laptop('split', 'The 70/30 split, explained by MTG (2:09)')}</div></section>
+<section class="sec tight" style="padding-bottom:0"><div class="narrow rv"><p class="eyebrow" style="margin-bottom:14px">Watch it explained</p>{laptop('split', 'The 70/30 split, explained by MTG (2:16)')}</div></section>
 <section class="sec tight"><div class="narrow"><div class="card pad prose rv">
  <h2>Where the 30% goes</h2>
  <p>The 30% performance fee pays the broker, the strategy provider and the partner program, and it is taken from profits only. JetUP's one-pager says the Profit Share to partners comes out of this 30%, never from client deposits.</p>
@@ -121,8 +121,8 @@ def build_videos():
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Start here</p>{laptop('simple', 'JetUP and TAG Markets: the simple picture (1:39)')}<p class="small center" style="margin:8px 0 0">Who does what, where your money sits, the 70/30 split and how to start, in 99 seconds.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The minibus taxi</p>{laptop('who', 'Five names, one simple picture (2:08)')}<p class="small center" style="margin:8px 0 0">JetUP, TAG Markets, CopyX, Sonic AI and you, as one minibus taxi.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The $100 promo</p>{laptop('promo', 'The $100 Fast Start Promo (2:18)')}<p class="small center" style="margin:8px 0 0">The money plan, how to claim it in 4 steps, and the promo rules.</p></div>
- <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The 70/30 split</p>{laptop('split', 'The 70/30 split (2:09)')}<p class="small center" style="margin:8px 0 0">Where every profit goes, no fee on a losing trade, and the calculator, tap by tap.</p></div>
- <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Amplify 24x</p>{laptop('amplify', 'Amplify 24x made simple (2:01)')}<p class="small center" style="margin:8px 0 0">One market stall that trades the size of 24, the $155 money plan, and the calculator, tap by tap.</p></div>
+ <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The 70/30 split</p>{laptop('split', 'The 70/30 split (2:16)')}<p class="small center" style="margin:8px 0 0">Where every profit goes, no fee on a losing trade, and the calculator, tap by tap.</p></div>
+ <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Amplify 24x</p>{laptop('amplify', 'Amplify 24x made simple (2:13)')}<p class="small center" style="margin:8px 0 0">One market stall that trades the size of 24, the $155 money plan, and the calculator, tap by tap.</p></div>
  <div class="grid2" style="align-items:start">
   <div class="rv"><p class="eyebrow" style="margin-bottom:14px">1 · Watch first</p>{laptop('5checks', 'JetUP 5 Checks, by MTG (5:25)')}<p class="small center" style="margin:8px 0 0">Lost money before? Five things to check before you try again.</p></div>
   <div class="rv" style="--d:1"><p class="eyebrow" style="margin-bottom:14px">2 · Then do</p>{laptop('training', 'Sign-up training, by MTG (9:09)')}<p class="small center" style="margin:8px 0 0">Every tap: sign up, KYC, deposit, Sonic AI and the $100 promo.</p></div>
@@ -207,7 +207,7 @@ FAQ = [
  ]),
  ('Risk', [
   ('Is there risk with JetUP and TAG Markets?', "Yes, like any trading. Prices move both ways, and 24x Amplify makes every move bigger. That's why the plan starts small ($50 into Sonic AI), and a built-in loss limit closes the account at 10% of the starting balance (5% with a community token), so you know the line before you start."),
-  ('What is Amplify 24x?', 'Amplify lets the account trade at 24 times its size: $50 trades like $1,200. That is exposure, the size you trade with, not money you own. A drop of about 4.2% on the trading balance is the same size as the whole account. <a href="/jetup/how-it-works/#amplify">Watch the 2:01 explainer</a>.'),
+  ('What is Amplify 24x?', 'Amplify lets the account trade at 24 times its size: $50 trades like $1,200. That is exposure, the size you trade with, not money you own. A drop of about 4.2% on the trading balance is the same size as the whole account. <a href="/jetup/how-it-works/#amplify">Watch the 2:13 explainer</a>.'),
   ('When is an account closed (liquidated)?', "It's written on TAG Markets' screen: the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start."),
   ('Is JetUP a scam?', "That's the right question to ask, and you can answer it yourself. Your account is in your own name at a licensed broker, the strategy's results are public on Myfxbook, and the rules are written down. The 5 checks show you exactly where to look."),
  ]),

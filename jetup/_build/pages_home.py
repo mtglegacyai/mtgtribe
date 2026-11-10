@@ -170,6 +170,7 @@ def build_home():
  <div class="wrap">
   <div class="shead"><p class="eyebrow rv">The money plan in the training</p><h2 class="h2 rv" style="--d:1" id="plan-h">$155 in. <span class="grad">$6,000 of exposure.</span></h2>
    <p class="lede rv" style="--d:2">Here's what happens to the deposit in the sign-up training, line by line. And here's the twist most people miss: exposure is the size you trade with, not money you own.</p></div>
+  <div class="rv" style="max-width:980px;margin:0 auto 28px">{laptop('amplify', 'Amplify 24x made simple, in 2:01')}</div>
   <div class="grid2" style="align-items:start">
    <div class="card ticket rv" data-in>
     <div class="tk-head"><span>Order ticket</span><b>Sonic AI · Amplify 24x</b></div>
@@ -281,7 +282,7 @@ def build_home():
 {tribe_cta()}
 '''
     crumbs_l = [('MTG TRIBE', '/'), ('Dashboard', '/dashboard/'), ('JetUP and TAG Markets', None)]
-    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who'), ld_video('promo'), ld_video('split')]
+    ld = [ld_faq(HOME_FAQ, SITE + path), ld_video('5checks'), ld_video('training'), ld_video('sonic'), ld_video('simple'), ld_video('who'), ld_video('promo'), ld_video('split'), ld_video('amplify')]
     ld[1]['@id'] = SITE + path + '#video-5-checks'
     ld[2]['@id'] = SITE + path + '#video-training'
     return page(path, 'JetUP and TAG Markets Guide: Check First, Then Start | MTG',

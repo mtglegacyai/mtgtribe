@@ -354,3 +354,5 @@ body.dash{background:#050403}
 @media (max-width:900px){.sstack{margin-left:0}}
 @media (max-width:640px){.sstack{--pw:96px;--sp:34px;gap:12px;width:100%}.slabels a{font-size:13px;white-space:normal}}
 @media (prefers-reduced-motion:reduce){.sweep,.sstack .pl.top{animation:none}}
+/* jumps to a stream (the stack, the side menu, "See stream #1") land below the sticky top bar */
+.dmain [id]{scroll-margin-top:84px}

@@ -1,6 +1,7 @@
 # JetUP explainer #3: "Amplify 24x made simple" (the market stall), 9 Nov 2026
 
-MTG asked for the next explainer on 9 Nov 2026: #3 from `tools/learning-system/PLAN.md`. The first preview (2:01) is built
+MTG asked for the next explainer on 9 Nov 2026: #3 from `tools/learning-system/PLAN.md`. **Live since 10 Nov 2026** (MTG:
+"Explainer must go live") as `jetup/media/jetup-explainer-amplify-24x.mp4`. This first version (2:01) is built
 from his banked voice only (0 HeyGen credits): the money plan and Amplify lines from the sign-up training take `t1.mp3`,
 "Bigger exposure means bigger swings, up and down" and "Start small" from the 5 Checks take `o2.mp3`, the greeting and
 close from explainer #1, and save, share, "We learn best when we teach others" and the slogan from explainer #2.
@@ -62,9 +63,10 @@ the exact text), get the six lines in one go, cut them into `v_nhook.wav`, `v_ns
 and `build_part.sh`, QA, and show MTG the preview. With the new lines the video opens on the spoken hook, "Here is the
 simple picture" and the two 5 Checks lines step aside for the new ones, and the length changes a little.
 
-## When MTG approves it for the site
+## On the site (10 Nov 2026)
 
-File name: `jetup/media/jetup-explainer-amplify-24x.mp4` (cover `jetup/img/` as the other explainers). Places: home
-"$155 in. $6,000 of exposure.", How It Works "Amplify 24x", the Exposure Calculator page, check 4 on the 5 Checks page,
-the Videos page and the downloads list. Then VideoObject data, `python3 tools/og/check_og.py`, `tools/qa/hscroll.js`,
-the full tests, and `PLAN.md`.
+`jetup/media/jetup-explainer-amplify-24x.mp4`, covers `jetup/img/cover-explainer-amplify-24x.jpg` and `.webp`, video key
+`amplify` in `jetup/_build/layout.py`. Places: home "$155 in. $6,000 of exposure.", How It Works "Amplify 24x", check 4
+on the 5 Checks page, the Exposure Calculator page ("Watch it explained"), the Videos page, and a link from the FAQ
+answer "What is Amplify 24x?". VideoObject data on each of the five pages. When the six lines are added, publish the
+new file under a new name (for example `-v2`), so caches refresh.

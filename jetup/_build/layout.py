@@ -23,8 +23,8 @@ JOIN_NOTE = ("Join JetUP opens JetUP's sign-up page with MTG's Partner link, so 
              "Invited by someone else? Use their Partner link instead, so you join their team.")
 YT = 'https://www.youtube.com/@mtgtribe'
 TT = 'https://www.tiktok.com/@joinmtgtribe'
-TG = 'https://t.me/mtgtribez'
-FB = 'https://www.facebook.com/Musa.TheMTG'
+TG = 'https://t.me/mtgtribe'
+FB = 'https://www.facebook.com/mtgtribe'
 
 def ver(path):
     with open(os.path.join(ROOT, path.lstrip('/')), 'rb') as f:
@@ -260,6 +260,9 @@ VIDEOS = {
  'split': dict(src='/jetup/media/jetup-explainer-the-70-30-split.mp4', poster='/jetup/img/cover-explainer-70-30-split.webp', jpg='/jetup/img/cover-explainer-70-30-split.jpg', dur='2:09', iso='PT2M9S', orient='h',
    title='The 70/30 split: where every profit goes',
    desc="MTG's 2:09 explainer: when Sonic AI makes a profit, 70% is yours and the 30% performance fee pays the broker, the strategy provider and the partner program. $10 becomes $7 for you, there is no fee on a losing trade, no management or join fee, and you can try your own numbers in the Profit Split Calculator."),
+ 'amplify': dict(src='/jetup/media/jetup-explainer-amplify-24x.mp4', poster='/jetup/img/cover-explainer-amplify-24x.webp', jpg='/jetup/img/cover-explainer-amplify-24x.jpg', dur='2:01', iso='PT2M1S', orient='h',
+   title='Amplify 24x made simple: exposure is the size you trade with',
+   desc="MTG's 2:01 explainer: Amplify lets an account trade at 24 times its size, like paying for one market stall and trading the size of 24. $50 becomes $1,200 and $200 becomes $4,800, which is $6,000 of exposure. Exposure is the size you trade with, not money you own, the loss limit is written down, and you can try your own numbers in the Exposure Calculator."),
  '5checks': dict(src='/jetup/media/jetup-5-checks-mtg-v5-3.mp4', poster='/jetup/img/cover-5-checks-v5-3.webp', jpg='/jetup/img/cover-5-checks-v5-3.jpg', dur='5:25', iso='PT5M25S', orient='h',
    title='JetUP 5 Checks: lost money before? Check these 5 things before you try again',
    desc="MTG's honest explainer: who holds your money, who regulates TAG Markets, whether Sonic AI's results are real, what can go wrong with 24x Amplify, and how to get out."),

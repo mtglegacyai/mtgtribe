@@ -114,5 +114,13 @@ to be asked.
 
 HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1. Create a new instant
 voice."; nothing charged). Voices made before HeyGen's new model have to be cloned again to speak there. Do not retry,
-do not pass a model, do not use another voice, do not clone anything: MTG decides. His banked lines stay usable.
-Details and his options: `tools/learning-system/PLAN.md`, "Voice". Remove this note once he has decided and it works.
+do not pass a model, do not use another voice, do not clone anything. His banked lines stay usable.
+**MTG's decision (10 Nov 2026): "Go with the same voice I've been on all videos".** The voice stays MTG Master Voice V2:
+no new clone, no other voice. Until HeyGen accepts that voice again, new lines come only from audio MTG makes himself in
+the HeyGen app with it; otherwise build from his recorded lines. Details: `tools/learning-system/PLAN.md`, "Voice".
+
+## MTG's social addresses (confirmed by MTG, 10 Nov 2026)
+
+TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp mtgtribe.com/group, **Telegram t.me/mtgtribe (@mtgtribe)**,
+**Facebook facebook.com/mtgtribe**: the same on every website page and on every video end card. The older
+t.me/mtgtribez and facebook.com/Musa.TheMTG are no longer used anywhere.

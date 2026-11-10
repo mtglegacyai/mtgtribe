@@ -50,5 +50,6 @@ endings already are the reference.
 ## End card addresses (confirmed by MTG, 10 Nov 2026)
 
 The end card shows TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp mtgtribe.com/group, **Telegram @mtgtribe** and
-**Facebook facebook.com/mtgtribe**. MTG was asked on 10 Nov 2026 because the website links to t.me/mtgtribez and
-facebook.com/Musa.TheMTG, and he confirmed the end card's two. Leave `PLAT` in `mtg_ending.py` as it is.
+**Facebook facebook.com/mtgtribe**. MTG was asked on 10 Nov 2026 because the website linked to two other addresses
+(a Telegram channel ending in z and a personal Facebook profile). He confirmed the end card's two, and the website was
+changed to match the same day. Leave `PLAT` in `mtg_ending.py` as it is.

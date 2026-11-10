@@ -50,6 +50,7 @@ def build_checks():
  <li><b>A built-in loss limit:</b> the account closes if the trader's loss passes 10% of the starting balance (5% with a community token), so you know the line before you start.</li>
  <li><b>Broker insolvency cover:</b> $1,000,000 in total, for all clients together, if the broker itself ever went bust. It is not trading insurance.</li>
 </ul>
+<div style="margin:16px 0 18px">{laptop('amplify', 'Watch it: Amplify 24x made simple (2:01)')}</div>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}Try the Exposure Calculator</a></p>
 <div data-ticks="checks">{tick(4)}</div>''', 'i-candle2', 'lime')
     c5 = section('check-5', 'Check 5 of 5', 'Can I get out?', f'''
@@ -94,7 +95,7 @@ def build_checks():
            ('How big are the moves with 24x Amplify?', '24x Amplify makes every move bigger, in both directions. A built-in loss limit closes the account at a 10% loss of the starting balance (5% with a community token), and the broker\'s insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
                 'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA), Sonic AI results on Myfxbook, 24x Amplify explained and withdrawals.',
-                main, crumbs_l, [ld_video('5checks'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
+                main, crumbs_l, [ld_video('5checks'), ld_video('amplify'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'
@@ -127,6 +128,7 @@ def build_how():
 <p>JetUP's own one-pager says the Lot Commission and the Global Pool are paid from broker margin, and the Profit Share comes from the 30% share of strategy profit, never from client deposits.</p>
 <p><a class="btn btn-lime btn-sm" href="/jetup/tools/profit-split-calculator/">{icon('i-split')}Open the Profit Split Calculator</a></p>''', 'i-split')}
  {section('amplify', 'Amplify 24x', 'Exposure, not money you own', f'''
+<div style="margin:4px 0 18px">{laptop('amplify', 'Amplify 24x, explained by MTG (2:01)')}</div>
 <p>Amplify lets an account trade at 24 times its size. In the training: <b>$50 × 24 = $1,200</b>, and the $200 promo account <b>× 24 = $4,800</b>. Together that's <b>$6,000 of exposure</b>. Exposure is the size you trade with, not money you own.</p>
 <p>With 24x, a price move of about 4.2% (100% ÷ 24) on the trading balance is the same size as the whole account. A 1% move on $6,000 is $60.</p>
 <div class="call info">{icon('i-info2')}<p><b>The built-in loss limit, from TAG Markets' screen:</b> the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start.</p></div>
@@ -141,7 +143,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('amplify'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'

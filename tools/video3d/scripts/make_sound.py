@@ -471,6 +471,28 @@ def laptop():
     return lowpass(x, 1600)
 
 
+def ping():
+    """A network waking up: three soft, round pings that ripple outward (computers lighting up around the world)."""
+    d = 1.8
+    x = np.zeros(int(d * SR))
+    for at, f, a in ((0.0, 660.0, 1.0), (0.22, 784.0, 0.75), (0.44, 880.0, 0.55), (0.7, 988.0, 0.35)):
+        tt = t(1.0)
+        n = np.sin(2 * np.pi * f * tt) * env(len(tt), 0.02, 0.4, curve=1.0)
+        i = int(at * SR)
+        x[i:i + len(n)] += n[:len(x) - i] * a
+    return lowpass(x, 1800)
+
+
+def halve():
+    """The reward halves: one soft note that steps down an octave, like a stair."""
+    d = 0.9
+    tt = t(d)
+    step = np.where(tt < 0.16, 392.0, 196.0)
+    ph = 2 * np.pi * np.cumsum(step) / SR
+    x = (np.sin(ph) + 0.25 * np.sin(2 * ph)) * env(len(tt), 0.02, 0.45, hold=0.12, curve=0.9)
+    return lowpass(x, 1400)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -488,6 +510,8 @@ PALETTE = {
     'vault': (vault, 0.3), 'murmur': (murmur, 0.25),
     # made for Leo's moments (10 November 2026): aha, relief, taking notes, getting started
     'aha': (aha, 0.35), 'exhale': (exhale, 0.3), 'scribble': (scribble, 0.15), 'laptop': (laptop, 0.25),
+    # made for video 05 (how Bitcoin really works)
+    'ping': (ping, 0.35), 'halve': (halve, 0.25),
 }
 
 

@@ -1,0 +1,11 @@
+{
+ "hook": "If Bitcoin", "nMax": "Only twenty-one million", "nOut": "over twenty million", "out": ["already out", 1, "end"],
+ "n3": "Number three", "loseAll": "lose it all",
+ "one": "One:", "record": "shared record", "computers": "copied on", "thousands": "thousands", "noBank": "No bank", "govt": "government",
+ "two": "Two:", "tenMin": "ten minutes", "miners": "miners add", "block": "a block", "earn": "earn new", "fourYears": "Every four years", "halves": "halves",
+ "stops": "That's why", "max21": ["twenty-one million", 2],
+ "three": ["Three:", 2], "noCoins": "doesn't hold", "keys": "the keys", "prove": "prove they're", "lose1": "Lose the keys", "lose2": "lose the coins", "forever": "Forever",
+ "tip": "My tip", "learn": "learn before", "never": "never trust", "guarantees": "guarantees",
+ "q": "What confuses", "askBelow": "Ask below", "answer": "I'll answer", "send": "And send",
+ "join": "Then join", "site": "MTG tribe", "weLearn": "We learn", "im": "I'm MTG", "slogan": "Let's Get"
+}

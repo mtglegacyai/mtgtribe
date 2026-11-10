@@ -1,0 +1,866 @@
+{
+"voice": "PROVISIONAL ESTIMATE",
+"duration": 58.0,
+"words": [
+{
+"text": "If",
+"start": 0.172,
+"end": 0.344
+},
+{
+"text": "Bitcoin",
+"start": 0.379,
+"end": 0.706
+},
+{
+"text": "still",
+"start": 0.74,
+"end": 1.005
+},
+{
+"text": "confuses",
+"start": 1.039,
+"end": 1.397
+},
+{
+"text": "you,",
+"start": 1.432,
+"end": 1.635
+},
+{
+"text": "give",
+"start": 1.793,
+"end": 2.027
+},
+{
+"text": "me",
+"start": 2.062,
+"end": 2.234
+},
+{
+"text": "fifty",
+"start": 2.268,
+"end": 2.533
+},
+{
+"text": "seconds.",
+"start": 2.568,
+"end": 2.895
+},
+{
+"text": "Only",
+"start": 3.377,
+"end": 3.611
+},
+{
+"text": "twenty-one",
+"start": 3.645,
+"end": 4.034
+},
+{
+"text": "million",
+"start": 4.068,
+"end": 4.395
+},
+{
+"text": "Bitcoin",
+"start": 4.43,
+"end": 4.757
+},
+{
+"text": "will",
+"start": 4.791,
+"end": 5.025
+},
+{
+"text": "ever",
+"start": 5.06,
+"end": 5.294
+},
+{
+"text": "exist,",
+"start": 5.328,
+"end": 5.593
+},
+{
+"text": "and",
+"start": 5.751,
+"end": 5.955
+},
+{
+"text": "over",
+"start": 5.989,
+"end": 6.223
+},
+{
+"text": "twenty",
+"start": 6.257,
+"end": 6.553
+},
+{
+"text": "million",
+"start": 6.588,
+"end": 6.915
+},
+{
+"text": "are",
+"start": 6.949,
+"end": 7.152
+},
+{
+"text": "already",
+"start": 7.187,
+"end": 7.514
+},
+{
+"text": "out.",
+"start": 7.548,
+"end": 7.751
+},
+{
+"text": "Number",
+"start": 8.061,
+"end": 8.357
+},
+{
+"text": "three",
+"start": 8.391,
+"end": 8.656
+},
+{
+"text": "is",
+"start": 8.691,
+"end": 8.863
+},
+{
+"text": "how",
+"start": 8.897,
+"end": 9.1
+},
+{
+"text": "people",
+"start": 9.135,
+"end": 9.431
+},
+{
+"text": "lose",
+"start": 9.465,
+"end": 9.699
+},
+{
+"text": "it",
+"start": 9.734,
+"end": 9.906
+},
+{
+"text": "all.",
+"start": 9.94,
+"end": 10.143
+},
+{
+"text": "One:",
+"start": 10.625,
+"end": 10.828
+},
+{
+"text": "Bitcoin",
+"start": 10.987,
+"end": 11.314
+},
+{
+"text": "is",
+"start": 11.348,
+"end": 11.52
+},
+{
+"text": "a",
+"start": 11.555,
+"end": 11.696
+},
+{
+"text": "shared",
+"start": 11.73,
+"end": 12.026
+},
+{
+"text": "record",
+"start": 12.061,
+"end": 12.357
+},
+{
+"text": "of",
+"start": 12.391,
+"end": 12.563
+},
+{
+"text": "who",
+"start": 12.597,
+"end": 12.801
+},
+{
+"text": "owns",
+"start": 12.835,
+"end": 13.069
+},
+{
+"text": "what,",
+"start": 13.103,
+"end": 13.337
+},
+{
+"text": "copied",
+"start": 13.496,
+"end": 13.792
+},
+{
+"text": "on",
+"start": 13.826,
+"end": 13.998
+},
+{
+"text": "thousands",
+"start": 14.033,
+"end": 14.422
+},
+{
+"text": "of",
+"start": 14.456,
+"end": 14.628
+},
+{
+"text": "computers.",
+"start": 14.663,
+"end": 15.052
+},
+{
+"text": "No",
+"start": 15.361,
+"end": 15.533
+},
+{
+"text": "bank",
+"start": 15.568,
+"end": 15.802
+},
+{
+"text": "or",
+"start": 15.836,
+"end": 16.008
+},
+{
+"text": "government",
+"start": 16.043,
+"end": 16.463
+},
+{
+"text": "runs",
+"start": 16.497,
+"end": 16.731
+},
+{
+"text": "it.",
+"start": 16.766,
+"end": 16.938
+},
+{
+"text": "Two:",
+"start": 17.42,
+"end": 17.623
+},
+{
+"text": "every",
+"start": 17.781,
+"end": 18.046
+},
+{
+"text": "ten",
+"start": 18.08,
+"end": 18.284
+},
+{
+"text": "minutes",
+"start": 18.318,
+"end": 18.645
+},
+{
+"text": "or",
+"start": 18.679,
+"end": 18.851
+},
+{
+"text": "so,",
+"start": 18.886,
+"end": 19.058
+},
+{
+"text": "miners",
+"start": 19.216,
+"end": 19.512
+},
+{
+"text": "add",
+"start": 19.547,
+"end": 19.75
+},
+{
+"text": "the",
+"start": 19.784,
+"end": 19.987
+},
+{
+"text": "next",
+"start": 20.022,
+"end": 20.256
+},
+{
+"text": "page,",
+"start": 20.29,
+"end": 20.524
+},
+{
+"text": "called",
+"start": 20.683,
+"end": 20.979
+},
+{
+"text": "a",
+"start": 21.013,
+"end": 21.154
+},
+{
+"text": "block,",
+"start": 21.189,
+"end": 21.454
+},
+{
+"text": "and",
+"start": 21.612,
+"end": 21.815
+},
+{
+"text": "earn",
+"start": 21.849,
+"end": 22.083
+},
+{
+"text": "new",
+"start": 22.118,
+"end": 22.321
+},
+{
+"text": "Bitcoin.",
+"start": 22.355,
+"end": 22.682
+},
+{
+"text": "Every",
+"start": 22.992,
+"end": 23.257
+},
+{
+"text": "four",
+"start": 23.292,
+"end": 23.526
+},
+{
+"text": "years,",
+"start": 23.56,
+"end": 23.825
+},
+{
+"text": "that",
+"start": 23.983,
+"end": 24.217
+},
+{
+"text": "reward",
+"start": 24.252,
+"end": 24.548
+},
+{
+"text": "halves.",
+"start": 24.582,
+"end": 24.878
+},
+{
+"text": "That's",
+"start": 25.188,
+"end": 25.484
+},
+{
+"text": "why",
+"start": 25.518,
+"end": 25.722
+},
+{
+"text": "it",
+"start": 25.756,
+"end": 25.928
+},
+{
+"text": "stops",
+"start": 25.962,
+"end": 26.228
+},
+{
+"text": "at",
+"start": 26.262,
+"end": 26.434
+},
+{
+"text": "twenty-one",
+"start": 26.468,
+"end": 26.857
+},
+{
+"text": "million.",
+"start": 26.892,
+"end": 27.219
+},
+{
+"text": "Three:",
+"start": 27.701,
+"end": 27.966
+},
+{
+"text": "your",
+"start": 28.124,
+"end": 28.358
+},
+{
+"text": "wallet",
+"start": 28.392,
+"end": 28.689
+},
+{
+"text": "doesn't",
+"start": 28.723,
+"end": 29.05
+},
+{
+"text": "hold",
+"start": 29.084,
+"end": 29.318
+},
+{
+"text": "coins.",
+"start": 29.353,
+"end": 29.618
+},
+{
+"text": "It",
+"start": 29.928,
+"end": 30.1
+},
+{
+"text": "holds",
+"start": 30.134,
+"end": 30.399
+},
+{
+"text": "the",
+"start": 30.434,
+"end": 30.637
+},
+{
+"text": "keys",
+"start": 30.671,
+"end": 30.905
+},
+{
+"text": "that",
+"start": 30.94,
+"end": 31.174
+},
+{
+"text": "prove",
+"start": 31.208,
+"end": 31.473
+},
+{
+"text": "they're",
+"start": 31.507,
+"end": 31.834
+},
+{
+"text": "yours.",
+"start": 31.869,
+"end": 32.134
+},
+{
+"text": "Lose",
+"start": 32.444,
+"end": 32.678
+},
+{
+"text": "the",
+"start": 32.712,
+"end": 32.915
+},
+{
+"text": "keys,",
+"start": 32.95,
+"end": 33.184
+},
+{
+"text": "lose",
+"start": 33.342,
+"end": 33.576
+},
+{
+"text": "the",
+"start": 33.61,
+"end": 33.814
+},
+{
+"text": "coins.",
+"start": 33.848,
+"end": 34.113
+},
+{
+"text": "Forever.",
+"start": 34.423,
+"end": 34.75
+},
+{
+"text": "My",
+"start": 35.232,
+"end": 35.404
+},
+{
+"text": "tip:",
+"start": 35.438,
+"end": 35.641
+},
+{
+"text": "learn",
+"start": 35.8,
+"end": 36.065
+},
+{
+"text": "before",
+"start": 36.099,
+"end": 36.395
+},
+{
+"text": "you",
+"start": 36.429,
+"end": 36.632
+},
+{
+"text": "buy,",
+"start": 36.667,
+"end": 36.87
+},
+{
+"text": "and",
+"start": 37.028,
+"end": 37.231
+},
+{
+"text": "never",
+"start": 37.266,
+"end": 37.531
+},
+{
+"text": "trust",
+"start": 37.565,
+"end": 37.83
+},
+{
+"text": "anyone",
+"start": 37.865,
+"end": 38.161
+},
+{
+"text": "who",
+"start": 38.195,
+"end": 38.398
+},
+{
+"text": "guarantees",
+"start": 38.433,
+"end": 38.853
+},
+{
+"text": "profits.",
+"start": 38.887,
+"end": 39.214
+},
+{
+"text": "What",
+"start": 39.696,
+"end": 39.93
+},
+{
+"text": "confuses",
+"start": 39.964,
+"end": 40.322
+},
+{
+"text": "you",
+"start": 40.357,
+"end": 40.56
+},
+{
+"text": "about",
+"start": 40.594,
+"end": 40.859
+},
+{
+"text": "Bitcoin?",
+"start": 40.894,
+"end": 41.221
+},
+{
+"text": "Ask",
+"start": 41.53,
+"end": 41.733
+},
+{
+"text": "below.",
+"start": 41.768,
+"end": 42.033
+},
+{
+"text": "I'll",
+"start": 42.343,
+"end": 42.577
+},
+{
+"text": "answer",
+"start": 42.611,
+"end": 42.907
+},
+{
+"text": "in",
+"start": 42.942,
+"end": 43.114
+},
+{
+"text": "my",
+"start": 43.148,
+"end": 43.32
+},
+{
+"text": "next",
+"start": 43.355,
+"end": 43.589
+},
+{
+"text": "videos.",
+"start": 43.623,
+"end": 43.919
+},
+{
+"text": "And",
+"start": 44.229,
+"end": 44.432
+},
+{
+"text": "send",
+"start": 44.466,
+"end": 44.7
+},
+{
+"text": "this",
+"start": 44.735,
+"end": 44.969
+},
+{
+"text": "to",
+"start": 45.003,
+"end": 45.175
+},
+{
+"text": "a",
+"start": 45.21,
+"end": 45.351
+},
+{
+"text": "friend",
+"start": 45.385,
+"end": 45.681
+},
+{
+"text": "who",
+"start": 45.716,
+"end": 45.919
+},
+{
+"text": "still",
+"start": 45.953,
+"end": 46.218
+},
+{
+"text": "doesn't",
+"start": 46.253,
+"end": 46.58
+},
+{
+"text": "get",
+"start": 46.614,
+"end": 46.817
+},
+{
+"text": "Bitcoin.",
+"start": 46.852,
+"end": 47.179
+},
+{
+"text": "Then",
+"start": 47.66,
+"end": 47.894
+},
+{
+"text": "join",
+"start": 47.929,
+"end": 48.163
+},
+{
+"text": "the",
+"start": 48.197,
+"end": 48.4
+},
+{
+"text": "free",
+"start": 48.435,
+"end": 48.669
+},
+{
+"text": "MTG",
+"start": 48.703,
+"end": 48.906
+},
+{
+"text": "TRIBE",
+"start": 48.941,
+"end": 49.206
+},
+{
+"text": "at",
+"start": 49.24,
+"end": 49.412
+},
+{
+"text": "MTG",
+"start": 49.447,
+"end": 49.65
+},
+{
+"text": "tribe",
+"start": 49.684,
+"end": 49.949
+},
+{
+"text": "dot",
+"start": 49.984,
+"end": 50.187
+},
+{
+"text": "com",
+"start": 50.221,
+"end": 50.424
+},
+{
+"text": "slash",
+"start": 50.459,
+"end": 50.724
+},
+{
+"text": "group.",
+"start": 50.758,
+"end": 51.023
+},
+{
+"text": "We",
+"start": 51.333,
+"end": 51.505
+},
+{
+"text": "learn",
+"start": 51.539,
+"end": 51.805
+},
+{
+"text": "crypto,",
+"start": 51.839,
+"end": 52.135
+},
+{
+"text": "AI",
+"start": 52.293,
+"end": 52.465
+},
+{
+"text": "and",
+"start": 52.5,
+"end": 52.703
+},
+{
+"text": "multiple",
+"start": 52.737,
+"end": 53.095
+},
+{
+"text": "income",
+"start": 53.13,
+"end": 53.426
+},
+{
+"text": "streams",
+"start": 53.46,
+"end": 53.787
+},
+{
+"text": "together.",
+"start": 53.821,
+"end": 54.179
+},
+{
+"text": "I'm",
+"start": 54.489,
+"end": 54.692
+},
+{
+"text": "MTG,",
+"start": 54.727,
+"end": 54.93
+},
+{
+"text": "Your",
+"start": 55.088,
+"end": 55.322
+},
+{
+"text": "Digital",
+"start": 55.357,
+"end": 55.684
+},
+{
+"text": "Architect.",
+"start": 55.718,
+"end": 56.107
+},
+{
+"text": "Let's",
+"start": 56.417,
+"end": 56.682
+},
+{
+"text": "Get",
+"start": 56.716,
+"end": 56.919
+},
+{
+"text": "This",
+"start": 56.954,
+"end": 57.188
+},
+{
+"text": "Crypto!",
+"start": 57.222,
+"end": 57.518
+}
+]
+}

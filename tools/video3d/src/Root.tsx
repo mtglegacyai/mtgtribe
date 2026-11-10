@@ -7,6 +7,7 @@ import {Cover01, Cover01_3D} from './compositions/whatif01/Covers';
 import {Cover02, DYK02_FPS, DYK02_FRAMES, StoneMoney} from './compositions/dyk02/StoneMoney';
 import {Cover03, DKO03_FPS, DKO03_FRAMES, TwelveWords} from './compositions/dko03/TwelveWords';
 import {Cover04, MOF04_FPS, MOF04_FRAMES, VaultMyth} from './compositions/mof04/VaultMyth';
+import {BitcoinWorks, Cover05, HBW05_FPS, HBW05_FRAMES} from './compositions/hbw05/BitcoinWorks';
 import {NEWLOOK_FRAMES, NewLook} from './compositions/preview/NewLook';
 import {LEOMOMENTS_FRAMES, LeoMoments} from './compositions/preview/LeoMoments';
 import {Hook3D, HOOK3D_FRAMES} from './compositions/whatif01/Hook3D';
@@ -36,6 +37,10 @@ export const RemotionRoot: React.FC = () => (
 	<Folder name="Video04">
 		<Composition id="MOF04-9x16" component={VaultMyth} width={1080} height={1920} fps={MOF04_FPS} durationInFrames={MOF04_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
 		<Still id="Cover04-9x16" component={Cover04} width={1080} height={1920} />
+	</Folder>
+	<Folder name="Video05">
+		<Composition id="HBW05-9x16" component={BitcoinWorks} width={1080} height={1920} fps={HBW05_FPS} durationInFrames={HBW05_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
+		<Still id="Cover05-9x16" component={Cover05} width={1080} height={1920} />
 	</Folder>
 	<Folder name="Real3D">
 		<Composition id="WhatIf01-3D-9x16" component={WhatIf01_3D} width={1080} height={1920} fps={30} durationInFrames={WHATIF01_3D_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />

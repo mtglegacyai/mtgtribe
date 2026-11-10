@@ -23,6 +23,7 @@ export const LEO_MOMENTS = {
 	wave: {clip: 'V4', from: 2.0, to: 4.45, feel: 'waves hello'},
 	wink: {clip: 'V4', from: 4.45, to: 5.0, feel: 'a quick wink: our secret'},
 	thumbsup: {clip: 'V4', from: 5.0, to: 6.5, feel: "thumbs up: you've got this, let's go"},
+	winkup: {clip: 'V4', from: 4.45, to: 6.5, feel: 'a wink, then a thumbs up: between friends (the share prompt)'},
 	point: {clip: 'V7', from: 2.4, to: 5.3, feel: 'raises one finger: this part is important'},
 	ask: {clip: 'V2', from: 2.3, to: 6.5, feel: 'open paw to the viewer: your turn, tell me'},
 	present: {clip: 'L2', from: 2.5, to: 6.5, feel: 'both paws open: here it is (wide clip, cropped)'},
@@ -52,6 +53,7 @@ export const LeoMoment: React.FC<{
 	const def: LeoMomentDef = LEO_MOMENTS[m];
 	const dur = Math.min(seconds ?? def.to - def.from, def.to - def.from);
 	const snd = sound === undefined ? ACCENT_SOUND[accent] : sound;
+	if (dur < 0.5) return null; // no room for the moment between two cues: leave it out rather than flash it
 	return (
 		<Sequence from={Math.round(at * fps)} durationInFrames={Math.round(dur * fps)} layout="none" name={`Leo ${m}`}>
 			<LeoWindow def={def} dur={dur} style={{...FRAMES[frame].style, ...style}} focus={focus ?? def.focus ?? FRAMES[frame].focus} accent={accent} />

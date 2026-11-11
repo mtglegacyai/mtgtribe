@@ -51,7 +51,7 @@ function stockTile(){
   var inner=d.createElement('div');inner.className='tradingview-widget-container__widget';wrap.appendChild(inner);
   var s=d.createElement('script');s.src='https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';s.async=true;
   s.text=JSON.stringify({symbol:'NASDAQ:CNTN',width:'100%',height:'100%',locale:'en',dateRange:'1M',colorTheme:'dark',isTransparent:true,autosize:true,largeChartUrl:'',
-    trendLineColor:'rgba(242, 173, 60, 1)',underLineColor:'rgba(255, 255, 255, 0.07)',underLineBottomColor:'rgba(255, 255, 255, 0)'});
+    trendLineColor:'rgba(242, 173, 60, 1)',underLineColor:'rgba(242, 173, 60, 0.25)',underLineBottomColor:'rgba(242, 173, 60, 0)'});
   var done=false;function ok(){if(!done){done=true;el.classList.add('st-on')}}
   function fail(){if(!done){done=true;$('.st-msg',el).textContent='The live price could not load right now.'}}
   s.onerror=fail;

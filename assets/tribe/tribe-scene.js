@@ -86,7 +86,7 @@ function heartPath(x,y,s){cx.save();cx.translate(x,y);cx.scale(s/22,s/22);cx.tra
   cx.bezierCurveTo(7,11,11,7.5,11,4);cx.bezierCurveTo(11,4,11,-2,6,-2);cx.bezierCurveTo(2.5,-2,0,2.5,0,4);cx.restore()}
 function heart(x,y,s,col,al){cx.globalAlpha=al;heartPath(x,y,s);cx.fillStyle=col;cx.fill();cx.globalAlpha=al*.55;heartPath(x-s*.12,y-s*.14,s*.32);cx.fillStyle='rgba(255,255,255,.7)';cx.fill();cx.globalAlpha=1}
 function crown(x,y,u){cx.beginPath();cx.moveTo(x-6*u,y);cx.lineTo(x-6.5*u,y-6*u);cx.lineTo(x-3*u,y-3*u);cx.lineTo(x,y-8*u);cx.lineTo(x+3*u,y-3*u);cx.lineTo(x+6.5*u,y-6*u);cx.lineTo(x+6*u,y);cx.closePath();
-  cx.fillStyle='#ffd98e';cx.fill();cx.lineWidth=1*u;cx.strokeStyle='#f2ad3c';cx.stroke()}
+  cx.fillStyle='#ffd98e';cx.fill();cx.lineWidth=1*u;cx.strokeStyle='#b8741a';cx.stroke()}
 
 function person(p,o,t){
   var u=G.s*o.ds,x=o.x,y=o.y,lk=p.lk;
@@ -145,7 +145,9 @@ function person(p,o,t){
 function glowGround(c,amt){
   if(amt<=0)return;var x=G.cx[c],y=G.cy,rx=G.rx[c]*1.5,ry=G.ry[c]*2.1;
   cx.save();cx.translate(x,y);cx.scale(1,ry/rx);
-  cx.globalAlpha=amt;cx.strokeStyle='#f2ad3c';cx.lineWidth=1/(ry/rx);cx.beginPath();cx.arc(0,0,rx*.72,0,TAU);cx.stroke();cx.globalAlpha=1;cx.restore();
+  var g=cx.createRadialGradient(0,0,0,0,0,rx);g.addColorStop(0,'rgba(242,173,60,'+(.22*amt)+')');g.addColorStop(1,'rgba(242,173,60,0)');
+  cx.fillStyle=g;cx.beginPath();cx.arc(0,0,rx,0,TAU);cx.fill();
+  cx.strokeStyle='rgba(255,217,142,'+(.28*amt)+')';cx.lineWidth=1/(ry/rx);cx.beginPath();cx.arc(0,0,rx*.72,0,TAU);cx.stroke();cx.restore();
 }
 /* the heart of each circle: the community it lives on (MTG, 5 Nov 2026):
    left WhatsApp, middle TikTok, right Facebook. Different communities, one tribe. */
@@ -186,7 +188,7 @@ function fire(c,t,amt){
 /* once all three stand, a ribbon of light joins them: different communities, one tribe */
 function bridge(t){
   var a=clamp((t-(END-2.2))/1.6,0,1);if(a<=0)return;var u=G.s,y=G.cy-G.ry[1]*.15-16*u;
-  cx.save();cx.setLineDash([3*u,6*u]);cx.lineDashOffset=-t*22*u;cx.lineWidth=2*u;cx.lineCap='round';cx.strokeStyle='#ffd98e';cx.globalAlpha=a;
+  cx.save();cx.setLineDash([3*u,6*u]);cx.lineDashOffset=-t*22*u;cx.lineWidth=2*u;cx.lineCap='round';cx.strokeStyle='rgba(255,217,142,'+(.55*a).toFixed(3)+')';
   for(var i=0;i<2;i++){var x0=G.cx[i],x1=G.cx[i+1],mx=(x0+x1)/2;cx.beginPath();cx.moveTo(x0,y);cx.quadraticCurveTo(mx,y-H*.3,x1,y);cx.stroke()}
   cx.restore();
 }

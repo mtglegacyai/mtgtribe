@@ -24,7 +24,8 @@ const SCALES = (process.argv[5] || '1,1.3').split(',').map(Number);
       }
       const r = await p.evaluate(sc => {
         document.querySelectorAll('.rv,[class*="reveal"]').forEach(e => e.classList.add('in', 'is-in', 'visible', 'shown'));
-        const W = innerWidth, out = { page: document.documentElement.scrollWidth - W, scrollers: [], cut: [] };
+        // the real screen width: in phone mode innerWidth grows with a page that is too wide, which used to hide exactly that fault
+        const W = document.documentElement.clientWidth, out = { page: document.documentElement.scrollWidth - W, scrollers: [], cut: [] };
         const name = e => { let s = e.tagName.toLowerCase(); if (e.id) s += '#' + e.id; if (e.classList.length) s += '.' + [...e.classList].slice(0, 3).join('.'); return s; };
         const path = e => { const a = []; for (let x = e; x && x !== document.body && a.length < 4; x = x.parentElement) a.unshift(name(x)); return a.join(' > '); };
         const shown = e => { for (let x = e; x; x = x.parentElement) { const cs = getComputedStyle(x); if (cs.display === 'none' || cs.visibility === 'hidden' || x.hasAttribute('inert') || x.getAttribute('aria-hidden') === 'true') return false; } return true; };

@@ -57,6 +57,8 @@ the voice bank).
 | Fact | Exact wording to use | Used in | Source |
 |---|---|---|---|
 | Qualify | At least $250 of active trading to qualify as a partner | partner plan | JetUP business plan |
+| Levels open | A $250 own deposit opens 3 levels. 1 to 3 direct partners: still 3 levels. From the 4th direct partner, each new direct partner opens 1 more level. 10 direct partners open all 10 | partner plan, explainer #6 | JetUP business plan (Oct 2026) and "How partners grow" one-pager |
+| Client start | The sign-up training's $155 is a client start; partners check the current qualification in their partner account | partner plan, explainer #6 | partner plan page; JetUP business plan |
 | Lot commission | Up to $8.00 per lot over 10 levels ($2, $1, $1, $1, then $0.50) | partner plan | JetUP business plan |
 | Profit share | 1.5% on each of 10 levels, paid from the 30% share | partner plan | JetUP business plan |
 | Connected accounts | Every strategy counts as a connected account (one person can have several) | (videos, if mentioned) | Sunday training |

@@ -493,6 +493,28 @@ def halve():
     return lowpass(x, 1400)
 
 
+def engine():
+    """A minibus taxi rolling past: a soft low hum that swells and fades, with a gentle wobble (no revving)."""
+    d = 2.6
+    tt = t(d)
+    swell_ = np.sin(np.pi * np.clip(tt / d, 0, 1)) ** 1.3
+    hum = sine(lambda u: 74 + 5 * np.sin(2 * np.pi * 3.1 * u), d) + 0.45 * sine(lambda u: 148 + 9 * np.sin(2 * np.pi * 3.1 * u), d)
+    x = hum * 0.7 + band(noise(d), 60, 320) * (0.8 + 0.2 * np.sin(2 * np.pi * 7 * tt))
+    return lowpass(x * swell_, 600)
+
+
+def hoot():
+    """A friendly double hoot, heard from far away: two short, round notes."""
+    d = 0.75
+    x = np.zeros(int(d * SR))
+    for at in (0.0, 0.3):
+        tt = t(0.24)
+        n = (np.sin(2 * np.pi * 349.2 * tt) + 0.8 * np.sin(2 * np.pi * 440.0 * tt) + 0.2 * np.sin(2 * np.pi * 698.4 * tt)) * env(len(tt), 0.03, 0.09, hold=0.1, curve=1.2)
+        i = int(at * SR)
+        x[i:i + len(n)] += n
+    return lowpass(x, 1300)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -512,6 +534,8 @@ PALETTE = {
     'aha': (aha, 0.35), 'exhale': (exhale, 0.3), 'scribble': (scribble, 0.15), 'laptop': (laptop, 0.25),
     # made for video 05 (how Bitcoin really works)
     'ping': (ping, 0.35), 'halve': (halve, 0.25),
+    # made for video 06 (the hidden cost of your commute)
+    'engine': (engine, 0.2), 'hoot': (hoot, 0.3),
 }
 
 

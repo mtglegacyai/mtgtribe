@@ -21,7 +21,7 @@ Then: what they will learn (2 to 3 lines), chapters, then:
 🔁 Share it with [the specific person from the video].
 🔗 [Main page]: [link]
 🌐 Visit https://mtgtribe.com: step-by-step tutorials, explainer videos and honest guides (risks included)
-✈️ Telegram: https://t.me/mtgtribez
+✈️ Telegram: https://t.me/mtgtribe
 🎵 TikTok: https://www.tiktok.com/@joinmtgtribe
 ▶️ Subscribe: https://www.youtube.com/@mtgtribe
 Disclaimer: education only, not financial advice, risks, independent guide, "If you join through my link, I may earn a reward." (when true)

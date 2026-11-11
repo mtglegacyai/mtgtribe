@@ -106,6 +106,21 @@ what is possible online these days".
   question for the comments, then the tribe. Natural asks only: no rewards, no "share with 10 friends", no "comment
   YES" (`compliance.md`).
 
+## Tone and business fit (MTG, 8 and 9 November 2026; applied to daily videos from 11 November 2026)
+
+- **Inform, never frighten.** MTG: "Take it easy on the warnings and on the losses and negativity ... I'm trying to
+  build a business here ... create videos that are going to convert these people into action takers", and "I am
+  educating them so that they can make informed decisions." Calm, positive, encouraging: the number, what it means,
+  the small next step. No scare hooks, no loss statistics, no warnings piled on warnings. Honesty stays: no income
+  promises, and the risk is named once, gently ("No promises: it takes time and work", "Education only").
+- **Never make a video that works against what MTG promotes.** Before choosing a topic, check his income streams on
+  the dashboard (`destinations.md`): Bellver Card, JetUP and TAG Markets (CopyX copy trading with the Sonic AI gold
+  strategy), ClickBaitPays, Bitcoin Wealth, ALTRUVA. So no "AI trading is a scam", "copy trading is dangerous" or
+  "crypto cards are a trap" videos. Explain how such things work, calmly, and let his websites do the rest.
+- **Scam awareness stays welcome on clear-cut cases:** someone asking for your 12 words, fake support, "guaranteed
+  profits". Told as "here is how to stay safe", never as fear.
+- **For full-time employees:** respect the job ("Your job matters. Keep it."), then show the small step next to it.
+
 ## 3. Pick a fresh topic from MTG's niche
 
 Topic families: see MTG's direction and upgrades above (Bitcoin, crypto and blockchain, smart contracts and the Crypto
@@ -141,7 +156,8 @@ action, short sign-off ("I'm MTG, Your Digital Architect. Let's Get This Crypto!
 
 ## MTG's voice: "MTG Master Voice V3" (since 10 November 2026)
 
-The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd`.
+The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd` (MTG: "V3 sounds
+better, sounds exactly like me").
 HeyGen's new speech engine (HeyGen Voice 1, in use since 10 November 2026) refuses "MTG Master Voice V2"
 (`3931c505632149ceb2bbfecf2778c09c`): instant voices made before it "must be cloned again". With MTG's approval that day
 ("V3 approved", after hearing a test next to V2), V3 was cloned from about 3 minutes of his own V2 narration (videos 01
@@ -155,8 +171,9 @@ to 04). Facts of the new engine, measured on 10 November 2026:
 - Cost: 1 credit for a 7 second line and 1 credit for a 61 second script (982 characters). Check the balance before
   and after every call and report it.
 - V3 speaks a little slower than V2 (about 2.8 words a second; V2 about 3.1): about 150 words for 60 seconds.
-- V2's old voice-bank lines and new V3 lines sound slightly different: never mix them inside one video without telling
-  MTG. A failed call (error 400) costs nothing, but ask MTG before any retry.
+- Everything already recorded in V2 (the voice banks, the live videos) stays usable. V2 and V3 lines sound slightly
+  different, so prefer one voice per new video. A failed call (error 400) costs nothing, but ask MTG before any retry.
+- Measured again on 11 November 2026: 1 credit for a 47 second script (149 words, about 3.2 words a second).
 
 ## Standing approval for credits
 

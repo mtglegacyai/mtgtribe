@@ -13,8 +13,8 @@ them. When you work on a site, read it first (Step 0) and add what you learn her
 | Tribe dashboard (income streams, playbook, prices, tools) | mtgtribe.com/dashboard |
 | YouTube | youtube.com/@mtgtribe |
 | TikTok | tiktok.com/@joinmtgtribe |
-| Telegram | t.me/mtgtribez |
-| Facebook | facebook.com/Musa.TheMTG |
+| Telegram | t.me/mtgtribe |
+| Facebook | facebook.com/mtgtribe |
 | WhatsApp MTG directly (messages and voice notes, no calls) | wa.me/27721714626 |
 
 **CTAs in every video (MTG, 9 November 2026): the tribe first, then the website.** Spoken: "Join the free MTG TRIBE

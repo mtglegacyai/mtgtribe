@@ -1,0 +1,760 @@
+{
+"voice": "MTG Master Voice V3 (65f1b9ff3f1e418496de5715a801e7dd)",
+"request": "a5a6cbed81a240c7ba299a6dadeebe9f",
+"duration": 48.8606,
+"pauses_added": [
+0.28,
+0.583,
+0.445,
+0.025,
+0.345,
+0.324
+],
+"words": [
+{
+"text": "If",
+"start": 0.256,
+"end": 0.427
+},
+{
+"text": "your",
+"start": 0.469,
+"end": 0.555
+},
+{
+"text": "trip",
+"start": 0.597,
+"end": 0.725
+},
+{
+"text": "to",
+"start": 0.768,
+"end": 0.896
+},
+{
+"text": "work",
+"start": 0.939,
+"end": 1.067
+},
+{
+"text": "takes",
+"start": 1.152,
+"end": 1.28
+},
+{
+"text": "an",
+"start": 1.365,
+"end": 1.451
+},
+{
+"text": "hour,",
+"start": 1.493,
+"end": 1.664
+},
+{
+"text": "you",
+"start": 2.091,
+"end": 2.176
+},
+{
+"text": "spend",
+"start": 2.219,
+"end": 2.432
+},
+{
+"text": "sixty",
+"start": 2.517,
+"end": 2.901
+},
+{
+"text": "working",
+"start": 2.987,
+"end": 3.115
+},
+{
+"text": "days",
+"start": 3.285,
+"end": 3.456
+},
+{
+"text": "a",
+"start": 3.541,
+"end": 3.584
+},
+{
+"text": "year",
+"start": 3.627,
+"end": 3.797
+},
+{
+"text": "just",
+"start": 3.925,
+"end": 4.053
+},
+{
+"text": "travelling.",
+"start": 4.139,
+"end": 4.437
+},
+{
+"text": "And",
+"start": 4.992,
+"end": 5.163
+},
+{
+"text": "twenty",
+"start": 5.205,
+"end": 5.461
+},
+{
+"text": "minutes",
+"start": 5.547,
+"end": 5.632
+},
+{
+"text": "of",
+"start": 5.803,
+"end": 5.888
+},
+{
+"text": "it",
+"start": 5.931,
+"end": 5.973
+},
+{
+"text": "can",
+"start": 6.016,
+"end": 6.144
+},
+{
+"text": "change",
+"start": 6.187,
+"end": 6.315
+},
+{
+"text": "a",
+"start": 6.4,
+"end": 6.443
+},
+{
+"text": "lot.",
+"start": 6.485,
+"end": 6.613
+},
+{
+"text": "An",
+"start": 7.363,
+"end": 7.491
+},
+{
+"text": "hour",
+"start": 7.533,
+"end": 7.661
+},
+{
+"text": "there,",
+"start": 7.789,
+"end": 7.917
+},
+{
+"text": "an",
+"start": 8.216,
+"end": 8.344
+},
+{
+"text": "hour",
+"start": 8.387,
+"end": 8.515
+},
+{
+"text": "back,",
+"start": 8.643,
+"end": 8.771
+},
+{
+"text": "five",
+"start": 9.155,
+"end": 9.496
+},
+{
+"text": "days",
+"start": 9.581,
+"end": 9.752
+},
+{
+"text": "a",
+"start": 9.795,
+"end": 9.837
+},
+{
+"text": "week.",
+"start": 9.88,
+"end": 10.008
+},
+{
+"text": "That's",
+"start": 10.605,
+"end": 10.776
+},
+{
+"text": "four",
+"start": 10.819,
+"end": 11.075
+},
+{
+"text": "hundred",
+"start": 11.203,
+"end": 11.331
+},
+{
+"text": "and",
+"start": 11.416,
+"end": 11.544
+},
+{
+"text": "eighty",
+"start": 11.587,
+"end": 11.757
+},
+{
+"text": "hours",
+"start": 11.843,
+"end": 11.971
+},
+{
+"text": "a",
+"start": 12.141,
+"end": 12.184
+},
+{
+"text": "year.",
+"start": 12.227,
+"end": 12.397
+},
+{
+"text": "That's",
+"start": 13.397,
+"end": 13.611
+},
+{
+"text": "the",
+"start": 13.653,
+"end": 13.739
+},
+{
+"text": "hidden",
+"start": 13.781,
+"end": 13.995
+},
+{
+"text": "cost",
+"start": 14.037,
+"end": 14.208
+},
+{
+"text": "of",
+"start": 14.336,
+"end": 14.379
+},
+{
+"text": "your",
+"start": 14.421,
+"end": 14.507
+},
+{
+"text": "commute.",
+"start": 14.549,
+"end": 14.848
+},
+{
+"text": "Not",
+"start": 15.317,
+"end": 15.445
+},
+{
+"text": "the",
+"start": 15.488,
+"end": 15.616
+},
+{
+"text": "fare.",
+"start": 15.659,
+"end": 15.787
+},
+{
+"text": "Your",
+"start": 16.256,
+"end": 16.384
+},
+{
+"text": "time.",
+"start": 16.427,
+"end": 16.64
+},
+{
+"text": "Your",
+"start": 17.64,
+"end": 17.768
+},
+{
+"text": "job",
+"start": 17.81,
+"end": 18.024
+},
+{
+"text": "matters.",
+"start": 18.152,
+"end": 18.45
+},
+{
+"text": "Keep",
+"start": 18.749,
+"end": 18.92
+},
+{
+"text": "it.",
+"start": 18.962,
+"end": 19.048
+},
+{
+"text": "But",
+"start": 19.773,
+"end": 19.858
+},
+{
+"text": "what",
+"start": 19.901,
+"end": 19.986
+},
+{
+"text": "if",
+"start": 20.029,
+"end": 20.072
+},
+{
+"text": "twenty",
+"start": 20.157,
+"end": 20.37
+},
+{
+"text": "minutes",
+"start": 20.456,
+"end": 20.584
+},
+{
+"text": "of",
+"start": 20.712,
+"end": 20.797
+},
+{
+"text": "that",
+"start": 20.84,
+"end": 20.968
+},
+{
+"text": "trip",
+"start": 21.01,
+"end": 21.224
+},
+{
+"text": "went",
+"start": 21.309,
+"end": 21.394
+},
+{
+"text": "to",
+"start": 21.437,
+"end": 21.522
+},
+{
+"text": "learning?",
+"start": 21.565,
+"end": 21.736
+},
+{
+"text": "Twenty",
+"start": 22.486,
+"end": 22.699
+},
+{
+"text": "minutes",
+"start": 22.785,
+"end": 22.87
+},
+{
+"text": "a",
+"start": 23.041,
+"end": 23.083
+},
+{
+"text": "day",
+"start": 23.126,
+"end": 23.297
+},
+{
+"text": "is",
+"start": 23.425,
+"end": 23.51
+},
+{
+"text": "eighty",
+"start": 23.553,
+"end": 23.894
+},
+{
+"text": "hours",
+"start": 23.937,
+"end": 24.065
+},
+{
+"text": "a",
+"start": 24.235,
+"end": 24.278
+},
+{
+"text": "year.",
+"start": 24.321,
+"end": 24.449
+},
+{
+"text": "Two",
+"start": 25.003,
+"end": 25.217
+},
+{
+"text": "full",
+"start": 25.387,
+"end": 25.643
+},
+{
+"text": "working",
+"start": 25.771,
+"end": 25.985
+},
+{
+"text": "weeks.",
+"start": 26.155,
+"end": 26.326
+},
+{
+"text": "Enough",
+"start": 26.941,
+"end": 27.24
+},
+{
+"text": "to",
+"start": 27.283,
+"end": 27.368
+},
+{
+"text": "learn",
+"start": 27.411,
+"end": 27.581
+},
+{
+"text": "a",
+"start": 27.624,
+"end": 27.667
+},
+{
+"text": "skill,",
+"start": 27.709,
+"end": 27.923
+},
+{
+"text": "or",
+"start": 28.264,
+"end": 28.563
+},
+{
+"text": "start",
+"start": 28.605,
+"end": 28.776
+},
+{
+"text": "building",
+"start": 28.818,
+"end": 28.989
+},
+{
+"text": "a",
+"start": 29.117,
+"end": 29.202
+},
+{
+"text": "second",
+"start": 29.245,
+"end": 29.373
+},
+{
+"text": "income",
+"start": 29.501,
+"end": 29.8
+},
+{
+"text": "next",
+"start": 29.885,
+"end": 29.97
+},
+{
+"text": "to",
+"start": 30.056,
+"end": 30.141
+},
+{
+"text": "your",
+"start": 30.184,
+"end": 30.269
+},
+{
+"text": "job.",
+"start": 30.312,
+"end": 30.525
+},
+{
+"text": "How",
+"start": 31.425,
+"end": 31.553
+},
+{
+"text": "long",
+"start": 31.596,
+"end": 31.724
+},
+{
+"text": "is",
+"start": 31.766,
+"end": 31.809
+},
+{
+"text": "your",
+"start": 31.852,
+"end": 31.937
+},
+{
+"text": "trip?",
+"start": 31.98,
+"end": 32.15
+},
+{
+"text": "Tell",
+"start": 32.534,
+"end": 32.662
+},
+{
+"text": "me",
+"start": 32.705,
+"end": 32.79
+},
+{
+"text": "below.",
+"start": 32.833,
+"end": 32.918
+},
+{
+"text": "And",
+"start": 33.387,
+"end": 33.558
+},
+{
+"text": "send",
+"start": 33.601,
+"end": 33.771
+},
+{
+"text": "this",
+"start": 33.814,
+"end": 33.942
+},
+{
+"text": "to",
+"start": 33.985,
+"end": 34.07
+},
+{
+"text": "the",
+"start": 34.113,
+"end": 34.155
+},
+{
+"text": "friend",
+"start": 34.198,
+"end": 34.411
+},
+{
+"text": "who",
+"start": 34.454,
+"end": 34.582
+},
+{
+"text": "rides",
+"start": 34.625,
+"end": 34.838
+},
+{
+"text": "with",
+"start": 34.923,
+"end": 35.009
+},
+{
+"text": "you.",
+"start": 35.051,
+"end": 35.18
+},
+{
+"text": "Then",
+"start": 35.93,
+"end": 36.101
+},
+{
+"text": "join",
+"start": 36.186,
+"end": 36.314
+},
+{
+"text": "the",
+"start": 36.4,
+"end": 36.485
+},
+{
+"text": "free",
+"start": 36.528,
+"end": 36.741
+},
+{
+"text": "MTG",
+"start": 36.826,
+"end": 37.338
+},
+{
+"text": "TRIBE",
+"start": 37.424,
+"end": 37.808
+},
+{
+"text": "at",
+"start": 37.893,
+"end": 38.021
+},
+{
+"text": "MTG",
+"start": 38.106,
+"end": 38.618
+},
+{
+"text": "tribe",
+"start": 38.661,
+"end": 38.917
+},
+{
+"text": "dot",
+"start": 39.002,
+"end": 39.173
+},
+{
+"text": "com",
+"start": 39.258,
+"end": 39.429
+},
+{
+"text": "slash",
+"start": 39.727,
+"end": 39.983
+},
+{
+"text": "group.",
+"start": 40.111,
+"end": 40.325
+},
+{
+"text": "We",
+"start": 41.029,
+"end": 41.157
+},
+{
+"text": "learn",
+"start": 41.199,
+"end": 41.285
+},
+{
+"text": "crypto,",
+"start": 41.37,
+"end": 41.754
+},
+{
+"text": "AI",
+"start": 42.053,
+"end": 42.437
+},
+{
+"text": "and",
+"start": 42.65,
+"end": 42.863
+},
+{
+"text": "multiple",
+"start": 42.906,
+"end": 43.162
+},
+{
+"text": "income",
+"start": 43.375,
+"end": 43.674
+},
+{
+"text": "streams",
+"start": 43.76,
+"end": 44.016
+},
+{
+"text": "together.",
+"start": 44.101,
+"end": 44.314
+},
+{
+"text": "I'm",
+"start": 45.168,
+"end": 45.338
+},
+{
+"text": "MTG,",
+"start": 45.381,
+"end": 45.808
+},
+{
+"text": "Your",
+"start": 46.106,
+"end": 46.234
+},
+{
+"text": "Digital",
+"start": 46.277,
+"end": 46.49
+},
+{
+"text": "Architect.",
+"start": 46.618,
+"end": 46.96
+},
+{
+"text": "Let's",
+"start": 47.471,
+"end": 47.727
+},
+{
+"text": "Get",
+"start": 47.77,
+"end": 47.855
+},
+{
+"text": "This",
+"start": 47.898,
+"end": 47.983
+},
+{
+"text": "Crypto!",
+"start": 48.026,
+"end": 48.325
+}
+]
+}

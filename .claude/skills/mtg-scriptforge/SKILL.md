@@ -37,6 +37,10 @@ visuals); a share prompt and a save prompt in every video. **Leo, his mascot, ap
 wow, care, relief, hope, action, belonging) with precise expressions from his existing clips, accents, soft sounds and
 action props, so his actions speak louder than words (`references/mascot.md`). Details: `references/daily-video.md`.
 
+**Tone and business fit (MTG, 8 and 9 November 2026):** inform, never frighten (calm, positive, no loss statistics,
+no scare hooks; honesty stays), and never make a video that works against what he promotes (for example copy trading
+with Sonic AI on JetUP and TAG Markets). Check his income streams before choosing a topic (`references/daily-video.md`).
+
 ## This is MTG's business
 
 MTG, 7 November 2026: "This is not a hobby. This is the serious business to me." Every video must be fun, helpful,

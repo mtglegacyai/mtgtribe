@@ -48,7 +48,8 @@ need the same circle before their next render.
 
 ## Standing rule: MTG's voice is "MTG Master Voice V3" (MTG, 10 November 2026)
 
-**The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd`.** Never another voice.
+**The only approved voice is HeyGen "MTG Master Voice V3", voice ID `65f1b9ff3f1e418496de5715a801e7dd`** (MTG: "V3 sounds
+better, sounds exactly like me"). Never another voice.
 HeyGen's new speech engine (HeyGen Voice 1, in use since 10 November 2026) refuses "MTG Master Voice V2"
 (`3931c505632149ceb2bbfecf2778c09c`): instant voices made before it "must be cloned again". With MTG's approval that day
 ("V3 approved", after hearing a test next to V2), V3 was cloned from about 3 minutes of his own V2 narration (videos 01
@@ -128,6 +129,15 @@ employees (questions and pain points leading to multiple streams of income); the
 signature with mtgtribe.com in a big solid gold pill under it, JetUp explainer style in gold); two or three free CSS 3D
 moments per video (`src/three/css3d.tsx`) and no HeyGen credits for visuals (he is running low); a share prompt to one
 specific person and a save prompt in every video. Details: `.claude/skills/mtg-scriptforge/references/daily-video.md`.
+**Tone and business fit (MTG, 8 and 9 November 2026, from his website sessions; applied to daily videos from
+11 November 2026):** inform, never frighten ("take it easy on the warnings and on the losses and negativity ... create
+videos that are going to convert these people into action takers"): calm, positive, encouraging, no loss statistics,
+no scare hooks; honesty stays (no income promises, the risk named once, gently). **Never make a video that works
+against what MTG promotes**: his JetUP and TAG Markets guide covers CopyX copy trading with the Sonic AI gold strategy,
+so the planned "AI trading bots" warning video was dropped. Check his income streams before choosing a topic.
+**MTG's social addresses (confirmed by MTG, 10 November 2026):** TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp
+mtgtribe.com/group, Telegram t.me/mtgtribe, Facebook facebook.com/mtgtribe (the older t.me/mtgtribez and
+facebook.com/Musa.TheMTG are no longer used).
 **The greeting names the real type of each video** (MTG, 7 November 2026): "Thank you for taking the time to watch this
 video / tutorial / explainer video / guide / training ...", chosen per video ("training" only for a real training); reuse
 the voice bank's recorded greeting with the right word before spending credits.

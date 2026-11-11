@@ -356,3 +356,5 @@ body.dash{background:#050403}
 @media (prefers-reduced-motion:reduce){.sweep,.sstack .pl.top{animation:none}}
 /* jumps to a stream (the stack, the side menu, "See stream #1") land below the sticky top bar */
 .dmain [id]{scroll-margin-top:84px}
+/* a card that has not faded in yet still sits 28px lower (.rv): leave room for the lift, so it settles below the bar too */
+.dmain .rv[id]:not(.in){scroll-margin-top:112px}

@@ -1,18 +1,22 @@
 /* =====================================================================
    MTG TRIBE design system | black, gold and glass
+   Pure black and pure gold (MTG, 11 Nov 2026: "black is black, and gold is gold. Not this mixture that ends up
+   producing a brownish color"). The rule: every black and grey is neutral, and gold is only ever used at full
+   strength. No gold glow, no gold wash, no dimmed or see-through gold: on black those turn brown. Quiet lines and
+   panels are clear (white at low strength); gold is for words, edges, icons and buttons that matter.
    Shared by the landing page (/) and the dashboard (/dashboard/).
    Layers: a living background, then frosted glass, then sharp text.
    Every animation stops for people who prefer reduced motion.
    ===================================================================== */
 @property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
 :root{
-  --bg:#050403;--bg-2:#0a0806;--bg-3:#110d08;
-  --text:#fbf8f2;--body:#d6cec0;--muted:#a19785;--faint:#6f6759;
-  --gold:#f2ad3c;--gold-hi:#ffd98e;--gold-lo:#b8741a;--gold-deep:#6b4009;--champ:#f7e6bf;
+  --bg:#000;--bg-2:#050505;--bg-3:#0b0b0b;
+  --text:#fff;--body:#d4d4d4;--muted:#9c9c9c;--faint:#767676;
+  --gold:#f2ad3c;--gold-hi:#ffd98e;--gold-lo:#e09a1c;--gold-deep:#e09a1c;--champ:#fff;
   --gold-rgb:242,173,60;
-  --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.14);--line-gold:rgba(242,173,60,.34);
+  --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.14);--line-gold:var(--gold);
   --glass:linear-gradient(140deg,rgba(255,255,255,.11),rgba(255,255,255,.035) 42%,rgba(255,255,255,.02));
-  --glass-dark:linear-gradient(160deg,rgba(22,18,12,.72),rgba(8,7,5,.62));
+  --glass-dark:linear-gradient(160deg,rgba(12,12,12,.72),rgba(5,5,5,.62));
   --good:#46e08f;--bad:#ff7a6b;
   --f-d:'Anton',Impact,'Arial Narrow Bold','Helvetica Neue',sans-serif;
   --f-b:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -35,15 +39,15 @@ button{font:inherit;color:inherit}
 .ic{width:1.1em;height:1.1em;flex:none}
 .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:8px}
-.skip{position:absolute;left:-999px;top:10px;z-index:999;padding:10px 14px;border-radius:10px;background:var(--gold);color:#1b1102;font-weight:800}
+.skip{position:absolute;left:-999px;top:10px;z-index:999;padding:10px 14px;border-radius:10px;background:var(--gold);color:#000;font-weight:800}
 .skip:focus{left:12px}
 
 /* ---------- type ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0;color:var(--gold-hi);font:800 12px/1 var(--f-b);letter-spacing:.24em;text-transform:uppercase}
 .eyebrow:before{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .display{margin:0;font:400 clamp(2.6rem,7vw,5.6rem)/.92 var(--f-d);letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
-.gold-text{background:linear-gradient(100deg,transparent 40%,rgba(255,250,230,.95) 49%,rgba(255,215,140,.9) 51%,transparent 60%) no-repeat,linear-gradient(180deg,#fff3d6 0%,#ffd98e 30%,#f2ad3c 62%,#b8741a 100%);background-size:280% 100%,100% 100%;background-position:180% 0,0 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-.silver-text{background:linear-gradient(180deg,#ffffff 0%,#ece7de 55%,#b9b1a3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.gold-text{background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.95) 49%,rgba(255,255,255,.8) 51%,transparent 60%) no-repeat,linear-gradient(180deg,#fff3d6 0%,#ffd98e 30%,#f2ad3c 66%,#e09a1c 100%);background-size:280% 100%,100% 100%;background-position:180% 0,0 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.silver-text{background:linear-gradient(180deg,#ffffff 0%,#ececec 55%,#b4b4b4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .lede{color:var(--body);font-size:clamp(1rem,1.25vw,1.14rem);line-height:1.7;text-wrap:pretty}
 .mono{font-family:var(--f-m)}
 
@@ -52,13 +56,13 @@ button{font:inherit;color:inherit}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.35),0 30px 80px rgba(0,0,0,.45);
   -webkit-backdrop-filter:blur(20px) saturate(1.45);backdrop-filter:blur(20px) saturate(1.45)}
 .glass:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;z-index:1;
-  background:linear-gradient(135deg,rgba(255,217,142,.75),rgba(255,255,255,.1) 28%,rgba(255,255,255,0) 55%,rgba(242,173,60,.42));
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.1) 28%,rgba(255,255,255,0) 55%,rgba(255,255,255,.16));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
 .glass.dark{background:var(--glass-dark)}
 .glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;opacity:0;transition:opacity .4s;
   background:radial-gradient(420px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.13),transparent 45%)}
 .tilt:hover .glare{opacity:1}
-@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){.glass{background:rgba(16,13,9,.92)}}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){.glass{background:rgba(9,9,9,.92)}}
 
 /* ---------- buttons ---------- */
 /* Flat buttons (MTG, 5 Nov 2026: "just make them flat, like the Join the Tribe button").
@@ -70,11 +74,11 @@ button{font:inherit;color:inherit}
 .btn .ic{width:18px;height:18px}
 .btn .chip{display:grid;place-items:center;width:32px;height:32px;margin-left:-11px;border-radius:10px}
 /* Gold: the main action */
-.btn-gold{color:#1a1002;
+.btn-gold{color:#000;
   background:linear-gradient(100deg,transparent 38%,rgba(255,255,255,.45) 50%,transparent 62%) no-repeat,linear-gradient(180deg,#ffd98e,#f2ad3c);
   background-size:280% 100%,100% 100%;background-position:190% 0,0 0;
   box-shadow:inset 0 0 0 1px rgba(255,236,190,.55),0 10px 24px rgba(0,0,0,.32)}
-.btn-gold .chip{background:rgba(26,16,2,.88);color:var(--gold-hi)}
+.btn-gold .chip{background:rgba(2,2,2,.88);color:var(--gold-hi)}
 .btn-gold:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:inset 0 0 0 1px rgba(255,240,200,.8),0 14px 30px rgba(0,0,0,.38)}
 .btn-gold:active{transform:translateY(0) scale(.985);filter:none;box-shadow:inset 0 0 0 1px rgba(255,236,190,.55),0 6px 14px rgba(0,0,0,.3)}
 /* Clear glass: the second action */
@@ -82,8 +86,8 @@ button{font:inherit;color:inherit}
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 10px 24px rgba(0,0,0,.3);
   -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4)}
 .btn-glass .chip{background:linear-gradient(180deg,#43e58b,#16a352);color:#fff}
-.btn-glass:hover{transform:translateY(-2px);background-color:rgba(var(--gold-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--gold-rgb),.65),0 14px 30px rgba(0,0,0,.36)}
-.btn-glass:active{transform:translateY(0) scale(.985);box-shadow:inset 0 0 0 1px rgba(var(--gold-rgb),.6),0 6px 14px rgba(0,0,0,.3)}
+.btn-glass:hover{transform:translateY(-2px);background-color:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--gold),0 14px 30px rgba(0,0,0,.36)}
+.btn-glass:active{transform:translateY(0) scale(.985);box-shadow:inset 0 0 0 1px var(--gold),0 6px 14px rgba(0,0,0,.3)}
 .btn-sm{min-height:42px;padding:0 15px;border-radius:12px;font-size:12px;gap:8px}
 .btn-sm .ic{width:16px;height:16px}
 /* orbiting light: a thin line of light travelling along the button's own edge (adds no size) */
@@ -96,22 +100,22 @@ button{font:inherit;color:inherit}
 .link .ic{width:16px;height:16px}
 
 /* ---------- pills, chips ---------- */
-.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-gold);background:rgba(10,8,5,.55);
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-gold);background:rgba(5,5,5,.55);
   color:var(--gold-hi);font:800 11.5px/1 var(--f-b);letter-spacing:.2em;text-transform:uppercase;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(var(--gold-rgb),.16),0 0 12px var(--gold)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,255,255,.14)}
 .pill.live .dot{background:var(--good);box-shadow:0 0 0 4px rgba(70,224,143,.16),0 0 12px var(--good)}
 
 /* ---------- MTG photo card: the whole photo, square, gold gradient border, soft gold glow ---------- */
 .photo-card{position:relative;isolation:isolate;aspect-ratio:1;border-radius:28px;padding:5px;
-  background:linear-gradient(145deg,#fff1c8,#f2ad3c 30%,#7a4a0c 55%,#ffd98e 78%,#b8741a);
-  box-shadow:0 0 0 1px rgba(255,217,142,.4),0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(var(--gold-rgb),.32)}
-.photo-card img{width:100%;height:100%;object-fit:cover;border-radius:23px;background:#1a140c}
+  background:linear-gradient(145deg,#fff1c8,#f2ad3c 30%,#e09a1c 55%,#ffd98e 78%,#f2ad3c);
+  box-shadow:0 0 0 1px var(--gold),0 40px 90px rgba(0,0,0,.6)}
+.photo-card img{width:100%;height:100%;object-fit:cover;border-radius:23px;background:#111}
 .photo-card .glare{border-radius:23px;inset:5px}
 /* round version (MTG, 5 Nov 2026): the whole square photo inside a circle with a gold metal rim */
 .photo-card.round{border-radius:50%;padding:6px;
-  background:conic-gradient(from 210deg,#fff1c8,#f2ad3c 18%,#7a4a0c 34%,#ffd98e 52%,#b8741a 70%,#fff1c8 86%,#f2ad3c);
-  box-shadow:0 0 0 1px rgba(255,217,142,.45),0 0 0 9px rgba(242,173,60,.07),0 40px 90px rgba(0,0,0,.6),0 0 80px rgba(var(--gold-rgb),.3)}
-.photo-card.round img{border-radius:50%;box-shadow:0 0 0 2px rgba(10,7,3,.55)}
+  background:conic-gradient(from 210deg,#fff1c8,#f2ad3c 18%,#e09a1c 34%,#ffd98e 52%,#f2ad3c 70%,#fff1c8 86%,#f2ad3c);
+  box-shadow:0 0 0 8px #000,0 0 0 9px var(--gold),0 40px 90px rgba(0,0,0,.6)}
+.photo-card.round img{border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.55)}
 .photo-card.round .glare{border-radius:50%;inset:6px}
 .photo-tag{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;white-space:nowrap;
   font:800 13px/1 var(--f-b);letter-spacing:.06em}
@@ -126,17 +130,17 @@ button{font:inherit;color:inherit}
 
 /* ---------- footer ---------- */
 .foot{position:relative;padding:72px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);
-  background:radial-gradient(800px 300px at 50% 0%,rgba(var(--gold-rgb),.08),transparent 70%),linear-gradient(180deg,#070605,#040302);text-align:center;color:var(--muted)}
+  background:linear-gradient(180deg,#050505,#000);text-align:center;color:var(--muted)}
 .foot .crown{width:44px;height:44px;margin:0 auto 18px;color:var(--gold)}
 .slog{margin:0;font:400 clamp(1.7rem,3.6vw,2.6rem)/1 var(--f-d);letter-spacing:.02em;text-transform:uppercase}
 .sig{margin:10px 0 0;color:var(--body);font-weight:700}
 .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0 30px}
 .soc{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;color:var(--champ);background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line-2);transition:transform .25s var(--spring),color .2s,box-shadow .2s,background-color .2s}
 .soc .ic{width:20px;height:20px}
-.soc:hover{transform:translateY(-3px);color:var(--gold-hi);background:rgba(var(--gold-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--gold-rgb),.6)}
+.soc:hover{transform:translateY(-3px);color:var(--gold-hi);background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--gold)}
 .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;font-size:14px}
 .flinks a:hover{color:var(--text)}
-.brandline{margin:22px 0 0;color:#ddd5c6;font-weight:800}
+.brandline{margin:22px 0 0;color:#dadada;font-weight:800}
 .fine{max-width:46rem;margin:12px auto 0;font-size:13px;line-height:1.6}
 
 @media (prefers-reduced-motion:no-preference){
@@ -152,7 +156,7 @@ button{font:inherit;color:inherit}
 }
 @keyframes spin{to{--ang:360deg}}
 @keyframes glint{0%{background-position:190% 0,0 0}22%,100%{background-position:-90% 0,0 0}}
-@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(var(--gold-rgb),0),0 0 12px var(--gold)}}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(255,255,255,0)}}
 @media (max-width:560px){
   .btn{min-height:54px;padding:0 20px;font-size:14px}
 }

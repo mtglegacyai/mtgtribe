@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(stage/Anton-Regular.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden}
+body{font-family:'Manrope',sans-serif;color:#fff;position:relative;background:
+ radial-gradient(900px 650px at 78% 30%,rgba(140,108,231,.42),transparent 70%),radial-gradient(800px 600px at 8% 95%,rgba(232,194,90,.22),transparent 70%),
+ linear-gradient(160deg,#150d2c,#0b0912 55%,#07050f)}
+.grid{position:absolute;inset:0;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px}
+.pill{position:absolute;left:96px;top:96px;display:inline-flex;align-items:center;height:64px;padding:0 30px;border-radius:999px;background:#cbfb61;color:#14110b;font:800 28px/1 'Manrope';letter-spacing:.16em}
+.h{position:absolute;left:92px;top:205px;font:400 132px/.97 'Anton';text-transform:uppercase}
+.h .g{background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{position:absolute;left:96px;top:560px;font:800 50px/1.25 'Manrope';color:#e9e3ff}
+.sub b{color:#cbfb61}
+.chips{position:absolute;left:96px;top:760px;display:flex;gap:18px}
+.chips span{display:inline-flex;align-items:center;gap:12px;height:76px;padding:0 28px;border-radius:22px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);font:800 34px/1 'Manrope'}
+.disc{position:absolute;left:1300px;top:180px;width:540px;height:540px;border-radius:50%;padding:12px;background:conic-gradient(from 210deg,#fff1b8,#c99a2e,#f7dd8d,#9c6f1f,#fff1b8);box-shadow:0 0 90px rgba(232,194,90,.45),0 30px 70px rgba(0,0,0,.55)}
+.disc img{width:100%;height:100%;border-radius:50%;display:block}
+.brand{position:absolute;right:100px;bottom:120px;font:800 30px/1 'Manrope';letter-spacing:.16em;color:#e8c25a}
+.brand em{font-style:normal;font-family:'Noto Color Emoji'}
+
+.disc{left:1650px;top:96px;width:200px;height:200px;padding:7px}
+.gr{position:absolute;left:1108px;top:330px;width:742px;height:368px}
+.gst{position:absolute;width:112px;height:83px;border-radius:12px;overflow:hidden;border:3px dashed rgba(155,124,255,.85);background:rgba(155,124,255,.10)}
+.gst::before{content:'';position:absolute;left:0;right:0;top:0;height:22px;background:repeating-linear-gradient(90deg,rgba(155,124,255,.8) 0 14px,rgba(155,124,255,.3) 14px 28px)}
+.gst::after{content:'';position:absolute;left:0;right:0;bottom:0;height:16px;background:rgba(155,124,255,.32)}
+.gst b{position:absolute;left:0;right:0;top:27px;text-align:center;font:400 32px/1 'Anton';color:rgba(246,243,255,.9)}
+.gst.mine{border:3px solid #cbfb61;background:rgba(203,251,97,.16);box-shadow:0 0 34px rgba(203,251,97,.55)}
+.gst.mine::before{background:repeating-linear-gradient(90deg,#cbfb61 0 14px,#f6f3ff 14px 28px)}
+.gst.mine::after{background:linear-gradient(180deg,#f3d27a,#c99a3a)}
+.gst.mine b{color:#cbfb61}
+.ex{position:absolute;top:735px;height:140px;border-radius:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;white-space:nowrap}
+.ex b{font:400 72px/1 'Anton'}.ex small{margin-top:6px;font:800 18px/1 'Manrope';letter-spacing:.12em;color:#cfc6ee}
+.e1{left:1108px;width:210px;background:rgba(203,251,97,.14);box-shadow:inset 0 0 0 4px #cbfb61}.e1 b{color:#cbfb61}
+.e2{left:1392px;width:140px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3c4,#e8c25a 55%,#a87a1e);color:#2a1d05}.e2 b{font-size:58px}
+.e3{left:1606px;width:244px;background:rgba(232,194,90,.12);box-shadow:inset 0 0 0 4px #e8c25a}.e3 b{background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.arr{position:absolute;top:765px;font:400 64px/1 'Anton';color:rgba(255,255,255,.55)}
+.brand{bottom:96px;right:70px}
+</style></head><body><div class="grid"></div>
+<div class="pill">EXPLAINER · 2:13</div>
+<div class="h" style="top:245px">Amplify <span class="g">24x</span><br>made simple</div>
+<div class="sub" style="top:545px;font-size:46px">Exposure is the size you trade with,<br><b>not money you own</b> ✅</div>
+<div class="chips" style="top:735px"><span>🍎 The market stall</span><span>🧮 Try the calculator</span></div>
+<div class="gr" id="gr"></div>
+<div class="ex e1"><b>$50</b><small>YOUR MONEY</small></div><div class="arr" style="left:1336px">→</div>
+<div class="ex e2"><b>24x</b></div><div class="arr" style="left:1550px">→</div>
+<div class="ex e3"><b>$1,200</b><small>TRADING SIZE</small></div>
+<div class="disc"><img src="stage/jetup-disc.png" alt=""></div>
+<div class="brand">MTG <em>👑</em> | YOUR DIGITAL ARCHITECT</div>
+<script>const g=document.getElementById('gr');for(let i=0;i<24;i++){const d=document.createElement('div');d.className='gst'+(i===0?' mine':'');d.style.left=(i%6)*126+'px';d.style.top=Math.floor(i/6)*95+'px';d.innerHTML='<b>'+(i+1)+'</b>';g.appendChild(d);}</script>
+</body></html>

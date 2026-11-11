@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(stage/Anton-Regular.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden}
+body{font-family:'Manrope',sans-serif;color:#fff;position:relative;background:
+ radial-gradient(900px 650px at 78% 30%,rgba(140,108,231,.42),transparent 70%),radial-gradient(800px 600px at 8% 95%,rgba(232,194,90,.22),transparent 70%),
+ linear-gradient(160deg,#150d2c,#0b0912 55%,#07050f)}
+.grid{position:absolute;inset:0;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px}
+.pill{position:absolute;left:96px;top:96px;display:inline-flex;align-items:center;height:64px;padding:0 30px;border-radius:999px;background:#cbfb61;color:#14110b;font:800 28px/1 'Manrope';letter-spacing:.16em}
+.h{position:absolute;left:92px;top:205px;font:400 132px/.97 'Anton';text-transform:uppercase}
+.h .g{background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{position:absolute;left:96px;top:560px;font:800 50px/1.25 'Manrope';color:#e9e3ff}
+.sub b{color:#cbfb61}
+.chips{position:absolute;left:96px;top:760px;display:flex;gap:18px}
+.chips span{display:inline-flex;align-items:center;gap:12px;height:76px;padding:0 28px;border-radius:22px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);font:800 34px/1 'Manrope'}
+.disc{position:absolute;left:1300px;top:180px;width:540px;height:540px;border-radius:50%;padding:12px;background:conic-gradient(from 210deg,#fff1b8,#c99a2e,#f7dd8d,#9c6f1f,#fff1b8);box-shadow:0 0 90px rgba(232,194,90,.45),0 30px 70px rgba(0,0,0,.55)}
+.disc img{width:100%;height:100%;border-radius:50%;display:block}
+.brand{position:absolute;right:100px;bottom:120px;font:800 30px/1 'Manrope';letter-spacing:.16em;color:#e8c25a}
+.brand em{font-style:normal;font-family:'Noto Color Emoji'}
+
+.taxi{position:absolute;left:1090px;top:420px;width:760px;height:320px}.taxi svg{width:760px;height:320px;overflow:visible}
+.road{position:absolute;left:1000px;right:0;top:722px;height:90px;background:linear-gradient(180deg,#221c36,#15111f)}
+.road i{position:absolute;left:0;right:0;top:40px;height:8px;background:repeating-linear-gradient(90deg,#cbfb61 0 60px,transparent 60px 120px);opacity:.75}
+.disc{left:1560px;top:120px;width:250px;height:250px;padding:8px}
+.tag{position:absolute;display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 22px;border-radius:999px;font:800 28px/1 'Manrope';white-space:nowrap}
+.t1{left:1545px;top:372px;background:linear-gradient(100deg,#8c6ce7,#e371fc)}
+.t2{left:1300px;top:598px;background:#120d22;box-shadow:inset 0 0 0 3px #cbfb61}.t2 b{color:#cbfb61}
+</style></head><body><div class="grid"></div>
+<div class="pill">EXPLAINER · 2:08</div>
+<div class="h">Five names.<br><span class="g">One simple</span><br>picture</div>
+<div class="sub" style="top:640px">JetUP, TAG Markets, CopyX, Sonic AI<br>and you, as <b>one minibus taxi</b> 🚐</div>
+<div class="chips" style="top:820px"><span>🧑‍✈️ The driver</span><span>💺 Your seat</span><span>🪧 The route board</span></div>
+<div class="disc"><img src="stage/jetup-disc.png" alt=""></div><div class="road"><i></i></div><div class="taxi"><svg viewBox="0 0 720 300">
+ <defs><linearGradient id="bodyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#e9e4f7"/><stop offset="1" stop-color="#c9c1e2"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3157"/><stop offset="1" stop-color="#15111f"/></linearGradient></defs>
+ <rect x="282" y="10" width="110" height="34" rx="8" fill="#cbfb61"/><text x="337" y="35" text-anchor="middle" font-family="Anton" font-size="26" fill="#14110b" letter-spacing="2">TAXI</text>
+ <path d="M30 236 L30 78 Q30 44 64 44 L548 44 Q566 44 578 58 L676 150 Q700 168 700 196 L700 236 Z" fill="url(#bodyg)" stroke="#bdb3dc" stroke-width="3"/>
+ <rect x="30" y="180" width="670" height="22" fill="#8c6ce7"/><rect x="30" y="202" width="670" height="8" fill="#e371fc"/>
+ <rect x="52" y="66" width="120" height="92" rx="14" fill="url(#glass)"/><rect x="186" y="66" width="120" height="92" rx="14" fill="url(#glass)"/>
+ <rect x="320" y="66" width="120" height="92" rx="14" fill="url(#glass)"/>
+ <path d="M456 66 L556 66 Q566 66 574 76 L574 158 L456 158 Z" fill="url(#glass)"/>
+ <path d="M586 70 L668 150 L668 160 L586 160 Z" fill="url(#glass)"/>
+ <line x1="446" y1="60" x2="446" y2="230" stroke="#bdb3dc" stroke-width="3"/><rect x="420" y="170" width="20" height="6" rx="3" fill="#7d7398"/>
+ <rect x="684" y="166" width="16" height="16" rx="4" fill="#ffe08f"/><rect x="30" y="160" width="10" height="18" rx="3" fill="#ff5f7a"/>
+ <g id="w1"><circle cx="160" cy="236" r="44" fill="#14101f"/><circle cx="160" cy="236" r="24" fill="#8a84a3"/><path d="M160 214 L160 258 M138 236 L182 236" stroke="#14101f" stroke-width="6"/></g>
+ <g id="w2"><circle cx="560" cy="236" r="44" fill="#14101f"/><circle cx="560" cy="236" r="24" fill="#8a84a3"/><path d="M560 214 L560 258 M538 236 L582 236" stroke="#14101f" stroke-width="6"/></g>
+</svg></div><div class="tag t1">⚡ Sonic AI · the driver</div><div class="tag t2">🔒 Your <b>TAG Markets</b> seat</div>
+<div class="brand">MTG <em>👑</em> | YOUR DIGITAL ARCHITECT</div>
+</body></html>

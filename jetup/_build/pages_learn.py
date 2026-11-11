@@ -159,6 +159,7 @@ def build_plan():
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Partner Plan', None)],
        [icon('i-file') + "JetUP's figures, as of 4 Oct 2026", icon('i-info2') + 'Check current terms in your partner account'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
+ <div class="rv">{laptop('partnerplan', 'The rule most people miss, explained by MTG (2:18)', eager=True)}</div>
  <div class="call info rv">{icon('i-info2')}<p><b>Before any number:</b> these are JetUP's own figures. JetUP's plan says there is no fixed, daily or guaranteed return and no guaranteed income, so results depend on the market and on the work you put in. New to the trading side? See how 24x Amplify and the 70/30 split work in <a href="/jetup/how-it-works/">How it works</a>.</p></div>
  {section('qualify', 'Who qualifies', 'The rule most people miss', '''
 <ul>
@@ -210,7 +211,7 @@ def build_plan():
            ('How do I qualify as a JetUP partner?', "JetUP's plan says everyone needs at least $250 of active trading. A $250 own deposit opens 3 levels; from the 4th direct partner each new direct partner opens one more level, and 10 direct partners open all 10.")]
     return page(path, 'JetUP Partner Plan Explained: Lot Commission, Profit Share | MTG',
                 "JetUP's partner plan in plain English: Lot Commission over 10 levels, 1.5% Profit Share on Sonic AI at TAG Markets, the Infinity Bonus, the Global Pool, rewards and the $250 qualification rule.",
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('profitshare')])
 
 def build_promo():
     path = '/jetup/promo/'

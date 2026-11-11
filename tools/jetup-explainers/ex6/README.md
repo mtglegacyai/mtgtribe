@@ -30,3 +30,10 @@ three lines, and "Now it's your turn". Glass style as approved for the JetUP pag
 key in `jetup/_build/layout.py` (dur '2:18', iso 'PT2M18S'), placed at the top of the Partner Plan page ("The rule most
 people miss") and on the Videos page, with VideoObject data. Run the feature checks, the sideways-scroll check and
 `tools/og/check_og.py`.
+
+## On the site (11 Nov 2026)
+
+MTG: "Put it live". `jetup/media/jetup-explainer-partner-plan.mp4`, covers `jetup/img/cover-explainer-partner-plan.jpg` and
+`.webp`, video key `partnerplan` in `jetup/_build/layout.py`. Places: the top of the Partner Plan page (with VideoObject
+data), the Videos page (after Amplify 24x), and a link from the FAQ answer "Do I have to build a team?". Placement script:
+`ex6_site_edits.py`. Sitemap dates for the three pages: 2026-11-11.

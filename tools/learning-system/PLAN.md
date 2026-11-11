@@ -75,7 +75,7 @@ JetUP tour sits at the top of /jetup/.
 | 3 | Amplify 24x made simple: exposure is the size you trade with, not money you own (market stall, + calculator demo), 2:13 | home "$155 in", How It Works "Amplify 24x", Exposure Calculator, check 4, Videos page, FAQ "What is Amplify 24x?" (link) | recorded lines + 6 new lines in MTG Master Voice V3 (10 Nov 2026, 1 credit with #4's two) | live 10 Nov 2026 (v1 with recorded lines); v2 with the 6 new lines approved by MTG and live 10 Nov 2026. Sources: `tools/jetup-explainers/ex3/` |
 | 4 | The 70/30 split: where every profit goes (+ calculator demo), 2:16 | home "70%", How it works "70/30", Profit Split Calculator, Videos page | recorded lines + 2 new lines in MTG Master Voice V3 (10 Nov 2026) | live 9 Nov 2026 with recorded lines; v2 with the spoken hook and calculator line approved by MTG and live 10 Nov 2026 |
 | 5 | The $100 Fast Start Promo: the money plan, claim it in 4 steps, the rules, "a promo is a promo", 2:18 | Promo page top, home "A promo is a promo", get-started part 6, Videos page | recorded lines only, 0 credits | live 9 Nov 2026 (Promo page claim list now 4 steps, like the video) |
-| 6 | The partner plan: the rule most people miss | Partner plan top | new lines (about 4 to 6 credits) | planned |
+| 6 | The partner plan: the rule most people miss (ten glass floors and an access card), 2:18 | Partner plan top, Videos page | 9 new lines in MTG Master Voice V3 (11 Nov 2026, 1 credit) + recorded greeting and close | live 11 Nov 2026 (MTG: "Put it live"): top of the Partner Plan page, Videos page, FAQ "Do I have to build a team?" (link). Sources: `tools/jetup-explainers/ex6/` |
 
 ## Next six
 

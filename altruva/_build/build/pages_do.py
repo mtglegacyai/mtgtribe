@@ -376,7 +376,7 @@ def p_safe(here):
 ])}
 <div class="honest">{ic("info")}<div><b>What we know so far:</b> we haven't confirmed ALTRUVA's contract address, verification, audit or renounced status. This page will be updated when we do.</div></div>""",
     "Check a contract yourself", "Five checks anyone can do on a phone, for ALTRUVA or anything else.", id="contract")}
-{sec(think("Can I take back an approval later?", "<p>Yes. BscScan's Token Approval Checker (bscscan.com/tokenapprovalchecker) lists the contracts allowed to use your tokens, and lets you revoke them. Revoking costs a few cents of BNB.</p>"))}
+{sec(think("Can I take back an approval later?", "<p>Yes. BscScan's Token Approval Checker (bscscan.com/<wbr>tokenapprovalchecker) lists the contracts allowed to use your tokens, and lets you revoke them. Revoking costs a few cents of BNB.</p>"))}
 '''
 
 

@@ -21,3 +21,25 @@ a.cwp-card:focus-visible{outline:2px solid #f2ad3c;outline-offset:3px}
 .cwp-ends{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}
 @media (max-width:560px){.cwp-grid{grid-template-columns:minmax(0,1fr)}.cwp-card.next{text-align:left;align-items:flex-start}.cwn{gap:8px}.cwn a,.cwn span.cwn-off{font-size:13.5px;padding:8px 12px}}
 @media (prefers-reduced-motion:reduce){.cwp-card{transition:none}}
+
+/* ---- Top bar: never wider than the screen, never on two rows (MTG, 11 Nov 2026) ----
+   When there is no room, the least important parts step aside, in this order: the MTG TRIBE words beside the photo,
+   the Join words (the WhatsApp icon stays), then the small emojis inside Dashboard and Go Home (the words stay).
+   Works at any text size. Needs the .mn-in / .mn-t wrappers in the header markup (cntn/index.html is the master). */
+.mn-acts{flex:0 1 auto;min-width:0}
+.mn-acts .ring .ic{flex:none}
+.mn-btn{flex:0 1 auto;min-width:0}
+.mn-in{display:flex;flex-wrap:wrap-reverse;align-content:flex-end;justify-content:center;row-gap:0;column-gap:inherit;min-width:0;height:2.4em;padding-inline:4px;margin-inline:-4px;overflow:hidden}
+.mn-in>*{flex:none;height:100%}
+.mn-in>.emo{display:inline-flex;align-items:center}
+.mn-in>.mn-t{display:block;line-height:2.4;white-space:nowrap}
+@media (min-width:621px){
+ .nav .brand{flex:1 1 0%;min-width:38px;max-width:max-content}
+ .mn-acts .ring{flex:1 1 0%;min-width:46px;max-width:max-content}
+ .nav .brand .bt,.mn-acts .ring .rt{display:inline-flex;flex-wrap:wrap;align-content:flex-start;align-items:center;flex:0 1 auto;min-width:0;height:1.4em;margin-block:-.2em;margin-right:-1px;overflow:hidden;white-space:nowrap}
+ .nav .brand .bt:before,.mn-acts .ring .rt:before{content:"";flex:none;width:0;height:1.4em}
+ .nav .brand .bt:after,.mn-acts .ring .rt:after{content:"";flex:none;width:1px}
+ .nav .brand .bt b{margin-left:.36em}
+ .mn-acts .ring .rt .m{margin-left:.35em}
+}
+@media (max-width:340px){.nav{padding-inline:12px}.mn-acts{gap:6px}}

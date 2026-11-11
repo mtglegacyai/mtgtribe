@@ -3,7 +3,7 @@
 // (3) visible text cut off by the screen edge. Usage: node hscroll.js pages.txt out.json [widths] [scales]
 const { chromium } = require('playwright');
 const fs = require('fs');
-const B = 'http://127.0.0.1:8765/';
+const B = process.env.BASE || 'http://127.0.0.1:8765/';   // BASE=https://mtgtribe.com/ checks the live site
 const pages = fs.readFileSync(process.argv[2], 'utf8').split('\n').filter(Boolean).map(p => p.replace(/index\.html$/, ''));
 const OUT = process.argv[3];
 const WIDTHS = (process.argv[4] || '320,360,375,390,412,430').split(',').map(Number);
@@ -28,7 +28,9 @@ const SCALES = (process.argv[5] || '1,1.3').split(',').map(Number);
         const W = document.documentElement.clientWidth, out = { page: document.documentElement.scrollWidth - W, scrollers: [], cut: [] };
         const name = e => { let s = e.tagName.toLowerCase(); if (e.id) s += '#' + e.id; if (e.classList.length) s += '.' + [...e.classList].slice(0, 3).join('.'); return s; };
         const path = e => { const a = []; for (let x = e; x && x !== document.body && a.length < 4; x = x.parentElement) a.unshift(name(x)); return a.join(' > '); };
-        const shown = e => { for (let x = e; x; x = x.parentElement) { const cs = getComputedStyle(x); if (cs.display === 'none' || cs.visibility === 'hidden' || x.hasAttribute('inert') || x.getAttribute('aria-hidden') === 'true') return false; } return true; };
+        // not shown: hidden boxes, and text kept for screen readers only (clipped to nothing, the way Canton tables keep their column headers on phones)
+        const shown = e => { for (let x = e; x; x = x.parentElement) { const cs = getComputedStyle(x); if (cs.display === 'none' || cs.visibility === 'hidden' || x.hasAttribute('inert') || x.getAttribute('aria-hidden') === 'true'
+          || (cs.position === 'absolute' && /^rect\(0px,? 0px,? 0px,? 0px\)$/.test(cs.clip))) return false; } return true; };
         for (const e of document.querySelectorAll('body *')) {
           const cs = getComputedStyle(e);
           if (/(auto|scroll)/.test(cs.overflowX) && e.scrollWidth > e.clientWidth + 2 && e.clientWidth > 0 && shown(e))

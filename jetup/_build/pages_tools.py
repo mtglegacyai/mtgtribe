@@ -124,7 +124,7 @@ def build_videos():
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The 70/30 split</p>{laptop('split', 'The 70/30 split (2:16)')}<p class="small center" style="margin:8px 0 0">Where every profit goes, no fee on a losing trade, and the calculator, tap by tap.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Amplify 24x</p>{laptop('amplify', 'Amplify 24x made simple (2:13)')}<p class="small center" style="margin:8px 0 0">One market stall that trades the size of 24, the $155 money plan, and the calculator, tap by tap.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The partner plan</p>{laptop('partnerplan', 'The partner plan: the rule most people miss (2:18)')}<p class="small center" style="margin:8px 0 0">Ten glass floors and an access card: how partner levels open, and what open levels pay.</p></div>
- <div class="grid2" style="align-items:start">
+ <div class="grid2" id="tutorials" style="align-items:start">
   <div class="rv"><p class="eyebrow" style="margin-bottom:14px">1 · Watch first</p>{laptop('5checks', 'JetUP 5 Checks, by MTG (5:25)')}<p class="small center" style="margin:8px 0 0">Lost money before? Five things to check before you try again.</p></div>
   <div class="rv" style="--d:1"><p class="eyebrow" style="margin-bottom:14px">2 · Then do</p>{laptop('training', 'Sign-up training, by MTG (9:09)')}<p class="small center" style="margin:8px 0 0">Every tap: sign up, KYC, deposit, Sonic AI and the $100 promo.</p></div>
  </div>

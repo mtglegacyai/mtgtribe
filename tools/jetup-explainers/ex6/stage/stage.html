@@ -1,0 +1,236 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--vio:#9b7cff;
+ --goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);--f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(900px 600px at 82% 18%,rgba(140,108,231,.30),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(232,194,90,.14),transparent 70%),
+ radial-gradient(700px 500px at 20% 15%,rgba(203,251,97,.07),transparent 70%),linear-gradient(160deg,#130c28,#0b0912 55%,#08060f)}
+#grid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(1100px 700px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;visibility:hidden;opacity:0;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.em{font-family:'Noto Color Emoji';font-style:normal}
+.card{border-radius:34px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
+/* edge-lit glass (MTG approved the glass style, 10 Nov 2026) */
+.glass{border-radius:30px;background:linear-gradient(158deg,rgba(203,251,97,.10),rgba(255,255,255,.03) 34%,rgba(20,16,32,.9) 70%,rgba(203,251,97,.07));box-shadow:inset 0 0 0 2.5px rgba(203,251,97,.85),0 0 34px rgba(203,251,97,.25),inset 0 0 26px rgba(203,251,97,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass:before{content:"";position:absolute;inset:9px;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(203,251,97,.32);pointer-events:none}
+.glass.v{background:linear-gradient(158deg,rgba(155,124,255,.14),rgba(255,255,255,.03) 34%,rgba(20,16,32,.9) 70%,rgba(155,124,255,.08));box-shadow:inset 0 0 0 2.5px rgba(155,124,255,.85),0 0 34px rgba(155,124,255,.25),inset 0 0 26px rgba(155,124,255,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass.v:before{box-shadow:inset 0 0 0 1px rgba(155,124,255,.32)}
+/* top bar */
+#top{left:56px;right:56px;top:40px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
+.who b{display:block;font:800 26px/1 var(--f-b)}.who small{display:block;margin-top:7px;font:800 15px/1 var(--f-b);color:var(--gold);letter-spacing:.1em}
+#chipT{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 20px/1 var(--f-b);letter-spacing:.14em}
+.ttl{left:110px;top:140px;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}.ttl span{color:var(--lime)}
+.figs{font:700 22px/1 var(--f-b);color:var(--muted);letter-spacing:.06em}
+/* hi */
+#hdisc{left:760px;top:180px;width:400px;height:400px;border-radius:50%;padding:8px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);box-shadow:0 0 60px rgba(232,194,90,.45)}
+#hdisc img{width:384px;height:384px;border-radius:50%;display:block}
+#hhi{top:640px;font:800 84px/1 var(--f-b)}#harch{top:750px;font:800 38px/1 var(--f-b);letter-spacing:.16em}
+
+/* the glass floors (isometric plates, floor 1 at the bottom) */
+.iso{left:0;top:0;width:1920px;height:1080px}
+.pl{position:absolute;border-radius:22px;border:2px solid rgba(155,124,255,.38);
+ background:linear-gradient(135deg,rgba(155,124,255,.12),rgba(14,10,24,.78) 50%,rgba(12,9,20,.88));box-shadow:0 0 16px rgba(155,124,255,.14)}
+.pl:before{content:"";position:absolute;inset:11px;border-radius:13px;border:1px solid rgba(155,124,255,.2)}
+.pl .on{position:absolute;inset:-2px;border-radius:22px;border:3px solid #cbfb61;opacity:0;
+ background:linear-gradient(135deg,rgba(203,251,97,.34),rgba(203,251,97,.08) 45%,rgba(14,12,22,.62));box-shadow:0 0 34px rgba(203,251,97,.55),inset 0 0 30px rgba(203,251,97,.28)}
+.pl .on:before{content:"";position:absolute;inset:9px;border-radius:13px;border:1.5px solid rgba(203,251,97,.5)}
+.fl{position:absolute;display:flex;align-items:center;gap:8px;height:40px;transform:translateY(-50%)}
+.fl:before{content:"";width:22px;height:2px;background:rgba(155,124,255,.5)}
+.fl b{display:grid;place-items:center;min-width:40px;height:40px;padding:0 8px;border-radius:12px;font:800 22px/1 var(--f-b);color:var(--body);box-shadow:inset 0 0 0 2px rgba(155,124,255,.45);background:rgba(20,16,34,.9)}
+.fl.lit b{color:#14110b;background:var(--lime);box-shadow:0 0 18px rgba(203,251,97,.55)}
+.fl.lit:before{background:var(--lime)}
+.fl i{font-size:24px;font-style:normal;font-family:'Noto Color Emoji'}
+
+/* hook */
+#hkE{left:1010px;top:250px;font:800 30px/1 var(--f-b);letter-spacing:.24em;color:var(--gold)}
+#hk10{left:1000px;top:300px;font:400 200px/1 var(--f-d);text-transform:uppercase}
+#hk3{left:1004px;top:520px;font:400 118px/1 var(--f-d);text-transform:uppercase;color:var(--lime);text-shadow:0 0 50px rgba(203,251,97,.35)}
+#hk3 small{display:block;margin-top:14px;font:800 36px/1 var(--f-b);letter-spacing:.14em;color:var(--body);text-shadow:none}
+#hkR{left:1004px;top:730px;display:inline-flex;align-items:center;gap:14px;height:84px;padding:0 36px;border-radius:999px;background:rgba(232,194,90,.12);box-shadow:inset 0 0 0 3px var(--gold),0 0 40px rgba(232,194,90,.25);font:800 36px/1 var(--f-b);color:var(--gold-hi)}
+
+/* what's a level */
+#lsvg{left:0;top:0;width:1920px;height:1080px}
+.node{display:grid;place-items:center;border-radius:50%;text-align:center}
+#lyou{left:890px;top:225px;width:140px;height:140px;background:radial-gradient(circle,rgba(232,194,90,.28),rgba(232,194,90,.06) 70%);box-shadow:0 0 0 5px var(--gold),0 0 50px rgba(232,194,90,.4);font-size:76px}
+#lyouT{left:890px;top:372px;width:140px;text-align:center;font:800 26px/1 var(--f-b);letter-spacing:.16em;color:var(--gold-hi)}
+.n1{width:110px;height:110px;top:440px;font-size:58px;background:radial-gradient(circle,rgba(203,251,97,.24),rgba(203,251,97,.04) 70%);box-shadow:0 0 0 4px var(--lime),0 0 34px rgba(203,251,97,.35)}
+.n2{width:76px;height:76px;top:608px;font-size:40px;background:radial-gradient(circle,rgba(155,124,255,.26),rgba(155,124,255,.04) 70%);box-shadow:0 0 0 3px var(--vio)}
+.ltag{left:110px;height:64px;display:inline-flex;align-items:center;gap:12px;padding:0 26px;border-radius:999px;font:800 28px/1 var(--f-b)}
+#lt1{top:463px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);color:var(--lime)}
+#lt1 small{font:800 22px/1 var(--f-b);color:var(--body)}
+#lt2{top:614px;background:rgba(155,124,255,.12);box-shadow:inset 0 0 0 3px var(--vio);color:#c9b8ff}
+.dr{left:330px;width:1260px;height:2px;background:repeating-linear-gradient(90deg,rgba(155,124,255,.55) 0 10px,transparent 10px 22px)}
+.dl{left:250px;width:60px;text-align:right;font:800 18px/1 var(--f-b);color:var(--muted)}
+#ldeep{left:1610px;top:705px;height:160px;display:flex;align-items:center;gap:14px}
+#ldeep:before{content:"";width:14px;height:160px;border:3px solid var(--lime);border-left:0;border-radius:0 12px 12px 0}
+#ldeep b{font:400 46px/1 var(--f-d);color:var(--lime);text-transform:uppercase}
+
+/* the building */
+#bcard{left:150px;top:400px;width:380px;height:240px;border-radius:26px;padding:28px 30px}
+#bcard .chp{width:66px;height:50px;border-radius:10px;background:linear-gradient(135deg,#f6e3a1,#c99a3a);box-shadow:inset 0 0 0 2px rgba(0,0,0,.18)}
+#bcard b{display:block;margin-top:46px;font:800 30px/1 var(--f-b);letter-spacing:.16em}
+#bcard small{display:block;margin-top:10px;font:800 20px/1 var(--f-b);letter-spacing:.14em;color:var(--lime)}
+#brd{left:590px;top:430px;width:84px;height:180px;border-radius:20px;background:linear-gradient(180deg,#2b2440,#15111f);box-shadow:inset 0 0 0 2px rgba(155,124,255,.5),0 20px 50px rgba(0,0,0,.5)}
+#brd i{position:absolute;left:24px;top:28px;width:36px;height:36px;border-radius:50%;background:#3a3150;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12)}
+#brdring{left:576px;top:404px;width:112px;height:112px;border-radius:50%;box-shadow:inset 0 0 0 6px var(--lime)}
+#bq{left:1360px;top:250px;width:440px;height:110px;border-radius:28px;display:flex;align-items:center;gap:18px;padding:0 30px}
+#bq b{font:400 64px/1 var(--f-d);color:var(--lime)}#bq small{display:block;font:800 22px/1.25 var(--f-b);color:var(--body)}
+#bqok{left:1360px;top:376px;height:56px;display:inline-flex;align-items:center;gap:10px;padding:0 22px;border-radius:999px;background:var(--lime);color:#14110b;font:800 24px/1 var(--f-b);letter-spacing:.06em}
+#bcnt{left:1360px;top:460px;width:440px;height:270px;border-radius:30px;padding:28px 34px}
+#bcnt p{font:800 22px/1 var(--f-b);letter-spacing:.16em;color:var(--gold)}
+#bcnt b{display:block;margin-top:10px;font:400 130px/1 var(--f-d)}
+#bcnt span{display:block;margin-top:6px;font:800 30px/1 var(--f-b);color:var(--body)}#bcnt span i{font-style:normal;color:var(--lime)}
+#bstill{left:1360px;top:750px;height:64px;display:inline-flex;align-items:center;gap:12px;padding:0 26px;border-radius:999px;background:rgba(155,124,255,.14);box-shadow:inset 0 0 0 3px var(--vio);font:800 28px/1 var(--f-b);color:#d9ccff}
+#ball{left:1360px;top:750px;height:64px;display:inline-flex;align-items:center;gap:12px;padding:0 26px;border-radius:999px;background:var(--lime);color:#14110b;font:800 30px/1 var(--f-b);letter-spacing:.08em;box-shadow:0 0 40px rgba(203,251,97,.5)}
+#bfig{left:110px;top:242px}
+
+/* what open floors pay: lot commission */
+#pchip,#schip{left:110px;top:244px;height:56px;display:inline-flex;align-items:center;gap:12px;padding:0 24px;border-radius:999px;background:rgba(232,194,90,.12);box-shadow:inset 0 0 0 2.5px var(--gold);font:800 24px/1 var(--f-b);letter-spacing:.14em;color:var(--gold-hi)}
+.bar{position:absolute;bottom:0;width:100px;border-radius:16px 16px 6px 6px;transform-origin:50% 100%;background:linear-gradient(180deg,#e9ff9e,#cbfb61 45%,#8fcf2a);box-shadow:0 0 30px rgba(203,251,97,.35),inset 0 2px 0 rgba(255,255,255,.6)}
+.bar.m{background:linear-gradient(180deg,#d8cbff,#9b7cff 50%,#6f50dc);box-shadow:0 0 26px rgba(155,124,255,.35),inset 0 2px 0 rgba(255,255,255,.5)}
+.bar.s{background:linear-gradient(180deg,#c5b4ff,#7d62e0 55%,#5a40c0);box-shadow:inset 0 2px 0 rgba(255,255,255,.4)}
+#bars{left:316px;top:440px;width:1288px;height:340px;visibility:visible;opacity:1}
+.bv{position:absolute;width:100px;text-align:center;font:800 28px/1 var(--f-b)}
+.bl{position:absolute;top:350px;width:100px;text-align:center;font:800 24px/1 var(--f-b);color:var(--body)}
+#pbase{left:300px;top:780px;width:1320px;height:3px;background:rgba(255,255,255,.25)}
+#ptot{left:1170px;top:226px;width:620px;height:120px;border-radius:30px;display:flex;align-items:center;justify-content:center;gap:16px}
+#ptot small{font:800 26px/1 var(--f-b);color:var(--body);letter-spacing:.06em}#ptot b{font:400 80px/1 var(--f-d);color:var(--lime)}
+#preal{left:1170px;top:362px;width:620px;height:62px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 2px rgba(255,255,255,.16);font:800 26px/1 var(--f-b)}
+#pfig{left:110px;top:840px}
+
+/* profit share */
+#chips{left:250px;top:330px;width:1420px;height:150px;visibility:visible;opacity:1}
+.sc{position:absolute;top:0;width:124px;height:118px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.sc b{font:400 44px/1 var(--f-d);color:var(--lime)}.sc small{font:800 20px/1 var(--f-b);color:var(--body)}
+#sarr{left:1320px;top:470px;width:4px;height:80px;background:linear-gradient(0deg,#9b7cff,rgba(155,124,255,0))}
+#sbar{left:310px;top:560px;width:1300px;height:130px;border-radius:28px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.45)}
+#s70{position:absolute;left:0;top:0;bottom:0;width:70%;background:linear-gradient(180deg,rgba(233,255,158,.55),rgba(203,251,97,.4) 50%,rgba(159,220,53,.4));display:flex;align-items:center;padding-left:40px;color:#e9ffc0;font:800 30px/1 var(--f-b);letter-spacing:.1em}
+#s30{position:absolute;right:0;top:0;bottom:0;width:30%;background:linear-gradient(180deg,#b9a2ff,#9b7cff 55%,#7a5be8);display:flex;flex-direction:column;justify-content:center;padding-left:30px;color:#fff}
+#s30 b{font:400 60px/1 var(--f-d)}#s30 small{margin-top:6px;font:800 20px/1 var(--f-b);letter-spacing:.12em}
+#sring{left:1210px;top:550px;width:410px;height:150px;border-radius:32px;box-shadow:inset 0 0 0 6px #fff,0 0 40px rgba(255,255,255,.35)}
+#snever{left:0;right:0;top:740px;display:flex;justify-content:center}
+#snever span{display:inline-flex;align-items:center;gap:14px;height:80px;padding:0 36px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 34px/1 var(--f-b)}
+#sfig{left:110px;top:840px}
+
+/* client or partner */
+.cc{top:270px;width:720px;height:340px;padding:40px 48px}
+.cc p{font:800 26px/1 var(--f-b);letter-spacing:.16em}
+.cc b{display:block;margin-top:18px;font:400 150px/1 var(--f-d)}
+.cc span{display:block;margin-top:12px;font:800 32px/1.2 var(--f-b);color:var(--body)}
+#cA{left:200px}#cA p{color:#c9b8ff}#cA b{color:#e3d9ff}
+#cB{left:1000px}#cB p{color:var(--lime)}#cB b{color:var(--lime)}
+#cchk{left:0;right:0;top:680px;display:flex;justify-content:center}
+#cchk span{display:inline-flex;align-items:center;gap:14px;height:90px;padding:0 40px;border-radius:999px;background:rgba(232,194,90,.12);box-shadow:inset 0 0 0 3px var(--gold),0 0 40px rgba(232,194,90,.2);font:800 36px/1 var(--f-b);color:var(--gold-hi)}
+#cchk .em{font-size:44px}
+
+/* recap */
+.rr{left:310px;width:1300px;height:110px;border-radius:30px;display:flex;align-items:center;gap:24px;padding:0 40px;font:800 42px/1 var(--f-b)}
+.rr .em{font-size:52px}.rr i{font-style:normal;color:var(--lime)}.rr u{text-decoration:none;color:var(--muted);font-size:40px}
+#rr1{top:300px}#rr2{top:440px}#rr3{top:580px}
+
+/* your turn */
+#ut{top:150px;font:400 140px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#ut span{color:var(--lime)}
+#useat{left:330px;top:340px;width:330px;height:330px;border-radius:50%;display:grid;place-items:center;font-size:170px;background:radial-gradient(circle,rgba(203,251,97,.22),rgba(203,251,97,.04) 70%);box-shadow:0 0 0 7px var(--lime),0 0 90px rgba(203,251,97,.45)}
+#uurl{left:820px;top:355px;width:800px;display:flex;justify-content:center}
+#uurl span{display:inline-flex;align-items:center;height:100px;padding:0 54px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 4px var(--lime),0 0 40px rgba(203,251,97,.25);font:800 60px/1 var(--f-b)}
+#uurl i{font-style:normal;color:var(--lime)}
+#ujoin{left:900px;top:510px;width:640px;height:150px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:22px;background:linear-gradient(180deg,#dcff86,#b5ec3c);color:#14190a;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.03em;box-shadow:0 22px 70px rgba(203,251,97,.4),0 0 0 6px rgba(203,251,97,.18)}
+#ujoin .em{font-size:72px}
+#uring{left:1150px;top:515px;width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 7px #fff}
+#uhand{left:1180px;top:560px;font-size:120px;transform-origin:30% 10%}
+
+/* captions */
+#cap{left:0;right:0;top:900px;display:flex;justify-content:center;visibility:visible;opacity:1}
+#capbox{max-width:1560px;padding:14px 30px 16px;border-radius:20px;background:rgba(8,6,14,.72);text-align:center;font:800 44px/1.3 var(--f-b);color:rgba(255,255,255,.95);visibility:hidden}
+#capbox span{margin:0 .12em}#capbox .on{color:var(--lime)}#capbox .todo{color:rgba(255,255,255,.55)}
+</style></head><body><div id="v"><div id="grid"></div>
+<div class="ab" id="top"><div class="who"><img src="jetup-disc-small.png" alt=""><div><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div></div><span id="chipT">JETUP · THE PARTNER PLAN</span></div>
+
+<!-- hook -->
+<div class="ab iso" id="hiso"></div>
+<div class="ab" id="hkE">THE PARTNER PLAN</div>
+<div class="ab" id="hk10">10 levels</div>
+<div class="ab" id="hk3">Only 3 open<small>ON DAY ONE</small></div>
+<div class="ab" id="hkR"><span class="em">🔑</span>The rule most people miss</div>
+
+<!-- hi -->
+<div class="ab" id="hdisc"><img src="jetup-disc.png" alt="JetUP"></div>
+<div class="ab c" id="hhi">Hi, I'm MTG</div>
+<div class="ab c goldtxt" id="harch">YOUR DIGITAL ARCHITECT</div>
+
+<!-- what's a level -->
+<div class="ab ttl" id="ltt">What's a <span>level</span>?</div>
+<svg class="ab" id="lsvg" viewBox="0 0 1920 1080"><g id="lines1" stroke="#cbfb61" stroke-width="4" stroke-linecap="round"></g><g id="lines2" stroke="#9b7cff" stroke-width="3" stroke-linecap="round"></g></svg>
+<div class="ab node" id="lyou">🙋</div><div class="ab" id="lyouT">YOU</div>
+<div id="l1nodes"></div><div id="l2nodes"></div>
+<div class="ab ltag" id="lt1">LEVEL 1<small>your direct partners</small></div>
+<div class="ab ltag" id="lt2">LEVEL 2</div>
+<div id="ldeeprows"></div>
+<div class="ab" id="ldeep"><b>10 levels deep</b></div>
+
+<!-- the building -->
+<div class="ab ttl" id="btt">How the <span>floors</span> open</div>
+<div class="ab glass" id="bcard"><div class="chp"></div><b>ACCESS CARD</b><small>YOUR PARTNER LEVELS</small></div>
+<div class="ab" id="brd"><i id="brdl"></i></div>
+<div class="ab" id="brdring"></div>
+<div class="ab iso" id="biso"></div>
+<div class="ab glass" id="bq"><b>$250</b><small>of active trading<br>to qualify</small></div>
+<div class="ab" id="bqok">✓ PARTNER</div>
+<div class="ab glass v" id="bcnt"><p>DIRECT PARTNERS</p><b id="bn">0</b><span>Floors open: <i id="bo">3</i> of 10</span></div>
+<div class="ab" id="bstill">Still 3 floors</div>
+<div class="ab" id="ball"><span class="em">🎉</span>ALL 10 OPEN</div>
+<div class="ab figs" id="bfig">JetUP's business plan, October 2026</div>
+
+<!-- lot commission -->
+<div class="ab ttl" id="ptt">What open floors <span>pay</span></div>
+<div class="ab" id="pchip">1 · LOT COMMISSION</div>
+<div class="ab" id="pbase"></div>
+<div class="ab" id="bars"></div>
+<div class="ab glass" id="ptot"><small>UP TO</small><b>$8.00</b><small>PER LOT</small></div>
+<div class="ab" id="preal"><span class="em">📊</span>From real trading, not from deposits</div>
+<div class="ab figs" id="pfig">JetUP's figures, 4 Oct 2026. Per lot (a standard trade size) traded on each open level.</div>
+
+<!-- profit share -->
+<div class="ab ttl" id="stt">And <span>Profit Share</span></div>
+<div class="ab" id="schip">2 · PROFIT SHARE</div>
+<div class="ab" id="chips"></div>
+<div class="ab" id="sarr"></div>
+<div class="ab" id="sbar"><div id="s70">STRATEGY PROFIT · 70% YOURS</div><div id="s30"><b>30%</b><small>THE 30% SHARE</small></div></div>
+<div class="ab" id="sring"></div>
+<div class="ab" id="snever"><span><span class="em">🛡️</span>Never from client deposits</span></div>
+<div class="ab figs" id="sfig">JetUP's figures, 4 Oct 2026. Sonic AI strategy, on every open level.</div>
+
+<!-- client or partner -->
+<div class="ab ttl" id="ctt">Client or <span>partner</span>?</div>
+<div class="ab glass v cc" id="cA"><p>CLIENT START</p><b>$155</b><span>the sign-up training</span></div>
+<div class="ab glass cc" id="cB"><p>PARTNER</p><b>$250</b><span>of active trading</span></div>
+<div class="ab" id="cchk"><span><span class="em">🔎</span>Check the current qualification in your partner account</span></div>
+
+<!-- recap -->
+<div class="ab ttl" id="rtt">So that's <span>the rule</span></div>
+<div class="ab glass rr" id="rr1"><span class="em">🔓</span><i>$250</i> of active trading <u>→</u> 3 levels open</div>
+<div class="ab glass rr" id="rr2"><span class="em">➕</span>From your <i>4th</i> direct partner <u>→</u> +1 level each</div>
+<div class="ab glass rr" id="rr3"><span class="em">🏢</span><i>10</i> direct partners <u>→</u> all 10 levels</div>
+
+<!-- your turn -->
+<div class="ab c" id="ut">Now it's <span>your turn</span></div>
+<div class="ab em" id="useat">🙋</div>
+<div class="ab" id="uurl"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="ujoin"><span class="em">🚀</span>Join JetUP</div>
+<div class="ab" id="uring"></div>
+<div class="ab em" id="uhand">👆</div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

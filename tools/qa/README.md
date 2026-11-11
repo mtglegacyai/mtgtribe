@@ -19,9 +19,16 @@ find . -name "*.html" -not -path "./tools/*" -not -path "./.git/*" -not -path "*
 node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
 ```
 
+Add 880, 912 and 960 for the widths between tablets and small laptops. To check another address (for example the live site),
+put `BASE=https://mtgtribe.com/` in front of the command.
+
+The check measures against the real screen width (`documentElement.clientWidth`). Until 11 Nov 2026 it used `innerWidth`,
+which grows with a page that is too wide in phone mode, so a page wider than the screen was never reported.
+
 It prints how many page views had a problem and writes the details to the JSON file. Things that are fine by design
 and can be ignored: screen-reader-only text (`.sr`, `caption.sr`), the moving ticker tape on /jetup/ (`.tape`) and
-ALTRUVA video titles that end in "..." (`.vt`).
+ALTRUVA video titles that end in "..." (`.vt`). Text clipped to nothing for screen readers (`clip:rect(0 0 0 0)`) is skipped by the check
+itself. `/group/` forwards to WhatsApp, so what the check measures there is WhatsApp's own page, not ours.
 
 ## How tables stay on the screen
 

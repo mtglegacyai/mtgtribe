@@ -81,7 +81,7 @@ JetUP tour sits at the top of /jetup/.
 
 | # | Video | Where | Voice | Status |
 |---|---|---|---|---|
-| 7 | Send your deposit the right way (networks, bus route) | Get started part 4, FAQ | recorded; analogy new or on screen | planned |
+| 7 | Send your deposit the right way (networks, bus rank), about 2:30 | Get started part 4, Videos page, FAQ (link) | 7 new lines in MTG Master Voice V3 (about 60 s, 1 to 2 credits) + 9 recorded step lines, greeting and close | on hold (MTG, 11 Nov 2026: "cancel this video for now", his step 4 recording is not in yet). Script and storyboard drafted, nothing recorded or built: `tools/jetup-explainers/ex7/README.md` |
 | 8 | Getting your money out | How it works "Withdrawals", check 5, FAQ | recorded lines | planned |
 | 9 | What "copying" really means | How it works, part 5 | mostly recorded | planned |
 | 10 | Exposure Calculator walkthrough | Exposure Calculator | new lines | planned |

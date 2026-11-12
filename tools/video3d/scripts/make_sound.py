@@ -515,6 +515,33 @@ def hoot():
     return lowpass(x, 1300)
 
 
+def typing():
+    """Someone typing a short line: a run of soft, muted key taps (no clicks)."""
+    d = 1.3
+    x = np.zeros(int(d * SR))
+    rng = np.random.default_rng(71)
+    at = 0.0
+    while at < 1.1:
+        tap = band(noise(0.07), 350, 1300) * env(int(0.07 * SR), 0.008, 0.018)
+        tap += sine(rng.uniform(420, 560), 0.07) * env(int(0.07 * SR), 0.008, 0.02) * 0.25
+        i = int(at * SR)
+        x[i:i + len(tap)] += tap * rng.uniform(0.55, 1.0)
+        at += rng.uniform(0.07, 0.15)
+    return lowpass(x, 1700)
+
+
+def shimmer():
+    """The answer arrives: three quiet rising notes inside a soft breath of air."""
+    d = 1.7
+    x = band(noise(d), 500, 1500) * env(int(d * SR), 0.3, 0.7, hold=0.3) * 0.08
+    for at, f, a in ((0.0, 392.0, 0.7), (0.16, 523.3, 0.85), (0.32, 659.3, 1.0)):
+        tt = t(1.2)
+        n = (np.sin(2 * np.pi * f * tt) + 0.18 * np.sin(2 * np.pi * f * 2 * tt)) * env(len(tt), 0.03, 0.5, curve=0.9)
+        i = int(at * SR)
+        x[i:i + len(n)] += n[:len(x) - i] * a
+    return lowpass(x, 1800)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -536,6 +563,8 @@ PALETTE = {
     'ping': (ping, 0.35), 'halve': (halve, 0.25),
     # made for video 06 (the hidden cost of your commute)
     'engine': (engine, 0.2), 'hoot': (hoot, 0.3),
+    # made for video 07 (before you try to make money with AI)
+    'typing': (typing, 0.15), 'shimmer': (shimmer, 0.35),
 }
 
 

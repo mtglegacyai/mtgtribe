@@ -17,5 +17,6 @@ Daily routine: when MTG says "let's create today's video", the next video follow
 | 04 | Myth or Fact | Myth or Fact: Is Your Money in a Vault? | how money and banks really work | 9:16 Short, 0:53 | Posted by MTG (9 Nov 2026) |
 | 05 | How ... Really Works | How Bitcoin Really Works: 3 Things Nobody Explained | Bitcoin (new direction) | 9:16, 1:05 | Preview sent to MTG (10 Nov 2026) with cover and posting pack. First video in MTG Master Voice V3, with Leo's moments, CSS 3D and the pill end screen |
 | 06 | The Hidden Cost of | The Hidden Cost of Your Commute: 60 Working Days a Year | full-time employees, time, multiple income streams | 9:16 Short, 0:52 | Preview sent to MTG (11 Nov 2026) with cover and posting pack |
+| 07 | Before You | Before You Try to Make Money With AI, Do These 3 Things | AI (the first AI video) | 9:16 Short, 0:56 | Preview sent to MTG (12 Nov 2026) with cover and posting pack |
 
 This repository is public: keep private strategy in MTG's Google Drive.

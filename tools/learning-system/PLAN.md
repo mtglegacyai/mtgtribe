@@ -82,7 +82,7 @@ JetUP tour sits at the top of /jetup/.
 | # | Video | Where | Voice | Status |
 |---|---|---|---|---|
 | 7 | Send your deposit the right way (networks, bus rank), about 2:30 | Get started part 4, Videos page, FAQ (link) | 7 new lines in MTG Master Voice V3 (about 60 s, 1 to 2 credits) + 9 recorded step lines, greeting and close | on hold (MTG, 11 Nov 2026: "cancel this video for now", his step 4 recording is not in yet). Script and storyboard drafted, nothing recorded or built: `tools/jetup-explainers/ex7/README.md` |
-| 8 | Getting your money out | How it works "Withdrawals", check 5, FAQ | recorded lines | planned |
+| 8 | Getting your money out (a fruit tree in your own backyard: pick the fruit any time, the promo's gift branch and its 12 months, one small withdrawal first), 2:06 | How it works "Withdrawals", check 5, FAQ (link), Videos page | 10 new lines in MTG Master Voice V3 (683 characters, 1 credit, recorded 12 Nov 2026) + 9 recorded lines, greeting and close | live 12 Nov 2026 (MTG: "Put it live"): How it works "Withdrawals", the 5 Checks page check 5, the Videos page (after the partner plan), FAQ "How do withdrawals work?" (link). Ten new lines in MTG Master Voice V3 (1 credit, 47 left). Sources: `tools/jetup-explainers/ex8/` |
 | 9 | What "copying" really means | How it works, part 5 | mostly recorded | planned |
 | 10 | Exposure Calculator walkthrough | Exposure Calculator | new lines | planned |
 | 11 | Infinity Bonus, the 50% rule and the difference rule | Partner plan "Infinity" | new lines | planned |

@@ -60,6 +60,18 @@ def fix(ws):
         else:
             out.append(ws[i]); i += 1
     return out
+# a caption too long for one line (over 60 characters) gets its line break where it reads best: at the comma nearest the
+# middle, else before the phrase word ("to", "and", "so", ...) nearest the middle, else at the word nearest the middle;
+# never one word alone on a line, and phrases such as "massive action" stay whole (the stage puts a <br> after word br)
+PHRASE = {'to', 'and', 'so', 'because', 'but', 'or', 'in', 'on', 'for', 'with', 'when', 'if', 'that', 'which'}
+def brk(ch, limit=60):
+    lens = [len(w['w']) + 1 for w in ch]; tot = sum(lens)
+    if tot <= limit or len(ch) < 4: return None
+    cut = [(sum(lens[:i + 1]), i) for i in range(1, len(ch) - 2)]              # break after word i: two words or more per line
+    commas = [(abs(n - tot / 2), i) for n, i in cut if ch[i]['w'].endswith(',') and .25 <= n / tot <= .75]
+    if commas: return min(commas)[1]
+    phrase = [(abs(n - tot / 2), i) for n, i in cut if nrm(ch[i + 1]['w']) in PHRASE and .3 <= n / tot <= .7]
+    return min(phrase)[1] if phrase else min((abs(n - tot / 2), i) for n, i in cut)[1]
 # never more than two caption lines: split long lines at sentence ends (and the recap at its colon and every comma, so each
 # caption matches the card that comes in with it)
 SPLIT_COMMA = {'nrecap'}
@@ -79,6 +91,8 @@ for k, t0 in VO:
         a = round((t0 - .08) if j == 0 else ch[0]['a'] - .05, 3)
         b = round(chunks[j + 1][0]['a'] - .05 if j + 1 < len(chunks) else vend[k] + .22, 3)
         caps.append(dict(a=a, b=b, w=ch))
+        br = brk(ch)
+        if br is not None: caps[-1]['br'] = br
 allw = [w for c_ in caps for w in c_['w']]
 K = ME.find_cues(allw, links=False)
 
@@ -99,7 +113,7 @@ C = dict(
     c_rules=vstart['change'], c_check=cue('change', 'check'), c_dash=cue('change', 'dashboard'),
     # into your basket
     k_where=cue('nbasket', 'where'), k_into=cue('nbasket', 'into'), k_basket=cue('nbasket', 'basket'), k_crypto=cue('nbasket', 'crypto'),
-    r_with=vstart['nroute'], r_broker=cue('nroute', 'broker'), r_wallet=cue('nroute', 'wallet'), r_address=cue('nroute', 'address'),
+    r_with=cue('nroute', 'withdrawals'), r_broker=cue('nroute', 'broker'), r_wallet=cue('nroute', 'wallet'), r_address=cue('nroute', 'address'),
     r_same=cue('nroute', 'same'), r_network=cue('nroute', 'network'), r_both=cue('nroute', 'both'), r_sides=cue('nroute', 'sides'),
     r_arrive=cue('nroute', 'arrive'), r_safely=cue('nroute', 'safely'),
     n_jet=vstart['n48'], n_says=cue('n48', 'says'), n_48=cue('n48', 'fortyeight'), n_on=cue('n48', 'on'), n_avg=cue('n48', 'average'),
@@ -121,7 +135,7 @@ C['g_open'] = round(C['t_think'] - .1, 3)                    # the gate's latch 
 S = dict(hook=[0, vstart['hi'] - .15], hi=[vstart['hi'] - .25, vstart['ntree'] - .2],
          tree=[vstart['ntree'] - .3, vstart['nbranch'] - .35], gift=[vstart['nbranch'] - .4, vstart['nbasket'] - .35],
          basket=[vstart['nbasket'] - .4, vstart['advice'] - .12], small=[vstart['advice'] - .2, vstart['nrecap'] - .35],
-         recap=[vstart['nrecap'] - .4, C['u_now'] + .55], turn=[C['u_now'] - .25, K['T_LINKS'] + .3], outro=[-10, -9])
+         recap=[vstart['nrecap'] - .4, C['u_now'] + .55], turn=[C['u_now'] - .25, K['T_LINKS'] + .05], outro=[-10, -9])   # the turn scene is gone before the kit's url pill (T_FAIR + .05)
 S = {k: [round(a, 3), round(b, 3)] for k, (a, b) in S.items()}
 
 EMOS = [[e['phrase'].replace('forty-eight', '48'), e['emoji']] for e in PLAN['emoji_pops']]     # caption words: "48 hours"
@@ -162,6 +176,6 @@ if __name__ == '__main__':
     for k in BODY: print(f'  {k:8s} {vstart[k]:7.3f} -> {vend[k]:7.3f}  {L[k]["text"]}')
     for k, (a, b) in S.items(): print(f'  scene {k:7s} {a:7.3f} -> {b:7.3f}')
     for c_ in caps:
-        if c_['a'] < kit0 + 8: print(f'  cap {c_["a"]:7.3f}-{c_["b"]:7.3f} ({sum(len(w["w"]) + 1 for w in c_["w"])} ch) ' + ' '.join(w['w'] for w in c_['w']))
+        if c_['a'] < kit0 + 8: print(f'  cap {c_["a"]:7.3f}-{c_["b"]:7.3f} ({sum(len(w["w"]) + 1 for w in c_["w"])} ch) ' + ' '.join(w['w'] + (' /' if i == c_.get('br') else '') for i, w in enumerate(c_['w'])))
     print('  emos', TL['emos'])
     print('  sfx', {k: len(v_) for k, v_ in json.load(open(os.path.join(HERE, 'sfx_body.json'))).items()})

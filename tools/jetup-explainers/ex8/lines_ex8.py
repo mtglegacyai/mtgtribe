@@ -54,6 +54,10 @@ def cut(x, s, e):
 PLAN = json.load(open(os.path.join(HERE, 'plan.json')))
 NEW = [l for l in PLAN['lines'] if l['kind'] == 'new']
 L, WD = {}, {}
+# HeyGen's word times for five of the new lines run ahead of their audio: the pauses in each cut line start and end
+# 0.16 to 0.21 s after the word gaps (checked 12 Nov 2026 on the pauses below -44 dB and with faster-whisper; the other new
+# lines agree within 0.05 s). Shift those words so the captions and every cue land on what MTG says.
+ALIGN = {'nbranch': .19, 'nbasket': .17, 'nroute': .17, 'n48': .18, 'nrecap': .19}
 
 # 1. the ten new V3 lines
 x = load(TAKE); WW = json.load(open(RAW))['original_words']; i = 0
@@ -69,7 +73,8 @@ for n, ln in enumerate(NEW):
     WD[k], j = [], 0                                 # a written word like "one-pager" is two of HeyGen's words
     for t in text.split():
         m = len(toks(t)); ws = seg[j:j + m]; j += m
-        WD[k].append(dict(w=t, a=round(ws[0]['start_time'] - s, 3), b=round(ws[-1]['end_time'] - s, 3)))
+        sh = ALIGN.get(k, 0.0)
+        WD[k].append(dict(w=t, a=round(ws[0]['start_time'] - s + sh, 3), b=round(ws[-1]['end_time'] - s + sh, 3)))
 assert i == len(WW), (i, len(WW))
 
 # 2. three lines from the 5 Checks takes, on the forced-alignment word times

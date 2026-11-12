@@ -38,11 +38,12 @@ const GX = 1218, POSTL = [GX - 148, GX - 118], POSTR = [GX + 118, GX + 148]; // 
 const FT = 680, FB = 770;                                   // fence tips, fence base (the ground line)
 const PLATE = [GX + 160, 700, 92, 56];                      // name plate x, y, w, h (on the pickets right of the gate)
 const BK = { x: 1620, y: 772, rx: 112, ry: 25, by: 866, brx: 88 }; // the basket: rim centre, rim radii, bottom
-const MANGO = 'M0 -27 C 15 -27 24 -12 23 6 C 22 22 10 31 -3 30 C -15 29 -23 18 -21 3 C -19 -12 -13 -27 0 -27 Z';
-const RIPE = [[548, 474, 1], [790, 488, 1.02], [866, 404, .96]];   // the two or three mangoes (x, y, size)
-const MS = [1012, 614, .74];                               // the small mango from the hook (behind the fence, beside the gate)
+const MANGO = 'M 0 -28 C 16 -29 27 -14 26 4 C 25 21 14 31 0 31 C -9 31 -14 27 -15 21 C -16 15 -12 11 -17 4 C -23 -5 -22 -19 -14 -25 C -10 -28 -5 -28 0 -28 Z';   // a kidney with a beak, like the 🥭
+const LEAF = 'M 2 -28 C 7 -38 18 -42 28 -38 C 21 -31 11 -27 2 -28 Z';
+const RIPE = [[548, 474, 1, 10], [790, 488, 1.02, -8], [866, 404, .96, 12]];   // the two or three mangoes (x, y, size, tilt)
+const MS = [984, 614, .74];                                // the small mango from the hook (behind the fence, beside the gate)
 const GIFT = { bx: 478, by: 600, w: 72, h: 66 };            // the gift box hanging from the gift branch
-const PATHD = 'M 722 664 C 860 668 1040 672 1160 690 C 1200 697 1218 722 1222 770 C 1227 815 1310 842 1400 838 C 1480 834 1530 815 1560 792';
+const PATHD = 'M 900 654 C 990 652 1100 656 1170 674 C 1206 684 1220 722 1222 770 C 1227 815 1310 842 1400 838 C 1480 834 1530 815 1560 792';   // on the backyard's lawn (above the picket tips), down through the open gate, to the basket
 
 const G = { ground: $('wGround'), tree: $('wTree'), fence: $('wFence'), front: $('wFront') };
 
@@ -63,6 +64,13 @@ for (let i = 0; i < 90; i++) {                              // grass along the o
   const x = -300 + i * 30 + rnd() * 14, y = FB + 4 + rnd() * 6, h = 7 + rnd() * 9;
   sv('path', { d: `M${x} ${y} l -3 ${-h} M${x + 3} ${y} l 2 ${-h * 1.2} M${x + 6} ${y} l 5 ${-h * .8}`, stroke: rnd() < .5 ? '#2c5e33' : '#3a7a3b', 'stroke-width': 2.2, 'stroke-linecap': 'round', opacity: .7 }, outside);
 }
+{ let s2 = 23; const r2 = () => (s2 = (s2 * 16807) % 2147483647) / 2147483647;
+  [[-1500, -300], [2200, 3400]].forEach(([x0, x1]) => { for (let x = x0; x < x1; x += 34) {
+    const y = 600 + r2() * 80, h = 6 + r2() * 9, xx = x + r2() * 30;
+    sv('path', { d: `M${xx} ${y} l -3 ${-h} M${xx + 3} ${y} l 2 ${-h * 1.2} M${xx + 6} ${y} l 5 ${-h * .8}`, stroke: r2() < .5 ? '#2f6e33' : '#3f8a3c', 'stroke-width': 2, 'stroke-linecap': 'round', opacity: .55 }, lawn);
+    const yo = FB + 4 + r2() * 6, ho = 7 + r2() * 9, xo = x + r2() * 14;
+    sv('path', { d: `M${xo} ${yo} l -3 ${-ho} M${xo + 3} ${yo} l 2 ${-ho * 1.2} M${xo + 6} ${yo} l 5 ${-ho * .8}`, stroke: r2() < .5 ? '#2c5e33' : '#3a7a3b', 'stroke-width': 2.2, 'stroke-linecap': 'round', opacity: .7 }, outside);
+  } }); }
 const stoneD = [[1236, 794, 40, 11], [1300, 822, 46, 12], [1384, 834, 50, 13], [1468, 826, 46, 12]];
 stoneD.forEach(([x, y, rx, ry]) => {                        // stepping stones from the gate towards the basket
   sv('ellipse', { cx: x + 3, cy: y + 4, rx, ry, fill: '#000', opacity: .35 }, outside);
@@ -105,7 +113,7 @@ sv('path', { d: 'M 664 506 l 26 -4 l 2 12 l -26 5 Z M 664 524 l 26 -4 l 2 10 l -
 sv('path', { d: 'M 678 512 C 650 486 636 500 650 516 C 660 526 672 520 678 512 Z M 678 512 C 706 484 722 498 708 516 C 698 526 686 520 678 512 Z', fill: '#d8ff7a', stroke: '#8fcf2a', 'stroke-width': 2 }, bow);
 sv('path', { d: 'M 674 516 l -12 34 l 10 -4 l 6 8 l 4 -36 Z M 684 516 l 14 32 l -10 -2 l -4 9 l -6 -36 Z', fill: '#b8ec4c' }, bow);
 sv('circle', { cx: 678, cy: 513, r: 7, fill: '#e9ff9e' }, bow);
-const ring = sv('g', {}, giftG), dots = [];
+const ring = sv('g', {}, G.front), dots = [];               // in front of the pickets: all twelve dots read
 for (let i = 0; i < 12; i++) {
   const a = -Math.PI / 2 + i * Math.PI / 6, x = GIFT.bx + 84 * Math.cos(a), y = GIFT.by + GIFT.h / 2 + 84 * Math.sin(a);
   dots.push([sv('circle', { cx: x, cy: y, r: 9, fill: 'rgba(255,255,255,.14)', stroke: 'rgba(255,255,255,.35)', 'stroke-width': 2 }, ring),
@@ -114,9 +122,10 @@ for (let i = 0; i < 12; i++) {
 
 // the crown: back masses, mid masses, light masses, then mango leaves (procedural, seeded), all revealed from the trunk top
 const crownG = sv('g', { 'clip-path': 'url(#cCrown)' }, treeG);
-const msStalk = sv('path', { d: 'M 924 470 C 958 506 990 548 1008 588', fill: 'none', stroke: '#5a3a22', 'stroke-width': 4, 'stroke-linecap': 'round' }, crownG);
-sv('ellipse', { cx: 958, cy: 510, rx: 18, ry: 6, fill: '#2f7d34', transform: 'rotate(55 958 510)' }, crownG);
-sv('ellipse', { cx: 984, cy: 546, rx: 16, ry: 5, fill: '#3f9440', transform: 'rotate(-30 984 546)' }, crownG);
+const msTwig = sv('g', {}, crownG);                       // the small mango's twig (it goes once its fruit is picked)
+const msStalk = sv('path', { d: 'M 924 470 C 950 508 966 552 980 590', fill: 'none', stroke: '#5a3a22', 'stroke-width': 4, 'stroke-linecap': 'round' }, msTwig);
+sv('ellipse', { cx: 948, cy: 512, rx: 18, ry: 6, fill: '#2f7d34', transform: 'rotate(55 948 512)' }, msTwig);
+sv('ellipse', { cx: 958, cy: 556, rx: 16, ry: 5, fill: '#3f9440', transform: 'rotate(-30 958 556)' }, msTwig);
 const blobs = [];
 for (let i = 0; i < 11; i++) {                              // the dome: masses round the upper half and the sides
   const a = Math.PI * (1.0 + i / 10);
@@ -138,25 +147,29 @@ for (let i = 0; i < 260; i++) {
 }
 sv('ellipse', { cx: CR.x, cy: CR.y + 150, rx: 260, ry: 60, fill: '#06140a', opacity: .28, filter: 'url(#fBlur)' }, crownG);   // shade under the crown
 // the ripe mangoes (hidden until "bears fruit")
-function mango(parent, x, y, k, withStalk = true) {
+function mango(parent, x, y, k, withStalk = true, tilt = 0) {
   const g = sv('g', { transform: `translate(${x} ${y}) scale(${k})` }, parent);
-  if (withStalk) sv('path', { d: 'M 0 -26 C 1 -36 -2 -44 -6 -52', fill: 'none', stroke: '#5a3a22', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, g);
   const glow = sv('circle', { cx: 0, cy: 2, r: 58, fill: 'url(#gGlowGold)', opacity: 0 }, g);
-  const raw = sv('path', { d: MANGO, fill: 'url(#gRaw)' }, g);
-  const ripe = sv('path', { d: MANGO, fill: 'url(#gRipe)', opacity: 0 }, g);
-  const blush = sv('path', { d: MANGO, fill: 'url(#gBlush)', opacity: 0 }, g);
-  sv('ellipse', { cx: -8, cy: -12, rx: 5, ry: 9, fill: '#fff', opacity: .38, transform: 'rotate(18 -8 -12)' }, g);
+  const f = sv('g', { transform: `rotate(${tilt})` }, g);           // the fruit, its stalk (or a short nub) and one leaf
+  sv('path', { d: withStalk ? 'M 1 -26 C 2 -36 -1 -44 -6 -52' : 'M 1 -26 L 2 -34', fill: 'none', stroke: '#5a3a22', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, f);
+  sv('path', { d: LEAF, fill: 'url(#gLeaf)' }, f);
+  const raw = sv('path', { d: MANGO, fill: 'url(#gRaw)' }, f);
+  const ripe = sv('path', { d: MANGO, fill: 'url(#gRipe)', opacity: 0 }, f);
+  const blush = sv('path', { d: MANGO, fill: 'url(#gBlush)', opacity: 0 }, f);
+  sv('path', { d: MANGO, fill: 'url(#gHi)' }, f);
+  sv('ellipse', { cx: -7, cy: -11, rx: 4.5, ry: 8, fill: '#fff', opacity: .38, transform: 'rotate(18 -7 -11)' }, f);
   return { g, glow, raw, ripe, blush, x, y, k };
 }
 const fruitG = sv('g', {}, treeG);
-const ripe = RIPE.map(([x, y, k]) => mango(fruitG, x, y, k));
+treeG.insertBefore(ribbonGlow, fruitG); treeG.insertBefore(bow, fruitG);   // the lime bow sits in front of the crown's lower edge: it reads on "tied"
+const ripe = RIPE.map(([x, y, k, a]) => mango(fruitG, x, y, k, true, a));
 const msG = sv('g', {}, G.tree);                            // the small mango: on screen from the hook (behind the fence)
-const small = mango(msG, MS[0], MS[1], MS[2], false);
+const small = mango(msG, MS[0], MS[1], MS[2], false, -8);   // its nub meets the twig from the crown
 
 /* the fence: pickets that grow outward from the gate, rails, the gate's posts, beam and sign, the name plate */
 const railG = sv('g', {}, G.fence);
 const pickets = [];
-for (let x = 40; x < 1880; x += 38) {
+for (let x = -1480; x < 3400; x += 38) {
   if (x + 24 > POSTL[0] - 10 && x < POSTR[1] + 10) continue;
   const g = sv('g', {}, G.fence);
   sv('path', { d: `M${x} ${FT + 10} L${x + 12} ${FT} L${x + 24} ${FT + 10} L${x + 24} ${FB} L${x} ${FB} Z`, fill: 'url(#gPicket)' }, g);
@@ -164,8 +177,8 @@ for (let x = 40; x < 1880; x += 38) {
   pickets.push([g, x + 12]);
 }
 [[FT + 26, 9], [FB - 26, 9]].forEach(([y, h]) => {
-  sv('rect', { x: 30, y, width: POSTL[0] - 30, height: h, fill: 'url(#gRail)' }, railG);
-  sv('rect', { x: POSTR[1], y, width: 1870 - POSTR[1], height: h, fill: 'url(#gRail)' }, railG);
+  sv('rect', { x: -1500, y, width: POSTL[0] + 1500, height: h, fill: 'url(#gRail)' }, railG);
+  sv('rect', { x: POSTR[1], y, width: 3420 - POSTR[1], height: h, fill: 'url(#gRail)' }, railG);
 });
 const gateG = sv('g', {}, G.fence);
 const postEls = [POSTL, POSTR].map(([a, b]) => {
@@ -215,13 +228,15 @@ glL.innerHTML = leafSVG(false); glR.innerHTML = leafSVG(true);
 glL.style.left = POSTL[1] + 'px'; glR.style.left = (POSTR[0] - 118) + 'px';
 glL.style.transformOrigin = '0% 50%'; glR.style.transformOrigin = '100% 50%';
 
-/* the front layer: the path through the gate, the basket, the small mango's trip, the tick seal, the key */
-const pathG = sv('g', {}, G.front);
+/* the path lies on the ground (behind the posts, the pickets and the gate leaves, so it goes through the opening);
+   the front layer: the basket, the small mango's trip, the tick seal, the key */
+const pathG = sv('g', {}, G.ground);
 const pathGlow = sv('path', { d: PATHD, fill: 'none', stroke: '#cbfb61', 'stroke-width': 18, 'stroke-linecap': 'round', opacity: 0, filter: 'url(#fBlur)' }, pathG);
 const pathBase = sv('path', { d: PATHD, fill: 'none', stroke: 'rgba(255,255,255,.55)', 'stroke-width': 7, 'stroke-linecap': 'round', 'stroke-dasharray': '1 17', opacity: 0 }, pathG);
 const pathLit = sv('path', { d: PATHD, fill: 'none', stroke: '#cbfb61', 'stroke-width': 9, 'stroke-linecap': 'round', 'stroke-dasharray': '1 17', mask: 'url(#mPath)', opacity: 0 }, pathG);
 $('mPathP').setAttribute('d', PATHD);
 const PL = pathBase.getTotalLength();
+const J0 = (() => { for (let l = 0; l <= PL; l += 2) if (pathBase.getPointAtLength(l).x >= 1150) return l / PL; return .3; })();   // the small mango joins the path in the opening, past the left post and leaf
 const basketG = sv('g', {}, G.front);
 sv('ellipse', { cx: BK.x + 6, cy: BK.by + 6, rx: 128, ry: 15, fill: '#000', opacity: .5, filter: 'url(#fBlur3)' }, basketG);
 const bkHandleBack = sv('path', { d: `M ${BK.x - 98} ${BK.y} C ${BK.x - 96} ${BK.y - 112} ${BK.x + 96} ${BK.y - 112} ${BK.x + 98} ${BK.y}`, fill: 'none', stroke: '#9a6a30', 'stroke-width': 13, 'stroke-linecap': 'round' }, basketG);
@@ -262,18 +277,24 @@ sv('path', { d: 'M 44 4 l 0 10 l 6 0 l 0 -10 Z M 52 4 l 0 7 l 5 0 l 0 -7 Z', fil
 const hand = $('hand');
 
 /* ---------- the camera ---------- */
-const CAM = { hook: [887, 640, 1.3], tree: [1381, 554, .907], gift: [478, 560, .95], basket: [1400, 556, .9], key: [1586, 690, 1.6], turn: [1700, 505, .7] };
+const CAM = { hook: [887, 640, 1.3], tree: [1381, 554, .907], gift: [520, 560, .95], basket: [1400, 556, .9], key: [1600, 700, 1.5], turn: [1700, 505, .7] };
 const CK = [[0, 'hook'], [S.tree[0] + .05, 'hook'], [S.tree[0] + 1.1, 'tree'], [S.gift[0] + .1, 'tree'], [S.gift[0] + 1.1, 'gift'],
   [S.basket[0] + .05, 'gift'], [S.basket[0] + 1.15, 'basket'], [C.w_dont - .1, 'basket'], [C.w_dont + .65, 'key'], [S.recap[0] + .05, 'key'],
   [S.recap[0] + 1.05, 'turn'], [1e9, 'turn']];
 let CM = [0, 0, 1];
-function camera(t) {
+function camAt(t) {
   let i = 0; while (i < CK.length - 2 && t >= CK[i + 1][0]) i++;
   const [t0, a] = CK[i], [t1, b] = CK[i + 1], k = a === b ? 0 : ez.inOut(lin(t, t0, t1));
   const A = CAM[a], B = CAM[b];
-  const s = Math.exp(mix(Math.log(A[2]), Math.log(B[2]), k));            // zoom in log space, and keep the move smooth
-  CM = [mix(A[0], B[0], k), mix(A[1], B[1], k), s];
+  return [mix(A[0], B[0], k), mix(A[1], B[1], k), Math.exp(mix(Math.log(A[2]), Math.log(B[2]), k))];   // zoom in log space
+}
+function camera(t) {
+  CM = camAt(t); const s = CM[2];
   $('world').style.transform = `translate(${(960 - CM[0] * s).toFixed(2)}px,${(540 - CM[1] * s).toFixed(2)}px) scale(${s.toFixed(5)})`;
+  // motion blur while the camera moves: the screen distance covered during half a frame (180-degree shutter), as a Gaussian
+  const h = .25 / TL.fps, P = camAt(t - h), Q = camAt(t + h), vx = Math.abs(Q[0] - P[0]) * s, vy = Math.abs(Q[1] - P[1]) * s;
+  if (vx + vy > 1.5) { $('fMBg').setAttribute('stdDeviation', `${(vx / 3.46 / s).toFixed(2)} ${(vy / 3.46 / s).toFixed(2)}`); $('world').style.filter = 'url(#fMB)'; }
+  else $('world').style.filter = 'none';
 }
 const w2s = (x, y) => [(x - CM[0]) * CM[2] + 960, (y - CM[1]) * CM[2] + 540];
 
@@ -292,12 +313,24 @@ function box(id) { const e = $(id); const x = parseFloat(e.style.left), y = pars
 function place(id, x, y) { const e = $(id); e.style.left = x + 'px'; e.style.top = y + 'px'; }
 // focus: the newest label is bright, older ones in the scene step back (darker, never see-through)
 const dim = (t, later) => later.reduce((m, c) => m * (1 - .55 * ez.out(lin(t, c - .1, c + .3))), 1);
-function foc(id, d) { $(id).style.filter = d > .995 ? 'none' : `brightness(${(.42 + .58 * d).toFixed(3)}) saturate(${(.55 + .45 * d).toFixed(3)})`; }
+const PILL = { lime: [[203, 251, 97], [203, 251, 97], [20, 25, 10]], gold: [[255, 241, 191], [232, 194, 90], [26, 20, 5]] };   // fill top, fill bottom (and ring), ink
+function foc(id, d) {
+  const e = $(id), b = .42 + .58 * d, fl = d > .995 ? 'none' : `brightness(${b.toFixed(3)}) saturate(${(.55 + .45 * d).toFixed(3)})`;
+  if (!e.classList.contains('pill') || e.classList.contains('line')) { e.style.filter = fl; return; }
+  // a solid pill steps back to its outline form (dark glass, its ring dimmed like the glass cards' rims), never a muddy fill
+  const [top, bot, ink] = PILL[e.classList.contains('gold') ? 'gold' : 'lime'], k = clamp((1 - d) / .55), em = e.querySelector('.em');
+  if (em) em.style.filter = fl;
+  if (k < .005) { e.style.background = e.style.color = e.style.boxShadow = ''; return; }
+  const mx = (c, q, f) => `rgb(${c.map((v, i) => Math.round(v + (q[i] - v) * f)).join(',')})`;
+  e.style.background = `linear-gradient(180deg,${mx(top, [21, 17, 42], k)},${mx(bot, [21, 17, 42], k)})`;
+  e.style.color = mx(ink, [246 * b, 243 * b, 255 * b], k);
+  e.style.boxShadow = `inset 0 0 0 3px rgba(${bot.map(v => Math.round(v * b)).join(',')},${(.9 * k).toFixed(3)}),0 0 40px rgba(${bot.join(',')},${(.45 * (1 - k)).toFixed(3)})`;
+}
 
 /* ---------- hook: the visitor's own question, the door becomes your backyard gate ---------- */
 const QW = [...$('hkQ').children].filter(e => e.tagName === 'SPAN');
 function hook(t) {
-  const [a, b] = S.hook, e = b + .2;
+  const [a, b] = S.hook, e = b - .05;                     // the question is gone before the disc pops
   st($('hkQ'), vis(t, a, e, 0, .35));
   QW.forEach((w, i) => {
     const c = C.h_words[i], k = ez.out(lin(t, c - .04, c + .14));
@@ -311,15 +344,16 @@ function hook(t) {
 
 /* ---------- hi ---------- */
 function hi(t) {
-  const [a, b] = S.hi; const d = pop(t, a + .05, b, .45, .3); st($('hdisc'), d.o, 0, 0, d.s * (1 + .01 * Math.sin(t * 1.6)));
-  const h = rise(t, a + .3, b, 24), r = rise(t, a + .55, b, 30); st($('hwho'), h.o, 0, h.y); st($('httl'), r.o, 0, r.y);
+  const [a, b] = S.hi, e = b - .35;                        // out before the backyard comes back in
+  const d = pop(t, a + .15, e, .45, .3); st($('hdisc'), d.o, 0, 0, d.s * (1 + .01 * Math.sin(t * 1.6)));
+  const h = rise(t, a + .4, e, 24), r = rise(t, a + .65, e, 30); st($('hwho'), h.o, 0, h.y); st($('httl'), r.o, 0, r.y);
 }
 
 /* ---------- the world, one function of t across every scene ---------- */
 function world(t) {
   camera(t);
-  const out = Math.max(vis(t, S.hi[0], S.hi[1], .35, .35), t > S.turn[1] - .3 ? lin(t, S.turn[1] - .3, S.turn[1]) : 0);
-  const dimR = 1 - .9 * vis(t, S.recap[0] + .2, C.u_now + .25, .6, .55);           // the recap cards stand in front
+  const out = Math.max(vis(t, S.hi[0], S.hi[1], .15, .35), t > S.turn[1] - .3 ? lin(t, S.turn[1] - .3, S.turn[1]) : 0);   // the backyard is gone before the disc pops
+  const dimR = 1 - .96 * vis(t, S.recap[0] + .2, C.u_now + .5, .6, .5);             // the recap cards stand in front; the picture returns as they fold away
   const wo = (1 - out) * dimR;
   $('world').style.opacity = wo.toFixed(3); $('world').style.visibility = wo < .002 || t < C.h_back - .3 ? 'hidden' : 'visible';
   const gb = C.h_back;                                     // the gate and the low fence arrive on "backyard"
@@ -329,7 +363,7 @@ function world(t) {
   yardGlow.setAttribute('opacity', (.9 * pulse(t, C.y_back - .1, 1.2)).toFixed(3));
   // pickets: near the gate on "backyard", the rest grow outward when the gate opens
   pickets.forEach(([g, x]) => {
-    const d = Math.abs(x - GX), near = d < 330, c = near ? gb + d / 330 * .35 : C.g_open + (d - 330) / 900 * .9;
+    const d = Math.abs(x - GX), near = d < 330, c = near ? gb + d / 330 * .35 : C.g_open + Math.min(d - 330, 900) / 900 * .9;
     const k = ez.back(lin(t, c, c + .35));
     g.setAttribute('transform', `translate(0 ${FB}) scale(1 ${Math.max(0, k).toFixed(3)}) translate(0 ${-FB})`);
     g.setAttribute('opacity', clamp(k * 3).toFixed(3));
@@ -352,13 +386,15 @@ function world(t) {
   // the small mango, glowing behind the fence from the hook until it is picked
   const sm = ez.back(lin(t, gb + .3, gb + .8));
   small.ripe.setAttribute('opacity', 1); small.raw.setAttribute('opacity', 0); small.blush.setAttribute('opacity', .8);
-  small.glow.setAttribute('opacity', (sm * (.75 + .25 * Math.sin(t * 3.2)) * (1 - lin(t, C.s_pick - .05, C.s_pick + .1))).toFixed(3));
-  small.g.setAttribute('transform', `translate(${MS[0]} ${MS[1] + 3 * Math.sin(t * 1.7)}) scale(${(MS[2] * Math.max(0, sm)).toFixed(3)})`);
+  const adv = pulse(t, C.s_advice, 1.3);                   // "My advice?": the hook's small mango calls for attention
+  small.glow.setAttribute('opacity', (Math.max(sm * (.75 + .25 * Math.sin(t * 3.2)), adv) * (1 - lin(t, C.s_pick - .05, C.s_pick + .1))).toFixed(3));
+  small.g.setAttribute('transform', `translate(${MS[0]} ${MS[1] + 3 * Math.sin(t * 1.7)}) scale(${(MS[2] * Math.max(0, sm) * (1 + .3 * adv)).toFixed(3)})`);
   small.g.setAttribute('opacity', (t < C.s_pick ? clamp(sm * 2) : 0).toFixed(3));
+  msTwig.setAttribute('opacity', (1 - ez.inOut(lin(t, C.w_dont - .1, C.w_dont + .4))).toFixed(3));   // the bare twig leaves as the camera moves to the key
   // the tree draws in: trunk (bottom up), then the crown from the trunk top
   const tk = ez.inOut(lin(t, C.t_think + .1, C.t_fruit + .3));
   trunkG.setAttribute('transform', `translate(${TX} ${TB}) scale(${(.5 + .5 * tk).toFixed(3)} ${Math.max(.001, tk).toFixed(3)}) translate(${-TX} ${-TB})`);   // grows from its base
-  treeG.setAttribute('opacity', (t > C.t_think ? 1 : 0).toFixed(3));
+  treeG.setAttribute('opacity', (t > C.t_think ? 1 - ez.inOut(lin(t, C.w_dont + .35, C.w_dont + .65)) * (1 - ez.inOut(lin(t, S.recap[0] + .2, S.recap[0] + .8))) : 0).toFixed(3));   // out of the key shot's corner, back under the recap dim
   const ck = ez.out(lin(t, C.t_fruit + .1, C.t_tree + .9));
   sa($('cCrownC'), { r: 620 * ck, cy: 430 - 60 * ck });
   blobEls.forEach(([e, x, y, r]) => { const d = Math.hypot(x - TX, y - 430) / 420, k = ez.back(lin(t, C.t_fruit + .05 + d * .55, C.t_fruit + .5 + d * .55));
@@ -370,7 +406,7 @@ function world(t) {
   // the mangoes ripen on "bears fruit" (two or three, never a laden tree); one is cupped, ready to pick
   ripe.forEach((m, i) => {
     const c = C.f_bears - .15 + i * .14, g = ez.back(lin(t, c, c + .5)), rk = ez.inOut(lin(t, c + .15, c + .9));
-    const cup = i === 2 ? ez.out(lin(t, C.a_with - .05, C.a_with + .3)) * (t < S.gift[0] + .4 ? 1 : 1 - lin(t, S.gift[0] + .4, S.gift[0] + .9)) : 0;
+    const cup = i === 2 ? ez.out(lin(t, C.a_with - .05, C.a_with + .3)) * (1 - lin(t, S.tree[1] - .3, S.tree[1])) : 0;
     m.g.setAttribute('transform', `translate(${m.x} ${(m.y - 6 * cup).toFixed(1)}) scale(${(m.k * Math.max(0, .55 + .45 * g)).toFixed(3)})`);
     m.g.setAttribute('opacity', clamp(g * 3).toFixed(3));
     m.raw.setAttribute('opacity', (1 - rk).toFixed(3)); m.ripe.setAttribute('opacity', rk.toFixed(3)); m.blush.setAttribute('opacity', (.8 * rk).toFixed(3));
@@ -378,7 +414,7 @@ function world(t) {
     m.glow.setAttribute('opacity', (.9 * hl).toFixed(3));
   });
   // the hand: reaches up and cups a ripe mango on "Profits can be withdrawn any time" (nothing is picked yet)
-  const hv = vis(t, C.a_prof - .1, S.gift[0] + .9, .35, .4), hk = ez.out(lin(t, C.a_prof - .1, C.a_with));
+  const hv = vis(t, C.a_prof - .1, S.tree[1], .35, .3), hk = ez.out(lin(t, C.a_prof - .1, C.a_with));   // gone before the camera moves
   if (hv > .002) {
     const [mx, my] = [RIPE[2][0], RIPE[2][1]];
     hand.style.visibility = 'visible'; hand.style.opacity = hv.toFixed(3);
@@ -403,8 +439,11 @@ function world(t) {
   const bb = lin(t, C.k_into - .05, C.k_into + .55), bsy = ez.back(bb), bsx = .7 + .3 * ez.out(bb);
   basketG.setAttribute('opacity', clamp(bb * 4).toFixed(3));
   basketG.setAttribute('transform', `translate(${BK.x} ${BK.by}) scale(${bsx.toFixed(3)} ${Math.max(.05, bsy).toFixed(3)}) translate(${-BK.x} ${-BK.by})`);
+  const kd = 1 - .55 * vis(t, C.w_dont - .1, S.small[1] + .3, .35, .5);   // the basket and the tree step back: the key, then the phone, lead
+  const kf = kd > .995 ? 'none' : `brightness(${kd.toFixed(3)}) saturate(${(.55 + .45 * kd).toFixed(3)})`;
+  basketG.style.filter = kf; treeG.style.filter = kf;
   // the path: faint on "Withdrawals", lights up dotted to the basket on "arrive safely"
-  const pf = vis(t, C.r_with - .1, S.small[1] - .3, .5, .4);
+  const pf = vis(t, C.r_with - .1, C.w_dont + .1, .5, .35);   // gone before the real TAG screen
   pathBase.setAttribute('opacity', (.5 * pf).toFixed(3));
   const pk2 = ez.inOut(lin(t, C.r_arrive - .5, C.r_safely + .05));
   $('mPathP').setAttribute('stroke-dasharray', `${(PL * pk2).toFixed(1)} ${PL + 10}`);
@@ -412,21 +451,23 @@ function world(t) {
   pathGlow.setAttribute('opacity', (.35 * pf * pk2 * (1 + .3 * pulse(t, C.r_safely, .8))).toFixed(3));
   // the first trip: the small mango is picked on "Start small" and travels the path into the basket by "early"
   let fv = 0;
-  if (t >= C.s_pick && t < C.s_land + .1) {
+  if (t >= C.s_pick && t < C.s_land) {
     fv = 1; const lift = ez.out(lin(t, C.s_pick, C.s_pick + .3));
     let x, y;
     const j0 = C.s_pick + .3, j1 = C.s_pick + .95, j2 = C.s_land - .3;
-    const P0 = pathBase.getPointAtLength(PL * .4);
+    const P0 = pathBase.getPointAtLength(PL * J0);
     if (t < j0) { x = MS[0]; y = MS[1] - 16 * lift; }
     else if (t < j1) { const k = ez.inOut(lin(t, j0, j1)), cx = MS[0] + 60, cy = MS[1] - 60;
       x = (1 - k) * (1 - k) * MS[0] + 2 * k * (1 - k) * cx + k * k * P0.x; y = (1 - k) * (1 - k) * (MS[1] - 16) + 2 * k * (1 - k) * cy + k * k * (P0.y - 26); }
-    else if (t < j2) { const k = ez.inOut(lin(t, j1, j2)), p = pathBase.getPointAtLength(PL * mix(.4, 1, k)); x = p.x; y = p.y - 26; }
+    else if (t < j2) { const k = ez.inOut(lin(t, j1, j2)), p = pathBase.getPointAtLength(PL * mix(J0, 1, k)); x = p.x; y = p.y - 26; }
     else { const k = ez.inOut(lin(t, j2, C.s_land)), p = pathBase.getPointAtLength(PL); x = mix(p.x, BK.x, k); y = mix(p.y - 26, BK.y - 40, k); }
-    fly.g.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(10 * Math.sin((t - C.s_pick) * 7)).toFixed(1)}) scale(${(MS[2] * (1 + .1 * lift)).toFixed(3)})`);
+    const settle = 1 - ez.inOut(lin(t, j2, C.s_land));                    // no wobble, no lift at the handover
+    fly.g.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(10 * Math.sin((t - C.s_pick) * 7) * settle).toFixed(1)}) scale(${(MS[2] * (1 + .1 * lift * settle)).toFixed(3)})`);
     fly.glow.setAttribute('opacity', '.9');
+    const want = x < POSTL[1] + 50 ? G.tree : G.front; if (flyG.parentNode !== want) want.appendChild(flyG);   // in the yard: behind the post and the leaf; out through the opening
   }
   fly.g.setAttribute('opacity', fv); flyG.setAttribute('opacity', fv);
-  const ink = ez.out(lin(t, C.s_land - .05, C.s_land + .3));
+  const ink = ez.out(lin(t, C.s_land, C.s_land + .3));
   inMango.g.setAttribute('opacity', (t >= C.s_land ? 1 : 0)); inMango.ripe.setAttribute('opacity', 1); inMango.raw.setAttribute('opacity', 0); inMango.blush.setAttribute('opacity', .8);
   inMango.glow.setAttribute('opacity', (.9 * (1 - .4 * lin(t, C.s_land + .3, C.s_land + 1.5))).toFixed(3));
   inMango.g.setAttribute('transform', `translate(${BK.x} ${(BK.y - 40 + 34 * ink).toFixed(1)}) scale(${MS[2]})`);
@@ -450,24 +491,24 @@ function treeLabels(t) {
   const [a, b] = S.tree;
   place('Lplate', 1090, 616); place('Ltrunk', 168, 770); place('Lprofit', 1110, 168); place('Lany', 1110, 352);
   const d1 = dim(t, [C.m_own, C.f_bears, C.a_with]), d2 = dim(t, [C.f_bears, C.a_with]), d3 = dim(t, [C.a_with]);
-  const p = rise(t, C.y_account - .1, b, 24); st($('Lplate'), p.o, 0, p.y); foc('Lplate', d1);
-  const r = rise(t, C.m_own - .12, b, 24); st($('Ltrunk'), r.o, 0, r.y); foc('Ltrunk', d2);
+  const p = rise(t, C.y_account - .1, C.f_bears + .25, 24, .4, .35); st($('Lplate'), p.o, 0, p.y); foc('Lplate', d1);
+  const r = rise(t, C.m_own - .12, C.a_with + .25, 24, .4, .35); st($('Ltrunk'), r.o, 0, r.y); foc('Ltrunk', d2);
   const f = rise(t, C.f_bears - .05, b, 24); st($('Lprofit'), f.o, 0, f.y); foc('Lprofit', d3);
   const n = pop(t, C.a_any - .12, b, .35, .3); st($('Lany'), n.o, 0, 0, n.s);
   const [px, py, pw, ph] = box('Lplate'); leader('plate', p.o * d1, [px, py + ph / 2 + p.y], w2s(PX + PW, PY + PH / 2), '#b39cff');
   const [tx_, ty_, tw] = box('Ltrunk'); leader('trunk', r.o * d2, [tx_ + tw / 2, ty_ + r.y], w2s(TX, 640), '#cbfb61');
-  const [fx, fy, , fh] = box('Lprofit'); leader('profit', f.o * d3, [fx, fy + fh / 2 + f.y], w2s(RIPE[1][0] + 18, RIPE[1][1] - 20), '#ffe08f');
-  const [nx, ny, , nh] = box('Lany'); leader('any', n.o, [nx, ny + nh / 2], w2s(RIPE[2][0] + 24, RIPE[2][1] + 10), '#ffe08f');
+  const [fx, fy, , fh] = box('Lprofit'); leader('profit', f.o * d3 * (1 - ez.out(lin(t, C.a_any - .2, C.a_any + .15))), [fx, fy + fh / 2 + f.y], w2s(RIPE[1][0] + 18, RIPE[1][1] - 20), '#ffe08f');
+  const [nx, ny, , nh] = box('Lany'); leader('any', n.o, [nx, ny + nh / 2], w2s(RIPE[2][0] + 24, RIPE[2][1] - 8), '#ffe08f');   // on the fruit, above the hand
 }
 
 /* ---------- labels: the gift branch (the promo) ---------- */
 function giftLabels(t) {
   const [a, b] = S.gift;
-  place('Gq', 76, 150); place('Gtag', 66, 246); place('Grel', 66, 408); place('Gkeep', 66, 514); place('Gphone', 66, 684);
+  place('Gq', 76, 140); place('Gtag', 66, 236); place('Grel', 66, 392); place('Gkeep', 66, 492); place('Gphone', 66, 658);
   const q = rise(t, C.g_promo - .15, C.g_tied + .2, 20); st($('Gq'), q.o, 0, q.y);
   const dT = dim(t, [C.e_own, C.c_check]), dK = dim(t, [C.c_check]);
-  const g = rise(t, C.g_tied - .1, b, 24); st($('Gtag'), g.o, 0, g.y); foc('Gtag', dT);
-  const r = pop(t, C.b_months - .05, b, .35, .3); st($('Grel'), r.o, 0, 0, r.s); foc('Grel', dT);
+  const g = rise(t, C.g_tied - .1, C.c_check + .25, 24, .4, .35); st($('Gtag'), g.o, 0, g.y); foc('Gtag', dT);
+  const r = pop(t, C.b_months - .05, C.c_check + .25, .35, .35); st($('Grel'), r.o, 0, 0, r.s); foc('Grel', dT);
   const k = rise(t, C.e_own - .12, b, 24); st($('Gkeep'), k.o, 0, k.y); foc('Gkeep', dK);
   const ph = vis(t, C.c_check - .15, b, .45, .3); st($('Gphone'), ph, -120 * (1 - ez.out(lin(t, C.c_check - .15, C.c_check + .35))), 0);
   const [gx, gy, gw, gh] = box('Gtag'); leader('tag', g.o * dT, [gx + gw, gy + gh / 2 + g.y], w2s(GIFT.bx - GIFT.w / 2 + 6, GIFT.by + 20), '#cbfb61');
@@ -476,11 +517,11 @@ function giftLabels(t) {
 /* ---------- labels: into your basket, the way out (an illustration), the 48 hours ---------- */
 function basketLabels(t) {
   const [a, b] = S.basket;
-  place('Bbasket', 1296, 700); place('illus', 1560, 136); place('Bacct', 56, 748); place('Bwal', 1176, 296); place('Bsafe', 1316, 556);
-  place('Bclock', 1176, 250); place('Bfees', 1086, 452);
+  place('Bbasket', 1296, 596); place('illus', 1560, 136); place('Bacct', 56, 748); place('Bwal', 1176, 296); place('Bsafe', 1316, 556);
+  place('Bclock', 1176, 250); place('Bfees', 1102, 452);
   const route = C.n_jet - .1;                              // the route labels step aside for the 48 hours
   const k = rise(t, C.k_crypto - .12, C.r_with + .1, 20); st($('Bbasket'), k.o, 0, k.y);
-  const il = vis(t, C.r_with - .1, C.w_dont + .1, .4, .35); st($('illus'), il);
+  const il = vis(t, C.r_with - .1, C.w_dont + .1, .4, .35); st($('illus'), il);   // as long as the drawn route is on screen (its pf window)
   const ac = rise(t, C.r_with - .05, route + .4, 24, .4, .4); st($('Bacct'), ac.o, 0, ac.y);
   const wl = rise(t, C.r_address - .15, route + .4, 24, .4, .4); st($('Bwal'), wl.o, 0, wl.y);
   $('net1').classList.toggle('on', t >= C.r_network); $('net2').classList.toggle('on', t >= C.r_sides);
@@ -490,20 +531,21 @@ function basketLabels(t) {
   const fe = rise(t, C.n_on - .05, b + .1, 20, .4, .35); st($('Bfees'), fe.o, 0, fe.y);
   const [kx, ky, , kh] = box('Bbasket'); leader('basket', k.o, [kx, ky + kh / 2 + k.y], w2s(BK.x + BK.rx - 8, BK.y + 20), '#ffe08f');
   const [wx, wy, ww, wh] = box('Bwal'); leader('wal', wl.o, [wx + 40, wy + wh + wl.y], w2s(BK.x + 30, BK.y - 30), '#ffe08f');
-  const [ax, ay, aw] = box('Bacct'); leader('acct', ac.o, [ax + 260, ay + ac.y], w2s(TX + 20, TB + 2), '#b39cff');
+  const [ax, ay, aw] = box('Bacct'); leader('acct', ac.o, [ax + 260, ay + ac.y], w2s(900, 654), '#b39cff');   // your account: the backyard, where the path starts
 }
 
 /* ---------- labels: one small fruit first, the key, your own balance ---------- */
 function smallLabels(t) {
   const [a, b] = S.small;
-  place('Stest', 1110, 372); place('Sprove', 1012, 482); place('Ssee', 742, 420); place('adv', 1250, 210);
+  place('Stest', 1110, 404); place('Sprove', 1110, 510); place('Ssee', 742, 370); place('adv', 1110, 234);   // 30 px gaps; 42 px under the ILLUSTRATION tag
   const off = C.w_dont - .1;
   const ad = pop(t, C.s_advice - .12, off + .3, .35, .35); st($('adv'), ad.o, 0, 0, ad.s);
   const ts = pop(t, C.s_land - .05, off + .3, .35, .35); st($('Stest'), ts.o, 0, 0, ts.s); foc('Stest', dim(t, [C.p_prove]));
   const pr = rise(t, C.p_prove - .1, off + .3, 24, .35, .35); st($('Sprove'), pr.o, 0, pr.y);
-  const ph = vis(t, C.l_log - .05, b, .15, .35), pk = ez.out(lin(t, C.l_log - .05, C.l_log + .6));
-  $('phone').style.opacity = ph.toFixed(3); $('phone').style.visibility = ph > .002 ? 'visible' : 'hidden';
-  $('phone').style.transform = `perspective(1600px) translateX(${(720 * (1 - pk)).toFixed(1)}px) rotateY(${(-18 + 12 * pk).toFixed(2)}deg)`;
+  // the phone slides in solid from the right and leaves the same way (never see-through over the fence)
+  const pin = ez.out(lin(t, C.l_log - .05, C.l_log + .6)), pout = ez.inOut(lin(t, b - .4, b)), pon = t >= C.l_log - .05 && t < b;
+  $('phone').style.opacity = pon ? '1' : '0'; $('phone').style.visibility = pon ? 'visible' : 'hidden';
+  $('phone').style.transform = `perspective(1600px) translateX(${(720 * (1 - pin) + 720 * pout).toFixed(1)}px) rotateY(${(-18 + 12 * pin - 12 * pout).toFixed(2)}deg)`;
   const se = pop(t, C.l_see - .12, b, .35, .35); st($('Ssee'), se.o, 0, 0, se.s);
 }
 
@@ -514,9 +556,9 @@ function recap(t) {
   const [tx_, ty_] = w2s(TX, 330);
   [['rc1', C.rc_pick - .25], ['rc2', C.rc_let - .25], ['rc3', C.rc_start - .25]].forEach(([id, c], i) => {
     const e = $(id), v = rise(t, c, b, 40, .45, .01), fk = ez.inOut(lin(t, fold - .05, fold + .55));
-    const [x0, y0, w, h] = [parseFloat(getComputedStyle(e).left), 282, 520, 470];
+    const [x0, y0, w, h] = [parseFloat(getComputedStyle(e).left), 340, 520, 420];
     const dx = (tx_ - (x0 + w / 2)) * fk, dy = (ty_ - (y0 + h / 2)) * fk;
-    const o = v.o * (1 - ez.inOut(lin(t, fold + .2, fold + .55)));
+    const o = v.o * (1 - ez.inOut(lin(t, fold + .36, fold + .55)));   // solid while they fly (never see-through over the picture); they dissolve only once small, into the crown
     e.style.opacity = o.toFixed(3); e.style.visibility = o > .002 ? 'visible' : 'hidden';
     e.style.transform = `perspective(1400px) translate(${dx.toFixed(1)}px,${(v.y + dy).toFixed(1)}px) rotateY(${(70 * fk).toFixed(1)}deg) scale(${(1 - .82 * fk).toFixed(3)})`;
     e.querySelector('.ok').style.transform = `scale(${(ez.back(lin(t, c + .3, c + .65))).toFixed(3)})`;
@@ -531,7 +573,7 @@ function turn(t) {
   st($('ujoin'), j.o, 0, 0, j.s * press * (1 + .02 * Math.sin(t * 4)));
   const u = rise(t, C.i_url - .3, b, 30); st($('uurl'), u.o, 0, u.y, 1 + .04 * pulse(t, C.i_url, .6));
   const hk = ez.out(lin(t, C.i_join - .45, tt)), hv = vis(t, C.i_join - .45, b, .25, .3);
-  st($('uhand'), hv, 260 * (1 - hk), 220 * (1 - hk) + (t > tt - .04 && t < tt + .16 ? 10 : 0));
+  st($('uhand'), hv, 320 * (1 - hk), (t > tt - .04 && t < tt + .16 ? 10 : 0));   // in from the right at its own height: never over the url pill
   const rk = lin(t, tt, tt + .65); $('uring').style.opacity = (t >= tt && t <= tt + .65 ? .9 * (1 - rk) : 0).toFixed(3);
   $('uring').style.visibility = t >= tt && t <= tt + .65 ? 'visible' : 'hidden'; $('uring').style.transform = `scale(${(.4 + 1.6 * ez.out(rk)).toFixed(3)})`;
 }
@@ -543,33 +585,39 @@ function scenes(t) {
 
 /* ---------- captions: the current line, the spoken word lit ---------- */
 const capbox = $('capbox'); let lastCap = null;
+const capHTML = c => c.w.map((w, i) => `<span>${w.w}</span>` + (i === c.w.length - 1 ? '' : i === c.br ? '<br>' : ' ')).join('');
 function captions(t) {
   const c = TL.caps.find(c => t >= c.a && t < c.b);
   if (!c || (TL.capoff && t >= TL.capoff)) { capbox.style.visibility = 'hidden'; lastCap = null; return; }
-  if (c !== lastCap) { capbox.innerHTML = c.w.map(w => `<span>${w.w}</span>`).join(' '); lastCap = c; }
-  const sp = capbox.children;
+  if (c !== lastCap) { capbox.innerHTML = capHTML(c); lastCap = c; }
+  const sp = capbox.querySelectorAll('span');
   c.w.forEach((w, i) => { const end = c.w[i + 1] ? c.w[i + 1].a : w.b + .25; sp[i].className = t >= w.a && t < end ? 'on' : t >= end ? '' : 'todo'; });
   capbox.style.visibility = 'visible'; capbox.style.opacity = Math.min(lin(t, c.a, c.a + .12), 1 - lin(t, c.b - .12, c.b)).toFixed(3);
 }
 
 /* ---------- emoji pops on key words, as in the sign-up training ---------- */
 const emoEl = document.createElement('div'); emoEl.id = 'emo';
-emoEl.style.cssText = 'position:absolute;left:0;top:0;width:96px;height:96px;font:84px/96px "Noto Color Emoji";text-align:center;visibility:hidden;transform-origin:100% 100%;z-index:60';
+emoEl.style.cssText = 'position:absolute;left:0;top:0;width:112px;height:112px;border-radius:50%;font:66px/112px "Noto Color Emoji";text-align:center;visibility:hidden;transform-origin:100% 100%;z-index:60;background:#15112a;box-shadow:inset 0 0 0 2.5px rgba(203,251,97,.85),0 0 30px rgba(203,251,97,.28),0 16px 34px rgba(0,0,0,.5)';   // a glass badge: an overlay on the caption, never a prop on the ground
 document.body.appendChild(emoEl);
 function emojis(t) {
-  const E = (TL.emos || []).filter(([t0]) => t >= t0 && t <= t0 + 2).pop();
+  let E = null, end = 0;
+  for (const e of (TL.emos || [])) {                       // a pop lives 2 s at most, and never past the caption it started on
+    const c = TL.caps.find(c => e[0] >= c.a && e[0] < c.b), en = Math.min(e[0] + 2, c ? c.b : e[0] + 2);
+    if (t >= e[0] && t < en) { E = e; end = en; }
+  }
   if (!E || capbox.style.visibility !== 'visible' || (TL.kit && t >= TL.kit[0])) { emoEl.style.visibility = 'hidden'; return; }
   const age = t - E[0]; if (emoEl.textContent !== E[1]) emoEl.textContent = E[1];
-  const a = Math.min(1, age / .15) * Math.min(1, (2 - age) / .3), s = .4 + .6 * ez.back(clamp(age / .4)); const r = capbox.getBoundingClientRect();
-  emoEl.style.left = (r.right + 6 - 96).toFixed(1) + 'px'; emoEl.style.top = (r.top - 96 - 14 - 8 * ez.out(clamp(age / 2))).toFixed(1) + 'px';
+  const a = Math.min(1, age / .15) * Math.min(1, (end - t) / .3), s = .4 + .6 * ez.back(clamp(age / .4)); const r = capbox.getBoundingClientRect();
+  emoEl.style.left = (r.right - 112).toFixed(1) + 'px'; emoEl.style.top = (r.top - 112 - 8 - 8 * ez.out(clamp(age / 2))).toFixed(1) + 'px';   // over the caption's right end
   emoEl.style.transform = `scale(${s.toFixed(3)})`; emoEl.style.opacity = a.toFixed(3); emoEl.style.visibility = 'visible';
 }
 
-/* QA helper: how many lines each caption takes (never more than two) */
+/* QA helper: every caption on the lines it was planned for (one, or two at its break), never more than two */
 window.capLines = function () {
   const out = []; const lh = parseFloat(getComputedStyle(capbox).lineHeight);
   capbox.style.visibility = 'hidden';
-  TL.caps.forEach(c => { capbox.innerHTML = c.w.map(w => `<span>${w.w}</span>`).join(' '); const n = Math.round((capbox.clientHeight - 30) / lh); if (n > 2) out.push([c.a, n, c.w.map(w => w.w).join(' ')]); });
+  TL.caps.forEach(c => { capbox.innerHTML = capHTML(c); const n = Math.round((capbox.clientHeight - 30) / lh), want = c.br === undefined ? 1 : 2;
+    if (n !== want) out.push([c.a, n, want, c.w.map(w => w.w).join(' ')]); });
   lastCap = null; return out;
 };
 window.R = function (t) { scenes(t); captions(t); emojis(t); return Promise.all([...document.images].map(i => i.decode().catch(() => {}))); };

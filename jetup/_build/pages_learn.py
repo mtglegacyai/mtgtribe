@@ -60,6 +60,7 @@ def build_checks():
  <li>📌 <b>Keep your own money in for 12 months</b> to keep the promo (taking it out earlier ends it).</li>
  <li>📲 Promo amounts change, so <b>check the current rules in your dashboard</b> before you start.</li>
 </ul>
+<div style="margin:16px 0 18px">{laptop('withdraw', 'Watch it: getting your money out (2:06)')}</div>
 <div class="call lime">{icon('i-shield2')}<p><b>My advice?</b> Start small, and do a small withdrawal early. Let the system prove itself to you.</p></div>
 <div data-ticks="checks">{tick(5)}</div>''', 'i-door', 'lime')
     why = f'''<div class="card pad rv"><p class="eyebrow">So why would anyone still give this a shot?</p>
@@ -95,7 +96,7 @@ def build_checks():
            ('How big are the moves with 24x Amplify?', '24x Amplify makes every move bigger, in both directions. A built-in loss limit closes the account at a 10% loss of the starting balance (5% with a community token), and the broker\'s insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
                 'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA), Sonic AI results on Myfxbook, 24x Amplify explained and withdrawals.',
-                main, crumbs_l, [ld_video('5checks'), ld_video('amplify'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
+                main, crumbs_l, [ld_video('5checks'), ld_video('amplify'), ld_video('withdraw'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'
@@ -133,7 +134,8 @@ def build_how():
 <p>With 24x, a price move of about 4.2% (100% ÷ 24) on the trading balance is the same size as the whole account. A 1% move on $6,000 is $60.</p>
 <div class="call info">{icon('i-info2')}<p><b>The built-in loss limit, from TAG Markets' screen:</b> the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start.</p></div>
 <p style="margin-top:14px"><a class="btn btn-lime btn-sm" href="/jetup/tools/exposure-calculator/">{icon('i-candle2')}Open the Exposure Calculator</a></p>''', 'i-candle2', 'red')}
- {section('withdraw', 'Getting money out', 'Withdrawals', '''
+ {section('withdraw', 'Getting money out', 'Withdrawals', f'''
+<div style="margin:4px 0 18px">{laptop('withdraw', 'Getting your money out, explained by MTG (2:06)')}</div>
 <ul>
  <li>Profits can be withdrawn any time. Withdrawals go through the broker. JetUP's one-pager says they take about 48 hours on average, and that fees and limits are the broker's terms.</li>
  <li>On the Dennis promo: the $100 bonus is released after 12 months, and taking your own money out before then ends the promo.</li>
@@ -143,7 +145,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('amplify'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('amplify'), ld_video('withdraw'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'

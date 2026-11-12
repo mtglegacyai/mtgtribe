@@ -227,4 +227,15 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
   closing track from 74.23 s (the full 51.36 s, ending on the last frame), speech-to-text hears every line in order.
 - Cover: `cover.html`, `shoot_cover.js`, `cover-explainer-getting-your-money-out.jpg` (1920x1080, 193 KB) and `.webp`
   (1280x720, 55 KB).
-- Not yet: the site placements above (after MTG's approval only).
+
+## On the site (12 Nov 2026)
+
+MTG: "Put it live". `jetup/media/jetup-explainer-getting-your-money-out.mp4`, covers
+`jetup/img/cover-explainer-getting-your-money-out.jpg` and `.webp`, video key `withdraw` in `jetup/_build/layout.py`
+(dur '2:06', iso 'PT2M6S'). Places: the top of How it works "Withdrawals", the 5 Checks page under check 5 (like check 4's
+Amplify player), the Videos page after the partner plan (all three with VideoObject data), and a "Watch the 2:06
+explainer" link in the FAQ answer "How do withdrawals work?". The dashboard's JetUP explainers tile now says 7. Placement
+script: `ex8_site_edits.py` (run from the repository root, then `python3 jetup/_build/build.py`). Sitemap dates for the
+five changed pages: 2026-11-12. Checks: the new player opens in the laptop frame and plays on all three pages (desktop
+and phone), VideoObject data parses, no em or en dashes, no script errors; sideways scroll 170 views clean; 51 social
+previews OK; the video returns to its spot when it ends (`tools/qa/video-return-test.js`, new case for check 5).

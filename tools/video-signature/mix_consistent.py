@@ -10,7 +10,9 @@ import mtg_ending as ME
 D = sys.argv[1]; SR = 48000
 MC = json.load(open(os.path.join(D, 'mixcues.json'))); K = json.load(open(os.path.join(D, 'kitcues.json')))
 BODY = json.load(open(os.path.join(D, 'sfx_body.json')))
-TRACK = '/tmp/claude-0/-home-user-mtgtribe/a6cc0db9-d96c-55e0-8645-be8a10935550/scratchpad/promo/track.mp3'
+# The closing track (banked on branch jetup-video-work: jetup-work/audio/they-call-me-mtg-closing-track.mp3).
+# Set MTG_TRACK to a local copy; the old path is kept as the fallback for the session that made the first videos.
+TRACK = os.environ.get('MTG_TRACK') or '/tmp/claude-0/-home-user-mtgtribe/a6cc0db9-d96c-55e0-8645-be8a10935550/scratchpad/promo/track.mp3'
 T = K['T']; N = int(round(T * SR))
 def ff_read(path, ch, af=None):
     cmd = ['ffmpeg', '-v', 'error', '-i', path] + (['-af', af] if af else []) + ['-ac', str(ch), '-ar', str(SR), '-f', 'f32le', '-']

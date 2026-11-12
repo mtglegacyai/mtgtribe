@@ -1,10 +1,11 @@
-# JetUP explainer #8: "Getting your money out" (plan, 12 Nov 2026)
+# JetUP explainer #8: "Getting your money out" (preview, 12 Nov 2026)
 
 MTG asked for the next explainer on 12 Nov 2026: #8 in `tools/learning-system/PLAN.md`, for How it works "Withdrawals",
-check 5 of the 5 Checks and the FAQ. **This is the plan only: nothing is recorded, no HeyGen credits are spent, nothing is
-built or published.** MTG reads it and approves (or changes) the new lines before anything is recorded.
+check 5 of the 5 Checks and the FAQ. MTG read the plan and approved the ten new lines the same day ("Yes, record (1
+credit)"): recorded in one request, 1 credit (48 before, 47 after). **Built and rendered as a preview (12 Nov 2026); not
+published.** It goes on the site only when MTG says so.
 
-About 2:12 in all (body about 78 s, then the fixed signature ending), 16:9, 1920x1080, 25 fps, captions burned in, the
+2:06 in all (125.58 s: the body to 79.3 s, then the fixed signature ending), 16:9, 1920x1080, 25 fps, captions burned in, the
 JetUP logo disc (never MTG's photo), the series' glass style, only the four signature sounds (whoosh, tick, pop, click).
 Calm, positive copy (MTG, 8 and 9 Nov 2026): no warnings, no red, nothing falls off the tree; the risk stays in the
 signature reminder and the end card's small line.
@@ -30,7 +31,7 @@ scene.
   small withdrawal early and let the system prove itself. A key in your own name plate: log in yourself and see your
   own balance.
 
-## Ten new lines (MTG Master Voice V3, 683 characters, about 40 s, 1 credit; ask MTG before recording)
+## Ten new lines (MTG Master Voice V3, 683 characters, 39.3 s, 1 credit; recorded 12 Nov 2026 after MTG's OK)
 
 1. "Can I get my money out? The answer is growing in your own backyard." (67)
 2. "Think of a fruit tree." (22)
@@ -122,7 +123,7 @@ action, you are the best, I'm MTG, see you on the next one, Let's Get This Crypt
 ## Placements
 
 - How it works, "Withdrawals" (/jetup/how-it-works/#withdraw; `jetup/_build/pages_learn.py` line 136): laptop player at
-  the top of the section, caption "Getting your money out, explained by MTG (2:12)" with the real length, VideoObject
+  the top of the section, caption "Getting your money out, explained by MTG (2:06)" with the real length, VideoObject
   added to the page's list (line 146).
 - The 5 Checks, check 5 "Can I get out?" (/jetup/five-checks/#check-5; `pages_learn.py` line 56): laptop player in the
   card under the list, the way check 4 carries the Amplify player (line 53); VideoObject added (line 98).
@@ -140,7 +141,7 @@ action, you are the best, I'm MTG, see you on the next one, Let's Get This Crypt
 
 ## Cover
 
-16:9 in the style of covers #3 to #6, and also the video's poster and thumbnail on the site. Pill "EXPLAINER · 2:12" (set
+16:9 in the style of covers #3 to #6, and also the video's poster and thumbnail on the site. Pill "EXPLAINER · 2:06" (set
 to the real length after the build). Big words "Getting your money out", with "money out" in the gold gradient. Sub
 line on two lines: "Withdraw profits any time, / and **the promo's 12-month rule** 🎁". Chips: "🥭 The fruit tree" and
 "✅ A small withdrawal first". One visual on the right: a mango tree behind its gate, a lime gift ribbon tied onto one
@@ -177,14 +178,7 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
 
 ## Still open
 
-- Voice: may I record the ten new lines (683 characters, about 40 s, 1 credit) in one request? Your balance is 48 (checked live on
-  12 Nov 2026); I check it again right before the request. PLAN.md planned #8 with recorded lines only.
-  The 0 credit option: open on your recorded check 5 lines ("Can I get out?" / "Profits can be withdrawn any time." /
-  "But the promo has rules.", `5-checks/o2.mp3` 63.838 to 68.371 s), drop the later "Profits can be withdrawn any time"
-  (the hook already plays that clip), and show the tree's words as on-screen text. It costs nothing, but only about
-  27 s of the body would then be your voice: the tree, the gift branch, the basket, the route, the 48 hours and the
-  recap (about 36 s) would be text with no voice. Your voice teaches the picture far better, and those three lines
-  already open check 5 in the 5 Checks video, at the top of the 5 Checks page where this video will also sit.
+- Voice: answered. MTG approved the ten new lines on 12 Nov 2026 and they are recorded (1 credit, 47 left).
 - Your real withdrawal screens are not in the facts yet: how Sonic AI profits move from CopyX to your TAG wallet, and the
   TAG Markets withdrawal screen itself. (Your guide's screenshot 20 shows Deposit and Withdraw buttons on each Sonic
   account under CopyX, Follower Hub, Strategies; the video does not use them until you confirm what they do.) So the way
@@ -212,3 +206,25 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
   better. Use 08, or record a fresh masked screen?
 - Besides How it works, check 5, the FAQ and the Videos page, add the optional links (get-started "Withdraw or reinvest",
   the home check 5 card, the promo rules)?
+
+## Build (12 Nov 2026)
+
+- Voice: `voice/ex8v3.flac` (the V3 take as delivered), `voice/ex8v3.txt` (the exact text sent), `voice/ex8v3_raw.json`
+  (HeyGen's word times). `lines_ex8.py` cuts all 36 lines (`lines.json`, `words.json`); HeyGen's word times for nbranch,
+  nbasket, nroute, n48 and nrecap ran 0.17 to 0.19 s ahead of the audio and are shifted (`ALIGN`). Speech-to-text hears
+  every line as written. Bank the take on `jetup-video-work` as `explainers/ex8v3.flac` when MTG agrees.
+- Picture: `make_ex8.py` (timeline, captions, cues, the signature ending's cues, body sounds), `stage/stage.html` and
+  `stage/engine.js` (the fruit tree scenes), `make_tag_balance.py` makes `stage/tag-balance.png` from guide screenshot 08
+  (right-hand phone only, both amounts masked, no arrow, no Deposit button). Copy `Anton-Regular.ttf` (branch
+  `jetup-video-work`, `jetup-work/engine/fonts/`), `jetup-disc.png` and `jetup-disc-small.png`
+  (`tools/jetup-tutorial/`) into `stage/` before rendering.
+- Reviewed on rendered stills in two rounds (design and brand, sync and story, facts and privacy): 37 issues, all applied.
+- Render: `MTG_TRACK=<the closing track> tools/video-signature/build_part.sh <absolute ex8 dir>
+  jetup-explainer-getting-your-money-out.mp4` (the closing track is `jetup-work/audio/they-call-me-mtg-closing-track.mp3`
+  on `jetup-video-work`; `mtg_ending.py` also needs Poppins in `/usr/share/fonts/truetype/google-fonts/`, Great Vibes and
+  the Lucide icons under `/home/claude/assets/`). QA: `tools/video-signature/qa_new.py`.
+- Preview of 12 Nov 2026: 125.58 s, 1920x1080, 25 fps, 18.6 MB, -14.0 LUFS, true peak -2.7 dBFS, no sample over 0.9,
+  closing track from 74.23 s (the full 51.36 s, ending on the last frame), speech-to-text hears every line in order.
+- Cover: `cover.html`, `shoot_cover.js`, `cover-explainer-getting-your-money-out.jpg` (1920x1080, 193 KB) and `.webp`
+  (1280x720, 55 KB).
+- Not yet: the site placements above (after MTG's approval only).

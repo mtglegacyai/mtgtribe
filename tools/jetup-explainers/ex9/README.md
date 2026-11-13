@@ -157,7 +157,7 @@ Times at the V3 pace measured on #8 (at most about 10 s later by the 2.6 words p
 7. **Look before you pick** (40 to 51 s): slot 1 opens into MTG's real CopyX list (guide screenshot 14, right-hand
    phone), cropped to the SONIC card, first in the list, with its Details button; the follower count, the ROI line and
    chart and Max DD sit masked under one glass panel "Check the record yourself: Myfxbook" (🔎 on "look before you
-   deposit"). On "Read the terms" (whoosh) one glass card, "Sonic AI's fee, from the CopyX screen", holds one crop of
+   deposit"). On "Read the terms" (whoosh) one glass card, "Sonic AI's terms, from the CopyX screen", holds one crop of
    screenshot 15 (left-hand phone): the "Performance Fee 30%" row only, enlarged to fill the card. It lights on
    "performance fee" (tick), then the chip "Taken from profits only" appears (✅). No other rows, no figures, no Amplify
    row.

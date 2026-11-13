@@ -8,8 +8,8 @@
 #  b) stage/copyx-fee.png: guide-p15, left-hand phone, ONLY the "Performance Fee ... 30%" row, enlarged 3x (Lanczos).
 #     No other row (Trading Days above, Min Investment below), nothing of the guide's text box or arrow.
 #  c) stage/copyx-eye.png: guide-p20, right-hand phone, ONLY the SONIC Amplify card: both tab rows above it are cut
-#     (no "Breached"), the blurred middle is blurred harder, the red arrow that enters it is painted out (the card's right
-#     border restored), Deposit, Withdraw and the red square are dimmed under a soft white veil (unnamed), and the eye
+#     (no "Breached"), the blurred middle is blurred harder, the red arrow that enters it is painted out with the blur
+#     round it, Deposit, Withdraw and the red square are dimmed under a soft white veil (unnamed), and the eye
 #     icon stays bright for the stage's spotlight and tap.
 # Checks: no arrow red left in any crop, the masked boxes carry no sharp detail (Laplacian), the fee row clears the text box.
 # Usage: python3 make_screens.py   (writes the three PNGs into stage/ and prints the eye icon's position for engine.js)
@@ -63,11 +63,6 @@ def restore_rows(a, mask, rows, ref_x):
     for y in rows: a[y, mask[y]] = a[y, ref_x]
     return a
 
-def restore_cols(a, mask, cols, ref_y):
-    """a vertical border under a painted-out arrow: copy each of its columns from a clean row"""
-    for x in cols: a[mask[:, x], x] = a[ref_y, x]
-    return a
-
 def frost(a, box, tint, k=.9, r=14):
     """destroy the detail in a box: hard blur, then settle it on a flat tint"""
     x0, y0, x1, y1 = box
@@ -101,6 +96,8 @@ X0, Y0, X1, Y1 = 1163, 446, 1519, 739                     # the card (border x 1
 a = p14[Y0:Y1, X0:X1].copy()
 m = red_mask(a, grow=6)                                    # arrow 1 (y 425..476) over the card's top edge, arrow 2 (y 556..688) to Details
 a = inpaint(a, m)
+near = ndi.binary_dilation(m, iterations=5); near[527 - Y0:] = False     # the header is plain white: lift the arrow's light ringing to it
+a[near & (a.min(axis=2) > 222)] = (254, 254, 253)
 a = restore_rows(a, m, range(448 - Y0, 454 - Y0), 1250 - X0)      # the card's top border, under the first arrow
 a = restore_rows(a, m, range(682 - Y0, 688 - Y0), 1250 - X0)      # the Details button's top border, under the second arrow's head
 assert red_mask(a, grow=0).sum() == 0 and (redness(a) > 12).sum() == 0, 'red left on the SONIC card'
@@ -144,6 +141,11 @@ assert R0[1] > 487 + 40, 'the crop must stay clear of the guide text box (it end
 row = p15[R0[1]:R0[3], R0[0]:R0[2]].copy()
 assert red_mask(row, grow=0).sum() == 0, 'red in the fee row'
 fee = up(row, 3)
+# the crop starts at the card's own left edge (x 88), inside the lime icon's dim glow (the icon itself starts at x 100): fade the
+# first 28 px (about 9 source px) in from black, so the glow rises softly out of the stage's black row, never a hard seam
+fa = np.array(fee).astype(np.float32); ramp = np.clip(np.arange(fa.shape[1]) / 28., 0, 1) ** 1.3
+fee = Image.fromarray(np.clip(fa * ramp[None, :, None], 0, 255).astype(np.uint8))
+assert np.array(fee)[:, 34:60].max() > 180, 'the feather must not dim the lime icon'
 fee.save(os.path.join(OUT, 'copyx-fee.png'), optimize=True)
 print('stage/copyx-fee.png', fee.size)
 
@@ -159,7 +161,6 @@ tip = np.zeros(c.shape[:2], bool); tip[316 - Y0:446 - Y0, 1270 - X0:] = True    
 m = (red_mask(c, grow=0) | (tip & (redness(c) > 3))) & ~keep
 m = ndi.binary_dilation(m, iterations=6) & ~keep
 c = inpaint(c, m, iters=800)
-c = restore_cols(c, m, range(1419 - X0, X1 - X0), 230 - Y0)    # the card's right border and the white beside it
 bl = BLUR
 reg = Image.fromarray(np.clip(c[bl[1]:bl[3], bl[0]:bl[2]], 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(9))
 c[bl[1]:bl[3], bl[0]:bl[2]] = np.array(reg).astype(np.float32)          # blurred harder: no figure even half readable

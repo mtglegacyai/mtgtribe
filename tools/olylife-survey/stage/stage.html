@@ -141,7 +141,7 @@ const L = TL.lines;
 const SC = {}; // name -> [t0, t1]
 const order = [['hook', 0], ['keep', L.keep[0] - .12], ['hi', L.hi[0] - .12], ['seven', L.seven[0] - .12],
   ['q1', L.q1[0] - .12], ['q2', L.q2[0] - .12], ['q3', L.q3[0] - .12], ['q4', L.q4[0] - .12], ['q5', L.q5[0] - .12], ['q6', L.q6[0] - .12],
-  ['sell', L.sell[0] - .12], ['q7', L.q7[0] - .12], ['good', L.good[0] - .12], ['comment', L.comment[0] - .12], ['follow', L.follow[0] - .12],
+  ['sell', L.sell[0] - .12], ['q7', L.q7[0] - .12], ['q8', L.q8[0] - .12], ['health', L.health1[0] - .12], ['good', L.good[0] - .12], ['comment', L.comment[0] - .12], ['follow', L.follow[0] - .12],
   ['tribe', L.tribe[0] - .12], ['engage', L.save[0] - .25], ['we', L.n_we[0] - .25], ['slog', L.n_slog[0] - .25], ['remind', L.remind[0] - .25],
   ['thanks', L.o_thanks[0]], ['massive', L.o_massive[0]], ['best', L.o_best[0]], ['sig', L.o_im[0]], ['end', W('o_lgtc', "Let's") + .35]];
 order.forEach(([k, t0], i) => SC[k] = [t0, i + 1 < order.length ? order[i + 1][1] + .3 : 1e9]);
@@ -157,8 +157,8 @@ const PO = {
   q3: t => ({ cx: CX, cy: 1170, size: 560, yaw: .05 * (t - SC.q3[0]), pitch: 1.05, a: 1 }),
   q4: t => ({ cx: CX, cy: 1225, size: 420, yaw: .55 - .07 * (t - SC.q4[0]), pitch: .5, a: 1 }),
   q5: t => ({ cx: CX, cy: 1120, size: 600, yaw: -.6 + .06 * (t - SC.q5[0]), pitch: .5, a: 1 }),
-  q6: t => ({ cx: CX, cy: 1215, size: 470, yaw: -.1 + .07 * (t - SC.q6[0]), pitch: .6, a: 1 }),
   q7: t => ({ cx: CX, cy: 1120, size: 580, yaw: .35 - .06 * (t - SC.q7[0]), pitch: .55, a: 1 }),
+  q8: t => ({ cx: CX, cy: 1130, size: 560, yaw: -.25 + .06 * (t - SC.q8[0]), pitch: .62, a: 1 }),
 };
 const NOPOSE = { cx: CX, cy: 1100, size: 600, yaw: 0, pitch: .55, a: 0 };
 const poseOf = (k, t) => PO[k] ? PO[k](t) : null;
@@ -232,7 +232,7 @@ function header(d, t, t0, t1, dy = 20) { const [a, p] = env(t, t0, t1, .4, .3); 
     const [t0, t1] = SC.hook; const a0 = env(t, -1, t1, 0, .3)[0];
     const pz = 1 + .025 * Math.sin(t * 1.8);
     S(h1, a0, pz); S(h2, a0, pz * pulse(t, W('hook', 'machine'), .06));
-    S(nm, a0, pulse(t, W('hook', 'Olly'), .08));
+    S(nm, a0, pulse(t, W('hook', 'OlyLife'), .08));
     const th = W('honest', 'honest'); const [ah, ph] = env(t, L.honest[0] - .05, t1, .3, .3); S(hon, ah, 1.15 - .15 * ph);
     S(und, 0);
   };
@@ -261,27 +261,29 @@ function header(d, t, t0, t1, dy = 20) { const [a, p] = env(t, t0, t1, .4, .3); 
   const dd = reg(E(photoDisc(330), CX, 505));
   const n1 = reg(E(H("HI, I'M MTG", 'gl shadow'), CX, 790, '', 'font-size:110px'));
   const n2 = reg(E(`<div style="font-weight:800;font-size:34px;letter-spacing:8px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 880));
-  const c1 = reg(E(`<div class="card" style="padding:34px 44px;text-align:center;font-weight:800;font-size:50px;line-height:1.25;white-space:normal;width:820px">Thinking of bringing this machine to my <span class="lime">community</span> 🏘️</div>`, CX, 1080));
-  const c2 = reg(E(H('SO FIRST, I\'M ASKING <span class="lime">YOU</span> 🫵', 'shadow'), CX, 1290, '', 'font-size:84px'));
+  const c1 = reg(E(`<div class="card" style="padding:30px 44px;text-align:center;font-weight:800;font-size:48px;line-height:1.25;white-space:normal;width:840px">We build <span class="lime">multiple streams of income</span> in my tribe 💰</div>`, CX, 1025));
+  const c1b = reg(E(chip('🦶 Our next one: this machine?'), CX, 1170));
+  const c2 = reg(E(H('BUT FIRST, I\'M ASKING <span class="lime">YOU</span> 🫵', 'shadow'), CX, 1295, '', 'font-size:80px'));
   S_.hi = t => {
     const [t0, t1] = SC.hi; const [a0, p0] = env(t, t0 + .25, t1, .4, .3);
     S(dd, a0, (.7 + .3 * p0) * (1 + .015 * Math.sin(t * 2)));
     const [a1, p1] = env(t, t0 + .15, t1, .35, .3); S(n1, a1, 1, 0, (1 - p1) * 30);
     const [a2] = env(t, W('hi', 'Digital') - .05, t1, .35, .3); S(n2, a2);
-    const [a3, p3] = env(t, W('hi', 'thinking') - .1, t1, .35, .3); S(c1, a3, .9 + .1 * p3);
+    const [a3, p3] = env(t, W('hi', 'multiple') - .15, t1, .35, .3); S(c1, a3, .9 + .1 * p3);
+    const [a3b, p3b] = env(t, W('hi', 'considering') - .1, t1, .3, .3); S(c1b, a3b, (.85 + .15 * p3b) * pulse(t, W('hi', 'next'), .06));
     const [a4, p4] = env(t, W('hi', 'asking') - .05, t1, .25, .3); S(c2, a4, 1.25 - .25 * p4);
   };
 }
 // ---- SEVEN quick questions, answer by number
-const dots = []; for (let i = 0; i < 7; i++) dots.push(reg(E(`<div class="dot">${i + 1}</div>`, CX + (i - 3) * 84, 300)));
+const dots = []; for (let i = 0; i < 8; i++) dots.push(reg(E(`<div class="dot">${i + 1}</div>`, CX + (i - 3.5) * 84, 300)));
 {
-  const big = reg(E(`<div class="anton gg shadow" style="font-size:420px;line-height:.9">7</div>`, CX, 640));
+  const big = reg(E(`<div class="anton gg shadow" style="font-size:420px;line-height:.9">8</div>`, CX, 640));
   const qq = reg(E(H('QUICK QUESTIONS', 'grad shadow'), CX, 900, '', 'font-size:104px'));
   const an = reg(E(chip('💬 Answer by NUMBER in the comments'), CX, 1040));
   const b1 = reg(E(`<div class="bub" style="width:640px"><div class="av">🙋🏾‍♀️</div><div><div class="n">Example answer</div>2: Twelve sessions, twice a week</div></div>`, CX - 40, 1180));
   const b2 = reg(E(`<div class="bub" style="width:640px"><div class="av">🙋🏽‍♂️</div><div><div class="n">Example answer</div>3: Honestly? I felt…</div></div>`, CX + 40, 1310));
   S_.seven = t => {
-    const [t0, t1] = SC.seven; const ts = W('seven', 'Seven');
+    const [t0, t1] = SC.seven; const ts = W('seven', 'Eight');
     const [a, p] = env(t, ts - .05, t1, .3, .3); S(big, a, (1.3 - .3 * p) * (1 + .02 * Math.sin(t * 3)));
     const [a2, p2] = env(t, W('seven', 'quick') - .05, t1, .3, .3); S(qq, a2, 1, 0, (1 - p2) * 30);
     const tn = W('seven', 'number'); const [a3, p3] = env(t, W('seven', 'Answer') - .05, t1, .3, .3); S(an, a3, (.9 + .1 * p3) * pulse(t, tn, .06));
@@ -296,8 +298,9 @@ const QS = {
   q3: { n: 3, title: ['YOUR FIRST SESSION:', 'WHAT DID YOU <span class="lime">FEEL?</span>'], sub: 'Describe it in your own words ✍️', subCue: ['q3', 'first'] },
   q4: { n: 4, title: ['AFTER A FEW WEEKS:', 'WHAT <span class="lime">CHANGED?</span> 📈'], sub: '…and what DIDN\'T change? ➖', subCue: ['q4', 'And'] },
   q5: { n: 5, title: ['ANYTHING YOU', '<span class="lime">DIDN\'T LIKE?</span> 😬'], sub: 'Be honest: it helps the next person 🤝', subCue: ['q5', 'honest'] },
-  q6: { n: 6, title: ['WAS IT', '<span class="lime">WORTH IT?</span> 💰'], sub: '', subCue: null },
+  q6: { n: 6, title: ['WAS IT WORTH', 'THE <span class="lime">MONEY?</span> 💰'], sub: '', subCue: null },
   q7: { n: 7, title: ['WHAT DO CLIENTS', '<span class="lime">COME BACK</span> FOR? 🔁'], sub: '…and the ONE question they always ask ❓', subCue: ['q7', 'question'] },
+  q8: { n: 8, title: ['HOW DID YOU FIND', 'YOUR FIRST <span class="lime">CLIENTS?</span> 🔎'], sub: 'And where do you run your sessions? 📍', subCue: ['q8', 'where'] },
 };
 for (const [k, Q] of Object.entries(QS)) {
   const bd = reg(E(`<div class="badge">${Q.n}</div>`, CX, 470));
@@ -306,8 +309,9 @@ for (const [k, Q] of Object.entries(QS)) {
   const sb = Q.sub ? reg(E(`<div class="card" style="padding:22px 36px;font-weight:800;font-size:42px;white-space:normal;text-align:center;max-width:860px">${Q.sub}</div>`, CX, 900)) : null;
   const extra = [];
   if (k === 'q6') {
-    extra.push([reg(E(chip('🎟️ Another session?'), CX, 880, '', '')), ['q6', 'session']]);
-    extra.push([reg(E(chip('📦 Buy the machine?', 'gold'), CX, 990)), ['q6', 'machine']]);
+    extra.push([reg(E(chip('🎟️ Paid per session?'), CX, 870, '', '')), ['q6', 'session']]);
+    extra.push([reg(E(chip('📦 Bought your own machine?', 'gold'), CX, 965)), ['q6', 'machine']]);
+    extra.push([reg(E(chip('🔁 Would you do it AGAIN?'), CX, 1060)), ['q6', 'again']]);
   }
   if (k === 'q3') { // footprints over the plates (top view)
     extra.push([reg(E(`<div style="font-size:120px;filter:drop-shadow(0 0 20px rgba(182,240,74,.9))">👣</div>`, CX, 1130)), ['q3', 'feel']]);
@@ -330,12 +334,35 @@ for (const [k, Q] of Object.entries(QS)) {
   const st = reg(E(`<div style="font-size:250px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))">🏪</div>`, CX, 640));
   const s1 = reg(E(H('YOU SELL IT', 'grad shadow'), CX, 900, '', 'font-size:110px'));
   const s2 = reg(E(H('OR RUN <span class="lime">SESSIONS?</span>', 'shadow'), CX, 1030, '', 'font-size:100px'));
-  const s3 = reg(E(chip('👇 This one is for YOU'), CX, 1180));
+  const s3 = reg(E(chip('👇 The last TWO are for YOU'), CX, 1180));
   S_.sell = t => {
     const [t0, t1] = SC.sell; const [a, p] = env(t, t0 + .02, t1, .35, .3); S(st, a, (.6 + .4 * p) * (1 + .02 * Math.sin(t * 3)));
     const [a1, p1] = env(t, W('sell', 'sell') - .1, t1, .3, .3); S(s1, a1, 1.2 - .2 * p1);
     const [a2, p2] = env(t, W('sell', 'run') - .1, t1, .3, .3); S(s2, a2, 1.2 - .2 * p2);
-    const [a3, p3] = env(t, W('sell', 'this') - .05, t1, .3, .3); S(s3, a3, (.85 + .15 * p3) * pulse(t, W('sell', 'you', 1), .07));
+    const [a3, p3] = env(t, W('sell', 'last') - .05, t1, .3, .3); S(s3, a3, (.85 + .15 * p3) * pulse(t, W('sell', 'you', 1), .07));
+  };
+}
+// ---- HEALTH IS WEALTH (MTG, 13 Nov 2026: our health comes first, look after your body)
+{
+  const hq = reg(E(H('WHY DOES THIS <span class="lime">MATTER?</span>', 'grad shadow'), CX, 330, '', 'font-size:76px'));
+  const hh = reg(E(`<div style="font-size:150px;filter:drop-shadow(0 0 40px rgba(124,255,150,.75))">💚</div>`, CX, 482));
+  const h1 = reg(E(H('HEALTH', 'gg shadow'), CX, 690, '', 'font-size:200px'));
+  const h2 = reg(E(H('IS WEALTH', 'gl shadow'), CX, 865, '', 'font-size:160px'));
+  const hc = reg(E(`<div class="card" style="padding:26px 40px;text-align:center;font-weight:800;font-size:44px;line-height:1.3;white-space:normal;width:840px">What good is money 💰 if you're too sick to enjoy it? 🤒</div>`, CX, 1045));
+  const hf = reg(E(chip('💚 Your health comes FIRST'), CX, 1185));
+  const hb = reg(E(chip('🧘🏾 Look after your body', 'gold'), CX, 1290));
+  burst(CX, 690, W('health1', 'health'), ['#b6f04a', '#7df59c', '#ffffff'], 16, 190, .8, 300, 90);
+  burst(CX, 865, W('health1', 'wealth'), ['#e8c25a', '#fae496', '#ffffff'], 16, 190, .8, 330, 80);
+  S_.health = t => {
+    const [t0, t1] = SC.health;
+    const [a0, p0] = env(t, t0 + .02, t1, .3, .3); S(hq, a0, 1, 0, (1 - p0) * 30);
+    const tbc = W('health1', 'Because'); const [ah, ph] = env(t, tbc - .1, t1, .3, .3);
+    const beat = 1 + .06 * Math.max(0, Math.sin((t - tbc) * Math.PI * 2 * 1.1)) ** 8; S(hh, ah, (.5 + .5 * ph) * beat);
+    const th = W('health1', 'health'); const [a1, p1] = env(t, th - .06, t1, .22, .3); S(h1, a1, 1.3 - .3 * p1);
+    const tw = W('health1', 'wealth'); const [a2, p2] = env(t, tw - .06, t1, .22, .3); S(h2, a2, 1.3 - .3 * p2);
+    const [a3, p3] = env(t, W('health2', 'What') - .1, t1, .3, .3); S(hc, a3, .9 + .1 * p3, 0, (1 - p3) * 30);
+    const tf = W('health2', 'health'); const [a4, p4] = env(t, tf - .08, t1, .28, .3); S(hf, a4, (.8 + .2 * p4) * pulse(t, W('health2', 'first'), .07));
+    const [a5, p5] = env(t, W('health2', 'look') - .08, t1, .28, .3); S(hb, a5, (.8 + .2 * p5) * pulse(t, W('health2', 'body'), .07));
   };
 }
 // ---- GOOD / BAD / NOTHING
@@ -399,7 +426,7 @@ for (const [k, Q] of Object.entries(QS)) {
     const [a, p] = env(t, t0 + .02, t1, .3, .3); S(q, a, 1, 0, (1 - p) * 30);
     const [a1, p1] = env(t, W('tribe', 'Join') - .08, t1, .3, .3); S(j1, a1, 1.15 - .15 * p1);
     const [a2, p2] = env(t, W('tribe', 'MTG') - .08, t1, .3, .3); S(j2, a2, 1.25 - .25 * p2);
-    const tu = W('tribe', 'MTG', 1); const [a3, p3] = env(t, tu - .1, t1, .3, .3); S(url, a3, (.6 + .4 * p3) * pulse(t, W('tribe', 'group'), .07));
+    const tu = W('tribe', 'mtgtribe.com/group'); const [a3, p3] = env(t, tu - .1, t1, .3, .3); S(url, a3, (.6 + .4 * p3) * pulse(t, tu + 1.2, .07));
     const [a4] = env(t, tu + .5, t1, .35, .3); S(wa, a4);
   };
 }
@@ -447,11 +474,13 @@ for (const [k, Q] of Object.entries(QS)) {
   const rs = reg(E(ringI('🛡️', '#b6f04a', 190), CX, 600));
   const r1 = reg(E(`<div style="font-weight:900;font-size:76px">Not medical advice</div>`, CX, 800));
   const r2 = reg(E(chip('🩺 Always check with your doctor first', 'gold'), CX, 950));
+  const r3 = reg(E(chip('💚 Health is wealth'), CX, 1070));
   S_.remind = t => {
     const [t0, t1] = SC.remind; const [a0] = env(t, t0, t1, .3, .3);
     const [a, p] = env(t, t0 + .05, t1, .3, .25); S(rs, a * a0, .85 + .15 * p);
     const [a1, p1] = env(t, W('remind', 'not') - .05, t1, .3, .25); S(r1, a1 * a0, 1.1 - .1 * p1);
     const [a2, p2] = env(t, W('remind', 'Always') - .05, t1, .3, .25); S(r2, a2 * a0, .9 + .1 * p2);
+    const [a5, p5] = env(t, W('remind', 'doctor') + .25, t1, .3, .25); S(r3, a5 * a0, (.85 + .15 * p5) * pulse(t, W('remind', 'doctor') + .55, .06));
   };
   // THANK YOU: like, share, comment, hearts, your support means everything
   const ty = reg(E(H('THANK YOU', 'gg shadow'), CX, 470, '', 'font-size:124px'));
@@ -531,10 +560,10 @@ for (const [k, Q] of Object.entries(QS)) {
 // ------------------------------------------------------------------ sound effects (whoosh, tick, pop, click), exported for the mix
 window.SFX = (() => {
   const wh = order.slice(1).map(o => o[1] + (['engage', 'we', 'slog', 'remind'].includes(o[0]) ? .25 : 0));
-  const tick = [L.q1[0], L.q2[0], L.q3[0], L.q4[0], L.q5[0], L.q6[0], L.q7[0], W('seven', 'number'), W('keep', 'people'), W('hi', 'thinking'), W('q6', 'session'), W('q6', 'machine'), W('q4', 'changed'), W('q4', 'And'),
-    W('tribe', 'MTG', 1) + .5, W('remind', 'Always')];
-  const pop = [W('honest', 'honest'), W('keep', 'amazing'), W('keep', 'real'), W('hi', 'asking'), W('seven', 'Seven'), W('sell', 'you', 1), W('good', 'Good'), W('good', 'bad'), W('good', 'nothing'), W('good', 'counts'),
-    W('comment', 'Comment'), W('comment', 'stitch'), W('follow', 'follow'), W('tribe', 'MTG', 1), W('save', 'Save'), W('share', 'share'), W('n_slog', 'action'),
+  const tick = [L.q1[0], L.q2[0], L.q3[0], L.q4[0], L.q5[0], L.q6[0], L.q7[0], L.q8[0], W('seven', 'number'), W('keep', 'people'), W('hi', 'multiple'), W('hi', 'considering'), W('q6', 'session'), W('q6', 'machine'), W('q6', 'again'), W('health2', 'What'), W('health2', 'health'), W('health2', 'body'), W('remind', 'doctor') + .25, W('q4', 'changed'), W('q4', 'And'),
+    W('tribe', 'mtgtribe.com/group') + .5, W('remind', 'Always')];
+  const pop = [W('honest', 'honest'), W('keep', 'amazing'), W('keep', 'real'), W('hi', 'asking'), W('seven', 'Eight'), W('health1', 'health'), W('health1', 'wealth'), W('sell', 'you', 1), W('good', 'Good'), W('good', 'bad'), W('good', 'nothing'), W('good', 'counts'),
+    W('comment', 'Comment'), W('comment', 'stitch'), W('follow', 'follow'), W('tribe', 'mtgtribe.com/group'), W('save', 'Save'), W('share', 'share'), W('n_slog', 'action'),
     W('o_thanks', 'like'), W('o_thanks', 'share'), W('o_thanks', 'comment'), W('o_massive', 'massive'), W('o_best', 'because') + .15];
   const click = [W('follow', 'follow') + .45];
   return { whoosh: wh, tick, pop, click };
@@ -557,8 +586,8 @@ window.render = (t) => {
   // top bar until the ending
   const ta = t < SC.engage[0] ? 1 : Math.max(0, 1 - (t - SC.engage[0]) / .35); topEl.style.opacity = ta;
   // question tracker
-  const qk = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'];
-  const tv = t >= SC.seven[0] && t < SC.good[0] + .3; const [ad] = env(t, W('seven', 'Seven') + .2, SC.good[0] + .3, .4, .3);
+  const qk = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+  const tv = t >= SC.seven[0] && t < SC.health[0] + .3; const [ad] = env(t, W('seven', 'Eight') + .2, SC.health[0] + .3, .4, .3);
   const cur = qk.findIndex(q => t >= SC[q][0] && t < SC[q][1] - .3) + 1 || (t >= SC.sell[0] && t < SC.q7[0] ? 6.5 : 0);
   dots.forEach((d, i) => {
     if (!tv) { S(d, 0); return; }

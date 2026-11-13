@@ -5,9 +5,28 @@ sellers and session hosts) for their real experience, with strong hooks, comment
 colours, emoji pops, made to trend on TikTok. **Preview only; MTG posts it after he approves it.** Facts it relies on:
 `tools/olylife/olylife-facts.md`. Caption, pinned comment and after-posting steps: `posting-pack.md`.
 
-2:00 (119.7 s), 9:16, 1080x1920, 30 fps. Mix -14 LUFS, true peak -2.8 dB.
+v3: 2:18 (138.0 s), 9:16, 1080x1920, 30 fps. Mix -14 LUFS, true peak -2.8 dB. (v1 and v2: 2:00.)
 
-## Script (MTG Master Voice V3, one request, 20 lines, 1,442 characters)
+## v3 (13 Nov 2026): Health is Wealth, the tribe, eight questions
+
+MTG: "throw in that Health is Wealth slogan... a reminder that our health comes first", "replace community with Tribe",
+frame it as one of the tribe's multiple income streams, improve the questions. Seven new lines in V3, one request
+(`133bc33e4bbb484282b410eabb5c6a71`, take `voice/survey_v3b.flac`), the unchanged lines keep the first take
+(`lines_survey2.py` builds both). 2:18.
+
+- Intro: "We build multiple streams of income in my tribe, and I'm considering this machine as our next one. But before
+  I bring it to my tribe, I'm asking you." (was "bringing this machine to my community")
+- "Eight quick questions." Question 6 asks what people really paid: "Was it worth the money? Did you pay per session,
+  or buy your own machine? Would you do it again?" Sellers get two: "the last two are for you", then new question 8:
+  "How did you find your first clients? And where do you run your sessions?"
+- **Health is Wealth**, its own scene right after the last question, before the comment call (the emotional peak, and
+  the reason honest answers matter): "Why does all of this matter? Because health is wealth." / "What good is money,
+  if you're too sick to enjoy it? Your health comes first. So look after your body." (MTG's own idea, 12 Nov 2026.)
+  Echoed as a "💚 Health is wealth" chip on the "not medical advice" scene.
+- Captions now show names as people read them: "OlyLife Tera-P90?" and "mtgtribe.com/group" (the voice text spells
+  them for pronunciation; v1 and v2 showed the spelled-out words).
+
+## Script v1 (MTG Master Voice V3, one request, 20 lines, 1,442 characters)
 
 Hook: "Have you used this foot machine? The Olly Life Terra P ninety?" / "I need your honest answer." / "I keep seeing
 amazing videos about it. Now I want the real stories, straight from the people who use it." / Hi, why I'm asking

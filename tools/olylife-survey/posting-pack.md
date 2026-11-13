@@ -1,6 +1,6 @@
 # Posting pack: OlyLife Tera-P90 honest survey (TikTok first)
 
-Preview only. MTG posts it himself after he approves it. 2:00, 9:16, 1080x1920, 30 fps.
+Preview only. MTG posts it himself after he approves it. 2:18, 9:16, 1080x1920, 30 fps (v3, 13 Nov 2026).
 
 ## The job of this video
 
@@ -15,9 +15,11 @@ Preview only. MTG posts it himself after he approves it. 2:00, 9:16, 1080x1920, 
 
 Used the OlyLife Tera-P90? 🦶 I need your HONEST answer 👇
 
-7 quick questions. Answer by number in the comments (1 to 7).
+8 quick questions. Answer by number in the comments (1 to 8).
 Good, bad or nothing at all: every honest answer counts ✅
-Sell it or run sessions? Number 7 is for you 🏪
+Sell it or run sessions? Numbers 7 and 8 are for you 🏪
+
+Because health is wealth 💚 Your health comes first.
 
 💬 Comment or ✂️ stitch this video with your story.
 📊 I'll share what you told me in my next video. Follow so you don't miss it.
@@ -34,8 +36,9 @@ Copy, paste and fill in 👇
 3 My first session felt:
 4 What changed / what didn't:
 5 What I didn't like:
-6 Worth it? (session or machine):
+6 Worth the money? Paid per session or bought the machine? Again?:
 7 Sellers: clients come back for... and always ask...
+8 Sellers: how I found my first clients, where I run sessions:
 
 ## After posting
 
@@ -50,8 +53,8 @@ Copy, paste and fill in 👇
 
 ## Notes
 
-- **WhatsApp status:** this video is 2:00, longer than one status (60 s). If you want a status version, ask for a
-  60-second cut (hook, the 7 questions on screen, comment prompt).
+- **WhatsApp status:** this video is 2:18, longer than one status (60 s). If you want a status version, ask for a
+  60-second cut (hook, the 8 questions on screen, Health is Wealth, comment prompt).
 - **What is on screen:** the device is a 3D illustration made for this video (no one else's photos or clips). OlyLife
   and Tera-P90 are named only to say which machine the survey is about. The two sample comments are labelled
   "Example answer".

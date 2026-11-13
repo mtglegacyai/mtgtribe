@@ -104,7 +104,7 @@ def build_home():
     {join_btn('Join JetUP', 'btn btn-lime')}
    </div>
    <ul class="chips rv" style="--d:4">
-    <li class="chip">{icon('i-film2')}2 videos, about 15 minutes</li>
+    <li class="chip">{icon('i-film2')}Start with 2 videos, about 15 minutes</li>
     <li class="chip">{icon('i-lock')}Account in your own name</li>
     <li class="chip">{icon('i-compass2')}Independent, not official</li>
    </ul>

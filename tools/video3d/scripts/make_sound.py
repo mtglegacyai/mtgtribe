@@ -542,6 +542,29 @@ def shimmer():
     return lowpass(x, 1800)
 
 
+def doorbell():
+    """The pizzas are here: a soft two-note doorbell, heard through the door."""
+    d = 1.8
+    x = np.zeros(int(d * SR))
+    for at, f, a in ((0.0, 659.3, 1.0), (0.42, 523.3, 0.9)):
+        tt = t(1.3)
+        n = (np.sin(2 * np.pi * f * tt) + 0.3 * np.sin(2 * np.pi * f * 2 * tt) + 0.1 * np.sin(2 * np.pi * f * 3 * tt)) * env(len(tt), 0.02, 0.55, curve=0.8)
+        i = int(at * SR)
+        x[i:i + len(n)] += n[:len(x) - i] * a
+    return lowpass(x, 1500)
+
+
+def slide():
+    """A pizza box sliding across the table: a soft cardboard swish that ends in a gentle bump."""
+    d = 1.0
+    tt = t(d)
+    x = band(noise(d), 250, 1400) * np.sin(np.pi * np.clip(tt / 0.6, 0, 1)) ** 1.5 * 0.8
+    bump = sine(lambda u: 95 + 35 * np.exp(-u * 30), 0.35) * env(int(0.35 * SR), 0.012, 0.12)
+    i = int(0.58 * SR)
+    x[i:i + len(bump)] += bump * 0.8
+    return lowpass(x, 1500)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -565,6 +588,8 @@ PALETTE = {
     'engine': (engine, 0.2), 'hoot': (hoot, 0.3),
     # made for video 07 (before you try to make money with AI)
     'typing': (typing, 0.15), 'shimmer': (shimmer, 0.35),
+    # made for video 08 (the story of the two pizzas)
+    'doorbell': (doorbell, 0.3), 'slide': (slide, 0.15),
 }
 
 

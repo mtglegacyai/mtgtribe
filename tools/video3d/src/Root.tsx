@@ -10,6 +10,7 @@ import {Cover04, MOF04_FPS, MOF04_FRAMES, VaultMyth} from './compositions/mof04/
 import {BitcoinWorks, Cover05, HBW05_FPS, HBW05_FRAMES} from './compositions/hbw05/BitcoinWorks';
 import {BAI07_FPS, BAI07_FRAMES, BeforeAI, Cover07} from './compositions/bai07/BeforeAI';
 import {CommuteCost, Cover06, HCC06_FPS, HCC06_FRAMES} from './compositions/hcc06/CommuteCost';
+import {Cover08, PizzaStory, SOP08_FPS, SOP08_FRAMES} from './compositions/sop08/PizzaStory';
 import {NEWLOOK_FRAMES, NewLook} from './compositions/preview/NewLook';
 import {LEOMOMENTS_FRAMES, LeoMoments} from './compositions/preview/LeoMoments';
 import {Hook3D, HOOK3D_FRAMES} from './compositions/whatif01/Hook3D';
@@ -51,6 +52,10 @@ export const RemotionRoot: React.FC = () => (
 	<Folder name="Video07">
 		<Composition id="BAI07-9x16" component={BeforeAI} width={1080} height={1920} fps={BAI07_FPS} durationInFrames={BAI07_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
 		<Still id="Cover07-9x16" component={Cover07} width={1080} height={1920} />
+	</Folder>
+	<Folder name="Video08">
+		<Composition id="SOP08-9x16" component={PizzaStory} width={1080} height={1920} fps={SOP08_FPS} durationInFrames={SOP08_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
+		<Still id="Cover08-9x16" component={Cover08} width={1080} height={1920} />
 	</Folder>
 	<Folder name="Real3D">
 		<Composition id="WhatIf01-3D-9x16" component={WhatIf01_3D} width={1080} height={1920} fps={30} durationInFrames={WHATIF01_3D_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />

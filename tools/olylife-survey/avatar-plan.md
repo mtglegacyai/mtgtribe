@@ -17,22 +17,22 @@ questions, realistic and a little cinematic, **only if it costs no more than 10 
 | Avatar for the hook only, the rest motion graphics | 10 to 12 s | about 8 to 10 |
 | MTG films himself on his phone, I edit | all of it | 0 |
 
-HeyGen did not connect in this session (14 Nov 2026), so the balance and any cheaper avatar engine could not be checked
-live. Check `get_current_user` and the engine's price before any render. Note: his avatar renders 16:9; a vertical
+Balance checked later on 14 Nov 2026: 42 credits (resets 3 Dec 2026). Check `get_current_user` and the engine's price before any render. Note: his avatar renders 16:9; a vertical
 TikTok crops it, so ask HeyGen for 9:16 if the look supports it.
 
-## The improved script (about 45 s), built on MTG's real first session
+## The improved script (about 50 s), built on MTG's real first session (updated 14 Nov 2026 evening)
 
 Why: a stranger has no reason to answer 8 questions. A real person trying the R350 machine and saying "not yet"
-is a story people stop for, and "watch my four-week journey" gives them a reason to follow.
+is a story people stop for (and since the evening of 14 Nov 2026: "nothing during, but hours later my feet felt light"), and "watch my four-week journey" gives them a reason to follow.
 
 > I just paid R350 to sit on this machine for thirty minutes. The OlyLife Tera-P90.
 > The videos online are full of amazing stories. So, did I feel anything?
-> Honestly? Not yet. It was my first session.
-> But at the centre, I met people on their third and fourth sessions. So I'm doing four sessions in four weeks, and
+> During the session? Honestly, nothing. But a few hours later, my feet felt light. Like fresh air was going
+> through them. I can't explain it.
+> At the centre, I met people on their third and fourth sessions. So I'm doing four sessions in four weeks, and
 > I'll tell you the truth, whatever happens.
 > Now I need your help. If you've used this machine, tell me in the comments:
-> One. How many sessions before you felt a difference?
+> One. Is that normal? What did you feel after your first session?
 > Two. What changed, and what didn't?
 > Three. Was it worth the money?
 > And if you sell it or run sessions: how did you find your first clients?

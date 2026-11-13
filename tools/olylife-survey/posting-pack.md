@@ -40,6 +40,16 @@ Copy, paste and fill in 👇
 7 Sellers: clients come back for... and always ask...
 8 Sellers: how I found my first clients, where I run sessions:
 
+## WhatsApp status version (59.7 s, `MTG-OlyLife-Survey-WhatsApp-60s.mp4`)
+
+Fits one status. Replies to a status come to MTG privately in WhatsApp, so people answer more openly than in public
+comments. Caption to paste with it:
+
+Used the OlyLife Tera-P90? 🦶 Reply with your answers, 1 to 8 💬
+Health is wealth 💚 Full video on TikTok: @joinmtgtribe
+
+Tip: post the TikTok first, so the status can point people to it.
+
 ## After posting
 
 - **First hour:** reply to early comments, and answer some with a video reply (TikTok shows those to new people).
@@ -53,8 +63,7 @@ Copy, paste and fill in 👇
 
 ## Notes
 
-- **WhatsApp status:** this video is 2:18, longer than one status (60 s). If you want a status version, ask for a
-  60-second cut (hook, the 8 questions on screen, Health is Wealth, comment prompt).
+- **WhatsApp status:** use the 59.7 s cut above, not the 2:18 version.
 - **What is on screen:** the device is a 3D illustration made for this video (no one else's photos or clips). OlyLife
   and Tera-P90 are named only to say which machine the survey is about. The two sample comments are labelled
   "Example answer".

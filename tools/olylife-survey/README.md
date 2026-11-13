@@ -7,6 +7,22 @@ colours, emoji pops, made to trend on TikTok. **Preview only; MTG posts it after
 
 v3: 2:18 (138.0 s), 9:16, 1080x1920, 30 fps. Mix -14 LUFS, true peak -2.8 dB. (v1 and v2: 2:00.)
 
+## WhatsApp status cut (13 Nov 2026): 59.7 s
+
+MTG asked for the 60-second status version. Built from the v3 voice (`lines_wa.py` cuts it at the silences between
+words) plus two new V3 lines for WhatsApp, one request (`9df1d8b4cbe34070a94faecba984ad55`, take
+`voice/survey_v3wa.flac`; the balance went from 44 to 42): "Reply to this status with your answers, by number." and
+"So reply to this status with your answers. The full video is on my TikTok, at join MTG tribe."
+
+Spoken: hook, honest answer, "We build multiple streams of income in my tribe... I'm asking you", "Eight quick
+questions" + reply line, all eight questions (short form spoken, full wording on screen; questions 7 and 8 carry a
+"SELLERS & SESSION HOSTS" tag because the seller line is cut), "Why does all of this matter? Because health is
+wealth. Your health comes first.", the reply and TikTok line, "Let's Get This Crypto!", then the closing track's last
+line ("Let's get this crypto, wherever I go!") on the end card (videos of 60 s or less, MTG 8 Nov 2026). The full
+signature ending does not fit in a status; the end card (photo, Crypto-Regards, slogan, url, all five platforms)
+closes it. Stage: `stage/stage_wa.html` with `stage/timeline_wa.js` (`STAGE=stage_wa.html node render.js ...`),
+mix `mix_wa.py`, checks `qa_wa.py`.
+
 ## v3 (13 Nov 2026): Health is Wealth, the tribe, eight questions
 
 MTG: "throw in that Health is Wealth slogan... a reminder that our health comes first", "replace community with Tribe",

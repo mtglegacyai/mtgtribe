@@ -1,0 +1,629 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>OlyLife survey stage</title>
+<style>
+@font-face{font-family:Anton;src:url(Anton-Regular.ttf)}
+@font-face{font-family:Montserrat;src:url(Montserrat.ttf);font-weight:100 900}
+@font-face{font-family:Oswald;src:url(Oswald.ttf);font-weight:200 700}
+@font-face{font-family:GreatVibes;src:url(GreatVibes-Regular.ttf)}
+:root{--g0:#03140b;--g1:#0a3d22;--green:#2fbf5b;--lime:#b6f04a;--mint:#d9fbe3;--gold:#e8c25a;--goldl:#fae496;--goldd:#c48e2c;--ice:#e6f5ec;--white:#f6fbf7;--dark:#06170d}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--g0);font-family:Montserrat,sans-serif;color:var(--white)}
+#bg,#fx,#layer,#cap,#top{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#bg{background:radial-gradient(120% 80% at 50% 38%,#0f5130 0%,#07301b 42%,#03140b 78%)}
+.blob{position:absolute;border-radius:50%;filter:blur(60px)}
+canvas#dev{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.e{position:absolute;left:0;top:0;transform-origin:50% 50%;will-change:transform,opacity;opacity:0;white-space:nowrap}
+.anton{font-family:Anton,sans-serif;letter-spacing:1px;text-transform:uppercase;line-height:1.02}
+.grad{background:linear-gradient(180deg,#ffffff 0%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ej{color:#fff;-webkit-text-fill-color:#fff;background:none}
+.lime{color:var(--lime)} .gold{color:var(--gold)} .mint{color:var(--mint)}
+.gl{background:linear-gradient(180deg,var(--goldl),var(--goldd));-webkit-background-clip:text;background-clip:text;color:transparent}
+.gg{background:linear-gradient(180deg,#e9ffb8,#38d26b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shadow{filter:drop-shadow(0 8px 28px rgba(0,0,0,.55))}
+.chip{display:inline-flex;align-items:center;gap:16px;padding:16px 30px;border-radius:999px;background:rgba(6,30,17,.82);
+  border:3px solid rgba(182,240,74,.75);font-weight:800;font-size:40px;box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 26px rgba(47,191,91,.25)}
+.chip.gold{border-color:rgba(232,194,90,.85);color:var(--white)}
+.card{border-radius:44px;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.18);
+  box-shadow:0 24px 60px rgba(0,0,0,.45);backdrop-filter:blur(10px)}
+.badge{width:190px;height:190px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Anton;font-size:128px;color:#fff;
+  background:radial-gradient(circle at 35% 30%,#7df59c,#22a64b 55%,#0d6b2d);border:7px solid var(--lime);box-shadow:0 0 50px rgba(124,255,150,.45),inset 0 -10px 24px rgba(0,0,0,.25)}
+.ring{width:230px;height:230px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:110px;
+  border:9px solid var(--c,#b6f04a);background:radial-gradient(circle,rgba(255,255,255,.12),rgba(6,30,17,.85));box-shadow:0 0 40px var(--c,#b6f04a)}
+.url{display:inline-flex;align-items:center;gap:18px;padding:22px 46px;border-radius:999px;background:linear-gradient(180deg,#d6ff7a,#9be03a);color:var(--dark);
+  font-weight:900;font-size:70px;box-shadow:0 0 50px rgba(182,240,74,.6),0 14px 30px rgba(0,0,0,.4)}
+.plat{display:flex;align-items:center;gap:22px;width:760px;height:78px;padding:0 28px;box-sizing:border-box;border-radius:22px;background:rgba(6,30,17,.85);
+  border:2px solid rgba(255,255,255,.14);font-size:34px;font-weight:700}
+.plat b{width:12px;height:46px;border-radius:6px;background:var(--c)} .plat span.h{margin-left:auto;color:var(--mint);font-weight:600}
+.disc{width:var(--d);height:var(--d);border-radius:50%;padding:calc(var(--d)*.045);box-sizing:border-box;background:conic-gradient(from 200deg,#fff2b8,#c48e2c,#fae496,#a8741f,#fff2b8);
+  box-shadow:0 0 60px rgba(232,194,90,.5)}
+.disc>div{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 40% 30%,#1a7a43,#063a1d 70%);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.disc .cr{font-size:calc(var(--d)*.26);line-height:1;margin-bottom:calc(var(--d)*-.02)}
+.disc .nm{font-family:Anton;font-size:calc(var(--d)*.30);line-height:1;letter-spacing:2px}
+.bub{display:flex;gap:18px;align-items:flex-start;padding:22px 30px;border-radius:30px;background:rgba(255,255,255,.95);color:#10241a;font-size:36px;font-weight:600;
+  box-shadow:0 14px 34px rgba(0,0,0,.4);white-space:normal}
+.bub .av{flex:0 0 64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;background:#d9fbe3}
+.bub .n{font-weight:800;color:#1c8a43;font-size:28px;margin-bottom:4px}
+.tile{width:300px;height:330px;border-radius:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-family:Anton;font-size:64px;
+  background:linear-gradient(170deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:3px solid var(--c);box-shadow:0 0 36px var(--c)}
+.tile .em{font-size:130px;line-height:1}
+.phone{width:270px;height:480px;border-radius:44px;background:#0b1b12;border:6px solid #cfd8d2;box-shadow:0 20px 50px rgba(0,0,0,.5);overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.dot{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;border:4px solid rgba(255,255,255,.35);color:rgba(255,255,255,.7);background:rgba(6,30,17,.6)}
+.btn{display:inline-flex;align-items:center;gap:18px;padding:24px 54px;border-radius:999px;font-weight:900;font-size:58px;background:linear-gradient(180deg,#ff3b6b,#e0164c);color:#fff;
+  box-shadow:0 14px 40px rgba(224,22,76,.5)}
+#cap .box{position:absolute;left:540px;top:1462px;transform:translate(-50%,-50%);padding:18px 34px;border-radius:30px;background:rgba(3,20,11,.78);
+  border:2px solid rgba(182,240,74,.35);font-weight:800;font-size:52px;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#cap .w{display:inline-block;margin:0 9px;color:rgba(246,251,247,.92);transition:none}
+#cap .w.on{color:var(--lime);transform:scale(1.08)}
+#top .bar{position:absolute;left:54px;top:166px;display:flex;align-items:center;gap:18px}
+#top .bar .t1{font-family:Anton;font-size:44px;letter-spacing:2px;line-height:1}
+#top .bar .t2{font-size:21px;font-weight:700;letter-spacing:4px;color:var(--lime)}
+#top .sv{position:absolute;right:54px;top:172px;font-size:30px;padding:12px 24px}
+#flash{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 45%,rgba(210,255,225,.9),rgba(210,255,225,0) 70%);opacity:0}
+.p{position:absolute;border-radius:50%}
+</style></head>
+<body>
+<div id="bg"></div><div id="fx"></div>
+<canvas id="dev" width="1080" height="1920"></canvas>
+<div id="layer"></div>
+<div id="top"></div>
+<div id="cap"></div>
+<div id="flash"></div>
+<script src="timeline_wa.js"></script>
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import { makeDevice } from './device.js';
+const TL = window.TL, CX = 540;
+// ------------------------------------------------------------------ easing and envelopes (as the signature engine)
+const cl = x => Math.min(1, Math.max(0, x));
+const eOut = x => 1 - Math.pow(1 - cl(x), 3);
+const eBack = x => { x = cl(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const smooth = x => { x = cl(x); return x * x * (3 - 2 * x); };
+function env(t, t0, t1, fin = .3, fout = .25) {
+  if (t < t0 || t > t1) return [0, 0];
+  const ai = fin > 0 ? eOut((t - t0) / fin) : 1, ao = fout > 0 ? eOut((t1 - t) / fout) : 1;
+  return [Math.min(ai, ao), fin > 0 ? eBack((t - t0) / (fin * 1.4)) : 1];
+}
+const pulse = (t, t0, amp = .08, dur = .35) => t >= t0 ? 1 + amp * Math.max(0, 1 - (t - t0) / dur) : 1;
+// ------------------------------------------------------------------ word cues
+const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+const LN = k => TL.lines[k] || [1e9, 1e9];
+function W(line, w, n = 0) { let c = 0; for (const [ww, a, b, l] of TL.words) if (l === line && norm(ww) === norm(w)) { if (c === n) return a; c++; } return 1e9; }  // WhatsApp cut: words that were cut never cue
+// ------------------------------------------------------------------ elements
+const layer = document.getElementById('layer');
+function E(html, x, y, cls = '', style = '', parent = layer) {
+  const d = document.createElement('div'); d.className = 'e ' + cls; d.innerHTML = html; d.style.cssText = style; parent.appendChild(d);
+  d._x = x; d._y = y; return d;
+}
+// set: alpha, scale, dx, dy, rotation (deg)
+function S(d, a, s = 1, dx = 0, dy = 0, r = 0) {
+  if (a <= 0.003) { if (d.style.opacity !== '0') d.style.opacity = '0'; return; }
+  d.style.opacity = a.toFixed(3);
+  d.style.transform = `translate(${d._x + dx}px,${d._y + dy}px) translate(-50%,-50%) rotate(${r}deg) scale(${s.toFixed(4)})`;
+}
+const all = []; const reg = d => (all.push(d), d);
+// particle burst (deterministic)
+const bursts = [];
+function burst(x, y, t0, cols, n = 14, r1 = 170, dur = .7, rx = null, ry = null) {
+  const ps = []; for (let i = 0; i < n; i++) {
+    const d = document.createElement('div'); d.className = 'p'; const sz = 10 + (i * 7) % 12; d.style.width = d.style.height = sz + 'px';
+    d.style.background = cols[i % cols.length]; d.style.boxShadow = `0 0 14px ${cols[i % cols.length]}`; d.style.opacity = 0; layer.appendChild(d);
+    ps.push({ d, ang: i / n * Math.PI * 2 + (i % 3) * .21, sp: .7 + ((i * 37) % 10) / 20, sz });
+  }
+  bursts.push({ x, y, t0, ps, r1, dur, rx: rx || 0, ry: ry || 0 });
+}
+function drawBursts(t) {
+  for (const B of bursts) {
+    const u = (t - B.t0) / B.dur;
+    for (const P of B.ps) {
+      if (u < 0 || u > 1) { if (P.d.style.opacity !== '0') P.d.style.opacity = 0; continue; }
+      const e = eOut(u), r = B.r1 * P.sp * e;
+      const x = B.x + Math.cos(P.ang) * (B.rx + r), y = B.y + Math.sin(P.ang) * (B.ry + r);
+      P.d.style.opacity = (1 - u).toFixed(3); P.d.style.transform = `translate(${x - P.sz / 2}px,${y - P.sz / 2}px) scale(${1 - .5 * u})`;
+    }
+  }
+}
+// ------------------------------------------------------------------ background: drifting glows + floating particles
+const fx = document.getElementById('fx'); const blobs = [];
+[[260, 520, 620, 'rgba(47,191,91,.30)'], [860, 1300, 700, 'rgba(182,240,74,.16)'], [760, 300, 520, 'rgba(46,160,120,.22)']].forEach(([x, y, s, c], i) => {
+  const b = document.createElement('div'); b.className = 'blob'; b.style.cssText = `width:${s}px;height:${s}px;background:${c}`; fx.appendChild(b); blobs.push({ b, x, y, s, i });
+});
+const motes = []; for (let i = 0; i < 26; i++) { const d = document.createElement('div'); d.className = 'p'; const s = 4 + (i * 5) % 7;
+  d.style.cssText = `width:${s}px;height:${s}px;background:rgba(214,255,122,.55);box-shadow:0 0 10px rgba(182,240,74,.8)`; fx.appendChild(d);
+  motes.push({ d, x: (i * 263) % 1080, y: (i * 571) % 1920, sp: 18 + (i * 13) % 30, ph: i * 1.7 }); }
+function drawBg(t) {
+  for (const B of blobs) { const x = B.x + 80 * Math.sin(t * .23 + B.i * 2), y = B.y + 60 * Math.cos(t * .19 + B.i); B.b.style.transform = `translate(${x - B.s / 2}px,${y - B.s / 2}px)`; }
+  for (const M of motes) { const y = ((M.y - t * M.sp) % 1920 + 1920) % 1920, x = M.x + 20 * Math.sin(t * .6 + M.ph);
+    M.d.style.transform = `translate(${x}px,${y}px)`; M.d.style.opacity = (.35 + .35 * Math.sin(t * 1.3 + M.ph)).toFixed(2); }
+}
+// ------------------------------------------------------------------ scene times
+const L = TL.lines;
+const SC = {}; // name -> [t0, t1]
+const order = [['hook', 0], ['hi', L.hi[0] - .12], ['seven', L.seven[0] - .12],
+  ['q1', L.q1[0] - .12], ['q2', L.q2[0] - .12], ['q3', L.q3[0] - .12], ['q4', L.q4[0] - .12], ['q5', L.q5[0] - .12], ['q6', L.q6[0] - .12],
+  ['q7', L.q7[0] - .12], ['q8', L.q8[0] - .12], ['health', L.health1[0] - .12], ['reply', L.wa2[0] - .12],
+  ['end', W('o_lgtc', "Let's") + .35]];
+order.forEach(([k, t0], i) => SC[k] = [t0, i + 1 < order.length ? order[i + 1][1] + .3 : 1e9]);
+window.SCENES = order.map(o => [o[0], o[1]]);
+const sceneAt = t => { let k = order[0][0]; for (const [n, t0] of order) if (t >= t0) k = n; return k; };
+
+// ------------------------------------------------------------------ the 3D device: pose per scene, smooth hand-over
+const DEV_FADE = .5;
+const PO = {
+  hook: t => ({ cx: CX, cy: 925, size: 740, yaw: -0.75 + 0.55 * (t / SC.hook[1]), pitch: .58, a: 1 }),
+  q1: t => ({ cx: CX, cy: 1110, size: 640, yaw: -0.45 + .08 * (t - SC.q1[0]), pitch: .55, a: 1 }),
+  q2: t => ({ cx: CX, cy: 1165, size: 520, yaw: .03 * (t - SC.q2[0]), pitch: .8, a: 1 }),
+  q3: t => ({ cx: CX, cy: 1170, size: 560, yaw: .05 * (t - SC.q3[0]), pitch: 1.05, a: 1 }),
+  q4: t => ({ cx: CX, cy: 1225, size: 420, yaw: .55 - .07 * (t - SC.q4[0]), pitch: .5, a: 1 }),
+  q5: t => ({ cx: CX, cy: 1120, size: 600, yaw: -.6 + .06 * (t - SC.q5[0]), pitch: .5, a: 1 }),
+  q7: t => ({ cx: CX, cy: 1095, size: 500, yaw: .35 - .06 * (t - SC.q7[0]), pitch: .55, a: 1 }),
+  q8: t => ({ cx: CX, cy: 1095, size: 500, yaw: -.25 + .06 * (t - SC.q8[0]), pitch: .62, a: 1 }),
+};
+const NOPOSE = { cx: CX, cy: 1100, size: 600, yaw: 0, pitch: .55, a: 0 };
+const poseOf = (k, t) => PO[k] ? PO[k](t) : null;
+function devPose(t) {
+  const k = sceneAt(t), i = order.findIndex(o => o[0] === k), t0 = order[i][1];
+  let cur = poseOf(k, t);
+  if (i > 0 && t - t0 < DEV_FADE) {
+    const pk = order[i - 1][0], prev = poseOf(pk, t0), u = smooth((t - t0) / DEV_FADE);
+    if (cur && prev) { const o = {}; for (const f of ['cx', 'cy', 'size', 'yaw', 'pitch']) o[f] = prev[f] + (cur[f] - prev[f]) * u; o.a = 1; return o; }
+    if (cur && !prev) { const e = eBack((t - t0) / (DEV_FADE * 1.1)); return { ...cur, size: cur.size * (.82 + .18 * e), a: eOut((t - t0) / .35) }; }
+    if (!cur && prev) { return { ...prev, a: 1 - eOut((t - t0) / .3) }; }
+  }
+  return cur || NOPOSE;
+}
+
+// ------------------------------------------------------------------ top bar
+const top = document.getElementById('top');
+top.innerHTML = `<div class="bar"><div class="disc" style="--d:84px"><div><div class="cr" style="font-size:24px">👑</div><div class="nm gl" style="font-size:27px">MTG</div></div></div>
+  <div><div class="t1 grad">MTG</div><div class="t2">YOUR DIGITAL ARCHITECT</div></div></div>
+  <div class="chip sv">📋 HONEST SURVEY</div>`;
+const topEl = top;
+
+// ------------------------------------------------------------------ captions
+const cap = document.getElementById('cap'); const capBox = document.createElement('div'); capBox.className = 'box'; cap.appendChild(capBox);
+const capPages = []; // {a, b, words:[{w,a,b}]}
+(() => {
+  const byLine = {}; for (const [w, a, b, l] of TL.words) (byLine[l] = byLine[l] || []).push({ w, a, b, l });
+  for (const l of Object.keys(byLine)) {
+    let page = []; let len = 0;
+    for (const x of byLine[l]) {
+      const add = x.w.length + 1;
+      if (page.length && (len + add > 24 || /[.?!]$/.test(page[page.length - 1].w))) { capPages.push(page); page = []; len = 0; }
+      page.push(x); len += add;
+    }
+    if (page.length) capPages.push(page);
+  }
+  capPages.sort((p, q) => p[0].a - q[0].a);
+})();
+let capKey = null;
+function drawCap(t) {
+  const endA = SC.end[0];
+  let pg = null;
+  for (let i = 0; i < capPages.length; i++) { const p = capPages[i]; const nx = capPages[i + 1]; const pb = nx ? Math.min(nx[0].a - .02, p[p.length - 1].b + .6) : p[p.length - 1].b + .6;
+    if (t >= p[0].a - .08 && t < pb) pg = p; }
+  if (!pg || t >= endA) { capBox.style.opacity = 0; return; }
+  const key = pg[0].a;
+  if (capKey !== key) { capBox.innerHTML = pg.map(x => `<span class="w">${x.w.replace(/[.,!?;:]$/, m => m)}</span>`).join(''); capKey = key; }
+  const ws = capBox.children; for (let i = 0; i < pg.length; i++) ws[i].classList.toggle('on', t >= pg[i].a - .03 && t < (pg[i + 1] ? pg[i + 1].a - .03 : pg[i].b + .25));
+  capBox.style.opacity = 1;
+}
+
+// ------------------------------------------------------------------ helpers for scenes
+const EJ = s => s.replace(/(\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]*)/gu, '<span class="ej">$1</span>');
+const H = (txt, cls = '') => `<div class="anton ${cls}">${EJ(txt)}</div>`;
+const disc = d => `<div class="disc" style="--d:${d}px"><div><div class="cr">👑</div><div class="nm gl">MTG</div></div></div>`;
+// MTG's own photo in the gold ring, for the two "I'm MTG" moments (MTG, 13 Nov 2026)
+const photoDisc = d => `<div class="disc" style="--d:${d}px"><div style="background:url(mtg-photo.jpg) center/cover"></div></div>`;
+const ringI = (em, c, d = 230) => `<div class="ring" style="--c:${c};width:${d}px;height:${d}px;font-size:${d * .48}px">${em}</div>`;
+const chip = (txt, cls = '') => `<div class="chip ${cls}">${txt}</div>`;
+const S_ = {}; // scene drawers
+function header(d, t, t0, t1, dy = 20) { const [a, p] = env(t, t0, t1, .4, .3); S(d, a, 1, 0, (1 - p) * dy); }
+
+// ---- HOOK (frame 0 is the cover: headline and device already on screen)
+{
+  const h1 = reg(E(H('USED THIS', 'grad shadow') , CX, 330, '', 'font-size:150px'));
+  const h2 = reg(E(H('MACHINE? 🦶', 'gg shadow'), CX, 490, '', 'font-size:170px'));
+  const nm = reg(E(chip('OlyLife THz Tera-P90'), CX, 640, '', ''));
+  const hon = reg(E(`<div class="anton shadow" style="text-align:center"><div style="font-size:72px">I NEED YOUR</div><div style="font-size:104px"><span class="lime">HONEST</span> ANSWER 🙏</div></div>`, CX, 1290, '', ''));
+  const und = reg(E(`<div style="width:300px;height:10px;border-radius:5px;background:var(--lime);box-shadow:0 0 20px var(--lime)"></div>`, CX + 52, 1362));
+  S_.hook = t => {
+    const [t0, t1] = SC.hook; const a0 = env(t, -1, t1, 0, .3)[0];
+    const pz = 1 + .025 * Math.sin(t * 1.8);
+    S(h1, a0, pz); S(h2, a0, pz * pulse(t, W('hook', 'machine'), .06));
+    S(nm, a0, pulse(t, W('hook', 'OlyLife'), .08));
+    const th = W('honest', 'honest'); const [ah, ph] = env(t, L.honest[0] - .05, t1, .3, .3); S(hon, ah, 1.15 - .15 * ph);
+    S(und, 0);
+  };
+  S_.hookFirst = true;
+}
+// ---- KEEP: amazing videos everywhere... now the real stories
+{
+  const ph = []; const em = ['⭐⭐⭐⭐⭐', '🔥🔥🔥', 'WOW 😍'];
+  for (let i = 0; i < 3; i++) ph.push(reg(E(`<div class="phone"><div style="font-size:${i === 0 ? 46 : 52}px;font-weight:900">${em[i]}</div><div style="font-size:90px">▶️</div></div>`, CX + (i - 1) * 250, 760)));
+  const t1x = reg(E(H('SO MANY <span class="lime">AMAZING</span> VIDEOS…', 'grad shadow'), CX, 330, '', 'font-size:88px'));
+  const t2x = reg(E(H('NOW I WANT', 'grad shadow'), CX, 1110, '', 'font-size:96px'));
+  const t3x = reg(E(H('THE <span class="lime">REAL STORIES</span> 🔍', 'shadow'), CX, 1230, '', 'font-size:110px'));
+  const t4x = reg(E(chip('👣 from the people who USE it'), CX, 1350));
+  S_.keep = t => {
+    const [t0, t1] = SC.keep; const [a0] = env(t, t0, t1, .3, .3); const ta = W('keep', 'amazing');
+    header(t1x, t, t0 + .05, t1);
+    ph.forEach((d, i) => { const [a, p] = env(t, ta - .1 + i * .12, t1, .3, .3); const rot = (i - 1) * 9; const blur = t > W('keep', 'Now') ? .55 : 1;
+      S(d, a * a0 * blur, (.6 + .4 * p) * (1 + .02 * Math.sin(t * 3 + i)), 0, (i === 1 ? -30 : 10) + (1 - p) * 60, rot); });
+    const tn = W('keep', 'Now'); const [a2, p2] = env(t, tn - .05, t1, .3, .3); S(t2x, a2, 1, 0, (1 - p2) * 20);
+    const tr = W('keep', 'real'); const [a3, p3] = env(t, tr - .05, t1, .25, .3); S(t3x, a3, 1.2 - .2 * p3);
+    const tp = W('keep', 'people'); const [a4, p4] = env(t, tp - .05, t1, .3, .3); S(t4x, a4, .9 + .1 * p4);
+  };
+}
+// ---- HI: MTG, why I'm asking
+{
+  const dd = reg(E(photoDisc(330), CX, 505));
+  const n1 = reg(E(H("HI, I'M MTG", 'gl shadow'), CX, 790, '', 'font-size:110px'));
+  const n2 = reg(E(`<div style="font-weight:800;font-size:34px;letter-spacing:8px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 880));
+  const c1 = reg(E(`<div class="card" style="padding:30px 44px;text-align:center;font-weight:800;font-size:48px;line-height:1.25;white-space:normal;width:840px">We build <span class="lime">multiple streams of income</span> in my tribe 💰</div>`, CX, 1025));
+  const c1b = reg(E(chip('🦶 Our next one: this machine?'), CX, 1170));
+  const c2 = reg(E(H('BUT FIRST, I\'M ASKING <span class="lime">YOU</span> 🫵', 'shadow'), CX, 1295, '', 'font-size:80px'));
+  S_.hi = t => {
+    const [t0, t1] = SC.hi; const [a0, p0] = env(t, t0 + .25, t1, .4, .3);
+    S(dd, a0, (.7 + .3 * p0) * (1 + .015 * Math.sin(t * 2)));
+    const [a1, p1] = env(t, t0 + .15, t1, .35, .3); S(n1, a1, 1, 0, (1 - p1) * 30);
+    const [a2] = env(t, t0 + .45, t1, .35, .3); S(n2, a2);
+    const [a3, p3] = env(t, W('hi', 'multiple') - .15, t1, .35, .3); S(c1, a3, .9 + .1 * p3);
+    const [a3b, p3b] = env(t, W('hi', 'considering') - .1, t1, .3, .3); S(c1b, a3b, (.85 + .15 * p3b) * pulse(t, W('hi', 'next'), .06));
+    const [a4, p4] = env(t, W('hi', 'asking') - .05, t1, .25, .3); S(c2, a4, 1.25 - .25 * p4);
+  };
+}
+// ---- SEVEN quick questions, answer by number
+const dots = []; for (let i = 0; i < 8; i++) dots.push(reg(E(`<div class="dot">${i + 1}</div>`, CX + (i - 3.5) * 84, 300)));
+{
+  const big = reg(E(`<div class="anton gg shadow" style="font-size:420px;line-height:.9">8</div>`, CX, 640));
+  const qq = reg(E(H('QUICK QUESTIONS', 'grad shadow'), CX, 900, '', 'font-size:104px'));
+  const an = reg(E(chip('💬 Reply to this STATUS, by number'), CX, 1040));
+  const b1 = reg(E(`<div class="bub" style="width:640px"><div class="av">🙋🏾‍♀️</div><div><div class="n">Example answer</div>2: Twelve sessions, twice a week</div></div>`, CX - 40, 1180));
+  const b2 = reg(E(`<div class="bub" style="width:640px"><div class="av">🙋🏽‍♂️</div><div><div class="n">Example answer</div>3: Honestly? I felt…</div></div>`, CX + 40, 1310));
+  S_.seven = t => {
+    const [t0, t1] = SC.seven; const ts = W('seven', 'Eight');
+    const [a, p] = env(t, ts - .05, t1, .3, .3); S(big, a, (1.3 - .3 * p) * (1 + .02 * Math.sin(t * 3)));
+    const [a2, p2] = env(t, W('seven', 'quick') - .05, t1, .3, .3); S(qq, a2, 1, 0, (1 - p2) * 30);
+    const tn = W('wa1', 'number'); const [a3, p3] = env(t, W('wa1', 'Reply') - .05, t1, .3, .3); S(an, a3, (.9 + .1 * p3) * pulse(t, tn, .06));
+    const [a4, p4] = env(t, tn + .1, t1, .3, .3); S(b1, a4, .85 + .15 * p4, 0, (1 - p4) * 40);
+    const [a5, p5] = env(t, W('wa1', 'number') + .45, t1, .3, .3); S(b2, a5, .85 + .15 * p5, 0, (1 - p5) * 40);
+  };
+}
+// question cards
+const QS = {
+  q1: { n: 1, title: ['WHY DID YOU', '<span class="lime">TRY IT?</span> 🤔'], sub: 'What were you hoping it would help with? 🎯', subCue: ['q1', 'hoping'] },
+  q2: { n: 2, title: ['HOW MANY', '<span class="lime">SESSIONS?</span> 🔢'], sub: 'And how often? 📅', subCue: ['q2', 'often'] },
+  q3: { n: 3, title: ['YOUR FIRST SESSION:', 'WHAT DID YOU <span class="lime">FEEL?</span>'], sub: 'Describe it in your own words ✍️', subCue: ['q3', 'first'] },
+  q4: { n: 4, title: ['AFTER A FEW WEEKS:', 'WHAT <span class="lime">CHANGED?</span> 📈'], sub: '…and what DIDN\'T change? ➖', subCue: ['q4', 'And'] },
+  q5: { n: 5, title: ['ANYTHING YOU', '<span class="lime">DIDN\'T LIKE?</span> 😬'], sub: 'Be honest: it helps the next person 🤝', subCue: ['q5', 'discomfort'] },
+  q6: { n: 6, title: ['WAS IT WORTH', 'THE <span class="lime">MONEY?</span> 💰'], sub: '', subCue: null },
+  q7: { n: 7, title: ['WHAT DO CLIENTS', '<span class="lime">COME BACK</span> FOR? 🔁'], sub: '…and the ONE question they always ask ❓', subCue: ['q7', 'for'] },
+  q8: { n: 8, title: ['HOW DID YOU FIND', 'YOUR FIRST <span class="lime">CLIENTS?</span> 🔎'], sub: 'And where do you run your sessions? 📍', subCue: ['q8', 'clients'] },
+};
+for (const [k, Q] of Object.entries(QS)) {
+  const bd = reg(E(`<div class="badge">${Q.n}</div>`, CX, 470));
+  const tl1 = reg(E(H(Q.title[0], 'grad shadow'), CX, 650, '', 'font-size:84px'));
+  const tl2 = reg(E(H(Q.title[1], 'shadow'), CX, 760, '', 'font-size:100px'));
+  const sb = Q.sub ? reg(E(`<div class="card" style="padding:22px 36px;font-weight:800;font-size:42px;white-space:normal;text-align:center;max-width:860px">${Q.sub}</div>`, CX, 900)) : null;
+  const extra = [];
+  if (k === 'q6') {
+    extra.push([reg(E(chip('🎟️ Paid per session?'), CX, 870, '', '')), ['q6', 'session']]);
+    extra.push([reg(E(chip('📦 Bought your own machine?', 'gold'), CX, 965)), ['q6', 'machine']]);
+    extra.push([reg(E(chip('🔁 Would you do it AGAIN?'), CX, 1060)), ['q6', 'machine']]);
+  }
+  if (k === 'q7' || k === 'q8') extra.push([reg(E(chip('🏪 SELLERS & SESSION HOSTS', 'gold'), CX, 1330)), [k, k === 'q7' ? 'Seven' : 'Eight']]);
+  if (k === 'q3') { // footprints over the plates (top view)
+    extra.push([reg(E(`<div style="font-size:120px;filter:drop-shadow(0 0 20px rgba(182,240,74,.9))">👣</div>`, CX, 1130)), ['q3', 'feel']]);
+  }
+  if (k === 'q4') {
+    extra.push([reg(E(`<div class="tile" style="--c:#b6f04a;width:330px;height:120px;font-size:44px;flex-direction:row"><div class="em" style="font-size:60px">✅</div>CHANGED</div>`, 330, 1030)), ['q4', 'changed']]);
+    extra.push([reg(E(`<div class="tile" style="--c:#e8c25a;width:330px;height:120px;font-size:44px;flex-direction:row"><div class="em" style="font-size:60px">➖</div>DIDN'T</div>`, 750, 1030)), ['q4', 'And']]);
+  }
+  S_[k] = t => {
+    const [t0, t1] = SC[k]; const tn = LN(k)[0];
+    const [a, p] = env(t, t0 + .02, t1, .3, .3); S(bd, a, (.5 + .5 * p) * pulse(t, tn + .2, .07), 0, 0, (1 - p) * -30);
+    const [a1, p1] = env(t, tn + .1, t1, .3, .3); S(tl1, a1, 1, 0, (1 - p1) * 30);
+    const [a2, p2] = env(t, tn + .3, t1, .28, .3); S(tl2, a2, 1.2 - .2 * p2);
+    if (sb) { const ts = W(...Q.subCue); const [a3, p3] = env(t, ts - .08, t1, .3, .3); S(sb, a3, .9 + .1 * p3, 0, (1 - p3) * 20); }
+    for (const [d, cue] of extra) { const tc = W(...cue); const [a4, p4] = env(t, tc - .08, t1, .28, .3); S(d, a4, (.6 + .4 * p4) * (1 + .03 * Math.sin(t * 3))); }
+  };
+}
+// ---- SELL: sellers and session hosts
+{
+  const st = reg(E(`<div style="font-size:250px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))">🏪</div>`, CX, 640));
+  const s1 = reg(E(H('YOU SELL IT', 'grad shadow'), CX, 900, '', 'font-size:110px'));
+  const s2 = reg(E(H('OR RUN <span class="lime">SESSIONS?</span>', 'shadow'), CX, 1030, '', 'font-size:100px'));
+  const s3 = reg(E(chip('👇 The last TWO are for YOU'), CX, 1180));
+  S_.sell = t => {
+    const [t0, t1] = SC.sell; const [a, p] = env(t, t0 + .02, t1, .35, .3); S(st, a, (.6 + .4 * p) * (1 + .02 * Math.sin(t * 3)));
+    const [a1, p1] = env(t, W('sell', 'sell') - .1, t1, .3, .3); S(s1, a1, 1.2 - .2 * p1);
+    const [a2, p2] = env(t, W('sell', 'run') - .1, t1, .3, .3); S(s2, a2, 1.2 - .2 * p2);
+    const [a3, p3] = env(t, W('sell', 'last') - .05, t1, .3, .3); S(s3, a3, (.85 + .15 * p3) * pulse(t, W('sell', 'you', 1), .07));
+  };
+}
+// ---- HEALTH IS WEALTH (MTG, 13 Nov 2026: our health comes first, look after your body)
+{
+  const hq = reg(E(H('WHY DOES THIS <span class="lime">MATTER?</span>', 'grad shadow'), CX, 330, '', 'font-size:76px'));
+  const hh = reg(E(`<div style="font-size:150px;filter:drop-shadow(0 0 40px rgba(124,255,150,.75))">💚</div>`, CX, 482));
+  const h1 = reg(E(H('HEALTH', 'gg shadow'), CX, 690, '', 'font-size:200px'));
+  const h2 = reg(E(H('IS WEALTH', 'gl shadow'), CX, 865, '', 'font-size:160px'));
+  const hc = reg(E(`<div class="card" style="padding:26px 40px;text-align:center;font-weight:800;font-size:44px;line-height:1.3;white-space:normal;width:840px">What good is money 💰 if you're too sick to enjoy it? 🤒</div>`, CX, 1045));
+  const hf = reg(E(chip('💚 Your health comes FIRST'), CX, 1185));
+  const hb = reg(E(chip('🧘🏾 Look after your body', 'gold'), CX, 1290));
+  burst(CX, 690, W('health1', 'health'), ['#b6f04a', '#7df59c', '#ffffff'], 16, 190, .8, 300, 90);
+  burst(CX, 865, W('health1', 'wealth'), ['#e8c25a', '#fae496', '#ffffff'], 16, 190, .8, 330, 80);
+  S_.health = t => {
+    const [t0, t1] = SC.health;
+    const [a0, p0] = env(t, t0 + .02, t1, .3, .3); S(hq, a0, 1, 0, (1 - p0) * 30);
+    const tbc = W('health1', 'Because'); const [ah, ph] = env(t, tbc - .1, t1, .3, .3);
+    const beat = 1 + .06 * Math.max(0, Math.sin((t - tbc) * Math.PI * 2 * 1.1)) ** 8; S(hh, ah, (.5 + .5 * ph) * beat);
+    const th = W('health1', 'health'); const [a1, p1] = env(t, th - .06, t1, .22, .3); S(h1, a1, 1.3 - .3 * p1);
+    const tw = W('health1', 'wealth'); const [a2, p2] = env(t, tw - .06, t1, .22, .3); S(h2, a2, 1.3 - .3 * p2);
+    const [a3, p3] = env(t, W('health1', 'wealth') + .7, t1, .3, .3); S(hc, a3, .9 + .1 * p3, 0, (1 - p3) * 30);
+    const tf = W('health2', 'health'); const [a4, p4] = env(t, tf - .08, t1, .28, .3); S(hf, a4, (.8 + .2 * p4) * pulse(t, W('health2', 'first'), .07));
+    const [a5, p5] = env(t, W('health2', 'first') + .25, t1, .28, .3); S(hb, a5, .8 + .2 * p5);
+  };
+}
+// ---- GOOD / BAD / NOTHING
+{
+  const tiles = [['👍', 'GOOD', '#b6f04a', 'Good', 190], ['👎', 'BAD', '#ff7a7a', 'bad', 540], ['🤷🏾', 'NOTHING', '#e8c25a', 'nothing', 890]]
+    .map(([e, l, c, w, x]) => [reg(E(`<div class="tile" style="--c:${c}"><div class="em">${e}</div>${l}</div>`, x, 680)), w]);
+  const g1 = reg(E(H('EVERY <span class="lime">HONEST</span> ANSWER', 'grad shadow'), CX, 1000, '', 'font-size:92px'));
+  const g2 = reg(E(H('COUNTS ✅', 'gg shadow'), CX, 1120, '', 'font-size:120px'));
+  S_.good = t => {
+    const [t0, t1] = SC.good;
+    tiles.forEach(([d, w]) => { const tw = W('good', w); const [a, p] = env(t, tw - .08, t1, .25, .3); S(d, a, (.5 + .5 * p) * pulse(t, tw + .2, .06), 0, 0, (1 - p) * 12); });
+    const [a1, p1] = env(t, W('good', 'every') - .05, t1, .3, .3); S(g1, a1, 1, 0, (1 - p1) * 30);
+    const [a2, p2] = env(t, W('good', 'counts') - .05, t1, .25, .3); S(g2, a2, 1.25 - .25 * p2);
+  };
+}
+// ---- COMMENT or STITCH
+{
+  const c1 = reg(E(`<div class="tile" style="--c:#b6f04a;width:400px;height:400px"><div class="em">💬</div>COMMENT</div>`, 290, 700));
+  const c2 = reg(E(`<div class="tile" style="--c:#2fe0d0;width:400px;height:400px"><div class="em">✂️</div>STITCH</div>`, 790, 700));
+  const or = reg(E(`<div class="anton" style="font-size:70px;color:var(--mint)">OR</div>`, 540, 700));
+  const c3 = reg(E(chip('🎥 Tell your story on camera'), CX, 1000));
+  const c4 = reg(E(`<div class="bub" style="width:700px"><div class="av">🙋🏿‍♂️</div><div><div class="n">You · now</div>1: I tried it because… 4: What changed was…</div></div>`, CX, 1200));
+  S_.comment = t => {
+    const [t0, t1] = SC.comment;
+    const tc = W('comment', 'Comment'); const [a, p] = env(t, tc - .08, t1, .25, .3); S(c1, a, (.5 + .5 * p) * pulse(t, tc + .2, .06));
+    const ts = W('comment', 'stitch'); const [a2, p2] = env(t, ts - .08, t1, .25, .3); S(c2, a2, (.5 + .5 * p2) * pulse(t, ts + .2, .06));
+    const [a3] = env(t, W('comment', 'or') - .05, t1, .2, .3); S(or, a3);
+    const [a4, p4] = env(t, W('comment', 'story') - .3, t1, .3, .3); S(c3, a4, .9 + .1 * p4);
+    const [a5, p5] = env(t, tc + .25, t1, .35, .3); S(c5 = c4, a5, .85 + .15 * p5, 0, (1 - p5) * 40);
+  };
+  var c5;
+}
+// ---- FOLLOW: I'll read every comment, next video = what you told me
+{
+  const ey = reg(E(`<div style="font-size:150px">👀</div>`, CX, 430));
+  const f1 = reg(E(H("I'LL READ <span class=\"lime\">EVERY</span> COMMENT", 'grad shadow'), CX, 600, '', 'font-size:80px'));
+  const bubs = [0, 1, 2].map(i => reg(E(`<div class="bub" style="width:560px;font-size:30px;padding:16px 24px"><div class="av" style="flex-basis:50px;height:50px;font-size:30px">${['🙋🏾‍♀️', '🙋🏽‍♂️', '🙋🏿'][i]}</div><div>${['5: Be honest, my feet felt…', '6: Worth it? For me…', '7: My clients always ask…'][i]}</div></div>`, CX + (i - 1) * 40, 760 + i * 110)));
+  const nx = reg(E(`<div class="card" style="padding:26px 40px;font-weight:800;font-size:46px">📊 NEXT VIDEO: what <span class="lime">YOU</span> told me</div>`, CX, 1110));
+  const fb = reg(E(`<div class="btn">➕ FOLLOW</div>`, CX, 1260));
+  const hd = reg(E(`<div style="font-weight:800;font-size:34px;color:var(--mint)">@joinmtgtribe</div>`, CX, 1350));
+  const tap = reg(E(`<div style="width:90px;height:90px;border-radius:50%;border:6px solid #fff;box-shadow:0 0 20px #fff"></div>`, CX + 120, 1270));
+  S_.follow = t => {
+    const [t0, t1] = SC.follow;
+    const [a0, p0] = env(t, t0 + .02, t1, .3, .3); S(ey, a0, .7 + .3 * p0);
+    const [a1, p1] = env(t, W('follow', 'read') - .1, t1, .3, .3); S(f1, a1, 1, 0, (1 - p1) * 30);
+    bubs.forEach((d, i) => { const tt = W('follow', 'every') + .15 + i * .3; const [a, p] = env(t, tt, t1, .3, .3); S(d, a, .85 + .15 * p, (1 - p) * (i % 2 ? 60 : -60)); });
+    const [a2, p2] = env(t, W('follow', 'next') - .1, t1, .3, .3); S(nx, a2, .9 + .1 * p2);
+    const tf = W('follow', 'follow'); const [a3, p3] = env(t, tf - .1, t1, .25, .3); S(fb, a3, (.6 + .4 * p3) * (t > tf + .45 && t < tf + .65 ? .94 : 1)); S(hd, a3);
+    const u = (t - (tf + .35)) / .5; S(tap, u > 0 && u < 1 ? (1 - u) : 0, .6 + .8 * u);
+  };
+}
+// ---- TRIBE: mtgtribe.com/group
+{
+  const q = reg(E(H('WANT MORE <span class="lime">HONEST</span> GUIDES?', 'grad shadow'), CX, 430, '', 'font-size:80px'));
+  const j1 = reg(E(H('JOIN THE <span class="lime">FREE</span>', 'grad shadow'), CX, 620, '', 'font-size:110px'));
+  const j2 = reg(E(H('MTG TRIBE 🤝', 'gl shadow'), CX, 760, '', 'font-size:150px'));
+  const url = reg(E(`<div class="url">💬 mtgtribe.com/group</div>`, CX, 1000));
+  const wa = reg(E(`<div class="chip" style="font-size:34px">WhatsApp tribe · tutorials · honest guides</div>`, CX, 1140));
+  S_.tribe = t => {
+    const [t0, t1] = SC.tribe;
+    const [a, p] = env(t, t0 + .02, t1, .3, .3); S(q, a, 1, 0, (1 - p) * 30);
+    const [a1, p1] = env(t, W('tribe', 'Join') - .08, t1, .3, .3); S(j1, a1, 1.15 - .15 * p1);
+    const [a2, p2] = env(t, W('tribe', 'MTG') - .08, t1, .3, .3); S(j2, a2, 1.25 - .25 * p2);
+    const tu = W('tribe', 'mtgtribe.com/group'); const [a3, p3] = env(t, tu - .1, t1, .3, .3); S(url, a3, (.6 + .4 * p3) * pulse(t, tu + 1.2, .07));
+    const [a4] = env(t, tu + .5, t1, .35, .3); S(wa, a4);
+  };
+}
+// ---- REPLY to this status, full video on TikTok (WhatsApp cut)
+{
+  const rp = reg(E(`<div class="tile" style="--c:#25d366;width:520px;height:300px;font-size:110px"><div class="em" style="font-size:120px">💬</div>REPLY</div>`, CX, 540));
+  const r1 = reg(E(`<div style="font-weight:900;font-size:54px;text-align:center">to this status with your answers</div>`, CX, 760));
+  const rb = reg(E(`<div class="bub" style="width:700px"><div class="av">🙋🏾</div><div><div class="n">Example reply</div>1: … 2: … 3: … 4: … 💚</div></div>`, CX, 905));
+  const rt = reg(E(chip('🎵 The FULL video is on TikTok'), CX, 1080));
+  const rh = reg(E(`<div class="url" style="font-size:62px">@joinmtgtribe</div>`, CX, 1210));
+  burst(CX, 540, W('wa2', 'reply'), ['#25d366', '#b6f04a', '#ffffff'], 14, 200);
+  S_.reply = t => {
+    const [t0, t1] = SC.reply; const tr = W('wa2', 'reply');
+    const [a, p] = env(t, tr - .1, t1, .25, .3); S(rp, a, (.5 + .5 * p) * pulse(t, tr + .2, .06));
+    const [a1, p1] = env(t, W('wa2', 'status') - .1, t1, .3, .3); S(r1, a1, 1, 0, (1 - p1) * 20);
+    const [a2, p2] = env(t, W('wa2', 'answers') - .05, t1, .3, .3); S(rb, a2, .85 + .15 * p2, 0, (1 - p2) * 30);
+    const [a3, p3] = env(t, W('wa2', 'full') - .1, t1, .3, .3); S(rt, a3, .9 + .1 * p3);
+    const th = W('wa2', 'joinmtgtribe'); const [a4, p4] = env(t, th - .1, t1, .28, .3); S(rh, a4, (.6 + .4 * p4) * pulse(t, th + .5, .07));
+  };
+}
+// ================================================================== the signature ending (scene order, cues, motion as the 9:09 training)
+{
+  // engage: save and share
+  const h1 = reg(E(H('HELP SOMEONE', 'gg shadow'), CX, 330, '', 'font-size:84px'));
+  const h2 = reg(E(H('DECIDE', 'gg shadow'), CX, 430, '', 'font-size:96px'));
+  const items = [['🔖', '#e8c25a', 'SAVE', 'come back and read the answers', 'save', 'Save', 'come', 650], ['📤', '#ff8fd0', 'SHARE', 'with someone who uses this machine', 'share', 'share', 'someone', 1060]]
+    .map(([e, c, lab, sub, line, w1, w2, y]) => ({ r: reg(E(ringI(e, c), CX, y)), l: reg(E(`<div class="anton" style="font-size:70px;color:${c}">${lab}</div>`, CX, y + 190)),
+      s: reg(E(`<div style="font-weight:700;font-size:38px;color:var(--ice)">${sub}</div>`, CX, y + 260)), line, w1, w2, c, y }));
+  items.forEach(it => burst(CX, it.y, W(it.line, it.w1), [it.c, '#ffffff', '#b6f04a'], 14, 170));
+  S_.engage = t => {
+    const [t0, t1] = SC.engage; const [a0] = env(t, t0, t1, .35, .35);
+    header(h1, t, t0 + .05, t1); header(h2, t, t0 + .05, t1);
+    for (const it of items) {
+      const tt = W(it.line, it.w1), ts = W(it.line, it.w2);
+      if (t < tt) { S(it.r, a0 * .45, 1); it.r.firstChild.style.filter = 'grayscale(1) brightness(.6)'; S(it.l, 0); S(it.s, 0); continue; }
+      it.r.firstChild.style.filter = 'none';
+      const [ak, pk] = env(t, tt - .05, t1, .2, .3); S(it.r, ak * a0, (.5 + .5 * pk) * pulse(t, tt + .25, .06)); S(it.l, ak * a0);
+      const [a2] = env(t, ts - .05, t1, .3, .3); S(it.s, a2 * a0);
+    }
+  };
+  // WE LEARN BEST / WHEN WE TEACH / OTHERS
+  const wr = reg(E(ringI('🤝', '#e8c25a', 200), CX, 560));
+  const w1 = reg(E(H('WE LEARN BEST', 'grad shadow'), CX, 800, '', 'font-size:96px'));
+  const w2 = reg(E(H('WHEN WE TEACH', 'gl shadow'), CX, 960, '', 'font-size:96px'));
+  const w3 = reg(E(H('OTHERS', 'gl shadow'), CX, 1090, '', 'font-size:120px'));
+  S_.we = t => {
+    const [t0, t1] = SC.we; const [a0] = env(t, t0, t1, .35, .35);
+    const [a1, p1] = env(t, t0 + .05, t1, .4, .3); S(wr, a1 * a0, .85 + .15 * p1); S(w1, a1 * a0, 1.15 - .15 * p1);
+    const tt = W('n_we', 'when'); const [a2, p2] = env(t, tt - .05, t1, .35, .3); S(w2, a2 * a0, 1.15 - .15 * p2); S(w3, a2 * a0, 1.15 - .15 * p2);
+  };
+  // IT PAYS TO / PAY ATTENTION / & TAKE / ACTION
+  const rows = [['IT PAYS TO', 'grad', 'It', 0, 500, 84], ['PAY ATTENTION', 'gl', 'pay', 0, 650, 112], ['& TAKE', 'grad', 'take', 0, 800, 84], ['ACTION', 'gg', 'action', 0, 975, 168]]
+    .map(([txt, cls, w, n, y, sz]) => ({ d: reg(E(H(txt, cls + ' shadow'), CX, y, '', `font-size:${sz}px`)), w, n, y }));
+  const sd = reg(E(disc(230), CX, 1225));
+  burst(CX, 975, W('n_slog', 'action'), ['#b6f04a', '#2fe0d0', '#e8c25a', '#ffffff'], 18, 160, .8, 360, 110);
+  S_.slog = t => {
+    const [t0, t1] = SC.slog; const [a0] = env(t, t0, t1, .35, .35);
+    for (const r of rows) { const tt = W('n_slog', r.w, r.w === 'pay' ? 0 : 0); const [a, p] = env(t, tt - .05, t1, .22, .3); S(r.d, a * a0, 1.25 - .25 * p); }
+    const ta = W('n_slog', 'action'); const [ae, pe] = env(t, ta + .2, t1, .3, .3); S(sd, ae * a0, .7 + .3 * pe);
+  };
+  // reminder: not medical advice
+  const rs = reg(E(ringI('🛡️', '#b6f04a', 190), CX, 600));
+  const r1 = reg(E(`<div style="font-weight:900;font-size:76px">Not medical advice</div>`, CX, 800));
+  const r2 = reg(E(chip('🩺 Always check with your doctor first', 'gold'), CX, 950));
+  const r3 = reg(E(chip('💚 Health is wealth'), CX, 1070));
+  S_.remind = t => {
+    const [t0, t1] = SC.remind; const [a0] = env(t, t0, t1, .3, .3);
+    const [a, p] = env(t, t0 + .05, t1, .3, .25); S(rs, a * a0, .85 + .15 * p);
+    const [a1, p1] = env(t, W('remind', 'not') - .05, t1, .3, .25); S(r1, a1 * a0, 1.1 - .1 * p1);
+    const [a2, p2] = env(t, W('remind', 'Always') - .05, t1, .3, .25); S(r2, a2 * a0, .9 + .1 * p2);
+    const [a5, p5] = env(t, W('remind', 'doctor') + .25, t1, .3, .25); S(r3, a5 * a0, (.85 + .15 * p5) * pulse(t, W('remind', 'doctor') + .55, .06));
+  };
+  // THANK YOU: like, share, comment, hearts, your support means everything
+  const ty = reg(E(H('THANK YOU', 'gg shadow'), CX, 470, '', 'font-size:124px'));
+  const lsc = [['👍', '#b6f04a', 'Like', 'like'], ['📤', '#ff8fd0', 'Share', 'share'], ['💬', '#e8c25a', 'Comment', 'comment']].map(([e, c, lab, w], k) => {
+    const x = CX + (k - 1) * 310; const r = reg(E(ringI(e, c, 210), x, 760)); const l = reg(E(`<div style="font-weight:800;font-size:44px">${lab}</div>`, x, 920));
+    burst(x, 760, W('o_thanks', w), [c, '#ffffff'], 12, 130); return { r, l, w, x };
+  });
+  const hearts = [0, 1, 2, 3, 4].map(j => reg(E('<div style="font-size:40px">❤️</div>', 0, 0)));
+  const sup = reg(E(chip('🙏 Your support means everything'), CX, 1080));
+  // thank yourself / MASSIVE ACTION
+  const m1 = reg(E(`<div style="font-weight:900;font-size:84px">Thank yourself</div>`, CX, 470));
+  const m2 = reg(E(`<div style="font-weight:600;font-size:56px;color:var(--ice)">for taking</div>`, CX, 570));
+  const m3 = reg(E(H('MASSIVE', 'gl shadow'), CX, 750, '', 'font-size:150px'));
+  const m4 = reg(E(H('ACTION', 'gl shadow'), CX, 910, '', 'font-size:150px'));
+  const m5 = reg(E(chip('🚀 today, to change your future!'), CX, 1110));
+  burst(CX, 830, W('o_massive', 'massive'), ['#e8c25a', '#fae496', '#ffffff'], 16, 150, .8, 380, 200);
+  // I wish you nothing but the best / YOU ARE THE BEST
+  const b1 = reg(E(`<div style="font-weight:900;font-size:64px">I wish you nothing</div>`, CX, 430));
+  const b2 = reg(E(`<div style="font-weight:900;font-size:64px">but the best,</div>`, CX, 515));
+  const b3 = reg(E(H('YOU ARE', 'gg shadow'), CX, 720, '', 'font-size:150px'));
+  const b4 = reg(E(H('THE BEST', 'gg shadow'), CX, 880, '', 'font-size:150px'));
+  const sp = [0, 1, 2, 3, 4, 5].map(k => reg(E('<div style="font-size:52px">✨</div>', CX + 440 * Math.cos(k * Math.PI / 3 + .4), 800 + 250 * Math.sin(k * Math.PI / 3 + .4))));
+  const bd = reg(E(disc(230), CX, 1180));
+  burst(CX, 800, W('o_best', 'because') + .15, ['#b6f04a', '#e8c25a', '#ffffff', '#ff8fd0'], 18, 150, .9, 400, 200);
+  // signature
+  const g1 = reg(E(photoDisc(460), CX, 560));
+  const g2 = reg(E(`<div style="font-family:GreatVibes;font-size:110px;color:var(--goldl)">Crypto-Regards,</div>`, CX, 900));
+  const g3 = reg(E(H('MTG', 'gl shadow'), CX, 1070, '', 'font-size:200px'));
+  const g4 = reg(E(`<div style="font-weight:800;font-size:30px;letter-spacing:12px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 1210));
+  const g5 = reg(E(chip('👋 See you on the next one'), CX, 1340));
+  const outro = (t) => {
+    const T_OUT = SC.thanks[0], TY = SC.massive[0], TW = SC.best[0], TS = SC.sig[0], t1 = SC.end[0] + .25;
+    const [a0] = env(t, T_OUT, t1, .3, .3);
+    // thank you
+    { const [a, p] = env(t, T_OUT, TY, .3, .25); S(ty, a * a0, 1.1 - .1 * p);
+      for (const it of lsc) { const tt = W('o_thanks', it.w); const [a2, p2] = env(t, tt - .04, TY, .18, .25); S(it.r, a2 * a0, (.45 + .55 * p2) * pulse(t, tt + .2, .06)); S(it.l, a2 * a0); }
+      const tl = W('o_thanks', 'like');
+      hearts.forEach((d, j) => { const u = (t - tl - .15 * j) / 1.4; if (u >= 0 && u <= 1 && t < TY) { d._x = lsc[0].x + 60 * Math.sin(j * 2.1 + u * 3); d._y = 680 - 220 * u; S(d, (1 - u) * a0); } else S(d, 0); });
+      const [a3, p3] = env(t, L.o_support[0] - .05, TY, .3, .25); S(sup, a3 * a0, .9 + .1 * p3); }
+    // massive action
+    { const [a, p] = env(t, TY, TW, .3, .25); S(m1, a * a0); S(m2, a * a0);
+      const tm = W('o_massive', 'massive'); const [a2, p2] = env(t, tm - .05, TW, .22, .25); S(m3, a2 * a0, 1.25 - .25 * p2); S(m4, a2 * a0, 1.25 - .25 * p2);
+      const [a3, p3] = env(t, W('o_massive', 'today') - .05, TW, .3, .25); S(m5, a3 * a0, .9 + .1 * p3); }
+    // you are the best
+    { const [a] = env(t, TW, TS, .3, .25); S(b1, a * a0); S(b2, a * a0);
+      const tb = W('o_best', 'because'); const [a2, p2] = env(t, tb - .05, TS, .22, .25); S(b3, a2 * a0, 1.25 - .25 * p2); S(b4, a2 * a0, 1.25 - .25 * p2);
+      sp.forEach((d, k) => { const tw = .6 + .4 * Math.sin(t * 6 + k); S(d, a2 * a0 * tw, .8 + .2 * tw); });
+      const [a3, p3] = env(t, tb + .3, TS, .3, .25); S(bd, a3 * a0, .8 + .2 * p3); }
+    // signature
+    { const [a, p] = env(t, TS, t1, .35, .25); const [ag] = env(t, TS, SC.end[0] + .1, .35, .25); S(g1, ag * a0, .9 + .1 * p); S(g2, a * a0); S(g3, a * a0, .9 + .1 * p);
+      const [a1] = env(t, W('o_im', 'Digital') - .05, t1, .35, .25); S(g4, a1 * a0);
+      const [a2, p2] = env(t, L.o_see[0] - .05, t1, .3, .25); S(g5, a2 * a0, .9 + .1 * p2); }
+  };
+  S_.thanks = outro; S_.massive = outro; S_.best = outro; S_.sig = outro;
+  // end card: stays to the last frame
+  const e1 = reg(E(photoDisc(280), CX, 330));
+  const e2 = reg(E(`<div style="font-family:GreatVibes;font-size:62px;color:var(--goldl)">Crypto-Regards,</div>`, CX, 545));
+  const e3 = reg(E(H('MTG', 'gl shadow'), CX, 640, '', 'font-size:104px'));
+  const e4 = reg(E(`<div style="font-weight:800;font-size:30px;letter-spacing:6px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 722));
+  const e5 = reg(E(`<div style="width:380px;height:3px;background:var(--gold)"></div>`, CX, 762));
+  const e6 = reg(E(`<div style="font-weight:900;font-size:56px">Let's Get This Crypto! 💪</div>`, CX, 842));
+  const e7 = reg(E(`<div class="url">mtgtribe.com/group</div>`, CX, 990));
+  const PL = [['TikTok', '@joinmtgtribe', '🎵', '#25f4ee'], ['YouTube', '@mtgtribe', '▶️', '#ff3030'], ['WhatsApp', 'mtgtribe.com/group', '💬', '#25d366'], ['Telegram', '@mtgtribe', '✈️', '#229ed9'], ['Facebook', 'facebook.com/mtgtribe', '📘', '#1877f2']]
+    .map(([n, h, e, c], k) => reg(E(`<div class="plat" style="--c:${c}"><b></b><span>${e}</span><span>${n}</span><span class="h">${h}</span></div>`, CX, 1125 + k * 92)));
+  const e8 = reg(E(chip('🎵 Full video on TikTok: @joinmtgtribe'), CX, 1610));
+  const e9 = reg(E(`<div style="font-weight:600;font-size:28px;color:#a9c2b2">Not medical advice. Everyone's experience is different.</div>`, CX, 1720));
+  S_.end = t => {
+    const E0 = SC.end[0]; const a0 = eOut((t - E0) / .45);
+    const [a, p] = env(t, E0 + .05, 1e9, .45, .1), [a1] = env(t, E0 + .4, 1e9, .4, .1), [a2] = env(t, E0 + .8, 1e9, .4, .1), [a4, p4] = env(t, E0 + .3, 1e9, .35, .1);
+    const [a5, p5] = env(t, E0 + 1.7, 1e9, .4, .1), [a6] = env(t, E0 + 2.0, 1e9, .4, .1);
+    const [ae, pe] = env(t, E0 + .15, 1e9, .45, .1); S(e1, ae * a0, .88 + .12 * pe); S(e2, a * a0); S(e3, a * a0, .88 + .12 * p); S(e4, a1 * a0); S(e5, a1 * a0); S(e6, a2 * a0);
+    S(e7, a4 * a0, .9 + .1 * p4);
+    PL.forEach((d, k) => { const [ak, pk] = env(t, E0 + .6 + .18 * k, 1e9, .35, .1); S(d, ak * a0, 1, (1 - pk) * 40); });
+    S(e8, a5 * a0, .9 + .1 * p5); S(e9, a6 * a0);
+  };
+}
+// ------------------------------------------------------------------ sound effects (whoosh, tick, pop, click), exported for the mix
+window.SFX = (() => {
+  const wh = order.slice(1).map(o => o[1] + (['engage', 'we', 'slog', 'remind'].includes(o[0]) ? .25 : 0));
+  const tick = [L.q1[0], L.q2[0], L.q3[0], L.q4[0], L.q5[0], L.q6[0], L.q7[0], L.q8[0], W('seven', 'number'), W('keep', 'people'), W('hi', 'multiple'), W('hi', 'considering'), W('q6', 'session'), W('q6', 'machine'), W('q6', 'again'), W('health2', 'What'), W('health2', 'health'), W('health2', 'body'), W('remind', 'doctor') + .25, W('q4', 'changed'), W('q4', 'And'),
+    W('tribe', 'mtgtribe.com/group') + .5, W('remind', 'Always')];
+  const pop = [W('honest', 'honest'), W('keep', 'amazing'), W('keep', 'real'), W('hi', 'asking'), W('seven', 'Eight'), W('health1', 'health'), W('health1', 'wealth'), W('sell', 'you', 1), W('good', 'Good'), W('good', 'bad'), W('good', 'nothing'), W('good', 'counts'),
+    W('comment', 'Comment'), W('comment', 'stitch'), W('follow', 'follow'), W('tribe', 'mtgtribe.com/group'), W('save', 'Save'), W('share', 'share'), W('n_slog', 'action'),
+    W('o_thanks', 'like'), W('o_thanks', 'share'), W('o_thanks', 'comment'), W('o_massive', 'massive'), W('o_best', 'because') + .15];
+  const click = [W('follow', 'follow') + .45];
+  tick.push(W('wa1', 'Reply'), W('wa1', 'number'), W('wa2', 'full'), W('q7', 'Seven') + .1, W('q8', 'Eight') + .1); pop.push(W('wa2', 'reply'), W('wa2', 'joinmtgtribe'));
+  return { whoosh: wh, tick, pop, click };
+})();
+// flash at scene changes (soft)
+const flash = document.getElementById('flash');
+// ------------------------------------------------------------------ device
+await document.fonts.load('bold 40px Oswald'); await document.fonts.load('bold 20px Montserrat'); await document.fonts.load('40px Anton'); await document.fonts.load('40px GreatVibes');
+const D = makeDevice(document.getElementById('dev'), 1080, 1920);
+const devCanvas = document.getElementById('dev');
+let devWasOn = true;
+// ------------------------------------------------------------------ render(t)
+window.render = (t) => {
+  drawBg(t);
+  for (const d of all) if (d.style.opacity !== '0') d.style.opacity = '0';
+  const k = sceneAt(t);
+  // the previous scene keeps drawing during its 0.3 s fade-out
+  for (const [n, t0] of order) { const [a, b] = SC[n]; if (t >= a && t < b && S_[n]) S_[n](t); }
+  drawBursts(t);
+  // top bar until the ending
+  const ta = t < SC.end[0] ? 1 : Math.max(0, 1 - (t - SC.end[0]) / .35); topEl.style.opacity = ta;
+  // question tracker
+  const qk = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+  const tv = t >= SC.seven[0] && t < SC.health[0] + .3; const [ad] = env(t, W('seven', 'Eight') + .2, SC.health[0] + .3, .4, .3);
+  const cur = qk.findIndex(q => t >= SC[q][0] && t < SC[q][1] - .3) + 1 || 0;
+  dots.forEach((d, i) => {
+    if (!tv) { S(d, 0); return; }
+    const n = i + 1, on = Math.round(cur) === n && cur % 1 === 0, done = cur > n;
+    d.style.background = on ? 'var(--lime)' : done ? 'rgba(47,191,91,.9)' : 'rgba(6,30,17,.6)';
+    d.style.color = on ? 'var(--dark)' : '#fff'; d.style.borderColor = on ? '#fff' : done ? 'var(--lime)' : 'rgba(255,255,255,.35)';
+    d.innerHTML = done ? '✓' : String(n);
+    const ti = on ? SC[qk[i]][0] : -9; S(d, ad, (on ? 1.25 : 1) * pulse(t, ti + .1, .15));
+  });
+  drawCap(t);
+  // soft flash at scene changes (body scenes only)
+  let fl = 0; for (const [n, t0] of order.slice(1)) { const u = (t - t0) / .35; if (u >= 0 && u < 1) fl = Math.max(fl, .10 * (1 - u)); } flash.style.opacity = fl.toFixed(3);
+  // device
+  const P = devPose(t);
+  if (P.a > .01) { D.render(P); devCanvas.style.opacity = P.a; devWasOn = true; }
+  else if (devWasOn) { devCanvas.style.opacity = 0; devWasOn = false; }
+  return k;
+};
+window.ready = true;
+</script>
+</body></html>

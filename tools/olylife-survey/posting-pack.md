@@ -13,27 +13,14 @@ Preview only. MTG posts it himself after he approves it. 2:18, 9:16, 1080x1920, 
 
 ## TikTok caption (copy and paste)
 
-OlyLife Tera-P90 users: I need your HONEST answer 👇🦶
-
-I'm considering this PEMF foot machine as our next income stream in the MTG Tribe. Before I bring it in, I want the real stories: good, bad or nothing at all.
-
-Answer by number in the comments 💬
-1 Why did you try it?
-2 How many sessions, how often?
-3 Your first session: what did you feel?
-4 What changed after a few weeks, and what didn't?
-5 Anything you didn't like?
-6 Worth the money? Per session or your own machine?
-7 Sellers: what do clients come back for?
-8 Sellers: how did you find your first clients?
-
-Health is wealth 💚 Your health comes first.
-
-✂️ Stitch this with your story. I'll share what you told me in my next video, so follow 🔔
-
-Not medical advice. Share only what you're comfortable sharing 🙏
+Used the OlyLife Tera-P90? 🦶 I need the TRUTH, not the sales pitch 👇
+8 questions. Answer by number, or stitch your story ✂️
+Health is wealth 💚
 
 #OlyLife #TeraP90 #PEMF #HealthIsWealth #SouthAfrica #HonestReview
+
+The 8 questions are in the video and in the pinned comment, so the caption stays short: the first line is what people
+see before "more", and it carries the search words (OlyLife, Tera-P90).
 
 **Why these hashtags:** two name the exact machine (where people who own one search), two the topic (#PEMF,
 #HealthIsWealth), one the place (#SouthAfrica), one the format (#HonestReview). Six focused tags beat thirty vague

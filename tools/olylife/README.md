@@ -70,6 +70,16 @@ with the frames; only what the video shows or clearly says is listed.
 sit, level 1, 30 minutes, water, clean, rest 20 minutes), a hygiene promise for the booking page ("plates cleaned with
 alcohol before and after every person"), and the capacity planning (one session about every 50 minutes per machine).
 
+## Content made so far
+
+- **Honest survey video** (13 Nov 2026, preview, not posted): MTG asks users and sellers 7 questions on TikTok.
+  Build, script and posting pack: `tools/olylife-survey/`. When the answers come in, save the best ones (no names,
+  no private health details) under "What people told me" below; they feed the follow-up video MTG promised in it.
+
+## What people told me
+
+(Empty until the survey is posted.)
+
 ## Next steps (when MTG is back from his trial and registered)
 
 1. Update `olylife-facts.md` with his registration, compensation plan, link and own experience.

@@ -189,54 +189,71 @@ def build_downloads():
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Downloads', None)])
 
 FAQ = [
- ('Basics', [
+ ('start', 'Start here', [
   ('What is JetUP?', 'JetUP is a community and partner program with training and AI tools. Its portal is jetup.ibportal.io and its hub is jet-up.ai. JetUP does not trade and does not hold your money.'),
   ('What is TAG Markets?', "TAG Markets is the broker. Its trading company, T.M. Financials Ltd, is licensed in Mauritius by the FSC (licence GB21026474). Your trading account is opened there, in your own name."),
   ('How are JetUP and TAG Markets linked?', 'JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets. You create your TAG Markets account by tapping Register CopyX inside the JetUP portal (after the sync the button says Login to CopyX), so the two are linked.'),
+  ('What is copy trading, in plain words?', "A strategy trades, and its trades are copied into your own account automatically. Think of a cooking class where the chef's every step happens in your own pot: your pot, your ingredients, your name on it. On CopyX the chef is Sonic AI and the pot is your account at TAG Markets. <a href='/jetup/how-it-works/#copy'>Watch the 2:04 explainer</a>."),
+  ('Do I need trading experience?', "No. That's what copy trading is for: you don't pick the trades or read charts, and you don't sit in front of a screen all day. Sonic AI's trades are copied into your account automatically. You decide three things: the strategy, how much to put in and when to stop, and you can watch every trade in MetaTrader 5. <a href='/jetup/how-it-works/#copy'>See it in 2 minutes</a>."),
   ('What are CopyX and Sonic AI?', "CopyX is TAG Markets' copy trading platform. Sonic AI is the strategy members connect: it trades gold (XAU/USD), and its track record is published on Myfxbook. <a href='/jetup/how-it-works/#copy'>Watch the 2:04 explainer</a>."),
+  ('Can I do it all on my phone?', "Yes. MTG's step-by-step videos are recorded on a phone: sign up, verify your ID with a face scan, fund your account, connect Sonic AI and watch your trades in the MetaTrader 5 app. <a href='/jetup/get-started/'>Follow the 6 parts</a>."),
  ]),
- ('Money', [
+ ('trust', 'Trust and myths', [
+  ('Who holds my money?', "You do, in your own MT5 account at TAG Markets, in your own name. JetUP does not hold it, and MTG never handles it: you deposit straight into your own TAG Markets account. Never send money to a person. <a href='/jetup/five-checks/#check-1'>Check 1 shows where to look</a>."),
+  ('Is JetUP a scam?', "That's the right question to ask, and you can answer it yourself. Your account is in your own name at a licensed broker, the strategy's results are public on Myfxbook, and the rules are written down. <a href='/jetup/five-checks/'>The 5 checks</a> show you exactly where to look."),
+  ('Is JetUP a pyramid scheme?', "Here's how to tell. In a pyramid, the money comes from new people joining. Here, JetUP's own one-pager says partner rewards come from trading: the Lot Commission and the Global Pool from broker margin, and the Profit Share from the 30% share of strategy profit, never from client deposits. Your money stays in your own account, and you can earn as a client without referring anyone."),
+  ('Is TAG Markets regulated in South Africa?', "TAG Markets' trading company, T.M. Financials Ltd, is licensed by the FSC in Mauritius (GB21026474). In South Africa, TM Financials SA (Pty) Ltd is authorised by the FSCA, FSP 55237, for marketing services. You can look both up yourself: <a href='/jetup/five-checks/#check-2'>check 2</a>."),
+  ('I lost money in other programs. Why is this different?', "You're right to be careful, and MTG has been there too. Most bad programs ask you to send money to them and promise a fixed return. Here your money goes into your own account at a licensed broker, the strategy's record is public, no return is promised, and you can watch every trade and withdraw yourself. Check it, then start small."),
+  ('How much can I earn? Is there a daily return?', "There is no fixed, daily or guaranteed return, and anyone who promises one is a red flag. When the strategy makes a profit, 70% of it is yours, and when it doesn't, there is no fee. Look at Sonic AI's record on Myfxbook and try your own numbers in the <a href='/jetup/tools/profit-split-calculator/'>Profit Split Calculator</a>."),
+ ]),
+ ('money', 'Money', [
   ('How much do I need to start?', "The training uses $155 in USDT or USDC: $50 into Sonic AI, $100 left in your balance for the Dennis promo, and a few dollars spare. Keep a little extra on the exchange for the network fee, and start with an amount you're comfortable with."),
+  ("I've never bought crypto. Can I still start?", "Yes. You fund your account with USDT or USDC, digital dollars you buy on an exchange such as VALR or Binance, and send them to your TAG Markets account on the same network. <a href='/jetup/get-started/#part-4'>Part 4</a> shows every tap."),
   ('Which network should I use for the TAG Markets deposit?', 'In this order: USDT on BEP20 (BNB Smart Chain) first, USDT on TRC20 (Tron) second, and USDC on ERC20 (Ethereum) if you prefer it, which is the most expensive. Use the same network on both sides, so your funds arrive safely.'),
   ('Which exchange or wallet should I use?', "VALR first, Binance second, or a Web3 wallet such as SafePal or MetaMask. The VALR and Binance buttons on this site are MTG's referral links."),
-  ('How is profit split?', 'When the strategy makes a profit, 70% is yours and 30% is the performance fee, which pays the broker, the strategy provider and the partner program. There is no performance fee on a loss, and no management or join fee.'),
+  ('What fees will I pay?', "The Sonic AI strategy has no management fee and no join fee. Its only fee is 30% of profit, and only when it makes a profit. Sending crypto costs a small network fee, and withdrawal fees and limits are the broker's terms."),
+  ('How is profit split?', 'When the strategy makes a profit, 70% is yours and 30% is the performance fee, which pays the broker, the strategy provider and the partner program. There is no performance fee on a loss, and no management or join fee. <a href="/jetup/how-it-works/#split">Watch the 70/30 explainer</a>.'),
   ('How do withdrawals work?', "Profits can be withdrawn any time, through the broker. JetUP's one-pager says withdrawals take about 48 hours on average. With the Dennis promo, taking your own money out before 12 months ends the promo. Test a small withdrawal early. <a href='/jetup/how-it-works/#withdraw'>Watch the 2:06 explainer</a>."),
  ]),
- ('After you join', [
+ ('partners', 'Earning as a partner (optional)', [
+  ('Do I have to recruit people to earn?', "No. As a client you earn from your own strategy: when Sonic AI makes a profit, 70% of it is yours, and you never have to refer anyone. JetUP also has an optional partner program for members who want to help more people and build faster. Partners are rewarded on the trading of the people they help. <a href='/jetup/partner-plan/'>See how it works (2:18)</a>."),
+  ('What do I get if I refer people?', "As a JetUP partner you are rewarded on the trading of the people you help, up to 10 levels: a Lot Commission of up to $8 per lot and a Profit Share of 1.5% of strategy profit on each level, paid from the 30% fee, never from deposits. Bigger teams add the Infinity Bonus, the Global Pool and BIX Card commissions. You qualify with at least $250 of active trading. Rewards follow real activity, so they are not guaranteed. <a href='/jetup/partner-plan/'>All the figures</a>."),
+  ('Why become a partner if it is optional?', "Because we learn best when we teach others. When you help a friend start the right way, you understand it better yourself, more people get their own account with written rules, and JetUP's plan rewards the activity you help create. Start as a client, learn it well, and share it when you're ready. <a href='/jetup/partner-plan/#qualify'>How to qualify</a>."),
+  ('Do I have to be good at selling?', "No. You share what you learned, and this guide does the explaining: every step is on video and every rule is written down. Send people a page or a video with your own Partner link, and point them to <a href='/jetup/five-checks/'>the 5 checks</a> first. Honest sharing works best: never promise anyone an income."),
+  ("Where do I get MTG's Partner link?", 'Tap any Join JetUP button on this site, or message MTG on WhatsApp from the sign-up training page, or ask in the MTG TRIBE group at mtgtribe.com/group. Invited by someone else? Use their Partner link.'),
+ ]),
+ ('promo', 'The promo and the codes', [
+  ('What is the Dennis Fast Start Promo?', 'For new partners, once: your own $100 plus a $100 bonus open a Sonic AI account that trades as $4,800 with 24x Amplify. Profits can be withdrawn any time, the bonus is released after 12 months, and taking your own money out before then ends the promo. Rules can change. <a href="/jetup/promo/">The promo page</a>.'),
+  ('What are the community token codes?', 'In part 5, after you type 50 in Investment, tap the arrow next to Community Token. Enter #9M and tap Verify, then 9MPromo and tap Submit. Both are case sensitive. With a community token, the loss limit becomes 5%.'),
+ ]),
+ ('after', 'After you join', [
   ('How do I see my trades?', "Install MetaTrader 5 (MT5), add an account and search for TM Financials, the company behind TAG Markets. Log in with your account number and investor password from CopyX, Follower Hub, Strategies (tap the eye icon). It is read only: you can watch every trade, not change anything. Sonic usually trades two or three times a day. <a href='/jetup/how-it-works/#copy'>Watch the 2:04 explainer</a>. Steps: mtgtribe.com/jetup/get-started/#mt5"),
   ('Can I open another strategy later?', "Yes. Deposit in TAG Markets, open CopyX, connect SONIC with the new amount and enter the two community codes again. Each one becomes its own account with the same rules. The Dennis Fast Start Promo is one time only, so a new strategy does not get another $100."),
   ('How do I withdraw my partner earnings?', "In the JetUP portal open your Wallet, tap Withdraw and choose your TAG wallet or one of your MT5 accounts. To send money out, add your own crypto wallet address under Wallets first. Start with a small withdrawal."),
   ('Do I have to buy the BIX Card to link BIX?', "No. Linking your BixPay wallet to the JetUP portal moves no money and costs nothing. It records your place in the team for BIX Card commissions. You can link it with a phone only: screenshot the QR code, then use Load from gallery in BixPay."),
  ]),
- ('Risk', [
+ ('risk', 'Risk, in plain words', [
   ('Is there risk with JetUP and TAG Markets?', "Yes, like any trading. Prices move both ways, and 24x Amplify makes every move bigger. That's why the plan starts small ($50 into Sonic AI), and a built-in loss limit closes the account at 10% of the starting balance (5% with a community token), so you know the line before you start."),
   ('What is Amplify 24x?', 'Amplify lets the account trade at 24 times its size: $50 trades like $1,200. That is exposure, the size you trade with, not money you own. A drop of about 4.2% on the trading balance is the same size as the whole account. <a href="/jetup/how-it-works/#amplify">Watch the 2:13 explainer</a>.'),
   ('When is an account closed (liquidated)?', "It's written on TAG Markets' screen: the account closes if the trader's loss passes 10% of the starting balance. With a community token, that limit becomes 5%. So you know the line before you start."),
-  ('Is JetUP a scam?', "That's the right question to ask, and you can answer it yourself. Your account is in your own name at a licensed broker, the strategy's results are public on Myfxbook, and the rules are written down. The 5 checks show you exactly where to look."),
- ]),
- ('Promo and partners', [
-  ('What is the Dennis Fast Start Promo?', 'For new partners, once: your own $100 plus a $100 bonus open a Sonic AI account that trades as $4,800 with 24x Amplify. Profits can be withdrawn any time, the bonus is released after 12 months, and taking your own money out before then ends the promo. Rules can change.'),
-  ('What are the community token codes?', 'In part 5, after you type 50 in Investment, tap the arrow next to Community Token. Enter #9M and tap Verify, then 9MPromo and tap Submit. Both are case sensitive. With a community token, the loss limit becomes 5%.'),
-  ('Do I have to build a team?', "No. You can use it as a client only. JetUP's partner plan pays partners who build a team, and JetUP's own founder says the big money comes from building a team. What a partner earns can be zero. <a href='/jetup/partner-plan/'>Watch how partner levels open (2:18)</a>."),
-  ("Where do I get MTG's Partner link?", 'Message MTG on WhatsApp from the sign-up training page, or ask in the MTG TRIBE group at mtgtribe.com/group.'),
  ]),
 ]
 
 def build_faq():
     path = '/jetup/faq/'
-    allqa = [qa for _, g in FAQ for qa in g]
-    blocks = ''.join('<div class="block rv"><p class="eyebrow" style="margin-bottom:14px">%s</p><div class="faq">%s</div></div>' % (
-        name, ''.join('<details><summary>%s</summary><p>%s</p></details>' % qa for qa in g)) for name, g in FAQ)
+    allqa = [qa for _, _, g in FAQ for qa in g]
+    blocks = ''.join('<div class="block rv" id="%s"><p class="eyebrow" style="margin-bottom:14px">%s</p><div class="faq">%s</div></div>' % (
+        gid, name, ''.join('<details><summary>%s</summary><p>%s</p></details>' % qa for qa in g)) for gid, name, g in FAQ)
     main = f'''
 {phead('i-help', 'Straight answers', 'JetUP and TAG Markets <span class="grad">FAQ</span>',
-       'The questions people ask before they start, answered plainly, with the risks left in.',
+       'The questions people ask before they start, answered plainly: do you need experience, do you have to recruit, who holds your money, and what is real.',
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('FAQ', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow">{blocks}
  <div class="card pad block rv center" style="display:grid;justify-items:center;gap:12px"><h2 class="h2" style="font-size:clamp(1.7rem,3.4vw,2.3rem)">Still have a question?</h2><p class="lede">Ask in the MTG TRIBE. The question most of you ask becomes the next video.</p><a class="btn btn-lime" href="{GROUP}">{icon('i-whatsapp')}Ask the tribe</a></div>
 </div></section>
 {join_cta()}'''
-    return page(path, 'JetUP and TAG Markets FAQ: Deposits, Risks, Promo | MTG',
-                'JetUP and TAG Markets questions answered: what they are, how much to start, BEP20 or TRC20, the 70/30 split, withdrawals, 24x Amplify, liquidation, the Dennis promo and the community codes.',
+    return page(path, 'JetUP FAQ: Do I Need to Recruit or Trade? Is It a Scam? | MTG',
+                'JetUP and TAG Markets questions answered: do I need trading experience, do I have to recruit to earn, who holds my money, is it a scam or a pyramid, fees, withdrawals, the partner program and the promo.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('FAQ', None)], [ld_faq(allqa, SITE + path)])
 
 def build_disclaimer():
@@ -273,6 +290,6 @@ def build_glossary():
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Glossary', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow"><div class="card pad rv glist">{rows}</div></div></section>
 {tribe_cta()}'''
-    return page(path, 'JetUP and TAG Markets Glossary: CFD, KYC, Amplify, XAU/USD | MTG',
-                'Plain English meanings of the words in the JetUP and TAG Markets guide: Amplify, exposure, CFD, KYC, CU number, community token, CopyX, Sonic AI, XAU/USD, MT5, network, performance fee and more.',
+    return page(path, 'JetUP Glossary: Copy Trading, CopyX, Amplify, CFD | MTG',
+                'Plain English meanings of the words in the JetUP and TAG Markets guide: copy trading, strategy, broker, CopyX, Sonic AI, Amplify, exposure, drawdown, CFD, KYC, MT5, Profit Share, the partner program and more.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Glossary', None)])

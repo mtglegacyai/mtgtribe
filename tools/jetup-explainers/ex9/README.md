@@ -3,8 +3,7 @@
 MTG asked for the next explainer on 13 Nov 2026 ("let's cook the next explainer video"): #9 in
 `tools/learning-system/PLAN.md`, What "copying" really means, for How it works and get-started part 5 "Connect Sonic
 AI". MTG read the plan and approved the eight new lines the same day ("Yes, record (1 credit)"): recorded in one
-request, 1 credit (44 before, 43 after). **Built and rendered as a preview (13 Nov 2026); not published.** It goes on the site only when
-MTG says so.
+request, 1 credit (44 before, 43 after). **Live on mtgtribe.com/jetup since 13 Nov 2026** (MTG: "Put it live"), see "On the site" below.
 
 2:04 in all (124.34 s: the body to 78.0 s, then the fixed signature ending), 16:9, 1920x1080, 25
 fps, captions burned in, the JetUP logo disc (never MTG's photo), the series' glass style, only the four signature
@@ -373,6 +372,22 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
   `python3 jetup/_build/build.py`. Dry run on a throwaway copy, 13 Nov 2026: the site builds, no sideways scroll on the five
   changed pages (140 views, 320 to 1024 px, normal and large text), both new players come back to their spot when the
   video ends (phone and laptop).
+
+## On the site (13 Nov 2026)
+
+MTG: "Put it live" (13 Nov 2026). Published with [mtglegacyai/mtgtribe#58](https://github.com/mtglegacyai/mtgtribe/pull/58)
+(`ex9_site_edits.py`, then `python3 jetup/_build/build.py`):
+
+- How it works, "What copying really means" (/jetup/how-it-works/#copy): the laptop player at the top of the section.
+- Get started, part 5 "Connect Sonic AI" (/jetup/get-started/#part-5): the player above the community codes, "Watch first";
+  the MetaTrader 5 card (#mt5) links to it ("Watch the glass lid, explained by MTG").
+- Videos page: right after the minibus taxi ("The cooking class").
+- FAQ: "Watch the 2:04 explainer" in "What are CopyX and Sonic AI?" and "How do I see my trades?".
+- VideoObject data on the three pages with a player; dashboard: 15 videos, 8 animated explainers; sitemap dates.
+- Checked before publishing: no sideways scroll on the five changed pages (170 views), every video returns to its spot
+  (all players, phone and laptop), 51 social previews. Checked live after the deploy: on all three pages, at phone and
+  laptop sizes, the cover loads, the player opens in the laptop frame and plays, the structured data parses, no dashes,
+  no script errors; both FAQ links and the dashboard count are live.
 
 ## How this plan was made
 

@@ -40,6 +40,11 @@ for) and "not financial advice" became "not medical advice".
 
 ## Visuals
 
+- **MTG's photo (MTG, 13 Nov 2026: "Use this image for my intro and outro, I am MTG"):** in the gold ring on "Hi,
+  I'm MTG" (intro), on "I'm MTG, Your Digital Architect" (signature) and on the end card that follows it.
+  `stage/mtg-photo.jpg` is his photo cropped square with a little ceiling added above the head so the ring does not
+  cut it. The top bar and the other ending scenes keep the crown disc. v2 = v1 with the photo.
+
 - The device is our own three.js model (`stage/device.js`): white body, champagne base, two brushed plates, the
   display reading "30 01" (30 minutes, level 1). No third-party photos or clips anywhere.
 - Every line and word pops on its spoken cue; captions light the active word; a 1 to 7 question tracker; emoji in

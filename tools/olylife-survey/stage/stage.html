@@ -214,6 +214,8 @@ function drawCap(t) {
 const EJ = s => s.replace(/(\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]*)/gu, '<span class="ej">$1</span>');
 const H = (txt, cls = '') => `<div class="anton ${cls}">${EJ(txt)}</div>`;
 const disc = d => `<div class="disc" style="--d:${d}px"><div><div class="cr">👑</div><div class="nm gl">MTG</div></div></div>`;
+// MTG's own photo in the gold ring, for the two "I'm MTG" moments (MTG, 13 Nov 2026)
+const photoDisc = d => `<div class="disc" style="--d:${d}px"><div style="background:url(mtg-photo.jpg) center/cover"></div></div>`;
 const ringI = (em, c, d = 230) => `<div class="ring" style="--c:${c};width:${d}px;height:${d}px;font-size:${d * .48}px">${em}</div>`;
 const chip = (txt, cls = '') => `<div class="chip ${cls}">${txt}</div>`;
 const S_ = {}; // scene drawers
@@ -256,13 +258,13 @@ function header(d, t, t0, t1, dy = 20) { const [a, p] = env(t, t0, t1, .4, .3); 
 }
 // ---- HI: MTG, why I'm asking
 {
-  const dd = reg(E(disc(300), CX, 520));
+  const dd = reg(E(photoDisc(330), CX, 505));
   const n1 = reg(E(H("HI, I'M MTG", 'gl shadow'), CX, 790, '', 'font-size:110px'));
   const n2 = reg(E(`<div style="font-weight:800;font-size:34px;letter-spacing:8px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 880));
   const c1 = reg(E(`<div class="card" style="padding:34px 44px;text-align:center;font-weight:800;font-size:50px;line-height:1.25;white-space:normal;width:820px">Thinking of bringing this machine to my <span class="lime">community</span> 🏘️</div>`, CX, 1080));
   const c2 = reg(E(H('SO FIRST, I\'M ASKING <span class="lime">YOU</span> 🫵', 'shadow'), CX, 1290, '', 'font-size:84px'));
   S_.hi = t => {
-    const [t0, t1] = SC.hi; const [a0, p0] = env(t, t0, t1, .4, .3);
+    const [t0, t1] = SC.hi; const [a0, p0] = env(t, t0 + .25, t1, .4, .3);
     S(dd, a0, (.7 + .3 * p0) * (1 + .015 * Math.sin(t * 2)));
     const [a1, p1] = env(t, t0 + .15, t1, .35, .3); S(n1, a1, 1, 0, (1 - p1) * 30);
     const [a2] = env(t, W('hi', 'Digital') - .05, t1, .35, .3); S(n2, a2);
@@ -475,7 +477,7 @@ for (const [k, Q] of Object.entries(QS)) {
   const bd = reg(E(disc(230), CX, 1180));
   burst(CX, 800, W('o_best', 'because') + .15, ['#b6f04a', '#e8c25a', '#ffffff', '#ff8fd0'], 18, 150, .9, 400, 200);
   // signature
-  const g1 = reg(E(disc(440), CX, 560));
+  const g1 = reg(E(photoDisc(460), CX, 560));
   const g2 = reg(E(`<div style="font-family:GreatVibes;font-size:110px;color:var(--goldl)">Crypto-Regards,</div>`, CX, 900));
   const g3 = reg(E(H('MTG', 'gl shadow'), CX, 1070, '', 'font-size:200px'));
   const g4 = reg(E(`<div style="font-weight:800;font-size:30px;letter-spacing:12px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 1210));
@@ -499,13 +501,13 @@ for (const [k, Q] of Object.entries(QS)) {
       sp.forEach((d, k) => { const tw = .6 + .4 * Math.sin(t * 6 + k); S(d, a2 * a0 * tw, .8 + .2 * tw); });
       const [a3, p3] = env(t, tb + .3, TS, .3, .25); S(bd, a3 * a0, .8 + .2 * p3); }
     // signature
-    { const [a, p] = env(t, TS, t1, .35, .25); S(g1, a * a0, .9 + .1 * p); S(g2, a * a0); S(g3, a * a0, .9 + .1 * p);
+    { const [a, p] = env(t, TS, t1, .35, .25); const [ag] = env(t, TS, SC.end[0] + .1, .35, .25); S(g1, ag * a0, .9 + .1 * p); S(g2, a * a0); S(g3, a * a0, .9 + .1 * p);
       const [a1] = env(t, W('o_im', 'Digital') - .05, t1, .35, .25); S(g4, a1 * a0);
       const [a2, p2] = env(t, L.o_see[0] - .05, t1, .3, .25); S(g5, a2 * a0, .9 + .1 * p2); }
   };
   S_.thanks = outro; S_.massive = outro; S_.best = outro; S_.sig = outro;
   // end card: stays to the last frame
-  const e1 = reg(E(disc(280), CX, 330));
+  const e1 = reg(E(photoDisc(280), CX, 330));
   const e2 = reg(E(`<div style="font-family:GreatVibes;font-size:62px;color:var(--goldl)">Crypto-Regards,</div>`, CX, 545));
   const e3 = reg(E(H('MTG', 'gl shadow'), CX, 640, '', 'font-size:104px'));
   const e4 = reg(E(`<div style="font-weight:800;font-size:30px;letter-spacing:6px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div>`, CX, 722));
@@ -520,7 +522,7 @@ for (const [k, Q] of Object.entries(QS)) {
     const E0 = SC.end[0]; const a0 = eOut((t - E0) / .45);
     const [a, p] = env(t, E0 + .05, 1e9, .45, .1), [a1] = env(t, E0 + .4, 1e9, .4, .1), [a2] = env(t, E0 + .8, 1e9, .4, .1), [a4, p4] = env(t, E0 + .3, 1e9, .35, .1);
     const [a5, p5] = env(t, E0 + 1.7, 1e9, .4, .1), [a6] = env(t, E0 + 2.0, 1e9, .4, .1);
-    S(e1, a * a0, .88 + .12 * p); S(e2, a * a0); S(e3, a * a0, .88 + .12 * p); S(e4, a1 * a0); S(e5, a1 * a0); S(e6, a2 * a0);
+    const [ae, pe] = env(t, E0 + .15, 1e9, .45, .1); S(e1, ae * a0, .88 + .12 * pe); S(e2, a * a0); S(e3, a * a0, .88 + .12 * p); S(e4, a1 * a0); S(e5, a1 * a0); S(e6, a2 * a0);
     S(e7, a4 * a0, .9 + .1 * p4);
     PL.forEach((d, k) => { const [ak, pk] = env(t, E0 + .6 + .18 * k, 1e9, .35, .1); S(d, ak * a0, 1, (1 - pk) * 40); });
     S(e8, a5 * a0, .9 + .1 * p5); S(e9, a6 * a0);

@@ -104,7 +104,7 @@ def build_start():
         'Tick both agreements. The second one says CopyX trades come from traders who are not part of TAG Markets. Then tap ' + k('Copy Now') + '.',
       ], [('14', 'Menu, CopyX, Sonic, Details, Connect'), ('15', 'Investment 50, then the community token'), ('16', '#9M, Verify, 9MPromo, Submit, the tick'), ('17', 'Copy Now, Success, then Profile')],
       'you see "Success". Your $50 Sonic account is connected.',
-      extra_before=codes,
+      extra_before='<div style="margin:0 0 18px">' + laptop('copy', 'Watch first: what copying really means (2:04)') + '</div>' + codes,
       extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Why the plan starts with $50:</b> 24x Amplify makes every move bigger, in both directions, so a small start lets you learn how it moves.</span></p><p class="call info" style="margin-top:10px">%s<span><b>New to Sonic AI?</b> Watch <a href="/jetup/how-it-works/#copy">JetUP\'s own 64-second Sonic AI video</a> first: what it trades, and why your money stays in your own account.</span></p>' % (icon('i-info2'), icon('i-film2')))
     p6 = part(6, 'Claim the Dennis Fast Start Promo', 'Your CU number unlocks the $100 promo bonus.', [
         'In TAG Markets open the menu, tap ' + k('Profile') + ' and write down your <b>CU number</b>.',
@@ -124,7 +124,7 @@ def build_start():
   <div class="grid3">
    <article class="card pad rv" id="mt5" aria-labelledby="mt5-h">
     <span class="ped" style="display:inline-grid;margin-bottom:12px"><b>{icon('i-candle2')}</b></span><h3 id="mt5-h" style="margin:0 0 6px;font:800 1.3rem/1.25 var(--f-b)">See every trade in MetaTrader 5</h3>
-    <p class="muted">A read-only view of your own account. You can watch, not trade or withdraw.</p>
+    <p class="muted">A read-only view of your own account. You can watch, not trade or withdraw. <a href="/jetup/how-it-works/#copy">Watch the glass lid, explained by MTG (2:04)</a></p>
     <ol class="steps">
      <li><span>Install <b>MetaTrader 5</b> (MT5) from the App Store or Google Play.</span></li>
      <li><span>Tap {k('New account')} (or add an account) and search for <b>TM Financials</b>, the company behind TAG Markets.</span></li>
@@ -237,7 +237,7 @@ def build_start():
     howto = {"@type": "HowTo", "name": "How to join JetUP and TAG Markets, connect Sonic AI and claim the Dennis Fast Start Promo",
              "totalTime": "PT45M", "step": [{"@type": "HowToStep", "position": i + 1, "name": n, "url": SITE + path + '#part-%d' % (i + 1)} for i, n in enumerate(
               ['Create your JetUP account', 'Link JetUP to TAG Markets', 'Verify your identity', 'Fund your TAG Markets account', 'Connect Sonic AI', 'Claim the Dennis Fast Start Promo'])]}
-    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('promo'), howto]
+    ld = [ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('copy'), ld_video('promo'), howto]
     return page(path, 'How to Join JetUP and TAG Markets: Step-by-Step Training | MTG',
                 'Join JetUP and TAG Markets one tap at a time: sign up, link CopyX, KYC, the TAG Markets deposit (BEP20, TRC20, ERC20), connect Sonic AI with the community codes and claim the Dennis promo.',
                 main, crumbs_l, ld, og_img='/jetup/img/cover-signup-training-v4-4.jpg', og_alt='Join JetUP + TAG Markets: every tap shown, 6 parts, phone friendly', lightbox=True)

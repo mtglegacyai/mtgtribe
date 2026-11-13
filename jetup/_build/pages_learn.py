@@ -117,6 +117,7 @@ def build_how():
 </tbody></table></div>
 <p style="margin-top:14px">JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets.</p>''', 'i-users2')}
  {section('copy', 'Copy trading', 'What "copying" really means', '''
+<div style="margin:4px 0 18px">''' + laptop('copy', 'What "copying" really means, explained by MTG (2:04)') + '''</div>
 <p>When you connect Sonic AI on CopyX, the strategy's trades are copied into <b>your</b> account automatically. You don't pick the trades. You pick the strategy, how much to put in, and when to stop.</p>
 <ul>
  <li><b>XAU/USD</b> is gold, priced in US dollars. XAU means gold, USD means US dollar.</li>
@@ -145,7 +146,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('split'), ld_video('amplify'), ld_video('withdraw'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('copy'), ld_video('split'), ld_video('amplify'), ld_video('withdraw'), ld_video('sonic')])
 
 def build_plan():
     path = '/jetup/partner-plan/'

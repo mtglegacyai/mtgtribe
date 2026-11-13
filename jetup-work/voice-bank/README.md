@@ -19,6 +19,9 @@ same voice only when MTG approves the credits for that video (measured: 14 credi
 | `tutorial/` | `p3v1.mp3` (2:25) | MTG's own tutorial, part 3 (8 Nov 2026), KYC: "In this video" (verify your identity on TAG Markets), overview, step lines (upload documents, Continue, country, Sumsub ID email and Start verification, the 6 digit code and never share it, consent and Create my account, Sumsub ID created, Identity Card, double-sided, the tips, Allow the camera, can't ask for your permission, ID scan front and back, selfie, Hold still, All set, documents on another profile, reviewed then deposit), the recap and the part 4 preview. Request `89f01eda7b2c497a826a8a085021a412`, about 7 credits |
 | `explainers/` | `ex2v1.mp3` (0:48) | Explainer #2, the minibus taxi (8 Nov 2026): "Four names, plus you" hook, the taxi picture (you don't drive, choose a driver, take your seat), Sonic AI is the driver, your seat in your name is your TAG Markets account, Copy X is the route board, Jet Up is the association that trains and organises the passengers, you decide which taxi and how much, and where the picture stops. Request `528543bbf4a34f8cb5b434f9291a88e8`, 2 credits |
 | `explainers/` | `ex2v2.mp3` (0:16) | Explainer #2, the positive close (8 Nov 2026, after MTG asked for less intimidating copy): "So that's the whole picture. Sonic AI does the driving. Your account sits in your name, at TAG Markets. Copy X connects you to the driver. And Jet Up trains you, every step of the way." and "Simple, right? Now it's your turn. Take your seat." Request `798ec1c748dd40189e3be7f09a55eac9`, 1 credit |
+| `explainers/` | `ex3ex4v3.flac` (0:51) | **MTG Master Voice V3** (10 Nov 2026), explainer #3's six lines (fifty dollars that trades like twelve hundred, the market stall, every move twenty-four times bigger, the loss limit, the Exposure Calculator line, the recap) and explainer #4's two ("Seventy, thirty" hook, the Profit Split Calculator line). 1 credit. Cut lines in `ex3-pack/` and `ex4-pack/` |
+| `explainers/` | `ex6v3.flac` (1:17) | **V3** (11 Nov 2026), explainer #6, the partner plan: ten levels and only three open on day one, what a level is, the building with ten floors and an access card, $250 of active trading opens floors 1 to 3, from the 4th direct partner each new one opens the next, lot commission, Profit Share, client start, the rule. 1 credit. Cut lines in `ex6-pack/` |
+| `explainers/` | `ex8v3.flac` (0:39) | **V3** (12 Nov 2026), explainer #8, getting your money out: "Can I get my money out? The answer is growing in your own backyard.", the fruit tree (the backyard is your account at TAG Markets in your own name, the tree is your own money, the fruit is your profit), the promo's gift branch, your basket is your crypto wallet, through the broker on the same network on both sides, about forty-eight hours (JetUP's one-pager), the recap. 1 credit (47 left). Cut lines, with six newly cut recorded lines, in `ex8-pack/` |
 | `signup-training/` | `t1.mp3` (3:04), `t2.mp3` (2:32), `t3.mp3` (3:14), `t4.mp3` (0:32) | Sign-up training narration, parts 1 to 6 plus the promo and comment lines |
 
 - `*_tts.json`: HeyGen's own response for each file, with **word-by-word timings** (`word_timestamps`) and the request ID.
@@ -44,15 +47,20 @@ Leave about 0.05 s before the first word and 0.15 s after the last one, and join
 - Withdrawals and the promo rules, start small, small test withdrawal (5 Checks part 2, training)
 - Partner link vs Client link, sign-up, KYC, deposit network and amount, Sonic AI codes, CU number, promo claim (training)
 - The minibus taxi picture of the five names (explainer #2)
+- The partner plan: levels, how they open (ten floors and an access card), lot commission, Profit Share (explainer #6, V3)
+- Getting your money out: the fruit tree in your own backyard, profits any time, the promo's gift branch and its 12 months, your crypto wallet, the same network on both sides, about 48 hours (JetUP's one-pager), one small withdrawal first (explainer #8, V3)
 - Closing lines: mtgtribe.com/jetup, mtgtribe.com/group, Telegram, save and share, "It pays to pay attention, and take action"
 
-Not covered yet (needs new lines): the partner plan (levels, lot commission, Infinity, Global Pool, rewards), the BIX Card,
-and the calculator walkthroughs.
+Not covered yet (needs new lines): the rest of the partner plan (Infinity, Global Pool, rewards), the BIX Card, and the
+calculator walkthroughs.
 
 ## MTG's voice since 10 Nov 2026: MTG Master Voice V3
 
 HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible with heygen-voice-1"). MTG made
 **MTG Master Voice V3** (`65f1b9ff3f1e418496de5715a801e7dd`), listened to both and decided: "V3 sounds better, sounds
 exactly like me", V3 from now on. Every new line is V3 (no model or engine override, no break tags: one paragraph per
-pause). Every V2 line in this bank stays usable. First V3 file: `explainers/ex3ex4v3.flac` (explainer #3's six lines and
-explainer #4's two, 1 credit).
+pause). Every V2 line in this bank stays usable. V3 files so far: `explainers/ex3ex4v3.flac` (10 Nov 2026,
+explainer #3's six lines and explainer #4's two, 1 credit), `explainers/ex6v3.flac` (11 Nov 2026, explainer #6's nine
+lines, 1 credit) and `explainers/ex8v3.flac` (12 Nov 2026, explainer #8's ten lines, 1 credit, 47 left). All are in
+`sentences.tsv`. HeyGen's word times for some V3 lines run up to about 0.2 s ahead of the audio: check the pauses before
+cutting (explainer #8's measured offsets are in `ex8v3_tts.json`, `word_time_offsets`).

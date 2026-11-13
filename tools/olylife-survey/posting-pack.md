@@ -13,20 +13,36 @@ Preview only. MTG posts it himself after he approves it. 2:18, 9:16, 1080x1920, 
 
 ## TikTok caption (copy and paste)
 
-Used the OlyLife Tera-P90? 🦶 I need your HONEST answer 👇
+OlyLife Tera-P90 users: I need your HONEST answer 👇🦶
 
-8 quick questions. Answer by number in the comments (1 to 8).
-Good, bad or nothing at all: every honest answer counts ✅
-Sell it or run sessions? Numbers 7 and 8 are for you 🏪
+I'm considering this PEMF foot machine as our next income stream in the MTG Tribe. Before I bring it in, I want the real stories: good, bad or nothing at all.
 
-Because health is wealth 💚 Your health comes first.
+Answer by number in the comments 💬
+1 Why did you try it?
+2 How many sessions, how often?
+3 Your first session: what did you feel?
+4 What changed after a few weeks, and what didn't?
+5 Anything you didn't like?
+6 Worth the money? Per session or your own machine?
+7 Sellers: what do clients come back for?
+8 Sellers: how did you find your first clients?
 
-💬 Comment or ✂️ stitch this video with your story.
-📊 I'll share what you told me in my next video. Follow so you don't miss it.
+Health is wealth 💚 Your health comes first.
 
-Share only what you're comfortable sharing 🙏 Not medical advice.
+✂️ Stitch this with your story. I'll share what you told me in my next video, so follow 🔔
 
-#OlyLife #TeraP90 #PEMF #HonestReview #SouthAfrica #Mzansi
+Not medical advice. Share only what you're comfortable sharing 🙏
+
+#OlyLife #TeraP90 #PEMF #HealthIsWealth #SouthAfrica #HonestReview
+
+**Why these hashtags:** two name the exact machine (where people who own one search), two the topic (#PEMF,
+#HealthIsWealth), one the place (#SouthAfrica), one the format (#HonestReview). Six focused tags beat thirty vague
+ones. To rotate on later posts: #PEMFTherapy #Terahertz #Mzansi #SouthAfricanTikTok #WellnessJourney
+#SideHustleSA #MTGTribe. Skip #fyp and #viral: no evidence they help, and they crowd out tags that do.
+
+**Before posting:** set the cover to the first frame ("USED THIS MACHINE?"); add the text "OlyLife Tera-P90 honest
+survey" as the title or search phrase if TikTok offers it; post when your audience is online (early evening South
+African time is a safe start; check TikTok Studio after the first few posts).
 
 ## Pinned comment (post it yourself right after publishing, then pin it)
 

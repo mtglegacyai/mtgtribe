@@ -53,7 +53,9 @@ Check the HeyGen credit balance before any speech request.
 ("not compatible with heygen-voice-1"); MTG made V3 himself, listened to both and decided: "V3 sounds better, sounds
 exactly like me", V3 from now on. No model or engine override, no break tags (one paragraph per pause). Measured: 1 credit
 for 51 seconds of speech. V2's recordings in the voice bank stay usable. The first V3 lines (10 Nov 2026): explainer #3's
-six lines and explainer #4's two lines, one request, banked as `explainers/ex3ex4v3.flac`.
+six lines and explainer #4's two lines, one request, banked as `explainers/ex3ex4v3.flac`. Explainer #6's nine lines
+(11 Nov 2026) and explainer #8's ten lines (12 Nov 2026, banked 13 Nov) are `explainers/ex6v3.flac` and
+`explainers/ex8v3.flac`, with their cut lines in `ex6-pack/` and `ex8-pack/`, all indexed in `sentences.tsv`.
 
 ## Standard: the site tour (video 0)
 

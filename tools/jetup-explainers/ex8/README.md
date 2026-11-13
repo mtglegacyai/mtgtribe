@@ -212,7 +212,8 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
 - Voice: `voice/ex8v3.flac` (the V3 take as delivered), `voice/ex8v3.txt` (the exact text sent), `voice/ex8v3_raw.json`
   (HeyGen's word times). `lines_ex8.py` cuts all 36 lines (`lines.json`, `words.json`); HeyGen's word times for nbranch,
   nbasket, nroute, n48 and nrecap ran 0.17 to 0.19 s ahead of the audio and are shifted (`ALIGN`). Speech-to-text hears
-  every line as written. Bank the take on `jetup-video-work` as `explainers/ex8v3.flac` when MTG agrees.
+  every line as written. Banked on `jetup-video-work` on 13 Nov 2026 (MTG: "Add the new lines to my voice bank"):
+  `explainers/ex8v3.flac`, `ex8v3.txt`, `ex8v3_tts.json` and the cut lines in `explainers/ex8-pack/`, indexed in `sentences.tsv`.
 - Picture: `make_ex8.py` (timeline, captions, cues, the signature ending's cues, body sounds), `stage/stage.html` and
   `stage/engine.js` (the fruit tree scenes), `make_tag_balance.py` makes `stage/tag-balance.png` from guide screenshot 08
   (right-hand phone only, both amounts masked, no arrow, no Deposit button). Copy `Anton-Regular.ttf` (branch

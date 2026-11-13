@@ -7,7 +7,7 @@
 #  - the three promo rule lines from the sign-up training take t3, at explainer #5's tested cuts;
 #  - everything else (greeting, "Profits can be withdrawn any time.", "Start small...", "Let the system prove itself",
 #    "Simple, right? Now it's your turn.", the fair-play lines and the signature ending) from explainer #4's banked pack.
-# Usage: python3 lines_ex8.py [take.wav] [take_raw.json]   (defaults: $EX8_VOICE/ex8v3.wav and ex8v3_raw.json)
+# Usage: python3 lines_ex8.py [take] [take_raw.json]   (defaults: voice/ex8v3.flac and voice/ex8v3_raw.json)
 import json, os, re, subprocess, sys, tempfile, wave
 import numpy as np
 SR = 48000
@@ -15,8 +15,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 BANK = 'origin/jetup-video-work:jetup-work/voice-bank/'
 VDIR = os.environ.get('EX8_VOICE', HERE)
-TAKE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(VDIR, 'ex8v3.wav')
-RAW = sys.argv[2] if len(sys.argv) > 2 else os.path.join(VDIR, 'ex8v3_raw.json')
+# the take: an explicit path, else $EX8_VOICE/ex8v3.wav, else the FLAC saved next to this script (voice/ex8v3.flac, the same
+# samples as HeyGen's WAV; also banked as explainers/ex8v3.flac on jetup-video-work)
+_def = os.path.join(VDIR, 'ex8v3.wav') if os.environ.get('EX8_VOICE') else os.path.join(HERE, 'voice', 'ex8v3.flac')
+TAKE = sys.argv[1] if len(sys.argv) > 1 else _def
+RAW = sys.argv[2] if len(sys.argv) > 2 else os.path.join(VDIR if os.environ.get('EX8_VOICE') else os.path.join(HERE, 'voice'), 'ex8v3_raw.json')
 TMP = tempfile.mkdtemp(prefix='ex8bank_')
 toks = lambda t: re.findall(r"[A-Za-z0-9']+", t)
 

@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TikTok cover</title><style>
+@font-face{font-family:Anton;src:url(Anton-Regular.ttf)}
+@font-face{font-family:Montserrat;src:url(Montserrat.ttf);font-weight:100 900}
+@font-face{font-family:Oswald;src:url(Oswald.ttf);font-weight:200 700}
+@font-face{font-family:GreatVibes;src:url(GreatVibes-Regular.ttf)}
+:root{--g0:#03140b;--g1:#0a3d22;--green:#2fbf5b;--lime:#b6f04a;--mint:#d9fbe3;--gold:#e8c25a;--goldl:#fae496;--goldd:#c48e2c;--ice:#e6f5ec;--white:#f6fbf7;--dark:#06170d}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--g0);font-family:Montserrat,sans-serif;color:var(--white)}
+#bg,#fx,#layer,#cap,#top{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#bg{background:radial-gradient(120% 80% at 50% 38%,#0f5130 0%,#07301b 42%,#03140b 78%)}
+.blob{position:absolute;border-radius:50%;filter:blur(60px)}
+canvas#dev{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.e{position:absolute;left:0;top:0;transform-origin:50% 50%;will-change:transform,opacity;opacity:0;white-space:nowrap}
+.anton{font-family:Anton,sans-serif;letter-spacing:1px;text-transform:uppercase;line-height:1.02}
+.grad{background:linear-gradient(180deg,#ffffff 0%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ej{color:#fff;-webkit-text-fill-color:#fff;background:none}
+.lime{color:var(--lime)} .gold{color:var(--gold)} .mint{color:var(--mint)}
+.gl{background:linear-gradient(180deg,var(--goldl),var(--goldd));-webkit-background-clip:text;background-clip:text;color:transparent}
+.gg{background:linear-gradient(180deg,#e9ffb8,#38d26b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shadow{filter:drop-shadow(0 8px 28px rgba(0,0,0,.55))}
+.chip{display:inline-flex;align-items:center;gap:16px;padding:16px 30px;border-radius:999px;background:rgba(6,30,17,.82);
+  border:3px solid rgba(182,240,74,.75);font-weight:800;font-size:40px;box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 26px rgba(47,191,91,.25)}
+.chip.gold{border-color:rgba(232,194,90,.85);color:var(--white)}
+.card{border-radius:44px;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.18);
+  box-shadow:0 24px 60px rgba(0,0,0,.45);backdrop-filter:blur(10px)}
+.badge{width:190px;height:190px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Anton;font-size:128px;color:#fff;
+  background:radial-gradient(circle at 35% 30%,#7df59c,#22a64b 55%,#0d6b2d);border:7px solid var(--lime);box-shadow:0 0 50px rgba(124,255,150,.45),inset 0 -10px 24px rgba(0,0,0,.25)}
+.ring{width:230px;height:230px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:110px;
+  border:9px solid var(--c,#b6f04a);background:radial-gradient(circle,rgba(255,255,255,.12),rgba(6,30,17,.85));box-shadow:0 0 40px var(--c,#b6f04a)}
+.url{display:inline-flex;align-items:center;gap:18px;padding:22px 46px;border-radius:999px;background:linear-gradient(180deg,#d6ff7a,#9be03a);color:var(--dark);
+  font-weight:900;font-size:70px;box-shadow:0 0 50px rgba(182,240,74,.6),0 14px 30px rgba(0,0,0,.4)}
+.plat{display:flex;align-items:center;gap:22px;width:760px;height:78px;padding:0 28px;box-sizing:border-box;border-radius:22px;background:rgba(6,30,17,.85);
+  border:2px solid rgba(255,255,255,.14);font-size:34px;font-weight:700}
+.plat b{width:12px;height:46px;border-radius:6px;background:var(--c)} .plat span.h{margin-left:auto;color:var(--mint);font-weight:600}
+.disc{width:var(--d);height:var(--d);border-radius:50%;padding:calc(var(--d)*.045);box-sizing:border-box;background:conic-gradient(from 200deg,#fff2b8,#c48e2c,#fae496,#a8741f,#fff2b8);
+  box-shadow:0 0 60px rgba(232,194,90,.5)}
+.disc>div{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 40% 30%,#1a7a43,#063a1d 70%);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.disc .cr{font-size:calc(var(--d)*.26);line-height:1;margin-bottom:calc(var(--d)*-.02)}
+.disc .nm{font-family:Anton;font-size:calc(var(--d)*.30);line-height:1;letter-spacing:2px}
+.bub{display:flex;gap:18px;align-items:flex-start;padding:22px 30px;border-radius:30px;background:rgba(255,255,255,.95);color:#10241a;font-size:36px;font-weight:600;
+  box-shadow:0 14px 34px rgba(0,0,0,.4);white-space:normal}
+.bub .av{flex:0 0 64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;background:#d9fbe3}
+.bub .n{font-weight:800;color:#1c8a43;font-size:28px;margin-bottom:4px}
+.tile{width:300px;height:330px;border-radius:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-family:Anton;font-size:64px;
+  background:linear-gradient(170deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:3px solid var(--c);box-shadow:0 0 36px var(--c)}
+.tile .em{font-size:130px;line-height:1}
+.phone{width:270px;height:480px;border-radius:44px;background:#0b1b12;border:6px solid #cfd8d2;box-shadow:0 20px 50px rgba(0,0,0,.5);overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.dot{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;border:4px solid rgba(255,255,255,.35);color:rgba(255,255,255,.7);background:rgba(6,30,17,.6)}
+.btn{display:inline-flex;align-items:center;gap:18px;padding:24px 54px;border-radius:999px;font-weight:900;font-size:58px;background:linear-gradient(180deg,#ff3b6b,#e0164c);color:#fff;
+  box-shadow:0 14px 40px rgba(224,22,76,.5)}
+#cap .box{position:absolute;left:540px;top:1462px;transform:translate(-50%,-50%);padding:18px 34px;border-radius:30px;background:rgba(3,20,11,.78);
+  border:2px solid rgba(182,240,74,.35);font-weight:800;font-size:52px;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#cap .w{display:inline-block;margin:0 9px;color:rgba(246,251,247,.92);transition:none}
+#cap .w.on{color:var(--lime);transform:scale(1.08)}
+#top .bar{position:absolute;left:54px;top:166px;display:flex;align-items:center;gap:18px}
+#top .bar .t1{font-family:Anton;font-size:44px;letter-spacing:2px;line-height:1}
+#top .bar .t2{font-size:21px;font-weight:700;letter-spacing:4px;color:var(--lime)}
+#top .sv{position:absolute;right:54px;top:172px;font-size:30px;padding:12px 24px}
+#flash{position:absolute;left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 45%,rgba(210,255,225,.9),rgba(210,255,225,0) 70%);opacity:0}
+.p{position:absolute;border-radius:50%}
+</style>
+<style>.e{opacity:1} .row{position:absolute;display:flex;align-items:center;gap:22px}</style></head><body>
+<div id="bg"></div><div id="fx"></div>
+<canvas id="dev" width="1080" height="1920"></canvas>
+<div id="layer"></div>
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js"}}</script>
+<script type="module">
+import { makeDevice } from './device.js';
+const L = document.getElementById('layer');
+const add = (html, x, y) => { const d = document.createElement('div'); d.className = 'e'; d.innerHTML = html; L.appendChild(d);
+  d.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%)`; return d; };
+// glows and motes (still)
+const fx = document.getElementById('fx');
+[[230,560,640,'rgba(47,191,91,.32)'],[880,1250,700,'rgba(182,240,74,.16)'],[780,380,520,'rgba(46,160,120,.22)']].forEach(([x,y,s,c]) => {
+  const b = document.createElement('div'); b.className = 'blob'; b.style.cssText = `width:${s}px;height:${s}px;background:${c};transform:translate(${x-s/2}px,${y-s/2}px)`; fx.appendChild(b); });
+for (let i = 0; i < 26; i++) { const d = document.createElement('div'); d.className = 'p'; const s = 4 + (i*5)%7;
+  d.style.cssText = `width:${s}px;height:${s}px;background:rgba(214,255,122,.6);box-shadow:0 0 10px rgba(182,240,74,.8);transform:translate(${(i*263)%1080}px,${(i*571)%1920}px)`; fx.appendChild(d); }
+// MTG with his photo (top left) and the survey tag (top right), inside the grid crop
+add(`<div class="row" style="position:static"><div class="disc" style="--d:128px"><div style="background:url(mtg-photo.jpg) center/cover"></div></div>
+  <div><div class="anton gl" style="font-size:54px;line-height:1">MTG</div><div style="font-weight:800;font-size:20px;letter-spacing:4px;color:var(--lime)">YOUR DIGITAL ARCHITECT</div></div></div>`, 300, 330);
+add(`<div class="chip" style="font-size:34px">📋 HONEST SURVEY</div>`, 812, 330);
+add(`<div class="anton grad shadow" style="font-size:158px">USED THIS</div>`, 540, 520);
+add(`<div class="anton gg shadow" style="font-size:178px">MACHINE? <span style="font-family:sans-serif">🦶</span></div>`, 540, 690);
+add(`<div class="chip" style="font-size:44px">OlyLife THz Tera-P90</div>`, 540, 840);
+add(`<div class="row" style="position:static;gap:24px"><div class="chip" style="font-size:40px">💬 8 QUESTIONS</div><div class="chip gold" style="font-size:40px">🏪 USERS &amp; SELLERS</div></div>`, 540, 1400);
+add(`<div class="row" style="position:static;gap:18px"><div class="anton gl shadow" style="font-size:84px">HEALTH IS WEALTH</div><div style="font-size:72px;filter:drop-shadow(0 0 18px rgba(124,255,150,.7))">💚</div></div>`, 540, 1535);
+await document.fonts.load('bold 40px Oswald'); await document.fonts.load('bold 20px Montserrat'); await document.fonts.load('40px Anton');
+const D = makeDevice(document.getElementById('dev'), 1080, 1920);
+D.render({ cx: 540, cy: 1110, size: 700, yaw: -0.42, pitch: .6 });
+window.ready = true;
+</script></body></html>

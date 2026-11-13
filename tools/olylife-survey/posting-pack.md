@@ -40,7 +40,8 @@ Not medical advice. Share only what you're comfortable sharing 🙏
 ones. To rotate on later posts: #PEMFTherapy #Terahertz #Mzansi #SouthAfricanTikTok #WellnessJourney
 #SideHustleSA #MTGTribe. Skip #fyp and #viral: no evidence they help, and they crowd out tags that do.
 
-**Before posting:** set the cover to the first frame ("USED THIS MACHINE?"); add the text "OlyLife Tera-P90 honest
+**Before posting:** upload `tiktok-cover.jpg` as the cover (1080x1920; everything important sits inside the 3:4
+profile-grid crop), or pick the first frame ("USED THIS MACHINE?"); add the text "OlyLife Tera-P90 honest
 survey" as the title or search phrase if TikTok offers it; post when your audience is online (early evening South
 African time is a safe start; check TikTok Studio after the first few posts).
 

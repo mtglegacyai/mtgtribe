@@ -83,6 +83,9 @@ MTG went to a centre that runs sessions, saw and touched the machines and did a 
 for people without their own machine; a glass of water before and after; sessions at least 6 hours apart. He felt no
 difference after the first session and said so plainly; he met people on their 3rd and 4th session. He is doing 4
 sessions over 4 weeks and logging them in `my-sessions.md`, for an honest testimony either way.
+A few hours after session 1 his feet felt "light... like there is fresh air going through" them (his words, logged).
+Before sessions the centre has everyone put aside phones and jewellery. **MTG will upload a video explaining these
+pre-session steps:** use it in the "how the machine works / your first session" part of his OlyLife page.
 
 OlyLife's official YouTube channel (OlyLife International) celebrated its 3rd anniversary about 10 months before
 14 Nov 2026 (seen by MTG), which fits the company's 2022 registration in Malaysia: about 4 years old.

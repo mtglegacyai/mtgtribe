@@ -17,7 +17,7 @@ be judged honestly.)
 
 | # | Date and time | Where, price | Setting | During | Next day | Notes |
 |---|---|---|---|---|---|---|
-| 1 | 14 Nov 2026, about 13:00 SAST | A centre with the machines, R350 for 30 minutes | 30 min, level 01 | "I haven't felt any difference on my body yet. I won't lie." | (to add) | Glass of water before and after. Met people there on their 3rd and 4th session. |
+| 1 | 14 Nov 2026, about 13:00 SAST | A centre with the machines, R350 for 30 minutes | 30 min, level 01 | "I haven't felt any difference on my body yet. I won't lie." | A few hours later, same day: "My feet actually are feeling a different type of way. They feel light. They feel like there is fresh air going through my pores... I just can't explain it." (baseline 2: feet) | Glass of water before and after. Phones, rings, bracelets and necklaces put aside before the session. Met people there on their 3rd and 4th session. |
 | 2 | planned 15 Nov 2026, about 10:00 SAST | | | | | 21 hours after session 1 (the centre asks for at least 6 hours between sessions) |
 | 3 | | | | | | |
 | 4 | | | | | | |

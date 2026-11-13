@@ -22,6 +22,9 @@ distributor videos feed this file only after checking; their health claims never
 
 **Confirmed in person by MTG (14 Nov 2026, a South African centre):** R350 per 30-minute session; water before and
 after; at least 6 hours between sessions; the display shows minutes and level ("30 01").
+Before the machine is switched on, everyone puts aside cell phones and jewellery (rings, bracelets, necklaces) and
+avoids touching such things during the session (matches the sitting card: no phones or devices that emit
+electromagnetic frequencies).
 
 ## Official websites
 

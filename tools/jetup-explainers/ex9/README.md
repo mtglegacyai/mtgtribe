@@ -1,9 +1,10 @@
-# JetUP explainer #9: What "copying" really means (plan, 13 Nov 2026)
+# JetUP explainer #9: What "copying" really means (13 Nov 2026)
 
 MTG asked for the next explainer on 13 Nov 2026 ("let's cook the next explainer video"): #9 in
 `tools/learning-system/PLAN.md`, What "copying" really means, for How it works and get-started part 5 "Connect Sonic
-AI". **This is the plan only: nothing is recorded, no HeyGen credits are spent, nothing is built or published.** MTG
-reads it and approves (or changes) the new lines before anything is recorded.
+AI". MTG read the plan and approved the eight new lines the same day ("Yes, record (1 credit)"): recorded in one
+request, 1 credit (44 before, 43 after). **Being built as a preview; not published.** It goes on the site only when
+MTG says so.
 
 About 2:05 in all (body about 79 s to the end of the Join line, then the fixed signature ending), 16:9, 1920x1080, 25
 fps, captions burned in, the JetUP logo disc (never MTG's photo), the series' glass style, only the four signature
@@ -44,7 +45,7 @@ over, no nonstop stirring (the chef stirs once, then rests), and no MT5 trade ro
 anywhere, cover included. The voice says only "cooking class", "chef", "pot", "spoon" and "glass lid", so the drawing
 can change for free.
 
-## Eight new lines (MTG Master Voice V3, 729 characters, about 41 s, 1 credit; ask MTG before recording)
+## Eight new lines (MTG Master Voice V3, 729 characters, 41.9 s, 1 credit; recorded 13 Nov 2026 after MTG's OK)
 
 1. "Copy trading. What gets copied, and what stays yours?" (53)
 2. "Think of a cooking class. The chef cooks at the front, and you copy each step, in your own pot." (95)
@@ -73,6 +74,18 @@ write "read only", as the FAQ does. Before cutting, listen to both and read the 
 the lines scripts of #2 to #5 print); speech-to-text writes "read" for both sounds, so that one is checked by ear. If
 either is wrong, tell MTG before any new request (it would cost a second credit). No new line says "Jet Up", "Copy X",
 "Sonic AI" or "TAG": those stay in his banked voice.
+
+**Recorded 13 Nov 2026** (`voice/ex9v3.flac`, the same samples as HeyGen's WAV; `voice/ex9v3_raw.json` keeps HeyGen's word
+times): one request, 41.9 s, exactly 1 credit (44 before, 43 after). Checks before cutting: faster-whisper heard all 135
+words as written in the whole take ("strategies" for "strategy's" and "5" for "five" are only spellings). "read-only":
+measured instead of guessed, because speech-to-text writes "read" for both sounds: the vowel of "read" has F1 254 Hz and
+F2 2304 Hz and lasts 0.16 s, like MTG's own "ee" in "each" and "see" (F1 about 300 Hz) and far from his "e" in "chef" and
+"step" (F1 466 to 570 Hz), so it is said "reed only". "Your pot is your own account.": cut on its own, speech-to-text
+guesses "Your part" (in American English "pot" and "part" share a vowel); its vowel matches his two other "pot"s (F1 679
+against 628 and 714 Hz, F2 1098 against 1002 and 1046 Hz), and after the cooking class line, as in the video, it hears
+"pot". MTG is asked to listen to that moment in the preview. HeyGen's word times for lines 5 to 8 run about 0.2 s ahead
+of the audio (the pauses end 0.15 to 0.22 s after HeyGen's word gaps; lines 1 to 4 agree within 0.04 s), the same drift
+as #8: `lines_ex9.py` shifts them (ALIGN).
 
 ## Recorded lines (0 credits)
 

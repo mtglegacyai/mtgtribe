@@ -3,10 +3,10 @@
 MTG asked for the next explainer on 13 Nov 2026 ("let's cook the next explainer video"): #9 in
 `tools/learning-system/PLAN.md`, What "copying" really means, for How it works and get-started part 5 "Connect Sonic
 AI". MTG read the plan and approved the eight new lines the same day ("Yes, record (1 credit)"): recorded in one
-request, 1 credit (44 before, 43 after). **Being built as a preview; not published.** It goes on the site only when
+request, 1 credit (44 before, 43 after). **Built and rendered as a preview (13 Nov 2026); not published.** It goes on the site only when
 MTG says so.
 
-About 2:05 in all (body about 79 s to the end of the Join line, then the fixed signature ending), 16:9, 1920x1080, 25
+2:04 in all (124.34 s: the body to 78.0 s, then the fixed signature ending), 16:9, 1920x1080, 25
 fps, captions burned in, the JetUP logo disc (never MTG's photo), the series' glass style, only the four signature
 sounds (whoosh, tick, pop, click). Calm, positive copy (MTG, 8 and 9 Nov 2026): no warnings, no red, no loss lines; the
 risk stays in the signature reminder and the end card's small line. It shows what copying does, what you control and how
@@ -219,8 +219,8 @@ Emoji pops: 🍲 "cooking class", 🥄 "lift the spoon", 🔎 "look before you d
 
 ## Cover
 
-16:9 in the style of covers #3 to #8, and also the video's poster and thumbnail on the site. Pill "EXPLAINER · 2:05"
-(set to the real length after the build, expected 2:02 to 2:16). Big words *What "copying" really means*, with "copying"
+16:9 in the style of covers #3 to #8, and also the video's poster and thumbnail on the site. Pill "EXPLAINER · 2:04"
+(the real length of the render). Big words *What "copying" really means*, with "copying"
 in the gold gradient. Sub line on two lines: "The trades get copied. / Your account and your choices **stay yours**."
 Chips: "🍲 The cooking class" and "👀 The glass lid". One visual on the right: a community-hall table with your enamel pot
 on a two-plate stove under a glass lid, its lime name plate in front, the chef's table softly behind, a lime CopyX line
@@ -336,6 +336,43 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
   and 'How do I see my trades?', and now, as standard, a 'Watch: the glass lid, explained' link on the get-started
   MetaTrader 5 card, which keeps the set-up details the video leaves out. Also the 'New to Sonic AI?' note pointing to
   the player above?
+
+## Build (13 Nov 2026)
+
+- Voice: `voice/ex9v3.flac` (the V3 take as delivered), `voice/ex9v3.txt` (the exact text sent), `voice/ex9v3_raw.json`
+  (HeyGen's word times). `lines_ex9.py` cuts all 30 lines (`lines.json`, `words.json`); HeyGen's word times for nauto,
+  nyours, nlid and nrecap ran 0.19 to 0.21 s ahead of the audio and are shifted (`ALIGN`). "Read the terms." and the fee
+  line are one stretch of `signup-training/t3.mp3` split in its own silence; `perf` is marked `"joined": true` and plays
+  straight after `terms`. Speech-to-text hears every line as written. Voice bank: not banked yet (ask MTG; the script is
+  ready, modelled on #8's).
+- Picture: `make_ex9.py` (timeline, captions, cues, the signature ending's cues, body sounds), `stage/stage.html` and
+  `stage/engine.js` (the cooking class scenes), `make_screens.py` makes the three masked crops of MTG's real CopyX screens:
+  `stage/copyx-sonic.png` (guide screenshot 14: the SONIC card only, the follower count dotted out, ROI, chart and Max DD
+  under the "Check the record yourself: Myfxbook" panel, no arrows), `stage/copyx-fee.png` (screenshot 15: the
+  "Performance Fee 30%" row only) and `stage/copyx-eye.png` (screenshot 20: the SONIC Amplify card only, no tab rows, the
+  blur kept and cleaned of the arrow, Deposit, Withdraw and the red square dimmed, the eye icon bright). Copy
+  `Anton-Regular.ttf` (branch `jetup-video-work`, `jetup-work/engine/fonts/`), `jetup-disc.png` and `jetup-disc-small.png`
+  (`tools/jetup-tutorial/`) into `stage/` before rendering.
+- Reviewed on rendered stills in two rounds (design and brand, sync and story, facts and privacy): 42 issues (22, then
+  20), all applied. Among them: the spoon now settles on its rest on "lift" (it was shown being lifted), the chef stays
+  out of the close shots, the hook's glass lid glints (the second open loop), every stir is the same single move, and the
+  "Read only" chip holds long enough to read. The card title on "Read the terms" became "Sonic AI's terms, from the
+  CopyX screen" (it holds the fee row; the line says "terms").
+- Render: `MTG_TRACK=<the closing track> tools/video-signature/build_part.sh <absolute ex9 dir>
+  jetup-explainer-what-copying-really-means.mp4` (the closing track is `jetup-work/audio/they-call-me-mtg-closing-track.mp3`
+  on `jetup-video-work`; `mtg_ending.py` also needs Poppins in `/usr/share/fonts/truetype/google-fonts/`, Great Vibes and
+  the Lucide icons under `/home/claude/assets/`). QA: `tools/video-signature/qa_new.py`.
+- Preview of 13 Nov 2026: 124.34 s, 1920x1080, 25 fps, 22.3 MB, -14.0 LUFS, true peak -2.6 dBFS, no sample over 0.9
+  (max 0.737), closing track from 72.99 s (the full 51.36 s, ending on the last frame), sounds 17 whoosh, 23 tick, 15 pop,
+  4 click, speech-to-text hears every line in order. Full-size frames of the two real screens checked: nothing readable
+  beyond SONIC, Amplify, the fee row and the eye icon.
+- Cover: `cover.html`, `shoot_cover.js`, `cover-explainer-what-copying-really-means.jpg` (1920x1080, 187 KB) and `.webp`
+  (1280x720, 52 KB), typographic quotes as in the video.
+- For "Put it live": `ex9_site_edits.py` (How it works, get-started part 5 and its MetaTrader 5 card, the Videos page after
+  the minibus taxi, two FAQ links, the dashboard counts, the sitemap and the video return check), then
+  `python3 jetup/_build/build.py`. Dry run on a throwaway copy, 13 Nov 2026: the site builds, no sideways scroll on the five
+  changed pages (140 views, 320 to 1024 px, normal and large text), both new players come back to their spot when the
+  video ends (phone and laptop).
 
 ## How this plan was made
 

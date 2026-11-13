@@ -76,6 +76,20 @@ the voice bank).
 | Keys | Self-custody: export the private key or recovery phrase and keep it offline | BIX page | BIX; Sunday training |
 | Two links | BIX referral link for people who only want the card; JetUP Partner link first for people joining JetUP | (links rollout) | Sunday training |
 
+## Beginner answers (MTG, 13 Nov 2026: remove fear, bust myths, keep answers short)
+
+| Fact | Exact wording to use | Used in | Source |
+|---|---|---|---|
+| No recruiting needed | As a client you earn from your own strategy (70% of profit); referring anyone is never required. The partner program is optional, for members who want to help more people and build faster | FAQ, home FAQ, partner plan "Optional" | MTG; JetUP business plan |
+| Why partner | "We learn best when we teach others"; more people get their own account with written rules; JetUP rewards the trading activity you help create. Never promise anyone an income | FAQ, partner plan | MTG |
+| Not a pyramid | Partner rewards come from trading: Lot Commission and Global Pool from broker margin, Profit Share from the 30% share, never from client deposits | FAQ, partner plan, how-it-works #split | JetUP one-pager |
+| No experience needed | Copy trading: you don't pick trades or read charts; you choose the strategy, how much to put in and when to stop; watch every trade in MT5 | FAQ, home FAQ, how-it-works #copy | site; explainer #9 |
+| No promised return | No fixed, daily or guaranteed return; a promise of one is a red flag | FAQ, partner plan | JetUP business plan |
+| Who holds the money | Your own MT5 account at TAG Markets, in your name; JetUP does not hold it; MTG never handles it; never send money to a person | FAQ, 5 checks | site |
+| Phone only | The whole start works on a phone (MTG's step-by-step videos are phone recordings, KYC face scan, MT5 app) | FAQ | MTG's recordings |
+| South Africa | TM Financials SA (Pty) Ltd, FSCA authorised, FSP 55237, for marketing services | FAQ, how-it-works, 5 checks | FSCA register |
+| Fees (Sonic AI) | No management fee, no join fee; 30% of profit only when there is a profit; network fee when sending crypto; withdrawal fees and limits are the broker's terms. Do not say "no monthly fee" (JetUP membership fees not confirmed) | FAQ | CopyX screen; JetUP one-pager |
+
 ## Words and names
 
 - Say "Jet Up" (two clear words) in every script; write "JetUP" on screen. MTG, 7 Nov 2026.

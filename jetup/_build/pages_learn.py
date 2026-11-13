@@ -118,7 +118,7 @@ def build_how():
 <p style="margin-top:14px">JetUP says on its own website that its trading accounts and transactions run through T.M. Financials Ltd, trading as TAG Markets.</p>''', 'i-users2')}
  {section('copy', 'Copy trading', 'What "copying" really means', '''
 <div style="margin:4px 0 18px">''' + laptop('copy', 'What "copying" really means, explained by MTG (2:04)') + '''</div>
-<p>When you connect Sonic AI on CopyX, the strategy's trades are copied into <b>your</b> account automatically. You don't pick the trades. You pick the strategy, how much to put in, and when to stop.</p>
+<p>When you connect Sonic AI on CopyX, the strategy's trades are copied into <b>your</b> account automatically. You don't pick the trades. You pick the strategy, how much to put in, and when to stop. So you <a href="/jetup/faq/#q-do-i-need-trading-experience">don't need trading experience</a>, and your money stays in your own account (<a href="/jetup/faq/#q-who-holds-my-money">who holds my money?</a>).</p>
 <ul>
  <li><b>XAU/USD</b> is gold, priced in US dollars. XAU means gold, USD means US dollar.</li>
  <li>The Sonic AI terms in the training: a 30% performance fee from profits only, no management fee, no join fee, a one month minimum, and an Amplify account.</li>
@@ -158,12 +158,21 @@ def build_plan():
     inf_rows = ''.join('<tr><td class="n">%s</td><td class="n">%s</td></tr>' % (a, b) for a, b in inf)
     main = f'''
 {phead('i-users2', "JetUP's partner program", "The partner plan, <span class=\"grad\">in plain English</span>",
-       "JetUP pays partners four ways, all tied to trading at TAG Markets. Here they are, with JetUP's own figures, and with the rules most people miss. Read this as information, not a promise: what a partner earns can be zero.",
+       "Optional, and open to every member. JetUP rewards partners four ways, all tied to trading at TAG Markets. Here they are, with JetUP's own figures and the rules most people miss, as information, not a promise.",
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Partner Plan', None)],
        [icon('i-file') + "JetUP's figures, as of 4 Oct 2026", icon('i-info2') + 'Check current terms in your partner account'])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="rv">{laptop('partnerplan', 'The rule most people miss, explained by MTG (2:18)', eager=True)}</div>
  <div class="call info rv">{icon('i-info2')}<p><b>Before any number:</b> these are JetUP's own figures. JetUP's plan says there is no fixed, daily or guaranteed return and no guaranteed income, so results depend on the market and on the work you put in. New to the trading side? See how 24x Amplify and the 70/30 split work in <a href="/jetup/how-it-works/">How it works</a>.</p></div>
+ {section('optional', 'Optional', "You don't have to refer anyone to earn", '''
+<p>As a client you earn from your own strategy: when Sonic AI makes a profit, 70% of it is yours. The partner program is extra, for members who want to help more people and build faster.</p>
+<ul>
+ <li>🎓 <b>We learn best when we teach others.</b> Helping a friend start the right way makes you understand it better yourself.</li>
+ <li>🤝 <b>More people get a fair start:</b> their own account, in their own name, with written rules and a public track record.</li>
+ <li>🏆 <b>Rewarded for real activity:</b> JetUP's plan pays partners from trading, never from anyone's deposit.</li>
+ <li>🌱 <b>No rush:</b> start as a client, learn it well, and share it when you're ready.</li>
+</ul>
+<p style="margin-top:12px"><a href="/jetup/faq/#partners">Questions about sharing, answered</a></p>''', 'i-users2', 'lime')}
  {section('qualify', 'Who qualifies', 'The rule most people miss', '''
 <ul>
  <li>JetUP's plan says <b>everyone needs at least $250 of active trading</b> to qualify as a partner.</li>
@@ -206,14 +215,15 @@ def build_plan():
 <tr><td>Real estate voucher up to $1.2M</td><td class="n">$3M</td><td>6 months in a row</td></tr>
 </tbody></table></div>
 <p style="margin-top:14px">JetUP's notes: a voucher or its cash equivalent, the real estate voucher is towards property (not a house handed over), and only campaigns listed in your partner account are open. These are JetUP's marketing figures, not a promise.</p>''', 'i-trophy2', 'gold')}
- <div class="card pad rv"><p class="eyebrow">The honest summary</p><p class="lede" style="margin-top:12px">JetUP's own founder says the big money comes from building a team, not from the trading percentage. So if you share this, share it the right way: teach first, be honest about how it works, and never promise anyone an income. Say "potential business partners", and treat the people who join as business partners.</p>
+ <div class="card pad rv"><p class="eyebrow">Share it the right way</p><p class="lede" style="margin-top:12px">If you choose to share, teach first: show people <a href="/jetup/five-checks/">the 5 checks</a>, be honest about how it works, and never promise anyone an income. Say "potential business partners", and treat the people who join as business partners. Done this way, everyone you help starts with their eyes open.</p>
  <p style="margin:16px 0 0"><a class="btn btn-ghost btn-sm" href="/jetup/downloads/">{icon('i-dl2')}Download the Business Plan and the one-pager</a></p></div>
 </div></section>
 {tribe_cta('Build it <span class="lime">the right way.</span>', 'Leaders and team builders: join the MTG TRIBE to learn how to teach this honestly, one step at a time.')}'''
-    faq = [('How does the JetUP partner plan pay?', "JetUP's plan has four incomes: Lot Commission (up to $8 per lot over 10 levels), Profit Share (1.5% of Sonic AI strategy profit on each of 10 levels), the Infinity Bonus (1.5% to 7.5% on new monthly team volume) and the Global Pool. What a partner earns can be zero."),
+    faq = [('How does the JetUP partner plan pay?', "JetUP's plan has four incomes: Lot Commission (up to $8 per lot over 10 levels), Profit Share (1.5% of Sonic AI strategy profit on each of 10 levels), the Infinity Bonus (1.5% to 7.5% on new monthly team volume) and the Global Pool. Partner rewards follow real trading activity, so they are not guaranteed."),
+           ('Do I have to recruit people to earn?', "No. As a client you earn from your own strategy: when Sonic AI makes a profit, 70% of it is yours. The partner program is optional, for members who want to help more people and build faster."),
            ('How do I qualify as a JetUP partner?', "JetUP's plan says everyone needs at least $250 of active trading. A $250 own deposit opens 3 levels; from the 4th direct partner each new direct partner opens one more level, and 10 direct partners open all 10.")]
     return page(path, 'JetUP Partner Plan Explained: Lot Commission, Profit Share | MTG',
-                "JetUP's partner plan in plain English: Lot Commission over 10 levels, 1.5% Profit Share on Sonic AI at TAG Markets, the Infinity Bonus, the Global Pool, rewards and the $250 qualification rule.",
+                "JetUP's optional partner plan in plain English: no need to refer anyone to earn as a client. Lot Commission over 10 levels, 1.5% Profit Share, the Infinity Bonus, the Global Pool and the $250 rule.",
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('profitshare')])
 
 def build_promo():

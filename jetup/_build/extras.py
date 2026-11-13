@@ -9,6 +9,12 @@ import hashlib, html, json, os, re
 GLOSSARY = [
  ('2fa', '2FA', r'\b2FA\b', 'Two-factor authentication: a second code, usually from an app on your phone, that you enter when you log in.', '/jetup/bix-card/#setup'),
  ('amplify', 'Amplify (24x)', r'\bAmplify\b', "TAG Markets' setting that lets an account trade at 24 times its size. Gains and losses both get 24 times bigger.", '/jetup/how-it-works/#amplify'),
+ ('broker', 'Broker', r'\b[Bb]roker\b', 'The company that holds your trading account and carries out the trades. For JetUP members that is TAG Markets (T.M. Financials Ltd).', '/jetup/how-it-works/#who'),
+ ('copy-trading', 'Copy trading', r'\b[Cc]opy trading\b', "A strategy trades, and its trades are copied into your own account automatically. You pick the strategy, how much to put in and when to stop; you don't pick the trades.", '/jetup/how-it-works/#copy'),
+ ('drawdown', 'Drawdown (Max DD)', r'\b[Dd]rawdown\b|\bMax DD\b', "How far an account fell from a high point before it recovered, as a percentage. Myfxbook shows a strategy's deepest dip as Max DD, so you can see it before you start.", '/jetup/five-checks/#check-3'),
+ ('partner-program', 'Partner program', r'\b[Pp]artner program\b', "JetUP's optional program for members who help others start. Partners are rewarded on the trading of the people they help, up to 10 levels deep. You don't need it to earn as a client.", '/jetup/partner-plan/#optional'),
+ ('profit-share', 'Profit Share', r'\bProfit Share\b', "Partners' share of strategy profit: 1.5% on each of 10 levels, paid out of the 30% performance fee, never from client deposits.", '/jetup/partner-plan/#profit-share'),
+ ('strategy', 'Strategy', r'\b[Ss]trategy\b', 'A set of trading rules, run by a trader or an AI. On CopyX you connect a strategy and its trades are copied into your account. Sonic AI is the strategy members connect.', '/jetup/how-it-works/#copy'),
  ('cfd', 'CFD', r'\bCFDs?\b', 'Contract for difference: you trade a price movement without owning the thing itself.', '/jetup/#risk'),
  ('community-token', 'Community token', r'\b[Cc]ommunity token\b', "A code from your sponsor's team, entered when you connect Sonic AI. The training says that with it, the loss limit becomes 5%.", '/jetup/get-started/#part-5'),
  ('copyx', 'CopyX', r'\bCopyX\b', "TAG Markets' copy trading platform. It copies a strategy's trades into your account.", '/jetup/how-it-works/#copy'),
@@ -126,9 +132,11 @@ JUMP = {
                          ('part-4', 'Fund your account'), ('part-5', 'Connect Sonic AI'), ('part-6', 'Claim the promo')],
  '/jetup/how-it-works/': [('who', 'Who does what'), ('copy', 'What copying means'), ('split', 'The 70/30 split'),
                           ('amplify', 'Exposure'), ('withdraw', 'Withdrawals')],
- '/jetup/partner-plan/': [('qualify', 'The rule most people miss'), ('lot', 'Lot commission'), ('profit-share', 'Profit Share'),
+ '/jetup/partner-plan/': [('optional', 'Optional, and why'), ('qualify', 'The rule most people miss'), ('lot', 'Lot commission'), ('profit-share', 'Profit Share'),
                           ('infinity', 'Infinity Bonus'), ('pool', 'Global Pool'), ('rewards', 'Rewards')],
  '/jetup/bix-card/': [('setup', 'Five steps to your card'), ('link', 'Link it to JetUP'), ('prices', 'Prices')],
+ '/jetup/faq/': [('start', 'Start here'), ('trust', 'Trust and myths'), ('money', 'Money'), ('partners', 'Earning as a partner'),
+                 ('promo', 'Promo and codes'), ('after', 'After you join'), ('risk', 'Risk')],
 }
 # pages whose sections can be ticked: the chip shows a tick when that item is done
 JUMP_TICKS = {'/jetup/five-checks/': ('checks', 'c'), '/jetup/get-started/': ('parts', 'p')}

@@ -76,6 +76,20 @@ alcohol before and after every person"), and the capacity planning (one session 
   Build, script and posting pack: `tools/olylife-survey/`. When the answers come in, save the best ones (no names,
   no private health details) under "What people told me" below; they feed the follow-up video MTG promised in it.
 
+## MTG's own visit (14 Nov 2026)
+
+MTG went to a centre that runs sessions, saw and touched the machines and did a 30-minute session (display "30 01":
+30 minutes, intensity level 1, the lowest, where first-timers start). Confirmed in person: R350 per 30-minute session
+for people without their own machine; a glass of water before and after; sessions at least 6 hours apart. He felt no
+difference after the first session and said so plainly; he met people on their 3rd and 4th session. He is doing 4
+sessions over 4 weeks and logging them in `my-sessions.md`, for an honest testimony either way.
+
+OlyLife's official YouTube channel (OlyLife International) celebrated its 3rd anniversary about 10 months before
+14 Nov 2026 (seen by MTG), which fits the company's 2022 registration in Malaysia: about 4 years old.
+
+The first survey video (posted 14 Nov 2026 morning) had 35 views and little engagement by the same day. MTG wants an
+avatar version (him on screen asking the questions), at most 10 HeyGen credits. See `tools/olylife-survey/README.md`.
+
 ## What people told me
 
 (Empty until the survey is posted.)

@@ -17,6 +17,12 @@ distributor videos feed this file only after checking; their health claims never
 | Power | 230 V version exists for South Africa; mains lead plugs into the back of the unit | Distributor listing, video 2 |
 | Clinical trials | None published on the Tera-P90 itself (a distributor site says so) | olylife.international |
 
+**Company age:** registered in Malaysia in 2022; its official YouTube channel marked a 3rd anniversary about
+10 months before 14 Nov 2026 (seen by MTG). About 4 years old.
+
+**Confirmed in person by MTG (14 Nov 2026, a South African centre):** R350 per 30-minute session; water before and
+after; at least 6 hours between sessions; the display shows minutes and level ("30 01").
+
 ## Official websites
 
 - **olylife.com.my**: the Malaysian company's own site (registration number in the footer).

@@ -1,0 +1,194 @@
+{
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 0.156,
+  "b": 5.516,
+  "dur": 5.36,
+  "text": "Ten levels deep. But on day one, only three of them are open. Here's the rule most people miss."
+ },
+ "nlevel": {
+  "file": "v_nlevel.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 6.087,
+  "b": 15.375,
+  "dur": 9.288,
+  "text": "First, what's a level? The people you invite yourself are your direct partners. That's level one. The people they invite are level two, and so on, ten levels deep."
+ },
+ "nfloors": {
+  "file": "v_nfloors.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 15.818,
+  "b": 21.178,
+  "dur": 5.36,
+  "text": "Think of a building with ten floors, and an access card. Your card only opens the floors you've unlocked."
+ },
+ "nqual": {
+  "file": "v_nqual.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 21.476,
+  "b": 28.372,
+  "dur": 6.896,
+  "text": "With at least two hundred and fifty dollars of active trading, you qualify as a partner, and floors one to three open straight away."
+ },
+ "nfourth": {
+  "file": "v_nfourth.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 28.601,
+  "b": 38.414,
+  "dur": 9.813,
+  "text": "One, two or three direct partners? Still three floors. From your fourth direct partner, every new one opens the next floor. Ten direct partners open all ten."
+ },
+ "nlots": {
+  "file": "v_nlots.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 38.729,
+  "b": 51.115,
+  "dur": 12.386,
+  "text": "So what do open floors pay? Lot commission: two dollars per lot on level one, one dollar on levels two to four, and fifty cents on levels five to ten. Up to eight dollars per lot, from real trading, not from deposits."
+ },
+ "nshare": {
+  "file": "v_nshare.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 51.534,
+  "b": 59.71,
+  "dur": 8.176,
+  "text": "And Profit Share: one and a half percent of the strategy's profit on every open level, paid from the thirty percent share, never from client deposits."
+ },
+ "nclient": {
+  "file": "v_nclient.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 60.045,
+  "b": 68.733,
+  "dur": 8.688,
+  "text": "Good to know: the sign-up training starts you as a client, with one hundred and fifty five dollars. To earn as a partner, check the current qualification in your partner account."
+ },
+ "nrecap": {
+  "file": "v_nrecap.wav",
+  "src": "explainers/ex6v3.flac",
+  "a": 69.121,
+  "b": 75.975,
+  "dur": 6.854,
+  "text": "So that's the rule: two hundred and fifty dollars opens three levels, and from your fourth direct partner, each new one opens the next."
+ },
+ "hi": {
+  "file": "v_hi.wav",
+  "src": "o1",
+  "a": 19.005,
+  "b": 21.935,
+  "dur": 2.93,
+  "text": "Hi, I'm MTG, Your Digital Architect."
+ },
+ "n_turn2": {
+  "file": "v_n_turn2.wav",
+  "src": "explainers/ex2v2",
+  "dur": 2.255,
+  "text": "Simple, right? Now it's your turn."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "tutorial/p1v3",
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
+ },
+ "every": {
+  "file": "v_every.wav",
+  "src": "v3",
+  "a": 12.195,
+  "b": 18.075,
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it."
+ },
+ "n_save": {
+  "file": "v_n_save.wav",
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it."
+ },
+ "n_share": {
+  "file": "v_n_share.wav",
+  "dur": 2.065,
+  "text": "Share it with someone who's ready to start."
+ },
+ "n_we": {
+  "file": "v_n_we.wav",
+  "dur": 2.015,
+  "text": "We learn best when we teach others."
+ },
+ "n_slog": {
+  "file": "v_n_slog.wav",
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action."
+ },
+ "o_fin": {
+  "file": "v_o_fin.wav",
+  "src": "t3",
+  "a": 168.725,
+  "b": 171.415,
+  "dur": 2.69,
+  "text": "Quick reminder: none of this is financial advice."
+ },
+ "o_dyor": {
+  "file": "v_o_dyor.wav",
+  "src": "t3",
+  "a": 171.455,
+  "b": 173.115,
+  "dur": 1.66,
+  "text": "Always do your own research."
+ },
+ "o_thanks": {
+  "file": "v_o_thanks.wav",
+  "src": "t3",
+  "a": 173.68,
+  "b": 178.055,
+  "dur": 4.375,
+  "text": "Thank you for tuning in, and for every like, share, and comment."
+ },
+ "o_support": {
+  "file": "v_o_support.wav",
+  "src": "t3",
+  "a": 178.385,
+  "b": 180.005,
+  "dur": 1.62,
+  "text": "Your support means everything."
+ },
+ "o_massive": {
+  "file": "v_o_massive.wav",
+  "src": "t3",
+  "a": 180.46,
+  "b": 184.12,
+  "dur": 3.66,
+  "text": "And thank yourself for taking massive action today to change your future!"
+ },
+ "o_best": {
+  "file": "v_o_best.wav",
+  "src": "t3",
+  "a": 184.355,
+  "b": 188.005,
+  "dur": 3.65,
+  "text": "I wish you nothing but the best, because YOU are the best."
+ },
+ "o_im": {
+  "file": "v_o_im.wav",
+  "src": "t3",
+  "a": 188.175,
+  "b": 191.26,
+  "dur": 3.085,
+  "text": "I'm MTG, Your Digital Architect."
+ },
+ "o_see": {
+  "file": "v_o_see.wav",
+  "src": "t3",
+  "a": 191.495,
+  "b": 192.565,
+  "dur": 1.07,
+  "text": "See you on the next one."
+ },
+ "o_lgtc": {
+  "file": "v_o_lgtc.wav",
+  "src": "t3",
+  "a": 192.765,
+  "b": 193.83,
+  "dur": 1.065,
+  "text": "Let's Get This Crypto!"
+ }
+}

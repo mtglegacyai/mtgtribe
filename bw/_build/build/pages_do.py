@@ -18,7 +18,7 @@ JOIN_STEPS = [
 def p_join(here):
     st = steps([(t, f'<p>{d}</p>') for t, d in JOIN_STEPS])
     return f'''{phero("rocket", "Join step by step",
-        "Five steps from an empty phone to slot 1. Take them one at a time, and watch the tutorial for each before you tap anything.",
+        "Three stages, five steps, from an empty phone to slot 1. Take them one at a time, and watch the tutorial for each before you tap anything.",
         [("badge-check", "0.001 BTC once-off"), ("clock", "About 30 minutes"), ("smartphone", "All on your phone")])}
 {sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">What you need</h2>{checks(JOIN_NEEDS)}
 <p class="fine">On the recording day of Tutorial 1, Bitcoin was about $67,000, so 0.001 BTC was about $67. With fees and a little BNB, MTG suggested preparing <b>about $76, about R1,300</b>. Prices move every minute: <a class="inl" href="{A('dashboard/tools/bitcoin-to-rand/', here)}">check today's price in rand</a>.</p>

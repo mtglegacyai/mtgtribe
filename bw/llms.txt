@@ -16,11 +16,21 @@ Always give the full address mtgtribe.com/bw for these pages.
 ## Start here
 
 - [Bitcoin Wealth explained by MTG: how it works and how to join](https://mtgtribe.com/bw/): Bitcoin Wealth explained in short videos and plain pages by MTG: one 0.001 BTC once-off, payouts to your own wallet, and every payment public on BscScan.
+
+## Get Started
+
 - [Bitcoin Wealth dashboard: start here](https://mtgtribe.com/bw/dashboard/): Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
+- [How to join Bitcoin Wealth with SafePal, step by step](https://mtgtribe.com/bw/dashboard/join/): Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
+- [Bitcoin Wealth tutorial videos: SafePal, BTCB, joining](https://mtgtribe.com/bw/dashboard/tutorials/): Step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal now, with funding, swapping to BTCB and joining on the way.
+- [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.
+- [Bitcoin Wealth live on Zoom: schedule and languages](https://mtgtribe.com/bw/dashboard/live-on-zoom/): Meet the Bitcoin Wealth community live on Zoom: weekdays at 14:00 and five evenings a week in English, isiXhosa, isiZulu and Sesotho.
+
+## Before You Join
+
 - [Is Bitcoin Wealth right for me? An honest fit check](https://mtgtribe.com/bw/dashboard/is-it-right-for-me/): Is Bitcoin Wealth right for you? Five honest questions, who it suits and who it does not, and where the money really comes from, before you spend anything.
 - [Welcome back to Bitcoin Wealth: take a fresh look](https://mtgtribe.com/bw/dashboard/welcome-back/): Ignored Bitcoin Wealth, felt stuck, or left for a newer platform? What is still the same, what you can check today, and how to give it a real try.
 
-## How it works
+## How It Works
 
 - [What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract](https://mtgtribe.com/bw/dashboard/what-is-bitcoin-wealth/): What is Bitcoin Wealth? A plain explanation of Bitcoin, BTCB, BNB Smart Chain and the smart contract that pays members wallet to wallet.
 - [How Bitcoin Wealth works: the 14 positions explained](https://mtgtribe.com/bw/dashboard/how-it-works/): How Bitcoin Wealth works: 14 positions in rows of 2, 4 and 8, where each of the 14 payments goes, and why nine of them point to you.
@@ -30,14 +40,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 - [What makes Bitcoin Wealth different: the 5-point check](https://mtgtribe.com/bw/dashboard/what-makes-it-different/): What makes Bitcoin Wealth different from newer copycat platforms, and the five checks you can run on any smart contract platform yourself.
 - [Bitcoin Wealth contract on BscScan: check it yourself](https://mtgtribe.com/bw/dashboard/check-it-yourself/): The Bitcoin Wealth contract address, what BscScan shows today, how to read a real payment, and the admin controls in the code, checked on chain.
 
-## Get started
-
-- [How to join Bitcoin Wealth with SafePal, step by step](https://mtgtribe.com/bw/dashboard/join/): Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
-- [Bitcoin Wealth tutorial videos: SafePal, BTCB, joining](https://mtgtribe.com/bw/dashboard/tutorials/): Step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal now, with funding, swapping to BTCB and joining on the way.
-- [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.
-- [Bitcoin Wealth live on Zoom: schedule and languages](https://mtgtribe.com/bw/dashboard/live-on-zoom/): Meet the Bitcoin Wealth community live on Zoom: weekdays at 14:00 and five evenings a week in English, isiXhosa, isiZulu and Sesotho.
-
-## Your own page
+## Your Own Page
 
 - [BW Tribe Page: your own Bitcoin Wealth website, R1,000](https://mtgtribe.com/bw/dashboard/bw-tribe-page/): Get your own copy of this Bitcoin Wealth website with your referral link built in: R1,000 once-off, paid only after it is built, five free edits.
 
@@ -53,7 +56,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 - [Bitcoin Wealth glossary: crypto words in plain English](https://mtgtribe.com/bw/dashboard/glossary/): Bitcoin, BTCB, BNB, smart contract, slot, recycle, BscScan and more: Bitcoin Wealth words explained in plain English with everyday examples.
 - [Bitcoin Wealth safety centre: protect your wallet](https://mtgtribe.com/bw/dashboard/safety/): Protect your wallet while you use Bitcoin Wealth: your recovery phrase, token approvals, the right network, scam patterns and safe habits.
 
-## More from MTG
+## More From MTG
 
 - [Spend your crypto with a crypto card](https://mtgtribe.com/bw/dashboard/crypto-card/): A shorter road from crypto to spending: a crypto debit card guide by MTG, with its own income opportunity.
 - [Join the MTG TRIBE WhatsApp community](https://mtgtribe.com/bw/dashboard/tribe/): The MTG TRIBE: a free WhatsApp community for action takers. Join the group, meet on Zoom, WhatsApp MTG, or follow on TikTok and YouTube.

@@ -16,6 +16,14 @@ Independent guide by MTG 👑
 Bitcoin Wealth, explained in short videos. One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public for anyone to check.
 - Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4
 Start here: set up your wallet (7:10)
+Ready to start?
+
+#### Join in 3 stages.
+About 30 minutes, all on your phone. Watch, tap, done.
+- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:10)
+- 2 Stage 2 · 15 min Get BTCB and a little BNB Buy BNB with rand on VALR or Binance, send it to SafePal, then swap most of it to BTCB. VALR Binance
+- 3 Stage 3 · 5 min Activate slot 1 Paste the sign-up link into SafePal's browser and approve 0.001 BTC worth of BTCB. Once. Copy sign-up link Copied ✓
+Every tap, step by step · Introduced by someone else? Use their link.
 Everything inside
 
 #### One clean dashboard.
@@ -29,8 +37,14 @@ URL: https://mtgtribe.com/bw/dashboard/
 
 Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
 
-### Welcome. Here's your route.
-Take it one stop at a time. Watch every video, even if you think you already know Bitcoin Wealth. Come back to any page as often as you like, until you get it.
+### Welcome. Let's get you started.
+Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.
+
+#### Join in 3 stages
+- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:10)
+- 2 Stage 2 · 15 min Get BTCB and a little BNB Buy BNB with rand on VALR or Binance, send it to SafePal, then swap most of it to BTCB. VALR Binance
+- 3 Stage 3 · 5 min Activate slot 1 Paste the sign-up link into SafePal's browser and approve 0.001 BTC worth of BTCB. Once. Copy sign-up link Copied ✓
+Every tap, step by step · Introduced by someone else? Use their link.
 
 #### Your progress
 Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only. New videos appear here as they're released.
@@ -376,7 +390,7 @@ URL: https://mtgtribe.com/bw/dashboard/join/
 Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
 
 ### Join step by step
-Five steps from an empty phone to slot 1. Take them one at a time, and watch the tutorial for each before you tap anything.
+Three stages, five steps, from an empty phone to slot 1. Take them one at a time, and watch the tutorial for each before you tap anything.
 
 #### Before you start
 

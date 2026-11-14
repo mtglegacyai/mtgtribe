@@ -85,31 +85,33 @@ def iso_dur(s):
 
 # side menu: key, path (relative to /bw/), label, subtitle, icon, group
 NAV = [
-    ('home', 'dashboard/', 'Welcome', 'Your route and progress', 'compass', 'Start here'),
-    ('fit', 'dashboard/is-it-right-for-me/', 'Is it right for me?', 'An honest fit check', 'scale', 'Start here'),
-    ('back', 'dashboard/welcome-back/', 'Welcome back', 'Left, stuck, or never looked?', 'heart-handshake', 'Start here'),
-    ('what', 'dashboard/what-is-bitcoin-wealth/', 'What is Bitcoin Wealth?', 'Bitcoin, BTCB, smart contract', 'bitcoin', 'How it works'),
-    ('hiw', 'dashboard/how-it-works/', 'The 14 positions', '2, 4, 8 and where each pays', 'network', 'How it works'),
-    ('slots', 'dashboard/12-slots/', 'The 12 slots', '0.001 BTC, once-off', 'layers', 'How it works'),
-    ('pool', 'dashboard/recycling-royal-pool/', 'Recycling and Royal Pool', 'After your first cycle', 'refresh-cw', 'How it works'),
-    ('stokvel', 'dashboard/stokvel/', 'Better than a stokvel?', 'Where it wins, where it stops', 'users', 'How it works'),
-    ('diff', 'dashboard/what-makes-it-different/', 'What makes it different', 'The original, 5 checks', 'sparkles', 'How it works'),
-    ('proof', 'dashboard/check-it-yourself/', 'Check it yourself', 'Every payment is public', 'scan-search', 'How it works'),
-    ('join', 'dashboard/join/', 'Join step by step', 'Wallet, BNB, BTCB, join', 'rocket', 'Get started'),
-    ('tut', 'dashboard/tutorials/', 'Tutorial videos', 'Follow along, one tap at a time', 'circle-play', 'Get started'),
-    ('exp', 'dashboard/explainers/', 'Explainer videos', 'How it works, in pictures', 'film', 'Get started'),
-    ('zoom', 'dashboard/live-on-zoom/', 'Live on Zoom', '5 evenings, 4 languages', 'video', 'Get started'),
-    ('page', 'dashboard/bw-tribe-page/', 'Your BW Tribe Page', 'Your own copy, R1,000 once-off', 'globe', 'Your own page'),
-    ('c-btc', 'dashboard/tools/bitcoin-to-rand/', 'Bitcoin to Rand Converter', 'Live price: BTC, USD, ZAR', 'bitcoin', 'Tools'),
+    # Get Started first (MTG, 14 Nov 2026: "Most people will never take time to go through everything before they get started,
+    # all they want to do is join"). Menu names in Title Case (MTG, same day).
+    ('home', 'dashboard/', 'Welcome', 'Start here: join in 3 stages', 'compass', 'Get Started'),
+    ('join', 'dashboard/join/', 'Join Step-By-Step', 'Wallet, BNB, BTCB, slot 1', 'rocket', 'Get Started'),
+    ('tut', 'dashboard/tutorials/', 'Tutorial Videos', 'Follow along, one tap at a time', 'circle-play', 'Get Started'),
+    ('exp', 'dashboard/explainers/', 'Explainer Videos', 'How it works, in pictures', 'film', 'Get Started'),
+    ('zoom', 'dashboard/live-on-zoom/', 'Live On Zoom', '5 evenings, 4 languages', 'video', 'Get Started'),
+    ('fit', 'dashboard/is-it-right-for-me/', 'Is It Right For Me?', 'An honest fit check', 'scale', 'Before You Join'),
+    ('back', 'dashboard/welcome-back/', 'Welcome Back', 'Left, stuck, or never looked?', 'heart-handshake', 'Before You Join'),
+    ('what', 'dashboard/what-is-bitcoin-wealth/', 'What Is Bitcoin Wealth?', 'Bitcoin, BTCB, smart contract', 'bitcoin', 'How It Works'),
+    ('hiw', 'dashboard/how-it-works/', 'The 14 Positions', '2, 4, 8 and where each pays', 'network', 'How It Works'),
+    ('slots', 'dashboard/12-slots/', 'The 12 Slots', '0.001 BTC, once-off', 'layers', 'How It Works'),
+    ('pool', 'dashboard/recycling-royal-pool/', 'Recycling And Royal Pool', 'After your first cycle', 'refresh-cw', 'How It Works'),
+    ('stokvel', 'dashboard/stokvel/', 'Better Than A Stokvel?', 'Where it wins, how it is funded', 'users', 'How It Works'),
+    ('diff', 'dashboard/what-makes-it-different/', 'What Makes It Different', 'The original, 5 checks', 'sparkles', 'How It Works'),
+    ('proof', 'dashboard/check-it-yourself/', 'Check It Yourself', 'Every payment is public', 'scan-search', 'How It Works'),
+    ('page', 'dashboard/bw-tribe-page/', 'Your BW Tribe Page', 'Your own copy, R1,000 once-off', 'globe', 'Your Own Page'),
+    ('c-btc', 'dashboard/tools/bitcoin-to-rand/', 'Bitcoin To Rand Converter', 'Live price: BTC, USD, ZAR', 'bitcoin', 'Tools'),
     ('c-slot', 'dashboard/tools/slot-calculator/', 'Slot Calculator', 'Each slot in BTC and rand', 'calculator', 'Tools'),
     ('c-halv', 'dashboard/tools/halving-countdown/', 'Halving Countdown', 'Live block height', 'hourglass', 'Tools'),
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers', 'circle-help', 'Help'),
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
-    ('safe', 'dashboard/safety/', 'Safety centre', 'Protect your wallet', 'shield-check', 'Help'),
-    ('card', 'dashboard/crypto-card/', 'Crypto card', 'Spend your crypto', 'credit-card', 'More from MTG'),
-    ('tribe', 'dashboard/tribe/', 'Join the MTG TRIBE', 'WhatsApp community', 'message-circle', 'More from MTG'),
+    ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
+    ('card', 'dashboard/crypto-card/', 'Crypto Card', 'Spend your crypto', 'credit-card', 'More From MTG'),
+    ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG'),
 ]
-EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More from MTG')]
+EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG')]
 NAVD = {n[0]: n for n in NAV + EXTRA}
 
 # Bitcoin Wealth programme facts (from the programme's own deck, as taught on bitcoinwealthpays.com)

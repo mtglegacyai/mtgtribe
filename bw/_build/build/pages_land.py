@@ -95,17 +95,36 @@ def scorecard():
  </div>"""
 
 
+def start3(here, head=True):
+    """the joiner's fast lane: three stages (the Join page breaks them into five steps)"""
+    v = V['t1']
+    st = [
+        ('wallet', 'Stage 1', '10 min', 'Set up your wallet', 'SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB.',
+         f'<button type="button" class="btn btn-gold btn-sm" data-play="t1">{ic("play")}<span class="lbl">Watch Tutorial 1 ({mmss(v["secs"])})</span></button>'),
+        ('coins', 'Stage 2', '15 min', 'Get BTCB and a little BNB', 'Buy BNB with rand on VALR or Binance, send it to SafePal, then swap most of it to BTCB.',
+         valr_btn(label='VALR') + binance_btn(label='Binance')),
+        ('rocket', 'Stage 3', '5 min', 'Activate slot 1', 'Paste the sign-up link into SafePal\'s browser and approve 0.001 BTC worth of BTCB. Once.',
+         copy_btn('signup', 'Copy sign-up link', size='sm', ring=False)),
+    ]
+    lis = ''.join(f'<li class="stg glass"><span class="sn">{i + 1}</span><div class="sbody"><p class="sk">{ic(icn)}<b>{k}</b> · {t}</p>'
+                  f'<h3>{h}</h3><p>{d}</p><div class="btn-row">{acts}</div></div></li>' for i, (icn, k, t, h, d, acts) in enumerate(st))
+    hd = ('<div class="sec-head center"><p class="eyebrow">Ready to start?</p><h2 class="h2">Join in <span class="hl">3 stages.</span></h2>'
+          '<p class="lead">About 30 minutes, all on your phone. Watch, tap, done.</p></div>') if head else ''
+    return (f'{hd}<ol class="stages" data-stages>{lis}</ol>'
+            f'<p class="stages-more"><a class="inl" href="{A("dashboard/join/", here)}">Every tap, step by step</a> · Introduced by someone else? Use their link.</p>')
+
+
 def landing():
     """Minimal and sleek (MTG, 14 Nov 2026: "minimal, sleek, and the rest of the info, videos, etc must be in a clean dashboard")."""
     here = ''
     import core as _c; _c._used.clear()
     tiles = [
-        ('network', 'How it works', 'The 14 positions and the 12 slots, filling live.', 'dashboard/how-it-works/'),
-        ('rocket', 'Join step by step', 'SafePal, BNB, BTCB, slot 1. One tap at a time.', 'dashboard/join/'),
-        ('scan-search', 'Check it yourself', 'The contract and every payment, on BscScan.', 'dashboard/check-it-yourself/'),
-        ('users', 'Better than a stokvel?', 'The honest scorecard, side by side.', 'dashboard/stokvel/'),
-        ('calculator', 'Free live tools', 'Bitcoin to rand, every slot in rand, the halving.', 'dashboard/tools/bitcoin-to-rand/'),
-        ('video', 'Live on Zoom', 'Five evenings a week, in four languages.', 'dashboard/live-on-zoom/'),
+        ('network', 'How It Works', 'The 14 positions and the 12 slots, filling live.', 'dashboard/how-it-works/'),
+        ('rocket', 'Join Step-By-Step', 'SafePal, BNB, BTCB, slot 1. One tap at a time.', 'dashboard/join/'),
+        ('scan-search', 'Check It Yourself', 'The contract and every payment, on BscScan.', 'dashboard/check-it-yourself/'),
+        ('users', 'Better Than A Stokvel?', 'The honest scorecard, side by side.', 'dashboard/stokvel/'),
+        ('calculator', 'Free Live Tools', 'Bitcoin to rand, every slot in rand, the halving.', 'dashboard/tools/bitcoin-to-rand/'),
+        ('video', 'Live On Zoom', 'Five evenings a week, in four languages.', 'dashboard/live-on-zoom/'),
     ]
     tl = ''.join(f'<a class="tile" href="{A(p, here)}">{ped(i)}<span class="tt"><b>{t}</b><small>{d}</small></span>{ic("arrow-up-right", "ic go")}</a>'
                  for i, t, d, p in tiles)
@@ -121,19 +140,25 @@ def landing():
 </div></header>
 <main id="main" tabindex="-1">
 <section class="lhero">
- <div class="lbg" aria-hidden="true"><i class="beam"></i><i class="beam b2"></i><i class="floor"></i></div>
+ <div class="lbg" aria-hidden="true"><canvas data-dust></canvas><i class="beam"></i><i class="beam b2"></i><i class="floor"></i></div>
  <div class="wrap lhero-in">
   <div class="lcopy">
    <p class="pill-eye"><i></i>Independent guide by MTG 👑</p>
-   <h1 class="display">Collect Bitcoin.<br><span class="hl">Together.</span></h1>
+   <h1 class="display"><span class="ln"><span>Collect</span></span> <span class="ln"><span>Bitcoin.</span></span> <span class="ln"><span class="hl">Together.</span></span></h1>
    <p class="lede">Bitcoin Wealth, explained in short videos. One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public for anyone to check.</p>
    <div class="ctas">
-    <button type="button" class="btn btn-gold btn-lg ring" data-play="t1">{ic('play')}<span class="lbl">Watch: start here</span></button>
-    <a class="btn btn-ghost btn-lg" href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span class="lbl">Enter the dashboard</span></a>
+    <a class="btn btn-gold btn-lg ring" href="#start">{ic('rocket')}<span class="lbl">Get started</span></a>
+    <button type="button" class="btn btn-ghost btn-lg" data-play="t1">{ic('play')}<span class="lbl">Watch first ({mmss(V['t1']['secs'])})</span></button>
    </div>
+   <p class="livep" data-livep hidden><i></i><span>Slot 1 today: <b data-k="z">R0</b> <small>0.001 BTC at the live price</small></span></p>
    <div class="chips mini">{chip('users', f'{MEMBERS} member IDs')}{chip('badge-check', '0.001 BTC once-off')}{chip('info', 'Independent, not official')}</div>
   </div>
   <div class="lvis">
+   <span class="coin3d fl1" aria-hidden="true"><i class="cf"><b>₿</b></i><i class="cb"><b>₿</b></i></span>
+   <span class="coin3d fl2" aria-hidden="true"><i class="cf"><b>₿</b></i><i class="cb"><b>₿</b></i></span>
+   <span class="fchip c1" aria-hidden="true">{ic('badge-check')}0.001 BTC once-off</span>
+   <span class="fchip c2" aria-hidden="true">{ic('wallet')}Paid wallet to wallet</span>
+   <span class="fchip c3" aria-hidden="true">{ic('scan-search')}Public on BscScan</span>
    <div class="hphone" data-tilt>
     <div class="phone-wrap"><figure class="vid" data-vid="t1"><div class="vbox">
      <img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 70vw, 300px" width="720" height="1280" decoding="async" fetchpriority="high" alt="Tutorial 1: set up your SafePal wallet for Bitcoin Wealth">
@@ -146,8 +171,10 @@ def landing():
 </section>
 <div class="tape" aria-label="Bitcoin Wealth in short"><div class="tape-in">{tape_one}<span aria-hidden="true" class="dup">{tape_one}</span></div></div>
 
+<section class="sec lsec" id="start"><div class="wrap">{start3(here)}</div></section>
+
 <section class="sec lsec"><div class="wrap">
- <div class="sec-head center"><p class="eyebrow">Everything inside</p><h2 class="h2 display2">One clean dashboard.</h2>
+ <div class="sec-head center"><p class="eyebrow">Everything inside</p><h2 class="h2">One clean <span class="hl">dashboard.</span></h2>
  <p class="lead">Every video, page and tool lives in the dashboard, in the right order. Start anywhere.</p></div>
  <div class="tiles">{tl}</div>
  <div class="center-row"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span class="lbl">Enter the dashboard</span></a></div>
@@ -173,7 +200,7 @@ def landing():
 <nav class="bnav" aria-label="Quick menu">
  <a href="{A('', here)}" aria-current="page">{ic('house')}<span>Home</span></a>
  <a href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span>Dashboard</span></a>
- <button type="button" data-play="t1">{ic('play')}<span>Start</span></button>
+ <a href="#start">{ic('rocket')}<span>Start</span></a>
  <button type="button" data-copy="signup">{ic('user-plus')}<span>Sign up</span><span class="copied" aria-live="polite">Copied ✓</span></button>
 </nav>
 {overlays(here)}"""

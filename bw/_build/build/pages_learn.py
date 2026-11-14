@@ -1,6 +1,6 @@
 """Dashboard pages: Start here + How it works (Bitcoin Wealth)."""
 from core import *
-from pages_land import matrix, flow_stage, why_grid, scorecard
+from pages_land import matrix, flow_stage, why_grid, scorecard, start3
 
 
 def phero(icon, title, lead, chips_=(), pcls='', extra=''):
@@ -45,9 +45,10 @@ def p_home(here):
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
         ('Teach someone else', f'<p>We learn best when we teach others. Share this guide, or get your own <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">BW Tribe Page</a> with your link inside.</p>'),
     ])
-    return f'''{phero("compass", "Welcome. Here's your route.",
-        "Take it one stop at a time. Watch every video, even if you think you already know Bitcoin Wealth. Come back to any page as often as you like, until you get it.",
+    return f'''{phero("compass", "Welcome. Let's get you started.",
+        "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.",
         [("users", f"{MEMBERS} member IDs ({CHECKED})"), ("badge-check", "0.001 BTC once-off"), ("info", "Independent, not official")])}
+{sec(start3(here, head=False), "Join in 3 stages", id="start")}
 {sec(f"""<div class="panel pad prog-panel glass"><div class="prog">
  <div class="pring" data-ring><svg viewBox="0 0 118 118" aria-hidden="true"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#3fc11f"/><stop offset="1" stop-color="#ffa101"/></linearGradient></defs><circle class="bg" cx="59" cy="59" r="50"/><circle class="fg" cx="59" cy="59" r="50"/></svg>
  <div class="val"><b data-k="n">0</b><small>of {NV} watched</small></div></div>

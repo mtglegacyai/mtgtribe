@@ -87,6 +87,7 @@ the voice bank).
 | No experience needed | Copy trading: you don't pick trades or read charts; you choose the strategy, how much to put in and when to stop; watch every trade in MT5 | FAQ, home FAQ, how-it-works #copy | site; explainer #9 |
 | No promised return | No fixed, daily or guaranteed return; a promise of one is a red flag | FAQ, partner plan | JetUP business plan |
 | Who holds the money | Your own MT5 account at TAG Markets, in your name; JetUP does not hold it; MTG never handles it; never send money to a person | FAQ, 5 checks | site |
+| Insolvency cover | JetUP's product presentation lists broker insolvency cover of up to $1M in total (aggregate, not per client); trading losses are not covered. Always quote it as JetUP's claim, with both limits | FAQ "Who holds my money?" | JetUP product presentation and full presentation (Downloads); MTG, 14 Nov 2026 |
 | Phone only | The whole start works on a phone (MTG's step-by-step videos are phone recordings, KYC face scan, MT5 app) | FAQ | MTG's recordings |
 | South Africa | TM Financials SA (Pty) Ltd, FSCA authorised, FSP 55237, for marketing services | FAQ, how-it-works, 5 checks | FSCA register |
 | Fees (Sonic AI) | No management fee, no join fee; 30% of profit only when there is a profit; network fee when sending crypto; withdrawal fees and limits are the broker's terms. Do not say "no monthly fee" (JetUP membership fees not confirmed) | FAQ | CopyX screen; JetUP one-pager |

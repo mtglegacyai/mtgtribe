@@ -1,0 +1,260 @@
+{
+ "n_in": {
+  "file": "v_n_in.wav",
+  "src": "czv3",
+  "a": 0.206,
+  "b": 4.903,
+  "dur": 4.697,
+  "text": "In this video, I'll show you how to find your virtual CoinZoom Visa debit card in the app.",
+  "lufs_in": -17.6
+ },
+ "n_three": {
+  "file": "v_n_three.wav",
+  "src": "czv3",
+  "a": 5.326,
+  "b": 9.813,
+  "dur": 4.487,
+  "text": "Three quick steps: tap Spend, tap Reveal, and double tap to confirm.",
+  "lufs_in": -19.2
+ },
+ "n_once": {
+  "file": "v_n_once.wav",
+  "src": "czv3",
+  "a": 9.883,
+  "b": 14.761,
+  "dur": 4.878,
+  "text": "Once your virtual crypto debit card is activated, it lives right inside your CoinZoom app.",
+  "lufs_in": -17.4
+ },
+ "n_s1": {
+  "file": "v_n_s1.wav",
+  "src": "czv3",
+  "a": 15.174,
+  "b": 19.418,
+  "dur": 4.244,
+  "text": "Step one. Log in, and tap the Spend tab at the bottom of the screen.",
+  "lufs_in": -18.5
+ },
+ "n_s1b": {
+  "file": "v_n_s1b.wav",
+  "src": "czv3",
+  "a": 19.398,
+  "b": 20.917,
+  "dur": 1.519,
+  "text": "This opens your card screen.",
+  "lufs_in": -17.5
+ },
+ "n_s2": {
+  "file": "v_n_s2.wav",
+  "src": "czv3",
+  "a": 20.977,
+  "b": 25.133,
+  "dur": 4.156,
+  "text": "Step two. Make sure Virtual Card is selected, then tap Reveal.",
+  "lufs_in": -18.2
+ },
+ "n_s3": {
+  "file": "v_n_s3.wav",
+  "src": "czv3",
+  "a": 25.649,
+  "b": 29.21,
+  "dur": 3.561,
+  "text": "Step three. The app asks you to confirm it's really you.",
+  "lufs_in": -20.5
+ },
+ "n_s3b": {
+  "file": "v_n_s3b.wav",
+  "src": "czv3",
+  "a": 29.19,
+  "b": 30.562,
+  "dur": 1.372,
+  "text": "Double tap to confirm.",
+  "lufs_in": -20.8
+ },
+ "n_there": {
+  "file": "v_n_there.wav",
+  "src": "czv3",
+  "a": 30.726,
+  "b": 35.852,
+  "dur": 5.126,
+  "text": "And there it is! Your card number, cardholder name, expiry date and CVV.",
+  "lufs_in": -15.7
+ },
+ "n_copy": {
+  "file": "v_n_copy.wav",
+  "src": "czv3",
+  "a": 36.071,
+  "b": 38.205,
+  "dur": 2.134,
+  "text": "Tap Copy to copy your card number.",
+  "lufs_in": -20.6
+ },
+ "n_keep": {
+  "file": "v_n_keep.wav",
+  "src": "czv3",
+  "a": 38.418,
+  "b": 42.025,
+  "dur": 3.607,
+  "text": "Keep these details private, and only enter them when you pay online.",
+  "lufs_in": -17.3
+ },
+ "n_recap": {
+  "file": "v_n_recap.wav",
+  "src": "czv3",
+  "a": 42.301,
+  "b": 43.103,
+  "dur": 0.802,
+  "text": "Let's recap.",
+  "lufs_in": -17.9
+ },
+ "n_recap2": {
+  "file": "v_n_recap2.wav",
+  "src": "czv3",
+  "a": 43.239,
+  "b": 46.987,
+  "dur": 3.748,
+  "text": "You tapped Spend, tapped Reveal, and double tapped to confirm.",
+  "lufs_in": -18.2
+ },
+ "hi": {
+  "file": "v_hi.wav",
+  "src": "t1.mp3",
+  "a": 17.61,
+  "b": 21.215,
+  "dur": 3.605,
+  "text": "Hi, my name is MTG, Your Digital Architect.",
+  "lufs_in": -20.4
+ },
+ "n_thanks": {
+  "file": "v_n_thanks.wav",
+  "src": "p1v2.mp3",
+  "a": 0.28,
+  "b": 2.385,
+  "dur": 2.105,
+  "text": "Thank you for taking the time to watch this video.",
+  "lufs_in": -21.8
+ },
+ "takeyour": {
+  "file": "v_takeyour.wav",
+  "src": "t1.mp3",
+  "a": 35.595,
+  "b": 36.505,
+  "dur": 0.91,
+  "text": "Take your time.",
+  "lufs_in": -20.3
+ },
+ "pause": {
+  "file": "v_pause.wav",
+  "src": "t1.mp3",
+  "a": 36.475,
+  "b": 39.04,
+  "dur": 2.565,
+  "text": "You can pause any step and follow along with me.",
+  "lufs_in": -20.8
+ },
+ "n_turn2": {
+  "file": "v_n_turn2.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.255,
+  "text": "Simple, right? Now it's your turn.",
+  "lufs_in": -18.2
+ },
+ "every": {
+  "file": "v_every.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it.",
+  "lufs_in": -19.9
+ },
+ "n_save": {
+  "file": "v_n_save.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it.",
+  "lufs_in": -18.6
+ },
+ "n_share": {
+  "file": "v_n_share.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.065,
+  "text": "Share it with someone who's ready to start.",
+  "lufs_in": -18.8
+ },
+ "n_we": {
+  "file": "v_n_we.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.015,
+  "text": "We learn best when we teach others.",
+  "lufs_in": -18.8
+ },
+ "n_slog": {
+  "file": "v_n_slog.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action.",
+  "lufs_in": -20.6
+ },
+ "o_fin": {
+  "file": "v_o_fin.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.69,
+  "text": "Quick reminder: none of this is financial advice.",
+  "lufs_in": -19.1
+ },
+ "o_dyor": {
+  "file": "v_o_dyor.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.66,
+  "text": "Always do your own research.",
+  "lufs_in": -17.2
+ },
+ "o_thanks": {
+  "file": "v_o_thanks.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 4.375,
+  "text": "Thank you for tuning in, and for every like, share, and comment.",
+  "lufs_in": -19.6
+ },
+ "o_support": {
+  "file": "v_o_support.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.62,
+  "text": "Your support means everything.",
+  "lufs_in": -19.2
+ },
+ "o_massive": {
+  "file": "v_o_massive.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.66,
+  "text": "And thank yourself for taking massive action today to change your future!",
+  "lufs_in": -17.7
+ },
+ "o_best": {
+  "file": "v_o_best.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.65,
+  "text": "I wish you nothing but the best, because YOU are the best.",
+  "lufs_in": -20.3
+ },
+ "o_im": {
+  "file": "v_o_im.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.085,
+  "text": "I'm MTG, Your Digital Architect.",
+  "lufs_in": -18.8
+ },
+ "o_see": {
+  "file": "v_o_see.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.07,
+  "text": "See you on the next one.",
+  "lufs_in": -17.0
+ },
+ "o_lgtc": {
+  "file": "v_o_lgtc.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.065,
+  "text": "Let's Get This Crypto!",
+  "lufs_in": -22.1
+ }
+}

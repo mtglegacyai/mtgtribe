@@ -10,99 +10,16 @@ URL: https://mtgtribe.com/bw/
 
 Bitcoin Wealth explained in short videos and plain pages by MTG: one 0.001 BTC once-off, payouts to your own wallet, and every payment public on BscScan.
 
-₿ ₿ The original Bitcoin Wealth, explained by MTG
+Independent guide by MTG 👑
 
-### Collect Bitcoin together. Check every payment yourself.
-Short videos and plain pages show you exactly how Bitcoin Wealth works: one once-off entry of 0.001 BTC, payouts that land in your own wallet, and a public record anyone can read. Nothing promised. Everything checkable.
-Free to learn. No sign-up needed to browse.
-Read from the Bitcoin Wealth contract on 14 November 2026. Check it yourself.
-See it before you believe it
-
-#### One payment, start to finish
-This is the whole idea in four moves. Tap any step.
-- 1 A member activates slot 1 They send 0.001 BTC worth of BTCB from their own wallet. Once.
-- 2 The smart contract splits it Code on BNB Smart Chain follows fixed rules, in the same transaction.
-- 3 It lands in a member's own wallet No withdraw button, no request, no office. It simply arrives.
-- 4 Anyone can check it Every payment is public on BscScan, forever. Don't trust. Verify.
-Every payout is another member's slot payment, moved wallet to wallet. No product, trading or mining: the community grows it together.
-The engine
-
-#### 14 positions. Watch them fill.
-Below you sit 2, then 4, then 8 positions. When a member takes a position, their payment goes straight out by fixed rules. Here's where all fourteen go.
-14 positions: 2, then 4, then 8
-Each position is one member paying the slot price, and each one produces one payment. Nine of the fourteen point to you: 6 to your wallet, 2 buy your next slot, 1 recycles you.
-Why people come home
-
-#### What Bitcoin Wealth gets right
-Members who tried the newer, shinier platforms keep coming back here, MTG included. These are the reasons, and every one can be checked.
-
-##### Paid to your own wallet
-No dashboard balance, no withdraw button, no admin to ask. Payouts land in the wallet only you control.
-
-##### One entry, once
-0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.
-
-##### Every payment public
-The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.
-
-##### Priced in Bitcoin
-Slots and payouts are in BTCB, Bitcoin's value on BNB Smart Chain. Not points, not a made-up coin.
-
-##### No bank, no treasurer
-No bank in the middle and no treasurer holding the pot in a personal account. Code follows the same rules for everyone.
-
-##### People, not just code
-Live Zoom five evenings a week, in four languages, plus a WhatsApp community that answers questions.
-The honest scorecard
-
-#### Better than a stokvel?
-In four ways, yes. And here's how each one is funded.
-Wherever you're coming from
-
-#### Ignored it? Tried it? Left it?
-
-##### You scrolled past it
-Fair. There's a lot of noise. Give it ten minutes with clear eyes: look at how the money moves, then check it on the blockchain.
-
-##### You tried, and felt stuck
-Your first two business partners can take longer than you expect. This time, learn it properly, share it honestly, and give it time.
-
-##### You left for something newer
-Welcome home. Bitcoin Wealth is still here, still running, with every payment on chain. Compare it with anything, using the same five checks.
-Tutorial 1 of 3
-
-#### Start with your own wallet
-MTG sets up SafePal on his phone, one tap at a time: the official download, two backups, and a clean wallet with only BNB, USDT and BTCB.
-- Download from the official website, never a link in a message
-- Back up two ways: cloud and paper
-- Keep only the three coins Bitcoin Wealth needs
-Next: buy on VALR or Binance, swap to BTCB, and join. Those tutorials are on the way.
+### Collect Bitcoin. Together.
+Bitcoin Wealth, explained in short videos. One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public for anyone to check.
 - Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4
-For members who share
+Start here: set up your wallet (7:10)
+Everything inside
 
-#### Get this whole website, with your link inside
-Your BW Tribe Page is a copy of this guide with your name, your photo and your own Bitcoin Wealth link built in. One link to send to every potential business partner. It teaches, answers and shows the tutorials for you, day and night.
-- Your address: mtgtribe.com/bw/yourname or bitcoinwealthpays.com/yourname
-- Every sign-up button carries your referral link
-- Five free edits to make it yours
-There's a traffic source that puts pages like yours in front of people who already watch crypto ads all day, and it pays an income of its own. No guarantee they join. Owners get the full story, the tutorials and the explainers.
-
-#### Your route through Bitcoin Wealth
-Every stop opens an exact page, video or tool. Start at stop 1 and follow the line.
-- 1 Start here Your route, an honest fit check, and a word for anyone who left or got stuck. Welcome Is it right for me? Welcome back
-- 2 Understand Bitcoin Wealth Bitcoin, BTCB and the smart contract, in plain words. What is Bitcoin Wealth?
-- 3 See how it pays The 14 positions, the 12 slots, recycling and the Royal Pool. The 14 positions The 12 slots Recycling and Royal Pool
-- 4 Compare it honestly Against a stokvel, against the newer copycats, and against your own checks. Better than a stokvel? What makes it different Check it yourself
-- 5 Join step by step Set up SafePal, buy on VALR or Binance, swap to BTCB, then activate slot 1. Set up SafePal Join step by step
-- 6 Run your numbers Live Bitcoin price in rand, every slot in rand, and the halving countdown. Bitcoin to Rand Slot Calculator Halving Countdown
-- 7 Meet us live Zoom five evenings a week, in four languages. Live on Zoom
-- 8 Get your own BW Tribe Page This whole website, with your name and your links on it. R1,000 once-off, paid after it's built. See what you get Order form
-- Side trip: answers and safety Straight answers, crypto words in plain English, and how to protect your wallet. FAQ Glossary Safety centre
-- Side trip: the MTG TRIBE A WhatsApp community for action takers. Ask, learn and grow together. WhatsApp group TikTok YouTube
-- Copy your sign-up link When you're ready. The button copies MTG's link and opens nothing: paste it into SafePal's browser. Introduced by someone else? Use their link. Copy sign-up link Copied ✓
-
-#### Don't learn this alone
-We meet live on Zoom five evenings a week, in four languages. Ask the person who invited you to add you to the WhatsApp group, or tap the WhatsApp button.
+#### One clean dashboard.
+Every video, page and tool lives in the dashboard, in the right order. Start anywhere.
 
 ---
 
@@ -362,16 +279,6 @@ Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin
 
 #### Side by side
 
-Stokvel compared with Bitcoin Wealth
-|  | Stokvel | Bitcoin Wealth |
-|---|---|---|
-| Can you see every payment? | Only if the treasurer shows you | Yes, on BscScan, forever |
-| Who holds the money? | A treasurer or a bank account | Members' own wallets (the Royal Pool waits in the contract) |
-| Who takes a cut? | Bank fees, sometimes more | Only small network fees |
-| What does it pay in? | Rand | BTCB, Bitcoin's value |
-| How much do you put in? | Every month, for the whole cycle | 0.001 BTC, once |
-| How are payouts funded? | Members take turns with the same pot | Members activating the positions below you |
-
 #### The verdict
 
 ##### Where Bitcoin Wealth wins
@@ -398,6 +305,27 @@ What makes Bitcoin Wealth different from newer copycat platforms, and the five c
 
 ### What makes Bitcoin Wealth different
 New smart contract platforms appear all the time, many of them copies with a new name. We don't name them. We give you five checks that work on any of them, and show how Bitcoin Wealth does on each.
+
+#### What Bitcoin Wealth gets right
+Members who tried the newer, shinier platforms keep coming back, MTG included. These are the reasons, and every one can be checked.
+
+##### Paid to your own wallet
+No dashboard balance, no withdraw button, no admin to ask. Payouts land in the wallet only you control.
+
+##### One entry, once
+0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.
+
+##### Every payment public
+The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.
+
+##### Priced in Bitcoin
+Slots and payouts are in BTCB, Bitcoin's value on BNB Smart Chain. Not points, not a made-up coin.
+
+##### No bank, no treasurer
+No bank in the middle and no treasurer holding the pot in a personal account. Code follows the same rules for everyone.
+
+##### People, not just code
+Live Zoom five evenings a week, in four languages, plus a WhatsApp community that answers questions.
 
 #### The 5-point check
 - 1. How long has it been running? Bitcoin Wealth's contract has been on chain since April 2026, with 41,013 member IDs by 14 November 2026. Ask the same of any newer platform.

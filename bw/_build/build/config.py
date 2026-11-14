@@ -57,7 +57,7 @@ PLANNED = [
     ('e1', 'Explainer', 'Bitcoin Wealth in two minutes', 'Bitcoin, BTCB, the smart contract and wallet to wallet payments, in one picture.'),
     ('e2', 'Explainer', 'How the 14 positions pay', 'Two, four, eight: where all fourteen payments go, and why nine point to you.'),
     ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
-    ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and the one place the comparison stops.'),
+    ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
 ]
 KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training'}

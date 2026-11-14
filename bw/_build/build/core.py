@@ -287,7 +287,7 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 <link rel="icon" type="image/png" sizes="32x32" href="{esc(fav)}">
 <link rel="apple-touch-icon" href="{esc(touch)}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Sora:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap">
 <link rel="stylesheet" href="{esc(css)}">
 <script>if(location.protocol==='http:'&&location.hostname==='mtgtribe.com')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');try{{if(localStorage.getItem('mtg-side')==='off'&&innerWidth>1060)document.documentElement.classList.add('side-off')}}catch(e){{}}</script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(',', ':'))}</script>'''

@@ -1,6 +1,6 @@
 """Dashboard pages: Start here + How it works (Bitcoin Wealth)."""
 from core import *
-from pages_land import matrix, flow_stage
+from pages_land import matrix, flow_stage, why_grid, scorecard
 
 
 def phero(icon, title, lead, chips_=(), pcls='', extra=''):
@@ -197,7 +197,7 @@ def p_stokvel(here):
     ]
     return f'''{phero("users", "Better than a stokvel?",
         "Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin Wealth shares the spirit: ordinary people pooling, no bank in the middle. Here's where it does better, and how each one is funded.")}
-{sec(table(["", "Stokvel", "Bitcoin Wealth"], rows, caption="Stokvel compared with Bitcoin Wealth"), "Side by side")}
+{sec(scorecard(), "Side by side")}
 {sec(f"""<div class="grid2">
  {box("Where Bitcoin Wealth wins", checks(["Transparency: every payment public, nobody has to be trusted to report it", "Peer to peer: payouts go straight to members' wallets", "No middleman holding the pot, no bank charges", "One small entry instead of monthly contributions", "Priced in Bitcoin's value, not rand"]), "trophy")}
  {box("How each one is funded", checks(["A stokvel is a closed circle: the same members take turns with the same pot", "Bitcoin Wealth is open: each cycle is completed by members activating the positions below you", "So it grows as the community grows, which is why teaching others matters"]), "info")}
@@ -217,6 +217,7 @@ def p_diff(here):
     items = ''.join(f'<li class="chk5 glass">{ped(i)}<div><h3 class="h3">{n + 1}. {q}</h3><p>{a}</p></div></li>' for n, (i, q, a) in enumerate(five))
     return f'''{phero("sparkles", "What makes Bitcoin Wealth different",
         "New smart contract platforms appear all the time, many of them copies with a new name. We don't name them. We give you five checks that work on any of them, and show how Bitcoin Wealth does on each.")}
+{sec(why_grid(), "What Bitcoin Wealth gets right", "Members who tried the newer, shinier platforms keep coming back, MTG included. These are the reasons, and every one can be checked.")}
 {sec(f'<ol class="five">{items}</ol>', "The 5-point check")}
 {sec(f"""<div class="grid2">
  {box("The original", f"<p>MTG calls Bitcoin Wealth the original: priced in Bitcoin, paid wallet to wallet, open on BscScan, and still running. {MEMBERS} member IDs say people keep choosing it.</p>", "award")}

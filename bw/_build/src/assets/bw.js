@@ -68,7 +68,7 @@
       sub: "This is MTG's Bitcoin Wealth referral link. Introduced by someone else? Use their link instead, so they stay your sponsor.",
       steps: ['Open <b>SafePal</b> and tap the <b>Browser</b> (Explore) tab.', 'Paste the link in the top bar, choose <b>BNB Smart Chain</b> and connect your wallet.', 'Have 0.001 BTC worth of BTCB plus a little BNB for fees, then approve the exact amount and activate slot 1.'],
       note: 'Learn first, and only use money you can afford to lose.',
-      acts: function () { return '<a class="btn btn-gold btn-sm" href="' + BW.join + '"><span class="lbl">Join step by step</span></a><a class="btn btn-ghost btn-sm" href="' + BW.tut + '"><span class="lbl">Tutorial videos</span></a>'; }
+      acts: function () { return '<a class="btn btn-gold btn-sm" href="' + BW.join + '"><span class="lbl">Join Step-By-Step</span></a><a class="btn btn-ghost btn-sm" href="' + BW.tut + '"><span class="lbl">Tutorial Videos</span></a>'; }
     },
     share: { text: function () { var b = $('.sharebox'); return b ? b.value : ''; }, quiet: 'Message copied ✓' },
     contract: { text: function () { return '0x1ad09b043E0Fe59243C9a18ee1c855bd7792Cd29'; }, quiet: 'Contract address copied ✓' }
@@ -204,7 +204,7 @@
     $('[data-mark]', pl).setAttribute('data-mark', k);
     var v = $('video', pl);
     v.poster = info.p.replace('-360.webp', '.webp'); v.src = info.s;
-    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 800); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
+    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 350); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
     paintWatched(); openSheet(pl);
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   });

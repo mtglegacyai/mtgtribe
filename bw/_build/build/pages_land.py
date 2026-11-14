@@ -141,31 +141,17 @@ def landing():
 <main id="main" tabindex="-1">
 <section class="lhero">
  <div class="lbg" aria-hidden="true"><canvas data-dust></canvas><i class="beam"></i><i class="beam b2"></i><i class="floor"></i></div>
- <div class="wrap lhero-in">
+ <div class="wrap lhero-in solo">
   <div class="lcopy">
    <p class="pill-eye"><i></i>Independent guide by MTG 👑</p>
    <h1 class="display"><span class="ln"><span>Collect</span></span> <span class="ln"><span>Bitcoin.</span></span> <span class="ln"><span class="hl">Together.</span></span></h1>
    <p class="lede">Bitcoin Wealth, explained in short videos. One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public for anyone to check.</p>
    <div class="ctas">
-    <a class="btn btn-gold btn-lg ring" href="#start">{ic('rocket')}<span class="lbl">Get started</span></a>
-    <button type="button" class="btn btn-ghost btn-lg" data-play="t1">{ic('play')}<span class="lbl">Watch first ({mmss(V['t1']['secs'])})</span></button>
+    <a class="btn btn-gold btn-lg ring" href="#start">{ic('rocket')}<span class="lbl">Get Started</span></a>
+    <button type="button" class="btn btn-ghost btn-lg" data-play="t1">{ic('play')}<span class="lbl">Watch First ({mmss(V['t1']['secs'])})</span></button>
    </div>
    <p class="livep" data-livep hidden><i></i><span>Slot 1 today: <b data-k="z">R0</b> <small>0.001 BTC at the live price</small></span></p>
    <div class="chips mini">{chip('users', f'{MEMBERS} member IDs')}{chip('badge-check', '0.001 BTC once-off')}{chip('info', 'Independent, not official')}</div>
-  </div>
-  <div class="lvis">
-   <span class="coin3d fl1" aria-hidden="true"><i class="cf"><b>₿</b></i><i class="cb"><b>₿</b></i></span>
-   <span class="coin3d fl2" aria-hidden="true"><i class="cf"><b>₿</b></i><i class="cb"><b>₿</b></i></span>
-   <span class="fchip c1" aria-hidden="true">{ic('badge-check')}0.001 BTC once-off</span>
-   <span class="fchip c2" aria-hidden="true">{ic('wallet')}Paid wallet to wallet</span>
-   <span class="fchip c3" aria-hidden="true">{ic('scan-search')}Public on BscScan</span>
-   <div class="hphone" data-tilt>
-    <div class="phone-wrap"><figure class="vid" data-vid="t1"><div class="vbox">
-     <img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 70vw, 300px" width="720" height="1280" decoding="async" fetchpriority="high" alt="Tutorial 1: set up your SafePal wallet for Bitcoin Wealth">
-     <button type="button" class="vplay" data-src="{L('media/' + v['slug'] + '.mp4', here)}" data-code="t1" aria-label="Play Tutorial 1 ({mmss(v['secs'])})"><span class="pbtn">{ic('play')}</span><span class="dur">{mmss(v['secs'])}</span></button>
-    </div></figure></div>
-   </div>
-   <p class="vnote">{ic('video')}<span>Start here: set up your wallet ({mmss(v['secs'])})</span></p>
   </div>
  </div>
 </section>
@@ -201,7 +187,7 @@ def landing():
  <a href="{A('', here)}" aria-current="page">{ic('house')}<span>Home</span></a>
  <a href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span>Dashboard</span></a>
  <a href="#start">{ic('rocket')}<span>Start</span></a>
- <button type="button" data-copy="signup">{ic('user-plus')}<span>Sign up</span><span class="copied" aria-live="polite">Copied ✓</span></button>
+ <button type="button" data-copy="signup">{ic('user-plus')}<span>Sign Up</span><span class="copied" aria-live="polite">Copied ✓</span></button>
 </nav>
 {overlays(here)}"""
     from seo import SEO_DESC

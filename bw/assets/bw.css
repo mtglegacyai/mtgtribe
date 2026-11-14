@@ -1222,3 +1222,36 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 @media (max-width:900px){.stages{grid-template-columns:minmax(0,1fr)}.stages:before{left:50%;right:auto;top:30px;bottom:30px;width:2px;height:auto;transform:translateX(-1px);background:linear-gradient(180deg,var(--gold),var(--hero),var(--electric))}}
 
 @media (max-width:560px){.fchip{display:none}}
+
+
+/* =====================================================================================================
+   v4 (MTG, 14 Nov 2026): one-column hero, phone-only video pop-up
+   ===================================================================================================== */
+.lhero-in.solo{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+.lhero-in.solo .lcopy{justify-items:center;max-width:880px}
+.lhero-in.solo .lede{margin-inline:auto;max-width:38rem}
+.lhero-in.solo .ctas,.lhero-in.solo .chips.mini{justify-content:center}
+.lhero-in.solo .display .ln{display:inline-block}
+@media (min-width:901px){.lhero-in.solo .display .ln{display:inline-block}}
+.lhero{padding:clamp(44px,7vw,96px) 0 clamp(44px,6vw,80px)}
+.lbg .beam{left:50%;margin-left:220px}.lbg .beam.b2{left:50%;margin-left:330px}
+.lbg{background:radial-gradient(60% 80% at 50% 0%,rgba(255,161,1,.18),transparent 62%),radial-gradient(40% 55% at 6% 105%,rgba(63,193,31,.10),transparent 70%),linear-gradient(180deg,#070906,#050705)}
+@media (max-width:900px){.lbg .beam{left:auto;right:-40px;margin:0}.lbg .beam.b2{left:auto;right:-10px;margin:0}}
+
+/* the pop-up is just a real-looking phone and its close button */
+.sheet.player{place-items:center;background:rgba(3,4,3,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sheet.player .sheet-in{width:auto;max-width:none;max-height:none;padding:0;gap:0;background:none;box-shadow:none;border:0;overflow:visible;border-radius:0}
+.sheet.player .pframe{position:relative;width:min(calc(100vw - 40px),calc((100dvh - 48px) * .5625));width:min(calc(100vw - 40px),calc((100vh - 48px) * .5625));max-width:400px}
+.sheet.player .pframe .vbox{max-width:none;width:100%;margin:0;padding:6px;border-radius:52px;border:2px solid transparent;
+  background:linear-gradient(#030303,#030303) padding-box,linear-gradient(140deg,#7a531c,#f6d88c 22%,#9a6a26 45%,#f2c66d 70%,#6b4615) border-box;
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 50px 100px -30px rgba(0,0,0,.95),0 0 80px -20px rgba(255,161,1,.35)}
+.sheet.player .pframe .vbox video{display:block;width:100%;aspect-ratio:9/16;border-radius:44px;object-fit:cover;background:#000}
+.sheet.player .pframe .vbox:before{content:"";position:absolute;z-index:3;left:50%;top:16px;width:30%;height:24px;transform:translateX(-50%);border-radius:20px;background:#000;
+  box-shadow:inset -12px 0 0 -8px #151515;pointer-events:none}
+.sheet.player .pbtn-s{position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#5c3d12,#f2c66d 55%,#7a531c)}
+.sheet.player .pbtn-s.l1{left:-3px;top:18%;height:6%}.sheet.player .pbtn-s.l2{left:-3px;top:27%;height:9%}.sheet.player .pbtn-s.r1{right:-3px;top:24%;height:12%}
+.sheet.player .xbtn{position:absolute;top:-14px;right:-14px;z-index:5;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  color:#fff;background:rgba(20,22,18,.92);box-shadow:0 0 0 1px rgba(255,190,90,.45),0 10px 24px rgba(0,0,0,.6)}
+.sheet.player .xbtn:hover{background:#2a2a20}
+.sheet.player .xbtn .ic{width:20px;height:20px}
+@media (max-width:480px){.sheet.player .xbtn{top:-10px;right:-6px}}

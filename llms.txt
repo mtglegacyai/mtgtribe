@@ -14,6 +14,12 @@
 - [Video: Join the MTG TRIBE, an invite from MTG](https://mtgtribe.com/assets/mtg-tribe-invite.mp4) (2:48): what the MTG TRIBE is and how to join at mtgtribe.com/group.
 - [Join the MTG TRIBE on WhatsApp](https://mtgtribe.com/group/)
 
+## Bitcoin Wealth Guide by MTG
+
+- [Bitcoin Wealth explained by MTG](https://mtgtribe.com/bw/): an independent, plain-English guide to Bitcoin Wealth: one 0.001 BTC once-off entry (slot 1), 14 positions per cycle (2, 4, 8), 12 slots from 0.001 to 2.048 BTC, payouts in BTCB straight to members' own wallets, and how to check every payment on BscScan. Join in 3 stages with SafePal, VALR or Binance. Live tools: Bitcoin to Rand Converter, Slot Calculator, Halving Countdown. Educational only, not official Bitcoin Wealth material and not financial advice.
+- [Full map of the Bitcoin Wealth guide](https://mtgtribe.com/bw/llms.txt) and [its full text](https://mtgtribe.com/bw/llms-full.txt).
+- [BW Tribe Page order form](https://mtgtribe.com/bwcopy/): your own copy of the guide with your referral link built in, R1,000 once-off, paid after it is built.
+
 ## Guide: How to buy CNTN stock from South Africa
 
 - [How to Buy CNTN Stock: Step-by-Step Guide (2026)](https://mtgtribe.com/cntn/): how to buy Canton Strategic Holdings (Nasdaq: CNTN) stock in 6 steps, from the US, UK, South Africa or anywhere: open a broker account, fund it in US dollars and place a limit order.

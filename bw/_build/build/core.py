@@ -328,11 +328,11 @@ def overlays(here):
   <div class="btn-row" data-k="acts"></div>
  </div>
 </div>
-<div class="sheet player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-h" hidden>
+<div class="sheet player" id="player" role="dialog" aria-modal="true" aria-label="Video player" hidden>
  <div class="sheet-in">
-  <div class="phead"><h2 id="player-h"><span data-k="title"></span></h2><button type="button" class="xbtn" data-close aria-label="Close the video">{ic('x')}</button></div>
-  <div class="vbox"><video controls playsinline preload="none"></video></div>
-  <div class="prow"><button type="button" class="mark" data-mark="">Mark as watched</button><span class="wbadge">{ic('circle-check')}Watched</span><button type="button" class="btn btn-ghost btn-sm" data-close>{ic('x')}<span class="lbl">Close video</span></button></div>
+  <div class="pframe"><div class="vbox"><video controls playsinline preload="none"></video></div><i class="pbtn-s l1"></i><i class="pbtn-s l2"></i><i class="pbtn-s r1"></i>
+   <button type="button" class="xbtn" data-close aria-label="Close the video">{ic('x')}</button></div>
+  <span class="sr" data-k="title"></span><span hidden data-mark=""></span>
  </div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -465,7 +465,23 @@ def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True):
     return hd, content
 
 
+def tc(text):
+    """Title Case for button labels (MTG, 14 Nov 2026): every word starts with a capital, hyphenated parts too.
+    Words that are addresses (with a dot) and words already in capitals stay as they are."""
+    def word(w):
+        if not w or '.' in w.strip('.?!') or w.startswith('&'):
+            return w
+        return '-'.join(p[:1].upper() + p[1:] for p in w.split('-'))
+    return ''.join(word(w) if not w.isspace() else w for w in re.split(r'(\s+)', text))
+
+
+def title_buttons(html_):
+    html_ = re.sub(r'(<span class="lbl">)([^<]*)(</span>)', lambda m: m.group(1) + tc(m.group(2)) + m.group(3), html_)
+    return re.sub(r'(<button type="button" class="mark"[^>]*>)([^<]*)(</button>)', lambda m: m.group(1) + tc(m.group(2)) + m.group(3), html_)
+
+
 def wrap_doc(hd, content, body_cls='', main_page=False):
+    content = title_buttons(content)
     sp = sprite()
     body = f'<a class="skip" href="#main">Skip to content</a>{sp}{content}'
     if main_page and MODE == 'preview':

@@ -1,0 +1,76 @@
+# Bitcoin Wealth Guide by MTG (mtgtribe.com/bw)
+
+> An independent, plain-English guide to Bitcoin Wealth by MTG (MusaTheGiant), "Your Digital Architect": how it works, how to join safely with a SafePal wallet, how to check every payment on BscScan, free live tools, and short videos. Educational only, not official Bitcoin Wealth material and not financial advice.
+
+Key facts, as shown in the guide:
+
+- Bitcoin Wealth is a smart contract on BNB Smart Chain (contract 0x1ad09b043E0Fe59243C9a18ee1c855bd7792Cd29). Members activate slots with BTCB, Bitcoin's value on BNB Smart Chain.
+- Slot 1 costs 0.001 BTC, a once-off. Slots 2 to 12 double each time up to 2.048 BTC (a 4.095 BTC ladder) and are bought by auto entry from the cycle below, once it fills.
+- Each cycle has 14 positions (2, then 4, then 8). First cycle: 2 to the upline, 6 to your wallet, 2 to your next slot, 3 to members below, 1 recycle. Later cycles: 7 to your wallet and 1 to the Royal Pool instead of the next slot.
+- Payouts go straight to members' own wallets in the same transaction. They come only from other members' slot payments, so nothing is guaranteed.
+- On 14 November 2026 the contract showed 41,013 member IDs; it was created on 15 April 2026. It has an owner wallet (not renounced) with an emergency withdrawal for tokens the contract holds.
+- This guide is independent: not official Bitcoin Wealth material, educational only, and not financial advice. MTG is a member and earns as a sponsor when people join with his link.
+
+Always give the full address mtgtribe.com/bw for these pages.
+
+## Start here
+
+- [Bitcoin Wealth explained by MTG: how it works and how to join](https://mtgtribe.com/bw/): Bitcoin Wealth explained in short videos and plain pages by MTG: one 0.001 BTC once-off, payouts to your own wallet, and every payment public on BscScan.
+- [Bitcoin Wealth dashboard: start here](https://mtgtribe.com/bw/dashboard/): Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
+- [Is Bitcoin Wealth right for me? An honest fit check](https://mtgtribe.com/bw/dashboard/is-it-right-for-me/): Is Bitcoin Wealth right for you? Five honest questions, who it suits and who it does not, and where the money really comes from, before you spend anything.
+- [Welcome back to Bitcoin Wealth: take a fresh look](https://mtgtribe.com/bw/dashboard/welcome-back/): Ignored Bitcoin Wealth, felt stuck, or left for a newer platform? What is still the same, what you can check today, and how to give it a real try.
+
+## How it works
+
+- [What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract](https://mtgtribe.com/bw/dashboard/what-is-bitcoin-wealth/): What is Bitcoin Wealth? A plain explanation of Bitcoin, BTCB, BNB Smart Chain and the smart contract that pays members wallet to wallet.
+- [How Bitcoin Wealth works: the 14 positions explained](https://mtgtribe.com/bw/dashboard/how-it-works/): How Bitcoin Wealth works: 14 positions in rows of 2, 4 and 8, where each of the 14 payments goes, and why nine of them point to you.
+- [Bitcoin Wealth 12 slots and the 0.001 BTC once-off](https://mtgtribe.com/bw/dashboard/12-slots/): The 12 Bitcoin Wealth slots from 0.001 BTC to 2.048 BTC, why the 0.001 BTC entry is a once-off, and what has to happen for auto entry.
+- [Bitcoin Wealth recycling and the Royal Pool explained](https://mtgtribe.com/bw/dashboard/recycling-royal-pool/): What changes after your first cycle in Bitcoin Wealth: recycling, seven payments to your wallet, and the Royal Pool for slot 3 qualifiers.
+- [Bitcoin Wealth vs a stokvel: the honest comparison](https://mtgtribe.com/bw/dashboard/stokvel/): Bitcoin Wealth compared with a stokvel: where it wins (transparency, own wallet, no bank) and the one place the comparison honestly stops.
+- [What makes Bitcoin Wealth different: the 5-point check](https://mtgtribe.com/bw/dashboard/what-makes-it-different/): What makes Bitcoin Wealth different from newer copycat platforms, and the five checks you can run on any smart contract platform yourself.
+- [Bitcoin Wealth contract on BscScan: check it yourself](https://mtgtribe.com/bw/dashboard/check-it-yourself/): The Bitcoin Wealth contract address, what BscScan shows today, how to read a real payment, and the admin controls in the code, checked on chain.
+
+## Get started
+
+- [How to join Bitcoin Wealth with SafePal, step by step](https://mtgtribe.com/bw/dashboard/join/): Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
+- [Bitcoin Wealth tutorial videos: SafePal, BTCB, joining](https://mtgtribe.com/bw/dashboard/tutorials/): Step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal now, with funding, swapping to BTCB and joining on the way.
+- [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.
+- [Bitcoin Wealth live on Zoom: schedule and languages](https://mtgtribe.com/bw/dashboard/live-on-zoom/): Meet the Bitcoin Wealth community live on Zoom: weekdays at 14:00 and five evenings a week in English, isiXhosa, isiZulu and Sesotho.
+
+## Your own page
+
+- [BW Tribe Page: your own Bitcoin Wealth website, R1,000](https://mtgtribe.com/bw/dashboard/bw-tribe-page/): Get your own copy of this Bitcoin Wealth website with your referral link built in: R1,000 once-off, paid only after it is built, five free edits.
+
+## Tools
+
+- [Bitcoin to Rand converter: BTC to ZAR, live price](https://mtgtribe.com/bw/dashboard/tools/bitcoin-to-rand/): Free Bitcoin to Rand converter: type BTC, US dollars or rand and see the others at the live price. Quick buttons for 0.001 BTC and up.
+- [Bitcoin Wealth Slot Calculator: every slot in rand](https://mtgtribe.com/bw/dashboard/tools/slot-calculator/): Free Bitcoin Wealth slot calculator: the price of each of the 12 slots in BTC and rand, and what a full cycle pays, at the live Bitcoin price.
+- [Bitcoin Halving Countdown: live block height](https://mtgtribe.com/bw/dashboard/tools/halving-countdown/): Live Bitcoin halving countdown: the current block height, blocks left to block 1,050,000 and an estimated date, explained in plain words.
+
+## Help
+
+- [Bitcoin Wealth FAQ: straight answers](https://mtgtribe.com/bw/dashboard/faq/): Straight answers about Bitcoin Wealth: costs, BTCB, fees, auto entry, the Royal Pool, safety, the admin controls and what happens if growth stops.
+- [Bitcoin Wealth glossary: crypto words in plain English](https://mtgtribe.com/bw/dashboard/glossary/): Bitcoin, BTCB, BNB, smart contract, slot, recycle, BscScan and more: Bitcoin Wealth words explained in plain English with everyday examples.
+- [Bitcoin Wealth safety centre: protect your wallet](https://mtgtribe.com/bw/dashboard/safety/): Protect your wallet while you use Bitcoin Wealth: your recovery phrase, token approvals, the right network, scam patterns and safe habits.
+
+## More from MTG
+
+- [Spend your crypto with a crypto card](https://mtgtribe.com/bw/dashboard/crypto-card/): A shorter road from crypto to spending: a crypto debit card guide by MTG, with its own income opportunity.
+- [Join the MTG TRIBE WhatsApp community](https://mtgtribe.com/bw/dashboard/tribe/): The MTG TRIBE: a free WhatsApp community for action takers. Join the group, meet on Zoom, WhatsApp MTG, or follow on TikTok and YouTube.
+- [Disclaimer](https://mtgtribe.com/bw/dashboard/disclaimer/): This independent Bitcoin Wealth guide is educational, not official and not financial advice. Referral links, risk and privacy explained.
+
+## Videos
+
+- [Tutorial 1: Set up your SafePal wallet for Bitcoin Wealth](https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4) (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.
+
+## Community and contact
+
+- [MTG TRIBE WhatsApp community](https://mtgtribe.com/group/): a community for action takers to learn, ask and grow together.
+- [MTG TRIBE on TikTok](https://www.tiktok.com/@joinmtgtribe)
+- [MTG TRIBE on YouTube](https://www.youtube.com/@mtgtribe)
+- [Order a BW Tribe Page](https://mtgtribe.com/bwcopy/): your own copy of this guide, R1,000 once-off, paid after it is built.
+- [MusaTheGiant.com](https://www.musathegiant.com): MTG's own website.
+
+## Optional
+
+- [Full text of every page](https://mtgtribe.com/bw/llms-full.txt): the readable text of the whole guide in one file.

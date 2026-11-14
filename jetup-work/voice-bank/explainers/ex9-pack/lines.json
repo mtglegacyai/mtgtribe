@@ -1,0 +1,99 @@
+{
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 0.206,
+  "b": 3.4,
+  "dur": 3.194,
+  "text": "Copy trading. What gets copied, and what stays yours?"
+ },
+ "ncook": {
+  "file": "v_ncook.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 3.875,
+  "b": 8.769,
+  "dur": 4.894,
+  "text": "Think of a cooking class. The chef cooks at the front, and you copy each step, in your own pot."
+ },
+ "ntwist": {
+  "file": "v_ntwist.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 8.913,
+  "b": 11.073,
+  "dur": 2.16,
+  "text": "And the twist? You don't even lift the spoon."
+ },
+ "npot": {
+  "file": "v_npot.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 11.269,
+  "b": 12.832,
+  "dur": 1.563,
+  "text": "Your pot is your own account."
+ },
+ "nauto": {
+  "file": "v_nauto.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 13.275,
+  "b": 19.263,
+  "dur": 5.988,
+  "text": "So what gets copied? The strategy's trades, into your account, automatically. You don't pick the trades."
+ },
+ "nyours": {
+  "file": "v_nyours.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 19.407,
+  "b": 25.668,
+  "dur": 6.261,
+  "text": "And what stays yours? Your own account, and your choices. You pick the strategy, how much to put in, and when to stop."
+ },
+ "nlid": {
+  "file": "v_nlid.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 26.035,
+  "b": 34.261,
+  "dur": 8.226,
+  "text": "Want to see it for yourself? Your pot has a glass lid: the MetaTrader five app. With your investor password, you can watch every trade, read-only."
+ },
+ "nrecap": {
+  "file": "v_nrecap.wav",
+  "src": "explainers/ex9v3.flac",
+  "a": 34.403,
+  "b": 41.703,
+  "dur": 7.3,
+  "text": "So that's copying. The trades get copied. Your money stays in your own account, you make your three choices, and you can watch every trade."
+ },
+ "deposit": {
+  "file": "v_deposit.wav",
+  "src": "5-checks/o1.mp3",
+  "a": 83.933,
+  "b": 88.571,
+  "dur": 4.638,
+  "text": "Your deposit goes into an M T five account at TAG Markets, in your name."
+ },
+ "copyx": {
+  "file": "v_copyx.wav",
+  "src": "5-checks/o1.mp3",
+  "a": 55.595,
+  "b": 57.735,
+  "dur": 2.14,
+  "text": "Then you connect a strategy through CopyX."
+ },
+ "terms": {
+  "file": "v_terms.wav",
+  "src": "signup-training/t3.mp3",
+  "a": 8.95,
+  "b": 10.4,
+  "dur": 1.45,
+  "text": "Read the terms."
+ },
+ "perf": {
+  "file": "v_perf.wav",
+  "src": "signup-training/t3.mp3",
+  "a": 10.4,
+  "b": 14.055,
+  "dur": 3.655,
+  "joined": true,
+  "text": "A thirty percent performance fee, taken from profits only."
+ }
+}

@@ -22,6 +22,7 @@ same voice only when MTG approves the credits for that video (measured: 14 credi
 | `explainers/` | `ex3ex4v3.flac` (0:51) | **MTG Master Voice V3** (10 Nov 2026), explainer #3's six lines (fifty dollars that trades like twelve hundred, the market stall, every move twenty-four times bigger, the loss limit, the Exposure Calculator line, the recap) and explainer #4's two ("Seventy, thirty" hook, the Profit Split Calculator line). 1 credit. Cut lines in `ex3-pack/` and `ex4-pack/` |
 | `explainers/` | `ex6v3.flac` (1:17) | **V3** (11 Nov 2026), explainer #6, the partner plan: ten levels and only three open on day one, what a level is, the building with ten floors and an access card, $250 of active trading opens floors 1 to 3, from the 4th direct partner each new one opens the next, lot commission, Profit Share, client start, the rule. 1 credit. Cut lines in `ex6-pack/` |
 | `explainers/` | `ex8v3.flac` (0:39) | **V3** (12 Nov 2026), explainer #8, getting your money out: "Can I get my money out? The answer is growing in your own backyard.", the fruit tree (the backyard is your account at TAG Markets in your own name, the tree is your own money, the fruit is your profit), the promo's gift branch, your basket is your crypto wallet, through the broker on the same network on both sides, about forty-eight hours (JetUP's one-pager), the recap. 1 credit (47 left). Cut lines, with six newly cut recorded lines, in `ex8-pack/` |
+| `explainers/` | `ex9v3.flac` (0:42) | **V3** (13 Nov 2026), explainer #9, what copying really means: "Copy trading. What gets copied, and what stays yours?", the cooking class (the chef cooks at the front, you copy each step in your own pot), "You don't even lift the spoon.", your pot is your own account, "You don't pick the trades.", "You pick the strategy, how much to put in, and when to stop.", the glass lid (MetaTrader five, investor password, read-only said "reed only", measured), the recap. 1 credit (43 left). Cut lines, with four newly cut recorded lines (deposit, CopyX, "Read the terms.", the fee line), in `ex9-pack/` |
 | `signup-training/` | `t1.mp3` (3:04), `t2.mp3` (2:32), `t3.mp3` (3:14), `t4.mp3` (0:32) | Sign-up training narration, parts 1 to 6 plus the promo and comment lines |
 
 - `*_tts.json`: HeyGen's own response for each file, with **word-by-word timings** (`word_timestamps`) and the request ID.
@@ -61,6 +62,7 @@ HeyGen's connector refused MTG Master Voice V2 on 10 Nov 2026 ("not compatible w
 exactly like me", V3 from now on. Every new line is V3 (no model or engine override, no break tags: one paragraph per
 pause). Every V2 line in this bank stays usable. V3 files so far: `explainers/ex3ex4v3.flac` (10 Nov 2026,
 explainer #3's six lines and explainer #4's two, 1 credit), `explainers/ex6v3.flac` (11 Nov 2026, explainer #6's nine
-lines, 1 credit) and `explainers/ex8v3.flac` (12 Nov 2026, explainer #8's ten lines, 1 credit, 47 left). All are in
+lines, 1 credit) `explainers/ex8v3.flac` (12 Nov 2026, explainer #8's ten lines, 1 credit, 47 left) and `explainers/ex9v3.flac`
+(13 Nov 2026, explainer #9's eight lines, 1 credit, 43 left). All are in
 `sentences.tsv`. HeyGen's word times for some V3 lines run up to about 0.2 s ahead of the audio: check the pauses before
-cutting (explainer #8's measured offsets are in `ex8v3_tts.json`, `word_time_offsets`).
+cutting (the measured offsets of explainers #8 and #9 are in `ex8v3_tts.json` and `ex9v3_tts.json`, `word_time_offsets`).

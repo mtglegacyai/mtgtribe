@@ -1,0 +1,761 @@
+{
+ "audio_url": "https://resource2.heygen.ai/text_to_speech/014da4e407f0458282d5068f68cc43a5/65f1b9ff3f1e418496de5715a801e7dd/id=6ddc09bdc8c34a858bf30f02c4727a73.wav",
+ "duration": 41.901156462585035,
+ "original_words": [
+  {
+   "text": "Copy",
+   "start_time": 0.256,
+   "end_time": 0.5547
+  },
+  {
+   "text": "trading",
+   "start_time": 0.597,
+   "end_time": 0.853
+  },
+  {
+   "text": "What",
+   "start_time": 1.323,
+   "end_time": 1.5787
+  },
+  {
+   "text": "gets",
+   "start_time": 1.664,
+   "end_time": 1.749
+  },
+  {
+   "text": "copied",
+   "start_time": 1.835,
+   "end_time": 2.133
+  },
+  {
+   "text": "and",
+   "start_time": 2.432,
+   "end_time": 2.56
+  },
+  {
+   "text": "what",
+   "start_time": 2.603,
+   "end_time": 2.688
+  },
+  {
+   "text": "stays",
+   "start_time": 2.773,
+   "end_time": 2.944
+  },
+  {
+   "text": "yours",
+   "start_time": 3.029,
+   "end_time": 3.2
+  },
+  {
+   "text": "Think",
+   "start_time": 3.925,
+   "end_time": 4.096
+  },
+  {
+   "text": "of",
+   "start_time": 4.139,
+   "end_time": 4.181
+  },
+  {
+   "text": "a",
+   "start_time": 4.224,
+   "end_time": 4.2667
+  },
+  {
+   "text": "cooking",
+   "start_time": 4.309,
+   "end_time": 4.48
+  },
+  {
+   "text": "class",
+   "start_time": 4.565,
+   "end_time": 4.779
+  },
+  {
+   "text": "The",
+   "start_time": 5.205,
+   "end_time": 5.2907
+  },
+  {
+   "text": "chef",
+   "start_time": 5.333,
+   "end_time": 5.5467
+  },
+  {
+   "text": "cooks",
+   "start_time": 5.632,
+   "end_time": 5.8027
+  },
+  {
+   "text": "at",
+   "start_time": 5.845,
+   "end_time": 5.931
+  },
+  {
+   "text": "the",
+   "start_time": 5.973,
+   "end_time": 6.016
+  },
+  {
+   "text": "front",
+   "start_time": 6.059,
+   "end_time": 6.229
+  },
+  {
+   "text": "and",
+   "start_time": 6.528,
+   "end_time": 6.741
+  },
+  {
+   "text": "you",
+   "start_time": 6.784,
+   "end_time": 6.8267
+  },
+  {
+   "text": "copy",
+   "start_time": 6.869,
+   "end_time": 7.125
+  },
+  {
+   "text": "each",
+   "start_time": 7.168,
+   "end_time": 7.424
+  },
+  {
+   "text": "step",
+   "start_time": 7.509,
+   "end_time": 7.723
+  },
+  {
+   "text": "in",
+   "start_time": 7.979,
+   "end_time": 8.107
+  },
+  {
+   "text": "your",
+   "start_time": 8.149,
+   "end_time": 8.235
+  },
+  {
+   "text": "own",
+   "start_time": 8.277,
+   "end_time": 8.3627
+  },
+  {
+   "text": "pot",
+   "start_time": 8.448,
+   "end_time": 8.619
+  },
+  {
+   "text": "And",
+   "start_time": 9.003,
+   "end_time": 9.045
+  },
+  {
+   "text": "the",
+   "start_time": 9.088,
+   "end_time": 9.216
+  },
+  {
+   "text": "twist",
+   "start_time": 9.259,
+   "end_time": 9.387
+  },
+  {
+   "text": "You",
+   "start_time": 9.899,
+   "end_time": 9.941
+  },
+  {
+   "text": "don't",
+   "start_time": 9.984,
+   "end_time": 10.112
+  },
+  {
+   "text": "even",
+   "start_time": 10.155,
+   "end_time": 10.24
+  },
+  {
+   "text": "lift",
+   "start_time": 10.325,
+   "end_time": 10.453
+  },
+  {
+   "text": "the",
+   "start_time": 10.539,
+   "end_time": 10.624
+  },
+  {
+   "text": "spoon",
+   "start_time": 10.667,
+   "end_time": 10.923
+  },
+  {
+   "text": "Your",
+   "start_time": 11.349,
+   "end_time": 11.477
+  },
+  {
+   "text": "pot",
+   "start_time": 11.52,
+   "end_time": 11.733
+  },
+  {
+   "text": "is",
+   "start_time": 11.947,
+   "end_time": 12.117
+  },
+  {
+   "text": "your",
+   "start_time": 12.16,
+   "end_time": 12.245
+  },
+  {
+   "text": "own",
+   "start_time": 12.288,
+   "end_time": 12.416
+  },
+  {
+   "text": "account",
+   "start_time": 12.501,
+   "end_time": 12.672
+  },
+  {
+   "text": "So",
+   "start_time": 13.165,
+   "end_time": 13.293
+  },
+  {
+   "text": "what",
+   "start_time": 13.336,
+   "end_time": 13.421
+  },
+  {
+   "text": "gets",
+   "start_time": 13.464,
+   "end_time": 13.592
+  },
+  {
+   "text": "copied",
+   "start_time": 13.677,
+   "end_time": 13.976
+  },
+  {
+   "text": "The",
+   "start_time": 14.616,
+   "end_time": 14.744
+  },
+  {
+   "text": "strategy's",
+   "start_time": 14.787,
+   "end_time": 15.213
+  },
+  {
+   "text": "trades",
+   "start_time": 15.256,
+   "end_time": 15.555
+  },
+  {
+   "text": "into",
+   "start_time": 15.939,
+   "end_time": 16.109
+  },
+  {
+   "text": "your",
+   "start_time": 16.237,
+   "end_time": 16.3228
+  },
+  {
+   "text": "account",
+   "start_time": 16.408,
+   "end_time": 16.621
+  },
+  {
+   "text": "automatically",
+   "start_time": 16.963,
+   "end_time": 17.475
+  },
+  {
+   "text": "You",
+   "start_time": 18.029,
+   "end_time": 18.2
+  },
+  {
+   "text": "don't",
+   "start_time": 18.243,
+   "end_time": 18.3708
+  },
+  {
+   "text": "pick",
+   "start_time": 18.413,
+   "end_time": 18.456
+  },
+  {
+   "text": "the",
+   "start_time": 18.541,
+   "end_time": 18.584
+  },
+  {
+   "text": "trades",
+   "start_time": 18.627,
+   "end_time": 18.883
+  },
+  {
+   "text": "And",
+   "start_time": 19.267,
+   "end_time": 19.437
+  },
+  {
+   "text": "what",
+   "start_time": 19.48,
+   "end_time": 19.608
+  },
+  {
+   "text": "stays",
+   "start_time": 19.651,
+   "end_time": 19.864
+  },
+  {
+   "text": "yours",
+   "start_time": 19.907,
+   "end_time": 20.077
+  },
+  {
+   "text": "Your",
+   "start_time": 20.547,
+   "end_time": 20.717
+  },
+  {
+   "text": "own",
+   "start_time": 20.76,
+   "end_time": 20.845
+  },
+  {
+   "text": "account",
+   "start_time": 20.931,
+   "end_time": 21.144
+  },
+  {
+   "text": "and",
+   "start_time": 21.357,
+   "end_time": 21.571
+  },
+  {
+   "text": "your",
+   "start_time": 21.613,
+   "end_time": 21.656
+  },
+  {
+   "text": "choices",
+   "start_time": 21.699,
+   "end_time": 21.912
+  },
+  {
+   "text": "You",
+   "start_time": 22.552,
+   "end_time": 22.68
+  },
+  {
+   "text": "pick",
+   "start_time": 22.723,
+   "end_time": 22.8508
+  },
+  {
+   "text": "the",
+   "start_time": 22.893,
+   "end_time": 22.9788
+  },
+  {
+   "text": "strategy",
+   "start_time": 23.021,
+   "end_time": 23.277
+  },
+  {
+   "text": "how",
+   "start_time": 23.747,
+   "end_time": 23.875
+  },
+  {
+   "text": "much",
+   "start_time": 23.917,
+   "end_time": 24.0028
+  },
+  {
+   "text": "to",
+   "start_time": 24.088,
+   "end_time": 24.173
+  },
+  {
+   "text": "put",
+   "start_time": 24.216,
+   "end_time": 24.344
+  },
+  {
+   "text": "in",
+   "start_time": 24.387,
+   "end_time": 24.472
+  },
+  {
+   "text": "and",
+   "start_time": 24.728,
+   "end_time": 24.856
+  },
+  {
+   "text": "when",
+   "start_time": 24.899,
+   "end_time": 24.984
+  },
+  {
+   "text": "to",
+   "start_time": 25.027,
+   "end_time": 25.1548
+  },
+  {
+   "text": "stop",
+   "start_time": 25.155,
+   "end_time": 25.368
+  },
+  {
+   "text": "Want",
+   "start_time": 25.895,
+   "end_time": 26.023
+  },
+  {
+   "text": "to",
+   "start_time": 26.066,
+   "end_time": 26.108
+  },
+  {
+   "text": "see",
+   "start_time": 26.151,
+   "end_time": 26.279
+  },
+  {
+   "text": "it",
+   "start_time": 26.322,
+   "end_time": 26.364
+  },
+  {
+   "text": "for",
+   "start_time": 26.407,
+   "end_time": 26.492
+  },
+  {
+   "text": "yourself",
+   "start_time": 26.535,
+   "end_time": 26.578
+  },
+  {
+   "text": "Your",
+   "start_time": 27.26,
+   "end_time": 27.388
+  },
+  {
+   "text": "pot",
+   "start_time": 27.431,
+   "end_time": 27.6018
+  },
+  {
+   "text": "has",
+   "start_time": 27.687,
+   "end_time": 27.772
+  },
+  {
+   "text": "a",
+   "start_time": 27.815,
+   "end_time": 27.9
+  },
+  {
+   "text": "glass",
+   "start_time": 27.943,
+   "end_time": 28.1138
+  },
+  {
+   "text": "lid",
+   "start_time": 28.284,
+   "end_time": 28.455
+  },
+  {
+   "text": "the",
+   "start_time": 28.754,
+   "end_time": 28.8818
+  },
+  {
+   "text": "MetaTrader",
+   "start_time": 28.924,
+   "end_time": 29.436
+  },
+  {
+   "text": "five",
+   "start_time": 29.522,
+   "end_time": 29.735
+  },
+  {
+   "text": "app",
+   "start_time": 29.863,
+   "end_time": 30.076
+  },
+  {
+   "text": "With",
+   "start_time": 30.588,
+   "end_time": 30.716
+  },
+  {
+   "text": "your",
+   "start_time": 30.759,
+   "end_time": 30.844
+  },
+  {
+   "text": "investor",
+   "start_time": 30.887,
+   "end_time": 31.228
+  },
+  {
+   "text": "password",
+   "start_time": 31.271,
+   "end_time": 31.698
+  },
+  {
+   "text": "you",
+   "start_time": 31.996,
+   "end_time": 32.0818
+  },
+  {
+   "text": "can",
+   "start_time": 32.124,
+   "end_time": 32.252
+  },
+  {
+   "text": "watch",
+   "start_time": 32.295,
+   "end_time": 32.423
+  },
+  {
+   "text": "every",
+   "start_time": 32.508,
+   "end_time": 32.7218
+  },
+  {
+   "text": "trade",
+   "start_time": 32.892,
+   "end_time": 33.106
+  },
+  {
+   "text": "read",
+   "start_time": 33.49,
+   "end_time": 33.66
+  },
+  {
+   "text": "only",
+   "start_time": 33.746,
+   "end_time": 33.831
+  },
+  {
+   "text": "So",
+   "start_time": 34.343,
+   "end_time": 34.428
+  },
+  {
+   "text": "that's",
+   "start_time": 34.471,
+   "end_time": 34.6418
+  },
+  {
+   "text": "copying",
+   "start_time": 34.684,
+   "end_time": 34.94
+  },
+  {
+   "text": "The",
+   "start_time": 35.367,
+   "end_time": 35.452
+  },
+  {
+   "text": "trades",
+   "start_time": 35.495,
+   "end_time": 35.751
+  },
+  {
+   "text": "get",
+   "start_time": 35.836,
+   "end_time": 35.964
+  },
+  {
+   "text": "copied",
+   "start_time": 36.007,
+   "end_time": 36.306
+  },
+  {
+   "text": "Your",
+   "start_time": 36.926,
+   "end_time": 37.0539
+  },
+  {
+   "text": "money",
+   "start_time": 37.097,
+   "end_time": 37.2246
+  },
+  {
+   "text": "stays",
+   "start_time": 37.31,
+   "end_time": 37.5659
+  },
+  {
+   "text": "in",
+   "start_time": 37.609,
+   "end_time": 37.694
+  },
+  {
+   "text": "your",
+   "start_time": 37.737,
+   "end_time": 37.8219
+  },
+  {
+   "text": "own",
+   "start_time": 37.865,
+   "end_time": 37.9926
+  },
+  {
+   "text": "account",
+   "start_time": 38.078,
+   "end_time": 38.291
+  },
+  {
+   "text": "you",
+   "start_time": 38.675,
+   "end_time": 38.7606
+  },
+  {
+   "text": "make",
+   "start_time": 38.803,
+   "end_time": 38.931
+  },
+  {
+   "text": "your",
+   "start_time": 38.974,
+   "end_time": 39.1019
+  },
+  {
+   "text": "three",
+   "start_time": 39.145,
+   "end_time": 39.315
+  },
+  {
+   "text": "choices",
+   "start_time": 39.358,
+   "end_time": 39.571
+  },
+  {
+   "text": "and",
+   "start_time": 40.083,
+   "end_time": 40.2966
+  },
+  {
+   "text": "you",
+   "start_time": 40.339,
+   "end_time": 40.4246
+  },
+  {
+   "text": "can",
+   "start_time": 40.467,
+   "end_time": 40.5526
+  },
+  {
+   "text": "watch",
+   "start_time": 40.595,
+   "end_time": 40.723
+  },
+  {
+   "text": "every",
+   "start_time": 40.851,
+   "end_time": 41.0646
+  },
+  {
+   "text": "trade",
+   "start_time": 41.15,
+   "end_time": 41.363
+  }
+ ],
+ "voice_id": "65f1b9ff3f1e418496de5715a801e7dd",
+ "voice_name": "MTG Master Voice V3",
+ "model": "server default (no model passed)",
+ "engine_in_reply": null,
+ "credits": 1,
+ "date": "2026-11-13",
+ "approved_by": "MTG, 13 Nov 2026: \"Yes, record (1 credit)\" (explainer #9, eight lines)",
+ "note": "original_characters were not kept. HeyGen's word times for nauto, nyours, nlid and nrecap run ahead of the audio by the seconds in word_time_offsets (measured on the pauses and with faster-whisper); add them to those lines' word times.",
+ "word_time_offsets": {
+  "nauto": 0.21,
+  "nyours": 0.19,
+  "nlid": 0.19,
+  "nrecap": 0.19
+ },
+ "lines": {
+  "nhook": {
+   "file": "v_nhook.wav",
+   "src": "explainers/ex9v3",
+   "a": 0.206,
+   "b": 3.4,
+   "dur": 3.194,
+   "text": "Copy trading. What gets copied, and what stays yours?"
+  },
+  "ncook": {
+   "file": "v_ncook.wav",
+   "src": "explainers/ex9v3",
+   "a": 3.875,
+   "b": 8.769,
+   "dur": 4.894,
+   "text": "Think of a cooking class. The chef cooks at the front, and you copy each step, in your own pot."
+  },
+  "ntwist": {
+   "file": "v_ntwist.wav",
+   "src": "explainers/ex9v3",
+   "a": 8.913,
+   "b": 11.073,
+   "dur": 2.16,
+   "text": "And the twist? You don't even lift the spoon."
+  },
+  "npot": {
+   "file": "v_npot.wav",
+   "src": "explainers/ex9v3",
+   "a": 11.269,
+   "b": 12.832,
+   "dur": 1.563,
+   "text": "Your pot is your own account."
+  },
+  "nauto": {
+   "file": "v_nauto.wav",
+   "src": "explainers/ex9v3",
+   "a": 13.275,
+   "b": 19.263,
+   "dur": 5.988,
+   "text": "So what gets copied? The strategy's trades, into your account, automatically. You don't pick the trades."
+  },
+  "nyours": {
+   "file": "v_nyours.wav",
+   "src": "explainers/ex9v3",
+   "a": 19.407,
+   "b": 25.668,
+   "dur": 6.261,
+   "text": "And what stays yours? Your own account, and your choices. You pick the strategy, how much to put in, and when to stop."
+  },
+  "nlid": {
+   "file": "v_nlid.wav",
+   "src": "explainers/ex9v3",
+   "a": 26.035,
+   "b": 34.261,
+   "dur": 8.226,
+   "text": "Want to see it for yourself? Your pot has a glass lid: the MetaTrader five app. With your investor password, you can watch every trade, read-only."
+  },
+  "nrecap": {
+   "file": "v_nrecap.wav",
+   "src": "explainers/ex9v3",
+   "a": 34.403,
+   "b": 41.703,
+   "dur": 7.3,
+   "text": "So that's copying. The trades get copied. Your money stays in your own account, you make your three choices, and you can watch every trade."
+  }
+ }
+}

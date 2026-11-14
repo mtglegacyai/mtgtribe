@@ -30,6 +30,7 @@ the voice bank).
 | Strategy | CopyX, SONIC (first in the list, no other trader), Details, Connect, Investment 50 (the screen shows a $10 minimum) | get-started part 5 | MTG's guide; Sunday training |
 | Community codes | Code 1 `#9M` then Verify; code 2 `9MPromo` then Submit. Case sensitive | get-started part 5, Zoom promo | MTG's guide (codes from MTG's team) |
 | Sonic terms | 30% performance fee from profits only, no management fee, no join fee, one month minimum, Amplify account | get-started part 5, how-it-works | CopyX screen |
+| One month minimum (meaning) | Give the strategy at least one month (30 days) with your full amount; after that you can take your own capital out. Profits can be withdrawn any time. Promo account: your own $100 can come out after 30 days, but before 12 months that ends the promo. Not confirmed: which button stops a strategy (the red square), and what happens inside the first month | FAQ, get-started part 5 | CopyX screen "Min Investment Period: 1 Month" (guide screenshot 15); JetUP one-pager ("Your 100 USD can be withdrawn after 30 days"; "Profit: any time"); MTG, 14 Nov 2026 |
 | Liquidation | Closed at a 10% loss of the starting balance, 5% with a community token | get-started, 5 checks, partner plan | CopyX screen |
 | Amplify | 24x. $50 trades like $1,200, $200 like $4,800. A drop of about 4.2% equals the whole deposit | get-started, 5 checks, calculators | CopyX; maths |
 

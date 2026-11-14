@@ -213,6 +213,7 @@ FAQ = [
   ('Which exchange or wallet should I use?', "VALR first, Binance second, or a Web3 wallet such as SafePal or MetaMask. The VALR and Binance buttons on this site are MTG's referral links."),
   ('What fees will I pay?', "The Sonic AI strategy has no management fee and no join fee. Its only fee is 30% of profit, and only when it makes a profit. Sending crypto costs a small network fee, and withdrawal fees and limits are the broker's terms."),
   ('How is profit split?', 'When the strategy makes a profit, 70% is yours and 30% is the performance fee, which pays the broker, the strategy provider and the partner program. There is no performance fee on a loss, and no management or join fee. <a href="/jetup/how-it-works/#split">Watch the 70/30 explainer</a>.'),
+  ('Can I take my own money out of the strategy?', "Yes. Profits can be withdrawn any time. Your own capital has a one month minimum on Sonic AI (the CopyX terms): give the strategy at least a month with your full amount, and after that you can take it out. With the Dennis promo, taking your own $100 out before 12 months ends the promo."),
   ('How do withdrawals work?', "Profits can be withdrawn any time, through the broker. JetUP's one-pager says withdrawals take about 48 hours on average. With the Dennis promo, taking your own money out before 12 months ends the promo. Test a small withdrawal early. <a href='/jetup/how-it-works/#withdraw'>Watch the 2:06 explainer</a>."),
  ]),
  ('partners', 'Earning as a partner (optional)', [

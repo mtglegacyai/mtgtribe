@@ -19,5 +19,6 @@ Daily routine: when MTG says "let's create today's video", the next video follow
 | 06 | The Hidden Cost of | The Hidden Cost of Your Commute: 60 Working Days a Year | full-time employees, time, multiple income streams | 9:16 Short, 0:52 | Preview sent to MTG (11 Nov 2026) with cover and posting pack |
 | 07 | Before You | Before You Try to Make Money With AI, Do These 3 Things | AI (the first AI video) | 9:16 Short, 0:56 | Preview sent to MTG (12 Nov 2026) with cover and posting pack |
 | 08 | The Story of | The Story of the 2 Pizzas That Cost 10,000 Bitcoin | Bitcoin history | 9:16 Short, 0:59 | Preview sent to MTG (13 Nov 2026) with cover and posting pack |
+| 09 | Can You Guess | Can You Guess How Much Gold Has Ever Been Mined? | gold (the first gold video), scarcity, Bitcoin's 21 million | 9:16 Short, 1:03 | Preview sent to MTG (14 Nov 2026) with cover and posting pack |
 
 This repository is public: keep private strategy in MTG's Google Drive.

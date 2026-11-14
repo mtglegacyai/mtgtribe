@@ -34,6 +34,8 @@ The palette (what each one is for):
   link       a soft, muted clink: a block joining a chain (video 02's blockchain)
   key        two soft key clinks and a small jingle: a key appears or is copied (video 03)
   door       a soft, slow swing of air with a low wooden knock: a door opening quietly (video 03)
+  pour       molten gold pouring into a mould, the tone rising as it fills (video 09)
+  gong       one soft, low gong with a slow bloom: the answer to a quiz lands (video 09)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -565,6 +567,27 @@ def slide():
     return lowpass(x, 1500)
 
 
+def pour():
+    """Molten gold pouring into a mould: a warm, thick flow whose tone slowly rises as the mould fills."""
+    d = 1.9
+    tt = t(d)
+    flow = band(noise(d), 120, 900) * (0.75 + 0.25 * np.sin(2 * np.pi * 5.5 * tt)) * 0.55
+    fill = sine(lambda u: 150 + 190 * (u / d) ** 1.4, d) * 0.5 + sine(lambda u: 300 + 380 * (u / d) ** 1.4, d) * 0.12
+    x = (flow + fill) * env(len(tt), 0.25, 0.7, hold=0.8)
+    return lowpass(x, 1400)
+
+
+def gong():
+    """The answer lands: one soft, low gong with a warm, slow bloom (never a crash)."""
+    d = 2.6
+    tt = t(d)
+    x = np.zeros(len(tt))
+    for f, a, dec in ((110.0, 1.0, 1.1), (164.8, 0.55, 1.4), (220.0, 0.4, 1.8), (277.2, 0.2, 2.4), (329.6, 0.14, 3.0)):
+        x += a * np.sin(2 * np.pi * f * tt + 0.6 * np.sin(2 * np.pi * 2.1 * tt)) * np.exp(-tt * dec)
+    x *= np.clip(tt / 0.03, 0, 1) ** 1.5
+    return lowpass(x, 1300)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -590,6 +613,8 @@ PALETTE = {
     'typing': (typing, 0.15), 'shimmer': (shimmer, 0.35),
     # made for video 08 (the story of the two pizzas)
     'doorbell': (doorbell, 0.3), 'slide': (slide, 0.15),
+    # made for video 09 (can you guess how much gold has ever been mined?)
+    'pour': (pour, 0.25), 'gong': (gong, 0.35),
 }
 
 

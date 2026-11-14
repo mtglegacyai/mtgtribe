@@ -1,0 +1,8 @@
+{
+ "hook": "Humans", "six": "six thousand", "guess": "Can you guess", "found": "we've found", "picture": "Picture", "melted": "melted", "cube": "one cube",
+ "optA": "Option A", "mountain": "a mountain", "optB": "Option B", "stadium": "a stadium", "optC": "option C", "building": "seven-floor", "three": "Three", "two": "Two", "one": ["One", 2],
+ "its": "It's C", "all": "All the gold", "tonnes": "more than", "tonnesEnd": ["tonnes", 1, "end"], "fits": "fits", "metres": "twenty-three", "field": "On a soccer", "covers": "it covers", "tenth": "a tenth",
+ "secret": "That's gold's", "rare": "It's rare", "print": "nobody", "btc": "Bitcoin borrows", "only": "only twenty-one", "ever": ["ever", 2], "so": "So before", "ask": "ask", "howRare": "how rare",
+ "did": "Did you", "tell": "Tell me", "send": "And send", "thinks": "who thinks",
+ "join": "Then join", "site": ["MTG tribe", 2], "weLearn": "We learn", "im": "I'm MTG", "slogan": "Let's Get"
+}

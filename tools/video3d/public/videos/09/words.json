@@ -1,0 +1,864 @@
+{
+"voice": null,
+"request": "302dc1cc724c4932b97254dc11450789",
+"duration": 59.7833,
+"pauses_added": [
+0.031,
+0.373,
+0.0,
+0.0,
+0.0
+],
+"words": [
+{
+"text": "Humans",
+"start": 0.256,
+"end": 0.597
+},
+{
+"text": "have",
+"start": 0.725,
+"end": 0.768
+},
+{
+"text": "chased",
+"start": 0.853,
+"end": 1.024
+},
+{
+"text": "gold",
+"start": 1.195,
+"end": 1.365
+},
+{
+"text": "for",
+"start": 1.579,
+"end": 1.664
+},
+{
+"text": "six",
+"start": 1.707,
+"end": 1.92
+},
+{
+"text": "thousand",
+"start": 2.091,
+"end": 2.261
+},
+{
+"text": "years.",
+"start": 2.475,
+"end": 2.645
+},
+{
+"text": "Can",
+"start": 3.285,
+"end": 3.413
+},
+{
+"text": "you",
+"start": 3.456,
+"end": 3.499
+},
+{
+"text": "guess",
+"start": 3.541,
+"end": 3.627
+},
+{
+"text": "how",
+"start": 3.712,
+"end": 3.797
+},
+{
+"text": "much",
+"start": 3.84,
+"end": 3.925
+},
+{
+"text": "we've",
+"start": 4.011,
+"end": 4.181
+},
+{
+"text": "found?",
+"start": 4.224,
+"end": 4.352
+},
+{
+"text": "Picture",
+"start": 4.907,
+"end": 5.205
+},
+{
+"text": "all",
+"start": 5.248,
+"end": 5.419
+},
+{
+"text": "of",
+"start": 5.461,
+"end": 5.504
+},
+{
+"text": "it,",
+"start": 5.547,
+"end": 5.632
+},
+{
+"text": "melted",
+"start": 5.888,
+"end": 6.229
+},
+{
+"text": "into",
+"start": 6.272,
+"end": 6.357
+},
+{
+"text": "one",
+"start": 6.485,
+"end": 6.656
+},
+{
+"text": "cube.",
+"start": 6.741,
+"end": 7.04
+},
+{
+"text": "Option",
+"start": 7.54,
+"end": 7.668
+},
+{
+"text": "A:",
+"start": 7.839,
+"end": 8.01
+},
+{
+"text": "as",
+"start": 8.351,
+"end": 8.564
+},
+{
+"text": "big",
+"start": 8.607,
+"end": 8.82
+},
+{
+"text": "as",
+"start": 8.863,
+"end": 8.906
+},
+{
+"text": "a",
+"start": 8.948,
+"end": 8.991
+},
+{
+"text": "mountain.",
+"start": 9.034,
+"end": 9.375
+},
+{
+"text": "Option",
+"start": 9.631,
+"end": 10.015
+},
+{
+"text": "B:",
+"start": 10.186,
+"end": 10.356
+},
+{
+"text": "as",
+"start": 10.74,
+"end": 10.868
+},
+{
+"text": "big",
+"start": 10.954,
+"end": 11.167
+},
+{
+"text": "as",
+"start": 11.21,
+"end": 11.252
+},
+{
+"text": "a",
+"start": 11.295,
+"end": 11.338
+},
+{
+"text": "stadium.",
+"start": 11.38,
+"end": 11.764
+},
+{
+"text": "Or",
+"start": 12.143,
+"end": 12.314
+},
+{
+"text": "option",
+"start": 12.357,
+"end": 12.485
+},
+{
+"text": "C:",
+"start": 12.655,
+"end": 12.869
+},
+{
+"text": "as",
+"start": 13.253,
+"end": 13.466
+},
+{
+"text": "tall",
+"start": 13.509,
+"end": 13.722
+},
+{
+"text": "as",
+"start": 13.807,
+"end": 13.893
+},
+{
+"text": "a",
+"start": 13.935,
+"end": 13.978
+},
+{
+"text": "seven-floor",
+"start": 14.021,
+"end": 14.575
+},
+{
+"text": "building.",
+"start": 14.618,
+"end": 14.789
+},
+{
+"text": "Three.",
+"start": 15.471,
+"end": 15.727
+},
+{
+"text": "Two.",
+"start": 16.325,
+"end": 16.538
+},
+{
+"text": "One.",
+"start": 16.965,
+"end": 17.178
+},
+{
+"text": "It's",
+"start": 17.978,
+"end": 18.276
+},
+{
+"text": "C.",
+"start": 18.319,
+"end": 18.49
+},
+{
+"text": "All",
+"start": 18.746,
+"end": 19.343
+},
+{
+"text": "the",
+"start": 19.428,
+"end": 19.514
+},
+{
+"text": "gold",
+"start": 19.556,
+"end": 19.684
+},
+{
+"text": "ever",
+"start": 19.812,
+"end": 19.855
+},
+{
+"text": "mined,",
+"start": 19.983,
+"end": 20.239
+},
+{
+"text": "more",
+"start": 20.58,
+"end": 20.708
+},
+{
+"text": "than",
+"start": 20.751,
+"end": 20.836
+},
+{
+"text": "two",
+"start": 20.879,
+"end": 21.092
+},
+{
+"text": "hundred",
+"start": 21.135,
+"end": 21.263
+},
+{
+"text": "and",
+"start": 21.391,
+"end": 21.476
+},
+{
+"text": "twenty",
+"start": 21.519,
+"end": 21.647
+},
+{
+"text": "thousand",
+"start": 21.775,
+"end": 21.988
+},
+{
+"text": "tonnes,",
+"start": 22.202,
+"end": 22.5
+},
+{
+"text": "fits",
+"start": 22.884,
+"end": 23.183
+},
+{
+"text": "in",
+"start": 23.268,
+"end": 23.354
+},
+{
+"text": "a",
+"start": 23.396,
+"end": 23.439
+},
+{
+"text": "cube",
+"start": 23.482,
+"end": 23.738
+},
+{
+"text": "about",
+"start": 23.823,
+"end": 23.994
+},
+{
+"text": "twenty-three",
+"start": 24.079,
+"end": 24.548
+},
+{
+"text": "metres",
+"start": 24.634,
+"end": 24.89
+},
+{
+"text": "wide.",
+"start": 24.932,
+"end": 25.146
+},
+{
+"text": "On",
+"start": 25.675,
+"end": 25.846
+},
+{
+"text": "a",
+"start": 25.889,
+"end": 25.931
+},
+{
+"text": "soccer",
+"start": 25.974,
+"end": 26.23
+},
+{
+"text": "field,",
+"start": 26.273,
+"end": 26.444
+},
+{
+"text": "it",
+"start": 26.828,
+"end": 26.955
+},
+{
+"text": "covers",
+"start": 26.998,
+"end": 27.169
+},
+{
+"text": "less",
+"start": 27.34,
+"end": 27.51
+},
+{
+"text": "than",
+"start": 27.596,
+"end": 27.724
+},
+{
+"text": "a",
+"start": 27.766,
+"end": 27.809
+},
+{
+"text": "tenth",
+"start": 27.852,
+"end": 28.15
+},
+{
+"text": "of",
+"start": 28.235,
+"end": 28.278
+},
+{
+"text": "the",
+"start": 28.321,
+"end": 28.406
+},
+{
+"text": "grass.",
+"start": 28.449,
+"end": 28.619
+},
+{
+"text": "That's",
+"start": 29.174,
+"end": 29.345
+},
+{
+"text": "gold's",
+"start": 29.387,
+"end": 29.686
+},
+{
+"text": "secret.",
+"start": 29.729,
+"end": 29.814
+},
+{
+"text": "It's",
+"start": 30.582,
+"end": 30.71
+},
+{
+"text": "rare,",
+"start": 30.753,
+"end": 30.966
+},
+{
+"text": "and",
+"start": 31.308,
+"end": 31.478
+},
+{
+"text": "nobody",
+"start": 31.521,
+"end": 31.691
+},
+{
+"text": "can",
+"start": 31.862,
+"end": 31.947
+},
+{
+"text": "print",
+"start": 31.99,
+"end": 32.161
+},
+{
+"text": "more.",
+"start": 32.246,
+"end": 32.374
+},
+{
+"text": "Bitcoin",
+"start": 32.929,
+"end": 33.313
+},
+{
+"text": "borrows",
+"start": 33.398,
+"end": 33.697
+},
+{
+"text": "that",
+"start": 33.74,
+"end": 33.867
+},
+{
+"text": "idea:",
+"start": 33.91,
+"end": 34.038
+},
+{
+"text": "only",
+"start": 34.422,
+"end": 34.635
+},
+{
+"text": "twenty-one",
+"start": 34.806,
+"end": 35.403
+},
+{
+"text": "million",
+"start": 35.531,
+"end": 35.617
+},
+{
+"text": "coins,",
+"start": 35.83,
+"end": 36.086
+},
+{
+"text": "ever.",
+"start": 36.47,
+"end": 36.726
+},
+{
+"text": "So",
+"start": 37.298,
+"end": 37.426
+},
+{
+"text": "before",
+"start": 37.469,
+"end": 37.512
+},
+{
+"text": "you",
+"start": 37.682,
+"end": 37.81
+},
+{
+"text": "put",
+"start": 37.853,
+"end": 37.938
+},
+{
+"text": "money",
+"start": 37.981,
+"end": 38.152
+},
+{
+"text": "into",
+"start": 38.28,
+"end": 38.365
+},
+{
+"text": "anything,",
+"start": 38.45,
+"end": 38.621
+},
+{
+"text": "ask:",
+"start": 39.218,
+"end": 39.432
+},
+{
+"text": "how",
+"start": 39.986,
+"end": 40.157
+},
+{
+"text": "rare",
+"start": 40.242,
+"end": 40.456
+},
+{
+"text": "is",
+"start": 40.584,
+"end": 40.669
+},
+{
+"text": "it,",
+"start": 40.712,
+"end": 40.84
+},
+{
+"text": "really?",
+"start": 41.096,
+"end": 41.266
+},
+{
+"text": "Did",
+"start": 41.821,
+"end": 41.949
+},
+{
+"text": "you",
+"start": 41.992,
+"end": 42.077
+},
+{
+"text": "guess",
+"start": 42.12,
+"end": 42.248
+},
+{
+"text": "right?",
+"start": 42.333,
+"end": 42.461
+},
+{
+"text": "Tell",
+"start": 42.888,
+"end": 43.016
+},
+{
+"text": "me",
+"start": 43.058,
+"end": 43.144
+},
+{
+"text": "below.",
+"start": 43.186,
+"end": 43.272
+},
+{
+"text": "And",
+"start": 43.997,
+"end": 44.082
+},
+{
+"text": "send",
+"start": 44.125,
+"end": 44.338
+},
+{
+"text": "this",
+"start": 44.381,
+"end": 44.509
+},
+{
+"text": "to",
+"start": 44.552,
+"end": 44.637
+},
+{
+"text": "a",
+"start": 44.68,
+"end": 44.722
+},
+{
+"text": "friend",
+"start": 44.765,
+"end": 44.978
+},
+{
+"text": "who",
+"start": 45.149,
+"end": 45.234
+},
+{
+"text": "thinks",
+"start": 45.277,
+"end": 45.448
+},
+{
+"text": "there's",
+"start": 45.533,
+"end": 45.704
+},
+{
+"text": "a",
+"start": 45.746,
+"end": 45.789
+},
+{
+"text": "mountain",
+"start": 45.832,
+"end": 46.258
+},
+{
+"text": "of",
+"start": 46.301,
+"end": 46.344
+},
+{
+"text": "gold",
+"start": 46.386,
+"end": 46.6
+},
+{
+"text": "out",
+"start": 46.728,
+"end": 46.813
+},
+{
+"text": "there.",
+"start": 46.856,
+"end": 47.026
+},
+{
+"text": "Then",
+"start": 47.567,
+"end": 47.737
+},
+{
+"text": "join",
+"start": 47.823,
+"end": 47.951
+},
+{
+"text": "the",
+"start": 48.036,
+"end": 48.121
+},
+{
+"text": "free",
+"start": 48.164,
+"end": 48.335
+},
+{
+"text": "MTG",
+"start": 48.42,
+"end": 48.932
+},
+{
+"text": "TRIBE",
+"start": 48.975,
+"end": 49.359
+},
+{
+"text": "at",
+"start": 49.487,
+"end": 49.529
+},
+{
+"text": "MTG",
+"start": 49.572,
+"end": 50.084
+},
+{
+"text": "tribe",
+"start": 50.127,
+"end": 50.425
+},
+{
+"text": "dot",
+"start": 50.511,
+"end": 50.639
+},
+{
+"text": "com",
+"start": 50.767,
+"end": 50.895
+},
+{
+"text": "slash",
+"start": 51.108,
+"end": 51.364
+},
+{
+"text": "group.",
+"start": 51.492,
+"end": 51.663
+},
+{
+"text": "We",
+"start": 52.175,
+"end": 52.303
+},
+{
+"text": "learn",
+"start": 52.345,
+"end": 52.473
+},
+{
+"text": "crypto,",
+"start": 52.516,
+"end": 52.9
+},
+{
+"text": "AI",
+"start": 53.241,
+"end": 53.625
+},
+{
+"text": "and",
+"start": 53.796,
+"end": 53.924
+},
+{
+"text": "multiple",
+"start": 53.967,
+"end": 54.223
+},
+{
+"text": "income",
+"start": 54.436,
+"end": 54.735
+},
+{
+"text": "streams",
+"start": 54.82,
+"end": 55.076
+},
+{
+"text": "together.",
+"start": 55.161,
+"end": 55.375
+},
+{
+"text": "I'm",
+"start": 55.929,
+"end": 56.143
+},
+{
+"text": "MTG,",
+"start": 56.185,
+"end": 56.569
+},
+{
+"text": "Your",
+"start": 56.868,
+"end": 56.996
+},
+{
+"text": "Digital",
+"start": 57.039,
+"end": 57.252
+},
+{
+"text": "Architect.",
+"start": 57.38,
+"end": 57.764
+},
+{
+"text": "Let's",
+"start": 58.447,
+"end": 58.703
+},
+{
+"text": "Get",
+"start": 58.745,
+"end": 58.831
+},
+{
+"text": "This",
+"start": 58.873,
+"end": 58.959
+},
+{
+"text": "Crypto!",
+"start": 59.001,
+"end": 59.3
+}
+]
+}

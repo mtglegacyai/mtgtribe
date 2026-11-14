@@ -67,6 +67,13 @@ electromagnetic frequencies).
 **Capacity of one machine:** 30-minute session plus 20-minute rest, so about one session every 50 minutes, at most
 about 9 in an 8-hour day.
 
+**Session length by model** (OlyNation guided-experience video, 14 Nov 2026): P90+ up to 20 minutes per session,
+P90 up to 30 minutes.
+
+**The "start-up check" shown in that video:** 14 or older; not pregnant; healthy skin on the feet (no injury,
+infection, irritation, open wounds); no pacemaker or implanted electronic device; skin comfortable with gentle
+stimulation. Also: use it on a dry surface, feet fully on the middle of each plate, legs comfortably apart.
+
 ## Who must not use it, or must ask a doctor first
 
 Pacemaker or other implanted electronics, metal implants, pregnancy, children (OlyLife says under 18; some say under 14),

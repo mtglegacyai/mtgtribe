@@ -96,7 +96,7 @@ def build_start():
     </div><p class="small" style="margin:0 0 14px;font-weight:700">Both codes are case sensitive. They come from MTG's team.</p>'''
     p5 = part(5, 'Connect Sonic AI', 'The part most people rush. Slow down here.', [
         'Open the menu, tap ' + k('CopyX') + ', find <b>SONIC</b> (the first one in the list) and tap ' + k('Details') + ', then ' + k('Connect') + '. <b>Don\'t pick any other trader.</b>',
-        'Read the terms: a 30% performance fee taken from profits only, no management fee, no join fee, a one month minimum, and an Amplify account.',
+        'Read the terms: a 30% performance fee taken from profits only, no management fee, no join fee, a one month minimum (give the strategy at least a month with your full amount; profits can come out any time), and an Amplify account.',
         'In ' + k('Investment') + ' type ' + k('50') + '. <b>Only 50.</b> The screen shows a $10 minimum, but 50 is the plan. Leave the other $100 in your balance for the promo.',
         '<b>Read the account rules on this screen:</b> the account closes if the trader\'s loss passes 10% of the starting balance. With a community token, that limit becomes 5%.',
         'Tap the arrow next to ' + k('Community Token') + '. Enter code 1, ' + k('#9M') + ', and tap ' + k('Verify') + '.',

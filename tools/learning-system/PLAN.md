@@ -56,7 +56,7 @@ for 51 seconds of speech. V2's recordings in the voice bank stay usable. The fir
 six lines and explainer #4's two lines, one request, banked as `explainers/ex3ex4v3.flac`. Explainer #6's nine lines
 (11 Nov 2026) and explainer #8's ten lines (12 Nov 2026, banked 13 Nov) are `explainers/ex6v3.flac` and
 `explainers/ex8v3.flac`, with their cut lines in `ex6-pack/` and `ex8-pack/`, all indexed in `sentences.tsv`. Explainer #9's eight
-lines (13 Nov 2026) are in `tools/jetup-explainers/ex9/voice/ex9v3.flac`, not banked yet (ask MTG).
+lines (13 Nov 2026) are banked as `explainers/ex9v3.flac` with `ex9-pack/` (14 Nov 2026, MTG: "Add the new lines to my voice bank").
 
 ## Standard: the site tour (video 0)
 

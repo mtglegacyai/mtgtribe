@@ -1,0 +1,236 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--vio:#9b7cff;
+ --goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);--f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(900px 600px at 82% 18%,rgba(140,108,231,.30),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(232,194,90,.14),transparent 70%),
+ radial-gradient(700px 500px at 20% 15%,rgba(203,251,97,.07),transparent 70%),linear-gradient(160deg,#130c28,#0b0912 55%,#08060f)}
+#grid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(1100px 700px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;visibility:hidden;opacity:0;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.em{font-family:'Noto Color Emoji';font-style:normal}
+/* edge-lit glass (MTG approved the glass style, 10 Nov 2026) */
+.glass{border-radius:30px;background:linear-gradient(158deg,rgba(203,251,97,.13),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(203,251,97,.07)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(203,251,97,.85),0 0 34px rgba(203,251,97,.25),inset 0 0 26px rgba(203,251,97,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass:before{content:"";position:absolute;inset:9px;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(203,251,97,.32);pointer-events:none}
+.glass.v{background:linear-gradient(158deg,rgba(155,124,255,.2),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(155,124,255,.08)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(155,124,255,.9),0 0 34px rgba(155,124,255,.28),inset 0 0 26px rgba(155,124,255,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass.v:before{box-shadow:inset 0 0 0 1px rgba(155,124,255,.32)}
+.glass.g{background:linear-gradient(158deg,rgba(232,194,90,.2),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(232,194,90,.08)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(255,224,143,.9),0 0 34px rgba(232,194,90,.28),inset 0 0 26px rgba(232,194,90,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass.g:before{box-shadow:inset 0 0 0 1px rgba(255,224,143,.32)}
+/* top bar */
+#top{left:56px;right:56px;top:40px;height:70px;display:flex;align-items:center;justify-content:space-between;z-index:40}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
+.who b{display:block;font:800 26px/1 var(--f-b);text-shadow:0 2px 10px rgba(5,3,10,.9)}.who small{display:block;margin-top:7px;font:800 15px/1 var(--f-b);color:var(--gold);letter-spacing:.1em;text-shadow:0 2px 8px rgba(5,3,10,.95),0 0 3px rgba(5,3,10,.8)}
+#chipT{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 20px/1 var(--f-b);letter-spacing:.14em}
+
+/* the world: one illustration that persists and grows (camera = translate + scale of #world) */
+#world{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;will-change:transform,opacity}
+#world>svg{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+/* your name plate: a real 3D flip (screen space, follows the table with the camera) */
+#plate{position:absolute;left:0;top:0;width:0;height:0;perspective:900px;visibility:hidden;z-index:6}
+#plate .pl{position:absolute;left:0;top:0;transform-origin:50% 50%;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ border-radius:16px;background:linear-gradient(180deg,#e6ff9c,#c3f35a 55%,#a4dc34);color:#14190a;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55),inset 0 -6px 12px rgba(60,90,10,.35),0 10px 22px rgba(0,0,0,.45);white-space:nowrap;text-align:center}
+#plate .pl b{font:800 40px/1.05 var(--f-b)}
+#plate .pl small{display:block;margin-top:6px;font:800 30px/1.1 var(--f-b);color:#2a3a0c}
+#plate .pl small i{font-style:normal;color:#3d5a10}
+#plateGlow{position:absolute;left:0;top:0;border-radius:30px;background:radial-gradient(closest-side,rgba(203,251,97,.75),rgba(203,251,97,0));visibility:hidden}
+
+/* hook */
+#hkT{left:110px;top:160px;display:inline-flex;align-items:center;gap:16px;height:72px;padding:0 32px;border-radius:999px;font:800 38px/1 var(--f-b);white-space:nowrap}
+#hkT .q{color:var(--gold-hi);margin:0 -.1em}
+.hkQ{top:306px;font:400 138px/.98 var(--f-d);text-transform:uppercase;letter-spacing:.005em;white-space:nowrap}
+.hkQ span{display:inline-block;margin-right:.2em;color:rgba(246,243,255,.26);transform-origin:50% 80%}
+.hkQ span.k{color:rgba(246,243,255,.22)}
+.hkQ span.lit{color:#fff;text-shadow:0 0 40px rgba(255,255,255,.18)}
+#hkL span.k.lit{color:#ffe08f;text-shadow:0 0 44px rgba(232,194,90,.45)}
+#hkR span.k.lit{color:#cbfb61;text-shadow:0 0 44px rgba(203,251,97,.45)}
+#hkL{left:110px}#hkR{left:1206px}
+#hkPot{left:770px;top:336px;width:380px;height:380px}
+#hkPot svg{width:380px;height:380px;overflow:visible}
+.slots{display:flex;gap:22px}
+.slot{position:relative;width:150px;height:150px;border-radius:30px}
+.slot .n{position:absolute;left:-14px;top:-14px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#14190a;font:800 30px/1 var(--f-b);box-shadow:0 0 22px rgba(203,251,97,.55)}
+.slot .dash{position:absolute;inset:22px;border-radius:18px;border:3px dashed rgba(203,251,97,.4)}
+#hkS{left:1210px;top:640px}
+
+/* hi */
+#hdisc{left:780px;top:150px;width:360px;height:360px;border-radius:50%;padding:8px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);box-shadow:0 0 60px rgba(232,194,90,.45)}
+#hdisc img{width:344px;height:344px;border-radius:50%;display:block}
+#hwho{top:556px;font:800 36px/1 var(--f-b);letter-spacing:.14em;color:var(--gold)}
+#hwho .em{letter-spacing:0;margin-right:.1em}#hwho .sep{display:inline-block;width:3px;height:34px;margin:0 .55em 0 .2em;vertical-align:-5px;border-radius:2px;background:rgba(232,194,90,.7)}
+#httl{top:630px;font:400 112px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}
+
+/* labels (screen space, never scaled by the camera) */
+.lab{display:inline-flex;align-items:center;gap:16px;min-height:84px;padding:16px 30px;border-radius:26px;font:800 40px/1.15 var(--f-b);white-space:nowrap}
+.lab .em{font-size:44px}
+.lab.two{flex-direction:column;align-items:flex-start;gap:8px;padding:20px 32px 22px}
+.lab small{display:block;font:700 32px/1.2 var(--f-b);color:var(--body)}
+.lab b{font-weight:800}
+.lab.lime b{color:var(--lime)}.lab.gold b{color:var(--gold-hi)}
+.pill{display:inline-flex;align-items:center;gap:14px;height:76px;padding:0 30px;border-radius:999px;font:800 38px/1 var(--f-b);white-space:nowrap}
+.pill.lime{background:var(--lime);color:#14190a;box-shadow:0 0 40px rgba(203,251,97,.45)}
+.pill.gold{background:linear-gradient(180deg,#fff1bf,#e8c25a);color:#1a1405;box-shadow:0 0 40px rgba(232,194,90,.45)}
+.pill.line{background:rgba(20,16,34,.86);box-shadow:inset 0 0 0 3px var(--lime),0 0 30px rgba(203,251,97,.25);color:#f6f3ff}
+.pill.gline{background:rgba(20,16,34,.86);box-shadow:inset 0 0 0 3px var(--gold-hi),0 0 30px rgba(232,194,90,.25);color:#f6f3ff}
+.pill .k{color:var(--lime)}.pill.gline .k{color:var(--gold-hi)}
+.tagsrc{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.22);font:800 30px/1 var(--f-b);color:var(--body);white-space:nowrap}
+#lead,#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible;pointer-events:none}
+#fx{z-index:7}
+/* the CopyX line's label, on the line */
+#Lcopyx{height:66px;padding:0 26px;font:800 40px/1 var(--f-b);gap:10px;z-index:8}
+#Lauto small{overflow:hidden}   /* its small line grows in on "into your account" (no empty half box before it) */
+/* what stays yours: the three choices */
+.cho{width:990px;height:152px;padding:0 30px 0 30px;display:flex;align-items:center;gap:24px}
+.cho .n{position:absolute;left:-14px;top:-14px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#14190a;font:800 30px/1 var(--f-b);box-shadow:0 0 22px rgba(203,251,97,.55);z-index:2}
+.cho .ic{flex:none;width:92px;height:92px;border-radius:24px;display:grid;place-items:center;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 2px rgba(203,251,97,.35)}
+.cho .ic svg{width:60px;height:60px;color:var(--lime)}
+.cho .tx{display:flex;flex-direction:column;gap:8px;white-space:nowrap}
+.cho .tx b{font:800 42px/1.08 var(--f-b)}
+.cho .tx small{font:700 31px/1.15 var(--f-b);color:var(--body)}
+.cho .dash{position:absolute;left:30px;right:30px;top:30px;bottom:30px;border-radius:18px;border:3px dashed rgba(203,251,97,.35)}
+/* the real screens */
+#scrS{width:688px;padding:24px 34px 32px}
+#scrS .hd,#scrF .hd{display:flex;align-items:center;gap:14px;margin:0 0 20px 2px}
+#scrS img{display:block;width:620px;height:510px}
+#scrF{width:1160px;padding:28px 40px 40px}
+#scrF .hd b{font:800 40px/1.1 var(--f-b);white-space:nowrap}
+#scrF .row{position:relative;width:1080px;height:163px;border-radius:24px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12)}
+#scrF .row img{position:absolute;left:24px;top:3px;width:1032px;height:156px}
+#scrF .lit{position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 0 4px var(--lime),0 0 40px rgba(203,251,97,.55);opacity:0}
+/* the real screen in a slim phone frame (thin gold-titanium rim, thin black bezel, camera island, side buttons) */
+#phone{left:1310px;top:118px;width:470px;height:726px;border-radius:66px;padding:3px;
+ background:linear-gradient(145deg,#f6e4b0,#b8955a 30%,#e9d3a0 52%,#8d6d3c 78%,#e2c88e);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,194,90,.18)}
+#phone .bz{position:absolute;inset:3px;border-radius:63px;background:#050507;padding:11px}
+#phone .sc{position:relative;width:100%;height:100%;border-radius:53px;overflow:hidden;background:#f1f1f3}
+#phone .sc img{position:absolute;left:11px;top:60px;width:420px;height:auto;display:block}
+#phone .isl{position:absolute;left:50%;top:18px;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#050507;z-index:3;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+#phone .isl:after{content:"";position:absolute;right:14px;top:10px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#2a3a5a,#05070d 70%)}
+#phone .btn{position:absolute;width:4px;border-radius:2px;background:linear-gradient(90deg,#8d6d3c,#e9d3a0)}
+#phone .glare{position:absolute;inset:0;border-radius:53px;background:linear-gradient(115deg,rgba(255,255,255,.10),transparent 32%);pointer-events:none;z-index:4}
+#phone .shade{position:absolute;inset:0;border-radius:53px;background:rgba(10,8,20,.55);z-index:2;pointer-events:none}
+/* the eye icon, magnified in place: a round loupe with a lime rim (the screen round it dimmed), tapped */
+#eyeLoupe{position:absolute;width:188px;height:188px;border-radius:50%;overflow:hidden;background:#fff;z-index:6;
+ box-shadow:0 0 0 6px var(--lime),0 0 46px rgba(203,251,97,.75),0 18px 40px rgba(0,0,0,.55)}
+#eyeLoupe img{position:absolute;width:1008px;height:auto;display:block}
+#eyeTap{position:absolute;left:44px;top:44px;width:100px;height:100px;border-radius:50%;box-shadow:inset 0 0 0 7px var(--lime);z-index:2}
+#eyeHand{position:absolute;font:96px/1 'Noto Color Emoji';z-index:7;transform-origin:30% 8%}
+/* the glass lid scene */
+#want{left:80px;top:150px;display:flex;align-items:center;gap:24px;padding:18px 40px 18px 20px;border-radius:999px}
+#want img{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 4px #e8c25a,0 0 26px rgba(232,194,90,.5)}
+#want b{font:800 50px/1 var(--f-b);white-space:nowrap}
+/* recap */
+#rtt{top:132px;font:400 92px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#rtt span{color:var(--lime)}
+.rcol{top:262px;padding:36px 42px 38px;display:flex;flex-direction:column;gap:24px}
+.rcol h3{font:800 48px/1.1 var(--f-b);white-space:nowrap;margin-bottom:4px}
+.rcol h3 .k{color:var(--gold-hi)}#rcR h3 .k{color:var(--lime)}
+.ri{display:flex;align-items:flex-start;gap:20px;font:800 40px/1.16 var(--f-b);white-space:nowrap}
+.ri small{display:block;margin-top:2px;font:700 32px/1.2 var(--f-b);color:var(--body)}
+.ri .ok{flex:none;width:52px;height:52px;margin-top:-4px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#14190a;font:800 30px/1 var(--f-b);box-shadow:0 0 22px rgba(203,251,97,.6)}
+#rcL .ri .ok{background:linear-gradient(180deg,#fff1bf,#e8c25a);box-shadow:0 0 22px rgba(232,194,90,.6)}
+#rcL{left:100px;width:640px;height:476px}#rcR{left:780px;width:1040px;height:476px}
+#rcSpoon{width:560px;height:205px;margin-top:4px}
+/* your turn */
+#ut{left:1010px;top:176px;width:880px;text-align:center;font:400 100px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}#ut span{color:var(--lime)}
+#ujoin{left:1130px;top:330px;width:640px;height:150px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:22px;background:linear-gradient(180deg,#dcff86,#b5ec3c);color:#14190a;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.03em;box-shadow:0 22px 70px rgba(203,251,97,.4),0 0 0 6px rgba(203,251,97,.18)}
+#ujoin .em{font-size:72px}
+#uurl{left:1050px;top:536px;width:800px;display:flex;justify-content:center}
+#uurl span{display:inline-flex;align-items:center;height:96px;padding:0 50px;border-radius:999px;background:linear-gradient(rgba(203,251,97,.12),rgba(203,251,97,.12)),rgba(21,17,42,.94);box-shadow:inset 0 0 0 4px var(--lime),0 0 40px rgba(203,251,97,.25);font:800 56px/1 var(--f-b)}
+#uurl i{font-style:normal;color:var(--lime)}
+#uback{left:960px;top:120px;width:960px;height:640px;background:radial-gradient(closest-side,rgba(8,6,16,.78),rgba(8,6,16,.5) 60%,rgba(8,6,16,0));pointer-events:none}
+#uring{left:1380px;top:335px;width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 7px #fff}
+#uhand{left:1410px;top:380px;font-size:120px;transform-origin:30% 10%}
+
+/* captions */
+#cap{left:0;right:0;top:900px;display:flex;justify-content:center;visibility:visible;opacity:1;z-index:50}
+#capbox{max-width:1560px;padding:14px 30px 16px;border-radius:20px;background:rgba(8,6,14,.72);text-align:center;font:800 44px/1.3 var(--f-b);color:rgba(255,255,255,.95);visibility:hidden}
+#capbox span{margin:0 .12em}#capbox .on{color:var(--lime)}#capbox .todo{color:rgba(255,255,255,.55)}
+#v *{font-feature-settings:"calt" 0 !important}   /* one apostrophe shape everywhere (Manrope's contextual alternates curl some and not others); !important because a later `font:` shorthand resets it */
+</style></head><body><div id="v"><div id="grid"></div>
+
+<svg width="0" height="0" style="position:absolute"><filter id="fMB" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feGaussianBlur id="fMBg" stdDeviation="0 0"/></filter></svg>
+<!-- the cooking class (world space): the hall, the chef at the front, the tables, your table in front -->
+<div id="world">
+ <svg id="wsvg" viewBox="0 0 1920 1080"><defs id="defs"></defs>
+  <g id="wHall"></g>
+  <g id="wChef"></g>
+  <g id="wRows"></g>
+  <g id="wLines"></g>
+  <g id="wYours"></g>
+  <g id="wFront"></g>
+ </svg>
+</div>
+<div id="plate"><div id="plateGlow"></div><div class="pl" id="plA"><b>Your pot</b></div><div class="pl" id="plB"><b>Your own account</b></div><div class="pl" id="plC"><b>Your account</b><small>TAG Markets <i>·</i> in your name</small></div></div>
+
+<!-- top bar -->
+<div class="ab" id="top"><div class="who"><img src="jetup-disc-small.png" alt=""><div><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div></div><span id="chipT">JETUP · WHAT “COPYING” REALLY MEANS</span></div>
+
+<!-- hook: the two-part question, the small pot under its glass lid, the three empty slots -->
+<div class="ab glass" id="hkT">What <span class="q">“copying”</span> really means</div>
+<div class="ab hkQ" id="hkL"><span>What</span><span>gets</span><br><span class="k">copied?</span></div>
+<div class="ab hkQ" id="hkR"><span>What</span><span>stays</span><br><span class="k">yours?</span></div>
+<div class="ab" id="hkPot"><svg id="hkPotSvg" viewBox="-200 -200 400 400"></svg></div>
+<div class="ab slots" id="hkS"><div class="slot glass"><span class="dash"></span><span class="n">1</span></div><div class="slot glass"><span class="dash"></span><span class="n">2</span></div><div class="slot glass"><span class="dash"></span><span class="n">3</span></div></div>
+
+<!-- hi -->
+<div class="ab" id="hdisc"><img src="jetup-disc.png" alt="JetUP"></div>
+<div class="ab c" id="hwho">MTG <span class="em">👑</span><span class="sep"></span>YOUR DIGITAL ARCHITECT</div>
+<div class="ab c" id="httl">What <span class="goldtxt">“copying”</span> really means</div>
+
+<!-- labels, leader lines and the stirs (screen space) -->
+<svg id="lead" viewBox="0 0 1920 1080"></svg>
+<svg id="fx" viewBox="0 0 1920 1080"><defs><radialGradient id="gFxLime"><stop offset="0" stop-color="#cbfb61" stop-opacity=".9"/><stop offset=".5" stop-color="#cbfb61" stop-opacity=".25"/><stop offset="1" stop-color="#cbfb61" stop-opacity="0"/></radialGradient>
+ <radialGradient id="gFxGold"><stop offset="0" stop-color="#ffe08f" stop-opacity=".9"/><stop offset=".5" stop-color="#e8c25a" stop-opacity=".25"/><stop offset="1" stop-color="#e8c25a" stop-opacity="0"/></radialGradient></defs></svg>
+<!-- your pot, your account -->
+<div class="ab lab glass" id="Lmoney"><b>Your money</b></div>
+<div class="ab lab two glass g" id="Lbadge"><b>Sonic AI</b><small>the strategy</small></div>
+<div class="ab pill line" id="Lcopyx">CopyX</div>
+<!-- what gets copied -->
+<div class="ab pill gline" id="Qcopied">What gets <span class="k">copied?</span></div>
+<div class="ab lab two glass g" id="Lauto"><b>Sonic AI's trades,</b><small>copied into your account,<br>automatically</small></div>
+<div class="ab pill lime" id="Cpick">You don't pick the trades</div>
+<!-- what stays yours: the three choices -->
+<div class="ab pill line" id="Qyours">What stays <span class="k">yours?</span></div>
+<div class="ab cho glass" id="ch1"><span class="n">1</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg></span><span class="tx"><b>The strategy</b><small>SONIC, first in the CopyX list</small></span><span class="dash"></span></div>
+<div class="ab cho glass" id="ch2"><span class="n">2</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h9l-1.2 3.2c1.9 1.3 2.7 3.6 2.7 6.3V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6.5c0-2.7.8-5 2.7-6.3Z"/><path d="M17 8.6h1.6a2.4 2.4 0 0 1 0 4.8H17.3"/><path d="M6.5 3 4.6 4.8"/></svg></span><span class="tx"><b>How much to put in</b><small>The training uses 50 · the screen's minimum: $10</small></span><span class="dash"></span></div>
+<div class="ab cho glass" id="ch3"><span class="n">3</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span><span class="tx"><b>When to stop</b></span><span class="dash"></span></div>
+<!-- look before you pick: MTG's real CopyX screens -->
+<div class="ab glass" id="scrS"><div class="hd"><span class="tagsrc">MTG's CopyX screen</span></div><img src="copyx-sonic.png" alt="SONIC, first in the CopyX list"></div>
+<div class="ab glass g" id="scrF"><div class="hd"><b>Sonic AI's terms, <span style="color:var(--gold-hi)">from the CopyX screen</span></b></div><div class="row"><img src="copyx-fee.png" alt="Performance Fee 30%"><div class="lit"></div></div></div>
+<div class="ab pill lime" id="Cprofit">Taken from profits only</div>
+<!-- the glass lid -->
+<div class="ab glass g" id="want"><img src="jetup-disc-small.png" alt=""><b>Want to see it for yourself?</b></div>
+<div class="ab lab glass" id="Lmt5"><b>MetaTrader 5 app</b></div>
+<div class="ab" id="phone"><div class="btn" style="left:-3px;top:150px;height:56px"></div><div class="btn" style="left:-3px;top:226px;height:56px"></div><div class="btn" style="right:-3px;top:190px;height:86px"></div>
+ <div class="bz"><div class="sc"><div class="isl"></div><img id="eyeImg" src="copyx-eye.png" alt="CopyX, Follower Hub, Strategies: the SONIC account"><div class="shade" id="eyeShade"></div><div class="glare"></div></div></div>
+ <div id="eyeLoupe"><img src="copyx-eye.png" alt=""><div id="eyeTap"></div></div><div id="eyeHand">👆</div></div>
+<div class="ab lab two glass" id="Cpass"><b>Investor password:</b><small>CopyX › Follower Hub ›<br>Strategies › eye icon</small></div>
+<div class="ab lab two glass" id="Cread"><b>Read only:</b><small>watch, not trade<br>or withdraw</small></div>
+<!-- recap -->
+<div class="ab c" id="rtt">So that's <span>copying</span></div>
+<div class="ab glass g rcol" id="rcL"><h3>What gets <span class="k">copied?</span></h3>
+ <div class="ri" id="ri1"><span class="ok">✓</span><span>The trades<small>(you don't pick them)</small></span></div>
+ <svg id="rcSpoon" viewBox="0 0 520 190"></svg></div>
+<div class="ab glass rcol" id="rcR"><h3>What stays <span class="k">yours?</span></h3>
+ <div class="ri" id="ri2"><span class="ok">✓</span><span>Your own account,<small>in your name</small></span></div>
+ <div class="ri" id="ri3"><span class="ok">✓</span><span>Your choices:<small>the strategy, how much, when to stop</small></span></div>
+ <div class="ri" id="ri4"><span class="ok">✓</span><span>Your glass lid:<small>watch every trade, read only</small></span></div></div>
+<!-- your turn -->
+<div class="ab" id="uback"></div>
+<div class="ab" id="ut">Now it's <span>your turn</span></div>
+<div class="ab" id="ujoin"><span class="em">🚀</span>Join JetUP</div>
+<div class="ab" id="uurl"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="uring"></div>
+<div class="ab em" id="uhand">👆</div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

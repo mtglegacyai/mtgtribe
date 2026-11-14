@@ -65,3 +65,14 @@ any long number. The USD 16.80 shown on the Spend screen is CoinZoom's own demo 
   the full 51.36 s closing track ending on the last frame), x264 CRF 18, AAC 256k.
 - `cover/`: `screen.py` (the video's own details screen, masked), `cover.html`, `shoot.js` (1920x1080).
 - `coinzoom-disc.png`: the CoinZoom mark from CoinZoom's official logo SVG (coinzoom.com), rendered at 1024 px.
+
+## Preview of 14 Nov 2026
+
+`coinzoom-find-your-virtual-card-mtg.mp4`: 1:54 (114.07 s), 1920x1080, 30 fps, 16.1 MB, -14.1 LUFS, true peak -2.6 dBFS,
+largest sample 0.74, closing track from 62.73 s to the last frame, sounds 19 whoosh, 15 tick, 11 pop, 5 click.
+Checks: speech-to-text hears every line in order (and the track's "Wherever I go" at the end); privacy OCR of every
+second frame (1,711 frames): 0 flags, with a positive control (the same scan on the unmasked details frame finds the
+number, the name and the expiry in all four passes); brightness: only planned fades (the In this video panel now fades
+out over the clip's own cut, so the bright title card no longer flashes back at 21 s); first frame: CoinZoom's title
+card in the window, MTG's top bar. Cover: `coinzoom-find-your-virtual-card-cover.jpg` (1920x1080) and `.webp` (1280x720).
+Render: about 70 s of frames on 4 workers, then the mix and the encode.

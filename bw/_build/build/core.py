@@ -468,4 +468,7 @@ def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True):
 def wrap_doc(hd, content, body_cls='', main_page=False):
     sp = sprite()
     body = f'<a class="skip" href="#main">Skip to content</a>{sp}{content}'
+    if main_page and MODE == 'preview':
+        # private preview page: the host adds the document skeleton, so keep our head tags at the top
+        return f'{hd}\n<div class="{body_cls}">{body}</div>'
     return f'<!doctype html>\n<html lang="en-ZA">\n<head>\n{hd}\n</head>\n<body class="{body_cls}">\n{body}\n</body>\n</html>\n'

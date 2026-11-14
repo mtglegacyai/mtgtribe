@@ -277,8 +277,7 @@ def p_disc(here):
 
 
 # ======================================================================= ORDER FORM (mtgtribe.com/bwcopy)
-def order_page():
-    here = ''
+def order_page(here=''):
     import core as _c; _c._used.clear()
     home = SITE + BASE
     f = lambda n, label, ph='', req=False, hint='', typ='text': (

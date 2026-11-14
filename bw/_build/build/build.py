@@ -211,6 +211,47 @@ def install(dst):
             shutil.copytree(s, t) if os.path.isdir(s) else shutil.copy(s, t)
 
 
+def render_preview(dst):
+    """private review copy (relative links, lighter video), for MTG to tap through before anything goes live"""
+    import posixpath
+    core.MODE = 'preview'
+    core.HASH.clear()
+    if os.path.exists(dst):
+        shutil.rmtree(dst)
+    os.makedirs(dst + '/assets', exist_ok=True)
+    for f in sorted(os.listdir(SRC + '/assets')):
+        shutil.copy(SRC + '/assets/' + f, dst + '/assets/' + f)
+    shutil.copy(REPO + '/assets/video-return.js', dst + '/assets/video-return.js')
+    os.makedirs(dst + '/img', exist_ok=True)
+    for f in os.listdir(OUT + '/_img'):
+        if not f.startswith('og-'):
+            shutil.copy(OUT + '/_img/' + f, dst + '/img/' + f)
+    os.makedirs(dst + '/media', exist_ok=True)
+    shutil.copy(OUT + '/_media/bitcoin-wealth-mascot-lion-wave.mp4', dst + '/media/')
+    for k, v in V.items():
+        out = dst + f'/media/{v["slug"]}.mp4'
+        sh('ffmpeg', '-y', '-v', 'error', '-i', STUDIO + '/' + v['master'], '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264',
+           '-preset', 'slow', '-crf', '29', '-maxrate', '650k', '-bufsize', '1300k', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '80k',
+           '-movflags', '+faststart', out)
+    files = {}
+    hd, body = landing()
+    files['index.html'] = core.wrap_doc(hd, body, 'landing', main_page=True)
+    for key, (title, fn, extra) in PAGES.items():
+        here = NAVD[key][1]
+        hd, content = core.dash_page(key, title, SEO_DESC[key], fn, [])
+        files[here + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
+    hd, body = order_page('bwcopy/')
+    files['bwcopy/index.html'] = core.wrap_doc(hd, body, 'landing orderpage')
+    for path, html in files.items():
+        d = posixpath.dirname(path) or '.'
+        html = html.replace('href="/bwcopy/"', 'href="' + posixpath.relpath('bwcopy/index.html', d) + '"')
+        html = html.replace('"/assets/video-return.js?v=1"', '"' + posixpath.relpath('assets/video-return.js', d) + '"')
+        os.makedirs(dst + '/' + d, exist_ok=True)
+        open(dst + '/' + path, 'w').write(html)
+    core.MODE = 'prod'
+    return sorted(files)
+
+
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
     if '--fast' not in sys.argv or not os.path.exists(OUT + '/_img'):

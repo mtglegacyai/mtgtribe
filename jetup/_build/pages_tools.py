@@ -18,6 +18,7 @@ def build_exposure():
 {phead('i-candle2', 'Tool', 'Exposure <span class="grad">Calculator</span>',
        'Type your own money, any bonus and the Amplify multiplier, then drag a price move. See the exposure, the profit or loss, and what that move means for your own money.',
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Exposure Calculator', None)], ped='lime')}
+<section class="sec tight" style="padding-top:0;padding-bottom:0"><div class="narrow rv" style="margin-bottom:22px">{laptop('calc', 'New here? Watch the calculator, tap by tap (2:03)', eager=True)}</div></section>
 <section class="sec tight" style="padding-top:0"><div class="wrap toolgrid">
  <form class="card pad" id="exp-form" novalidate aria-label="Exposure Calculator inputs">
   <p class="eyebrow" style="margin-bottom:12px">Start from an example</p>
@@ -64,7 +65,7 @@ def build_exposure():
     app = {"@type": "WebApplication", "name": "Exposure Calculator (JetUP and TAG Markets Amplify)", "url": SITE + path, "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
     return page(path, 'Exposure Calculator: 24x Amplify on TAG Markets | MTG',
                 'Free Exposure Calculator for JetUP and TAG Markets: see what 24x Amplify does to a deposit, the profit or loss from a price move, and the move that equals all your own money.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Exposure Calculator', None)], [app, ld_video('amplify')],
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Exposure Calculator', None)], [app, ld_video('calc'), ld_video('amplify')],
                 keywords='Exposure Calculator, Amplify calculator, TAG Markets Amplify, JetUp 24x, leverage calculator, copy trading risk, MTG TRIBE')
 
 def build_split():
@@ -124,6 +125,7 @@ def build_videos():
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The $100 promo</p>{laptop('promo', 'The $100 Fast Start Promo (2:18)')}<p class="small center" style="margin:8px 0 0">The money plan, how to claim it in 4 steps, and the promo rules.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The 70/30 split</p>{laptop('split', 'The 70/30 split (2:16)')}<p class="small center" style="margin:8px 0 0">Where every profit goes, no fee on a losing trade, and the calculator, tap by tap.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Amplify 24x</p>{laptop('amplify', 'Amplify 24x made simple (2:13)')}<p class="small center" style="margin:8px 0 0">One market stall that trades the size of 24, the $155 money plan, and the calculator, tap by tap.</p></div>
+ <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Know your numbers</p>{laptop('calc', 'The Exposure Calculator, tap by tap (2:03)')}<p class="small center" style="margin:8px 0 0">Your map before you start: the $6,000 exposure, a 1% move both ways, and your lines to know.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">The partner plan</p>{laptop('partnerplan', 'The partner plan: the rule most people miss (2:18)')}<p class="small center" style="margin:8px 0 0">Ten glass floors and an access card: how partner levels open, and what open levels pay.</p></div>
  <div class="rv" style="max-width:980px;margin:0 auto;width:100%"><p class="eyebrow" style="margin-bottom:14px">Getting your money out</p>{laptop('withdraw', 'Getting your money out, explained by MTG (2:06)')}<p class="small center" style="margin:8px 0 0">A fruit tree in your own backyard: withdraw profits any time, the promo's 12-month rule, and a small withdrawal first.</p></div>
  <div class="grid2" id="tutorials" style="align-items:start">
@@ -149,7 +151,7 @@ def build_videos():
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Videos: Trainings by MTG | MTG',
                 'Watch the JetUP and TAG Markets videos: the 5 checks before you start, the sign-up training with Sonic AI and the Dennis promo, MTG\'s step-by-step phone videos (create your JetUP account, link TAG Markets) and JetUP\'s own Profit Share explainer.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('simple'), ld_video('who'), ld_video('copy'), ld_video('promo'), ld_video('split'), ld_video('amplify'), ld_video('partnerplan'), ld_video('withdraw'), ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('simple'), ld_video('who'), ld_video('copy'), ld_video('promo'), ld_video('split'), ld_video('amplify'), ld_video('calc'), ld_video('partnerplan'), ld_video('withdraw'), ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
 
 DOWNLOADS = [
  ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),

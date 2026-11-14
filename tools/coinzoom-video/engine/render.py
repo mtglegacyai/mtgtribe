@@ -1,10 +1,10 @@
-# Renders the CoinZoom narrated video frame by frame (1920x1080, 30 fps): MTG's dark explainer stage, CoinZoom's own clip
-# in a slim gold-titanium window with a camera that zooms to each tap, rings, taps, chips, step pills, the In this video
-# and recap panels, captions with the spoken word lit, emoji pops, privacy blur on the card details, and the signature
-# ending (mtg_ending.py, with the CoinZoom logo disc and mtgtribe.com).
-#   python3 render.py range <f0> <f1> <outdir>     frames f0..f1-1 as f%05d.jpg
-#   python3 render.py test <t1,t2,...> <outdir>    stills at those times as t<time>.png
-# Needs MTG_FONTS, MTG_ICONS, MTG_LOGO, MTG_URL in the environment (see build.sh).
+# Renders one narrated CoinZoom clip frame by frame (1920x1080, 30 fps) from its video folder's timeline.json: MTG's dark
+# explainer stage, CoinZoom's own clip in a slim gold-titanium window with a camera that zooms to each tap, rings, taps,
+# chips, step pills, the In this video and recap panels, captions with the spoken word lit, emoji pops, the privacy blur,
+# and the signature ending (mtg_ending.py, with the CoinZoom logo disc and mtgtribe.com).
+#   python3 render.py <video dir> range <f0> <f1> <outdir>     frames f0..f1-1 as f%05d.jpg
+#   python3 render.py <video dir> test <t1,t2,...> <outdir>    stills at those times as t<time>.png
+# Needs MTG_FONTS, MTG_ICONS, MTG_LOGO, MTG_URL in the environment (env.sh).
 import json, math, os, sys, functools
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -13,8 +13,10 @@ import mtg_ending as ME
 from mtg_ending import ease_out, ease_back, smooth, env, paste, paste_c, glow, chip, emo, logo_card, burst
 lru = functools.lru_cache(maxsize=None)
 
-TL = json.load(open(os.path.join(HERE, 'timeline.json'))); KC = json.load(open(os.path.join(HERE, 'kitcues.json')))
-SRCDIR = os.path.join(HERE, '..', 'src720')
+VD = os.path.abspath(sys.argv[1] if __name__ == '__main__' else os.environ['CZ_VIDEO'])     # the video's folder
+TL = json.load(open(os.path.join(VD, 'timeline.json'))); KC = json.load(open(os.path.join(VD, 'kitcues.json')))
+SRCDIR = os.path.join(VD, TL['SRCDIR'])
+SW, SH, NSRC = TL.get('SRC_W', 1280), TL.get('SRC_H', 720), TL.get('SRC_N', 512)
 W, H = 1920, 1080
 WX, WY, WW, WH, WR = 240, 112, 1440, 810, 28
 FONTS = os.environ['MTG_FONTS']
@@ -87,8 +89,8 @@ def cam(t):
     return cx, cy, z
 
 def view(t):
-    cx, cy, z = cam(t); w, h = 1280 / z, 720 / z
-    x0 = min(max(cx - w / 2, 0), 1280 - w); y0 = min(max(cy - h / 2, 0), 720 - h)
+    cx, cy, z = cam(t); w, h = SW / z, SH / z
+    x0 = min(max(cx - w / 2, 0), SW - w); y0 = min(max(cy - h / 2, 0), SH - h)
     return x0, y0, w, h, WW / w
 
 def to_win(r, v):
@@ -98,16 +100,17 @@ def to_win(r, v):
 @functools.lru_cache(maxsize=16)
 def src_frame(n): return Image.open(os.path.join(SRCDIR, f'f{n:04d}.jpg')).convert('RGB')
 
+PL = TL.get('PLATE')               # {frame, x_cut, frames: [a, b]}: a frame of the clip's own plain background
 @lru
 def plate_mask():
-    m = np.zeros((720, 1280), np.float32); m[:, :772] = 1; m[:, 772:780] = np.linspace(1, 0, 8)[None, :]
+    c = PL['x_cut']; m = np.zeros((SH, SW), np.float32); m[:, :c] = 1; m[:, c:c + 8] = np.linspace(1, 0, 8)[None, :]
     return m[..., None]
 @lru
-def plate(): return np.asarray(src_frame(165), np.float32)
+def plate(): return np.asarray(src_frame(PL['frame']), np.float32)
 
 def cleaned(n, a):
-    """the phone scenes (frames 196 to 454) sit on the same green as frame 165: while zoomed, its side text is taken off"""
-    if a <= 0 or not 196 <= n <= 454: return src_frame(n)
+    """the phone scenes sit on the clip's plain background: while zoomed in, its big side text is taken off"""
+    if not PL or a <= 0 or not PL['frames'][0] <= n <= PL['frames'][1]: return src_frame(n)
     f = np.asarray(src_frame(n), np.float32); m = plate_mask() * a
     return Image.fromarray((f * (1 - m) + plate() * m).astype(np.uint8))
 
@@ -221,23 +224,25 @@ def mask_pill(w, h, label):
 
 # ------------------------------------------------------------------ the window (CoinZoom's clip)
 def window_layer(t):
-    st = src_time(t); n = min(max(int(round(st * 30)) + 1, 1), 512)
+    st = src_time(t); n = min(max(int(round(st * 30)) + 1, 1), NSRC)
     v = view(t); x0, y0, w, h, sc = v
-    z = 1280 / w; ca = min(1.0, max(0.0, (z - 1.03) / .45))
+    z = SW / w; ca = min(1.0, max(0.0, (z - 1.03) / .17))      # fully clean from 1.2x
     content = cleaned(n, ca).resize((WW, WH), Image.BICUBIC, box=(x0, y0, x0 + w, y0 + h)).convert('RGBA')
-    # privacy: blur the card number, name and expiry in every frame the details screen can show, labelled pills on top
-    m0, m1 = TL['MASK_FRAMES']
-    if m0 <= n <= m1:
-        la = TL['LABEL_ALPHA'].get(str(n), 1.0 if 421 <= n <= 455 else 0.0)
-        for rect, label in TL['MASKS']:
-            X0, Y0, X1, Y1 = to_win((rect[0] - 3, rect[1] - 3, rect[2] + 3, rect[3] + 3), v)
-            box = tuple(int(round(q)) for q in (max(0, X0), max(0, Y0), min(WW, X1), min(WH, Y1)))
-            if box[2] - box[0] < 4 or box[3] - box[1] < 4: continue
-            reg = content.crop(box).filter(ImageFilter.GaussianBlur(max(6, (box[3] - box[1]) * .35)))
-            reg = Image.blend(reg, Image.new('RGBA', reg.size, (240, 238, 246, 255)), .45); content.paste(reg, box[:2])
-            if la > 0:
-                ph = int((box[3] - box[1]) * .86); pw = int(min(box[2] - box[0] - 6, max(ph * 5.2, (box[2] - box[0]) * .8)))
-                paste_c(content, mask_pill(pw, ph, label), (box[0] + box[2]) / 2, (box[1] + box[3]) / 2, la)
+    # privacy: every listed area is blurred in each source frame where it can show (the blur is taken from the frame itself,
+    # so it follows crossfades); a labelled pill sits on top while the screen is fully in
+    for M in TL['MASKS']:
+        if not M['frames'][0] <= n <= M['frames'][1]: continue
+        rect, label = M['rect'], M.get('label')
+        la = M.get('alpha', {}).get(str(n), 1.0 if M['full'][0] <= n <= M['full'][1] else 0.0)
+        X0, Y0, X1, Y1 = to_win((rect[0] - 3, rect[1] - 3, rect[2] + 3, rect[3] + 3), v)
+        box = tuple(int(round(q)) for q in (max(0, X0), max(0, Y0), min(WW, X1), min(WH, Y1)))
+        if box[2] - box[0] < 4 or box[3] - box[1] < 4: continue
+        bh = box[3] - box[1]
+        reg = content.crop(box).filter(ImageFilter.GaussianBlur(min(22, max(6, bh * .35))))
+        reg = Image.blend(reg, Image.new('RGBA', reg.size, (240, 238, 246, 255)), .45); content.paste(reg, box[:2])
+        if la > 0 and label:
+            ph = int(min(bh * .86, 54)); pw = int(min(box[2] - box[0] - 6, max(ph * 5.2, (box[2] - box[0]) * .8)))
+            paste_c(content, mask_pill(pw, ph, label), (box[0] + box[2]) / 2, (box[1] + box[3]) / 2, la)
     # the In this video panel dims the clip behind it
     P = TL['PLAN']; dpl, _ = env(t, P['t0'], P['t1'], .35, .3)
     if dpl > 0:
@@ -250,10 +255,12 @@ def window_layer(t):
     for key, tt in TL['TAPS']:
         if tt - .4 <= t <= tt + .6:
             X0, Y0, X1, Y1 = to_win(TL['B'][key], v); draw_tap(content, ((X0 + X1) / 2, (Y0 + Y1) / 2), t, tt)
-    for e, label, t0, t1 in TL['CHIPS']:
+    for ch in TL['CHIPS']:
+        e, label, t0, t1 = ch[:4]; side = ch[4] if len(ch) > 4 else 'R'
         a, p = env(t, t0, t1, .25, .25)
         if a > 0:
-            c = chip(label, None, LIME, 30, e); paste_c(content, c, WW - 36 - c.width / 2, WH - 64, a, .85 + .15 * p)
+            c = chip(label, None, LIME, 30, e)
+            paste_c(content, c, (36 + c.width / 2) if side == 'L' else (WW - 36 - c.width / 2), WH - 64, a, .85 + .15 * p)
     return content
 
 # ------------------------------------------------------------------ panels on the stage
@@ -264,33 +271,34 @@ def plan_panel(ov, t):
     paste_c(ov, glass(1060, 620), 960, 515, a0 * a1, .94 + .06 * p1)
     paste_c(ov, two_tone('IN THIS ', 'VIDEO', ANTON, 84), 960, 282, a0 * a1, 1.1 - .1 * p1)
     a2, _ = env(t, P['sub'], P['t1'], .35, .3)
-    paste_c(ov, txt('Find your virtual CoinZoom Visa debit card', MB, 34, (201, 195, 224)), 960, 358, a0 * a2)
-    rows = [(('Tap ', False), ('Spend', True)), (('Tap ', False), ('Reveal', True)), (('Double tap', True), (' to confirm', False))]
+    paste_c(ov, txt(P['subtext'], MB, 34, (201, 195, 224)), 960, 358, a0 * a2)
+    rows = [tuple((x, bool(hl)) for x, hl in segs) for segs in P['segs']]; n = len(rows)
+    y0, dy = (470, 102) if n <= 3 else (447, 88)
     for i, (tt, segs) in enumerate(zip(P['rows'], rows)):
         a, p = env(t, tt - .08, P['t1'], .3, .3)
         if a <= 0: continue
-        y = 470 + i * 102; x = 560 + (1 - p) * -40
-        paste_c(ov, num_circle(i + 1, 62), x, y, a0 * a, .7 + .3 * p)
-        r = label_row(segs); paste(ov, r, x + 52, y - r.height / 2, a0 * a)
+        y = y0 + i * dy; x = 560 + (1 - p) * -40
+        paste_c(ov, num_circle(i + 1, 62 if n <= 3 else 56), x, y, a0 * a, .7 + .3 * p)
+        r = label_row(segs, 46 if n <= 3 else 42); paste(ov, r, x + 50, y - r.height / 2, a0 * a)
     ap, pp = env(t, P['pause'], P['t1'], .3, .3)
-    if ap > 0: paste_c(ov, chip('Pause any step and follow along', None, LIME, 30, '⏸️'), 960, 780, a0 * ap, .85 + .15 * pp)
+    if ap > 0: paste_c(ov, chip('Pause any step and follow along', None, LIME, 30, '⏸️'), 960, 780 if n <= 3 else 792, a0 * ap, .85 + .15 * pp)
 
 def recap_panel(ov, t):
     R = TL['RECAP']; a0, _ = env(t, R['t0'], R['t1'], .35, .3)
     if a0 <= 0: return
     a1, p1 = env(t, R['t0'] + .05, R['t1'], .4, .3)
     paste_c(ov, two_tone("LET'S ", 'RECAP', ANTON, 104), 960, 250, a0 * a1, 1.12 - .12 * p1)
-    cards = [('💳', 'Tap Spend', 'Your card screen opens'), ('👀', 'Tap Reveal', 'With Virtual Card selected'),
-             ('👆', 'Double tap', 'Confirm, and your details appear')]
+    cards = R['cards']; n = len(cards)
+    cw, gap = (470, 550) if n <= 3 else (405, 445)
     for i, (e, ttl, sub) in enumerate(cards):
-        cx, cy = 410 + i * 550, 575; ak, pk = env(t, R['t0'] + .15 + .12 * i, R['t1'], .3, .3)
+        cx, cy = 960 + (i - (n - 1) / 2) * gap, 575; ak, pk = env(t, R['t0'] + .15 + .12 * i, R['t1'], .3, .3)
         if ak <= 0: continue
         done = t >= R['ticks'][i]; pd = ease_back((t - R['ticks'][i]) / .35) if done else 0
-        paste_c(ov, glass(470, 320, LIME if done else VIO, 30, .92), cx, cy, a0 * ak, (.9 + .1 * pk) * ME.pulse(t, R['ticks'][i], .05))
-        paste_c(ov, num_circle(i + 1, 64, done), cx - 235 + 52, cy - 160 + 52, a0 * ak, .7 + .3 * (pd if done else 1))
+        paste_c(ov, glass(cw, 320, LIME if done else VIO, 30, .92), cx, cy, a0 * ak, (.9 + .1 * pk) * ME.pulse(t, R['ticks'][i], .05))
+        paste_c(ov, num_circle(i + 1, 64, done), cx - cw / 2 + 52, cy - 160 + 52, a0 * ak, .7 + .3 * (pd if done else 1))
         paste_c(ov, emo(e, 72), cx, cy - 62, a0 * ak)
-        paste_c(ov, txt(ttl, MXB, 46, LIME if done else TEXT), cx, cy + 30, a0 * ak)
-        paste_c(ov, txt(sub, MSB, 27, (201, 195, 224)), cx, cy + 88, a0 * ak)
+        paste_c(ov, txt(ttl, MXB, 46 if n <= 3 else 40, LIME if done else TEXT), cx, cy + 30, a0 * ak)
+        paste_c(ov, txt(sub, MSB, 27 if n <= 3 else 24, (201, 195, 224)), cx, cy + 88, a0 * ak)
 
 def turn_panel(ov, t):
     U = TL['TURN']; a0, _ = env(t, U['t0'], U['t1'], .3, .3)
@@ -299,13 +307,13 @@ def turn_panel(ov, t):
     paste_c(ov, two_tone("NOW IT'S ", 'YOUR TURN', ANTON, 132), 960, 300, a0 * a1, 1.15 - .15 * p1)
     paste_c(ov, logo_card(230), 960, 560, a0 * a1, .8 + .2 * p1)
     a2, p2 = env(t, U['turn'] - .1, U['t1'], .3, .3)
-    paste_c(ov, chip('Open your CoinZoom app: Spend, Reveal, confirm', None, LIME, 36, '📱'), 960, 800, a0 * a2, .85 + .15 * p2)
+    paste_c(ov, chip(U['chip'], None, LIME, 36, '📱'), 960, 800, a0 * a2, .85 + .15 * p2)
     burst(ov, 960, 800, t, U['turn'], [LIME, ME.GOLD, ME.WHITE], 14, 130, .7, 440, 50)
 
 def top_bar(ov, t):
     paste_c(ov, logo_card(58), 66, 56)
     paste(ov, txt('MTG', MXB, 30, TEXT), 108, 30); paste(ov, txt('YOUR DIGITAL ARCHITECT', MB, 14, GOLD, .14), 110, 68)
-    s = txt('COINZOOM · VIRTUAL CARD', MXB, 19, DARK, .14); pw = s.width + 48
+    s = txt(TL['SERIES'], MXB, 19, DARK, .14); pw = s.width + 48
     pill = Image.new('RGBA', (pw, 48), (0, 0, 0, 0)); ImageDraw.Draw(pill).rounded_rectangle([0, 0, pw - 1, 47], 24, fill=LIME + (255,))
     pill.alpha_composite(s, (24, (48 - s.height) // 2)); paste(ov, pill, W - 40 - pw, 32)
     for n, segs, t0, t1 in TL['STEPS']:
@@ -357,7 +365,7 @@ def captions(ov, t):
         if lit >= 0 and t > c['words'][lit]['b'] + .25: lit = -1
         im, ends, nl = caption_img(ci, lit); pad = 21
         y0 = 1000 - (nl * 56) / 2 - 10 - pad
-        paste(ov, im, -pad, y0, a); last = (ends[-1][0], y0 + pad + ends[-1][1])
+        paste(ov, im, -pad, y0, a); last = (max(e[0] for e in ends), y0 + pad + ends[-1][1])   # clear of every line
     return last
 
 def emojis(ov, t, anchor):
@@ -389,13 +397,13 @@ def frame(t):
     return im.convert('RGB')
 
 if __name__ == '__main__':
-    mode = sys.argv[1]
+    mode = sys.argv[2]
     if mode == 'test':
-        out = sys.argv[3]; os.makedirs(out, exist_ok=True)
-        for s in sys.argv[2].split(','):
+        out = sys.argv[4]; os.makedirs(out, exist_ok=True)
+        for s in sys.argv[3].split(','):
             frame(float(s)).save(os.path.join(out, f't{float(s):07.2f}.png'))
     else:
-        f0, f1, out = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]; os.makedirs(out, exist_ok=True)
+        f0, f1, out = int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]; os.makedirs(out, exist_ok=True)
         for f in range(f0, f1):
             frame(f / TL['fps']).save(os.path.join(out, f'f{f:05d}.jpg'), quality=93)
             if f % 150 == 0: print('frame', f, flush=True)

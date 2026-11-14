@@ -1,0 +1,251 @@
+{
+ "n_in": {
+  "file": "v_n_in.wav",
+  "src": "cz2v3",
+  "a": 0.206,
+  "b": 4.063,
+  "dur": 3.857,
+  "text": "In this video, I'll show you how to load cash into your CoinZoom account.",
+  "lufs_in": -18.0
+ },
+ "n_four": {
+  "file": "v_n_four.wav",
+  "src": "cz2v3",
+  "a": 4.259,
+  "b": 9.966,
+  "dur": 5.707,
+  "text": "Four quick steps: tap Deposit, tap CoinZoom Cash, pick a store, and show your barcode.",
+  "lufs_in": -18.3
+ },
+ "n_what": {
+  "file": "v_n_what.wav",
+  "src": "cz2v3",
+  "a": 10.181,
+  "b": 17.097,
+  "dur": 6.916,
+  "text": "CoinZoom Cash lets you load cash at participating stores across the US, like Speedway, Stripes and 7-Eleven.",
+  "lufs_in": -17.1
+ },
+ "n_s1": {
+  "file": "v_n_s1.wav",
+  "src": "cz2v3",
+  "a": 17.307,
+  "b": 19.981,
+  "dur": 2.674,
+  "text": "Step one. In your Wallet, tap Deposit.",
+  "lufs_in": -18.0
+ },
+ "n_s2": {
+  "file": "v_n_s2.wav",
+  "src": "cz2v3",
+  "a": 20.208,
+  "b": 22.648,
+  "dur": 2.44,
+  "text": "Step two. Tap CoinZoom Cash.",
+  "lufs_in": -19.6
+ },
+ "n_s3": {
+  "file": "v_n_s3.wav",
+  "src": "cz2v3",
+  "a": 22.683,
+  "b": 25.663,
+  "dur": 2.98,
+  "text": "Step three. Use the map to pick a store near you.",
+  "lufs_in": -16.3
+ },
+ "n_s3b": {
+  "file": "v_n_s3b.wav",
+  "src": "cz2v3",
+  "a": 25.643,
+  "b": 28.497,
+  "dur": 2.854,
+  "text": "It only shows stores that take CoinZoom Cash.",
+  "lufs_in": -17.4
+ },
+ "n_s4": {
+  "file": "v_n_s4.wav",
+  "src": "cz2v3",
+  "a": 29.014,
+  "b": 33.947,
+  "dur": 4.933,
+  "text": "Step four. At the store, pull up your barcode, and ask the cashier to scan it.",
+  "lufs_in": -20.1
+ },
+ "n_tip": {
+  "file": "v_n_tip.wav",
+  "src": "cz2v3",
+  "a": 34.134,
+  "b": 39.244,
+  "dur": 5.11,
+  "text": "Your barcode has a timer, and the screen shows the fee and the limits, so read them first.",
+  "lufs_in": -17.1
+ },
+ "n_done": {
+  "file": "v_n_done.wav",
+  "src": "cz2v3",
+  "a": 39.488,
+  "b": 42.836,
+  "dur": 3.348,
+  "text": "The cashier loads your cash and gives you a receipt. You're done!",
+  "lufs_in": -16.8
+ },
+ "n_recap": {
+  "file": "v_n_recap.wav",
+  "src": "cz2v3",
+  "a": 42.816,
+  "b": 43.645,
+  "dur": 0.829,
+  "text": "Let's recap.",
+  "lufs_in": -18.8
+ },
+ "n_recap2": {
+  "file": "v_n_recap2.wav",
+  "src": "cz2v3",
+  "a": 43.968,
+  "b": 49.884,
+  "dur": 5.916,
+  "text": "You tapped Deposit, chose CoinZoom Cash, picked a store, and the cashier scanned your barcode.",
+  "lufs_in": -18.6
+ },
+ "hi": {
+  "file": "v_hi.wav",
+  "src": "t1.mp3",
+  "a": 17.61,
+  "b": 21.215,
+  "dur": 3.605,
+  "text": "Hi, my name is MTG, Your Digital Architect.",
+  "lufs_in": -20.4
+ },
+ "n_thanks": {
+  "file": "v_n_thanks.wav",
+  "src": "p1v2.mp3",
+  "a": 0.28,
+  "b": 2.385,
+  "dur": 2.105,
+  "text": "Thank you for taking the time to watch this video.",
+  "lufs_in": -21.8
+ },
+ "takeyour": {
+  "file": "v_takeyour.wav",
+  "src": "t1.mp3",
+  "a": 35.595,
+  "b": 36.505,
+  "dur": 0.91,
+  "text": "Take your time.",
+  "lufs_in": -20.3
+ },
+ "pause": {
+  "file": "v_pause.wav",
+  "src": "t1.mp3",
+  "a": 36.475,
+  "b": 39.04,
+  "dur": 2.565,
+  "text": "You can pause any step and follow along with me.",
+  "lufs_in": -20.8
+ },
+ "n_turn2": {
+  "file": "v_n_turn2.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.255,
+  "text": "Simple, right? Now it's your turn.",
+  "lufs_in": -18.2
+ },
+ "every": {
+  "file": "v_every.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it.",
+  "lufs_in": -19.9
+ },
+ "n_save": {
+  "file": "v_n_save.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it.",
+  "lufs_in": -18.6
+ },
+ "n_share": {
+  "file": "v_n_share.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.065,
+  "text": "Share it with someone who's ready to start.",
+  "lufs_in": -18.8
+ },
+ "n_we": {
+  "file": "v_n_we.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.015,
+  "text": "We learn best when we teach others.",
+  "lufs_in": -18.8
+ },
+ "n_slog": {
+  "file": "v_n_slog.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action.",
+  "lufs_in": -20.6
+ },
+ "o_fin": {
+  "file": "v_o_fin.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 2.69,
+  "text": "Quick reminder: none of this is financial advice.",
+  "lufs_in": -19.1
+ },
+ "o_dyor": {
+  "file": "v_o_dyor.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.66,
+  "text": "Always do your own research.",
+  "lufs_in": -17.2
+ },
+ "o_thanks": {
+  "file": "v_o_thanks.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 4.375,
+  "text": "Thank you for tuning in, and for every like, share, and comment.",
+  "lufs_in": -19.6
+ },
+ "o_support": {
+  "file": "v_o_support.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.62,
+  "text": "Your support means everything.",
+  "lufs_in": -19.2
+ },
+ "o_massive": {
+  "file": "v_o_massive.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.66,
+  "text": "And thank yourself for taking massive action today to change your future!",
+  "lufs_in": -17.7
+ },
+ "o_best": {
+  "file": "v_o_best.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.65,
+  "text": "I wish you nothing but the best, because YOU are the best.",
+  "lufs_in": -20.3
+ },
+ "o_im": {
+  "file": "v_o_im.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 3.085,
+  "text": "I'm MTG, Your Digital Architect.",
+  "lufs_in": -18.8
+ },
+ "o_see": {
+  "file": "v_o_see.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.07,
+  "text": "See you on the next one.",
+  "lufs_in": -17.0
+ },
+ "o_lgtc": {
+  "file": "v_o_lgtc.wav",
+  "src": "explainers/ex4-pack",
+  "dur": 1.065,
+  "text": "Let's Get This Crypto!",
+  "lufs_in": -22.1
+ }
+}

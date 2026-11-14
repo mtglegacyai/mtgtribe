@@ -1,0 +1,21 @@
+# generated or local-only: clip frames, cut lines, banked takes, renders, mixes, scans
+src720
+src1080
+lines/
+frames/
+test/
+ocr/
+bank/
+*.wav
+*.mp4
+timeline.json
+mixcues.json
+sfx_body.json
+*.log
+**/cover/*.png
+**/cover/*.jpg
+**/cover/*.ttf
+**/cover/coinzoom-disc.png
+assets/
+words_partial.json
+**/cover/screen.jpg

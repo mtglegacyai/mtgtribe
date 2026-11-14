@@ -5,11 +5,11 @@ import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from stt import load16
 from faster_whisper import WhisperModel
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.abspath(sys.argv[1])          # the video folder (python3 words.py <video dir>)
 L = json.load(open(os.path.join(HERE, 'lines.json'))); WD = json.load(open(os.path.join(HERE, 'words_partial.json')))
 ALIGN = 0.10
 for k, v in L.items():
-    if v.get('src') == 'czv3':
+    if str(v.get('src', '')).startswith('cz'):          # the new V3 take of this video
         WD[k] = [dict(w=w['w'], a=round(min(w['a'] + ALIGN, v['dur']), 3), b=round(min(w['b'] + ALIGN, v['dur']), 3)) for w in WD[k]]
 m = WhisperModel('small.en', device='cpu', compute_type='int8')
 norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())

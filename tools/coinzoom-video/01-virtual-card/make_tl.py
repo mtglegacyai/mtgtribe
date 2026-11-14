@@ -5,7 +5,7 @@
 import json, os, re, wave
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
-import sys; sys.path.insert(0, HERE)
+import sys; sys.path.insert(0, os.path.join(HERE, '..', 'engine'))
 import mtg_ending as ME
 SR, FPS = 48000, 30
 L = json.load(open(os.path.join(HERE, 'lines.json'))); WD = json.load(open(os.path.join(HERE, 'words.json')))
@@ -98,16 +98,21 @@ CHIPS = [('✅', 'Card screen open', wt('n_s1b', 'opens'), E['n_s1b'] + .5),
 STEPS = [(1, [['Tap ', 0], ['Spend', 1]], S['n_s1'] - .05, S['n_s2'] - .05), (2, [['Tap ', 0], ['Reveal', 1]], S['n_s2'] - .05, S['n_s3'] - .05),
          (3, [['Double tap', 1], [' to confirm', 0]], S['n_s3'] - .05, Tonly - .3)]
 # privacy: the card details screen (source frames 418 to 460) is blurred under labelled pills in every frame it shows
-MASKS = [((821, 346, 1028, 370), 'Your card number'), ((821, 407, 1064, 432), 'Your name'), ((821, 468, 951, 494), 'MM/YY')]
-MASK_FRAMES = (414, 462)                 # source frame numbers (1-based file names) with the blur on
-LABEL_ALPHA = {418: .25, 419: .5, 420: .75, 456: .85, 457: .65, 458: .45, 459: .25, 460: .1}   # else 1 inside 421..455
+LABEL_ALPHA = {'418': .25, '419': .5, '420': .75, '456': .85, '457': .65, '458': .45, '459': .25, '460': .1}   # 1 inside 421..455
+MASKS = [dict(rect=r, label=lab, frames=(414, 462), full=(421, 455), alpha=LABEL_ALPHA)
+         for r, lab in [((821, 346, 1028, 370), 'Your card number'), ((821, 407, 1064, 432), 'Your name'), ((821, 468, 951, 494), 'MM/YY')]]
+# the phone scenes (frames 196 to 454) sit on the same green as frame 165: while zoomed in, the clip's side text is taken off
+PLATE = dict(frame=165, x_cut=772, frames=(196, 454))
 
 # ---------------------------------------------------------------- panels
 # the panel fades out over the source's own cut to the photo, so the bright title card never flashes back
-PLAN = dict(t0=Tin, t1=Tact + .3, rows=[wt('n_three', 'Spend'), wt('n_three', 'Reveal'), wt('n_three', 'double')],
+PLAN = dict(t0=Tin, t1=Tact + .3, subtext='Find your virtual CoinZoom Visa debit card',
+            segs=[[['Tap ', 0], ['Spend', 1]], [['Tap ', 0], ['Reveal', 1]], [['Double tap', 1], [' to confirm', 0]]], rows=[wt('n_three', 'Spend'), wt('n_three', 'Reveal'), wt('n_three', 'double')],
             sub=S['n_in'] + .9, pause=wt('pause', 'pause') - .05)
-RECAP = dict(t0=Trec + .15, t1=wt('n_turn2', 'Now') - .05, ticks=[wt('n_recap2', 'Spend'), wt('n_recap2', 'Reveal'), wt('n_recap2', 'double')])
-TURN = dict(t0=wt('n_turn2', 'Now') - .1, t1=K['T_LINKS'] + .3, turn=wt('n_turn2', 'turn'))
+RECAP = dict(t0=Trec + .15, t1=wt('n_turn2', 'Now') - .05,
+             cards=[['💳', 'Tap Spend', 'Your card screen opens'], ['👀', 'Tap Reveal', 'With Virtual Card selected'],
+                    ['👆', 'Double tap', 'Confirm, and your details appear']], ticks=[wt('n_recap2', 'Spend'), wt('n_recap2', 'Reveal'), wt('n_recap2', 'double')])
+TURN = dict(t0=wt('n_turn2', 'Now') - .1, t1=K['T_LINKS'] + .3, turn=wt('n_turn2', 'turn'), chip='Open your CoinZoom app: Spend, Reveal, confirm')
 WIN = dict(out0=Trec, out1=Trec + .45)
 EMOS = [(wt('hi', 'Hi'), '👋'), (wt('n_once', 'activated'), '💳'), (wt('n_s1', 'Spend') + .1, '👆'),
         (wt('n_there', 'there'), '🎉'), (wt('n_keep', 'private'), '🔒'), (wt('n_turn2', 'turn'), '🚀')]
@@ -131,7 +136,7 @@ sfx = dict(whoosh=[Tin, Tact, Ts1, S['n_s2'] - .05, S['n_s3'] - .05, Tdet, Tonly
 sfx = {k: sorted(round(x, 3) for x in v) for k, v in sfx.items()}
 
 TL = dict(T=T, fps=FPS, S=S, E=E, SRC=SRC, CAM0=CAM0, CAM=CAM, B=B, RINGS=RINGS, TAPS=TAPS, CHIPS=CHIPS, STEPS=STEPS,
-          MASKS=MASKS, MASK_FRAMES=MASK_FRAMES, LABEL_ALPHA=LABEL_ALPHA, PLAN=PLAN, RECAP=RECAP, TURN=TURN, WIN=WIN,
+          MASKS=MASKS, PLATE=PLATE, SRCDIR='src720', SRC_W=1280, SRC_H=720, SRC_N=512, SERIES='COINZOOM · VIRTUAL CARD', PLAN=PLAN, RECAP=RECAP, TURN=TURN, WIN=WIN,
           EMOS=EMOS, CAPS=CAPS, END_CARD=K['END_CARD'], KIT_START=K['T_LINKS'])
 json.dump(TL, open(os.path.join(HERE, 'timeline.json'), 'w'), indent=1, ensure_ascii=False)
 json.dump(dict(cues=K, orient='h', nxt=None, links=False, T=T, fps=FPS), open(os.path.join(HERE, 'kitcues.json'), 'w'), indent=1)

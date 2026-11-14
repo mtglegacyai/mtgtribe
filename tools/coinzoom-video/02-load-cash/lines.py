@@ -1,17 +1,16 @@
-# CoinZoom narration: every voice line the video uses, as v_<key>.wav (48 kHz mono) + lines.json + words.json.
-#  - new lines: MTG Master Voice V3, one request (voice/czv3.wav, 1 credit, 14 Nov 2026), cut on HeyGen's word times
+# CoinZoom Cash narration (video 2): every voice line the video uses, as v_<key>.wav (48 kHz mono) + lines.json + words.json.
+#  - new lines: MTG Master Voice V3, one request (voice/cz2v3.wav, 1 credit, 14 Nov 2026), cut on HeyGen's word times
 #    with the edges snapped to the silence around them (the explainer #10 method);
 #  - banked, 0 credits: "Hi, my name is MTG, Your Digital Architect.", "Take your time.", "You can pause any step and
 #    follow along with me." (sign-up training t1), "Thank you for taking the time to watch this video." (tutorial p1v2),
 #    "Simple, right? Now it's your turn.", the fair-play line and the signature ending (explainer #4 pack).
-# Banked takes: run ./fetch_bank.sh first (extracts them from branch jetup-video-work into bank/).
 # All lines are levelled to the median loudness of the banked ending lines, so the new V3 lines sit at his usual level.
 import json, os, re, subprocess, sys, wave
 import numpy as np
 SR = 48000
 HERE = os.path.dirname(os.path.abspath(__file__))
-B = os.path.join(HERE, 'bank'); OUT = os.path.join(HERE, 'lines'); os.makedirs(OUT, exist_ok=True)
-TAKE = os.path.join(HERE, '..', 'voice', 'czv3.flac'); RAW = os.path.join(HERE, '..', 'voice', 'czv3_words.json')
+B = os.path.join(HERE, '..', 'bank'); OUT = os.path.join(HERE, 'lines'); os.makedirs(OUT, exist_ok=True)   # bank: ../engine/fetch_bank.sh
+TAKE = os.path.join(HERE, 'voice', 'cz2v3.flac'); RAW = os.path.join(HERE, 'voice', 'cz2v3_words.json')
 
 def load(f, ss=None, to=None):
     cmd = ['ffmpeg', '-v', 'error'] + (['-ss', str(ss), '-to', str(to)] if ss is not None else []) + ['-i', f, '-ac', '1', '-ar', str(SR), '-f', 's16le', '-']
@@ -38,21 +37,20 @@ def cut(x, s, e, fi=.012, fo=.05):
     return y
 
 # ---- new lines (first word, last word) as they appear in the take
-NEW = [('n_in', 'In', 'app', "In this video, I'll show you how to find your virtual CoinZoom Visa debit card in the app."),
-       ('n_three', 'Three', 'confirm', 'Three quick steps: tap Spend, tap Reveal, and double tap to confirm.'),
-       ('n_once', 'Once', 'app', 'Once your virtual crypto debit card is activated, it lives right inside your CoinZoom app.'),
-       ('n_s1', 'Step', 'screen', 'Step one. Log in, and tap the Spend tab at the bottom of the screen.'),
-       ('n_s1b', 'This', 'screen', 'This opens your card screen.'),
-       ('n_s2', 'Step', 'Reveal', 'Step two. Make sure Virtual Card is selected, then tap Reveal.'),
-       ('n_s3', 'Step', 'you', "Step three. The app asks you to confirm it's really you."),
-       ('n_s3b', 'Double', 'confirm', 'Double tap to confirm.'),
-       ('n_there', 'And', 'V', 'And there it is! Your card number, cardholder name, expiry date and CVV.'),
-       ('n_copy', 'Tap', 'number', 'Tap Copy to copy your card number.'),
-       ('n_keep', 'Keep', 'online', 'Keep these details private, and only enter them when you pay online.'),
+NEW = [('n_in', 'In', 'account', "In this video, I'll show you how to load cash into your CoinZoom account."),
+       ('n_four', 'Four', 'barcode', 'Four quick steps: tap Deposit, tap CoinZoom Cash, pick a store, and show your barcode.'),
+       ('n_what', 'Coin', 'Eleven', 'CoinZoom Cash lets you load cash at participating stores across the US, like Speedway, Stripes and 7-Eleven.'),
+       ('n_s1', 'Step', 'Deposit', 'Step one. In your Wallet, tap Deposit.'),
+       ('n_s2', 'Step', 'Cash', 'Step two. Tap CoinZoom Cash.'),
+       ('n_s3', 'Step', 'you', 'Step three. Use the map to pick a store near you.'),
+       ('n_s3b', 'It', 'Cash', 'It only shows stores that take CoinZoom Cash.'),
+       ('n_s4', 'Step', 'it', 'Step four. At the store, pull up your barcode, and ask the cashier to scan it.'),
+       ('n_tip', 'Your', 'first', 'Your barcode has a timer, and the screen shows the fee and the limits, so read them first.'),
+       ('n_done', 'The', 'done', "The cashier loads your cash and gives you a receipt. You're done!"),
        ('n_recap', "Let's", 'recap', "Let's recap."),
-       ('n_recap2', 'You', 'confirm', 'You tapped Spend, tapped Reveal, and double tapped to confirm.')]
+       ('n_recap2', 'You', 'barcode', 'You tapped Deposit, chose CoinZoom Cash, picked a store, and the cashier scanned your barcode.')]
 # caption spellings: what people read (the voice says "Coin Zoom" and "C V V")
-SPELL = {'Coin': 'CoinZoom', 'C': 'CVV'}
+SPELL = {'Coin': 'CoinZoom', 'U': 'US', 'Seven': '7-Eleven'}
 
 x = load(TAKE); W = json.load(open(RAW))['original_words']
 L, WD = {}, {}
@@ -60,8 +58,8 @@ i = 0
 for key, w0, w1, text in NEW:
     while W[i]['text'] != w0: i += 1
     j = i
-    PREV = {'n_there': 'V', 'n_s3': 'really'}                       # the last word's neighbour, where the word repeats
-    while W[j]['text'] != w1 or (key == 'n_s1' and W[j + 1]['text'] != 'This') or (key in PREV and W[j - 1]['text'] != PREV[key]): j += 1
+    PREV = {'n_s3': 'near'}                       # the last word's neighbour, where the word repeats
+    while W[j]['text'] != w1 or (key in PREV and W[j - 1]['text'] != PREV[key]): j += 1
     lo = (W[i - 1]['end_time'] + .03) if i else 0.0
     hi = (W[j + 1]['start_time'] - .03) if j + 1 < len(W) else len(x) / SR
     s, e = snap(x, W[i]['start_time'], W[j]['end_time'], lo, hi)
@@ -71,9 +69,10 @@ for key, w0, w1, text in NEW:
     while k <= j:
         t = W[k]['text']; a, b = W[k]['start_time'] - s, W[k]['end_time'] - s
         if t == 'Coin' and k + 1 <= j and W[k + 1]['text'] == 'Zoom': b = W[k + 1]['end_time'] - s; k += 1; t = 'CoinZoom'
-        elif t == 'C' and k + 2 <= j and W[k + 1]['text'] == 'V' and W[k + 2]['text'] == 'V': b = W[k + 2]['end_time'] - s; k += 2; t = 'CVV'
+        elif t == 'U' and k + 1 <= j and W[k + 1]['text'] == 'S': b = W[k + 1]['end_time'] - s; k += 1; t = 'US'
+        elif t == 'Seven' and k + 1 <= j and W[k + 1]['text'] == 'Eleven': b = W[k + 1]['end_time'] - s; k += 1; t = '7-Eleven'
         ws.append(dict(w=t, a=round(a, 3), b=round(b, 3))); k += 1
-    WD[key] = ws; L[key] = dict(file=f'v_{key}.wav', src='czv3', a=round(s, 3), b=round(e, 3), dur=round(e - s, 3), text=text)
+    WD[key] = ws; L[key] = dict(file=f'v_{key}.wav', src='cz2v3', a=round(s, 3), b=round(e, 3), dur=round(e - s, 3), text=text)
     i = j + 1
 
 # ---- banked lines cut from the takes (cut points as in tools/jetup-tutorial/part1/lines.json)

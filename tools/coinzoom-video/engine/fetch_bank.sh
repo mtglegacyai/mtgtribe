@@ -1,6 +1,6 @@
 #!/bin/bash
-# Extracts the banked takes this video uses from MTG's voice bank (branch jetup-video-work) into bank/.
-set -e; cd "$(dirname "$(readlink -f "$0")")"; mkdir -p bank; V=origin/jetup-video-work:jetup-work/voice-bank
+# Extracts the banked takes the CoinZoom videos use from MTG's voice bank (branch jetup-video-work) into ../bank/ (shared by every video).
+set -e; cd "$(dirname "$(readlink -f "$0")")/.."; mkdir -p bank; V=origin/jetup-video-work:jetup-work/voice-bank
 git fetch -q origin jetup-video-work
 git show $V/signup-training/t1.mp3 > bank/t1.mp3; git show $V/tutorial/p1v2.mp3 > bank/p1v2.mp3
 git show $V/explainers/ex4-pack/words.json > bank/ex4_words.json

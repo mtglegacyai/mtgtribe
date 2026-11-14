@@ -23,6 +23,9 @@ is written for any distributor to share.
 5. **The "conductive pen" check** is shown as "a way to observe how your body responds". It is a demonstration
    accessory, not a measurement; do not repeat it as a test on MTG's page.
 
+**MTG's decision (14 Nov 2026): he will make his own version with Claude's help, later ("not now").** The OlyNation
+video does not go on his page.
+
 **Recommended:** MTG's own short "How to use it" video built from these same steps (his footage at the centre,
 the 3D machine from the survey video, his voice or on-screen text), ending with his own invitation. Until then, the
 OlyNation video can be linked or embedded from YouTube with permission.

@@ -99,6 +99,14 @@ avatar version (him on screen asking the questions), at most 10 HeyGen credits. 
 
 (Empty until the survey is posted.)
 
+## Planned (MTG decided, timing his call)
+
+- **MTG's own "How to use the P90" video**, replacing the OlyNation one he found (decided 14 Nov 2026, "not now"):
+  his footage at the centre (pre-session steps: water, phones and jewellery aside; feet on the plates; the display),
+  the 3D machine from the survey video, his voice or on-screen text, the start-up check, ending with his own
+  invitation. 16:9 for the landing page (laptop frame) plus a 9:16 cut. Steps and facts:
+  `sources/2026-11-14-olynation-guided-experience.md`.
+
 ## Next steps (when MTG is back from his trial and registered)
 
 1. Update `olylife-facts.md` with his registration, compensation plan, link and own experience.

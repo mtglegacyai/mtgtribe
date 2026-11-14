@@ -342,8 +342,9 @@ Against `tools/learning-system/jetup-facts.md` and the site copy, word for word 
   (HeyGen's word times). `lines_ex9.py` cuts all 30 lines (`lines.json`, `words.json`); HeyGen's word times for nauto,
   nyours, nlid and nrecap ran 0.19 to 0.21 s ahead of the audio and are shifted (`ALIGN`). "Read the terms." and the fee
   line are one stretch of `signup-training/t3.mp3` split in its own silence; `perf` is marked `"joined": true` and plays
-  straight after `terms`. Speech-to-text hears every line as written. Voice bank: not banked yet (ask MTG; the script is
-  ready, modelled on #8's).
+  straight after `terms`. Speech-to-text hears every line as written. Banked on `jetup-video-work` on 14 Nov 2026
+  (MTG: "Add the new lines to my voice bank"): `explainers/ex9v3.flac`, `ex9v3.txt`, `ex9v3_tts.json` and the cut lines in
+  `explainers/ex9-pack/`, indexed in `sentences.tsv`.
 - Picture: `make_ex9.py` (timeline, captions, cues, the signature ending's cues, body sounds), `stage/stage.html` and
   `stage/engine.js` (the cooking class scenes), `make_screens.py` makes the three masked crops of MTG's real CopyX screens:
   `stage/copyx-sonic.png` (guide screenshot 14: the SONIC card only, the follower count dotted out, ROI, chart and Max DD

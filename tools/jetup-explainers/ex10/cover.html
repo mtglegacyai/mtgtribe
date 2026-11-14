@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Cover of JetUP explainer #10, Know your numbers: the Exposure Calculator (16:9, also the poster and thumbnail on the site).
+     Shoot it with shoot_cover.js (it writes the pill's length from kitcues.json). The picture on the right is the video's own:
+     MTG's real Exposure Calculator (stage/calc/calc.jpg, the screenshot the video uses) in the same slim laptop, the
+     "Trading exposure $6,000.00" card boxed in gold with the video's "$6,000 trading exposure" chip, and the hook's road map
+     pin "Your numbers" on a small map card. Never MTG's photo: the JetUP disc. Needs stage/Anton-Regular.ttf,
+     stage/jetup-disc.png and stage/calc/calc.jpg; Manrope from Google Fonts. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(stage/Anton-Regular.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden}
+body{font-family:'Manrope',sans-serif;color:#fff;position:relative;background:
+ radial-gradient(900px 650px at 78% 40%,rgba(140,108,231,.42),transparent 70%),radial-gradient(800px 600px at 8% 95%,rgba(232,194,90,.22),transparent 70%),
+ linear-gradient(160deg,#150d2c,#0b0912 55%,#07050f)}
+body *{font-feature-settings:"calt" 0}
+.grid{position:absolute;inset:0;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px}
+.pill{position:absolute;left:96px;top:96px;display:inline-flex;align-items:center;height:64px;padding:0 30px;border-radius:999px;background:#cbfb61;color:#14110b;font:800 28px/1 'Manrope';letter-spacing:.16em;z-index:5}
+.h{position:absolute;left:92px;top:205px;font:400 150px/.95 'Anton';text-transform:uppercase;white-space:nowrap;z-index:5}
+.h .g{background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{position:absolute;left:96px;top:540px;font:800 48px/1.25 'Manrope';color:#e9e3ff;white-space:nowrap;z-index:5}
+.sub b{color:#cbfb61}
+.em{font-style:normal;font-family:'Noto Color Emoji'}
+.chips{position:absolute;left:96px;top:660px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;z-index:5}
+.chips span{display:inline-flex;align-items:center;gap:14px;height:76px;padding:0 28px;border-radius:22px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);font:800 34px/1 'Manrope';white-space:nowrap}
+.disc{position:absolute;left:1650px;top:96px;width:200px;height:200px;border-radius:50%;padding:7px;background:conic-gradient(from 210deg,#fff1b8,#c99a2e,#f7dd8d,#9c6f1f,#fff1b8);box-shadow:0 0 90px rgba(232,194,90,.45),0 30px 70px rgba(0,0,0,.55);z-index:5}
+.disc img{width:100%;height:100%;border-radius:50%;display:block}
+.brand{position:absolute;right:100px;bottom:96px;font:800 30px/1 'Manrope';letter-spacing:.16em;color:#e8c25a;white-space:nowrap;z-index:5}
+.brand .sep{display:inline-block;width:3px;height:28px;margin:0 .5em 0 .32em;vertical-align:-4px;border-radius:2px;background:rgba(232,194,90,.75)}
+/* the laptop (the stage's): thin gold-titanium rim, thin black bezel, camera dot, aluminium base */
+#lap{position:absolute;left:986px;top:340px;width:852px;height:540px;border-radius:22px;padding:13px;background:#07060b;z-index:3;
+ box-shadow:0 0 0 2px #b8955a,0 0 0 3px rgba(255,234,180,.35),0 40px 90px rgba(0,0,0,.6),0 0 90px rgba(155,124,255,.25)}
+#lap .camdot{position:absolute;left:50%;top:4px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#1d2840}
+#lap .base{position:absolute;left:-64px;right:-64px;top:540px;height:20px;border-radius:2px 2px 18px 18px;background:linear-gradient(180deg,#e9e3f6,#b5aecb 45%,#7e7798);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+#lap .base:before{content:"";position:absolute;left:50%;top:0;width:150px;height:7px;margin-left:-75px;border-radius:0 0 9px 9px;background:linear-gradient(180deg,#8d86a6,#bdb6d2)}
+#scr{position:relative;width:826px;height:514px;border-radius:7px;overflow:hidden;background:#0d0a17}
+/* the real page: the results column (page px x 600..1261, y 76..487 of the 1280x800 shot), at 1.25 */
+#scr img{position:absolute;left:-750px;top:-95px;width:1600px;height:1000px}
+#scr .shade{position:absolute;inset:0;background:rgba(7,5,14,.5)}
+#scr .hole{position:absolute;left:21px;top:104px;width:771px;height:106px;border-radius:12px;box-shadow:0 0 0 2000px rgba(7,5,14,.5),inset 0 0 0 3px #ffe08f,0 0 34px rgba(232,194,90,.7)}
+/* the chip, the video's */
+.num{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:18px 32px 22px;white-space:nowrap;z-index:6;border-radius:30px;
+ background:linear-gradient(158deg,rgba(232,194,90,.2),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(232,194,90,.08)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(255,224,143,.9),0 0 50px rgba(232,194,90,.45),inset 0 0 26px rgba(232,194,90,.12),0 30px 70px rgba(0,0,0,.55)}
+.num b{font:400 110px/1 'Anton';letter-spacing:.01em;background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num small{font:800 38px/1.1 'Manrope';color:#f6f3ff}
+#cEx{left:930px;top:620px}
+/* the hook's road map pin, small */
+#mapc{position:absolute;left:1176px;top:120px;width:420px;height:200px;border-radius:26px;overflow:hidden;z-index:4;transform:rotate(-4deg);
+ box-shadow:inset 0 0 0 2.5px rgba(203,251,97,.8),0 0 30px rgba(203,251,97,.25),0 24px 50px rgba(0,0,0,.55)}
+#mapc svg{display:block;width:420px;height:200px}
+</style></head><body><div class="grid"></div>
+
+<div class="pill" id="pill">EXPLAINER · 2:03</div>
+<div class="h">Know your<br><span class="g">numbers</span></div>
+<div class="sub">The Exposure Calculator, <b>tap by tap.</b></div>
+<div class="chips"><span><i class="em">🗺️</i>Your map before you start</span><span><i class="em">📏</i>Exposure, explained</span></div>
+<div class="disc"><img src="stage/jetup-disc.png" alt=""></div>
+<div class="brand">MTG <i class="em">👑</i><span class="sep"></span>YOUR DIGITAL ARCHITECT</div>
+
+<div id="mapc"><svg viewBox="0 0 420 200"><defs>
+ <radialGradient id="mBg" cx=".55" cy=".45" r=".8"><stop offset="0" stop-color="#21173d"/><stop offset="1" stop-color="#0c0819"/></radialGradient>
+ <linearGradient id="mGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1bf"/><stop offset=".45" stop-color="#e8c25a"/><stop offset="1" stop-color="#a8792a"/></linearGradient>
+ <filter id="mBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+ <rect width="420" height="200" fill="url(#mBg)"/>
+ <path d="M -10 160 C 80 140 140 175 220 150 S 340 120 430 140 L 430 210 L -10 210 Z" fill="#1c2350" opacity=".8"/>
+ <g fill="none" stroke-linecap="round"><path d="M -10 70 C 120 80 200 40 430 60" stroke="rgba(10,6,22,.9)" stroke-width="13"/><path d="M -10 70 C 120 80 200 40 430 60" stroke="rgba(214,204,246,.3)" stroke-width="8"/>
+ <path d="M 130 210 C 150 140 120 80 160 -10" stroke="rgba(10,6,22,.9)" stroke-width="13"/><path d="M 130 210 C 150 140 120 80 160 -10" stroke="rgba(214,204,246,.3)" stroke-width="8"/>
+ <path d="M 40 160 C 110 120 160 130 220 110 S 300 90 330 92" stroke="#cbfb61" stroke-width="16" opacity=".35" filter="url(#mBlur)"/>
+ <path d="M 40 160 C 110 120 160 130 220 110 S 300 90 330 92" stroke="#cbfb61" stroke-width="7"/></g>
+ <circle cx="40" cy="160" r="10" fill="#cbfb61" stroke="#14190a" stroke-width="3"/>
+ <g transform="translate(330 92)"><path d="M 0 0 C -7 -18 -30 -34 -30 -58 A 30 30 0 1 1 30 -58 C 30 -34 7 -18 0 0 Z" fill="url(#mGold)" stroke="#8e6420" stroke-width="2.5"/><circle cx="0" cy="-59" r="12" fill="#1a1405"/></g>
+ <rect x="138" y="134" width="190" height="46" rx="23" fill="rgba(21,17,42,.95)" stroke="#ffe08f" stroke-width="2.5"/>
+ <text x="233" y="165" text-anchor="middle" fill="#fff" style="font:800 24px Manrope">Your numbers</text></svg></div>
+
+<div id="lap"><span class="camdot"></span><div id="scr"><img src="stage/calc/calc.jpg" alt="MTG's Exposure Calculator: Trading exposure $6,000.00"><div class="hole"></div></div><div class="base"></div></div>
+<div class="num" id="cEx"><b>$6,000</b><small>trading exposure</small></div>
+</body></html>

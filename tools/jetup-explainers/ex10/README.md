@@ -26,3 +26,22 @@ as digits). HeyGen's word times for lines 2 to 6 ran 0.15 to 0.2 s ahead of the 
 
 Facts: the calculator page itself (`jetup/_build/pages_tools.py` build_exposure) and `jetup-facts.md` (24x Amplify,
 the loss limit 10%, 5% with a community token). No return figures.
+
+## Build (14 Nov 2026)
+
+- Screens: `calc_shots.js` (repo served on port 8770 with `npx -y http-server@14.1.1 /home/user/mtgtribe -p 8770 -s -c-1`)
+  shoots the real calculator page at 1280x800 (device scale 2) into `stage/calc/`: `top` (as it opens, no example lit),
+  `pre`, `calc` (after tapping "Training: $150 + $100": 150, 100, 24, balance $250, exposure $6,000), `f_own`, `f_bonus`,
+  `f_mult` (each field focused), `m00` and `mp02`..`mp10`, `mn02`..`mn10` (the price move from 0 to +1% and -1% in 0.2
+  steps, scrolled so the slider sits mid-screen; $60 and -$60 at 1%), `lines` (the last two results, 2.50% and 4.17%) and
+  `note` (the loss limit note), plus `boxes.json` / `boxes.js` (every tap and highlight target per shot). The side menu
+  is folded away (the page's own state); no overlay, cookie bar or personal data on this page.
+- Picture: `make_ex10.py` (timeline, captions, cues, kit cues, body sounds, voice.wav, mixcues.json), `stage/stage.html`
+  and `stage/engine.js` (the road map hook, the laptop camera over one document, spotlight, highlight boxes, taps, chips,
+  recap, your turn). `stage/` also holds `Anton-Regular.ttf`, `jetup-disc.png`, `jetup-disc-small.png` (from ex9).
+- Test stills: `node render.js test <t1,...> test_build`, then
+  `python3 ../../video-signature/compose_kit.py test <this dir> test_build`.
+- Cover: `cover.html`, `shoot_cover.js` (the pill length comes from kitcues.json), `cover-explainer-know-your-numbers.jpg`
+  (1920x1080) and `.webp` (1280x720).
+- Render: `MTG_TRACK=<the closing track> tools/video-signature/build_part.sh <absolute ex10 dir>
+  jetup-explainer-know-your-numbers.mp4`. Not rendered yet.

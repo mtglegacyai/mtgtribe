@@ -3,7 +3,7 @@
 MTG asked for the next explainer on 14 Nov 2026 ("Let's cook the next explainer video"): #10 in
 `tools/learning-system/PLAN.md`, the Exposure Calculator walkthrough. MTG approved six new lines the same day ("Yes,
 record (1 credit)"): recorded in one request in MTG Master Voice V3, 44.8 s, 1 credit (42 before, 41 after).
-**Being built as a preview; not published.**
+**Built and rendered as a preview (14 Nov 2026); not published.**
 
 16:9, 1920x1080, 25 fps, captions burned in, the JetUP logo disc (never MTG's photo), the series' glass style, only the
 four signature sounds. Calm, positive copy: know your numbers before you start (MTG, 8 and 9 Nov 2026: inform, never
@@ -45,3 +45,11 @@ the loss limit 10%, 5% with a community token). No return figures.
   (1920x1080) and `.webp` (1280x720).
 - Render: `MTG_TRACK=<the closing track> tools/video-signature/build_part.sh <absolute ex10 dir>
   jetup-explainer-know-your-numbers.mp4`. Not rendered yet.
+
+## Preview of 14 Nov 2026
+
+`jetup-explainer-know-your-numbers.mp4`: 123.12 s (2:03), 1920x1080, 25 fps, 22.1 MB, -14.0 LUFS, true peak -2.6 dBFS, no
+sample over 0.9, closing track from 71.77 s to the last frame, sounds 18 whoosh, 22 tick, 14 pop, 3 click; speech-to-text
+hears every line in order. Render: `MTG_TRACK=<closing track> tools/video-signature/build_part.sh <absolute ex10 dir>
+jetup-explainer-know-your-numbers.mp4`. Known: the real page shows its "-1.0%" readout in its own pink, kept as the real
+page; while the slider returns to 0 the page briefly shows +$24 at +0.4%.

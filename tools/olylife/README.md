@@ -42,6 +42,7 @@ A reminder about registering is scheduled in the session for Sunday 15 Nov 2026,
 | 12 Nov 2026 | YouTube podcast (ojpIJqXpUFQ), two hosts who sell it | Claims checked; "FDA approved" and "NASA uses it" are not correct |
 | 12 Nov 2026 | TikTok flyer reel (SA prices, R350 session flyer, sitting-position card) | SA prices, session price, sitting rules |
 | 13 Nov 2026 | TikTok "how to prepare the machine" (5 min, SA distributor in OlyLife cap and shirt) | Set-up, cleaning and session routine below |
+| 14 Nov 2026 | YouTube: "OlyLife Tera P90 Review: Two Doctors Reveal the Truth and Benefits" (Essential Therapies podcast; both doctors sell it) | Practical tips for the page (everyone feels it differently, start low and slow, how often); claims listed as not usable. Notes: `sources/2026-11-14-essential-therapies-podcast.md` |
 
 ### 13 Nov 2026: how-to video, extracted
 

@@ -123,7 +123,8 @@ const ILEN = infLine.getTotalLength();
 const HKW = [...$('hkT').querySelectorAll('span')];
 function hook(t) {
   const [a, b] = S.hook;
-  const s = rise(t, a, b, 30, .5, .35); st($('hiso'), s.o, 0, s.y);
+  // the first frame reads on its own: the ten floors and the title are there, dimmed, from t = 0; they light on his words
+  st($('hiso'), vis(t, a, b, 0, .35));
   // the floors light one by one on "Ten levels"; the top opens on "the limit": the top plate lifts, three ghost floors rise
   // above it and fade, a beam climbs to the infinity sign, which draws itself as he says "Infinity"
   H.P.forEach((p, i) => {
@@ -144,8 +145,8 @@ function hook(t) {
   [infGlow, infDark, infLine].forEach(p => sa(p, { 'stroke-dashoffset': ILEN * (1 - dr) }));
   op(infLine, dr > 0 ? 1 : 0); op(infDark, dr > 0 ? .6 : 0); op(infGlow, dr > 0 ? .35 + .25 * Math.sin(t * 3) + .4 * pulse(t, C.h_infinity + .3, .7) : 0);
   // "10 levels" on "Ten levels"; it gives way to the title on "Meet the Infinity Bonus"; "No depth limit" on its words
-  const k10 = rise(t, C.h_ten - .1, C.h_meet + .1, 30, .35, .35); st($('hk10'), k10.o, 0, k10.y - 40 * lin(t, C.h_meet - .25, C.h_meet + .1));
-  const tt = rise(t, C.h_meet - .05, b, 30, .45, .35); st($('hkT'), tt.o, 0, tt.y);
+  const k10 = pop(t, C.h_ten - .1, C.h_no - .1, .35, .25); st($('hk10'), k10.o, 0, 0, k10.s);
+  st($('hkT'), vis(t, a, b, 0, .35));
   [C.h_meet, C.h_infinity, C.h_bonus].forEach((c, i) => {
     const w = HKW[i]; w.style.opacity = (.35 + .65 * ez.out(lin(t, c - .06, c + .15))).toFixed(3);
     w.style.transform = `translateY(${(-10 * pulse(t, c - .04, .3)).toFixed(1)}px) scale(${(1 + .05 * pulse(t, c - .04, .3)).toFixed(3)})`;

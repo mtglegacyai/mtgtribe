@@ -49,8 +49,9 @@ body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased
 .fl b{display:grid;place-items:center;min-width:44px;height:40px;padding:0 8px;border-radius:12px;font:800 24px/1 var(--f-b);color:var(--body);box-shadow:inset 0 0 0 2px rgba(155,124,255,.45);background:rgba(20,16,34,.9)}
 .fl.lit b{color:#14110b;background:var(--lime);box-shadow:0 0 18px rgba(203,251,97,.55)}
 .fl.lit:before{background:var(--lime)}
-#hk10{left:1010px;top:330px;font:400 190px/1 var(--f-d);text-transform:uppercase;white-space:nowrap;z-index:22}
-#hk10 small{display:block;margin-top:10px;font:800 34px/1 var(--f-b);letter-spacing:.2em;color:var(--gold)}
+/* "10 levels" sits where "No depth limit" will pop, under the title (the title reads, dimmed, from the first frame) */
+#hk10{left:966px;top:640px;display:inline-flex;align-items:center;gap:18px;height:96px;padding:0 40px;border-radius:999px;background:rgba(232,194,90,.10);box-shadow:inset 0 0 0 3px rgba(255,224,143,.9),0 0 44px rgba(232,194,90,.28);font:800 48px/1 var(--f-b);white-space:nowrap;z-index:22}
+#hk10 small{font:800 30px/1 var(--f-b);letter-spacing:.16em;color:var(--gold-hi)}
 #hkT{left:960px;top:270px;font:400 158px/.95 var(--f-d);text-transform:uppercase;letter-spacing:.005em;white-space:nowrap;z-index:22;text-shadow:0 8px 40px rgba(5,3,10,.8)}
 #hkT span{display:inline-block;margin-right:.16em;transform-origin:50% 80%}
 #hkT .gl{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 30px rgba(232,194,90,.45))}
@@ -166,7 +167,7 @@ body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased
 
 <!-- hook: the ten glass floors; the top opens upward to an infinity sign -->
 <div class="ab iso" id="hiso"></div>
-<div class="ab" id="hk10">10 levels<small>PROFIT SHARE</small></div>
+<div class="ab" id="hk10">10 levels<small>· PROFIT SHARE</small></div>
 <div class="ab" id="hkT"><span>The</span><span class="gl">Infinity</span><br><span>Bonus</span></div>
 <div class="ab" id="hkNo"><span class="inf">∞</span>No depth limit</div>
 

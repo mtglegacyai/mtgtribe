@@ -3,7 +3,7 @@
 MTG asked for the next explainer on 15 Nov 2026 ("let's craft, and engineer the next explainer video"): #11 in
 `tools/learning-system/PLAN.md`, the Infinity Bonus with the 50% rule and the difference rule, for the Partner Plan
 "Infinity" section. MTG approved seven new lines the same day ("Yes, record"): one request in MTG Master Voice V3, 49.0 s,
-1 credit (503 before, 502 after). **Being built as a preview; not published.**
+1 credit (503 before, 502 after). **Built and rendered as a preview (15 Nov 2026); not published.**
 
 16:9, 1920x1080, 25 fps, captions burned in, the JetUP logo disc (never MTG's photo), the series' glass style, only the
 four signature sounds. Calm, positive copy; JetUP's figures, never an income promise.
@@ -35,7 +35,7 @@ is not redefined.
   "Next: step-by-step, part 1"), `sfx_body.json` (9 whoosh, 19 tick, 6 pop, 3 click, never closer than 0.49 s),
   `voice.wav` and `mixcues.json`. T = 119.19 s (1:59), the ending from 72.889 s ('every'), end card 115.109 s. Pauses:
   0.6 s before each new scene, 1.3 s after the difference rule line so its last chip can be read.
-- Scenes: hook 0 to 5.77 (explainer #6's ten glass floors light, the top opens upward to an infinity sign, title, "No
+- Scenes: hook 0 to 5.77 (explainer #6's ten glass floors and the title, dimmed, from the first frame; the floors light on "Ten levels", the top opens upward to an infinity sign, "No
   depth limit"), Hi 5.67 to 9.2, Profit Share 9.1 to 22.58 (ten 1.5% level bars, "Paid from the 30% share, never from client
   deposits", then the lime Infinity layer on top, from level 1, past level 10), the bicycle 22.58 to 33.8 (the gear
   cassette is the scale, the chain lands on 1.5% on "one and a half" and climbs one gear per step to 7.5% as he says it; the
@@ -58,3 +58,9 @@ is not redefined.
   end of Rule 1), `cover-explainer-infinity-bonus.jpg` (1920x1080, 196 KB) and `.webp` (1280x720, 63 KB).
 - Render: `MTG_TRACK=<the closing track> tools/video-signature/build_part.sh <absolute ex11 dir>
   jetup-explainer-infinity-bonus.mp4`. Not rendered yet.
+
+## Preview of 15 Nov 2026
+
+`jetup-explainer-infinity-bonus.mp4`: 119.19 s (1:59), 1920x1080, 25 fps, 22.6 MB, -14.0 LUFS, true peak -2.7 dBFS, no
+sample over 0.9, closing track from 67.84 s to the last frame, sounds 19 whoosh, 21 tick, 15 pop, 3 click; speech-to-text
+hears every line in order. The first frame shows the ten floors and the title (dimmed) so it reads on its own.

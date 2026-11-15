@@ -12,6 +12,7 @@ const CASES = [
   ['JetUP How It Works, what copying really means (pop-up)', '/jetup/how-it-works/', '[data-video$="what-copying-really-means.mp4"]'],
   ['JetUP Get started, part 5, what copying really means (pop-up)', '/jetup/get-started/', '#part-5 [data-video$="what-copying-really-means.mp4"]'],
   ['JetUP Exposure Calculator, know your numbers (pop-up)', '/jetup/tools/exposure-calculator/', '[data-video$="know-your-numbers.mp4"]'],
+  ['JetUP Partner Plan, the Infinity Bonus (pop-up)', '/jetup/partner-plan/', '[data-video$="infinity-bonus.mp4"]'],
   ['JetUP Videos, last video (pop-up)', '/jetup/videos/', '[data-video]', 'last'],
   ['JetUP home, 70/30 (pop-up)', '/jetup/', '[data-video$="70-30-split-v2.mp4"]'],
   ['Home, tribe invite (pop-up)', '/', 'a#watch[data-invite]'],

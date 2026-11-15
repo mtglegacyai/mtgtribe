@@ -167,12 +167,18 @@
   on(d, 'click', function (e) { var m = e.target.closest('[data-mark]'); if (m) markWatched(m.getAttribute('data-mark')); });
   paintWatched();
 
+  /* a 16:9 video has a light file for phones and a 1080p file for big screens */
+  function pickSrc(src, hd) {
+    var c = navigator.connection || {};
+    return (hd && !c.saveData && Math.max(window.innerWidth || 0, (window.screen && screen.width) || 0) >= 1200) ? hd : src;
+  }
+
   /* inline poster players */
   function startInline(btn) {
     var box = btn.parentNode, k = btn.getAttribute('data-code');
     var v = d.createElement('video');
     v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'auto';
-    v.src = btn.getAttribute('data-src');
+    v.src = pickSrc(btn.getAttribute('data-src'), btn.getAttribute('data-src-hd'));
     var img = $('img', box); if (img) v.poster = img.currentSrc || img.src;
     box.replaceChild(v, btn); track(v, k);
     // a close button on the video, and back to the poster when it ends
@@ -194,6 +200,12 @@
     var p = v.play(); if (p && p.catch) p.catch(function () {});
   }
   on(d, 'click', function (e) { var b = e.target.closest('.vplay'); if (b) startInline(b); });
+  /* a button beside a cover that starts that video in place: [data-start="code"] */
+  on(d, 'click', function (e) {
+    var b = e.target.closest('[data-start]'); if (!b) return;
+    var t = $('.vplay[data-code="' + b.getAttribute('data-start') + '"]'); if (!t) return;
+    t.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); startInline(t);
+  });
 
   /* modal player for any [data-play] */
   on(d, 'click', function (e) {
@@ -203,7 +215,8 @@
     $('[data-k="title"]', pl).textContent = info.t + ' (' + info.d + ')';
     $('[data-mark]', pl).setAttribute('data-mark', k);
     var v = $('video', pl);
-    v.poster = info.p.replace('-360.webp', '.webp'); v.src = info.s;
+    pl.classList.toggle('wide', info.o === 'h');      // 16:9 plays in the laptop, 9:16 in the phone
+    v.poster = info.p.replace(/-(360|640)\.webp$/, '.webp'); v.src = pickSrc(info.s, info.hd);
     if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 350); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
     paintWatched(); openSheet(pl);
     var p = v.play(); if (p && p.catch) p.catch(function () {});

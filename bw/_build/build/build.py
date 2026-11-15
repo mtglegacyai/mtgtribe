@@ -15,7 +15,7 @@ OUT = SCR + '/out'
 FONTS = SCR + '/fonts/'
 
 PAGES = {
-    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['t1']),
+    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['s1', 't1']),
     'fit': ('Is Bitcoin Wealth right for me?', p_fit, None),
     'back': ('Welcome back to Bitcoin Wealth', p_back, None),
     'what': ('What is Bitcoin Wealth?', p_what, None),
@@ -89,12 +89,12 @@ def images(dst):
     # mascot poster (approved /bw shirt)
     m = Image.open(STUDIO + '/brand/mascot/mtg-mascot-bw.png').convert('RGB')
     m.resize((540, 945), Image.LANCZOS).save(dst + '/bitcoin-wealth-mascot-lion-bw.webp', quality=82, method=6)
-    # Tutorial 1 posters from the approved 9:16 thumbnail
+    # video posters from the approved thumbnails: 9:16 (720 and 360 wide) or 16:9 (1280 and 640 wide)
     for k, v in V.items():
-        th = STUDIO + '/projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg'
-        t = Image.open(th).convert('RGB')
-        t.resize((720, 1280), Image.LANCZOS).save(dst + f'/{v["slug"]}.webp', quality=82, method=6)
-        t.resize((360, 640), Image.LANCZOS).save(dst + f'/{v["slug"]}-360.webp', quality=80, method=6)
+        t = Image.open(STUDIO + '/' + v['poster']).convert('RGB')
+        for w, suf in (((1280, ''), (640, '-640')) if v['o'] == 'h' else ((720, ''), (360, '-360'))):
+            h = w * 9 // 16 if v['o'] == 'h' else w * 16 // 9
+            t.resize((w, h), Image.LANCZOS).save(dst + f'/{v["slug"]}{suf}.webp', quality=82 if not suf else 80, method=6)
     import ogpages
     sz = ogpages.build_all(dst)
     print('social previews:', len(sz), 'largest', max(sz.values()) // 1000, 'KB')
@@ -124,12 +124,18 @@ def og(path, logo, l1, l2, l3, l4, url):
 # ------------------------------------------------------------------ media (web encodes of the approved masters)
 def media(dst):
     os.makedirs(dst, exist_ok=True)
+    x264 = ['-c:v', 'libx264', '-preset', 'slow', '-profile:v', 'high', '-pix_fmt', 'yuv420p']
     for k, v in V.items():
-        out = dst + f'/{v["slug"]}.mp4'
-        if not os.path.exists(out):
-            sh('ffmpeg', '-y', '-v', 'error', '-i', STUDIO + '/' + v['master'], '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264',
-               '-preset', 'slow', '-crf', '27', '-maxrate', '900k', '-bufsize', '1800k', '-profile:v', 'high', '-pix_fmt', 'yuv420p',
-               '-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-movflags', '+faststart', out)
+        src = STUDIO + '/' + v['master']
+        if v['o'] == 'h':      # 16:9: a light 720p for phones and a 1080p for big screens (the player picks)
+            jobs = [('', 'scale=1280:720:flags=lanczos', ['-crf', '25', '-maxrate', '1500k', '-bufsize', '3000k'], '112k'),
+                    ('-1080p', 'scale=1920:1080:flags=lanczos', ['-crf', '23', '-maxrate', '3200k', '-bufsize', '6400k'], '128k')]
+        else:
+            jobs = [('', 'scale=720:1280:flags=lanczos', ['-crf', '27', '-maxrate', '900k', '-bufsize', '1800k'], '96k')]
+        for suf, vf, rate, ab in jobs:
+            out = dst + f'/{v["slug"]}{suf}.mp4'
+            if not os.path.exists(out):
+                sh('ffmpeg', '-y', '-v', 'error', '-i', src, '-vf', vf, *x264, *rate, '-c:a', 'aac', '-b:a', ab, '-ac', '2', '-movflags', '+faststart', out)
     out = dst + '/bitcoin-wealth-mascot-lion-wave.mp4'
     if not os.path.exists(out):
         sh('ffmpeg', '-y', '-v', 'error', '-i', STUDIO + '/brand/mascot/clips/mascot-wave-bw.mp4', '-an', '-vf', 'scale=540:-2:flags=lanczos',
@@ -170,7 +176,7 @@ def render(dst):
         v = V[c]
         return (f'<video:video><video:thumbnail_loc>{SITE}{BASE}img/{v["slug"]}.webp</video:thumbnail_loc><video:title>{core.esc("Bitcoin Wealth " + v["label"] + ": " + v["title"])}</video:title>'
                 f'<video:description>{core.esc(v["desc"])}</video:description><video:content_loc>{SITE}{BASE}media/{v["slug"]}.mp4</video:content_loc>'
-                f'<video:duration>{int(round(v["secs"]))}</video:duration><video:publication_date>{LAUNCHED}T00:00:00+02:00</video:publication_date>'
+                f'<video:duration>{int(round(v["secs"]))}</video:duration><video:publication_date>{v["date"]}T00:00:00+02:00</video:publication_date>'
                 f'<video:family_friendly>yes</video:family_friendly><video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video>')
     sm = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
           'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + ''.join(
@@ -229,10 +235,8 @@ def render_preview(dst):
     os.makedirs(dst + '/media', exist_ok=True)
     shutil.copy(OUT + '/_media/bitcoin-wealth-mascot-lion-wave.mp4', dst + '/media/')
     for k, v in V.items():
-        out = dst + f'/media/{v["slug"]}.mp4'
-        sh('ffmpeg', '-y', '-v', 'error', '-i', STUDIO + '/' + v['master'], '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264',
-           '-preset', 'slow', '-crf', '29', '-maxrate', '650k', '-bufsize', '1300k', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '80k',
-           '-movflags', '+faststart', out)
+        for suf in (('', '-1080p') if v['o'] == 'h' else ('',)):      # the review copy uses the same files as the live site
+            shutil.copy(OUT + f'/_media/{v["slug"]}{suf}.mp4', dst + f'/media/{v["slug"]}{suf}.mp4')
     files = {}
     hd, body = landing()
     files['index.html'] = core.wrap_doc(hd, body, 'landing', main_page=True)

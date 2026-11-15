@@ -1,6 +1,7 @@
 // Video return check (MTG, 10 Nov 2026): when a video ends, the page must come back to exactly where the visitor
 // pressed play. Usage: node tools/qa/video-return-test.js [base url]. Needs a server that answers range requests,
 // for example npx http-server . -p 8766 (python's http.server cannot seek videos). Add new pages and players to CASES.
+// ONLY=<part of a case name> runs just the matching cases.
 // When a video ends, does the page come back to the video's spot? Each case runs with the new script blocked (old
 // behaviour) and with it, at phone and laptop size. The page is knocked to the top mid-video (what full screen does on
 // phones), then the video plays to its end.
@@ -19,7 +20,10 @@ const CASES = [
   ['ALTRUVA How It Works (inline)', '/altruva/dashboard/how-it-works/', '.vplay'],
   ['ALTRUVA dashboard, tutorial 2 (sheet)', '/altruva/dashboard/', '[data-play="t2"]'],
   ['Canton report (inline)', '/canton-weekly/2026-11-08/', '.vcover'],
-];
+  ['BW dashboard, The Missing Piece (inline, laptop frame)', '/bw/dashboard/', '.vplay[data-code="s1"]'],
+  ['BW dashboard, The Missing Piece from its tile (sheet, laptop frame)', '/bw/dashboard/', '.vtile[data-play="s1"]'],
+  ['BW tutorials, tutorial 1 (inline, phone frame)', '/bw/dashboard/tutorials/', '.vplay'],
+].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {
   const b = await chromium.launch(); const rows = []; let bad = 0;
   for (const [devName, ctxOpt] of [['phone', { ...devices['Pixel 7'] }], ['laptop', { viewport: { width: 1280, height: 800 } }]]) {

@@ -1,0 +1,472 @@
+{
+ "date": "2026-11-15",
+ "date_h": "15 November 2026",
+ "headline": "down to $0.080 in a market-wide sell-off, testing December 2025 lows",
+ "price_short": "$0.0801",
+ "lede": "Canton Coin (CC) price, chart levels and three scenarios for the week ahead, plus what's happening with CNTN stock. Plain English, no hype.",
+ "summary": "Canton Coin is at <b>$0.0801</b> (about R1.36), down about <b>14%</b> this week and <b>24%</b> this month, its lowest price since December 2025. The whole crypto market fell hard: Bitcoin about 14% and Ether about 19% over 7 days, and the Fear and Greed Index sits at 10, Extreme Fear. The $0.091 support from last week gave way on 9 November. On the network side the news kept coming: Nomura was approved as a Super Validator on 10 November and Digital Asset signed a tokenized Japanese government bond deal with Progmat. CNTN stock fell about <b>17%</b> to <b>$1.71</b>, close to its 52 week low.",
+ "summary_plain": "Canton Coin at $0.0801, down about 14% this week in a market-wide sell-off. Support $0.075, resistance $0.0855. Nomura approved as a Super Validator. Scenarios and CNTN stock for 15 November 2026.",
+ "meta_chips": [
+  [
+   "list",
+   "CC $0.0801"
+  ],
+  [
+   "clock",
+   "7 days: -14%"
+  ],
+  [
+   "wallet",
+   "CNTN $1.71"
+  ],
+  [
+   "calendar",
+   "Updated 15 Nov 2026"
+  ]
+ ],
+ "snapshot": [
+  [
+   "Price",
+   "<b>$0.0801</b> (about R1.36)"
+  ],
+  [
+   "24 hours",
+   "<span class=\"dn\">About -5.7%</span>"
+  ],
+  [
+   "7 days / 30 days",
+   "<span class=\"dn\">About -14%</span> / <span class=\"dn\">about -24%</span>"
+  ],
+  [
+   "Market cap",
+   "$3.21 billion (rank #25)"
+  ],
+  [
+   "24h volume",
+   "About $20 million"
+  ],
+  [
+   "Supply",
+   "40.06 billion CC, no maximum, still growing"
+  ],
+  [
+   "All-time high",
+   "$0.1942 (3 Feb 2026), about 59% below it"
+  ],
+  [
+   "All-time low",
+   "$0.0590 (6 Dec 2025)"
+  ]
+ ],
+ "snapshot_note": "Snapshot 15 November 2026 from CoinGecko, cross checked with the Kraken CC/USD price ($0.0800).",
+ "closes": [
+  [
+   "26 Oct",
+   0.10111
+  ],
+  [
+   "27 Oct",
+   0.099366
+  ],
+  [
+   "28 Oct",
+   0.099262
+  ],
+  [
+   "29 Oct",
+   0.100403
+  ],
+  [
+   "30 Oct",
+   0.094234
+  ],
+  [
+   "31 Oct",
+   0.09848
+  ],
+  [
+   "1 Nov",
+   0.097812
+  ],
+  [
+   "2 Nov",
+   0.097672
+  ],
+  [
+   "3 Nov",
+   0.094121
+  ],
+  [
+   "4 Nov",
+   0.096472
+  ],
+  [
+   "5 Nov",
+   0.099383
+  ],
+  [
+   "6 Nov",
+   0.096189
+  ],
+  [
+   "7 Nov",
+   0.094309
+  ],
+  [
+   "8 Nov",
+   0.094033
+  ],
+  [
+   "9 Nov",
+   0.090462
+  ],
+  [
+   "10 Nov",
+   0.091442
+  ],
+  [
+   "11 Nov",
+   0.089386
+  ],
+  [
+   "12 Nov",
+   0.090651
+  ],
+  [
+   "13 Nov",
+   0.088745
+  ],
+  [
+   "14 Nov",
+   0.085528
+  ],
+  [
+   "15 Nov",
+   0.0801
+  ]
+ ],
+ "chart_lines": [
+  {
+   "v": 0.091,
+   "kind": "resistance"
+  },
+  {
+   "v": 0.0855,
+   "kind": "resistance"
+  },
+  {
+   "v": 0.075,
+   "kind": "support"
+  },
+  {
+   "v": 0.071,
+   "kind": "support"
+  }
+ ],
+ "chart_alt": "Canton Coin daily closes from 26 October to 15 November 2026, falling from about $0.101 to $0.080, with resistance at $0.0855 and $0.091 and support at $0.075 and $0.071",
+ "chart_live_label": "15 Nov $0.0801",
+ "changed": [
+  "📉 Price fell from $0.0927 to $0.0801, about 14%. It touched about $0.075 on Kraken on 15 November, the lowest since December 2025.",
+  "🌍 It was not only Canton: Bitcoin fell about 14% and Ether about 19% in the same 7 days, and the Fear and Greed Index dropped from 28 to 10.",
+  "🧱 Last week's $0.091 support broke on 9 November and the next try at $0.088 gave way on 13 November. Old support is now resistance.",
+  "🏯 Nomura (with BOOSTRY) was approved as a Super Validator on 10 November (CIP-0130), and CapConnect+, a commercial paper platform built with Walmart, applied to become one (CIP-0131).",
+  "📉 CNTN stock fell from $2.06 to $1.71 (about -17%), and touched $1.66, its 52 week low, on 13 November."
+ ],
+ "technicals": [
+  [
+   "Trend",
+   "Down: lower highs since February, and a new lower low this week"
+  ],
+  [
+   "20 day average",
+   "About $0.094 (price about 15% below)"
+  ],
+  [
+   "50 day average",
+   "About $0.108 (price below)"
+  ],
+  [
+   "200 day average",
+   "About $0.126 (price far below)"
+  ],
+  [
+   "RSI (14)",
+   "About 28: oversold territory for the first time in these reports"
+  ],
+  [
+   "MACD",
+   "Below its signal line and below zero, the gap widening again (bearish)"
+  ],
+  [
+   "Volume",
+   "Rising on the drop: about $17 to $20 million a day, double last week's quiet days"
+  ],
+  [
+   "Futures",
+   "About $34 million open interest across 36 perpetual markets (Binance about $10.6 million). Funding is close to flat, no crowded bets either way"
+  ]
+ ],
+ "levels": [
+  [
+   "🔴 Resistance 2",
+   "$0.091",
+   "9 to 12 November closes, last week's support now overhead"
+  ],
+  [
+   "🔴 Resistance 1",
+   "$0.0855",
+   "14 November level, where the slide sped up"
+  ],
+  [
+   "🟢 Support 1",
+   "$0.075",
+   "15 November intraday low and the December 2025 trading range"
+  ],
+  [
+   "🟢 Support 2",
+   "$0.071",
+   "Mid December 2025 base, where buyers held for a week"
+  ],
+  [
+   "🟢 Support 3",
+   "$0.059",
+   "All-time low, 6 December 2025"
+  ]
+ ],
+ "scenarios": [
+  [
+   "🟢 Bullish",
+   "Daily close above $0.0855",
+   "Oversold bounce toward $0.091, then the 20 day average near $0.094"
+  ],
+  [
+   "🟡 Base",
+   "Holds $0.075 to $0.0855",
+   "Sideways while the whole market looks for a floor"
+  ],
+  [
+   "🔴 Bearish",
+   "Daily close below $0.075",
+   "Opens $0.071, and below that the December lows"
+  ]
+ ],
+ "fund_score": "Mixed",
+ "fundamentals": [
+  "🏦 <b>Institutions keep arriving:</b> Nomura approved as a Super Validator with a milestone-based weight of up to 10 (CIP-0130, 10 November). Digital Asset and Progmat signed an MOU on 10 November to bring tokenized Japanese government bonds and repo onto Canton Network. CapConnect+ proposed itself as a Super Validator (CIP-0131), and Canton Network says DTCC's service puts over $30 trillion of assets within reach on-chain.",
+  "🔥 <b>Burn vs mint:</b> no new full measurement this week. The latest independent figure (CantonNews, 8 November) was about 15.2 million CC burned against 21.9 million minted per day, so supply still grows. Universal burn (CIP-0129, approved) is expected from Q1 2027.",
+  "⚠️ <b>Ecosystem housekeeping:</b> the Edel token project reported about $300,000 of EDEL tokens stolen, and Console Wallet paused and then restored its services (12 November). Neither notice says the Canton network itself was compromised. Canton 3.7.3 shipped a sequencer fix, and the Splice 0.10.0 MainNet upgrade is scheduled for 16 November.",
+  "🧰 <b>Grants:</b> the development fund approved 4.59 million CC for a privacy (TEE) covalidator by Financial Privacy Inc. and 1.27 million CC for Python tooling by Obsidian Systems, and OpenZeppelin's Canton library passed review. No unlocks, ETF filings or new spot listings found."
+ ],
+ "cntn_table": [
+  [
+   "Price (13 Nov close)",
+   "<b>$1.71</b>"
+  ],
+  [
+   "Week",
+   "<span class=\"dn\">About -17%</span>"
+  ],
+  [
+   "Market cap",
+   "About $136 million (estimate, sources differ)"
+  ],
+  [
+   "52 week range",
+   "$1.66 to $5.83"
+  ]
+ ],
+ "cntn_notes": [
+  "CNTN is Canton Strategic Holdings, a Nasdaq company that holds about 3.7 billion CC. It is <b>not</b> Digital Asset, the private company that built Canton Network.",
+  "Tokenized CNTN shares made their first trades on TSV LLC on 4 November. No wider access was announced this week: only verified participants can trade, and South African access has not been announced.",
+  "On 12 November the company publicly backed Digital Asset's stand against front-running (MEV), saying Canton Network's design keeps orders private. No new filings that change the picture were found.",
+  "You can buy CNTN through Interactive Brokers from most countries, or any US broker. <a class=\"tx\" href=\"/cntn/\">See the step-by-step guide</a>."
+ ],
+ "bottom_line": [
+  "📉 CC broke last week's support and is at its lowest since December 2025, in step with a market-wide sell-off. $0.075 is the level to watch.",
+  "🏦 The institutional story got stronger (Nomura, Progmat, CapConnect+), but supply still grows and CC itself is not yet the thing banks buy.",
+  "👀 RSI near 28 says sellers are stretched. Watch for a daily close back above $0.0855 before reading anything into a bounce."
+ ],
+ "sources": [
+  [
+   "CoinGecko: Canton Coin",
+   "https://www.coingecko.com/en/coins/canton-network"
+  ],
+  [
+   "CoinGecko: historical data",
+   "https://www.coingecko.com/en/coins/canton-network/historical_data"
+  ],
+  [
+   "CoinGecko: derivatives (open interest, funding)",
+   "https://www.coingecko.com/en/coins/canton-network#markets"
+  ],
+  [
+   "Kraken: CC/USD ticker",
+   "https://www.kraken.com/prices/canton"
+  ],
+  [
+   "Alternative.me: Crypto Fear and Greed Index",
+   "https://alternative.me/crypto/fear-and-greed-index/"
+  ],
+  [
+   "Canton Foundation GitHub: CIP-0130 Nomura",
+   "https://github.com/canton-foundation/cips/blob/main/cip-0130/cip-0130.md"
+  ],
+  [
+   "Canton Foundation GitHub: CIP-0131 CapConnect+",
+   "https://github.com/canton-foundation/cips/blob/main/cip-0131/cip-0131.md"
+  ],
+  [
+   "Canton Foundation GitHub: dev fund",
+   "https://github.com/canton-foundation/canton-dev-fund"
+  ],
+  [
+   "Digital Asset: Progmat collaboration",
+   "https://blog.digitalasset.com/press-release/strategic-collaboration-toward-accelerating-the-on-chain-transformation"
+  ],
+  [
+   "Canton Network blog: One Giant Leap",
+   "https://www.canton.network/blog/one-giant-leap"
+  ],
+  [
+   "CantonNews daily",
+   "https://cantonnews.org/today"
+  ],
+  [
+   "CantonNews: Edel, Cantex and Console Wallet roundup",
+   "https://cantonnews.org/canton-roundup-edel-reports-token-theft-cantex-adds-2fa-and-console-wallet-restores-services"
+  ],
+  [
+   "CantonNews: OpenZeppelin passes dev fund review",
+   "https://cantonnews.org/openzeppelin-s-canton-library-and-four-app-designs-pass-development-fund-review"
+  ],
+  [
+   "Canton Foundation: SV calendar (Splice 0.10.0)",
+   "https://sv-cal.canton.foundation/"
+  ],
+  [
+   "Yahoo Finance: CNTN",
+   "https://finance.yahoo.com/quote/CNTN/"
+  ],
+  [
+   "GuruFocus: CNTN on MEV",
+   "https://www.gurufocus.com/news/9194603/canton-strategic-holdings-cntn-supports-mev-transparency-amid-blockchain-market-evolution"
+  ]
+ ],
+ "video_script": [
+  {
+   "scene": "intro",
+   "text": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for the fifteenth of November, twenty twenty six.",
+   "caption": "Hi, my name is MTG, Your Digital Architect. Thank you for taking the time to watch this weekly market report. Here is your Canton Coin update for 15 November 2026."
+  },
+  {
+   "scene": "price",
+   "text": "Canton Coin is trading at about eight cents, roughly one rand thirty six. That is down about fourteen percent this week, its lowest price since December last year. But this was a market wide move: Bitcoin fell about fourteen percent too.",
+   "caption": "Canton Coin is trading at about $0.080, roughly R1.36. That is down about 14% this week, its lowest price since December 2025. But this was a market-wide move: Bitcoin fell about 14% too."
+  },
+  {
+   "scene": "trend",
+   "text": "On the chart, the downtrend made a new lower low. Price sits well below its twenty and fifty day moving averages, and the Relative Strength Index is around twenty eight. That is oversold, which means sellers are stretched, not that the drop is over.",
+   "caption": "On the chart, the downtrend made a new lower low. Price sits well below its 20 and 50 day moving averages, and the RSI is around 28. That is oversold: sellers are stretched, which does not mean the drop is over."
+  },
+  {
+   "scene": "levels",
+   "text": "Watch these levels. Support sits at seven and a half cents, then seven point one cents. Resistance sits at eight point five five cents, then nine point one cents, last week's old support.",
+   "caption": "Watch these levels. Support sits at $0.075, then $0.071. Resistance sits at $0.0855, then $0.091, last week's old support."
+  },
+  {
+   "scene": "scenarios",
+   "text": "Three scenarios for the week. A daily close above eight point five five cents opens room for a bounce toward nine point one cents. Holding between seven and a half and eight point five five cents means sideways while the market finds a floor. A daily close below seven and a half cents opens the way to seven point one cents.",
+   "caption": "Three scenarios for the week. A daily close above $0.0855 opens room for a bounce toward $0.091. Holding between $0.075 and $0.0855 means sideways while the market finds a floor. A daily close below $0.075 opens the way to $0.071."
+  },
+  {
+   "scene": "fundamentals",
+   "text": "On the fundamentals, the institutions keep coming. Nomura was approved as a Super Validator, and Digital Asset signed a deal to bring tokenized Japanese government bonds onto Canton. The network still creates more coin than it burns, so the score stays mixed.",
+   "caption": "On the fundamentals, the institutions keep coming. Nomura was approved as a Super Validator, and Digital Asset signed a deal to bring tokenized Japanese government bonds onto Canton. The network still mints more than it burns, so the score stays Mixed."
+  },
+  {
+   "scene": "guides",
+   "text": "Want to learn how to buy Canton Coin, or C N T N stock? Both step by step guides are waiting for you. Go to M T G tribe dot com slash C C, and M T G tribe dot com slash C N T N.",
+   "caption": "Want to learn how to buy Canton Coin, or CNTN stock? Both step-by-step guides are waiting for you: mtgtribe.com/cc and mtgtribe.com/cntn."
+  },
+  {
+   "scene": "outro",
+   "text": "Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto!"
+  }
+ ],
+ "video_vis": {
+  "price": 0.0801,
+  "tiles": [
+   [
+    "7 days",
+    "-14%",
+    "dn"
+   ],
+   [
+    "30 days",
+    "-24%",
+    "dn"
+   ],
+   [
+    "From the high",
+    "-59%",
+    "dn"
+   ],
+   [
+    "In rand",
+    "R1.36",
+    ""
+   ]
+  ],
+  "trend_h": "New lower low, RSI oversold near 28",
+  "scenarios": [
+   [
+    "🟢 Bullish",
+    "Close above",
+    "$0.0855"
+   ],
+   [
+    "🟡 Base",
+    "Holds",
+    "$0.075 to $0.0855"
+   ],
+   [
+    "🔴 Bearish",
+    "Close below",
+    "$0.075"
+   ]
+  ],
+  "fundamentals": [
+   "🏯 Nomura approved as a Super Validator",
+   "🇯🇵 Tokenized Japanese bonds deal",
+   "🔥 Mint still ahead of burn"
+  ]
+ },
+ "guides": {
+  "cc": {
+   "date": "2026-11-15",
+   "date_h": "15 November 2026",
+   "price": "<b>$0.0801</b>",
+   "chg": "About -14% / about -24%",
+   "mcap": "About $3.21 billion (top 30)",
+   "ath": "$0.1942 on 3 February 2026, more than double today's price",
+   "supply": "40.06 billion CC, no maximum, still growing"
+  },
+  "cntn": {
+   "date": "2026-11-13",
+   "price": "$1.71",
+   "price_date": "13 November 2026",
+   "range": "$1.66 to $5.83"
+  }
+ },
+ "thumb": {
+  "hook": "Lowest since December as all crypto sold off",
+  "move": "-14%",
+  "move_label": "this week"
+ },
+ "video": {
+  "src": "video.mp4",
+  "poster": "poster.jpg",
+  "title": "Canton Coin weekly analysis, 15 November 2026",
+  "duration_iso": "PT1M58S"
+ }
+}

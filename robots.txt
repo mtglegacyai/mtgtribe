@@ -32,3 +32,4 @@ Allow: /
 
 Sitemap: https://mtgtribe.com/sitemap.xml
 Sitemap: https://mtgtribe.com/altruva/sitemap.xml
+Sitemap: https://mtgtribe.com/bw/sitemap.xml

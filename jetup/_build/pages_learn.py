@@ -192,6 +192,7 @@ def build_plan():
   <div style="margin-top:18px;max-width:300px;margin-inline:auto">{phone('profitshare', "JetUP's own Profit Share video (1:14)")}</div>
  </article>
  {section('infinity', 'Income 3 · Infinity Bonus', 'A leadership bonus, no depth limit', f'''
+<div style="margin:4px 0 18px">{laptop('infinity', 'The Infinity Bonus, explained by MTG (1:59)')}</div>
 <p>An extra percentage on top of the Profit Share, from level 1 with unlimited depth, set by the <b>new</b> team volume each calendar month (not your accumulated total).</p>
 <div class="tbl-wrap" style="max-width:420px"><table class="tbl"><thead><tr><th>New volume a month</th><th>Rate</th></tr></thead><tbody>{inf_rows}</tbody></table></div>
 <ul style="margin-top:14px">
@@ -224,7 +225,7 @@ def build_plan():
            ('How do I qualify as a JetUP partner?', "JetUP's plan says everyone needs at least $250 of active trading. A $250 own deposit opens 3 levels; from the 4th direct partner each new direct partner opens one more level, and 10 direct partners open all 10.")]
     return page(path, 'JetUP Partner Plan Explained: Lot Commission, Profit Share | MTG',
                 "JetUP's optional partner plan in plain English: no need to refer anyone to earn as a client. Lot Commission over 10 levels, 1.5% Profit Share, the Infinity Bonus, the Global Pool and the $250 rule.",
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('infinity'), ld_video('profitshare')])
 
 def build_promo():
     path = '/jetup/promo/'

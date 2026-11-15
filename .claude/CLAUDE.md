@@ -38,6 +38,10 @@ publish without approval.
   inline and playlist players). Copy that file to any new site. Check with `tools/qa/video-return-test.js`.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
+- On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in
+  the laptop frame (`.lap`), it plays in place, and the pop-up player becomes a laptop for it (`#player.wide`); 9:16 videos keep the
+  phone. Two files are made (720p for phones, `-1080p` for screens 1200 px and wider). `hero=True` gives the pulsing play button; the
+  cover's `spot` says where on the picture the button sits. First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
 
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 

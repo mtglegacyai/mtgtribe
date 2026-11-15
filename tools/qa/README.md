@@ -50,4 +50,5 @@ node tools/qa/video-return-test.js http://127.0.0.1:8766
 
 It needs a static server that answers range requests (videos must seek), for example `npx http-server . -p 8766`.
 Each case runs without and with the script; with it, every video's cover must come back to the same place on screen.
+To run only some cases, put part of their name in `ONLY`, for example `ONLY=BW node tools/qa/video-return-test.js http://127.0.0.1:8766`.
 

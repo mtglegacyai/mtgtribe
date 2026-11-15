@@ -154,11 +154,14 @@ def sec(body, title=None, lead=None, id=None, cls=''):
 
 
 def poster(code, here, size=720):
+    """(big, small) poster of a video: 720 and 360 wide for 9:16, 1280 and 640 wide for 16:9"""
     v = V[code]
-    return L(f'img/{v["slug"]}.webp', here), L(f'img/{v["slug"]}-360.webp', here)
+    return L(f'img/{v["slug"]}.webp', here), L(f'img/{v["slug"]}-{"640" if v["o"] == "h" else "360"}.webp', here)
 
 
-def vid(code, here, cap=True):
+def vid(code, here, cap=True, eager=False, hero=False):
+    """a video on its cover: 9:16 in the slim phone, 16:9 in the laptop (MTG's standing rule, 5 Nov 2026).
+    It plays in place, closes itself at the end and puts the visitor back where they pressed play."""
     v = V[code]
     big, small = poster(code, here)
     src = L(f'media/{v["slug"]}.mp4', here)
@@ -167,9 +170,20 @@ def vid(code, here, cap=True):
         fc = (f'<figcaption class="vcap"><span><b>{v["title"]}</b><br>{v["label"]}, {mmss(v["secs"])}</span>'
               f'<span class="wbadge">{ic("circle-check")}Watched</span>'
               f'<button type="button" class="mark" data-mark="{code}">Mark as watched</button></figcaption>')
+    load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    if v['o'] == 'h':
+        hd = L(f'media/{v["slug"]}-1080p.mp4', here)
+        spot = f' style="--px:{v["spot"][0]}%;--py:{v["spot"][1]}%"' if v.get('spot') else ''
+        return (f'<figure class="vid vid16" data-vid="{code}"><div class="lap"><div class="lap-scr"><div class="vbox">'
+                f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 760px" '
+                f'width="1280" height="720" {load} decoding="async" alt="{esc(v["title"])}: video cover">'
+                f'<button type="button" class="vplay{" hero" if hero else ""}" data-src="{esc(src)}" data-src-hd="{esc(hd)}" data-code="{code}"{spot} '
+                f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
+                f'<span class="pbtn">{ic("play")}</span><span class="dur">{mmss(v["secs"])}</span></button>'
+                f'</div></div><div class="lap-base"><i></i></div></div>{fc}</figure>')
     return (f'<figure class="vid" data-vid="{code}"><div class="vbox">'
             f'<img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 90vw, 340px" '
-            f'width="720" height="1280" loading="lazy" decoding="async" alt="{esc(v["title"])}: video cover">'
+            f'width="720" height="1280" {load} decoding="async" alt="{esc(v["title"])}: video cover">'
             f'<button type="button" class="vplay" data-src="{esc(src)}" data-code="{code}" '
             f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
             f'<span class="pbtn">{ic("play")}</span><span class="dur">{mmss(v["secs"])}</span></button>'
@@ -190,11 +204,13 @@ def vlink(code, here):
 
 
 def video_data(here):
-    """JSON for the modal player and the progress tiles"""
+    """JSON for the modal player and the progress tiles (o: 'h' = 16:9, plays in the laptop frame)"""
     d = {}
     for k, v in V.items():
         big, small = poster(k, here)
         d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, d=mmss(v['secs']))
+        if v['o'] == 'h':
+            d[k].update(o='h', hd=L(f'media/{v["slug"]}-1080p.mp4', here))
     return json.dumps(d, separators=(',', ':'))
 
 
@@ -295,7 +311,7 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 
 def video_obj(code, name, desc, thumb, media, dur):
     return {'@type': 'VideoObject', '_code': code, 'name': name, 'description': desc,
-            'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': LAUNCHED + 'T00:00:00+02:00',
+            'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': V[code]['date'] + 'T00:00:00+02:00',
             'duration': dur, 'contentUrl': SITE + BASE + media, 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
             'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
             'about': BW_THING}
@@ -330,7 +346,7 @@ def overlays(here):
 </div>
 <div class="sheet player" id="player" role="dialog" aria-modal="true" aria-label="Video player" hidden>
  <div class="sheet-in">
-  <div class="pframe"><div class="vbox"><video controls playsinline preload="none"></video></div><i class="pbtn-s l1"></i><i class="pbtn-s l2"></i><i class="pbtn-s r1"></i>
+  <div class="pframe"><div class="vbox"><video controls playsinline preload="none"></video></div><i class="pbase"><i></i></i><i class="pbtn-s l1"></i><i class="pbtn-s l2"></i><i class="pbtn-s r1"></i>
    <button type="button" class="xbtn" data-close aria-label="Close the video">{ic('x')}</button></div>
   <span class="sr" data-k="title"></span><span hidden data-mark=""></span>
  </div>

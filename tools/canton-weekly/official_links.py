@@ -4,7 +4,7 @@ Why: visitors should never have to search for a name and risk landing on a copyc
 Every page gets the first mention of each name in each section linked to its official site.
 (directory_table() can build an "Official websites" table, but MTG chose not to show one: the inline links are enough.)
 
-Sources used to verify each address (checked 2 November 2026):
+Sources used to verify each address (checked 2 November 2026; Nomura, Progmat, CapConnect+ and OpenZeppelin added 15 November 2026 from each company's own site):
 - Canton Network's official ecosystem directory (cantonecosystem.com, linked from canton.network)
 - Canton Wiki project pages, and each project's own homepage
 - The company's own site for exchanges, brokers and tax offices
@@ -50,6 +50,10 @@ OFFICIAL = {
     "Canton Strategic Holdings": ("https://www.cantonstrategic.com/", "cantonstrategic.com", "The company behind CNTN stock", "noopener"),
     "DTCC": ("https://www.dtcc.com/", "dtcc.com", "US market infrastructure company", "noopener"),
     "CoinGecko": ("https://www.coingecko.com/en/coins/canton-network", "coingecko.com", "Canton Coin price data", "noopener"),
+    "Nomura": ("https://www.nomura.com/", "nomura.com", "Japanese financial group, Canton Super Validator (CIP-0130)", "noopener"),
+    "Progmat": ("https://progmat.co.jp/", "progmat.co.jp", "Japanese digital asset platform (linked from Digital Asset's 10 Nov 2026 press release)", "noopener"),
+    "CapConnect+": ("https://www.capconnectplus.com/", "capconnectplus.com", "Commercial paper platform, proposed Super Validator (CIP-0131)", "noopener"),
+    "OpenZeppelin": ("https://www.openzeppelin.com/", "openzeppelin.com", "Smart contract security company", "noopener"),
     "CoinMarketCap": ("https://coinmarketcap.com/currencies/canton-network/", "coinmarketcap.com", "Canton Coin price data", "noopener"),
     # Brokers and markets
     "Interactive Brokers": ("https://www.interactivebrokers.com/", "interactivebrokers.com", "Broker for US shares (most countries)", "noopener"),
@@ -77,10 +81,11 @@ PATTERNS = [
     ("Binance", r"\bBinance(?:\.com)?\b"),
     ("Nasdaq", r"\bNasdaq\b(?!\.com)"),
     ("Gate", r"\bGate\b"),
+    ("CapConnect+", r"\bCapConnect\+"),
 ] + [(k, r"\b" + re.escape(k) + r"\b") for k in (
     "Nightly", "Bron", "Ledger", "Cypherock", "VALR", "Kraken", "Bybit", "KuCoin", "MEXC", "OneSwap", "Cantex",
     "CaviarNine", "CBTC", "Rocky", "Ligero", "DTCC", "CoinGecko", "CoinMarketCap", "Robinhood", "SoFi",
-    "EasyEquities", "SEC", "SARS", "HMRC", "IRS")]
+    "EasyEquities", "SEC", "SARS", "HMRC", "IRS", "Nomura", "Progmat", "OpenZeppelin")]
 _RX = [(k, re.compile(p)) for k, p in PATTERNS]
 
 # Never link inside these elements (links, headings, FAQ questions, buttons, code, scripts).

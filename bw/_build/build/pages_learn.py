@@ -45,7 +45,20 @@ def p_home(here):
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
         ('Teach someone else', f'<p>We learn best when we teach others. Share this guide, or get your own <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">BW Tribe Page</a> with your link inside.</p>'),
     ])
-    return f'''{phero("compass", "Welcome. Let's get you started.",
+    story = V['s1']
+    feat = f"""<section class="feat" id="story" aria-label="Watch this first"><div class="wrap"><div class="feat-in">
+ {vid('s1', here, cap=False, eager=True, hero=True)}
+ <div class="feat-copy"><p class="eyebrow">Watch this first · {mmss(story['secs'])}</p>
+  <h2 class="h2">You may be missing <span class="hl">one piece.</span></h2>
+  <p class="lead">Thandi did everything right and still had to start again. See what Leo shows her.</p>
+  <div class="btn-row"><button type="button" class="btn btn-gold ring" data-start="s1">{ic('play')}<span class="lbl">Watch The Missing Piece</span></button>
+  <a class="btn btn-ghost" href="#start">{ic('rocket')}<span class="lbl">Get Started</span></a></div>
+  <p class="fine">A short cartoon by MTG. Leo and Thandi, and their voices, are made with AI.</p></div>
+</div></div></section>"""
+    stile = (f'<button type="button" class="vtile story" data-play="s1" data-vid="s1" title="{esc(story["desc"])}">'
+             f'<span class="vn">{ic("play")}</span><span class="vt">{story["short"]} ({mmss(story["secs"])})</span>{ic("circle-check")}</button>')
+    return f'''{feat}
+{phero("compass", "Welcome. Let's get you started.",
         "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.",
         [("users", f"{MEMBERS} member IDs ({CHECKED})"), ("badge-check", "0.001 BTC once-off"), ("info", "Independent, not official")])}
 {sec(start3(here, head=False), "Join in 3 stages", id="start")}
@@ -53,7 +66,7 @@ def p_home(here):
  <div class="pring" data-ring><svg viewBox="0 0 118 118" aria-hidden="true"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#3fc11f"/><stop offset="1" stop-color="#ffa101"/></linearGradient></defs><circle class="bg" cx="59" cy="59" r="50"/><circle class="fg" cx="59" cy="59" r="50"/></svg>
  <div class="val"><b data-k="n">0</b><small>of {NV} watched</small></div></div>
  <div class="stack"><div><h2 class="h3">Your progress</h2><p class="fine">Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only. New videos appear here as they're released.</p></div>
- <p class="vgl">Tutorials</p><div class="vgrid">{tiles}</div><p class="vgl">Explainers</p><div class="vgrid">{etiles}</div></div>
+ <p class="vgl">Start here</p><div class="vgrid">{stile}</div><p class="vgl">Tutorials</p><div class="vgrid">{tiles}</div><p class="vgl">Explainers</p><div class="vgrid">{etiles}</div></div>
 </div></div>""", id="progress")}
 {sec(route, "Your route, in order", "Seven stops. Each one builds on the last, so go in order the first time.")}
 {sec(f"""<div class="grid3">

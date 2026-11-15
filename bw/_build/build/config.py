@@ -4,7 +4,7 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-14'
+TODAY = '2026-11-15'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
@@ -44,11 +44,19 @@ PRICE_ZAR = 1000          # BW Tribe Page, once-off (MTG: "R1000 is the fixed on
 SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide by MTG. Short videos and plain pages "
              "show how it works, how to join safely and how to check every payment yourself: https://mtgtribe.com/bw")
 
-# released videos: code, slug, title, one-line summary, seconds, source master (in mtg-studio)
+# released videos: code, slug, title, one-line summary, seconds, source master (in mtg-studio), extras
+# extras: o='h' for a 16:9 video (laptop frame; 9:16 plays in the phone frame), poster (in mtg-studio), label, short, date
+_CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 VIDEOS = [
+    ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
+     'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
+     86.8, _CARTOON + 'BW-cartoon-01-the-missing-piece-16x9.mp4',
+     dict(o='h', poster=_CARTOON + 'BW-cartoon-01-website-poster-16x9.jpg', label='Cartoon', short='The Missing Piece', date='2026-11-15',
+          spot=(50.0, 75.7))),      # where the play button sits on the poster, in percent: the gap between the two friends
     ('t1', 'bitcoin-wealth-tutorial-1-safepal-wallet-setup', 'Set up your SafePal wallet for Bitcoin Wealth',
      'Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.',
-     429.6, 'projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4'),
+     429.6, 'projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
+     dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
@@ -60,12 +68,17 @@ PLANNED = [
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
 ]
-KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training'}
-V = {v[0]: dict(code=v[0], slug=v[1], title=v[2], desc=v[3], secs=v[4], master=v[5], n=int(v[0][1:]),
-                kind=KIND[v[0][0]], label=KIND[v[0][0]] + ' ' + v[0][1:]) for v in VIDEOS}
+KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon'}
+V = {}
+for _v in VIDEOS:
+    _x = _v[6] if len(_v) > 6 else {}
+    V[_v[0]] = dict(code=_v[0], slug=_v[1], title=_v[2], desc=_v[3], secs=_v[4], master=_v[5], n=int(_v[0][1:]), kind=KIND[_v[0][0]],
+                    label=_x.get('label', KIND[_v[0][0]] + ' ' + _v[0][1:]), o=_x.get('o', 'v'), poster=_x.get('poster'),
+                    date=_x.get('date', LAUNCHED), spot=_x.get('spot'))
+    V[_v[0]]['short'] = _x.get('short', _v[2])
 SHORT = {'t1': 'Set up SafePal'}
-for _k, _v in V.items():
-    _v['short'] = SHORT.get(_k, _v['title'])
+for _k, _s in SHORT.items():
+    V[_k]['short'] = _s
 NV = len(VIDEOS)
 TUT = [k for k in V if k[0] == 't']
 EXP = [k for k in V if k[0] == 'e']

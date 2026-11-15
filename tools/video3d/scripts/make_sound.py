@@ -36,6 +36,8 @@ The palette (what each one is for):
   door       a soft, slow swing of air with a low wooden knock: a door opening quietly (video 03)
   pour       molten gold pouring into a mould, the tone rising as it fills (video 09)
   gong       one soft, low gong with a slow bloom: the answer to a quiz lands (video 09)
+  step       a soft footstep up a wooden stair: a first step, climbing (video 10)
+  shrink     a warm glide down that settles with a friendly pop: something big made small (video 10)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -588,6 +590,28 @@ def gong():
     return lowpass(x, 1300)
 
 
+def step():
+    """A soft footstep up a wooden stair: a low, rounded tap with a small lift in tone (never a stomp)."""
+    d = 0.5
+    tt = t(d)
+    body = sine(lambda u: 120 + 60 * np.exp(-u * 40), d) * env(len(tt), 0.012, 0.16)
+    wood = band(noise(d), 300, 1100) * env(len(tt), 0.01, 0.07) * 0.35
+    lift = sine(lambda u: 330 + 60 * u / d, d) * env(len(tt), 0.03, 0.2) * 0.18
+    return lowpass(body + wood + lift, 1400)
+
+
+def shrink():
+    """Something big becoming small: a warm tone that glides down and settles with a soft, friendly pop."""
+    d = 1.1
+    tt = t(d)
+    fr = lambda u: 520 * 2 ** (-1.6 * np.clip(u / 0.7, 0, 1))
+    x = (sine(fr, d) + 0.3 * sine(lambda u: 2 * fr(u), d)) * env(len(tt), 0.05, 0.5, hold=0.35)
+    pop = sine(lambda u: 392 + 130 * np.exp(-u * 18), 0.35) * env(int(0.35 * SR), 0.015, 0.14)
+    i = int(0.72 * SR)
+    x[i:i + len(pop)] += pop[:len(x) - i] * 0.8
+    return lowpass(x, 1500)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -615,6 +639,8 @@ PALETTE = {
     'doorbell': (doorbell, 0.3), 'slide': (slide, 0.15),
     # made for video 09 (can you guess how much gold has ever been mined?)
     'pour': (pour, 0.25), 'gong': (gong, 0.35),
+    # made for video 10 (why most people never start a second income)
+    'step': (step, 0.2), 'shrink': (shrink, 0.25),
 }
 
 

@@ -155,7 +155,7 @@ def build_videos():
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Videos', None)], [ld_video('simple'), ld_video('who'), ld_video('copy'), ld_video('promo'), ld_video('split'), ld_video('amplify'), ld_video('calc'), ld_video('partnerplan'), ld_video('infinity'), ld_video('withdraw'), ld_video('5checks'), ld_video('training'), ld_video('tut1'), ld_video('tut2'), ld_video('tut3'), ld_video('sonic'), ld_video('profitshare')])
 
 DOWNLOADS = [
- ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 21-page step-by-step guide with annotated screenshots: sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes and the Dennis promo. Personal details are hidden.', '10.2 MB'),
+ ('jetup-tag-markets-onboarding-guide.pdf', 'pdf', 'JetUP + TAG Markets Onboarding Guide', 'The 22-page step-by-step guide with annotated screenshots (updated 15 Nov 2026): sign-up, CopyX, KYC, the deposit, Sonic AI, the community codes, the Dennis promo in the JetUP Dashboard and your MetaTrader 5 login. Personal details are hidden.', '10.4 MB'),
  ('jetup-business-plan-oct-2026.pdf', 'pdf', 'JetUP Business Plan (Oct 2026)', "JetUP's official 14-page plan: the three pillars, the 70/30 split, the four incomes and the rewards.", '3.6 MB'),
  ('jetup-how-partners-grow-one-pager.pdf', 'pdf', 'How Partners Grow (one page)', "JetUP's one-pager: the Dennis promo, 70/30, the four incomes and its risk warning.", '0.4 MB'),
  ('bix-card-setup-and-funding-guide.pdf', 'pdf', 'BIX Card Setup and Funding Guide', 'Install, verify, fund, order a card and link BIX to the JetUP portal. 16 pages.', '2.8 MB'),
@@ -227,7 +227,7 @@ FAQ = [
   ("Where do I get MTG's Partner link?", 'Tap any Join JetUP button on this site, or message MTG on WhatsApp from the sign-up training page, or ask in the MTG TRIBE group at mtgtribe.com/group. Invited by someone else? Use their Partner link.'),
  ]),
  ('promo', 'The promo and the codes', [
-  ('What is the Dennis Fast Start Promo?', 'For new partners, once: your own $100 plus a $100 bonus open a Sonic AI account that trades as $4,800 with 24x Amplify. Profits can be withdrawn any time, the bonus is released after 12 months, and taking your own money out before then ends the promo. Rules can change. <a href="/jetup/promo/">The promo page</a>.'),
+  ('What is the Dennis Fast Start Promo?', 'For new partners, once: your own $100 plus a $100 bonus open a Sonic AI account that trades as $4,800 with 24x Amplify. Profits can be withdrawn any time, the bonus is released after 12 months, and taking your own money out before then ends the promo. You claim it in your JetUP Dashboard on jet-up.ai. Rules can change. <a href="/jetup/promo/#claim">How to claim it</a>.'),
   ('What are the community token codes?', 'In part 5, after you type 50 in Investment, tap the arrow next to Community Token. Enter #9M and tap Verify, then 9MPromo and tap Submit. Both are case sensitive. With a community token, the loss limit becomes 5%.'),
  ]),
  ('after', 'After you join', [

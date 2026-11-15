@@ -108,14 +108,14 @@ def build_start():
       extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Why the plan starts with $50:</b> 24x Amplify makes every move bigger, in both directions, so a small start lets you learn how it moves.</span></p><p class="call info" style="margin-top:10px">%s<span><b>New to Sonic AI?</b> Watch <a href="/jetup/how-it-works/#copy">JetUP\'s own 64-second Sonic AI video</a> first: what it trades, and why your money stays in your own account.</span></p>' % (icon('i-info2'), icon('i-film2')))
     p6 = part(6, 'Claim the Dennis Fast Start Promo', 'Your CU number unlocks the $100 promo bonus.', [
         'In TAG Markets open the menu, tap ' + k('Profile') + ' and write down your <b>CU number</b>.',
-        'Go to <b>jet-up.ai</b> and tap the orange ' + k('Dennis Fast Start Promo') + ' tile.',
-        'Enter your name, email and CU number exactly as in TAG Markets, then tap ' + k('Join the promo') + '.',
-        "You'll see " + k('Application received!') + ' Approval usually takes a few minutes and can take up to 24 hours. Wait for the confirmation email.',
+        'Go to <b>jet-up.ai</b> and tap the ' + k('Dennis Fast Start Promo') + ' banner. No Dashboard account yet? Tap ' + k('Sign up') + '.',
+        'Sign up for the <b>JetUP Dashboard</b> with your CU number, the email of this CU in the JetUP IB portal, and a <b>new password</b> you make up for the Dashboard (not your IB portal password). Then enter the code from the newest email.',
+        'In the Dashboard open the ' + k('Dennis Promo') + ' tab and apply with one tap. Your status shows there too. Wait for the confirmation email: your $100 bonus joins the $100 you left in your balance.',
         'When it arrives, open ' + k('CopyX') + ', then ' + k('Follower Hub') + ', then ' + k('Strategies') + '.',
         "You'll see two Sonic accounts: your $50 account ($50 × 24 = $1,200) and your $200 promo account ($200 × 24 = $4,800).",
-      ], [('18', 'jet-up.ai: the orange Dennis Fast Start Promo tile and form'), ('20', 'Follower Hub, Strategies, both accounts (balances blurred)')],
+      ], [('n19', 'jet-up.ai: the Dennis Fast Start Promo banner and the Dashboard sign-up'), ('n20', 'The JetUP Dashboard: the Dennis Promo tab'), ('20', 'Follower Hub, Strategies, both accounts (balances blurred)')],
       'both Sonic accounts show under Strategies.',
-      extra_before='<div style="margin:0 0 18px">' + laptop('promo', "Watch the promo explained (2:18)") + '</div>',
+      extra_before='<div style="margin:0 0 18px">' + laptop('promo', "Watch the promo explained (2:18)") + '</div><p class="call info" style="margin:-6px 0 18px">%s<span>Updated 15 Nov 2026: the promo is now claimed in your JetUP Dashboard on jet-up.ai. The video shows the earlier form; the steps below are the current ones. The JetUP Dashboard is separate from the IB portal, with its own login.</span></p>' % icon('i-info2'),
       extra_after='<p class="call info" style="margin-top:12px">%s<span><b>Know the promo rules:</b> profits can be withdrawn any time. The $100 bonus is released after 12 months. Taking your own money out before then ends the promo. Rules can change, so check your dashboard. <a href="/jetup/promo/">All the promo rules</a></span></p>' % icon('i-info2'))
 
     AFTER = f'''<section class="sec tight" id="after" aria-labelledby="after-h">

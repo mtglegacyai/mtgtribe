@@ -38,9 +38,9 @@ the voice bank).
 
 | Fact | Exact wording to use | Used in | Source |
 |---|---|---|---|
-| Claim | TAG Markets Profile, copy the CU number; jet-up.ai, orange "Dennis Fast Start Promo" tile; name, email, CU number; Join the promo; "Application received!" | get-started part 6, promo page | MTG's guide |
-| Approval time | Usually a few minutes, up to 24 hours | get-started part 6 | Sunday training 7 Nov 2026 |
-| Result | Two Sonic accounts under Follower Hub, Strategies: $50 and the $200 promo account | get-started part 6 | MTG's guide |
+| Claim | TAG Markets Profile, copy the CU number; jet-up.ai, "Dennis Fast Start Promo" banner; sign up for the JetUP Dashboard (CU number, the email of this CU in the IB portal, a NEW Dashboard password, not the IB portal password, then the code from the newest email); in the Dashboard open the Dennis Promo tab and apply with one tap; the status shows there. The Dashboard is separate from the IB portal (TAG Markets' system). Until 14 Nov 2026 it was the orange tile form ("Join the promo", "Application received!"): explainer #5 and the sign-up training still show that form | get-started part 6, promo page | MTG's guide |
+| Approval time | For the old form: usually a few minutes, up to 24 hours. Not stated for the Dashboard: the new guide says only that a confirmation email follows, so the site no longer gives a time | (none) | Sunday training 7 Nov 2026; MTG's new guide 15 Nov 2026 |
+| Result | Two Sonic accounts under Follower Hub, Strategies: $50 and the $200 promo account. The $200 strategy is created on CopyX automatically | get-started part 6, promo page | MTG's guide (new edition 15 Nov 2026) |
 | Rules | Profits can be withdrawn any time. The $100 bonus is released after 12 months. Taking your own money out before then ends the promo. One time only | promo page, get-started, 5 checks, FAQ, videos | JetUP one-pager; MTG's guide |
 
 ## After you join
@@ -126,6 +126,12 @@ Then read every video script and PDF page against the tables above. Any differen
 questions" for MTG.
 
 ## Source log
+
+- 15 Nov 2026: MTG's new onboarding guide (22 pages, a cover added). Changed: the Dennis promo claim moved to the JetUP
+  Dashboard on jet-up.ai (sign-up with CU number, IB portal email, a new Dashboard password and an email code; the Dennis
+  Promo tab, apply with one tap; the $200 strategy is created automatically), and the MetaTrader 5 page names the eye icon.
+  Published on the Downloads page with personal details hidden (the old guide's 31 boxes carried over, account numbers,
+  balances, a member's initials and progress card blurred).
 
 - 7 Nov 2026: a JetUP Sunday training (YouTube `kgV47dJprRo`, transcript supplied by MTG). Added: name as on ID, the Register
   label, SONIC first in the list, the $10 minimum note, promo approval time, MetaTrader 5 view, more strategies, withdraw and

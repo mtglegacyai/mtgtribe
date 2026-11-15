@@ -235,6 +235,7 @@ def build_promo():
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Dennis Fast Start Promo', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack" style="gap:20px">
  <div class="rv">{laptop('promo', 'The $100 promo, explained by MTG (2:18)', eager=True)}</div>
+ <p class="call info rv">{icon('i-info2')}<span>Updated 15 Nov 2026: the promo is now claimed in your JetUP Dashboard on jet-up.ai. The video shows the earlier form; the claim steps below are the current ones.</span></p>
  <div class="card ticket rv" data-in>
   <div class="tk-head"><span>The promo account</span><b>Sonic AI · Amplify 24x</b></div>
   <div class="tk-row rv-row"><span class="tki" aria-hidden="true">💵</span><p>Your own money<small>Left in your TAG Markets balance</small></p><span class="v">$100</span></div>
@@ -253,9 +254,9 @@ def build_promo():
  {section('claim', 'How to claim it', 'Four steps, in part 6', '''
 <ol>
  <li>In TAG Markets open the menu, tap <kbd>Profile</kbd> and write down your CU number.</li>
- <li>Go to jet-up.ai and tap the orange <kbd>Dennis Fast Start Promo</kbd> tile.</li>
- <li>Enter your name, email and CU number exactly, then tap <kbd>Join the promo</kbd>. You'll see <kbd>Application received!</kbd></li>
- <li>When the confirmation email arrives, open CopyX, Follower Hub, Strategies: you'll see your $50 account and your $200 promo account.</li>
+ <li>Go to jet-up.ai, tap the <kbd>Dennis Fast Start Promo</kbd> banner and sign up for the JetUP Dashboard: your CU number, the email of this CU in the IB portal, a new Dashboard password (not your IB portal password), and the code from the newest email.</li>
+ <li>In the Dashboard open the <kbd>Dennis Promo</kbd> tab and apply with one tap. Your status shows there too.</li>
+ <li>When the confirmation email arrives, open CopyX, Follower Hub, Strategies: you'll see your $50 account and your $200 promo account, created for you automatically.</li>
 </ol>
 <p><a href="/jetup/get-started/#part-6">Open part 6 with the screenshots</a></p>''', 'i-rocket2')}
  <div class="card lime-edge pad promo rv">

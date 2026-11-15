@@ -44,6 +44,7 @@ A reminder about registering is scheduled in the session for Sunday 15 Nov 2026,
 | 13 Nov 2026 | TikTok "how to prepare the machine" (5 min, SA distributor in OlyLife cap and shirt) | Set-up, cleaning and session routine below |
 | 14 Nov 2026 | YouTube: "OlyLife Tera P90 Review: Two Doctors Reveal the Truth and Benefits" (Essential Therapies podcast; both doctors sell it) | Practical tips for the page (everyone feels it differently, start low and slow, how often); claims listed as not usable. Notes: `sources/2026-11-14-essential-therapies-podcast.md` |
 | 14 Nov 2026 | "How to Use the OlyLife P90 Series: P90 & P90+ PEMF Guided Experience" (9:03, 16:9, made by the OlyNation team, olynation.team on every scene) | MTG wants it on his landing page: needs OlyNation's permission (or a YouTube embed); start-up check, getting ready, session lengths saved. Notes: `sources/2026-11-14-olynation-guided-experience.md` |
+| 15 Nov 2026 | Distributor coach Darren Frier on ODC 2026 (Bangkok): 2027 devices G1 Max, C1 Warm Pad, Spring Water Max and Lite, smart bracelet, app | From his notes, not official: names, prices, dates saved for later checking; claims and the income line listed as not usable. Notes: `sources/2026-11-15-odc-2026-new-devices.md` |
 
 ### 13 Nov 2026: how-to video, extracted
 

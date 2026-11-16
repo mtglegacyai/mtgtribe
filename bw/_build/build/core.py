@@ -361,7 +361,8 @@ def overlays(here):
 <script>window.BW={json.dumps(dict(ref=REF, valr=VALR, binance=BINANCE, order=ORDER, join=L('dashboard/join/', here), tut=L('dashboard/tutorials/', here), wa=WA_MTG))};window.BWV={video_data(here)};</script>
 <script src="{A('assets/bw.js', here)}" defer></script>
 <script src="/assets/video-return.js?v=1" defer></script>
-<script src="https://mtgtribe.com/assets/zoom-cta.js?v=4" defer></script>'''
+<script src="https://mtgtribe.com/assets/zoom-cta.js?v=4" defer></script>
+<script src="https://mtgtribe.com/assets/wa-message.js?v=1" defer></script>'''
 
 
 DISCLAIMER = ('<b>Independent guide.</b> This is not an official Bitcoin Wealth website. MTG is a Bitcoin Wealth member and made this guide '

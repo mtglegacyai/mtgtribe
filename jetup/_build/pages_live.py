@@ -1,3 +1,4 @@
+import html
 # JetUP live on Zoom: the weekly schedule of JetUP's Zoom sessions, in the JetUP guide at /jetup/zoom/ (MTG, 16 Nov 2026).
 # The sessions are JetUP's (organizer JetUP); MTG shares the Zoom link in the MTG TRIBE WhatsApp group and visitors can
 # message him for it. Never write that MTG hosts them. Page CSS: /jetup/assets/zoom-live.css. Page script (the tested
@@ -6,7 +7,9 @@ from layout import *
 
 PATH = '/jetup/zoom/'
 ICS = PATH + 'jetup-live-zoom-schedule.ics'
-WA_ZOOM = WA_MTG + '?text=Hi%20MTG%2C%20please%20send%20me%20the%20Zoom%20link%20for%20your%20next%20session.'
+# MTG's exact words (16 Nov 2026), so he knows the visitor came from the JetUP Zoom page and wants the link
+WA_ZOOM_TEXT = 'Hi MTG,\n\nPlease send me the Zoom link for your next JetUp session.\n\nThank you 😊'
+WA_ZOOM = WA_MTG + '?text=Hi%20MTG%2C%0A%0APlease%20send%20me%20the%20Zoom%20link%20for%20your%20next%20JetUp%20session.%0A%0AThank%20you%20%F0%9F%98%8A'
 
 # The five weekly sessions, South African time. data-s matches S[] in zoom-live.js.
 # (index, weekday, kind, emoji, name, SA time, Nigeria, UK, Canada and US East, Australia, Australia day)
@@ -22,7 +25,7 @@ ZONES = [('South Africa (SAST)', 'Africa/Johannesburg'), ('Nigeria (Lagos)', 'Af
 
 FAQ_LIVE = [
  ('How do I get the Zoom link?',
-  f'The Zoom link is shared in the MTG TRIBE WhatsApp group. <a href="{GROUP}">Join the group</a>, or <a href="{WA_ZOOM}" target="_blank" rel="noopener">message MTG directly on WhatsApp<span class="sr"> (opens in a new tab)</span></a> and ask him for the link.'),
+  f'The Zoom link is shared in the MTG TRIBE WhatsApp group. <a href="{GROUP}">Join the group</a>, or <a href="{WA_ZOOM}" data-wa-text="{html.escape(WA_ZOOM_TEXT)}" target="_blank" rel="noopener">message MTG directly on WhatsApp<span class="sr"> (opens in a new tab)</span></a> and ask him for the link.'),
  ('What time is it where I live?',
   'Every time on this page is South African time (SAST, UTC+2, no daylight saving). The <a href="#timezones">time zone table</a> shows Nigeria, the United Kingdom, Canada and US East and Australia, plus a Your time column worked out from your own device.'),
  ('Can I join from my phone?',
@@ -208,7 +211,7 @@ def build_live():
    <div class="card pad way rv" style="--d:1">
     <p class="eyebrow num">Way 2 · One on one</p>
     <h3>Ask MTG directly</h3>
-    <a class="btn btn-ghost" href="{WA_ZOOM}" target="_blank" rel="noopener">{icon('i-msg')}Message MTG on WhatsApp<span class="sr"> (opens in a new tab)</span></a>
+    <a class="btn btn-ghost" href="{WA_ZOOM}" data-wa-text="{html.escape(WA_ZOOM_TEXT)}" target="_blank" rel="noopener">{icon('i-msg')}Message MTG on WhatsApp<span class="sr"> (opens in a new tab)</span></a>
     <p class="what">Opens a private WhatsApp chat with MTG, one on one, if you prefer not to join a group.</p>
    </div>
   </div>

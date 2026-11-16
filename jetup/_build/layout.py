@@ -412,6 +412,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <script src="/jetup/assets/jetup.js?v={js}" defer></script>{foot_extra}
 <script src="/assets/video-return.js?v=1" defer></script>
 <script src="/assets/zoom-cta.js?v=4" defer></script>
+<script src="/assets/wa-message.js?v=1" defer></script>
 </body>
 </html>
 '''

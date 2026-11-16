@@ -1,0 +1,122 @@
+{
+ "title": "Know your numbers: the Exposure Calculator",
+ "next_chip": "Next: the 70/30 split",
+ "emoji_pops": [
+  {
+   "phrase": "road trip",
+   "emoji": "🗺️"
+  },
+  {
+   "phrase": "exposure",
+   "emoji": "📏"
+  },
+  {
+   "phrase": "either direction",
+   "emoji": "↕️"
+  },
+  {
+   "phrase": "lines to know",
+   "emoji": "📍"
+  }
+ ],
+ "lines": [
+  {
+   "key": "nhook",
+   "kind": "new",
+   "text": "Before you start, know your numbers, like checking the map before a road trip. My free Exposure Calculator is your map.",
+   "scene": "Hook",
+   "on_screen": "A road map with a route and a pin 'Your numbers' turns into the Exposure Calculator in a laptop frame (mtgtribe.com/jetup/tools/exposure-calculator). Title 'Know your numbers'."
+  },
+  {
+   "key": "hi",
+   "kind": "shared",
+   "text": "Hi, I'm MTG, Your Digital Architect.",
+   "scene": "Hi",
+   "on_screen": "The JetUP logo disc, MTG crown | Your Digital Architect, the title. No photo."
+  },
+  {
+   "key": "nex",
+   "kind": "new",
+   "text": "Step one: tap an example. The training one is one hundred and fifty dollars of your own, plus the one hundred dollar bonus.",
+   "scene": "Step 1: an example",
+   "on_screen": "The real calculator page: the 'Training: $150 + $100' example button is tapped (click); the fields fill with 150, 100, 24."
+  },
+  {
+   "key": "six",
+   "kind": "recorded",
+   "text": "That's six thousand dollars of exposure.",
+   "scene": "Read your exposure",
+   "on_screen": "'Account balance $250' then 'Trading exposure $6,000' spotlit (tick)."
+  },
+  {
+   "key": "expo",
+   "kind": "recorded",
+   "text": "Exposure is the size you trade with, not money you own.",
+   "scene": "Read your exposure",
+   "on_screen": "Chip under the exposure card: 'The size you trade with, not money you own'."
+  },
+  {
+   "key": "nown",
+   "kind": "new",
+   "text": "Or type your own: your money, any bonus, and the multiplier. Sonic AI's Amplify account uses twenty-four.",
+   "scene": "Step 2: your own numbers",
+   "on_screen": "Each field highlights on its word (tick each): Your own money, Bonus added, Amplify multiplier 24x."
+  },
+  {
+   "key": "ndrag",
+   "kind": "new",
+   "text": "Now drag the price move. One percent on six thousand is sixty dollars, in either direction.",
+   "scene": "Step 3: drag a move",
+   "on_screen": "The slider is dragged to +1% then to -1%: 'Profit or loss from this move' shows $60 then -$60, the same size both ways."
+  },
+  {
+   "key": "swings",
+   "kind": "recorded",
+   "text": "Bigger exposure means bigger swings, up and down.",
+   "scene": "Step 3: drag a move",
+   "on_screen": "The move meter fills calmly; label: same size, both directions."
+  },
+  {
+   "key": "nlines",
+   "kind": "new",
+   "text": "The last two results are your lines to know. With the training example, a two and a half percent move equals your own one hundred and fifty, and about four point two percent equals the whole balance.",
+   "scene": "Your lines to know",
+   "on_screen": "The two last result cards spotlit: 'Move that equals your deposit 2.5%' and 'Move that equals the whole balance 4.17%'."
+  },
+  {
+   "key": "nlimit",
+   "kind": "recorded",
+   "text": "And the loss limit is written down before you start: ten percent of the starting balance, or five percent with a community token.",
+   "scene": "Your lines to know",
+   "on_screen": "The page's own info note about TAG Markets' loss limit spotlit (10%, 5% with a community token)."
+  },
+  {
+   "key": "nrecap",
+   "kind": "new",
+   "text": "So that's the calculator: tap an example or type your own, read your exposure, drag a move, and know your lines before you start.",
+   "scene": "Recap",
+   "on_screen": "Four ticks: Tap an example or type your own, Read your exposure, Drag a move, Know your lines."
+  },
+  {
+   "key": "n_turn2",
+   "kind": "shared",
+   "text": "Simple, right? Now it's your turn.",
+   "scene": "Your turn",
+   "on_screen": "The lime 'Open the Exposure Calculator' and 'Join JetUP' buttons with the mtgtribe.com/jetup pill."
+  },
+  {
+   "key": "l_ifme",
+   "kind": "shared",
+   "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button.",
+   "scene": "Your turn",
+   "on_screen": "The Join JetUP button is tapped on its words."
+  },
+  {
+   "key": "every",
+   "kind": "shared",
+   "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it.",
+   "scene": "Fair play and signature ending",
+   "on_screen": "The fixed signature ending, links off, Next: the 70/30 split."
+  }
+ ]
+}

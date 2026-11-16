@@ -138,10 +138,6 @@ def media(dst):
             out = dst + f'/{v["slug"]}{suf}.mp4'
             if not os.path.exists(out):
                 sh('ffmpeg', '-y', '-v', 'error', '-i', src, '-vf', vf, *x264, *rate, '-c:a', 'aac', '-b:a', ab, '-ac', '2', '-movflags', '+faststart', out)
-    out = dst + '/bitcoin-wealth-mascot-lion-wave.mp4'
-    if not os.path.exists(out):
-        sh('ffmpeg', '-y', '-v', 'error', '-i', STUDIO + '/brand/mascot/clips/mascot-wave-bw.mp4', '-an', '-vf', 'scale=540:-2:flags=lanczos',
-           '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out)
 
 
 # ------------------------------------------------------------------ pages
@@ -243,7 +239,6 @@ def render_preview(dst):
         if not f.startswith('og-'):
             shutil.copy(OUT + '/_img/' + f, dst + '/img/' + f)
     os.makedirs(dst + '/media', exist_ok=True)
-    shutil.copy(OUT + '/_media/bitcoin-wealth-mascot-lion-wave.mp4', dst + '/media/')
     for k, v in V.items():
         for suf in (('', '-1080p') if v['o'] == 'h' else ('',)):      # the review copy uses the same files as the live site
             shutil.copy(OUT + f'/_media/{v["slug"]}{suf}.mp4', dst + f'/media/{v["slug"]}{suf}.mp4')

@@ -369,8 +369,7 @@ def p_page(here):
  <h2 class="h2">How it works</h2>
  {steps([("Fill in the order form", "<p>Two minutes. Your details go straight to MTG on WhatsApp.</p>"), ("MTG builds your page", "<p>You agree the payment method together on WhatsApp.</p>"), ("You check it", "<p>Love it? Then you pay. Changed your mind? MTG deletes it. Nothing to lose.</p>"), ("Share your one link", "<p>Send it to potential business partners, post it in your groups and on your socials.</p>")])}
 </div></div>""", "Everything, up front")}
-{sec(f"""<div class="lionrow"><div class="lion"><video data-deco autoplay muted loop playsinline preload="none" poster="{A('img/bitcoin-wealth-mascot-lion-bw.webp', here)}" width="540" height="960" aria-hidden="true"><source src="{L('media/bitcoin-wealth-mascot-lion-wave.mp4', here)}" type="video/mp4"></video></div>
-<div class="secret glass big">{ic('lock-keyhole')}<div><b>The part we only tell owners</b><p>MTG uses a traffic source that makes it much easier to put a page like yours in front of people who already watch crypto ads all day. It has its own income stream too. No guarantee those visitors join. Once your BW Tribe Page is built, paid and yours, MTG shows you how it works, with its own tutorials and explainers.</p></div></div></div>""")}'''
+{sec(f"""<div class="secret glass big">{ic('lock-keyhole')}<div><b>The part we only tell owners</b><p>MTG uses a traffic source that makes it much easier to put a page like yours in front of people who already watch crypto ads all day. It has its own income stream too. No guarantee those visitors join. Once your BW Tribe Page is built, paid and yours, MTG shows you how it works, with its own tutorials and explainers.</p></div></div>""")}'''
 
 
 # ======================================================================= TOOLS

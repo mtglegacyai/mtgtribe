@@ -728,8 +728,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 /* ---------- offer (BW Tribe Page) ---------- */
 .offer{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,48px);padding:clamp(20px,4vw,44px);align-items:center}
 .offer-copy{display:grid;gap:16px;align-content:start}
-.lion{width:min(100%,300px);border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,190,90,.3),0 30px 60px -20px rgba(0,0,0,.8),0 0 50px -10px rgba(255,161,1,.35)}
-.lion video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#120c08}
 .price{display:flex;gap:14px;align-items:center;padding:14px 18px;border-radius:18px;background:rgba(255,161,1,.08);box-shadow:inset 0 0 0 1px rgba(255,161,1,.35);width:fit-content;max-width:100%}
 .price>b{font:800 clamp(2rem,4.6vw,2.8rem)/1 var(--display);background:linear-gradient(120deg,var(--hero),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .price span{font-weight:800;color:var(--text);line-height:1.3}
@@ -822,7 +820,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .sent{display:flex;gap:12px;padding:16px;margin-top:10px}.sent>.ic{color:var(--electric);flex:none;width:24px;height:24px}
 .orderpage .secret{max-width:760px;margin:0 auto}
 @media (max-width:560px){.cube{width:50px;--h:25px}.coin2{width:26px;height:26px;margin:-13px 0 0 -13px}.coin2 b{font-size:14px}}
-.lion{width:min(100%,250px)}
 .dlogo .blogo img{display:block}
 /* calm info notes (MTG, 9 Nov 2026: inform, never frighten) */
 .note{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:14px 16px;border-radius:16px;margin-top:16px;font-size:.93rem;color:var(--ice);
@@ -914,9 +911,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 
 /* slim footer */
 .lfoot.slim .lfoot-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
-.lionrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}
-.lionrow .lion{width:min(200px,40vw)}
-@media (max-width:640px){.lionrow{grid-template-columns:minmax(0,1fr);justify-items:center}}
 
 /* phone quick bar (like JetUp) */
 .bnav{display:none}

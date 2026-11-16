@@ -1,4 +1,5 @@
-/* JetUP live on Zoom calendar strip, links to mtgtribe.com/jetup/zoom/ (MTG, 16 Nov 2026).
+/* Live on Zoom calendar strip, one per income stream (MTG, 16 Nov 2026): JetUP pages link to mtgtribe.com/jetup/zoom/,
+   Bitcoin Wealth pages to mtgtribe.com/bw/dashboard/live-on-zoom/, other pages show nothing.
    One line on any page:  <script src="/assets/zoom-cta.js" defer></script>
    Inserts a compact card right before the page's first <footer> (else at the end of <main>, else at the end of <body>).
    Self-contained: no dependencies, one <style> injected once, every class starts with mtgz-, so the host page's own
@@ -12,6 +13,10 @@
   if (host === 'mtgtribe.com' && /^\/(jetup\/zoom|jetuplive|zoom|group|bw\/dashboard\/live-on-zoom)(\/|$)/i.test(location.pathname)) return;
   // Bitcoin Wealth pages show the Bitcoin Wealth schedule (MTG, 16 Nov 2026: 'link it ... to all the mtgtribe.com/bw pages only')
   var BW = /^\/(bw|bwcopy)(\/|$)/i.test(location.pathname) || /bitcoinwealth/i.test(host);
+  var JU = /^\/(jetup|jetupzoom)(\/|$)/i.test(location.pathname);
+  // Each income stream shows only its own Zoom schedule (MTG, 16 Nov 2026): JetUP on JetUP pages, Bitcoin Wealth on
+  // Bitcoin Wealth pages, and no card on the other streams' pages (ALTRUVA, Canton, the home page, the dashboard).
+  if (!BW && !JU) return;
   var D = BW ? {kick: 'Bitcoin Wealth · Weekly', name: 'Bitcoin Wealth', url: 'https://mtgtribe.com/bw/dashboard/live-on-zoom/',
     days: 'Mon to Fri 14:00 English <span class="mtgz-dot" aria-hidden="true">·</span> Evenings in isiXhosa, English, isiZulu and Sesotho'}
     : {kick: 'JetUP · Weekly', name: 'JetUP', url: 'https://mtgtribe.com/jetup/zoom/',

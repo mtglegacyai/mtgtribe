@@ -43,7 +43,7 @@ SEO_DESC = {
  'join': 'Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.',
  'tut': 'Step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal now, with funding, swapping to BTCB and joining on the way.',
  'exp': 'Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.',
- 'zoom': 'Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho. See your own time and add them to your calendar.',
+ 'zoom': 'Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho, in SA time and yours.',
  'page': 'Get your own copy of this Bitcoin Wealth website with your referral link built in: R1,000 once-off, paid only after it is built, five free edits.',
  'c-btc': 'Free Bitcoin to Rand converter: type BTC, US dollars or rand and see the others at the live price. Quick buttons for 0.001 BTC and up.',
  'c-slot': 'Free Bitcoin Wealth slot calculator: the price of each of the 12 slots in BTC and rand, and what a full cycle pays, at the live Bitcoin price.',

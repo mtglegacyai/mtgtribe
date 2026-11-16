@@ -617,8 +617,8 @@ def order_page(here=''):
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>window.BW={{"wa":"{WA_MTG}"}};window.BWV={{}};</script>
 <script src="{A('assets/bw.js', here)}" defer></script>
-<script src="/assets/zoom-cta.js?v=4" defer></script>
-<script src="/assets/wa-message.js?v=1" defer></script>'''
+<script src="/assets/zoom-cta.js?v=5" defer></script>
+<script src="/assets/wa-message.js?v=2" defer></script>'''
     desc = 'Order your BW Tribe Page: your own copy of the Bitcoin Wealth guide with your referral link built in. R1,000 once-off, paid only after it is built.'
     hd = head('Order your BW Tribe Page', desc, '', here, og_key='order')
     hd = hd.replace(f'<link rel="canonical" href="{SITE}{BASE}">', f'<link rel="canonical" href="{SITE}{ORDER}">').replace(

@@ -296,6 +296,10 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      That line (48.46 s to the end of "They Call Me MTG", about 3 s) plays right after his last word and ends with the
      video; the studio's `ClosingTrack` does this by default and `closingTail()` sizes the end card. Before rendering,
      check his mp3 is in `public/music/` (it is not in git): no track, no final render.
+   - **His spoken slogan (MTG, 16 November 2026):** every video with the short ending uses his one approved recording
+     of "Let's get this crypto" in his normal voice (`kit/video3d/public/voice-bank/slogan.wav`, spliced in with
+     `scripts/splice_slogan.py`), never the high, shouted slogan a script produces and never a re-recorded one.
+     Details: `references/daily-video.md`, "MTG's voice".
    - **Length:** vertical, 60 seconds or less when everything fits, up to 3 minutes when the topic is bigger (MTG,
      10 November 2026). Leo's moments at every emotional beat (`references/mascot.md`). Text sized for phones; movement in every shot (3D entrances, slow camera push-in, the CSS 3D
      kit), and the `EndScreen` (tribe pill, 3 to 7 website pills, the big gold mtgtribe.com pill under the signature).

@@ -24,7 +24,8 @@ latest instruction in the chat wins, then mtg-creative-standard.
   use someone else's.
 - **Honest, never hype.** Show the risks, the rules and "where the picture stops" for every analogy. No income promises,
   no fake balances, no "best ever". Hide personal data in every frame.
-- **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". No em or en dashes anywhere,
+- **Brand:** MTG 👑 | Your Digital Architect. Slogan exactly "Let's Get This Crypto! 💪". When an explainer ends with his spoken slogan, use his one approved recording in his normal voice
+  (`tools/video3d/public/voice-bank/slogan.wav`, MTG 16 November 2026), never the high one a script produces. No em or en dashes anywhere,
   including inside videos, PDFs and file names. Follow each site's own content rules (names or brands MTG has ruled out).
 - **Every dashboard opens with a site tour.** Each opportunity has a landing page whose **Dashboard** button (sometimes
   "Learn more") leads to its dashboard. The very top of every dashboard is a video that shows visitors around the whole

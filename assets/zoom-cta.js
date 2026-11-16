@@ -60,7 +60,7 @@
         '<span class="mtgz-page"><span class="mtgz-head">LIVE</span><span class="mtgz-face">🕗</span></span></span>' +
       '<span class="mtgz-txt">' +
         '<span class="mtgz-kick">JetUP · Weekly</span>' +
-        '<span class="mtgz-title" role="heading" aria-level="2"><span aria-hidden="true">📣 </span><span class="mtgz-gold">JetUP</span> live on <span class="mtgz-gold">Zoom</span> with MTG</span>' +
+        '<span class="mtgz-title" role="heading" aria-level="2"><span aria-hidden="true">📣 </span><span class="mtgz-gold">JetUP</span> live on <span class="mtgz-gold">Zoom</span></span>' +
         '<span class="mtgz-days">Tue <span class="mtgz-dot" aria-hidden="true">·</span> Thu <span class="mtgz-dot" aria-hidden="true">·</span> Sat 8pm <span class="mtgz-dot" aria-hidden="true">·</span> Sun 3pm international <span class="mtgz-dot" aria-hidden="true">·</span> Sun 8pm training</span>' +
         '<span class="mtgz-tz">South African time (SAST)</span>' +
       '</span>' +
@@ -87,7 +87,7 @@
     }
     var box = d.createElement('aside');
     box.className = 'mtgz';
-    box.setAttribute('aria-label', 'JetUP live Zoom sessions with MTG');
+    box.setAttribute('aria-label', 'JetUP live Zoom sessions');
     box.innerHTML = HTML;
     var foot = d.querySelector('footer'), main = d.querySelector('main');
     if (foot && foot.parentNode) foot.parentNode.insertBefore(box, foot);

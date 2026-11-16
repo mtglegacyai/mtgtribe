@@ -16,3 +16,13 @@ rose at the end.
 
 To rebuild a finished file: `python3 scripts/make_slogan.py voice-src/slogan/take1-deep-voice.wav
 voice-src/slogan/take1-deep-voice.words.json slogan-deep-1 --from 0.30` (take 2 and 3: `--from 0.26`).
+
+## Second round, the same day (no credits)
+
+MTG on the three finished takes: "too slow or it just breaks ... too far apart from each other. It's one thing. Let's
+get this crypto ... not too slow, not too fast, not too high. Just in the perfect tone, in the perfect speed." So the
+words were joined into one phrase, from the takes already paid for:
+- A (`public/voice-bank/slogan-try-A-take2-joined-fast`, now also `slogan-deep`): take 2, "Let's get" as spoken, the
+  gap before "this" and the long pause before "crypto" closed to 35 ms, the drawn-out "s" of "this" trimmed, then 1.12
+  times faster with the pitch kept (rubberband). About 2.0 s, 119 Hz.
+- B (`slogan-try-B-take1-joined-fast`): take 1's four words joined 20 ms apart, 1.12 times faster. About 1.8 s, 118 Hz.

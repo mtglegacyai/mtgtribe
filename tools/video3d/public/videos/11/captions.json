@@ -1163,30 +1163,30 @@
  },
  {
   "text": " Let's",
-  "startMs": 56984,
-  "endMs": 57368,
-  "timestampMs": 57176,
+  "startMs": 56907,
+  "endMs": 57380,
+  "timestampMs": 57143,
   "confidence": null
  },
  {
   "text": " Get",
-  "startMs": 57838,
-  "endMs": 58051,
-  "timestampMs": 57944,
+  "startMs": 57460,
+  "endMs": 57630,
+  "timestampMs": 57545,
   "confidence": null
  },
  {
   "text": " This",
-  "startMs": 58520,
-  "endMs": 58819,
-  "timestampMs": 58669,
+  "startMs": 57688,
+  "endMs": 57991,
+  "timestampMs": 57839,
   "confidence": null
  },
  {
   "text": " Crypto!",
-  "startMs": 59374,
-  "endMs": 59993,
-  "timestampMs": 59683,
+  "startMs": 58049,
+  "endMs": 58898,
+  "timestampMs": 58473,
   "confidence": null
  }
 ]

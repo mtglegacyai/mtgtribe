@@ -40,3 +40,6 @@ and rose at the end (his narration: about 126 Hz).
 - Final: `out/dyk11-9x16.mp4`, 1:03 (63.4 s), -14.1 LUFS, true peak -1.3 dBFS, cover embedded. The slogan measures
   118 Hz in the finished file; the theme's last line starts at 60.23 s, right after "Crypto!" (59.99 s), correlation
   0.93.
+- Second round, the same day: MTG found all three takes too slow and too broken up ("It's one thing. Let's get this
+  crypto"). The words of take 2 were joined into one phrase (about 2.0 s, version A) and spliced in 0.36 s after
+  "Architect."; version B (take 1 joined, about 1.8 s) was sent as the alternative. No credits used.

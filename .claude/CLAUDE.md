@@ -62,6 +62,13 @@ publish without approval.
   cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
   button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
 
+## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
+
+"Show me a real preview first ... I mean a live preview on a temporal web link." Before a website change goes live, give MTG
+a private link he can open and tap through on his phone (the built pages, published as a private page only he can open). A
+screen recording or screenshots are not a preview for him. For /bw: `build.render_preview()` in `bw/_build/build/build.py`;
+the steps and the host's limits are in `tools/qa/README.md` ("Private preview link"). Say what differs from the real site.
+
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 
 Every MTG website gets the system in the skill `.claude/skills/mtg-site-learning-system/` (MTG can also save it to his

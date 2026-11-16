@@ -46,10 +46,12 @@ function judge(ctx, m, { inline }) {
   if (process.env.FALLBACK && m.max && !m.coverWin) fail(ctx, 'no full screen in this browser, and the player did not cover the window itself');
   if (!process.env.FALLBACK && m.max && !m.fs) fail(ctx, 'full screen is available but was not used');
   // Close and Full screen: there, on screen, big enough, not on the picture
-  for (const want of [m.max ? 'Exit full screen' : 'Full screen', 'Close the video']) {
+  for (const want of [m.max ? 'Exit Full Screen' : 'Full Screen', 'Close the video']) {
     const b = m.btns.find(x => x.name === want); if (!b) { fail(ctx, 'button missing: ' + want); continue; }
     if (b.l < -eps || b.t < top - eps || b.r > m.vw + eps || b.b > m.vh + eps) fail(ctx, `button off screen: ${want}`);
     if (b.w < 30 || b.h < 30) fail(ctx, `button too small: ${want} ${Math.round(b.w)}x${Math.round(b.h)}`);
+    // the words "Full Screen" always show, so a visitor knows what the button does (MTG, 16 Nov 2026)
+    if (want !== 'Close the video' && b.text.replace(/\s+/g, ' ') !== want) fail(ctx, `the words "${want}" are not showing on the button (it shows "${b.text}")`);
     if (!(b.r <= p.l + eps || b.l >= p.r - eps || b.b <= p.t + eps || b.t >= p.b - eps)) fail(ctx, `button on the picture: ${want}`);
   }
   if (m.btns.length === 2) { const [a, b] = m.btns; if (!(a.r <= b.l + eps || b.r <= a.l + eps || a.b <= b.t + eps || b.b <= a.t + eps)) fail(ctx, 'buttons overlap'); }

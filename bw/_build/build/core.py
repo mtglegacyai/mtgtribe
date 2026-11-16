@@ -162,12 +162,12 @@ def poster(code, here, size=720):
 
 def player(wide=False, cover='', left='', right='', pid=''):
     """The one video player (MTG, 16 Nov 2026): the slim gold phone for a 9:16 video, the slim laptop for a 16:9 one.
-    The screen has the video's own shape and nothing lies on the picture: the camera, Full screen and Close sit in the
+    The screen has the video's own shape and nothing lies on the picture: the camera, Full Screen and Close sit in the
     bar above it. Styles: "VIDEO PLAYER" in bw.css. Behaviour: "video players" in bw.js."""
     return (f'<div class="pl {"pl-h" if wide else "pl-v"}"{f' id="{pid}"' if pid else ""}><div class="pl-dev"><div class="pl-bar">'
             f'<span class="pl-l"><span class="pl-tx">{left}</span>'
-            f'<button type="button" class="pl-b pl-max" data-pl-max aria-label="Full screen">{ic("maximize-2", "ic i-max")}{ic("minimize-2", "ic i-min")}'
-            f'<span class="t t-max">Full screen</span><span class="t t-min">Exit full screen</span></button></span>'
+            f'<button type="button" class="pl-b pl-max" data-pl-max aria-label="Full Screen">{ic("maximize-2", "ic i-max")}{ic("minimize-2", "ic i-min")}'
+            f'<span class="t t-max">Full Screen</span><span class="t t-min">Exit Full Screen</span></button></span>'
             f'<i class="pl-cam" aria-hidden="true"></i>'
             f'<span class="pl-r"><span class="pl-tx">{right}</span>'
             f'<button type="button" class="pl-b pl-x" data-pl-x aria-label="Close the video"><span class="t">Close</span>{ic("x")}</button></span>'

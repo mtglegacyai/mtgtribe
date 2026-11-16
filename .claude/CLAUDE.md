@@ -41,8 +41,10 @@ publish without approval.
   the screen of the frame has exactly the video's shape and the video is never cropped (`object-fit:contain`, also in full
   screen); **nothing lies on the picture** (no camera notch, no close button, no badge, no floating button, no pop-up note);
   the frame takes its size from the **visible** screen height (`svh` in the page, `dvh` in a pop-up), so the complete player
-  fits under the site's top bar on any phone; the player has its **own Full screen** (the bar with Exit full screen and Close,
-  and the whole video in the rest), never the browser's bare one. Reference: the `.pl` player on /bw (`core.player()` in
+  fits under the site's top bar on any phone; the player has its **own Full Screen** (the bar with Exit Full Screen and Close,
+  and the whole video in the rest), never the browser's bare one. The button always shows its words, written **Full Screen**
+  (each word capitalised), on vertical and wide videos alike, "to make sure the visitor sees it, and knows what that button
+  does" (MTG, 16 Nov 2026); an icon alone is not enough. Reference: the `.pl` player on /bw (`core.player()` in
   `bw/_build/build/core.py`, "VIDEO PLAYER" in `bw.css`, "video players" in `bw.js`). Check with
   `tools/qa/player-check.js` (README there): it must report 0 failures before MTG sees a preview.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).

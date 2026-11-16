@@ -176,9 +176,10 @@
   /* ------------------------------------------------------------ video players
      One player (.pl) for every video: in the page, in the pop-up and full screen (MTG, 16 Nov 2026: "displayed in
      full, nothing hidden, but not too big ... even when maximized ... and the close button is still there").
-     The screen has the video's own shape and nothing lies on the picture; Full screen and Close sit in the bar.
+     The screen has the video's own shape and nothing lies on the picture; Full Screen and Close sit in the bar.
+     The words "Full Screen" always show, so a visitor knows what the button does (MTG, 16 Nov 2026).
        cover  the poster and the play button
-       .on    playing: the bar shows Full screen and Close
+       .on    playing: the bar shows Full Screen and Close
        .max   full screen: the bar and the whole video, nothing else
      A video that plays to the end closes itself; /assets/video-return.js then puts the page back where they were. */
   var maxed = null, wantMax = null;                     // the player that is full screen now; the one that asked for it
@@ -193,7 +194,7 @@
   }
   function setMax(pl, yes) {
     pl.classList.toggle('max', yes);
-    var b = $('[data-pl-max]', pl); if (b) b.setAttribute('aria-label', yes ? 'Exit full screen' : 'Full screen');
+    var b = $('[data-pl-max]', pl); if (b) b.setAttribute('aria-label', yes ? 'Exit Full Screen' : 'Full Screen');
     if (yes) maxed = pl; else if (maxed === pl) maxed = null;
     // a wide video turns the phone on its side while it is full screen (where the phone allows it)
     try {
@@ -287,7 +288,7 @@
     plShut(pl);
     var v = d.createElement('video');
     v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'auto';
-    v.setAttribute('controlslist', 'nofullscreen nodownload noremoteplayback');   // our own Full screen keeps Close on screen
+    v.setAttribute('controlslist', 'nofullscreen nodownload noremoteplayback');   // our own Full Screen keeps Close on screen
     v.setAttribute('disablepictureinpicture', '');
     v.setAttribute('aria-label', (BWV[k] || {}).t || 'Video');
     if (poster) v.poster = poster;

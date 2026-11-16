@@ -1,0 +1,180 @@
+/* =====================================================================
+   JetUP live on Zoom, /jetup/zoom/ (MTG, 16 Nov 2026). Loaded on that page only, after jetup.css.
+   Uses the JetUP tokens (violet glass, lime, pink, MTG gold). Every rule is scoped under .lv so nothing
+   reaches the shared shell. Layouts follow the width of their own box (container queries), so they fit
+   with the side menu docked or closed; phones get lists and cards, never a sideways scroll.
+   ===================================================================== */
+html:not(.js) .lv .js-only,.lv [hidden]{display:none!important}
+.lv .ic{width:1.1em;height:1.1em}
+
+/* ---------- hero ---------- */
+.lv-hero{padding-bottom:0}
+.lv-hcq{container-type:inline-size}
+.lv-hgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;align-items:center}
+@container (min-width:860px){.lv-hgrid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px}}
+.lv-emos{display:flex;gap:12px;margin:0 0 14px;font-size:clamp(2.1rem,5vw,2.8rem);line-height:1;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.lv-emos span{display:inline-block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.45))}
+.lv-hero h1{margin-top:12px}
+.lv-tz{display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;padding:10px 15px;border-radius:14px;color:#eaffc4;font:800 14px/1.35 var(--f-b);
+  background:rgba(var(--lime-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--lime-rgb),.36)}
+.lv-tz .ic{width:20px;height:20px;color:var(--lime)}
+.lv-hero .ctas{margin-top:22px}
+
+/* ---------- next session card ---------- */
+.lv .nxcard{padding:clamp(20px,3vw,30px)}
+.lv .nx-lab{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;color:var(--lime);font:800 12px/1.3 var(--f-b);letter-spacing:.2em;text-transform:uppercase}
+.lv .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(var(--lime-rgb),.6)}
+.lv .onnow{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:999px;color:#fff;letter-spacing:.14em;background:linear-gradient(180deg,#ff7790,#e2405f);box-shadow:0 6px 18px rgba(var(--down-rgb),.35)}
+.lv .onnow .dot{background:#fff}
+.lv .nxcard h2{margin:14px 0 0;font:400 clamp(1.9rem,4vw,2.6rem)/1 var(--f-d);text-transform:uppercase;text-wrap:balance}
+.lv .nx-when{margin:8px 0 0;color:#fff;font:800 17px/1.45 var(--f-b)}
+.lv .cd{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.lv .cd .cdu{display:block;padding:14px 6px 12px;border-radius:16px;text-align:center;background:rgba(11,9,18,.62);box-shadow:inset 0 0 0 1px var(--line-2)}
+.lv .cd b{display:block;color:var(--lime);font:700 clamp(1.9rem,6vw,2.6rem)/1 var(--f-m);font-variant-numeric:tabular-nums;text-shadow:0 0 18px rgba(var(--lime-rgb),.35)}
+.lv .cd .cdu>span{display:block;margin-top:6px;color:var(--muted);font:800 11px/1.2 var(--f-b);letter-spacing:.16em;text-transform:uppercase}
+.lv .nx-local{margin:16px 0 0;padding:12px 14px;border-radius:14px;color:var(--body);font-weight:600;line-height:1.5;background:rgba(var(--vio-rgb),.1);box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.42)}
+.lv .nx-local:empty{display:none}
+.lv .nx-local b{color:#fff}
+.lv .nx-after{margin:12px 0 0;color:var(--muted);font-size:14px}
+.lv .nxcard .btn{width:100%;margin-top:18px}
+
+/* ---------- section heads ---------- */
+.lv .shead .lede{margin:0}
+
+/* ---------- the calendar: a premium wall calendar page in the JetUP palette ---------- */
+.lv-calq{container-type:inline-size}
+.lv .cal-wrap{position:relative;padding-top:26px}
+.lv .cal{position:relative;border-radius:22px;color:#1c1533;background:linear-gradient(180deg,#fdfcff,#f1edfb);
+  box-shadow:0 2px 0 #ddd5f1,0 5px 0 -1px #ebe6f8,0 8px 0 -2px #d6cdee,0 40px 80px rgba(0,0,0,.55),0 16px 30px rgba(0,0,0,.35)}
+.lv .band{position:relative;display:flex;align-items:center;gap:16px;padding:30px clamp(16px,3vw,30px) 20px;border-radius:22px 22px 0 0;color:#fff;
+  background:radial-gradient(420px 160px at 88% 0%,rgba(var(--lime-rgb),.20),transparent 70%),radial-gradient(520px 200px at 0% 100%,rgba(var(--pink-rgb),.22),transparent 70%),linear-gradient(160deg,#2c2160,#1a1338 60%,#120d26)}
+.lv .band .ttl{flex:1;min-width:0}
+.lv .band .kick{margin:0;color:var(--lime);font:800 11px/1.3 var(--f-b);letter-spacing:.22em;text-transform:uppercase}
+.lv .band .bt{margin:6px 0 0;font:400 clamp(1.6rem,4.4vw,2.6rem)/1 var(--f-d);letter-spacing:.05em;text-transform:uppercase}
+.lv .band .tzl{margin:8px 0 0;color:#d9d2f3;font:700 13px/1.4 var(--f-b)}
+.lv .clock{flex:none;width:clamp(60px,10vw,88px);height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.45))}
+.lv .rings{position:absolute;left:0;right:0;top:-26px;height:56px;display:flex;justify-content:space-around;padding:0 6%;pointer-events:none;z-index:2}
+.lv .rings i{position:relative;width:16px;height:56px}
+.lv .rings i:before{content:"";position:absolute;left:0;top:0;width:16px;height:40px;border-radius:9px;
+  background:linear-gradient(90deg,#3d3168,#f1edff 30%,#b9a6ff 55%,#6a58b0 80%,#2a2050);box-shadow:0 4px 8px rgba(0,0,0,.45)}
+.lv .rings i:after{content:"";position:absolute;left:2px;top:34px;width:12px;height:12px;border-radius:50%;background:#07050d;box-shadow:inset 0 2px 3px rgba(0,0,0,.9),0 1px 0 rgba(255,255,255,.18)}
+.lv .rings i:nth-child(n+7){display:none}
+@container (min-width:620px){.lv .rings i:nth-child(n+7){display:block}}
+/* phones and narrow boxes: a list of days */
+.lv .days{display:grid;grid-template-columns:minmax(0,1fr)}
+.lv .day{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);align-items:start;gap:12px;padding:14px;border-bottom:1px solid rgba(28,21,51,.10)}
+.lv .day:last-child{border-bottom:0}
+.lv .day .dh{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.lv .day .dn{font:400 22px/1 var(--f-d);letter-spacing:.08em;color:#1c1533}
+.lv .day .dt{color:#5f5880;font:800 12px/1.2 var(--f-b);letter-spacing:.04em}
+.lv .day.quiet{padding-top:10px;padding-bottom:10px}
+.lv .day.quiet .dn{color:#9993b0}
+.lv .day .none{margin:0;padding-top:3px;color:#8f89a8;font:700 13px/1.4 var(--f-b)}
+.lv .day .evs{display:grid;gap:10px}
+.lv .day.today{background:linear-gradient(90deg,rgba(var(--lime-rgb),.34),rgba(var(--lime-rgb),.10));box-shadow:inset 4px 0 0 #5d8a00}
+.lv .tdy{display:none;align-self:flex-start;margin-top:4px;padding:3px 8px;border-radius:999px;color:var(--lime);background:#15101f;font:800 10px/1.2 var(--f-b);letter-spacing:.16em;text-transform:uppercase}
+.lv .day.today .tdy{display:inline-block}
+.lv .day.today .dn{color:#1c1533}
+.lv .ev{position:relative;display:block;padding:12px 12px 12px 15px;border-radius:14px;color:#fff;overflow:hidden;
+  background:linear-gradient(160deg,#3b2b78,#201744);box-shadow:0 10px 20px rgba(28,21,51,.26),inset 0 0 0 1px rgba(var(--vio-rgb),.45)}
+.lv .ev:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#c9b8ff,var(--vio))}
+.lv .ev .tm{display:block;font:400 30px/1 var(--f-d);letter-spacing:.02em}
+.lv .ev .tm small{margin-left:4px;color:#d9d2f3;font:800 12px/1 var(--f-b);letter-spacing:.12em}
+.lv .ev .nm{display:block;margin-top:6px;font:800 14px/1.25 var(--f-b);overflow-wrap:anywhere}
+.lv .ev .nm .e{margin-right:4px;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.lv .ev .yt{display:block;margin-top:6px;color:#e4defa;font:700 12px/1.35 var(--f-b)}
+.lv .ev .yt:empty{display:none}
+.lv .ev.intl{background:linear-gradient(160deg,#0f5a4a,#083a31);box-shadow:0 10px 20px rgba(28,21,51,.26),inset 0 0 0 1px rgba(var(--up-rgb),.4)}
+.lv .ev.intl:before{background:linear-gradient(180deg,#b6ffe3,var(--up))}
+.lv .ev.train{background:linear-gradient(160deg,#6a2378,#3d1347);box-shadow:0 10px 20px rgba(28,21,51,.26),inset 0 0 0 1px rgba(var(--pink-rgb),.45)}
+.lv .ev.train:before{background:linear-gradient(180deg,#f7d2ff,var(--pink))}
+.lv .cal-foot{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;padding:14px clamp(16px,3vw,26px);border-top:1px solid rgba(28,21,51,.12);color:#4d4668;font:700 13px/1.45 var(--f-b)}
+.lv .legend{display:flex;flex-wrap:wrap;gap:8px 16px}
+.lv .legend span{display:inline-flex;align-items:center;gap:8px}
+.lv .legend i{width:14px;height:14px;flex:none;border-radius:4px;background:#3b2b78}
+.lv .legend i.intl{background:#0f5a4a}.lv .legend i.train{background:#6a2378}
+@container (min-width:460px) and (max-width:759px){.lv .day .evs{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+/* wide boxes: seven columns, like a real week */
+@container (min-width:760px){
+  .lv .days{grid-template-columns:repeat(7,minmax(0,1fr))}
+  .lv .day{display:flex;flex-direction:column;gap:10px;min-height:250px;padding:14px 10px 16px;border-bottom:0;border-right:1px solid rgba(28,21,51,.10)}
+  .lv .day:last-child{border-right:0}
+  .lv .day .dh{padding-bottom:10px;border-bottom:2px solid rgba(28,21,51,.12)}
+  .lv .day.quiet{padding-top:14px;padding-bottom:16px}
+  .lv .day .none{padding-top:0}
+  .lv .day .evs{display:flex;flex-direction:column;gap:10px}
+  .lv .day.today{background:linear-gradient(180deg,rgba(var(--lime-rgb),.34),rgba(var(--lime-rgb),.08));box-shadow:inset 0 0 0 2px #6f9c0c}
+  .lv .day.today .dh{border-bottom-color:#5d8a00}
+  .lv .ev .tm{font-size:clamp(22px,2.6cqi,30px)}
+  .lv .ev .nm{font-size:13px}
+}
+
+/* ---------- time zones: cards on phones, a table on wide boxes ---------- */
+.lv-tzq{container-type:inline-size}
+.lv .tzcard{padding:0}
+.lv .tzt{width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+.lv .tzt,.lv .tzt tbody,.lv .tzt tr,.lv .tzt th,.lv .tzt td{display:block}
+.lv .tzt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.lv .tzt tbody{display:grid;gap:14px}
+.lv .tzt tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:14px;border-radius:20px;
+  background:linear-gradient(160deg,rgba(32,26,49,.9),rgba(18,15,28,.9));box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.32),0 18px 40px rgba(0,0,0,.35)}
+.lv .tzt tbody th{grid-column:1/-1;padding:2px 2px 8px;border-bottom:1px solid var(--line);text-align:left;font:800 16px/1.35 var(--f-b);color:var(--text)}
+.lv .tzt tbody th small{display:block;color:var(--muted);font-weight:600;font-size:13px}
+.lv .tzt td{min-width:0;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04)}
+.lv .tzt td:before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font:800 10.5px/1.35 var(--f-b);letter-spacing:.08em;text-transform:uppercase}
+.lv .tzt td.sa{grid-column:1/-1;background:rgba(var(--vio-rgb),.12);box-shadow:inset 0 0 0 1px rgba(var(--vio-rgb),.35)}
+.lv .tzt td.you{grid-column:1/-1;background:rgba(var(--lime-rgb),.09);box-shadow:inset 0 0 0 1px rgba(var(--lime-rgb),.38)}
+.lv .tzt td.you:before{color:var(--lime)}
+.lv .tt{display:block;color:var(--text);font:700 16px/1.3 var(--f-m)}
+.lv .tzt .sa .tt{color:#d8ccff}
+.lv .tzt .you .tt{color:var(--lime)}
+.lv .dy{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;color:var(--lime);background:rgba(var(--lime-rgb),.12);font:800 11px/1.4 var(--f-b);letter-spacing:.06em}
+.lv .tznote{margin:16px 0 0;color:var(--muted);font-size:14px}
+@container (max-width:290px){.lv .tzt tr{grid-template-columns:minmax(0,1fr)}}
+@container (min-width:880px){
+  .lv .tzcard{padding:clamp(10px,1.6vw,18px)}
+  .lv .tzt{display:table}
+  .lv .tzt thead{position:static;width:auto;height:auto;overflow:visible;clip:auto;display:table-header-group}
+  .lv .tzt tbody{display:table-row-group}
+  .lv .tzt tr{display:table-row;padding:0;border-radius:0;background:none;box-shadow:none}
+  .lv .tzt th,.lv .tzt td{display:table-cell;padding:14px 12px;text-align:left;vertical-align:top;border-radius:0;background:none;box-shadow:none;border-bottom:1px solid var(--line)}
+  .lv .tzt td:before{display:none}
+  .lv .tzt thead th{color:var(--lime);font:800 12px/1.35 var(--f-b);letter-spacing:.08em;text-transform:uppercase}
+  .lv .tzt thead th small{display:block;margin-top:4px;color:var(--muted);font:600 12px/1.35 var(--f-b);letter-spacing:0;text-transform:none}
+  .lv .tzt tbody th{padding:14px 12px;font-size:15px}
+  .lv .tzt tbody tr:last-child>*{border-bottom:0}
+  .lv .tzt td.sa,.lv .tzt th.sa{background:rgba(var(--vio-rgb),.08);box-shadow:none}
+  .lv .tzt .you{background:rgba(var(--lime-rgb),.07);box-shadow:none}
+  .lv .tzt thead .you{border-radius:12px 12px 0 0}
+}
+
+/* ---------- how to get the link ---------- */
+.lv-wq{container-type:inline-size}
+.lv .ways{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+@container (min-width:640px){.lv .ways{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lv .way{display:flex;flex-direction:column;gap:14px}
+.lv .way .num{margin:0}
+.lv .way h3{margin:0;font:400 clamp(1.5rem,3vw,1.9rem)/1.05 var(--f-d);text-transform:uppercase}
+.lv .way .btn{width:100%;min-height:60px}
+.lv .way .what{margin:0;color:var(--body);font-size:15px;line-height:1.6}
+.lv .way .what:before{content:"What happens: ";color:var(--lime);font-weight:800}
+
+/* ---------- add to calendar ---------- */
+.lv-aq{container-type:inline-size}
+.lv .addcal{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:center}
+@container (min-width:720px){.lv .addcal{grid-template-columns:auto minmax(0,1fr) auto;gap:26px}}
+.lv .addcal .big{font-size:44px;line-height:1;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.lv .addcal h2{margin:0;font:400 clamp(1.5rem,3.2vw,2rem)/1.05 var(--f-d);text-transform:uppercase}
+.lv .addcal p{margin:8px 0 0;color:var(--body);font-size:15px}
+
+/* ---------- motion (only for people who are fine with it) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .lv .dot{animation:lv-pulse 1.8s ease-out infinite}
+  .lv .onnow .dot{animation-name:lv-pulsew}
+  .lv-emos span:first-child{animation:lv-bob 3.2s ease-in-out infinite;transform-origin:70% 70%}
+  .lv .cal{transition:transform .5s var(--ease)}
+  .lv .cal-wrap:hover .cal{transform:translateY(-3px) rotate(-.15deg)}
+}
+@keyframes lv-pulse{0%{box-shadow:0 0 0 0 rgba(var(--lime-rgb),.6)}70%{box-shadow:0 0 0 12px rgba(var(--lime-rgb),0)}100%{box-shadow:0 0 0 0 rgba(var(--lime-rgb),0)}}
+@keyframes lv-pulsew{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+@keyframes lv-bob{0%,100%{transform:rotate(0)}50%{transform:rotate(-8deg) scale(1.05)}}

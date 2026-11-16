@@ -135,6 +135,8 @@ JUMP = {
  '/jetup/partner-plan/': [('optional', 'Optional, and why'), ('qualify', 'The rule most people miss'), ('lot', 'Lot commission'), ('profit-share', 'Profit Share'),
                           ('infinity', 'Infinity Bonus'), ('pool', 'Global Pool'), ('rewards', 'Rewards')],
  '/jetup/bix-card/': [('setup', 'Five steps to your card'), ('link', 'Link it to JetUP'), ('prices', 'Prices')],
+ '/jetup/zoom/': [('next', 'Next live session'), ('calendar', 'The weekly calendar'), ('timezones', 'Your time zone'),
+                 ('link', 'Get the Zoom link'), ('add', 'Add to my calendar'), ('faq', 'Questions')],
  '/jetup/faq/': [('start', 'Start here'), ('trust', 'Trust and myths'), ('money', 'Money'), ('partners', 'Earning as a partner'),
                  ('promo', 'Promo and codes'), ('after', 'After you join'), ('risk', 'Risk')],
 }

@@ -57,11 +57,14 @@ VIDEOS = [
      'Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.',
      429.6, 'projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
      dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg')),
+    ('t2', 'bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal', 'Buy BNB on VALR and send it to SafePal',
+     'Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.',
+     349.9, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
+     dict(poster='projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-9x16.jpg', date='2026-11-16')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('t2', 'Tutorial', 'Fund SafePal and swap to BTCB', 'Buy BNB on VALR or Binance, send it on BNB Smart Chain, swap to BTCB, keep BNB for fees.'),
-    ('t3', 'Tutorial', 'Join Bitcoin Wealth with SafePal', 'Paste the sign-up link in SafePal\'s browser, approve the exact amount and activate slot 1.'),
+    ('t3', 'Tutorial', 'Swap, sign up, activate slot 1', 'Swap BNB for BTCB in SafePal and keep a little BNB for fees, sign up with the link of the person who invited you, and activate slot 1.'),
     ('e1', 'Explainer', 'Bitcoin Wealth in two minutes', 'Bitcoin, BTCB, the smart contract and wallet to wallet payments, in one picture.'),
     ('e2', 'Explainer', 'How the 14 positions pay', 'Two, four, eight: where all fourteen payments go, and why nine point to you.'),
     ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
@@ -76,7 +79,7 @@ for _v in VIDEOS:
                     label=_x.get('label', KIND[_v[0][0]] + ' ' + _v[0][1:]), o=_x.get('o', 'v'), poster=_x.get('poster'),
                     date=_x.get('date', LAUNCHED), spot=_x.get('spot'))
     V[_v[0]]['short'] = _x.get('short', _v[2])
-SHORT = {'t1': 'Set up SafePal'}
+SHORT = {'t1': 'Set up SafePal', 't2': 'Buy BNB, send to SafePal'}
 for _k, _s in SHORT.items():
     V[_k]['short'] = _s
 NV = len(VIDEOS)

@@ -9,10 +9,13 @@ JOIN_NEEDS = ['A smartphone with the SafePal app', '0.001 BTC worth of BTCB, plu
 JOIN_STEPS = [
     ('Set up SafePal', 'Download SafePal from safepal.com, create a wallet, back it up two ways and keep only BNB, USDT and BTCB. Tutorial 1 shows every tap.'),
     ('Open a VALR or Binance account', 'Both let you buy crypto with rand. Many members keep both, as a backup.'),
-    ('Buy BNB and send it to SafePal', 'Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20). Send a small test first.'),
+    ('Buy BNB and send it to SafePal', 'Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20). Send a small test first. Tutorial 2 shows every tap.'),
     ('Swap BNB to BTCB in SafePal', 'Swap most of it to BTCB, and keep a little BNB for network fees. Never empty your BNB.'),
     ('Activate slot 1', 'Copy the sign-up link, paste it into SafePal\'s browser, connect your wallet, approve the exact amount and activate slot 1.'),
 ]
+
+T2_CHECKS = ["Pay by EFT from a bank account in your own name", "Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours",
+             "Buy BNB with your rand", "Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters"]
 
 
 def p_join(here):
@@ -25,7 +28,11 @@ def p_join(here):
 <div class="btn-row">{valr_btn()}{binance_btn()}</div></div>
 <div class="phone-wrap">{vid('t1', here)}</div></div>""", "Before you start")}
 {sec(st, "The five steps")}
-{sec(f'<div class="grid2">{soon("t2")}{soon("t3")}</div>', "Tutorials 2 and 3", "Funding SafePal and joining, recorded on MTG's phone, are on the way. Meanwhile, ask in the MTG TRIBE.")}
+{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 2: {V['t2']['title']}</h2><p>Steps 2 and 3, tap by tap. {V['t2']['desc']}</p>
+{checks(T2_CHECKS)}
+<div class="btn-row">{valr_btn()}{binance_btn()}</div></div>
+<div class="phone-wrap">{vid('t2', here)}</div></div>""", "Fund your SafePal")}
+{sec(f'<div class="grid2">{soon("t3")}</div>', "Tutorial 3", "Swapping to BTCB, signing up and activating slot 1, recorded on MTG's phone, is on the way. Meanwhile, ask in the MTG TRIBE.")}
 {sec(honest("Before you activate.", "Approve only the exact amount you are paying, keep a little BNB for fees, and if someone else introduced you, use their link so they stay your sponsor."))}'''
 
 
@@ -33,11 +40,16 @@ def p_join(here):
 def p_tut(here):
     return f'''{phero("circle-play", "Tutorial videos",
         "Step-by-step trainings recorded on MTG's own phone, with every private detail hidden. Pause after each step and try it yourself.",
-        [("film", f"{len(TUT)} ready, 2 on the way"), ("eye-off", "Private details hidden")])}
+        [("film", f"{len(TUT)} ready, 1 on the way"), ("eye-off", "Private details hidden")])}
 {sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 1: {V['t1']['title']}</h2><p>{V['t1']['desc']}</p>
 {checks(["Download from safepal.com, never from a link in a message", "Two backups: Google Drive and paper", "Rename the wallet Bitcoin Wealth", "Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)"])}</div>
 <div class="phone-wrap">{vid('t1', here)}</div></div>""")}
-{sec(f'<div class="grid2">{soon("t2")}{soon("t3")}</div>', "Coming next")}
+{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 2: {V['t2']['title']}</h2><p>{V['t2']['desc']}</p>
+{checks(T2_CHECKS)}
+<p>Using Binance instead? The steps are very similar.</p>
+<div class="btn-row">{valr_btn()}{binance_btn()}{wa_group_btn(size='sm')}</div></div>
+<div class="phone-wrap">{vid('t2', here)}</div></div>""")}
+{sec(f'<div class="grid2">{soon("t3")}</div>', "Coming next")}
 {sec(think("Do I really need to watch them all?", "<p>Yes, even if you think you already know. Each one shows a screen you'll meet sooner or later. Then share them: we learn best when we teach others.</p>"))}'''
 
 

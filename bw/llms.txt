@@ -66,6 +66,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 
 - [Cartoon: The Missing Piece](https://mtgtribe.com/bw/media/bitcoin-wealth-the-missing-piece-cartoon.mp4) (1:27): A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.
 - [Tutorial 1: Set up your SafePal wallet for Bitcoin Wealth](https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4) (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.
+- [Tutorial 2: Buy BNB on VALR and send it to SafePal](https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4) (5:50): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
 
 ## Community and contact
 

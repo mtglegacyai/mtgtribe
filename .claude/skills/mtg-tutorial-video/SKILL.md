@@ -89,9 +89,7 @@ sign-up training. Do not invent a new ending, sound set or transition style per 
   the training engine's own helpers; `retime_part.py` inserts the banked lines and re-times a part; `compose_kit.py`
   composites the ending onto the stage frames; `mix_consistent.py` is the one mix for every video.
 
-**The slogan lands deep (MTG, 16 Nov 2026).** "Let's Get This Crypto!" at the end of every video must be deep, thorough and
-strong, never on a high note ("this is a slogan, so it must land"). Use MTG's deep take (private studio repo,
-`brand/voice/slogan/`, README says which one he picked) in place of the last words of the signature outro.
+**The slogan (MTG, 16 Nov 2026):** keep his original recorded "Let's Get This Crypto!". He rejected vocoder re-shaped versions; never re-shape his voice.
 
 **Leo, the mascot (MTG, 16 Nov 2026), in videos that use him:** wherever Leo appears he speaks, and when he points at something he
 says what it is; never a silent, pointing or lip-moving Leo. Give him only the lines that make sure people get it, understand it

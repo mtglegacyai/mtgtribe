@@ -297,7 +297,8 @@ When the video is finished, deliver its posting pack (`references/posting-pack.m
      video; the studio's `ClosingTrack` does this by default and `closingTail()` sizes the end card. Before rendering,
      check his mp3 is in `public/music/` (it is not in git): no track, no final render.
    - **His spoken slogan (MTG, 16 November 2026):** every video with the short ending uses his one approved recording
-     of "Let's get this crypto" in his normal voice (`kit/video3d/public/voice-bank/slogan.wav`, spliced in with
+     of "Let's get this crypto" in his normal voice (`tools/video3d/public/voice-bank/slogan.wav` in the mtgtribe
+     project, `kit/video3d/public/voice-bank/slogan.wav` when the studio is bundled; spliced in with
      `scripts/splice_slogan.py`), never the high, shouted slogan a script produces and never a re-recorded one.
      Details: `references/daily-video.md`, "MTG's voice".
    - **Length:** vertical, 60 seconds or less when everything fits, up to 3 minutes when the topic is bigger (MTG,

@@ -157,6 +157,14 @@ def landing():
 </section>
 <div class="tape" aria-label="Bitcoin Wealth in short"><div class="tape-in">{tape_one}<span aria-hidden="true" class="dup">{tape_one}</span></div></div>
 
+<section class="sec lsec promo" id="in-34-seconds" aria-labelledby="promo-h"><div class="wrap">
+ <div class="sec-head center"><p class="eyebrow">34 seconds</p><h2 class="h2" id="promo-h">Curious? <span class="hl">Hear it first.</span></h2>
+ <p class="lead">Four short clips about Bitcoin Wealth. Then follow every step yourself, one tap at a time.</p></div>
+ <div class="phone-wrap">{vid('p1', here, cap=False)}</div>
+ <div class="center-row"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/tutorials/', here)}">{ic('circle-play')}<span class="lbl">Watch The Step-By-Step Tutorials</span></a></div>
+ <p class="fine promo-note">A short Bitcoin Wealth promo video. Don't just take anyone's word for it: <a class="inl" href="{A('dashboard/check-it-yourself/', here)}">check it yourself</a>.</p>
+</div></section>
+
 <section class="sec lsec" id="start"><div class="wrap">{start3(here)}</div></section>
 
 <section class="sec lsec"><div class="wrap">
@@ -192,5 +200,5 @@ def landing():
 {overlays(here)}"""
     from seo import SEO_DESC
     hd = head('Bitcoin Wealth explained by MTG: how it works, how to join, check it yourself', SEO_DESC['land'], '', here,
-              extra_ld=video_ld(['t1'], here), og_key='land')
+              extra_ld=video_ld(['p1', 't1'], here), og_key='land')
     return hd, body

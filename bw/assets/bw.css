@@ -1007,12 +1007,16 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .vid{position:relative;display:grid;justify-items:center;gap:12px;min-width:0;margin:0}
 .vid16{justify-items:stretch;gap:8px;max-width:100%}
 .phone-wrap{display:grid;place-items:center;min-width:0}
+.phone-wrap>.vid{justify-self:stretch}                             /* the figure takes the whole column, so the player has a width to measure itself against (also without a caption) */
 .vcap{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:320px;font-size:.86rem;color:var(--muted)}
 
 .pl{position:relative;display:block;min-width:0;margin-left:auto;margin-right:auto;
   --rim:2px;--bez:5px;--bar:44px;--chin:14px;--rad:28px;
   --wide:100%;                                                   /* the width the player may use */
-  --room:calc(var(--svh) - var(--hdr) - 20px)}                   /* the height it may use: the visible screen under the top bar */
+  --room:calc(var(--svh) - var(--hdr) - var(--foot,0px) - 20px)} /* the height it may use: the visible screen under the top bar, above a fixed bottom bar */
+@media (max-width:760px){.landing{--foot:calc(64px + env(safe-area-inset-bottom,0px))}}      /* the landing page's quick menu at the bottom of a phone */
+.promo .center-row{margin-top:22px}
+.promo-note{max-width:46ch;margin:14px auto 0;text-align:center}
 .pl-v{--ar:.5625;width:280px;max-width:100%;width:max(var(--pl-min,200px),min(var(--pl-w,320px),var(--wide),calc((var(--room) - var(--bar) - var(--chin) - 2 * var(--rim)) * var(--ar) + 2 * (var(--bez) + var(--rim)))))}
 .pl-h{--ar:1.77778;--rim:1.5px;--bez:clamp(4px,.9vw,8px);--bar:40px;--rad:14px;--deck:clamp(9px,1.3vw,14px);--lip:clamp(8px,1.4vw,20px);padding:0 var(--lip);width:100%;
   width:max(var(--pl-min,240px),min(var(--pl-w,100%),var(--wide),calc((var(--room) - var(--bar) - var(--bez) - 2 * var(--rim) - var(--deck)) * var(--ar) + 2 * (var(--bez) + var(--rim) + var(--lip)))))}

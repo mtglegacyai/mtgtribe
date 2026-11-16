@@ -187,6 +187,9 @@
   function fsElement() { return d.fullscreenElement || d.webkitFullscreenElement || null; }
   function quiet(p) { if (p && p.catch) p.catch(function () {}); }
   function hdrHeight() { return parseFloat(getComputedStyle(html).getPropertyValue('--hdr')) || 66; }
+  function footHeight() {                               // a page's fixed bottom bar (the landing page's quick menu on phones)
+    var n = $('.bnav'); return n && getComputedStyle(n).position === 'fixed' ? n.getBoundingClientRect().height : 0;
+  }
   /* old browsers without svh and dvh: give the styles the real visible height */
   if (!(window.CSS && CSS.supports && CSS.supports('height', '100svh'))) {
     var vhFix = function () { var h = (window.innerHeight || html.clientHeight) + 'px'; html.style.setProperty('--svh', h); html.style.setProperty('--dvh', h); };
@@ -302,20 +305,21 @@
     quiet(v.play());
     return v;
   }
-  /* bring the whole player on screen, under the site's top bar */
+  /* bring the whole player on screen, under the site's top bar and above a fixed bottom bar */
   function plIntoView(pl) {
-    var r = pl.getBoundingClientRect(), top = hdrHeight() + 10, h = window.innerHeight || html.clientHeight;
-    var dy = r.top < top ? r.top - top : (r.bottom > h - 8 ? Math.min(r.bottom - (h - 8), r.top - top) : 0);
+    var r = pl.getBoundingClientRect(), top = hdrHeight() + 10, bot = (window.innerHeight || html.clientHeight) - footHeight() - 8;
+    var dy = r.top < top ? r.top - top : (r.bottom > bot ? Math.min(r.bottom - bot, r.top - top) : 0);
     if (Math.abs(dy) > 2) { try { window.scrollBy({ top: dy, behavior: RM ? 'auto' : 'smooth' }); } catch (e) { window.scrollBy(0, dy); } }
   }
+  /* the height a player may take: the visible screen between the page's fixed bars (the pop-up has the whole screen) */
+  function plRoom(pl) { return (window.innerHeight || html.clientHeight) - (pl.id === 'pl-pop' ? 16 : hdrHeight() + footHeight()); }
   /* a screen too short for the smallest frame (a phone on its side): straight to full screen, where the whole video always fits */
   function fitOrMax(pl) {
-    var pop = pl.id === 'pl-pop', h = window.innerHeight || html.clientHeight;
-    if (pl.getBoundingClientRect().height > h - (pop ? 16 : hdrHeight())) enterMax(pl); else if (!pop) plIntoView(pl);
+    if (pl.getBoundingClientRect().height > plRoom(pl)) enterMax(pl); else if (pl.id !== 'pl-pop') plIntoView(pl);
   }
   var fitT;
   on(window, 'resize', function () {                    // the phone was turned while a video is open
-    clearTimeout(fitT); fitT = setTimeout(function () { var pl = $('.pl.on:not(.max)'); if (pl && pl.getBoundingClientRect().height > (window.innerHeight || html.clientHeight) - (pl.id === 'pl-pop' ? 16 : hdrHeight())) enterMax(pl); }, 350);
+    clearTimeout(fitT); fitT = setTimeout(function () { var pl = $('.pl.on:not(.max)'); if (pl && pl.getBoundingClientRect().height > plRoom(pl)) enterMax(pl); }, 350);
   });
   /* a cover in the page: it plays in place */
   function startInline(btn) {

@@ -319,11 +319,14 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 
 
 def video_obj(code, name, desc, thumb, media, dur):
-    return {'@type': 'VideoObject', '_code': code, 'name': name, 'description': desc,
-            'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': V[code]['date'] + 'T00:00:00+02:00',
-            'duration': dur, 'contentUrl': SITE + BASE + media, 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
-            'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
-            'about': BW_THING}
+    o = {'@type': 'VideoObject', '_code': code, 'name': name, 'description': desc,
+         'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': V[code]['date'] + 'T00:00:00+02:00',
+         'duration': dur, 'contentUrl': SITE + BASE + media, 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
+         'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
+         'about': BW_THING}
+    if code[0] == 'p':                    # a promo video is shown by MTG, not made by him
+        del o['author']
+    return o
 
 
 def video_ld(codes, here):

@@ -57,6 +57,9 @@ def p_home(here):
 </div></div></section>"""
     stile = (f'<button type="button" class="vtile story" data-play="s1" data-vid="s1" title="{esc(story["desc"])}">'
              f'<span class="vn">{ic("play")}</span><span class="vt">{story["short"]} ({mmss(story["secs"])})</span>{ic("circle-check")}</button>')
+    promo = V['p1']
+    stile += (f'<button type="button" class="vtile story" data-play="p1" data-vid="p1" title="{esc(promo["desc"])}">'
+              f'<span class="vn">{ic("play")}</span><span class="vt">{promo["short"]} ({mmss(promo["secs"])})</span>{ic("circle-check")}</button>')
     return f'''{feat}
 {phero("compass", "Welcome. Let's get you started.",
         "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.",

@@ -22,6 +22,9 @@ def _add_class(tag, cls):
     return tag[:-1] + f' class="{cls}">'
 
 def _label_table(t):
+    # a table with class "own-cards" labels its own cells and has its own phone layout (the time zone cards on /jetup/zoom/)
+    if re.search(r'^<table\b[^>]*\bclass="[^"]*\bown-cards\b', t):
+        return t
     head = re.search(r'<thead\b.*?</thead>', t, re.S)
     if not head: return t
     labels = [_text(x) for x in re.findall(r'<th\b[^>]*>(.*?)</th>', head.group(0), re.S)]

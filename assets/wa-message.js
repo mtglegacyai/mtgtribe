@@ -24,6 +24,7 @@
   var S = [
     [/^\/jetup\/zoom(\/|$)/i, null, null, ZOOM],
     [/^\/jetupzoom(\/|$)/i, null, null, ZOOM],
+    [/^\/bw\/dashboard\/live-on-zoom(\/|$)/i, null, null, 'Hi MTG,\n\nPlease send me the Zoom link for your next Bitcoin Wealth session.\n\nThank you \uD83D\uDE0A'],
     [/^\/jetup(\/|$)/i, 'JetUP and TAG Markets guide', 'I have a question about JetUP and TAG Markets. Can you please help me?'],
     [/^\/altruva(\/|$)/i, 'ALTRUVA guide', 'I have a question about ALTRUVA. Can you please help me?'],
     [/^\/bw(\/|$)/i, 'Bitcoin Wealth guide', 'I have a question about Bitcoin Wealth. Can you please help me?'],

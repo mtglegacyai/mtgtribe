@@ -46,6 +46,7 @@ SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide b
 
 # released videos: code, slug, title, one-line summary, seconds, source master (in mtg-studio), extras
 # extras: o='h' for a 16:9 video (laptop frame; 9:16 plays in the phone frame), poster (in mtg-studio), label, short, date
+# poster: the website cover (no address pill, room for the play button). spot: where the play button sits on it, in percent
 _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
@@ -56,7 +57,8 @@ VIDEOS = [
     ('t1', 'bitcoin-wealth-tutorial-1-safepal-wallet-setup', 'Set up your SafePal wallet for Bitcoin Wealth',
      'Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.',
      429.6, 'projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
-     dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg')),
+     dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-website-poster-9x16.jpg',
+          spot=(68.0, 88.0))),      # the play button sits under the phone, clear of Leo's shirt and the three chips
     ('t2', 'bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal', 'Buy BNB on VALR and send it to SafePal',
      'Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.',
      357.2, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',

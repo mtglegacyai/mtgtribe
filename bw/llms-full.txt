@@ -562,6 +562,8 @@ Free Bitcoin to Rand converter: type BTC, US dollars or rand and see the others 
 ### Bitcoin to Rand Converter
 What is 0.001 BTC in rand right now? Type any amount in Bitcoin, dollars or rand.
 
+#### How the converter works
+
 ##### Type in any box
 Type Bitcoin, dollars or rand, and the other two follow. 0.001 BTC is the Bitcoin Wealth entry for slot 1.
 
@@ -591,6 +593,8 @@ Live Bitcoin halving countdown: the current block height, blocks left to block 1
 About every four years, the reward for mining a new Bitcoin block is cut in half. Here's how close the next one is, live.
 Estimated: 2028
 Reading the live block height…
+
+#### About the halving
 
 ##### Why it matters
 Fewer new Bitcoin are made after each halving, while the 21 million limit never changes. Past halvings were followed by big price moves, up and down. That's history, not a promise.
@@ -636,6 +640,8 @@ Bitcoin, BTCB, BNB, smart contract, slot, recycle, BscScan and more: Bitcoin Wea
 
 ### Glossary: crypto words in plain English
 Every word you'll hear in the videos and pages, with an everyday example where it helps.
+
+#### All the words
 
 ##### Bitcoin (BTC)
 Digital money with no bank behind it, live since 2009. Only 21 million will ever exist.
@@ -779,6 +785,8 @@ The MTG TRIBE: a free WhatsApp community for action takers. Join the group, meet
 
 ### Join the MTG TRIBE
 A free WhatsApp community of action takers who learn, execute and teach others. Many opportunities, honest guides, real people.
+
+#### Ways to join in
 
 ##### The WhatsApp group
 Ask questions, get the Zoom links, learn with others.

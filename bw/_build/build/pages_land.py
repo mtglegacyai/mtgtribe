@@ -30,7 +30,7 @@ def flow_stage(here, big=True):
         ('hand-coins', 'It lands in a member\'s own wallet', 'No withdraw button, no request, no office. It simply arrives.'),
         ('scan-search', 'Anyone can check it', 'Every payment is public on BscScan, forever. Don\'t trust. Verify.'),
     ]
-    lis = ''.join(f'<li data-fs tabindex="0" role="button"><span class="fsn">{i + 1}</span><span class="fst">{ic(ic_)}<b>{t}</b><small>{d}</small></span></li>'
+    lis = ''.join(f'<li><button type="button" class="fs" data-fs><span class="fsn">{i + 1}</span><span class="fst">{ic(ic_)}<b>{t}</b><small>{d}</small></span></button></li>'
                   for i, (ic_, t, d) in enumerate(steps_))
     return f'''<div class="flow3d glass" data-flow data-tilt>
  <div class="scene" aria-hidden="true">

@@ -311,7 +311,7 @@ SPECS = [
       alt='Join the MTG TRIBE WhatsApp group'),
  dict(slug='jetup-live', fam='jetup', page='/jetuplive/', eb='📣 5 LIVE SESSIONS A WEEK', h='JetUP live<br>on <span class="g">Zoom</span>', hs=110,
       sub='Every session in SA time, and in yours.', url='mtgtribe.com/jetuplive', hero=hero_zoom,
-      alt='JetUP live on Zoom with MTG: the weekly calendar of five sessions, in SA time'),
+      alt='JetUP live on Zoom: the weekly calendar of five sessions, in SA time'),
  dict(slug='canton-weekly', fam='canton', page='/canton-weekly/', eb='EVERY SUNDAY · BY MTG 👑', h='Canton Coin,<br>every <span class="g">Sunday</span>', hs=92,
       sub='Price, levels, 3 scenarios, CNTN news.', url='mtgtribe.com/canton-weekly', hero=hero_canton_hub,
       alt='Canton Coin weekly report by MTG, every Sunday'),

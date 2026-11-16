@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//MTG TRIBE//Zoom schedule//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:MTG TRIBE Zoom sessions
+X-WR-CALNAME:JetUP live Zoom sessions
 X-WR-TIMEZONE:Africa/Johannesburg
 BEGIN:VTIMEZONE
 TZID:Africa/Johannesburg

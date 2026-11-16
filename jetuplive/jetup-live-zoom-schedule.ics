@@ -21,11 +21,11 @@ DTSTAMP:20261116T000000Z
 DTSTART;TZID=Africa/Johannesburg:20261117T200000
 DURATION:PT1H
 RRULE:FREQ=WEEKLY;BYDAY=TU
-SUMMARY:MTG TRIBE Zoom: Presentation (Tuesday)
+SUMMARY:JetUP Zoom: Presentation (Tuesday)
 DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
  //mtgtribe.com/group/
 LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
-URL:https://mtgtribe.com/zoom/
+URL:https://mtgtribe.com/jetuplive/
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
@@ -35,11 +35,11 @@ DTSTAMP:20261116T000000Z
 DTSTART;TZID=Africa/Johannesburg:20261119T200000
 DURATION:PT1H
 RRULE:FREQ=WEEKLY;BYDAY=TH
-SUMMARY:MTG TRIBE Zoom: Presentation (Thursday)
+SUMMARY:JetUP Zoom: Presentation (Thursday)
 DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
  //mtgtribe.com/group/
 LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
-URL:https://mtgtribe.com/zoom/
+URL:https://mtgtribe.com/jetuplive/
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
@@ -49,11 +49,11 @@ DTSTAMP:20261116T000000Z
 DTSTART;TZID=Africa/Johannesburg:20261121T200000
 DURATION:PT1H
 RRULE:FREQ=WEEKLY;BYDAY=SA
-SUMMARY:MTG TRIBE Zoom: Presentation (Saturday)
+SUMMARY:JetUP Zoom: Presentation (Saturday)
 DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
  //mtgtribe.com/group/
 LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
-URL:https://mtgtribe.com/zoom/
+URL:https://mtgtribe.com/jetuplive/
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
@@ -63,11 +63,11 @@ DTSTAMP:20261116T000000Z
 DTSTART;TZID=Africa/Johannesburg:20261122T150000
 DURATION:PT1H
 RRULE:FREQ=WEEKLY;BYDAY=SU
-SUMMARY:MTG TRIBE Zoom: International presentation
+SUMMARY:JetUP Zoom: International presentation
 DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
  //mtgtribe.com/group/
 LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
-URL:https://mtgtribe.com/zoom/
+URL:https://mtgtribe.com/jetuplive/
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
@@ -77,11 +77,11 @@ DTSTAMP:20261116T000000Z
 DTSTART;TZID=Africa/Johannesburg:20261122T200000
 DURATION:PT1H
 RRULE:FREQ=WEEKLY;BYDAY=SU
-SUMMARY:MTG TRIBE Zoom: Training night (back office training)
+SUMMARY:JetUP Zoom: Training night (back office training)
 DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
  //mtgtribe.com/group/
 LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
-URL:https://mtgtribe.com/zoom/
+URL:https://mtgtribe.com/jetuplive/
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT

@@ -118,8 +118,8 @@ def ped(icon, cls=''):
 
 
 def think(q, body, alt=False, icon='message-circle'):
-    return (f'<aside class="think{" alt" if alt else ""}">{ped(icon)}<div><p class="q">{q}</p>'
-            f'<div class="prose">{body}</div></div></aside>')
+    return (f'<div class="think{" alt" if alt else ""}" role="note">{ped(icon)}<div><p class="q">{q}</p>'
+            f'<div class="prose">{body}</div></div></div>')
 
 
 def box(title, body, icon=None):
@@ -145,8 +145,9 @@ def table(head, rows, hl=None, caption=None):
     return f'<div class="tbl-wrap"><table>{cap}<thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
 
 
-def sec(body, title=None, lead=None, id=None, cls=''):
-    head = ''
+def sec(body, title=None, lead=None, id=None, cls='', sr=None):
+    """a page section. sr: a heading for screen readers and search only, where the design shows none (keeps h1, h2, h3 in order)"""
+    head = f'<h2 class="sr">{sr}</h2>' if sr else ''
     if title:
         head = f'<div class="sec-head"><h2 class="h2">{title}</h2>' + (f'<p class="lead">{lead}</p>' if lead else '') + '</div>'
     i = f' id="{id}"' if id else ''
@@ -159,11 +160,26 @@ def poster(code, here, size=720):
     return L(f'img/{v["slug"]}.webp', here), L(f'img/{v["slug"]}-{"640" if v["o"] == "h" else "360"}.webp', here)
 
 
+def player(wide=False, cover='', left='', right='', pid=''):
+    """The one video player (MTG, 16 Nov 2026): the slim gold phone for a 9:16 video, the slim laptop for a 16:9 one.
+    The screen has the video's own shape and nothing lies on the picture: the camera, Full Screen and Close sit in the
+    bar above it. Styles: "VIDEO PLAYER" in bw.css. Behaviour: "video players" in bw.js."""
+    return (f'<div class="pl {"pl-h" if wide else "pl-v"}"{f' id="{pid}"' if pid else ""}><div class="pl-dev"><div class="pl-bar">'
+            f'<span class="pl-l"><span class="pl-tx">{left}</span>'
+            f'<button type="button" class="pl-b pl-max" data-pl-max aria-label="Full Screen">{ic("maximize-2", "ic i-max")}{ic("minimize-2", "ic i-min")}'
+            f'<span class="t t-max">Full Screen</span><span class="t t-min">Exit Full Screen</span></button></span>'
+            f'<i class="pl-cam" aria-hidden="true"></i>'
+            f'<span class="pl-r"><span class="pl-tx">{right}</span>'
+            f'<button type="button" class="pl-b pl-x" data-pl-x aria-label="Close the video"><span class="t">Close</span>{ic("x")}</button></span>'
+            f'</div><div class="pl-scr">{cover}</div></div><i class="pl-deck" aria-hidden="true"><i></i></i></div>')
+
+
 def vid(code, here, cap=True, eager=False, hero=False):
-    """a video on its cover: 9:16 in the slim phone, 16:9 in the laptop (MTG's standing rule, 5 Nov 2026).
-    It plays in place, closes itself at the end and puts the visitor back where they pressed play."""
+    """a video on its cover, in the player: it plays in place, closes itself at the end and puts the visitor back
+    where they pressed play. The bar shows what it is and how long; nothing covers the picture."""
     v = V[code]
     big, small = poster(code, here)
+    wide = v['o'] == 'h'
     src = L(f'media/{v["slug"]}.mp4', here)
     fc = ''
     if cap:
@@ -171,23 +187,16 @@ def vid(code, here, cap=True, eager=False, hero=False):
               f'<span class="wbadge">{ic("circle-check")}Watched</span>'
               f'<button type="button" class="mark" data-mark="{code}">Mark as watched</button></figcaption>')
     load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
-    if v['o'] == 'h':
-        hd = L(f'media/{v["slug"]}-1080p.mp4', here)
-        spot = f' style="--px:{v["spot"][0]}%;--py:{v["spot"][1]}%"' if v.get('spot') else ''
-        return (f'<figure class="vid vid16" data-vid="{code}"><div class="lap"><div class="lap-scr"><div class="vbox">'
-                f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 760px" '
-                f'width="1280" height="720" {load} decoding="async" alt="{esc(v["title"])}: video cover">'
-                f'<button type="button" class="vplay{" hero" if hero else ""}" data-src="{esc(src)}" data-src-hd="{esc(hd)}" data-code="{code}"{spot} '
-                f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
-                f'<span class="pbtn">{ic("play")}</span><span class="dur">{mmss(v["secs"])}</span></button>'
-                f'</div></div><div class="lap-base"><i></i></div></div>{fc}</figure>')
-    return (f'<figure class="vid" data-vid="{code}"><div class="vbox">'
-            f'<img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 90vw, 340px" '
-            f'width="720" height="1280" {load} decoding="async" alt="{esc(v["title"])}: video cover">'
-            f'<button type="button" class="vplay" data-src="{esc(src)}" data-code="{code}" '
-            f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
-            f'<span class="pbtn">{ic("play")}</span><span class="dur">{mmss(v["secs"])}</span></button>'
-            f'</div>{fc}</figure>')
+    spot = f' style="--px:{v["spot"][0]}%;--py:{v["spot"][1]}%"' if v.get('spot') else ''
+    hd = ' data-src-hd="%s"' % esc(L('media/%s-1080p.mp4' % v['slug'], here)) if wide else ''
+    img = (f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 760px" width="1280" height="720" '
+           if wide else
+           f'<img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 82vw, 310px" width="720" height="1280" ')
+    cover = (f'{img}{load} decoding="async" alt="{esc(v["title"])}: video cover">'
+             f'<button type="button" class="vplay{" pulse" if hero else ""}" data-src="{esc(src)}"{hd} data-code="{code}"{spot} '
+             f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})"><span class="pbtn">{ic("play")}</span></button>')
+    return (f'<figure class="vid{" vid16" if wide else ""}" data-vid="{code}">'
+            f'{player(wide, cover, esc(v["short"] if wide else v["label"]), mmss(v["secs"]))}{fc}</figure>')
 
 
 def play_btn(code, label=None, kind='ghost', size='sm'):
@@ -204,11 +213,11 @@ def vlink(code, here):
 
 
 def video_data(here):
-    """JSON for the modal player and the progress tiles (o: 'h' = 16:9, plays in the laptop frame)"""
+    """JSON for the pop-up player and the progress tiles (o: 'h' = 16:9, plays in the laptop; p and pb: the small and the big cover)"""
     d = {}
     for k, v in V.items():
         big, small = poster(k, here)
-        d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, d=mmss(v['secs']))
+        d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, pb=big, d=mmss(v['secs']))
         if v['o'] == 'h':
             d[k].update(o='h', hd=L(f'media/{v["slug"]}-1080p.mp4', here))
     return json.dumps(d, separators=(',', ':'))
@@ -345,11 +354,7 @@ def overlays(here):
  </div>
 </div>
 <div class="sheet player" id="player" role="dialog" aria-modal="true" aria-label="Video player" hidden>
- <div class="sheet-in">
-  <div class="pframe"><div class="vbox"><video controls playsinline preload="none"></video></div><i class="pbase"><i></i></i><i class="pbtn-s l1"></i><i class="pbtn-s l2"></i><i class="pbtn-s r1"></i>
-   <button type="button" class="xbtn" data-close aria-label="Close the video">{ic('x')}</button></div>
-  <span class="sr" data-k="title"></span><span hidden data-mark=""></span>
- </div>
+ <div class="sheet-in">{player(pid='pl-pop')}</div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <button type="button" class="totop" id="totop" aria-label="Back to top"><svg class="tr" viewBox="0 0 52 52" aria-hidden="true"><circle class="bg" cx="26" cy="26" r="24"/><circle class="fg" cx="26" cy="26" r="24"/></svg>{ic('arrow-up')}</button>
@@ -415,7 +420,7 @@ def topbar(key, here):
     if key != 'home':
         crumb += f'{ic("chevron-right")}<span class="g">{g}</span>{ic("chevron-right")}<span>{label}</span>'
     return f"""<header class="dtop">
- <button type="button" class="menu-btn" id="menu-btn" aria-controls="side" aria-expanded="false"><span class="bars" aria-hidden="true"></span><span class="mtx">Menu</span></button>
+ <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu" aria-controls="side" aria-expanded="false"><span class="bars" aria-hidden="true"></span><span class="mtx">Menu</span></button>
  <a class="dlogo" href="{A('', here)}" aria-label="Bitcoin Wealth guide home">{logo(here, 'blogo sm')}</a>
  <nav class="dcrumb" aria-label="Breadcrumb">{crumb}</nav>
  <div class="dtop-act">

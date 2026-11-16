@@ -36,12 +36,31 @@ publish without approval.
   playing, the visitor must be automatically scrolled to the exact section where the video is at", on every website,
   new ones too). Every page with a video loads `/assets/video-return.js` (one line, no setup: it works with pop-up,
   inline and playlist players). Copy that file to any new site. Check with `tools/qa/video-return-test.js`.
+- **The whole video, always (MTG, 16 Nov 2026):** "displayed in full, nothing hidden, but at the same time not too big ... even when
+  they are maximized ... all the parts of the video are displayed, and the close button is still there." So, on every site:
+  the screen of the frame has exactly the video's shape and the video is never cropped (`object-fit:contain`, also in full
+  screen); **nothing lies on the picture** (no camera notch, no close button, no badge, no floating button, no pop-up note);
+  the frame takes its size from the **visible** screen height (`svh` in the page, `dvh` in a pop-up), so the complete player
+  fits under the site's top bar on any phone; the player has its **own Full Screen** (the bar with Exit Full Screen and Close,
+  and the whole video in the rest), never the browser's bare one. The button always shows its words, written **Full Screen**
+  (each word capitalised), on vertical and wide videos alike, "to make sure the visitor sees it, and knows what that button
+  does" (MTG, 16 Nov 2026); an icon alone is not enough. Reference: the `.pl` player on /bw (`core.player()` in
+  `bw/_build/build/core.py`, "VIDEO PLAYER" in `bw.css`, "video players" in `bw.js`). Check with
+  `tools/qa/player-check.js` (README there): it must report 0 failures before MTG sees a preview.
+- **The play button cannot be missed (MTG, 16 Nov 2026):** "position it such that it is impossible to miss ... without it being in
+  the way of important content ... whether it's a horizontal or a vertical video, make sure that the play button cannot be
+  missed." On a vertical cover the button sits **in the middle** of the cover, never near the bottom. So every website cover
+  is drawn with a **clear band in the middle** for it (on a 1080 x 1920 cover: y 780 to 1140; headline above, characters and
+  phone below, no address pill). On a wide cover it sits in the middle too, or in the clear spot the cover names (`spot`).
+  Keep its pulse and rings as they are (he likes them). `player-check.js` fails when the button is not in the middle of a
+  vertical cover, not wholly on the cover, or smaller than 52 px.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 - On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in
-  the laptop frame (`.lap`), it plays in place, and the pop-up player becomes a laptop for it (`#player.wide`); 9:16 videos keep the
-  phone. Two files are made (720p for phones, `-1080p` for screens 1200 px and wider). `hero=True` gives the pulsing play button; the
-  cover's `spot` says where on the picture the button sits. First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
+  the laptop (`.pl.pl-h`), it plays in place, and the pop-up player becomes a laptop for it; 9:16 videos get the phone (`.pl.pl-v`).
+  Two files are made (720p for phones, `-1080p` for screens 1200 px and wider). `hero=True` gives the pulsing play button; the
+  cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
+  button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
 
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 

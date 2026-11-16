@@ -25,8 +25,8 @@ PAGES = {
     'stokvel': ('Bitcoin Wealth vs a stokvel', p_stokvel, None),
     'diff': ('What makes Bitcoin Wealth different', p_diff, None),
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, None),
-    'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1']),
-    'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1']),
+    'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2']),
+    'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2']),
     'exp': ('Bitcoin Wealth explainer videos', p_exp, None),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
     'page': ('Your own BW Tribe Page', p_page, None),
@@ -154,6 +154,11 @@ def render(dst):
         core.HASH['assets/' + f] = hashlib.md5(open(SRC + '/assets/' + f, 'rb').read()).hexdigest()[:8]
     shutil.copytree(OUT + '/_img', base + '/img')
     shutil.copytree(OUT + '/_media', base + '/media')
+    # a video cover that changes must show at once, not after the browser's memory of the old one runs out
+    for v in V.values():
+        for f in sorted(os.listdir(OUT + '/_img')):
+            if f.startswith(v['slug']) and f.endswith('.webp'):
+                core.HASH['img/' + f] = hashlib.md5(open(OUT + '/_img/' + f, 'rb').read()).hexdigest()[:8]
     hd, body = landing()
     open(base + '/index.html', 'w').write(core.wrap_doc(hd, body, 'landing'))
     for key, (title, fn, extra) in PAGES.items():

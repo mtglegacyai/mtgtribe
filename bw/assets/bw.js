@@ -20,44 +20,53 @@
   /* ------------------------------------------------------------ sheets (copy sheet, video player) */
   /* A sheet never traps anyone: Close is always on screen, tapping outside, Escape and the phone's Back button
      all close it, and a finished video closes itself and returns the visitor to exactly where they were. */
-  var lastFocus = null, savedY = 0, sheetHist = false;
-  function exitFs(v) {
-    try {
-      if (d.fullscreenElement && d.exitFullscreen) d.exitFullscreen();
-      else if (d.webkitFullscreenElement && d.webkitExitFullscreen) d.webkitExitFullscreen();
-      if (v && v.webkitDisplayingFullscreen && v.webkitExitFullscreen) v.webkitExitFullscreen();
-    } catch (e) {}
+  var lastFocus = null, savedY = 0;
+  var sheetHist = false, maxHist = false, skipPop = 0;   // our own Back steps (a sheet, a player covering the window) and our own history.back() calls
+  function ownBack() { skipPop++; try { history.back(); } catch (e) { skipPop--; } }
+  /* while a sheet is open, the page behind it is out of reach for the keyboard and for screen readers */
+  function hush(yes) {
+    $$('body > *').forEach(function (c) {
+      if (c.classList.contains('sheet') || c.classList.contains('pl') || c.id === 'toast') return;
+      if (yes) c.setAttribute('inert', ''); else c.removeAttribute('inert');
+    });
   }
   function openSheet(el) {
     if (!el) return;
     if (!$('.sheet.on')) { lastFocus = d.activeElement; savedY = window.scrollY || 0; }
+    clearTimeout(el._t); el._at = Date.now();
     el.hidden = false; void el.offsetWidth; el.classList.add('on');
-    d.body.style.overflow = 'hidden';
-    if (!sheetHist) { try { history.pushState({ altSheet: 1 }, ''); sheetHist = true; } catch (e) {} }
-    var f = $('[data-close]', el); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
+    d.body.style.overflow = 'hidden'; hush(true);
+    if (!sheetHist) { try { history.pushState({ bwSheet: 1 }, ''); sheetHist = true; } catch (e) {} }
+    var f = $('[data-close],[data-pl-x]', el); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
   }
   function closeSheet(el, fromPop) {
     if (!el || el.hidden || !el.classList.contains('on')) return;
-    el.classList.remove('on'); d.body.style.overflow = '';
-    var v = $('video', el); if (v) { exitFs(v); v.pause(); }
-    setTimeout(function () { el.hidden = true; if (v) { v.removeAttribute('src'); v.load(); } }, 260);
+    el.classList.remove('on'); d.body.style.overflow = ''; hush(false);
+    var pl = el.id === 'player' ? $('#pl-pop') : null;      // the pop-up player: leave full screen, stop, and empty it
+    if (pl) { var v = $('video', pl); if (v) v.pause(); leaveMax(pl); }
+    el._t = setTimeout(function () { el.hidden = true; if (pl) plShut(pl); }, 260);
     if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
     var y = savedY;
     if (Math.abs((window.scrollY || 0) - y) > 2) window.scrollTo(0, y);
     setTimeout(function () { if (Math.abs((window.scrollY || 0) - y) > 2) window.scrollTo(0, y); }, 400);
-    if (sheetHist && !fromPop) { sheetHist = false; try { history.back(); } catch (e) {} }
+    if (sheetHist && !fromPop) { sheetHist = false; ownBack(); }
   }
+  /* the phone's Back button undoes the newest step first: a player covering the window, then an open sheet */
   on(window, 'popstate', function () {
-    if (!sheetHist) return;
-    sheetHist = false;
-    $$('.sheet.on').forEach(function (s) { closeSheet(s, true); });
+    if (skipPop) { skipPop--; return; }
+    if (maxHist) { maxHist = false; if (maxed && maxed._hold) coverWindow(maxed, false, true); return; }
+    if (sheetHist) { sheetHist = false; $$('.sheet.on').forEach(function (s) { closeSheet(s, true); }); }
   });
   $$('.sheet').forEach(function (s) {
-    on(s, 'click', function (e) { if (e.target === s || e.target.closest('[data-close]')) closeSheet(s); });
+    on(s, 'click', function (e) {
+      if (e.target === s && Date.now() - (s._at || 0) < 500) return;      // the second tap of a double tap must not close what the first one opened
+      if (e.target === s || e.target.closest('[data-close]')) closeSheet(s);
+    });
   });
   on(d, 'keydown', function (e) {
     if (e.key !== 'Escape') return;
-    $$('.sheet.on').forEach(closeSheet);
+    if (maxed && maxed._hold) return leaveMax(maxed);       // first out of a player that covers the window
+    $$('.sheet.on').forEach(function (s) { closeSheet(s); });
     closeDrawer();
   });
 
@@ -146,111 +155,197 @@
   if (cur && side.scrollHeight > side.clientHeight) { side.scrollTop = Math.max(0, cur.offsetTop - side.clientHeight / 2); }
 
   /* ------------------------------------------------------------ watched videos */
-  var watched = {};
+  var watched = {}, toastLater = '';
   try { (JSON.parse(get('bw-watched') || '[]') || []).forEach(function (k) { watched[k] = 1; }); } catch (e) {}
   function paintWatched() {
     $$('[data-vid]').forEach(function (el) { el.classList.toggle('watched', !!watched[el.getAttribute('data-vid')]); });
     var n = Object.keys(watched).filter(function (k) { return BWV[k]; }).length;
     $$('[data-ring]').forEach(function (r) { r.style.setProperty('--v', n / Math.max(1, Object.keys(BWV).length)); var x = $('[data-k="n"]', r); if (x) x.textContent = n; });
-    var p = $('#player'); if (p) p.classList.toggle('watched', !!watched[$('[data-mark]', p).getAttribute('data-mark')]);
   }
-  function markWatched(k) {
+  /* quietly: while a video plays, the "watched" note waits until the player has closed, so it never lies on the picture */
+  function markWatched(k, quietly) {
     if (!k || watched[k]) return;
     watched[k] = 1; set('bw-watched', JSON.stringify(Object.keys(watched)));
-    paintWatched(); toast((BWV[k] ? BWV[k].st : 'Welcome tour') + ': watched ✓');
-  }
-  function track(v, k) {
-    on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched(k); });
-    on(v, 'ended', function () { markWatched(k); });
-    on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); });
+    paintWatched();
+    var m = (BWV[k] ? BWV[k].st : 'Video') + ': watched ✓';
+    if (quietly) toastLater = m; else toast(m);
   }
   on(d, 'click', function (e) { var m = e.target.closest('[data-mark]'); if (m) markWatched(m.getAttribute('data-mark')); });
   paintWatched();
+
+  /* ------------------------------------------------------------ video players
+     One player (.pl) for every video: in the page, in the pop-up and full screen (MTG, 16 Nov 2026: "displayed in
+     full, nothing hidden, but not too big ... even when maximized ... and the close button is still there").
+     The screen has the video's own shape and nothing lies on the picture; Full Screen and Close sit in the bar.
+     The words "Full Screen" always show, so a visitor knows what the button does (MTG, 16 Nov 2026).
+       cover  the poster and the play button
+       .on    playing: the bar shows Full Screen and Close
+       .max   full screen: the bar and the whole video, nothing else
+     A video that plays to the end closes itself; /assets/video-return.js then puts the page back where they were. */
+  var maxed = null, wantMax = null;                     // the player that is full screen now; the one that asked for it
+  var IPHONE = /iP(hone|od)/.test(navigator.userAgent || '');
+  function fsElement() { return d.fullscreenElement || d.webkitFullscreenElement || null; }
+  function quiet(p) { if (p && p.catch) p.catch(function () {}); }
+  function hdrHeight() { return parseFloat(getComputedStyle(html).getPropertyValue('--hdr')) || 66; }
+  /* old browsers without svh and dvh: give the styles the real visible height */
+  if (!(window.CSS && CSS.supports && CSS.supports('height', '100svh'))) {
+    var vhFix = function () { var h = (window.innerHeight || html.clientHeight) + 'px'; html.style.setProperty('--svh', h); html.style.setProperty('--dvh', h); };
+    vhFix(); on(window, 'resize', vhFix);
+  }
+  function setMax(pl, yes) {
+    pl.classList.toggle('max', yes);
+    var b = $('[data-pl-max]', pl); if (b) b.setAttribute('aria-label', yes ? 'Exit Full Screen' : 'Full Screen');
+    if (yes) maxed = pl; else if (maxed === pl) maxed = null;
+    // a wide video turns the phone on its side while it is full screen (where the phone allows it)
+    try {
+      var o = window.screen && screen.orientation;
+      if (o && yes && o.lock && pl.classList.contains('pl-h') && fsElement()) quiet(o.lock('landscape'));
+      else if (o && !yes && o.unlock) o.unlock();
+    } catch (e) {}
+  }
+  /* where the browser has no full screen for a page element (some in-app browsers), the player itself covers the window */
+  function coverWindow(pl, yes, fromPop) {
+    var v = $('video', pl), playing = v && !v.paused, f = d.activeElement;
+    if (yes && !pl._hold) {
+      var h = d.createElement('div'); h.className = 'pl-hold'; h.style.height = pl.offsetHeight + 'px';
+      pl.parentNode.insertBefore(h, pl); pl._hold = h; d.body.appendChild(pl); pl.classList.add('cover-win'); html.classList.add('pl-lock');
+      if (!maxHist) { try { history.pushState({ bwMax: 1 }, ''); maxHist = true; } catch (e) {} }      // Back leaves it, like real full screen
+    } else if (!yes && pl._hold) {
+      pl._hold.parentNode.replaceChild(pl, pl._hold); pl._hold = null; pl.classList.remove('cover-win'); html.classList.remove('pl-lock');
+      if (maxHist && !fromPop) { maxHist = false; ownBack(); }
+    }
+    setMax(pl, yes);
+    if (playing && v.paused) quiet(v.play());           // moving a video pauses it: carry on
+    if (f && f !== d.activeElement && pl.contains(f)) { try { f.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  function maxFailed() { var pl = wantMax; wantMax = null; if (pl && pl.classList.contains('on') && !fsElement()) coverWindow(pl, true); }
+  function enterMax(pl) {
+    var v = $('video', pl), req = pl.requestFullscreen || pl.webkitRequestFullscreen;
+    if (req && (d.fullscreenEnabled || d.webkitFullscreenEnabled)) {
+      wantMax = pl;
+      try { var r = req.call(pl); if (r && r.catch) r.catch(maxFailed); } catch (e) { maxFailed(); }
+      setTimeout(function () { if (wantMax === pl) maxFailed(); }, 1200);      // some browsers never say that it failed
+    } else if (IPHONE && v && v.webkitEnterFullscreen) {  // iPhone: its own full screen player, which has its own Close
+      try { v.webkitEnterFullscreen(); } catch (e) { coverWindow(pl, true); }
+    } else coverWindow(pl, true);
+  }
+  function leaveMax(pl) {
+    var v = pl && $('video', pl);
+    if (wantMax === pl) wantMax = null;
+    try {
+      if (fsElement()) { if (d.exitFullscreen) quiet(d.exitFullscreen()); else if (d.webkitExitFullscreen) d.webkitExitFullscreen(); }
+      if (v && v.webkitDisplayingFullscreen && v.webkitExitFullscreen) v.webkitExitFullscreen();
+    } catch (e) {}
+    if (pl && pl._hold) coverWindow(pl, false);
+  }
+  /* run fn once full screen has really ended (it ends a moment after it is asked to); 1.2 s at most */
+  function whenOut(v, fn) {
+    if (!fsElement() && !(v && v.webkitDisplayingFullscreen)) return fn();
+    var done = false, evs = ['fullscreenchange', 'webkitfullscreenchange'], t = setTimeout(go, 1200);
+    function go() { if (done) return; done = true; clearTimeout(t); evs.forEach(function (e) { d.removeEventListener(e, chk); }); if (v) v.removeEventListener('webkitendfullscreen', go); fn(); }
+    function chk() { if (!fsElement()) go(); }
+    evs.forEach(function (e) { d.addEventListener(e, chk); }); if (v) v.addEventListener('webkitendfullscreen', go);
+  }
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) {
+    on(d, ev, function () {
+      var el = fsElement();
+      if (el) wantMax = null;
+      $$('.pl.max').forEach(function (p) { if (p !== el && !p._hold) setMax(p, false); });
+      if (el && el.classList && el.classList.contains('pl')) setMax(el, true);
+    });
+  });
+  ['fullscreenerror', 'webkitfullscreenerror'].forEach(function (ev) { on(d, ev, maxFailed); });
 
   /* a 16:9 video has a light file for phones and a 1080p file for big screens */
   function pickSrc(src, hd) {
     var c = navigator.connection || {};
     return (hd && !c.saveData && Math.max(window.innerWidth || 0, (window.screen && screen.width) || 0) >= 1200) ? hd : src;
   }
-
-  /* inline poster players */
-  function startInline(btn) {
-    var box = btn.parentNode, k = btn.getAttribute('data-code');
+  /* while an open player is on screen, the floating buttons step aside (nothing may lie on the picture) */
+  var plSeen = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (en) { en.target._seen = en.isIntersecting; }); syncPlaying(); }) : null;
+  function syncPlaying() { html.classList.toggle('pl-playing', $$('.pl.on').some(function (p) { return p._seen !== false; })); }
+  function plShut(pl) {                                 // back to the cover: no video left in the player
+    var v = $('video', pl);
+    if (v) { try { v.pause(); } catch (e) {} v.removeAttribute('src'); try { v.load(); } catch (e) {} if (v.parentNode) v.parentNode.removeChild(v); }
+    pl.classList.remove('on');
+    if (plSeen) plSeen.unobserve(pl);
+    syncPlaying();
+    if (toastLater && !$('.pl.on')) { toast(toastLater); toastLater = ''; }
+  }
+  function plClose(pl) {                                // Close, or the video ended: out of full screen first, then back to the cover
+    var v = $('video', pl);
+    if (v) { try { v.pause(); } catch (e) {} }
+    leaveMax(pl);
+    whenOut(v, function () {
+      var sheet = pl.id === 'pl-pop' ? $('#player') : null;
+      if (sheet) return closeSheet(sheet);
+      var had = pl.contains(d.activeElement) || d.activeElement === d.body || !d.activeElement;
+      plShut(pl);
+      var b = $('.vplay', pl); if (b && had) { try { b.focus({ preventScroll: true }); } catch (e) {} }
+    });
+  }
+  function plOpen(pl, k, src, poster) {
+    plShut(pl);
     var v = d.createElement('video');
     v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'auto';
-    v.src = pickSrc(btn.getAttribute('data-src'), btn.getAttribute('data-src-hd'));
-    var img = $('img', box); if (img) v.poster = img.currentSrc || img.src;
-    box.replaceChild(v, btn); track(v, k);
-    // a close button on the video, and back to the poster when it ends
-    var x = d.createElement('button');
-    x.type = 'button'; x.className = 'vclose'; x.setAttribute('aria-label', 'Close the video');
-    x.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>';
-    box.appendChild(x);
-    var startY = window.scrollY || 0;
-    function restore(back) {
-      exitFs(v); v.pause();
-      if (v.parentNode === box) box.replaceChild(btn, v);
-      if (x.parentNode === box) box.removeChild(x);
-      v.removeAttribute('src'); try { v.load(); } catch (e) {}
-      // back to exactly where they pressed play (fullscreen can move the page)
-      if (back) setTimeout(function () { if (Math.abs((window.scrollY || 0) - startY) > 2) window.scrollTo(0, startY); }, 350);
-    }
-    on(x, 'click', function () { restore(false); });
-    on(v, 'ended', function () { exitFs(v); setTimeout(function () { restore(true); }, 600); });
-    var p = v.play(); if (p && p.catch) p.catch(function () {});
+    v.setAttribute('controlslist', 'nofullscreen nodownload noremoteplayback');   // our own Full Screen keeps Close on screen
+    v.setAttribute('disablepictureinpicture', '');
+    v.setAttribute('aria-label', (BWV[k] || {}).t || 'Video');
+    if (poster) v.poster = poster;
+    v.src = src;
+    v.style.pointerEvents = 'none'; setTimeout(function () { v.style.pointerEvents = ''; }, 450);      // the second tap of a double tap must not pause it
+    $('.pl-scr', pl).appendChild(v);
+    pl.classList.add('on'); pl._seen = true; if (plSeen) plSeen.observe(pl); syncPlaying();
+    on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched(k, true); });
+    on(v, 'play', function () { $$('.pl video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); });
+    on(v, 'ended', function () { markWatched(k, true); if ($('video', pl) === v) plClose(pl); });
+    quiet(v.play());
+    return v;
   }
-  on(d, 'click', function (e) { var b = e.target.closest('.vplay'); if (b) startInline(b); });
-  /* a button beside a cover that starts that video in place: [data-start="code"] */
-  on(d, 'click', function (e) {
-    var b = e.target.closest('[data-start]'); if (!b) return;
-    var t = $('.vplay[data-code="' + b.getAttribute('data-start') + '"]'); if (!t) return;
-    t.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); startInline(t);
+  /* bring the whole player on screen, under the site's top bar */
+  function plIntoView(pl) {
+    var r = pl.getBoundingClientRect(), top = hdrHeight() + 10, h = window.innerHeight || html.clientHeight;
+    var dy = r.top < top ? r.top - top : (r.bottom > h - 8 ? Math.min(r.bottom - (h - 8), r.top - top) : 0);
+    if (Math.abs(dy) > 2) { try { window.scrollBy({ top: dy, behavior: RM ? 'auto' : 'smooth' }); } catch (e) { window.scrollBy(0, dy); } }
+  }
+  /* a screen too short for the smallest frame (a phone on its side): straight to full screen, where the whole video always fits */
+  function fitOrMax(pl) {
+    var pop = pl.id === 'pl-pop', h = window.innerHeight || html.clientHeight;
+    if (pl.getBoundingClientRect().height > h - (pop ? 16 : hdrHeight())) enterMax(pl); else if (!pop) plIntoView(pl);
+  }
+  var fitT;
+  on(window, 'resize', function () {                    // the phone was turned while a video is open
+    clearTimeout(fitT); fitT = setTimeout(function () { var pl = $('.pl.on:not(.max)'); if (pl && pl.getBoundingClientRect().height > (window.innerHeight || html.clientHeight) - (pl.id === 'pl-pop' ? 16 : hdrHeight())) enterMax(pl); }, 350);
   });
-
-  /* modal player for any [data-play] */
+  /* a cover in the page: it plays in place */
+  function startInline(btn) {
+    var pl = btn.closest('.pl'); if (!pl) return;
+    var img = $('.pl-scr img', pl);
+    var v = plOpen(pl, btn.getAttribute('data-code'), pickSrc(btn.getAttribute('data-src'), btn.getAttribute('data-src-hd')), img ? (img.currentSrc || img.src) : '');
+    try { v.focus({ preventScroll: true }); } catch (e) {}
+    fitOrMax(pl);
+  }
   on(d, 'click', function (e) {
-    var b = e.target.closest('[data-play]'); if (!b) return;
-    var k = b.getAttribute('data-play'), info = BWV[k], pl = $('#player'); if (!info || !pl) return;
-    var open = $('.sheet.on'); if (open && open !== pl) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
-    $('[data-k="title"]', pl).textContent = info.t + ' (' + info.d + ')';
-    $('[data-mark]', pl).setAttribute('data-mark', k);
-    var v = $('video', pl);
-    pl.classList.toggle('wide', info.o === 'h');      // 16:9 plays in the laptop, 9:16 in the phone
-    v.poster = info.p.replace(/-(360|640)\.webp$/, '.webp'); v.src = pickSrc(info.s, info.hd);
-    if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 350); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
-    paintWatched(); openSheet(pl);
-    var p = v.play(); if (p && p.catch) p.catch(function () {});
-  });
-
-  /* playlists */
-  $$('[data-playlist]').forEach(function (pl) {
-    var fig = $('.now .vid', pl), desc = $('[data-k="desc"]', pl);
-    function pick(k, play) {
-      var info = BWV[k]; if (!info) return;
-      $$('[data-pick]', pl).forEach(function (b) { b.setAttribute('aria-current', b.getAttribute('data-pick') === k ? 'true' : 'false'); });
-      var box = $('.vbox', fig), old = $('video', box);
-      if (old) { old.pause(); }
-      var big = info.p.replace('-360.webp', '.webp');
-      box.innerHTML = '<img src="' + info.p + '" srcset="' + info.p + ' 360w, ' + big + ' 720w" sizes="(max-width:760px) 90vw, 340px" width="720" height="1280" alt="">' +
-        '<button type="button" class="vplay" data-src="' + info.s + '" data-code="' + k + '" aria-label="Play ' + info.t + ' (' + info.d + ')"><span class="pbtn">' +
-        '<svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span><span class="dur">' + info.d + '</span></button>';
-      fig.setAttribute('data-vid', k);
-      var cap = $('.vcap span', fig); if (cap) cap.innerHTML = '<b>' + info.t + '</b><br>' + info.l + ', ' + info.d;
-      var mk = $('[data-mark]', fig); if (mk) mk.setAttribute('data-mark', k);
-      var src = $('[data-pick="' + k + '"] .pt', pl); if (desc && src) desc.textContent = src.getAttribute('title') || '';
-      paintWatched();
-      if (play) {
-        startInline($('.vplay', box));
-        if (innerWidth <= 820) fig.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' });
-      }
+    var t = e.target, b, pl;
+    if ((b = t.closest('.vplay'))) return startInline(b);
+    if ((b = t.closest('[data-pl-max]'))) { pl = b.closest('.pl'); return pl.classList.contains('max') ? leaveMax(pl) : enterMax(pl); }
+    if ((b = t.closest('[data-pl-x]'))) return plClose(b.closest('.pl'));
+    /* a button beside a cover that starts that video in place: [data-start="code"] (a video that is already open just carries on) */
+    if ((b = t.closest('[data-start]'))) {
+      var c = $('.vplay[data-code="' + b.getAttribute('data-start') + '"]'), pv; pl = c && c.closest('.pl'); pv = pl && $('video', pl);
+      if (pv) { quiet(pv.play()); plIntoView(pl); } else if (c) startInline(c);
+      return;
     }
-    on(pl, 'click', function (e) {
-      var b = e.target.closest('[data-pick]'); if (!b) return;
-      var k = b.getAttribute('data-pick'); pick(k, true);
-      try { history.replaceState(null, '', '#' + k); } catch (x) {}
-    });
-    var h = (location.hash || '').slice(1);
-    if (h && $('[data-pick="' + h + '"]', pl)) pick(h, false);
+    /* any [data-play="code"] opens that video in the pop-up: the phone for 9:16, the laptop for 16:9 */
+    if ((b = t.closest('[data-play]'))) {
+      var k = b.getAttribute('data-play'), info = BWV[k], sheet = $('#player'), pop = $('#pl-pop'); if (!info || !sheet || !pop) return;
+      var open = $('.sheet.on'); if (open && open !== sheet) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
+      pop.classList.toggle('pl-h', info.o === 'h'); pop.classList.toggle('pl-v', info.o !== 'h');
+      sheet.setAttribute('aria-label', info.t + ' (' + info.d + ')');
+      openSheet(sheet);
+      plOpen(pop, k, pickSrc(info.s, info.hd), info.pb || info.p);
+      fitOrMax(pop);
+    }
   });
 
   /* ------------------------------------------------------------ scroll: progress bar, back to top, route map */

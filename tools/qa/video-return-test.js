@@ -23,6 +23,8 @@ const CASES = [
   ['BW dashboard, The Missing Piece (inline, laptop frame)', '/bw/dashboard/', '.vplay[data-code="s1"]'],
   ['BW dashboard, The Missing Piece from its tile (sheet, laptop frame)', '/bw/dashboard/', '.vtile[data-play="s1"]'],
   ['BW tutorials, tutorial 1 (inline, phone frame)', '/bw/dashboard/tutorials/', '.vplay'],
+  ['BW tutorials, tutorial 2 (inline, phone frame)', '/bw/dashboard/tutorials/', '.vplay[data-code="t2"]'],
+  ['BW join, tutorial 2 (inline, phone frame)', '/bw/dashboard/join/', '.vplay[data-code="t2"]'],
 ].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {
   const b = await chromium.launch(); const rows = []; let bad = 0;

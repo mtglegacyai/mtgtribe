@@ -412,12 +412,22 @@ On the recording day of Tutorial 1, Bitcoin was about $67,000, so 0.001 BTC was 
 #### The five steps
 - Set up SafePal Download SafePal from safepal.com, create a wallet, back it up two ways and keep only BNB, USDT and BTCB. Tutorial 1 shows every tap.
 - Open a VALR or Binance account Both let you buy crypto with rand. Many members keep both, as a backup.
-- Buy BNB and send it to SafePal Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20). Send a small test first.
+- Buy BNB and send it to SafePal Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20). Send a small test first. Tutorial 2 shows every tap.
 - Swap BNB to BTCB in SafePal Swap most of it to BTCB, and keep a little BNB for network fees. Never empty your BNB.
 - Activate slot 1 Copy the sign-up link, paste it into SafePal's browser, connect your wallet, approve the exact amount and activate slot 1.
 
-#### Tutorials 2 and 3
-Funding SafePal and joining, recorded on MTG's phone, are on the way. Meanwhile, ask in the MTG TRIBE.
+#### Fund your SafePal
+
+#### Tutorial 2: Buy BNB on VALR and send it to SafePal
+Steps 2 and 3, tap by tap. Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
+- Pay by EFT from a bank account in your own name
+- Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours
+- Buy BNB with your rand
+- Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
+
+#### Tutorial 3
+Swapping to BTCB, signing up and activating slot 1, recorded on MTG's phone, is on the way. Meanwhile, ask in the MTG TRIBE.
 
 ---
 
@@ -437,6 +447,15 @@ Download SafePal from the official site, create a wallet, back it up two ways, a
 - Rename the wallet Bitcoin Wealth
 - Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)
 - Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4
+
+#### Tutorial 2: Buy BNB on VALR and send it to SafePal
+Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
+- Pay by EFT from a bank account in your own name
+- Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours
+- Buy BNB with your rand
+- Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
+Using Binance instead? The steps are very similar.
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
 
 #### Coming next
 Do I really need to watch them all?
@@ -543,6 +562,8 @@ Free Bitcoin to Rand converter: type BTC, US dollars or rand and see the others 
 ### Bitcoin to Rand Converter
 What is 0.001 BTC in rand right now? Type any amount in Bitcoin, dollars or rand.
 
+#### How the converter works
+
 ##### Type in any box
 Type Bitcoin, dollars or rand, and the other two follow. 0.001 BTC is the Bitcoin Wealth entry for slot 1.
 
@@ -572,6 +593,8 @@ Live Bitcoin halving countdown: the current block height, blocks left to block 1
 About every four years, the reward for mining a new Bitcoin block is cut in half. Here's how close the next one is, live.
 Estimated: 2028
 Reading the live block height…
+
+#### About the halving
 
 ##### Why it matters
 Fewer new Bitcoin are made after each halving, while the 21 million limit never changes. Past halvings were followed by big price moves, up and down. That's history, not a promise.
@@ -617,6 +640,8 @@ Bitcoin, BTCB, BNB, smart contract, slot, recycle, BscScan and more: Bitcoin Wea
 
 ### Glossary: crypto words in plain English
 Every word you'll hear in the videos and pages, with an everyday example where it helps.
+
+#### All the words
 
 ##### Bitcoin (BTC)
 Digital money with no bank behind it, live since 2009. Only 21 million will ever exist.
@@ -760,6 +785,8 @@ The MTG TRIBE: a free WhatsApp community for action takers. Join the group, meet
 
 ### Join the MTG TRIBE
 A free WhatsApp community of action takers who learn, execute and teach others. Many opportunities, honest guides, real people.
+
+#### Ways to join in
 
 ##### The WhatsApp group
 Ask questions, get the Zoom links, learn with others.

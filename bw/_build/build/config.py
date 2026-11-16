@@ -48,6 +48,8 @@ SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide b
 # extras: o='h' for a 16:9 video (laptop frame; 9:16 plays in the phone frame), poster (in mtg-studio), label, short, date
 # poster: the website cover: no address pill, and a clear band in the middle (y 780 to 1140 of 1920), where the play button sits
 # (MTG, 16 Nov 2026: impossible to miss). spot: another place for the button, in percent, only when a cover's picture needs it
+# wide: a 16:9 cover for a 9:16 video, for a page where the tall phone would take too much room (core.wide_cover): pressing it
+# opens the video in the phone pop-up. Its middle stays clear for the play button too
 _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
@@ -68,7 +70,8 @@ VIDEOS = [
     ('p1', 'bitcoin-wealth-in-34-seconds-promo', 'Bitcoin Wealth in 34 seconds',
      'A short Bitcoin Wealth promo video: four short clips about starting small, from 0.001 BTC, with a smart contract doing the paying.',
      34.3, 'projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-34-seconds.mp4',
-     dict(poster='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-9x16.jpg', label='Promo', short='Promo video', date='2026-11-16')),
+     dict(poster='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-9x16.jpg', label='Promo', short='Promo video', date='2026-11-16',
+          wide='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-16x9.jpg')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
@@ -85,7 +88,7 @@ for _v in VIDEOS:
     _x = _v[6] if len(_v) > 6 else {}
     V[_v[0]] = dict(code=_v[0], slug=_v[1], title=_v[2], desc=_v[3], secs=_v[4], master=_v[5], n=int(_v[0][1:]), kind=KIND[_v[0][0]],
                     label=_x.get('label', KIND[_v[0][0]] + ' ' + _v[0][1:]), o=_x.get('o', 'v'), poster=_x.get('poster'),
-                    date=_x.get('date', LAUNCHED), spot=_x.get('spot'))
+                    date=_x.get('date', LAUNCHED), spot=_x.get('spot'), wide=_x.get('wide'))
     V[_v[0]]['short'] = _x.get('short', _v[2])
 SHORT = {'t1': 'Set up SafePal', 't2': 'Buy BNB, send to SafePal'}
 for _k, _s in SHORT.items():

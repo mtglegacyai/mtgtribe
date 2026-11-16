@@ -25,7 +25,7 @@ const CASES = [
   ['BW tutorials, tutorial 1 (inline, phone frame)', '/bw/dashboard/tutorials/', '.vplay'],
   ['BW tutorials, tutorial 2 (inline, phone frame)', '/bw/dashboard/tutorials/', '.vplay[data-code="t2"]'],
   ['BW join, tutorial 2 (inline, phone frame)', '/bw/dashboard/join/', '.vplay[data-code="t2"]'],
-  ['BW landing, promo video (inline, phone frame, above the bottom menu)', '/bw/', '.vplay[data-code="p1"]'],
+  ['BW landing, promo video from its wide cover (sheet, phone frame)', '/bw/', '.wcov[data-play="p1"]'],
   ['BW dashboard, promo video from its tile (sheet, phone frame)', '/bw/dashboard/', '.vtile[data-play="p1"]'],
 ].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {

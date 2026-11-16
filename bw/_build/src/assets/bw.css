@@ -900,6 +900,10 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .tile .go{color:var(--gold);width:18px;height:18px;transition:transform .3s var(--ease)}.tile:hover .go{transform:translate(2px,-2px)}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.tiles{grid-template-columns:minmax(0,1fr)}}
+/* one card on its own (MTG, 16 Nov 2026: the home page keeps only Join Step-By-Step): centred, a little larger, its gold edge always lit */
+.tiles.one{grid-template-columns:minmax(0,560px);justify-content:center}
+.tiles.one .tile{padding:22px 24px;background:linear-gradient(160deg,rgba(255,161,1,.10),rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(255,161,1,.45),0 24px 40px -18px rgba(255,161,1,.35)}
+.tiles.one .tile b{font-size:1.14rem}.tiles.one .tile small{font-size:.92rem}
 
 /* BW Tribe Page band */
 .tribeband{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,32px);align-items:center;padding:clamp(16px,3vw,26px) clamp(16px,3vw,30px)}
@@ -1099,6 +1103,25 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 @keyframes pbreathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.085)}}
 @keyframes pring{0%{transform:scale(.9);opacity:.95}70%,100%{transform:scale(1.75);opacity:0}}
 @media (prefers-reduced-motion:reduce){.vplay .pbtn:before,.vplay.pulse .pbtn,.vplay.pulse .pbtn:before,.vplay.pulse .pbtn:after{animation:none}.vplay.pulse .pbtn:after{display:none}}
+
+/* WIDE COVER: a 16:9 cover for a vertical video (MTG, 16 Nov 2026: "change the orientation of the video thumbnail to horizontal
+   so that it takes less space ... even though the video itself will play in vertical orientation"). Pressing it opens the video
+   in the pop-up, in the phone frame. The play button sits in the middle, breathing, with the same rings as on every cover. */
+.wcov{position:relative;display:block;width:min(100%,640px);margin:0 auto;padding:0;border:2px solid transparent;border-radius:22px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;font:inherit;color:inherit;
+  background:linear-gradient(#040404,#040404) padding-box,linear-gradient(140deg,#7a531c,#f6d88c 22%,#9a6a26 45%,#f2c66d 70%,#6b4615) border-box;
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 60px -30px rgba(0,0,0,.9),0 0 60px -14px rgba(255,161,1,.3);transition:transform .35s var(--ease),box-shadow .35s}
+.wcov:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 36px 64px -30px rgba(0,0,0,.9),0 0 70px -10px rgba(255,161,1,.45)}
+.wcov img{display:block;width:100%;height:100%;object-fit:cover}
+.wcov .pbtn{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:clamp(56px,15%,96px);aspect-ratio:1;border-radius:50%;color:#1f1300;transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 34% 28%,#fff3c4 0,#ffd257 34%,#ffa101 72%,#e07f00 100%);
+  box-shadow:0 0 0 clamp(4px,.9vw,9px) rgba(255,190,60,.22),0 0 46px 6px rgba(255,170,20,.55),0 12px 26px rgba(0,0,0,.5);animation:pbreathe 2.4s ease-in-out infinite}
+.wcov .pbtn:before,.wcov .pbtn:after{content:"";position:absolute;inset:-12%;border-radius:50%;border:2px solid rgba(255,214,110,.85);animation:pring 2.4s cubic-bezier(.2,.6,.3,1) infinite}
+.wcov .pbtn:after{border-color:rgba(255,214,110,.7);animation-delay:1.2s;opacity:0}
+.wcov .pbtn .ic{width:38%;height:38%;margin-left:7%;fill:currentColor}
+.wcov:hover .pbtn,.wcov:focus-visible .pbtn{animation-play-state:paused}
+.wcov:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@supports not (aspect-ratio:1){.wcov .pbtn{width:60px;height:60px}}
+@media (prefers-reduced-motion:reduce){.wcov,.wcov .pbtn,.wcov .pbtn:before{animation:none;transition:none}.wcov .pbtn:after{display:none}}
 
 /* the pop-up: the same player in the middle of the screen, sized to the screen that is visible right now */
 .sheet.player{place-items:center;background:rgba(3,4,3,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}

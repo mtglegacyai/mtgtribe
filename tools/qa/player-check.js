@@ -107,6 +107,19 @@ function judge(ctx, m, { inline }) {
         const closed = await p.evaluate(() => ({ on: !!document.querySelector('.pl.on'), vids: document.querySelectorAll('.pl video').length, cls: document.documentElement.className, cover: !!document.querySelector('.vplay') && getComputedStyle(document.querySelector('.vplay')).display !== 'none' }));
         checks++; if (closed.on || closed.vids || /pl-playing/.test(closed.cls) || !closed.cover) fail(tag, 'close did not return to the cover ' + JSON.stringify(closed));
       }
+      // a wide cover for a vertical video (.wcov): the play button is in its middle, whole and big enough, and the cover fits the screen
+      const wc = await p.evaluate(() => [...document.querySelectorAll('.wcov')].map(c => { const r = c.getBoundingClientRect(), b = c.querySelector('.pbtn'), pb = b ? b.getBoundingClientRect() : null, img = c.querySelector('img');
+        return { code: c.dataset.play, w: r.width, h: r.height, vw: document.documentElement.clientWidth, left: r.left, right: r.right, hasBtn: !!pb, bw: pb ? pb.width : 0, bx: pb ? (pb.left + pb.width / 2 - r.left) / r.width : 0, by: pb ? (pb.top + pb.height / 2 - r.top) / r.height : 0,
+          inside: !!pb && pb.left >= r.left && pb.right <= r.right && pb.top >= r.top && pb.bottom <= r.bottom, shape: r.width / r.height, img: !!img && img.complete && img.naturalWidth > 0 }; }));
+      for (const c of wc) {
+        const tag = `${w}x${h} ${path} wide cover ${c.code}`; checks++;
+        if (!c.hasBtn) { fail(tag, 'the wide cover has no play button'); continue; }
+        if (!c.inside) fail(tag, 'the play button is not wholly on the wide cover');
+        if (c.bw < 52) fail(tag, `the play button is only ${Math.round(c.bw)} px wide`);
+        if (Math.abs(c.bx - 0.5) > 0.03 || Math.abs(c.by - 0.5) > 0.05) fail(tag, `the play button is not in the middle of the wide cover: ${Math.round(c.bx * 100)}%, ${Math.round(c.by * 100)}%`);
+        if (c.left < -0.75 || c.right > c.vw + 0.75) fail(tag, 'the wide cover is wider than the screen');
+        if (Math.abs(c.shape / (16 / 9) - 1) > 0.02) fail(tag, `the wide cover is not 16:9 (${c.shape.toFixed(3)})`);
+      }
       // the pop-up
       const keys = await p.evaluate(() => [...new Set([...document.querySelectorAll('[data-play]')].filter(e => e.getBoundingClientRect().width > 0).map(e => e.dataset.play))]);
       for (const k of keys) {

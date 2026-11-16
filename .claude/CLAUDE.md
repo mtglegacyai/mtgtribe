@@ -54,6 +54,12 @@ publish without approval.
   phone below, no address pill). On a wide cover it sits in the middle too, or in the clear spot the cover names (`spot`).
   Keep its pulse and rings as they are (he likes them). `player-check.js` fails when the button is not in the middle of a
   vertical cover, not wholly on the cover, or smaller than 52 px.
+- **A vertical video can have a wide cover where the tall phone would take too much room (MTG, 16 Nov 2026):** "change the
+  orientation of the video thumbnail to horizontal so that it takes less space in the home page, even though the video itself
+  will play in vertical orientation." On /bw: give the video a `wide` cover in `config.py` (16:9, middle clear for the play
+  button, a label a phone can read) and put `core.wide_cover(code, here)` on the page (`.wcov` in `bw.css`). Pressing it opens
+  the video in the pop-up, in the phone frame; it closes itself at the end and the page is back at the cover. First use: the
+  34-second promo on the /bw main page. `player-check.js` checks the wide cover's button too.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 - On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in

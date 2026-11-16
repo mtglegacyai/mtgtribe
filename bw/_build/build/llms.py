@@ -29,10 +29,11 @@ def _md(el, out):
         if isinstance(c, NavigableString) or not isinstance(c, Tag):
             continue
         cls = set(c.get('class') or [])
-        if c.name in SKIP_TAGS or cls & SKIP_CLASS or c.get('aria-hidden') == 'true' or c.has_attr('hidden'):
+        wide = c.name == 'button' and 'wcov' in cls and c.get('data-play') in V      # a wide cover that opens a video
+        if not wide and (c.name in SKIP_TAGS or cls & SKIP_CLASS or c.get('aria-hidden') == 'true' or c.has_attr('hidden')):
             continue
-        if c.name == 'figure' and c.get('data-vid') in V:
-            v = V[c['data-vid']]
+        if wide or (c.name == 'figure' and c.get('data-vid') in V):
+            v = V[c['data-play'] if wide else c['data-vid']]
             out.append(f'- Video: {v["label"]}, "{v["title"]}" ({mmss(v["secs"])}): {v["desc"]} {SITE}{BASE}media/{v["slug"]}.mp4')
             continue
         if c.name in ('h1', 'h2', 'h3', 'h4'):

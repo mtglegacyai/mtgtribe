@@ -1049,16 +1049,18 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .pl-scr>video:fullscreen{object-fit:contain!important;border-radius:0!important}      /* a browser's own full screen never crops either */
 .pl-scr>video:-webkit-full-screen{object-fit:contain!important;border-radius:0!important}
 
-/* the bar: what is playing and how long; while it plays, Full screen and Close */
-.pl-bar{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px;min-width:0;padding:0 8px;
-  color:#d9ccb0;font:800 12px/1 var(--body);letter-spacing:.01em}
+/* the bar: what is playing and how long; while it plays, Full Screen and Close.
+   The words "Full Screen" always show (MTG, 16 Nov 2026: "to make sure the visitor sees it, and knows what that button does"):
+   the two buttons get the room their words need, and the camera takes what is left between them. */
+.pl-bar{position:relative;display:grid;grid-template-columns:minmax(max-content,1fr) minmax(0,52px) minmax(max-content,1fr);align-items:center;gap:6px;min-width:0;padding:0 7px;
+  color:#d9ccb0;font:800 12px/1 var(--body);letter-spacing:.01em;container:plbar/inline-size}
 .pl-h .pl-bar{grid-template-columns:minmax(0,1fr) auto;padding:0 4px}
 .pl-h .pl-b{height:30px}.pl-h .pl-b:after{top:-5px;bottom:-5px}
 .pl-l,.pl-r{display:flex;align-items:center;min-width:0}
 .pl-r{justify-content:flex-end}
 .pl-tx{display:block;min-width:0;padding:0 4px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .pl-r .pl-tx{font-variant-numeric:tabular-nums}
-.pl-cam{display:block;width:52px;height:13px;border-radius:9px;background:#000;box-shadow:inset 0 0 0 1px #1d1d1d,inset -9px 0 0 -5px #191919}      /* the camera island */
+.pl-cam{display:block;width:100%;height:13px;border-radius:9px;background:#000;box-shadow:inset 0 0 0 1px #1d1d1d,inset -9px 0 0 -5px #191919}      /* the camera island */
 .pl-h .pl-cam{position:absolute;left:50%;top:3px;width:4px;height:4px;margin-left:-2px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,217,142,.3)}
 .pl-b{position:relative;display:none;align-items:center;gap:6px;height:32px;padding:0 10px;border:0;border-radius:9px;background:rgba(255,255,255,.1);
   color:#fff;font:inherit;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s}
@@ -1071,9 +1073,9 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .pl.on .pl-tx{display:none}
 .pl .i-min,.pl .t-min,.pl.max .i-max,.pl.max .t-max{display:none}
 .pl.max .i-min{display:block}.pl.max .t-min{display:inline}
-/* a short screen makes a narrow phone: the buttons keep their icons and drop the words (the names stay for screen readers) */
-@media (max-height:660px),(max-width:339px){.pl-v:not(.max) .pl-max .t{display:none}.pl-v:not(.max) .pl-max{padding:0 9px}}
-@media (max-height:540px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}.pl-v .pl-cam{width:30px}.pl-v .pl-bar{gap:4px;padding:0 6px}}
+/* a very narrow phone (a short screen): Close keeps its cross and drops its word, so "Full Screen" always has room */
+@container plbar (max-width:206px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}}
+@supports not (container-type:inline-size){@media (max-height:500px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}}}
 
 /* the cover's play button: it sits where the cover leaves room for it (--px, --py) and its size follows the cover */
 .vplay{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border:0;padding:0;background:none;cursor:pointer}
@@ -1100,7 +1102,7 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 /* the pop-up: the same player in the middle of the screen, sized to the screen that is visible right now */
 .sheet.player{place-items:center;background:rgba(3,4,3,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .sheet.player .sheet-in{display:block;width:auto;max-width:none;max-height:none;padding:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible}
-.sheet.player .pl{--pl-w:400px;--pl-min:150px;--wide:calc(100vw - 32px);--room:calc(var(--dvh) - 28px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+.sheet.player .pl{--pl-w:400px;--pl-min:172px;--wide:calc(100vw - 32px);--room:calc(var(--dvh) - 28px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
 .sheet.player .pl-h{--pl-w:1040px;--wide:calc(100vw - 24px)}
 
 /* full screen: black, the bar on top, and the whole video in everything that is left */
@@ -1110,7 +1112,7 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .pl.max .pl-dev{position:absolute;top:0;right:0;bottom:0;left:0;grid-template-rows:auto minmax(0,1fr);border:0;
   padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);      /* clear of notches and the home bar */
  border-radius:0;background:#000;box-shadow:none}
-.pl.max .pl-bar{grid-template-columns:minmax(0,1fr) auto;gap:10px;min-height:56px;padding:8px 12px;font-size:13px}
+.pl.max .pl-bar{grid-template-columns:minmax(0,1fr) auto;gap:10px;min-height:56px;padding:8px 12px;font-size:13px;container-type:normal}
 .pl.max .pl-l{justify-content:flex-end}                          /* both buttons together at the right: a tablet draws its own mark at the top left */
 .pl.max .pl-scr{width:100%;height:100%;aspect-ratio:auto}
 .pl.max .pl-scr:before,.pl.max.on .pl-scr>img{display:none}
@@ -1126,9 +1128,10 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
   .pl.max .pl-dev{grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr) auto}
   .pl.max .pl-scr{grid-row:1;grid-column:1}
   .pl.max .pl-bar{grid-row:1;grid-column:2;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:10px;min-height:0;
-    padding:10px}
-  .pl.max .pl-b{justify-content:center;width:44px;height:44px;padding:0}
-  .pl.max .pl-b .t{display:none}}
+    padding:10px 8px;font-size:10px;line-height:1.2}
+  .pl.max .pl-b{flex-direction:column;justify-content:center;gap:4px;width:62px;height:auto;min-height:52px;padding:7px 3px;white-space:normal;text-align:center}
+  .pl.max .pl-x{flex-direction:column-reverse}      /* the cross on top, the word under it, like its neighbour */
+}
 .pl-hold{visibility:hidden}                                      /* keeps the page's shape while the player covers the window */
 .pl-lock,.pl-lock body{overflow:hidden}
 /* while an open player is on screen, the floating buttons step aside so nothing can lie on the picture */

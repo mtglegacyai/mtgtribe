@@ -62,7 +62,8 @@ sizes, phones upright and on their side, tablets and computers, and fails if any
 - the picture is whole and on screen, under the site's top bar, and the frame around it too;
 - the video is never cropped (`object-fit:contain`, no rounded corners) and the screen has the video's own shape;
 - nothing lies on the picture (it samples 81 points on it);
-- Full screen and Close are there, on screen, big enough, and not on the picture, also in full screen;
+- Full Screen and Close are there, on screen, big enough, and not on the picture, also in full screen, and the words
+  "Full Screen" (or "Exit Full Screen") show on the button at every size;
 - leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind.
 
 ```bash

@@ -424,7 +424,7 @@ Steps 2 and 3, tap by tap. Send rand from your bank to VALR with your own refere
 - Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours
 - Buy BNB with your rand
 - Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
-- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:50): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
 
 #### Tutorial 3
 Swapping to BTCB, signing up and activating slot 1, recorded on MTG's phone, is on the way. Meanwhile, ask in the MTG TRIBE.
@@ -455,7 +455,7 @@ Send rand from your bank to VALR with your own reference, buy BNB with it, and s
 - Buy BNB with your rand
 - Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
 Using Binance instead? The steps are very similar.
-- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:50): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
 
 #### Coming next
 Do I really need to watch them all?

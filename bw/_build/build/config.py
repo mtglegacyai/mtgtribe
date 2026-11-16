@@ -59,7 +59,7 @@ VIDEOS = [
      dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg')),
     ('t2', 'bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal', 'Buy BNB on VALR and send it to SafePal',
      'Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.',
-     349.9, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
+     357.2, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
      dict(poster='projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-9x16.jpg', date='2026-11-16')),
 ]
 # planned videos (shown as "coming soon", never as playable)

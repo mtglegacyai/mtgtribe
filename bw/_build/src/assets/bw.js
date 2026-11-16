@@ -632,7 +632,4 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { run = es[0].isIntersecting; if (run) requestAnimationFrame(frame); }).observe(cv);
     else { run = true; requestAnimationFrame(frame); }
   });
-
-  /* pause decorative loops for reduced motion */
-  if (RM) $$('video[data-deco]').forEach(function (v) { v.removeAttribute('autoplay'); try { v.pause(); } catch (e) {} });
 })();

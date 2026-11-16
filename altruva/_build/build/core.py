@@ -327,7 +327,7 @@ def overlays(here):
 <script>window.ALT={json.dumps(dict(ref=REF, login=LOGIN, join=L('dashboard/join/', here), t3=L('dashboard/tutorials/#t3', here), tut=L('dashboard/tutorials/', here)))};window.ALTV={video_data(here)};</script>
 <script src="{A('assets/altruva.js', here)}" defer></script>
 <script src="/assets/video-return.js?v=1" defer></script>
-<script src="/assets/zoom-cta.js?v=3" defer></script>'''
+<script src="/assets/zoom-cta.js?v=4" defer></script>'''
 
 
 DISCLAIMER = ('<b>Independent guide.</b> This is not an official ALTRUVA website. MTG is an ALTRUVA member and made this guide '

@@ -407,7 +407,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/jetup/assets/jetup.js?v={js}" defer></script>
 <script src="/assets/video-return.js?v=1" defer></script>
-<script src="/assets/zoom-cta.js?v=3" defer></script>
+<script src="/assets/zoom-cta.js?v=4" defer></script>
 </body>
 </html>
 '''

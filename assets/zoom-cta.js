@@ -1,15 +1,15 @@
-/* JetUP live on Zoom calendar strip, links to mtgtribe.com/jetuplive/ (MTG, 16 Nov 2026).
+/* JetUP live on Zoom calendar strip, links to mtgtribe.com/jetup/zoom/ (MTG, 16 Nov 2026).
    One line on any page:  <script src="/assets/zoom-cta.js" defer></script>
    Inserts a compact card right before the page's first <footer> (else at the end of <main>, else at the end of <body>).
    Self-contained: no dependencies, one <style> injected once, every class starts with mtgz-, so the host page's own
    styles are never touched. All links are absolute (some pages are exported to another domain).
-   Does nothing on mtgtribe.com/jetuplive/ (and the old /zoom/) and mtgtribe.com/group/, and never inserts twice. */
+   Does nothing on mtgtribe.com/jetup/zoom/ (and the old /jetuplive/ and /zoom/) and mtgtribe.com/group/, and never inserts twice. */
 (function () {
   'use strict';
   var d = document, w = window;
   if (w.__mtgzDone) return;
   var host = (location.hostname || '').replace(/^www\./, '');
-  if (host === 'mtgtribe.com' && /^\/(jetuplive|zoom|group)(\/|$)/i.test(location.pathname)) return;
+  if (host === 'mtgtribe.com' && /^\/(jetup\/zoom|jetuplive|zoom|group)(\/|$)/i.test(location.pathname)) return;
 
   var CSS = [
     '.mtgz{all:initial;display:block;box-sizing:border-box;width:auto;max-width:980px;margin:48px auto;margin-left:max(16px,calc((100% - 980px) / 2));margin-right:max(16px,calc((100% - 980px) / 2));',
@@ -65,7 +65,7 @@
         '<span class="mtgz-tz">South African time (SAST)</span>' +
       '</span>' +
       '<span class="mtgz-acts">' +
-        '<a class="mtgz-btn" href="https://mtgtribe.com/jetuplive/">' + CAL + 'See the full schedule</a>' +
+        '<a class="mtgz-btn" href="https://mtgtribe.com/jetup/zoom/">' + CAL + 'See the full schedule</a>' +
         '<a class="mtgz-link" href="https://mtgtribe.com/group/">' + WA + 'Get the Zoom link on WhatsApp</a>' +
       '</span>' +
     '</div>';

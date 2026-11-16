@@ -76,3 +76,21 @@ FALLBACK=1 node tools/qa/player-check.js
 The second run is a browser without full screen for page elements (some in-app browsers): the player must cover the
 window itself. Needs the same kind of server as above on port 8765 (`BASE=...` for another address); `VPS=360x640,740x360`
 runs only those sizes; `SHOT=folder` saves pictures. It must print `0 failures` before MTG sees a preview.
+
+# The Bitcoin Wealth guide (/bw): two more checks (16 Nov 2026)
+
+```bash
+python3 tools/qa/bw-static-scan.py
+```
+
+Reads every built /bw page: broken links and anchors, missing files, unclosed tags, duplicate ids, pictures without alt
+or size, meta and social tags, JSON-LD, heading order, buttons without a name, dashes. It must print `0 findings`.
+
+```bash
+node tools/qa/bw-tools-test.js
+```
+
+Uses every interactive tool on a phone and on a computer with a fixed Bitcoin price, and checks the answers: the Bitcoin
+to Rand converter (all three boxes, presets, own price, comma decimals, bad input), the slot calculator (slots 1, 5
+and 12), the halving countdown, the glossary search, the fit check, the copy sheet, Mark as watched and the progress
+ring, the menu, Back to top, the order form's WhatsApp message and the live slot price. It must print `0 failures`.

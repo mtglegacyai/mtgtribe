@@ -175,6 +175,7 @@ def build_start():
     <div class="vpart">{phone('tut3')}<b>Part 3</b><small>Verify your identity (KYC)</small></div>
     <div class="vsoon"><b>Parts 4 to 6</b><small>Deposit, Sonic AI and the promo: coming next.</small></div></div>
   </div>
+  <div class="block">{manual_card('Prefer to follow on paper?')}</div>
   <div class="block rv" id="wallets">
    <p class="eyebrow" style="margin-bottom:14px">Need USDT or USDC? Start here</p>
    <div class="wallets">{wal}</div>

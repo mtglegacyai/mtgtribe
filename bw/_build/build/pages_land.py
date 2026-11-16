@@ -118,13 +118,10 @@ def landing():
     """Minimal and sleek (MTG, 14 Nov 2026: "minimal, sleek, and the rest of the info, videos, etc must be in a clean dashboard")."""
     here = ''
     import core as _c; _c._used.clear()
+    # one card only (MTG, 16 Nov 2026: "I really want to optimise/increase traffic to this page: mtgtribe.com/bw/dashboard/join",
+    # so How It Works, Check It Yourself, Better Than A Stokvel?, Free Live Tools and Live On Zoom left the home page; they are in the dashboard)
     tiles = [
-        ('network', 'How It Works', 'The 14 positions and the 12 slots, filling live.', 'dashboard/how-it-works/'),
         ('rocket', 'Join Step-By-Step', 'SafePal, BNB, BTCB, slot 1. One tap at a time.', 'dashboard/join/'),
-        ('scan-search', 'Check It Yourself', 'The contract and every payment, on BscScan.', 'dashboard/check-it-yourself/'),
-        ('users', 'Better Than A Stokvel?', 'The honest scorecard, side by side.', 'dashboard/stokvel/'),
-        ('calculator', 'Free Live Tools', 'Bitcoin to rand, every slot in rand, the halving.', 'dashboard/tools/bitcoin-to-rand/'),
-        ('video', 'Live On Zoom', 'Five evenings a week, in four languages.', 'dashboard/live-on-zoom/'),
     ]
     tl = ''.join(f'<a class="tile" href="{A(p, here)}">{ped(i)}<span class="tt"><b>{t}</b><small>{d}</small></span>{ic("arrow-up-right", "ic go")}</a>'
                  for i, t, d, p in tiles)
@@ -160,7 +157,7 @@ def landing():
 <section class="sec lsec promo" id="in-34-seconds" aria-labelledby="promo-h"><div class="wrap">
  <div class="sec-head center"><p class="eyebrow">34 seconds</p><h2 class="h2" id="promo-h">Curious? <span class="hl">Hear it first.</span></h2>
  <p class="lead">Four short clips about Bitcoin Wealth. Then follow every step yourself, one tap at a time.</p></div>
- <div class="phone-wrap">{vid('p1', here, cap=False)}</div>
+ {wide_cover('p1', here)}
  <div class="center-row"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/tutorials/', here)}">{ic('circle-play')}<span class="lbl">Watch The Step-By-Step Tutorials</span></a></div>
  <p class="fine promo-note">A short Bitcoin Wealth promo video. Don't just take anyone's word for it: <a class="inl" href="{A('dashboard/check-it-yourself/', here)}">check it yourself</a>.</p>
 </div></section>
@@ -170,7 +167,7 @@ def landing():
 <section class="sec lsec"><div class="wrap">
  <div class="sec-head center"><p class="eyebrow">Everything inside</p><h2 class="h2">One clean <span class="hl">dashboard.</span></h2>
  <p class="lead">Every video, page and tool lives in the dashboard, in the right order. Start anywhere.</p></div>
- <div class="tiles">{tl}</div>
+ <div class="tiles{' one' if len(tiles) == 1 else ''}">{tl}</div>
  <div class="center-row"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span class="lbl">Enter the dashboard</span></a></div>
 </div></section>
 

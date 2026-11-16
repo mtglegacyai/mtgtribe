@@ -199,6 +199,18 @@ def vid(code, here, cap=True, eager=False, hero=False):
             f'{player(wide, cover, esc(v["short"] if wide else v["label"]), mmss(v["secs"]))}{fc}</figure>')
 
 
+def wide_cover(code, here):
+    """a wide (16:9) cover for a vertical video (MTG, 16 Nov 2026: "change the orientation of the video thumbnail to horizontal
+    so that it takes less space ... even though the video itself will play in vertical orientation"). Pressing it opens the
+    video in the pop-up, in the phone frame; at the end the player closes itself and the page is back at this cover.
+    Styles: "WIDE COVER" in bw.css."""
+    v = V[code]
+    big, small = L(f'img/{v["slug"]}-wide.webp', here), L(f'img/{v["slug"]}-wide-640.webp', here)
+    return (f'<button type="button" class="wcov" data-play="{code}" aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
+            f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:700px) 92vw, 640px" width="1280" height="720" '
+            f'loading="lazy" decoding="async" alt="{esc(v["title"])}: video cover"><span class="pbtn">{ic("play")}</span></button>')
+
+
 def play_btn(code, label=None, kind='ghost', size='sm'):
     v = V[code]
     label = label or v['short']

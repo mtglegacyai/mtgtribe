@@ -97,6 +97,10 @@ def images(dst):
         for w, suf in (((1280, ''), (640, '-640')) if v['o'] == 'h' else ((720, ''), (360, '-360'))):
             h = w * 9 // 16 if v['o'] == 'h' else w * 16 // 9
             t.resize((w, h), Image.LANCZOS).save(dst + f'/{v["slug"]}{suf}.webp', quality=82 if not suf else 80, method=6)
+        if v.get('wide'):                 # a 16:9 cover for a 9:16 video (core.wide_cover)
+            t = Image.open(STUDIO + '/' + v['wide']).convert('RGB')
+            for w, suf in ((1280, '-wide'), (640, '-wide-640')):
+                t.resize((w, w * 9 // 16), Image.LANCZOS).save(dst + f'/{v["slug"]}{suf}.webp', quality=82 if w > 640 else 80, method=6)
     import ogpages
     sz = ogpages.build_all(dst)
     print('social previews:', len(sz), 'largest', max(sz.values()) // 1000, 'KB')

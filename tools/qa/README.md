@@ -66,6 +66,8 @@ sizes, phones upright and on their side, tablets and computers, and fails if any
   "Full Screen" (or "Exit Full Screen") show on the button at every size;
 - leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind;
 - the play button cannot be missed: in the middle of every vertical cover, wholly on the cover, at least 52 px wide.
+- a wide cover for a vertical video (`.wcov`, the promo on the /bw main page): 16:9, not wider than the screen, with its play
+  button in the middle, whole and at least 52 px wide; pressing it must open the phone pop-up, which gets all the checks above.
 
 ```bash
 node tools/qa/player-check.js

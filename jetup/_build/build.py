@@ -8,10 +8,11 @@ from pages_learn import build_checks, build_how, build_plan, build_promo, build_
 from pages_tools import build_exposure, build_split, build_videos, build_downloads, build_faq, build_disclaimer, build_glossary
 from layout import ORDER, ROOT
 from extras import build_index
+from pages_live import build_live   # JetUP live on Zoom, /jetup/zoom/ (MTG, 16 Nov 2026)
 
 if __name__ == '__main__':
     for fn in (build_home, build_start, build_checks, build_how, build_plan, build_promo, build_bix,
-               build_exposure, build_split, build_videos, build_downloads, build_faq, build_glossary, build_disclaimer):
+               build_exposure, build_split, build_live, build_videos, build_downloads, build_faq, build_glossary, build_disclaimer):
         out = fn()
         print('wrote', os.path.relpath(out, os.path.join(os.path.dirname(__file__), '..', '..')), os.path.getsize(out), 'bytes')
     out, n, size = build_index(ROOT, ORDER)   # search the guide (MTG, 7 Nov 2026)

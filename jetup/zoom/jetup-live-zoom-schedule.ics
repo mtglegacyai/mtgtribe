@@ -1,0 +1,88 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MTG TRIBE//Zoom schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:JetUP live Zoom sessions
+X-WR-TIMEZONE:Africa/Johannesburg
+BEGIN:VTIMEZONE
+TZID:Africa/Johannesburg
+X-LIC-LOCATION:Africa/Johannesburg
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+TZNAME:SAST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:mtgtribe-zoom-presentation-tue@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261117T200000
+DURATION:PT1H
+RRULE:FREQ=WEEKLY;BYDAY=TU
+SUMMARY:JetUP Zoom: Presentation (Tuesday)
+DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
+ //mtgtribe.com/group/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/jetup/zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:mtgtribe-zoom-presentation-thu@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261119T200000
+DURATION:PT1H
+RRULE:FREQ=WEEKLY;BYDAY=TH
+SUMMARY:JetUP Zoom: Presentation (Thursday)
+DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
+ //mtgtribe.com/group/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/jetup/zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:mtgtribe-zoom-presentation-sat@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261121T200000
+DURATION:PT1H
+RRULE:FREQ=WEEKLY;BYDAY=SA
+SUMMARY:JetUP Zoom: Presentation (Saturday)
+DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
+ //mtgtribe.com/group/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/jetup/zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:mtgtribe-zoom-international-sun@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261122T150000
+DURATION:PT1H
+RRULE:FREQ=WEEKLY;BYDAY=SU
+SUMMARY:JetUP Zoom: International presentation
+DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
+ //mtgtribe.com/group/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/jetup/zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:mtgtribe-zoom-training-sun@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261122T200000
+DURATION:PT1H
+RRULE:FREQ=WEEKLY;BYDAY=SU
+SUMMARY:JetUP Zoom: Training night (back office training)
+DESCRIPTION:The Zoom link is shared in the MTG TRIBE WhatsApp group: https:
+ //mtgtribe.com/group/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/jetup/zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

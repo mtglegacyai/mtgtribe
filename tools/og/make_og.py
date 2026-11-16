@@ -226,6 +226,25 @@ def hero_group():
 <div class="chip" style="right:0;top:392px"><span class="e">📚</span>Learn together</div>
 <div class="chip" style="left:100px;top:466px"><span class="e">🚀</span>Grow together, free</div>'''
 
+def hero_zoom():
+    # The weekly Zoom calendar as a real calendar page: gold binder rings, a navy band, the five sessions in SA time.
+    rows = [('TUE', '8pm', 'Presentation', '#18275a'), ('THU', '8pm', 'Presentation', '#18275a'), ('SAT', '8pm', 'Presentation', '#18275a'),
+            ('SUN', '3pm', 'International presentation', '#0f4f63'), ('SUN', '8pm', 'Training night', '#4a1f62')]
+    r = ''.join(f'''<div style="display:flex;align-items:center;gap:14px;height:62px;padding:0 16px 0 0;border-bottom:1.5px solid rgba(13,22,48,.12)">
+ <span style="flex:none;width:68px;font:400 28px/1 'Anton';letter-spacing:.06em;color:#0d1630;text-align:center">{dd}</span>
+ <span style="flex:1;display:flex;align-items:center;gap:14px;height:46px;padding:0 16px;border-radius:12px;background:{bg};box-shadow:inset 4px 0 0 #f2ad3c,0 8px 16px rgba(13,22,48,.25)">
+  <b style="font:400 30px/1 'Anton';color:#ffd98e;letter-spacing:.02em">{t}</b><span style="font:800 19px/1.1 'Manrope';color:#fff">{n}</span></span></div>''' for dd, t, n, bg in rows)
+    rings = ''.join(f'<i style="position:absolute;top:-22px;left:{x}px;width:14px;height:40px;border-radius:8px;background:linear-gradient(90deg,#7a4a0c,#ffe2aa 30%,#f2ad3c 55%,#b8741a 80%,#5b3606);box-shadow:0 4px 8px rgba(0,0,0,.5)"></i>' for x in (40, 120, 200, 280, 360, 440))
+    return f'''<div class="ab" style="left:0;top:34px;width:500px;height:456px;border-radius:22px;background:linear-gradient(180deg,#fffdf7,#f3ecdc);box-shadow:0 3px 0 #d9ceb3,0 6px 0 -1px #efe6d0,0 34px 70px rgba(0,0,0,.6)">
+ {rings}
+ <div style="display:flex;align-items:center;justify-content:space-between;height:92px;padding:16px 22px 0;border-radius:22px 22px 0 0;background:linear-gradient(160deg,#16244f,#0d1630 60%,#0a1126)">
+  <div><p style="font:800 13px/1 'Manrope';letter-spacing:.2em;color:#ffd98e">EVERY WEEK ON ZOOM</p>
+  <p style="margin-top:8px;font:400 34px/1 'Anton';letter-spacing:.06em;background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent">WEEKLY ZOOM CALENDAR</p></div>
+  <span class="e" style="font-size:50px;line-height:1">🕗</span></div>
+ <div style="padding:6px 6px 0">{r}</div>
+ <p style="padding:14px 22px 0;font:800 17px/1 'Manrope';color:#4c5470">All times: South African time (SAST, UTC+2)</p></div>
+<div class="chip" style="left:96px;top:500px"><span class="e">💬</span>Zoom link on WhatsApp</div>'''
+
 def hero_canton_hub():
     pts = [(0, 250), (60, 200), (120, 285), (180, 225), (240, 300), (300, 205), (360, 265), (420, 180), (480, 235)]
     poly = ' '.join(f'{x},{y}' for x, y in pts)
@@ -290,6 +309,9 @@ SPECS = [
  dict(slug='tribe-whatsapp', fam='tribe', page='/group/', eb='MTG TRIBE ON WHATSAPP', h='Don\'t learn<br>this <span class="g">alone.</span>', hs=110,
       sub='Join the tribe: action takers who learn, ask and grow together.', url='mtgtribe.com/group', hero=hero_group,
       alt='Join the MTG TRIBE WhatsApp group'),
+ dict(slug='jetup-live', fam='jetup', page='/jetup/zoom/', eb='📣 5 LIVE SESSIONS A WEEK', h='JetUP live<br>on <span class="g">Zoom</span>', hs=110,
+      sub='Every session in SA time, and in yours.', url='mtgtribe.com/jetup/zoom', hero=hero_zoom,
+      alt='JetUP live on Zoom: the weekly calendar of five sessions, in SA time'),
  dict(slug='canton-weekly', fam='canton', page='/canton-weekly/', eb='EVERY SUNDAY · BY MTG 👑', h='Canton Coin,<br>every <span class="g">Sunday</span>', hs=92,
       sub='Price, levels, 3 scenarios, CNTN news.', url='mtgtribe.com/canton-weekly', hero=hero_canton_hub,
       alt='Canton Coin weekly report by MTG, every Sunday'),

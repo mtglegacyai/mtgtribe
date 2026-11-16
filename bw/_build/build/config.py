@@ -8,7 +8,7 @@ TODAY = '2026-11-15'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
-SCR = '/tmp/claude-0/-home-user/612e96d5-9b21-5852-ab8a-e6cd65a7a534/scratchpad/bwsite'
+SCR = os.environ.get('BW_SCR') or '/tmp/claude-0/-home-user/612e96d5-9b21-5852-ab8a-e6cd65a7a534/scratchpad/bwsite'  # BW_SCR: another session's scratch
 STUDIO = '/home/user/mtg-studio'
 REPO = '/home/user/mtgtribe'
 
@@ -147,6 +147,13 @@ RANKS = [('Ignite', 'Qualifier', 'Sponsor 2 people'), ('Beginner', 'Ranking 1', 
 ZOOM = [('Mon', '14:00', 'English'), ('Tue', '14:00', 'English'), ('Wed', '14:00', 'English'), ('Thu', '14:00', 'English'),
         ('Fri', '14:00', 'English'), ('Mon', '20:00', 'isiXhosa'), ('Tue', '20:00', 'English'), ('Wed', '20:00', 'English'),
         ('Thu', '20:00', 'isiZulu'), ('Fri', '19:00', 'Sesotho')]
+ZOOM_TZ = 'Africa/Johannesburg'      # every Zoom time above is South African time (SAST, UTC+2, no daylight saving)
+ZOOM_LANG = {'English': 'en', 'isiXhosa': 'xh', 'isiZulu': 'zu', 'Sesotho': 'st'}   # language codes (calendar chips, JSON-LD)
+ZOOM_FROM = '2026-11-16'            # first week of the published schedule (the .ics and JSON-LD start here)
+ZOOM_MIN = 60                       # a calendar reminder block, in minutes (the page shows "On now" for 90 minutes)
+ZOOM_ICS = 'bitcoin-wealth-zoom-schedule.ics'   # served next to the Live On Zoom page
+# MTG's words (16 Nov 2026) for the "Ask MTG directly" button: the link and its data-wa-text carry exactly this message
+ZOOM_WA_TEXT = 'Hi MTG,\n\nPlease send me the Zoom link for your next Bitcoin Wealth session.\n\nThank you 😊'
 ZOOM_LINE = ("We meet live on Zoom five evenings a week, in four languages. Ask the person who invited you to add you to the "
              "WhatsApp group, or tap the WhatsApp button below this video.")
 

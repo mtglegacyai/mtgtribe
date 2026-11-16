@@ -84,6 +84,8 @@ ICONS.update({
  'i-refresh2': _sym('i-refresh2', '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>'),
  'i-layers2': _sym('i-layers2', '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>'),
  'i-timer2': _sym('i-timer2', '<path d="M10 2h4"/><path d="M12 14l3-3"/><circle cx="12" cy="14" r="8"/>'),
+ 'i-clock2': _sym('i-clock2', '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l-4 2"/>'),
+ 'i-calplus': _sym('i-calplus', '<path d="M8 2v4"/><path d="M16 2v4"/><path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"/><path d="M3 10h18"/><path d="M16 19h6"/><path d="M19 16v6"/>'),
  'i-candle2': _sym('i-candle2', '<path d="M9 5v4"/><rect width="4" height="6" x="7" y="9" rx="1"/><path d="M9 15v2"/><path d="M17 3v2"/><rect width="4" height="8" x="15" y="5" rx="1"/><path d="M17 13v3"/><path d="M3 3v18h18"/>'),
 })
 
@@ -108,6 +110,7 @@ MENU = [
    ('/jetup/tools/profit-split-calculator/', 'i-split', 'Profit Split Calculator', 'Your 70%, the 30% fee', 'tool'),
  ]),
  ('Library', [
+   ('/jetup/zoom/', 'i-mega', 'Live on Zoom', '5 sessions a week, SA time'),   # MTG, 16 Nov 2026
    ('/jetup/videos/', 'i-film2', 'Videos', 'Trainings and explainers'),
    ('/jetup/downloads/', 'i-dl2', 'Downloads', 'Guides, decks and videos'),
    ('/jetup/faq/', 'i-help', 'FAQ', 'Straight answers'),
@@ -334,9 +337,10 @@ OG = {
  '/jetup/disclaimer/': ('/assets/og/jetup-disclaimer.jpg', 'Disclaimer for the independent JetUP and TAG Markets guide'),
  '/jetup/tools/exposure-calculator/': ('/assets/og/jetup-exposure-calculator.jpg', 'Exposure Calculator: what 24x Amplify does to a deposit'),
  '/jetup/tools/profit-split-calculator/': ('/assets/og/jetup-profit-split-calculator.jpg', 'Profit Split Calculator: the 70/30 on TAG Markets CopyX'),
+ '/jetup/zoom/': ('/assets/og/jetup-live.jpg', 'JetUP live on Zoom: the weekly calendar of five sessions, in SA time'),
 }
 
-def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='JetUP and TAG Markets guide by MTG', lightbox=False, keywords=None):
+def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='JetUP and TAG Markets guide by MTG', lightbox=False, keywords=None, head_extra='', foot_extra=''):
     url = SITE + path
     if path in OG:
         og_img, og_alt = OG[path]
@@ -381,7 +385,7 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 <link rel="apple-touch-icon" href="/jetup/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="/jetup/assets/jetup.css?v={css}">
+<link rel="stylesheet" href="/jetup/assets/jetup.css?v={css}">{head_extra}
 <script>if(location.protocol==='http:'&&location.hostname==='mtgtribe.com')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');{side_js}</script>
 <script type="application/ld+json">{ld}</script>
 </head>
@@ -405,8 +409,10 @@ def page(path, title, desc, main, crumbs_list=None, ld_extra=None, docked=True, 
 {thumb_bar(path, icon, JETUP_JOIN)}
 {TOTOP}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="/jetup/assets/jetup.js?v={js}" defer></script>
+<script src="/jetup/assets/jetup.js?v={js}" defer></script>{foot_extra}
 <script src="/assets/video-return.js?v=1" defer></script>
+<script src="/assets/zoom-cta.js?v=5" defer></script>
+<script src="/assets/wa-message.js?v=2" defer></script>
 </body>
 </html>
 '''
@@ -444,6 +450,27 @@ def phead(icon_name, eyebrow, h1, lede, crumbs_list, chips=None, ped='', extra='
 
 def join_btn(label='Join JetUP', cls='btn btn-pri'):
     return f'<a class="{cls}" href="{JETUP_JOIN}" target="_blank" rel="sponsored noopener" data-join>{icon("i-rocket2")}{label}</a>'
+
+MANUAL_PDF = '/jetup/downloads/jetup-tag-markets-onboarding-guide.pdf'
+
+def manual_card(eyebrow='The onboarding manual', hid='manual-h'):
+    """The 22-page onboarding manual as a featured card (MTG, 16 Nov 2026: make the invitation to print or save it compelling,
+    right where the manual is): the Downloads page, where the file lives, and Get Started, where people follow the steps."""
+    return f'''<div class="manual rv" id="manual">
+ <div class="mpics" aria-hidden="true"><img class="b1" src="/jetup/img/manual-step-16.webp" width="560" height="315" alt="" loading="lazy">
+  <img class="b2" src="/jetup/img/manual-step-10.webp" width="560" height="315" alt="" loading="lazy">
+  <img class="fr" src="/jetup/img/manual-cover.webp" width="800" height="450" alt="" loading="lazy"><span class="mbadge"><b>22</b>pages</span></div>
+ <div class="mtxt">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 class="h2" id="{hid}">Every tap, in order. <span class="grad">Right beside you.</span></h2>
+  <p class="lede">From your JetUP sign-up to Sonic AI trading in your own account: TAG Markets, the ID check, your deposit, the community code, the $100 Dennis promo and your MetaTrader 5 login. Every screen shows the exact button to tap, circled in red.</p>
+  <ul class="mperks"><li><span aria-hidden="true">🖨️</span><span><b>Print it</b> and tick off each page as you go</span></li>
+   <li><span aria-hidden="true">📲</span><span><b>Save it</b> to your phone, it opens even offline</span></li>
+   <li><span aria-hidden="true">🤝</span><span><b>Share it</b> with the person you invite</span></li></ul>
+  <div class="ctas"><a class="btn btn-lime" href="{MANUAL_PDF}" target="_blank" rel="noopener">{icon('i-book')}Open the manual</a><a class="btn btn-ghost" href="{MANUAL_PDF}" download>{icon('i-dl2')}Save it to my phone</a></div>
+  <p class="small" style="margin:12px 0 0">Free PDF, 10.4 MB, updated 15 Nov 2026. Personal details are hidden. Screens change over time: if yours looks a little different, look for the same words.</p>
+ </div>
+</div>'''
 
 def join_note(extra=''):
     return f'<p class="jnote">{icon("i-info2")}<span>{JOIN_NOTE}{extra}</span></p>'

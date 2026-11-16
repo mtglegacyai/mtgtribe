@@ -167,7 +167,7 @@ DOWNLOADS = [
 def build_downloads():
     path = '/jetup/downloads/'
     rows = ''.join(f'''<article class="card dl rv" style="--d:{i % 3}"><span class="ft">PDF</span><div><h3>{t}</h3><p>{d} {s}.</p></div>
- <a class="btn btn-ghost btn-sm" href="/jetup/downloads/{f}" download>{icon('i-dl2')}Download</a></article>''' for i, (f, k, t, d, s) in enumerate(DOWNLOADS))
+ <a class="btn btn-ghost btn-sm" href="/jetup/downloads/{f}" download>{icon('i-dl2')}Download</a></article>''' for i, (f, k, t, d, s) in enumerate(DOWNLOADS[1:]))
     vids = [('5checks', 'JetUP 5 Checks, by MTG', '5:25 · 1080p · 81 MB', 'jetup-5-checks-mtg-v5-3.mp4'), ('training', 'Sign-up training, by MTG', '9:09 · 1080p · 65 MB', 'jetup-tag-markets-signup-training-mtg-v4-4.mp4'), ('profitshare', "Profit Share explained (JetUP's own)", '1:14 · vertical · 9 MB', 'jetup-profit-share-explained.mp4')]
     vrows = ''.join(f'''<article class="card dl rv" style="--d:{i}"><span class="ft mp4">MP4</span><div><h3>{t}</h3><p>{m}</p></div>
  <a class="btn btn-ghost btn-sm" href="/jetup/media/{f}" download>{icon('i-dl2')}Download</a></article>''' for i, (k, t, m, f) in enumerate(vids))
@@ -177,8 +177,9 @@ def build_downloads():
        'Everything worth keeping, in one place. Save it, read it offline and share it with someone who is ready to learn.',
        [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Downloads', None)])}
 <section class="sec tight" style="padding-top:0"><div class="narrow stack">
+ {manual_card('Start here: the onboarding manual')}
  <p class="call info rv">{icon('i-info2')}<span><b>Read the official decks as JetUP's own marketing.</b> Some figures (for example "up to 1% to 1.5% daily trading profit") are JetUP's claims, not promises, so check every number against your own dashboard.</span></p>
- <p class="eyebrow rv" style="margin-top:10px">Guides and decks</p>
+ <p class="eyebrow rv" style="margin-top:18px">Official JetUP guides and decks</p>
  {rows}
  <p class="eyebrow rv" style="margin-top:18px">Videos</p>
  {vrows}
@@ -188,7 +189,7 @@ def build_downloads():
 </div></section>
 {tribe_cta()}'''
     return page(path, 'JetUP and TAG Markets Downloads: PDF Guides and Videos | MTG',
-                'Download the JetUP Business Plan, the How Partners Grow one-pager, the BIX Card setup guide, the official JetUP decks and MTG\'s JetUP and TAG Markets videos.',
+                'Download the 22-page JetUP and TAG Markets onboarding manual (print it or save it to your phone), the JetUP Business Plan, the How Partners Grow one-pager, the BIX Card setup guide, the official JetUP decks and MTG\'s JetUP and TAG Markets videos.',
                 main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Downloads', None)])
 
 FAQ = [

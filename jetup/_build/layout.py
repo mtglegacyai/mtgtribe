@@ -451,6 +451,27 @@ def phead(icon_name, eyebrow, h1, lede, crumbs_list, chips=None, ped='', extra='
 def join_btn(label='Join JetUP', cls='btn btn-pri'):
     return f'<a class="{cls}" href="{JETUP_JOIN}" target="_blank" rel="sponsored noopener" data-join>{icon("i-rocket2")}{label}</a>'
 
+MANUAL_PDF = '/jetup/downloads/jetup-tag-markets-onboarding-guide.pdf'
+
+def manual_card(eyebrow='The onboarding manual', hid='manual-h'):
+    """The 22-page onboarding manual as a featured card (MTG, 16 Nov 2026: make the invitation to print or save it compelling,
+    right where the manual is): the Downloads page, where the file lives, and Get Started, where people follow the steps."""
+    return f'''<div class="manual rv" id="manual">
+ <div class="mpics" aria-hidden="true"><img class="b1" src="/jetup/img/manual-step-16.webp" width="560" height="315" alt="" loading="lazy">
+  <img class="b2" src="/jetup/img/manual-step-10.webp" width="560" height="315" alt="" loading="lazy">
+  <img class="fr" src="/jetup/img/manual-cover.webp" width="800" height="450" alt="" loading="lazy"><span class="mbadge"><b>22</b>pages</span></div>
+ <div class="mtxt">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 class="h2" id="{hid}">Every tap, in order. <span class="grad">Right beside you.</span></h2>
+  <p class="lede">From your JetUP sign-up to Sonic AI trading in your own account: TAG Markets, the ID check, your deposit, the community code, the $100 Dennis promo and your MetaTrader 5 login. Every screen shows the exact button to tap, circled in red.</p>
+  <ul class="mperks"><li><span aria-hidden="true">🖨️</span><span><b>Print it</b> and tick off each page as you go</span></li>
+   <li><span aria-hidden="true">📲</span><span><b>Save it</b> to your phone, it opens even offline</span></li>
+   <li><span aria-hidden="true">🤝</span><span><b>Share it</b> with the person you invite</span></li></ul>
+  <div class="ctas"><a class="btn btn-lime" href="{MANUAL_PDF}" target="_blank" rel="noopener">{icon('i-book')}Open the manual</a><a class="btn btn-ghost" href="{MANUAL_PDF}" download>{icon('i-dl2')}Save it to my phone</a></div>
+  <p class="small" style="margin:12px 0 0">Free PDF, 10.4 MB, updated 15 Nov 2026. Personal details are hidden. Screens change over time: if yours looks a little different, look for the same words.</p>
+ </div>
+</div>'''
+
 def join_note(extra=''):
     return f'<p class="jnote">{icon("i-info2")}<span>{JOIN_NOTE}{extra}</span></p>'
 

@@ -20,6 +20,7 @@ ap.add_argument('take'); ap.add_argument('words'); ap.add_argument('name')
 ap.add_argument('--from', dest='start', type=float, default=0.3, help='cut the take here (just before "Let\'s")')
 ap.add_argument('--ref', default='public/videos/11/voice/s01.wav', help='narration to match the loudness to')
 ap.add_argument('--lift', type=float, default=1.5, help='dB above the narration: a slogan sits a little forward')
+ap.add_argument('--plain', action='store_true', help='no colouring at all: only the loudness is matched (MTG, 16 November 2026: "just like the rest of my voice")')
 a = ap.parse_args()
 
 CHAIN = ','.join([
@@ -42,6 +43,8 @@ def active_rms(x):
     loud = r[r > r.max() * 0.15]
     return float(np.sqrt((loud ** 2).mean()))
 
+if a.plain:
+    CHAIN = 'highpass=f=50'
 ref = load(a.ref)[: int(50 * SR)]
 target = active_rms(ref) * 10 ** (a.lift / 20)
 gain_db = 20 * np.log10(target / active_rms(load(a.take, CHAIN, a.start)))

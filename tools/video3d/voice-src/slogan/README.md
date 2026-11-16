@@ -26,3 +26,11 @@ words were joined into one phrase, from the takes already paid for:
   gap before "this" and the long pause before "crypto" closed to 35 ms, the drawn-out "s" of "this" trimmed, then 1.12
   times faster with the pitch kept (rubberband). About 2.0 s, 119 Hz.
 - B (`slogan-try-B-take1-joined-fast`): take 1's four words joined 20 ms apart, 1.12 times faster. About 1.8 s, 118 Hz.
+
+## Third round, the same day: his normal voice (1 credit, with MTG's yes)
+
+MTG on A and B: "I sound like I'm in a drama ... locked up in some terrible horror. Let me sound normally, just like the
+rest of my voice ... not at a high pitch, not at a snail pace." Take 4 (`take4-plain.wav`): "I'm MTG, your digital
+architect. Let's get this crypto." with no tags, lowercase and a full stop. The sign-off part measures 124 Hz (his
+narration), the slogan 118 Hz, about 0.9 s, falling on "crypto". Finished with `make_slogan.py --plain` (no colouring,
+loudness only, +0.5 dB) as `public/voice-bank/slogan-plain`, copied to `slogan-deep` (the file the tools use).

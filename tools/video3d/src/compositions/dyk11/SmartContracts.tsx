@@ -352,7 +352,7 @@ export const SmartContracts: React.FC<{closingTrack: string | null}> = ({closing
 					[C.but - 0.15, 'air', 0.26], [C.broken - 0.1, 'pluck1', 0.28], [C.fixed - 0.2, 'key', 0.32], [C.usually, 'thud', 0.34], [C.mistake - 0.2, 'tension', 0.26],
 					[C.tip - 0.15, 'chime', 0.3], [C.wallet - 0.4, 'slide', 0.3], [C.understand, 'tick', 0.3], [C.explain - 0.1, 'pluck2', 0.28], [C.sign - 0.1, 'ping', 0.34], [C.sign + 0.2, 'pluck4', 0.26],
 					[C.did, 'chime', 0.3], [C.tell, 'pluck2', 0.28], [C.send, 'pluck3', 0.3],
-					[C.join - 0.15, 'glow', 0.35], [C.weLearn - 0.35, 'pluck1', 0.28], [C.im - 0.1, 'air', 0.25], [SLOGAN[3] - 0.02, 'land', 0.42],
+					[C.join - 0.15, 'glow', 0.35], [C.weLearn - 0.35, 'pluck1', 0.28], [C.im - 0.1, 'air', 0.25],
 				]}
 			/>
 			<Html5Audio src={staticFile('videos/11/voice/s01.wav')} />

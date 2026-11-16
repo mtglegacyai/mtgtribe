@@ -1,7 +1,7 @@
 {
 "voice": null,
 "request": "a4b14e9ca975408a9f36989ec4c3cc93",
-"duration": 59.3188,
+"duration": 58.053,
 "pauses_added": [
 0.0,
 0.0,
@@ -878,23 +878,23 @@
 },
 {
 "text": "Let's",
-"start": 56.907,
-"end": 57.38
+"start": 57.052,
+"end": 57.265
 },
 {
 "text": "Get",
-"start": 57.46,
-"end": 57.63
+"start": 57.308,
+"end": 57.393
 },
 {
 "text": "This",
-"start": 57.688,
-"end": 57.991
+"start": 57.436,
+"end": 57.521
 },
 {
 "text": "Crypto!",
-"start": 58.049,
-"end": 58.898
+"start": 57.606,
+"end": 57.905
 }
 ],
 "slogan": "slogan-deep"

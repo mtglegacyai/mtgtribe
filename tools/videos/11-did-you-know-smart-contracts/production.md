@@ -43,3 +43,8 @@ and rose at the end (his narration: about 126 Hz).
 - Second round, the same day: MTG found all three takes too slow and too broken up ("It's one thing. Let's get this
   crypto"). The words of take 2 were joined into one phrase (about 2.0 s, version A) and spliced in 0.36 s after
   "Architect."; version B (take 1 joined, about 1.8 s) was sent as the alternative. No credits used.
+- Third round, the same day: MTG found A and B dramatic ("like I'm in a drama ... some terrible horror") and asked for
+  his normal voice. With his yes, 1 credit (202 before, 201 after): a plain take, no tags, no effects, slogan at about
+  118 Hz in 0.9 s (his narration: about 124 Hz). The landing sound was removed. Final: `out/dyk11-9x16.mp4`, 1:01
+  (61.3 s), -14.1 LUFS, true peak -1.5 dBFS; the theme's last line starts at 58.16 s, right after "crypto" (57.91 s).
+  Today's voice credits: 5 (the daily limit).

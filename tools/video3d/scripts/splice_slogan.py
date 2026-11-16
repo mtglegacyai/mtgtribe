@@ -1,7 +1,7 @@
 """Put MTG's banked slogan (public/voice-bank/slogan-deep.wav, made by make_slogan.py) at the end of a video's voice.
 
 Run it after voice_timing.py and before make_cues.py:
-  python3 scripts/splice_slogan.py public/videos/NN [--bank public/voice-bank/slogan-deep] [--gap 0.36]
+  python3 scripts/splice_slogan.py public/videos/NN [--bank public/voice-bank/slogan-deep] [--gap 0.5]
 The script still sends "Let's Get This Crypto!" to HeyGen (so "Your Digital Architect." keeps its natural ending);
 this replaces those four spoken words with the banked take, `--gap` seconds after the word before them, and rewrites
 voice/s01.wav, words.json, captions.json and timeline.json. Running it twice is safe (it replaces the last four words).
@@ -11,7 +11,7 @@ import numpy as np
 
 SR = 48000
 ap = argparse.ArgumentParser()
-ap.add_argument('dir'); ap.add_argument('--bank', default='public/voice-bank/slogan-deep'); ap.add_argument('--gap', type=float, default=0.36)
+ap.add_argument('dir'); ap.add_argument('--bank', default='public/voice-bank/slogan-deep'); ap.add_argument('--gap', type=float, default=0.5)
 a = ap.parse_args()
 
 norm = lambda s: re.sub(r"[^\w']", '', s).lower()

@@ -1,26 +1,26 @@
 {
- "take": "A-take2-joined-fast.wav",
- "duration": 2.466,
+ "take": "take4-plain.wav",
+ "duration": 1.06,
  "words": [
   {
    "text": "Let's",
-   "start": 0.054,
-   "end": 0.527
+   "start": 0.059,
+   "end": 0.272
   },
   {
    "text": "get",
-   "start": 0.607,
-   "end": 0.777
+   "start": 0.315,
+   "end": 0.4
   },
   {
    "text": "this",
-   "start": 0.835,
-   "end": 1.138
+   "start": 0.443,
+   "end": 0.528
   },
   {
    "text": "crypto!",
-   "start": 1.196,
-   "end": 2.045
+   "start": 0.613,
+   "end": 0.912
   }
  ]
 }

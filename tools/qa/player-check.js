@@ -75,7 +75,13 @@ function judge(ctx, m, { inline }) {
         const btn = p.locator('.vplay').nth(i); const code = await btn.getAttribute('data-code');
         const tag = `${w}x${h} ${path} inline ${code}`;
         // the cover: the frame fits the screen under the top bar
-        const cov = await btn.evaluate(el => { const pl = el.closest('.pl'), dev = pl.querySelector('.pl-dev').getBoundingClientRect(), deck = pl.querySelector('.pl-deck'), dk = getComputedStyle(deck).display !== 'none' ? deck.getBoundingClientRect().height : 0, scr = pl.querySelector('.pl-scr').getBoundingClientRect(); return { h: dev.height + dk, w: pl.getBoundingClientRect().width, sw: scr.width, sh: scr.height, vh: innerHeight, vw: innerWidth, sb: pl.getBoundingClientRect().left }; });
+        const cov = await btn.evaluate(el => { const pl = el.closest('.pl'), dev = pl.querySelector('.pl-dev').getBoundingClientRect(), deck = pl.querySelector('.pl-deck'), dk = getComputedStyle(deck).display !== 'none' ? deck.getBoundingClientRect().height : 0, scr = pl.querySelector('.pl-scr').getBoundingClientRect(), pb = el.querySelector('.pbtn').getBoundingClientRect(); return { h: dev.height + dk, w: pl.getBoundingClientRect().width, sw: scr.width, sh: scr.height, vh: innerHeight, vw: innerWidth, sb: pl.getBoundingClientRect().left,
+          tall: pl.classList.contains('pl-v'), spot: !!el.getAttribute('style'), bx: (pb.left + pb.width / 2 - scr.left) / scr.width, by: (pb.top + pb.height / 2 - scr.top) / scr.height, bw: pb.width, inside: pb.left >= scr.left && pb.right <= scr.right && pb.top >= scr.top && pb.bottom <= scr.bottom }; });
+        // the play button cannot be missed (MTG, 16 Nov 2026): on a vertical cover it sits in the middle; on any cover it is whole and big enough
+        checks++;
+        if (!cov.inside) fail(tag, 'the play button is not wholly on the cover');
+        if (cov.bw < 52) fail(tag, `the play button is only ${Math.round(cov.bw)} px wide`);
+        if (cov.tall && !cov.spot && (Math.abs(cov.bx - 0.5) > 0.03 || Math.abs(cov.by - 0.5) > 0.05)) fail(tag, `the play button is not in the middle of the vertical cover: ${Math.round(cov.bx * 100)}%, ${Math.round(cov.by * 100)}%`);
         checks++;
         const short = cov.h > cov.vh - 66 + 0.75;      // the screen is too short for the smallest frame (a phone on its side): play must go straight to full screen
         if (cov.w > cov.vw) fail(tag, 'cover frame wider than the screen');

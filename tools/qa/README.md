@@ -64,7 +64,8 @@ sizes, phones upright and on their side, tablets and computers, and fails if any
 - nothing lies on the picture (it samples 81 points on it);
 - Full Screen and Close are there, on screen, big enough, and not on the picture, also in full screen, and the words
   "Full Screen" (or "Exit Full Screen") show on the button at every size;
-- leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind.
+- leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind;
+- the play button cannot be missed: in the middle of every vertical cover, wholly on the cover, at least 52 px wide.
 
 ```bash
 node tools/qa/player-check.js

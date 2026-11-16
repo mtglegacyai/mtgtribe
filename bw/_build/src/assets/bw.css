@@ -1077,12 +1077,14 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 @container plbar (max-width:206px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}}
 @supports not (container-type:inline-size){@media (max-height:500px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}}}
 
-/* the cover's play button: it sits where the cover leaves room for it (--px, --py) and its size follows the cover */
+/* the cover's play button cannot be missed (MTG, 16 Nov 2026: "position it such that it is impossible to miss ... without it being
+   in the way of important content"): it sits in the middle of the cover, and every website cover keeps that middle clear.
+   A cover can name another spot (--px, --py) when its picture needs it; the button's size follows the cover. */
 .vplay{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border:0;padding:0;background:none;cursor:pointer}
 .pl.on .vplay{display:none}
-.vplay .pbtn{position:absolute;left:var(--px,50%);top:var(--py,89%);display:grid;place-items:center;width:clamp(52px,24%,76px);aspect-ratio:1;border-radius:50%;
+.vplay .pbtn{position:absolute;left:var(--px,50%);top:var(--py,50%);display:grid;place-items:center;width:clamp(56px,27%,88px);aspect-ratio:1;border-radius:50%;
   color:#1f1300;background:var(--gold);box-shadow:0 0 0 8px rgba(255,161,1,.16),0 10px 24px rgba(0,0,0,.45);transform:translate(-50%,-50%);transition:transform .3s var(--ease)}
-.pl-h .vplay .pbtn{top:var(--py,50%);width:clamp(54px,12%,118px)}
+.pl-h .vplay .pbtn{width:clamp(54px,12%,118px)}
 .vplay .pbtn:before{content:"";position:absolute;inset:-18%;border-radius:50%;border:2px solid rgba(255,161,1,.55);animation:plring 2.6s var(--ease) infinite}
 .vplay .pbtn .ic{width:38%;height:38%;margin-left:7%;fill:currentColor}
 .vplay:hover .pbtn{transform:translate(-50%,-50%) scale(1.06)}

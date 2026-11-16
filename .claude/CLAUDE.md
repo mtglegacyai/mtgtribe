@@ -47,6 +47,13 @@ publish without approval.
   does" (MTG, 16 Nov 2026); an icon alone is not enough. Reference: the `.pl` player on /bw (`core.player()` in
   `bw/_build/build/core.py`, "VIDEO PLAYER" in `bw.css`, "video players" in `bw.js`). Check with
   `tools/qa/player-check.js` (README there): it must report 0 failures before MTG sees a preview.
+- **The play button cannot be missed (MTG, 16 Nov 2026):** "position it such that it is impossible to miss ... without it being in
+  the way of important content ... whether it's a horizontal or a vertical video, make sure that the play button cannot be
+  missed." On a vertical cover the button sits **in the middle** of the cover, never near the bottom. So every website cover
+  is drawn with a **clear band in the middle** for it (on a 1080 x 1920 cover: y 780 to 1140; headline above, characters and
+  phone below, no address pill). On a wide cover it sits in the middle too, or in the clear spot the cover names (`spot`).
+  Keep its pulse and rings as they are (he likes them). `player-check.js` fails when the button is not in the middle of a
+  vertical cover, not wholly on the cover, or smaller than 52 px.
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 - On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in

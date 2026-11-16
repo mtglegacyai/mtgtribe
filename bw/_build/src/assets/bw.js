@@ -343,7 +343,7 @@
       pop.classList.toggle('pl-h', info.o === 'h'); pop.classList.toggle('pl-v', info.o !== 'h');
       sheet.setAttribute('aria-label', info.t + ' (' + info.d + ')');
       openSheet(sheet);
-      plOpen(pop, k, pickSrc(info.s, info.hd), info.p.replace(/-(360|640)\.webp$/, '.webp'));
+      plOpen(pop, k, pickSrc(info.s, info.hd), info.pb || info.p);
       fitOrMax(pop);
     }
   });

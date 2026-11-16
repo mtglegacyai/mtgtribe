@@ -1015,6 +1015,7 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
   --wide:100%;                                                   /* the width the player may use */
   --room:calc(var(--svh) - var(--hdr) - var(--foot,0px) - 20px)} /* the height it may use: the visible screen under the top bar, above a fixed bottom bar */
 @media (max-width:760px){.landing{--foot:calc(64px + env(safe-area-inset-bottom,0px))}}      /* the landing page's quick menu at the bottom of a phone */
+.promo{scroll-margin-top:30px}                                   /* a link to #in-34-seconds lands with its small heading clear of the top bar */
 .promo .center-row{margin-top:22px}
 .promo-note{max-width:46ch;margin:14px auto 0;text-align:center}
 .pl-v{--ar:.5625;width:280px;max-width:100%;width:max(var(--pl-min,200px),min(var(--pl-w,320px),var(--wide),calc((var(--room) - var(--bar) - var(--chin) - 2 * var(--rim)) * var(--ar) + 2 * (var(--bez) + var(--rim)))))}

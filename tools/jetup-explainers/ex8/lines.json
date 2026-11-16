@@ -1,0 +1,274 @@
+{
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 0.206,
+  "b": 3.852,
+  "dur": 3.646,
+  "text": "Can I get my money out? The answer is growing in your own backyard."
+ },
+ "hi": {
+  "file": "v_hi.wav",
+  "src": "o1",
+  "a": 19.005,
+  "b": 21.935,
+  "dur": 2.93,
+  "text": "Hi, I'm MTG, Your Digital Architect."
+ },
+ "ntree": {
+  "file": "v_ntree.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 4.387,
+  "b": 5.381,
+  "dur": 0.994,
+  "text": "Think of a fruit tree."
+ },
+ "nyard": {
+  "file": "v_nyard.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 5.795,
+  "b": 9.14,
+  "dur": 3.345,
+  "text": "The backyard is your account at TAG Markets, in your own name."
+ },
+ "nmoney": {
+  "file": "v_nmoney.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 9.402,
+  "b": 10.741,
+  "dur": 1.339,
+  "text": "The tree is your own money."
+ },
+ "nfruit": {
+  "file": "v_nfruit.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 10.941,
+  "b": 13.038,
+  "dur": 2.097,
+  "text": "And when it bears fruit, that's your profit."
+ },
+ "anytime": {
+  "file": "v_anytime.wav",
+  "src": "5-checks/o2.mp3",
+  "a": 65.085,
+  "b": 66.865,
+  "dur": 1.78,
+  "text": "Profits can be withdrawn any time."
+ },
+ "nbranch": {
+  "file": "v_nbranch.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 13.212,
+  "b": 16.533,
+  "dur": 3.321,
+  "text": "And the promo? It's a gift branch, tied onto your tree."
+ },
+ "bonus": {
+  "file": "v_bonus.wav",
+  "src": "signup-training/t3.mp3",
+  "a": 113.685,
+  "b": 116.83,
+  "dur": 3.145,
+  "text": "The one hundred dollar bonus is released after twelve months."
+ },
+ "ends": {
+  "file": "v_ends.wav",
+  "src": "signup-training/t3.mp3",
+  "a": 117.035,
+  "b": 120.255,
+  "dur": 3.22,
+  "text": "And taking your own money out before then ends the promo."
+ },
+ "change": {
+  "file": "v_change.wav",
+  "src": "signup-training/t3.mp3",
+  "a": 121.05,
+  "b": 123.685,
+  "dur": 2.635,
+  "text": "Rules can change, so check your dashboard."
+ },
+ "nbasket": {
+  "file": "v_nbasket.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 16.668,
+  "b": 20.118,
+  "dur": 3.45,
+  "text": "So where does your fruit go? Into your own basket: your crypto wallet."
+ },
+ "nroute": {
+  "file": "v_nroute.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 20.465,
+  "b": 27.346,
+  "dur": 6.881,
+  "text": "Withdrawals go through the broker, to your wallet address. Use the same network on both sides, so your funds arrive safely."
+ },
+ "n48": {
+  "file": "v_n48.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 27.619,
+  "b": 31.445,
+  "dur": 3.826,
+  "text": "Jet Up's one-pager says withdrawals take about forty-eight hours on average."
+ },
+ "advice": {
+  "file": "v_advice.wav",
+  "src": "5-checks/o2.mp3",
+  "a": 78.99,
+  "b": 79.83,
+  "dur": 0.84,
+  "text": "My advice?"
+ },
+ "small": {
+  "file": "v_small.wav",
+  "src": "5-checks/o2.mp3",
+  "a": 80.095,
+  "b": 82.96,
+  "dur": 2.865,
+  "text": "Start small, and do a small withdrawal early."
+ },
+ "prove": {
+  "file": "v_prove.wav",
+  "src": "5-checks/o2.mp3",
+  "a": 83.235,
+  "b": 84.975,
+  "dur": 1.74,
+  "text": "Let the system prove itself to you."
+ },
+ "word": {
+  "file": "v_word.wav",
+  "src": "5-checks/o1.mp3",
+  "a": 93.526,
+  "b": 94.765,
+  "dur": 1.239,
+  "text": "Don't take my word for it."
+ },
+ "login": {
+  "file": "v_login.wav",
+  "src": "5-checks/o1.mp3",
+  "a": 95.138,
+  "b": 97.618,
+  "dur": 2.48,
+  "text": "Log in yourself, and see your own balance."
+ },
+ "nrecap": {
+  "file": "v_nrecap.wav",
+  "src": "explainers/ex8v3.flac",
+  "a": 31.872,
+  "b": 39.164,
+  "dur": 7.292,
+  "text": "So that's the picture: pick the fruit any time, let your tree stand twelve months to keep the promo, and start with one small withdrawal."
+ },
+ "n_turn2": {
+  "file": "v_n_turn2.wav",
+  "src": "explainers/ex2v2",
+  "dur": 2.255,
+  "text": "Simple, right? Now it's your turn."
+ },
+ "l_ifme": {
+  "file": "v_l_ifme.wav",
+  "src": "tutorial/p1v3",
+  "dur": 6.65,
+  "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button."
+ },
+ "every": {
+  "file": "v_every.wav",
+  "src": "v3",
+  "a": 12.195,
+  "b": 18.075,
+  "dur": 5.88,
+  "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it."
+ },
+ "n_save": {
+  "file": "v_n_save.wav",
+  "dur": 2.585,
+  "text": "Save this video, so it's here when you need it."
+ },
+ "n_share": {
+  "file": "v_n_share.wav",
+  "dur": 2.065,
+  "text": "Share it with someone who's ready to start."
+ },
+ "n_we": {
+  "file": "v_n_we.wav",
+  "dur": 2.015,
+  "text": "We learn best when we teach others."
+ },
+ "n_slog": {
+  "file": "v_n_slog.wav",
+  "dur": 2.595,
+  "text": "It pays to pay attention, and take action."
+ },
+ "o_fin": {
+  "file": "v_o_fin.wav",
+  "src": "t3",
+  "a": 168.725,
+  "b": 171.415,
+  "dur": 2.69,
+  "text": "Quick reminder: none of this is financial advice."
+ },
+ "o_dyor": {
+  "file": "v_o_dyor.wav",
+  "src": "t3",
+  "a": 171.455,
+  "b": 173.115,
+  "dur": 1.66,
+  "text": "Always do your own research."
+ },
+ "o_thanks": {
+  "file": "v_o_thanks.wav",
+  "src": "t3",
+  "a": 173.68,
+  "b": 178.055,
+  "dur": 4.375,
+  "text": "Thank you for tuning in, and for every like, share, and comment."
+ },
+ "o_support": {
+  "file": "v_o_support.wav",
+  "src": "t3",
+  "a": 178.385,
+  "b": 180.005,
+  "dur": 1.62,
+  "text": "Your support means everything."
+ },
+ "o_massive": {
+  "file": "v_o_massive.wav",
+  "src": "t3",
+  "a": 180.46,
+  "b": 184.12,
+  "dur": 3.66,
+  "text": "And thank yourself for taking massive action today to change your future!"
+ },
+ "o_best": {
+  "file": "v_o_best.wav",
+  "src": "t3",
+  "a": 184.355,
+  "b": 188.005,
+  "dur": 3.65,
+  "text": "I wish you nothing but the best, because YOU are the best."
+ },
+ "o_im": {
+  "file": "v_o_im.wav",
+  "src": "t3",
+  "a": 188.175,
+  "b": 191.26,
+  "dur": 3.085,
+  "text": "I'm MTG, Your Digital Architect."
+ },
+ "o_see": {
+  "file": "v_o_see.wav",
+  "src": "t3",
+  "a": 191.495,
+  "b": 192.565,
+  "dur": 1.07,
+  "text": "See you on the next one."
+ },
+ "o_lgtc": {
+  "file": "v_o_lgtc.wav",
+  "src": "t3",
+  "a": 192.765,
+  "b": 193.83,
+  "dur": 1.065,
+  "text": "Let's Get This Crypto!"
+ }
+}

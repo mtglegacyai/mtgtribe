@@ -4,6 +4,7 @@ import {AbsoluteFill, Easing, Html5Audio, Img, interpolate, staticFile} from 're
 import captionsJson from '../../../public/videos/11/captions.json';
 import C from '../../../public/videos/11/cues.json';
 import timeline from '../../../public/videos/11/timeline.json';
+import W from '../../../public/videos/11/words.json';
 import {closingTail, COLORS} from '../../brand';
 import {BrandBar} from '../../components/BrandBar';
 import {Captions} from '../../components/Captions';
@@ -26,6 +27,8 @@ import {Backdrop, Chip, clamp, Cues, ease, fadeOut, Flip, GOLD_TEXT, Panel, useP
 // (ethereum.org, for non-upgradeable contracts, hence "usually").
 
 export const DYK11_FPS = 30;
+// the banked deep slogan (MTG, 16 November 2026): the start of each of its four words, for the end screen and the sound
+const SLOGAN = W.words.slice(-4).map((w) => w.start);
 const captions = captionsJson as Caption[];
 const TAIL = closingTail(captions[captions.length - 1].endMs / 1000, timeline.total);
 export const DYK11_FRAMES = Math.ceil((timeline.total + TAIL) * DYK11_FPS);
@@ -336,7 +339,7 @@ export const SmartContracts: React.FC<{closingTrack: string | null}> = ({closing
 			<LeoMoment m="laugh" at={C.coins + 0.1} seconds={Math.min(2.3, C.join - C.coins - 0.45)} style={{left: 290, top: 540, width: 500, height: 640}} focus="50% 10%" sound={null} />
 
 			{/* THE TRIBE, THE WEBSITE AND THE SIGN-OFF, then the theme's last line */}
-			<EndScreen t={t} cardAt={C.join - 0.15} photoAt={C.im - 0.1} sloganAt={C.slogan - 0.05} pillsAt={C.weLearn - 0.35} pills={['crypto', 'wallet', 'ai', 'streams', 'tribe']} />
+			<EndScreen t={t} cardAt={C.join - 0.15} photoAt={C.im - 0.1} sloganAt={C.slogan - 0.05} pillsAt={C.weLearn - 0.35} pills={['crypto', 'wallet', 'ai', 'streams', 'tribe']} sloganWords={SLOGAN} />
 			<LeoMoment m="welcome" at={C.site - 0.3} seconds={Math.min(2.1, C.weLearn - C.site - 0.35)} style={{left: 300, top: 630, width: 480, height: 570}} focus="50% 10%" sound={null} />
 
 			{/* sound, fitted to this story and soft (Leo's accents bring their own); the theme plays only its last line */}
@@ -349,7 +352,7 @@ export const SmartContracts: React.FC<{closingTrack: string | null}> = ({closing
 					[C.but - 0.15, 'air', 0.26], [C.broken - 0.1, 'pluck1', 0.28], [C.fixed - 0.2, 'key', 0.32], [C.usually, 'thud', 0.34], [C.mistake - 0.2, 'tension', 0.26],
 					[C.tip - 0.15, 'chime', 0.3], [C.wallet - 0.4, 'slide', 0.3], [C.understand, 'tick', 0.3], [C.explain - 0.1, 'pluck2', 0.28], [C.sign - 0.1, 'ping', 0.34], [C.sign + 0.2, 'pluck4', 0.26],
 					[C.did, 'chime', 0.3], [C.tell, 'pluck2', 0.28], [C.send, 'pluck3', 0.3],
-					[C.join - 0.15, 'glow', 0.35], [C.weLearn - 0.35, 'pluck1', 0.28], [C.im - 0.1, 'air', 0.25],
+					[C.join - 0.15, 'glow', 0.35], [C.weLearn - 0.35, 'pluck1', 0.28], [C.im - 0.1, 'air', 0.25], [SLOGAN[3] - 0.02, 'land', 0.42],
 				]}
 			/>
 			<Html5Audio src={staticFile('videos/11/voice/s01.wav')} />

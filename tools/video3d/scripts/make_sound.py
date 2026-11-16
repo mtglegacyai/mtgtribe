@@ -40,6 +40,7 @@ The palette (what each one is for):
   shrink     a warm glide down that settles with a friendly pop: something big made small (video 10)
   vend       a can dropping into a vending machine's tray, a soft thunk and roll (video 11)
   keypad     three soft, warm keypad beeps: a choice being made (video 11)
+  land       a warm, low thump with a slow bloom: MTG's slogan landing on "Crypto!" (every video, from 16 Nov 2026)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -641,6 +642,15 @@ def keypad():
     return lowpass(x, 1600)
 
 
+def land():
+    """The slogan lands: a warm, low thump with a soft, slow bloom underneath (felt more than heard, never a boom)."""
+    d = 2.2
+    tt = t(d)
+    thump = sine(lambda u: 62 + 40 * np.exp(-u * 14), d) * np.clip(tt / 0.012, 0, 1) * np.exp(-tt * 3.2)
+    bloom = sum(np.sin(2 * np.pi * f * tt) * a for f, a in ((110.0, 0.30), (164.8, 0.22), (220.0, 0.14))) * env(len(tt), 0.18, 1.2, hold=0.2) * 0.6
+    return lowpass(thump + bloom, 900)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -672,6 +682,8 @@ PALETTE = {
     'step': (step, 0.2), 'shrink': (shrink, 0.25),
     # made for video 11 (did you know a contract can run itself?)
     'vend': (vend, 0.2), 'keypad': (keypad, 0.15),
+    # made for MTG's slogan (16 November 2026): every video, under "Crypto!"
+    'land': (land, 0.25),
 }
 
 

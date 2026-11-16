@@ -1,0 +1,26 @@
+{
+ "take": "take2-authoritative.wav",
+ "duration": 3.005,
+ "words": [
+  {
+   "text": "Let's",
+   "start": 0.039,
+   "end": 0.337
+  },
+  {
+   "text": "Get",
+   "start": 0.935,
+   "end": 1.233
+  },
+  {
+   "text": "This",
+   "start": 1.361,
+   "end": 1.489
+  },
+  {
+   "text": "Crypto!",
+   "start": 2.172,
+   "end": 2.74
+  }
+ ]
+}

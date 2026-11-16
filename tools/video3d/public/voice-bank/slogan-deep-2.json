@@ -1,0 +1,26 @@
+{
+ "take": "take3-slowly.wav",
+ "duration": 3.276,
+ "words": [
+  {
+   "text": "Let's",
+   "start": 0.039,
+   "end": 0.465
+  },
+  {
+   "text": "get",
+   "start": 0.636,
+   "end": 0.849
+  },
+  {
+   "text": "this",
+   "start": 0.977,
+   "end": 1.233
+  },
+  {
+   "text": "crypto!",
+   "start": 2.087,
+   "end": 3.012
+  }
+ ]
+}

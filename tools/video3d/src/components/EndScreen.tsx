@@ -17,7 +17,10 @@ import {DEFAULT_PILLS, HintPill, SITE_PILLS, SitePillId, UrlPill} from './Pills'
  *
  * Everything stays above y 1230, clear of the captions. The theme's last line plays over step 3 (ClosingTrack).
  */
-export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sloganAt: number; pills?: SitePillId[]; pillsAt?: number}> = ({t, cardAt, photoAt, sloganAt, pills = DEFAULT_PILLS, pillsAt}) => {
+export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sloganAt: number; pills?: SitePillId[]; pillsAt?: number; sloganWords?: number[]}> = ({t, cardAt, photoAt, sloganAt, pills = DEFAULT_PILLS, pillsAt, sloganWords}) => {
+	// sloganWords: the start times of "Let's", "Get", "This", "Crypto!" in his banked deep slogan (MTG, 16 November 2026:
+	// "this is a slogan, so it must feel like a slogan"): each word lands on screen as he says it, the website after.
+	const afterSlogan = sloganWords ? sloganWords[sloganWords.length - 1] + 0.55 : sloganAt + 0.35;
 	const list = pills.slice(0, 7);
 	// pillsAt: when the pills start (default: right after the tribe card); set it to the words that name them
 	const firstPill = pillsAt ?? cardAt + 0.9;
@@ -63,15 +66,32 @@ export const EndScreen: React.FC<{t: number; cardAt: number; photoAt: number; sl
 				<div style={{fontFamily: BODY, fontWeight: 800, fontSize: 38, color: COLORS.text}}>Your Digital Architect</div>
 			</div>
 			<div style={{position: 'absolute', top: 790, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 26}}>
-				<div style={{opacity: ease(t, sloganAt), transform: `scale(${interpolate(usePop(sloganAt, 12), [0, 1], [0.7, 1])})`}}>
-					<span style={{fontFamily: DISPLAY, fontSize: 96, ...GOLD_TEXT}}>Let's Get This Crypto!</span> <span style={{fontFamily: DISPLAY, fontSize: 96}}>💪</span>
-				</div>
-				<UrlPill text="mtgtribe.com" size={72} t={t} at={sloganAt + 0.35} />
-				<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '12px 30px', borderRadius: 999, border: '2.5px solid rgba(242,173,60,0.85)', background: 'rgba(18,14,9,0.94)', opacity: ease(t, sloganAt + 0.75), transform: `translateY(${interpolate(t, [sloganAt + 0.75, sloganAt + 1.15], [20, 0], clamp)}px)`}}>
+				{sloganWords ? (
+					<div style={{display: 'flex', alignItems: 'baseline', gap: 16}}>
+						{["Let's", 'Get', 'This', 'Crypto!'].map((w, i) => (
+							<SloganWord key={w} text={w} at={sloganWords[i] - 0.06} t={t} big={i === 3} />
+						))}
+						<span style={{fontFamily: DISPLAY, fontSize: 84, display: 'inline-block', opacity: ease(t, sloganWords[3] + 0.15), transform: `scale(${interpolate(usePop(sloganWords[3] + 0.15, 10), [0, 1], [0.4, 1])})`}}>💪</span>
+					</div>
+				) : (
+					<div style={{opacity: ease(t, sloganAt), transform: `scale(${interpolate(usePop(sloganAt, 12), [0, 1], [0.7, 1])})`}}>
+						<span style={{fontFamily: DISPLAY, fontSize: 96, ...GOLD_TEXT}}>Let's Get This Crypto!</span> <span style={{fontFamily: DISPLAY, fontSize: 96}}>💪</span>
+					</div>
+				)}
+				<UrlPill text="mtgtribe.com" size={72} t={t} at={afterSlogan} />
+				<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '12px 30px', borderRadius: 999, border: '2.5px solid rgba(242,173,60,0.85)', background: 'rgba(18,14,9,0.94)', opacity: ease(t, afterSlogan + 0.4), transform: `translateY(${interpolate(t, [afterSlogan + 0.4, afterSlogan + 0.8], [20, 0], clamp)}px)`}}>
 					<BrandIcon icon="whatsapp" size={40} />
 					<span style={{fontFamily: BODY, fontWeight: 800, fontSize: 36, color: COLORS.text}}>Join the tribe: <span style={{color: COLORS.goldHi}}>mtgtribe.com/group</span></span>
 				</div>
 			</div>
 		</AbsoluteFill>
+	);
+};
+
+/** One word of the slogan: it drops in with weight as he says it; "Crypto!" lands bigger, with a gold glow. */
+const SloganWord: React.FC<{text: string; at: number; t: number; big?: boolean}> = ({text, at, t, big}) => {
+	const p = usePop(at, big ? 9 : 12);
+	return (
+		<span style={{fontFamily: DISPLAY, fontSize: big ? 100 : 86, lineHeight: 1, ...GOLD_TEXT, display: 'inline-block', opacity: ease(t, at, 0.12), transform: `translateY(${interpolate(p, [0, 1], [-46, 0])}px) scale(${interpolate(p, [0, 1], [1.35, 1])})`, filter: big ? `drop-shadow(0 0 ${26 * ease(t, at + 0.1, 0.4)}px rgba(242,173,60,0.65))` : undefined}}>{text}</span>
 	);
 };

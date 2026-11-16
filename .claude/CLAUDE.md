@@ -65,6 +65,18 @@ to 04). Facts of the new engine, measured on 10 November 2026:
 - V3 speaks a little slower than V2 (about 2.8 words a second; V2 about 3.1): about 150 words for 60 seconds.
 - V2's old voice-bank lines and new V3 lines sound slightly different: never mix them inside one video without telling
   MTG. A failed call (error 400) costs nothing, but ask MTG before any retry.
+- **The spoken slogan is the banked deep take (MTG, 16 November 2026).** MTG: the slogan at the end was "too high ...
+  take it down, make it deep ... make it land harder. This is a slogan, so it must feel like a slogan ... after fixing
+  that, just continue using that." Measured on video 11: his narration sits at about 126 Hz, the slogan inside each
+  script came out at 240 to 270 Hz and rose at the end. So "Let's Get This Crypto!" was recorded once on its own with a
+  HeyGen delivery tag (`[deep voice] Let's... Get... This... Crypto!`, about 118 Hz, falling on "Crypto"), finished by
+  `scripts/make_slogan.py` and banked as `public/voice-bank/slogan-deep.wav` (takes 2 and 3 are the alternatives; raw
+  takes in `voice-src/slogan/`). Every video: keep the slogan in the script sent to HeyGen (so "Your Digital
+  Architect." ends naturally), then run `python3 scripts/splice_slogan.py public/videos/NN` after `voice_timing.py` and
+  before `make_cues.py`; in the composition import `words.json`, take `SLOGAN = W.words.slice(-4).map((w) => w.start)`,
+  pass `sloganWords={SLOGAN}` to `EndScreen` (the words land on screen one by one) and add the cue
+  `[SLOGAN[3] - 0.02, 'land', 0.42]` (a soft, low landing under "Crypto!"). First used in video 11 (re-made the same
+  day); waiting for MTG to listen and pick take 1, 2 or 3.
 Wherever an older note or skill says "MTG Master Voice V2", read V3.
 
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)

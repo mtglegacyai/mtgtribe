@@ -6,7 +6,7 @@ import core
 from config import *
 from pages_learn import p_home, p_fit, p_back, p_what, p_hiw, p_slots, p_pool, p_stokvel, p_diff, p_proof
 from pages_do import (p_join, p_tut, p_exp, p_zoom, p_page, p_c_btc, p_c_slot, p_c_halv, p_faq, faq_ld, p_gloss, p_safe,
-                      p_card, p_tribe, p_disc, order_page, JOIN_STEPS, JOIN_NEEDS, GLOSS)
+                      p_card, p_tribe, p_disc, order_page, JOIN_STEPS, JOIN_NEEDS, GLOSS, zoom_ld, zoom_ics, zoom_head)
 from pages_land import landing
 from seo import SEO_DESC
 
@@ -59,6 +59,8 @@ def page_ld(key, title, desc):
                  'inLanguage': 'en-ZA', 'supply': [{'@type': 'HowToSupply', 'name': n} for n in JOIN_NEEDS],
                  'tool': [{'@type': 'HowToTool', 'name': 'SafePal wallet app'}],
                  'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': t} for i, (n, t) in enumerate(JOIN_STEPS)]}]
+    if key == 'zoom':
+        return zoom_ld(url, core.og_image(key))
     if key == 'page':
         return [{'@type': 'Product', 'name': 'BW Tribe Page', 'description': desc, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
                  'offers': {'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + ORDER, 'availability': 'https://schema.org/InStock'}}]
@@ -168,6 +170,9 @@ def render(dst):
         ld = ld + page_ld(key, title, desc)
         hd, content = core.dash_page(key, title, desc, fn, ld)
         os.makedirs(base + '/' + here, exist_ok=True)
+        if key == 'zoom':      # page-only stylesheet, and the weekly schedule for people's calendars
+            hd += zoom_head(here)
+            open(base + '/' + here + ZOOM_ICS, 'w', newline='').write(zoom_ics(SITE + BASE + here))
         open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
     hd, body = order_page()
     os.makedirs(dst + ORDER, exist_ok=True)
@@ -196,7 +201,7 @@ def check(dst):
     bad = []
     for r, _, fs in os.walk(dst):
         for f in fs:
-            if f.endswith(('.html', '.css', '.js', '.xml', '.txt')):
+            if f.endswith(('.html', '.css', '.js', '.xml', '.txt', '.ics')):
                 s = open(os.path.join(r, f), encoding='utf-8').read()
                 for ch, nm in (('—', 'em dash'), ('–', 'en dash')):
                     if ch in s:
@@ -248,6 +253,10 @@ def render_preview(dst):
     for key, (title, fn, extra) in PAGES.items():
         here = NAVD[key][1]
         hd, content = core.dash_page(key, title, SEO_DESC[key], fn, [])
+        if key == 'zoom':
+            hd += zoom_head(here)
+            os.makedirs(dst + '/' + here, exist_ok=True)
+            open(dst + '/' + here + ZOOM_ICS, 'w', newline='').write(zoom_ics(SITE + BASE + here))
         files[here + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
     hd, body = order_page('bwcopy/')
     files['bwcopy/index.html'] = core.wrap_doc(hd, body, 'landing orderpage')

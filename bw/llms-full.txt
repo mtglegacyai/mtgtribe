@@ -491,26 +491,66 @@ The honest scorecard. Open
 
 URL: https://mtgtribe.com/bw/dashboard/live-on-zoom/
 
-Meet the Bitcoin Wealth community live on Zoom: weekdays at 14:00 and five evenings a week in English, isiXhosa, isiZulu and Sesotho.
+Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho. See your own time and add them to your calendar.
+
+Live on Zoom · 10 sessions a week
 
 ### Live on Zoom
-Meet the community, ask anything and watch it explained live. Weekdays at 14:00, and five evenings a week in four languages.
+Meet the community, ask anything and watch it explained live. Weekdays at 14:00 in English, and five evenings a week in four languages.
+All times are South African time (SAST, UTC+2)
+Languages: English isiXhosa isiZulu Sesotho
+Next live session
 
-#### The weekly schedule
+#### Every weekday on Zoom
+Monday to Friday at 14:00 in English. Evenings: Monday 20:00 isiXhosa; Tuesday and Wednesday 20:00 English; Thursday 20:00 isiZulu; Friday 19:00 Sesotho. South African time.
+0 Days 0 Hours 0 Minutes
+The weekly calendar
 
-##### Mon
-
-##### Tue
-
-##### Wed
-
-##### Thu
-
-##### Fri
+#### 10 sessions. Every week.
+Two sessions every weekday, one in the afternoon and one in the evening. Today is marked, and the dates follow South African time.
+Bitcoin Wealth · Live on Zoom
+Weekly Zoom calendar
+South African time (SAST, UTC+2)
+No live session
+No live session
 The 14:00 sessions are in English, and questions are welcome in any language, like isiZulu.
+Time zones
 
-#### How to get the Zoom link
-We meet live on Zoom five evenings a week, in four languages. Ask the person who invited you to add you to the WhatsApp group, or tap the WhatsApp button. Links are only shared inside the group, never in public.
+#### What time is that where you are?
+The same sessions in the tribe's biggest time zones. Daylight saving is taken care of: the times follow the clocks in each country.
+
+Each Bitcoin Wealth Zoom session in South African time and in other time zones
+| Session | South Africa SAST, UTC+2 | Nigeria Lagos, UTC+1 | United Kingdom London, UTC+0 | Canada and US East Toronto, New York, UTC-5 | Australia Sydney, UTC+11 | Your time your device |
+|---|---|---|---|---|---|---|
+| Monday to Friday English Questions welcome in any language | 14:00 | 13:00 | 12:00 | 07:00 | 23:00 |  |
+| Monday isiXhosa | 20:00 | 19:00 | 18:00 | 13:00 | 05:00 Tue |  |
+| Tuesday and Wednesday English | 20:00 | 19:00 | 18:00 | 13:00 | 05:00 Wed and Thu |  |
+| Thursday isiZulu | 20:00 | 19:00 | 18:00 | 13:00 | 05:00 Fri |  |
+| Friday Sesotho | 19:00 | 18:00 | 17:00 | 12:00 | 04:00 Sat |  |
+
+A day tag (like Tue ) means the session falls on a different day there. Somewhere else? The Your time column works it out from your own device.
+How to get the Zoom link
+
+#### The link lives on WhatsApp
+The Zoom links are only shared inside the MTG TRIBE WhatsApp group, never in public. Ask the person who invited you to add you to the group, or choose the way that suits you.
+Way 1 · The group
+
+##### Join the MTG TRIBE group
+Opens WhatsApp and the MTG TRIBE group, where the Zoom links for the sessions are shared.
+Way 2 · One on one
+
+##### Ask MTG directly
+Opens a private WhatsApp chat with MTG, with a short message asking for the Zoom link of the next session, ready to send.
+
+#### Add the schedule to your calendar
+10 weekly reminders, set in South African time, so your phone or computer shows each one in your own time. No Zoom link inside: the link is shared in the WhatsApp group.
+Questions
+
+#### Good to know
+The Zoom links are only shared inside the MTG TRIBE WhatsApp group, never in public. Ask the person who invited you to add you to the group, join the group, or message MTG on WhatsApp and ask for the link.
+Every time on this page is South African time (SAST, UTC+2, no daylight saving). The time zone table shows Nigeria, the United Kingdom, Canada and US East and Australia, plus a Your time column worked out from your own device.
+Monday to Friday at 14:00 the sessions are in English, and questions are welcome in any language, like isiZulu. In the evenings: Monday 20:00 isiXhosa; Tuesday and Wednesday 20:00 English; Thursday 20:00 isiZulu; Friday 19:00 Sesotho.
+Yes. Zoom works on phones, tablets and computers. Install the Zoom app on your phone, then tap the link when it is shared in the group.
 
 ---
 

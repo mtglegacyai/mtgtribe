@@ -1,0 +1,183 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MTG TRIBE//Bitcoin Wealth Zoom schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bitcoin Wealth live on Zoom
+X-WR-TIMEZONE:Africa/Johannesburg
+BEGIN:VTIMEZONE
+TZID:Africa/Johannesburg
+X-LIC-LOCATION:Africa/Johannesburg
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0200
+TZNAME:SAST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:bw-zoom-mon-1400-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261116T140000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=MO
+SUMMARY:Bitcoin Wealth Zoom: English session (Monday 14:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. Questions are w
+ elcome in any language\, like isiZulu. The Zoom link is shared inside the 
+ MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ or ask MTG on WhatsA
+ pp: https://wa.me/27721714626 Schedule and time zones: https://mtgtribe.co
+ m/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-mon-2000-xh@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261116T200000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=MO
+SUMMARY:Bitcoin Wealth Zoom: isiXhosa session (Monday 20:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in isiXhosa. The Zoom link 
+ is shared inside the MTG TRIBE WhatsApp group: https://mtgtribe.com/group/
+  or ask MTG on WhatsApp: https://wa.me/27721714626 Schedule and time zones
+ : https://mtgtribe.com/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-tue-1400-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261117T140000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=TU
+SUMMARY:Bitcoin Wealth Zoom: English session (Tuesday 14:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. Questions are w
+ elcome in any language\, like isiZulu. The Zoom link is shared inside the 
+ MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ or ask MTG on WhatsA
+ pp: https://wa.me/27721714626 Schedule and time zones: https://mtgtribe.co
+ m/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-tue-2000-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261117T200000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=TU
+SUMMARY:Bitcoin Wealth Zoom: English session (Tuesday 20:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. The Zoom link i
+ s shared inside the MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ 
+ or ask MTG on WhatsApp: https://wa.me/27721714626 Schedule and time zones:
+  https://mtgtribe.com/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-wed-1400-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261118T140000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=WE
+SUMMARY:Bitcoin Wealth Zoom: English session (Wednesday 14:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. Questions are w
+ elcome in any language\, like isiZulu. The Zoom link is shared inside the 
+ MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ or ask MTG on WhatsA
+ pp: https://wa.me/27721714626 Schedule and time zones: https://mtgtribe.co
+ m/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-wed-2000-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261118T200000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=WE
+SUMMARY:Bitcoin Wealth Zoom: English session (Wednesday 20:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. The Zoom link i
+ s shared inside the MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ 
+ or ask MTG on WhatsApp: https://wa.me/27721714626 Schedule and time zones:
+  https://mtgtribe.com/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-thu-1400-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261119T140000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=TH
+SUMMARY:Bitcoin Wealth Zoom: English session (Thursday 14:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. Questions are w
+ elcome in any language\, like isiZulu. The Zoom link is shared inside the 
+ MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ or ask MTG on WhatsA
+ pp: https://wa.me/27721714626 Schedule and time zones: https://mtgtribe.co
+ m/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-thu-2000-zu@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261119T200000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=TH
+SUMMARY:Bitcoin Wealth Zoom: isiZulu session (Thursday 20:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in isiZulu. The Zoom link i
+ s shared inside the MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ 
+ or ask MTG on WhatsApp: https://wa.me/27721714626 Schedule and time zones:
+  https://mtgtribe.com/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-fri-1400-en@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261120T140000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=FR
+SUMMARY:Bitcoin Wealth Zoom: English session (Friday 14:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in English. Questions are w
+ elcome in any language\, like isiZulu. The Zoom link is shared inside the 
+ MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ or ask MTG on WhatsA
+ pp: https://wa.me/27721714626 Schedule and time zones: https://mtgtribe.co
+ m/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:bw-zoom-fri-1900-st@mtgtribe.com
+DTSTAMP:20261116T000000Z
+DTSTART;TZID=Africa/Johannesburg:20261120T190000
+DURATION:PT60M
+RRULE:FREQ=WEEKLY;BYDAY=FR
+SUMMARY:Bitcoin Wealth Zoom: Sesotho session (Friday 19:00)
+DESCRIPTION:Live Bitcoin Wealth session on Zoom in Sesotho. The Zoom link i
+ s shared inside the MTG TRIBE WhatsApp group: https://mtgtribe.com/group/ 
+ or ask MTG on WhatsApp: https://wa.me/27721714626 Schedule and time zones:
+  https://mtgtribe.com/bw/dashboard/live-on-zoom/
+LOCATION:Zoom (link in the MTG TRIBE WhatsApp group)
+URL:https://mtgtribe.com/bw/dashboard/live-on-zoom/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

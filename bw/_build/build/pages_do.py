@@ -67,19 +67,287 @@ def p_exp(here):
 
 
 # ======================================================================= ZOOM
+# Live On Zoom (MTG, 16 Nov 2026: "as beautiful as the JetUp page"). Everything comes from ZOOM in config.py: the calendar,
+# the time zone table, the page script's data, the JSON-LD and the .ics. Page CSS: assets/zoom-live.css. Page script (the
+# schedule maths, countdown, calendar dates, time zones; tested in Node): assets/zoom-live.js. Never write that MTG hosts them.
+import datetime as _dt
+from urllib.parse import quote as _quote
+from zoneinfo import ZoneInfo as _Zone
+
+ZDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+ZFULL = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+ZONES = [('South Africa', 'SAST', 'Africa/Johannesburg'), ('Nigeria', 'Lagos', 'Africa/Lagos'), ('United Kingdom', 'London', 'Europe/London'),
+         ('Canada and US East', 'Toronto, New York', 'America/Toronto'), ('Australia', 'Sydney', 'Australia/Sydney')]
+WA_ZOOM = WA_MTG + '?text=' + _quote(ZOOM_WA_TEXT)
+
+
+def zsessions():
+    """the ten weekly sessions in week order: dict(i, dow 0=Mon, day, full, t, h, m, lang, code, eve)"""
+    out = []
+    for d, t, lang in sorted(ZOOM, key=lambda z: (ZDAYS.index(z[0]), z[1])):
+        h, m = map(int, t.split(':'))
+        out.append(dict(dow=ZDAYS.index(d), day=d, full=ZFULL[ZDAYS.index(d)], t=t, h=h, m=m, lang=lang, code=ZOOM_LANG[lang], eve=h >= 17))
+    for i, z in enumerate(out):
+        z['i'] = i
+    return out
+
+
+def zgroups():
+    """sessions with the same time and language, grouped for the table and JSON-LD (e.g. Monday to Friday 14:00 English)"""
+    g = {}
+    for z in zsessions():
+        g.setdefault((z['t'], z['lang']), []).append(z)
+    return sorted(g.values(), key=lambda ss: (ss[0]['dow'], ss[0]['t']))
+
+
+def zdays_label(dows, full=True):
+    names = ZFULL if full else ZDAYS
+    if len(dows) == 1:
+        return names[dows[0]]
+    if len(dows) > 2 and dows == list(range(dows[0], dows[-1] + 1)):
+        return f'{names[dows[0]]} to {names[dows[-1]]}'
+    return ', '.join(names[d] for d in dows[:-1]) + ' and ' + names[dows[-1]]
+
+
+def zfirst(z):
+    """the first start of a session on or after ZOOM_FROM, as an aware datetime in South African time"""
+    d0 = _dt.date.fromisoformat(ZOOM_FROM)
+    d = d0 + _dt.timedelta(days=(z['dow'] - d0.weekday()) % 7)
+    return _dt.datetime(d.year, d.month, d.day, z['h'], z['m'], tzinfo=_Zone(ZOOM_TZ))
+
+
+def zutc(off):
+    m = int(off.total_seconds() // 60)
+    if not m:
+        return 'UTC+0'
+    a = abs(m)
+    return 'UTC' + ('-' if m < 0 else '+') + str(a // 60) + (f':{a % 60:02d}' if a % 60 else '')
+
+
+def zlang(z, cls=''):
+    return f'<span class="lg l-{z["code"]}{" " + cls if cls else ""}">{z["lang"]}</span>'
+
+
+def _zcal():
+    days = []
+    for dow in range(7):
+        evs = [z for z in zsessions() if z['dow'] == dow]
+        inner = ''.join(
+            f'<div class="ev l-{z["code"]}{" eve" if z["eve"] else ""}" data-s="{z["i"]}"><span class="tm">{z["t"]} <small>SAST</small></span>'
+            f'{zlang(z)}<span class="pt"><span class="e" aria-hidden="true">{"🌙" if z["eve"] else "☀️"}</span>{"Evening" if z["eve"] else "Afternoon"}</span>'
+            f'<span class="yt"></span></div>' for z in evs) or '<p class="none">No live session</p>'
+        days.append(f'<div class="day{"" if evs else " quiet"}" role="listitem" data-dow="{(dow + 1) % 7}"><div class="dh"><span class="dn">{ZDAYS[dow]}</span>'
+                    f'<span class="dt"></span><span class="tdy">Today</span></div><div class="evs">{inner}</div></div>')
+    return '\n'.join(days)
+
+
+def _ztable():
+    ref = zfirst(zsessions()[0])
+    head = '<th scope="col">Session</th>' + ''.join(
+        f'<th scope="col"{" class=sa" if k == 0 else ""}>{n}<small>{c}, <span class="off" data-tz="{tz}">{zutc(ref.astimezone(_Zone(tz)).utcoffset())}</span></small></th>'
+        for k, (n, c, tz) in enumerate(ZONES)) + '<th scope="col" class="you js-only">Your time<small id="you-zone">your device</small></th>'
+    rows = []
+    for ss in zgroups():
+        z0 = ss[0]
+        st = zfirst(z0)
+        cells = []
+        for k, (n, c, tz) in enumerate(ZONES):
+            lt = st.astimezone(_Zone(tz))
+            shift = (lt.weekday() - z0['dow']) % 7
+            dy = ''
+            if shift:
+                dy = f'<span class="dy">{zdays_label([(x["dow"] + shift) % 7 for x in ss], False)}</span>'
+            cells.append(f'<td{" class=sa" if k == 0 else ""} data-label="{n} ({c})" data-tz="{tz}"><span class="tt">{lt:%H:%M}</span>{dy}</td>')
+        cells.append('<td class="you js-only" data-label="Your time" data-tz="local"><span class="tt"></span></td>')
+        note = '<small>Questions welcome in any language</small>' if z0['lang'] == 'English' and not z0['eve'] else ''
+        rows.append(f'<tr data-s="{",".join(str(x["i"]) for x in ss)}">'
+                    f'<th scope="row"><span class="rd">{zdays_label([x["dow"] for x in ss])}</span> {zlang(z0)}{note}</th>{"".join(cells)}</tr>')
+    return (f'<table class="tzt"><caption class="sr">Each Bitcoin Wealth Zoom session in South African time and in other time zones</caption>'
+            f'<thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table>')
+
+
+ZFAQ = [
+    ('How do I get the Zoom link?',
+     f'The Zoom links are only shared inside the MTG TRIBE WhatsApp group, never in public. Ask the person who invited you to add you to the group, '
+     f'<a class="inl" href="{GROUP}" target="_blank" rel="noopener">join the group</a>, or '
+     f'<a class="inl" href="{esc(WA_ZOOM)}" data-wa-text="{esc(ZOOM_WA_TEXT)}" target="_blank" rel="noopener">message MTG on WhatsApp</a> and ask for the link.'),
+    ('What time is it where I live?',
+     'Every time on this page is South African time (SAST, UTC+2, no daylight saving). The <a class="inl" href="#timezones">time zone table</a> '
+     'shows Nigeria, the United Kingdom, Canada and US East and Australia, plus a Your time column worked out from your own device.'),
+    ('Which language is each session in?',
+     'Monday to Friday at 14:00 the sessions are in English, and questions are welcome in any language, like isiZulu. In the evenings: '
+     + '; '.join(f'{zdays_label([x["dow"] for x in ss])} {ss[0]["t"]} {ss[0]["lang"]}' for ss in zgroups() if ss[0]['eve']) + '.'),
+    ('Can I join from my phone?',
+     'Yes. Zoom works on phones, tablets and computers. Install the Zoom app on your phone, then tap the link when it is shared in the group.'),
+]
+
+
+def zfaq_ld(url):
+    return {'@type': 'FAQPage', '@id': url + '#faqpage',
+            'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a)}} for q, a in ZFAQ]}
+
+
+def zoom_ld(url, image):
+    """EventSeries plus one Event per group of sessions (weekly eventSchedule), and the FAQ"""
+    note = 'The Zoom link is shared inside the MTG TRIBE WhatsApp group.'
+    where = {'@type': 'VirtualLocation', 'url': url}
+    first = min(zfirst(z) for z in zsessions())
+    evs = []
+    for ss in zgroups():
+        z0, st = ss[0], min(zfirst(z) for z in ss)
+        en = st + _dt.timedelta(minutes=ZOOM_MIN)
+        lab = zdays_label([x['dow'] for x in ss])
+        id_ = url + f'#zoom-{z0["code"]}-{z0["t"].replace(":", "")}-{ZDAYS[z0["dow"]].lower()}'
+        evs.append({'@type': 'Event', '@id': id_, 'name': f'Bitcoin Wealth live on Zoom in {z0["lang"]} ({lab} {z0["t"]})',
+                    'description': f'Live Bitcoin Wealth Zoom session in {z0["lang"]}, every {lab} at {z0["t"]} South African time. {note}',
+                    'url': url, 'image': image, 'inLanguage': z0['code'], 'startDate': st.isoformat(), 'endDate': en.isoformat(),
+                    'eventAttendanceMode': 'https://schema.org/OnlineEventAttendanceMode', 'eventStatus': 'https://schema.org/EventScheduled',
+                    'location': where, 'isAccessibleForFree': True, 'superEvent': {'@id': url + '#series'},
+                    'eventSchedule': {'@type': 'Schedule', 'startDate': st.date().isoformat(), 'repeatFrequency': 'P1W',
+                                      'byDay': [f'https://schema.org/{x["full"]}' for x in ss], 'startTime': z0['t'] + ':00',
+                                      'endTime': en.strftime('%H:%M:%S'), 'duration': f'PT{ZOOM_MIN}M', 'scheduleTimezone': ZOOM_TZ}})
+    series = {'@type': 'EventSeries', '@id': url + '#series', 'name': 'Bitcoin Wealth live Zoom sessions',
+              'description': (f'{len(ZOOM)} live Bitcoin Wealth Zoom sessions every week in {len(ZOOM_LANG)} languages ('
+                              + ', '.join(ZOOM_LANG) + '), in South African time. ' + note),
+              'url': url, 'image': image, 'inLanguage': list(ZOOM_LANG.values()), 'startDate': first.isoformat(),
+              'eventAttendanceMode': 'https://schema.org/OnlineEventAttendanceMode', 'eventStatus': 'https://schema.org/EventScheduled',
+              'location': where, 'isAccessibleForFree': True, 'subEvent': [{'@id': e['@id']} for e in evs]}
+    return [series] + evs + [zfaq_ld(url)]
+
+
+def zoom_ics(url):
+    """the weekly schedule as an iCalendar file: ten weekly events in Africa/Johannesburg (with its VTIMEZONE),
+    CRLF line ends, lines folded at 75 bytes, and no Zoom link inside (it is shared in the WhatsApp group)"""
+    def tx(v):
+        return v.replace('\\', '\\\\').replace(';', '\\;').replace(',', '\\,').replace('\n', '\\n')
+
+    def fold(line):
+        b, out = line.encode('utf-8'), []
+        lim = 75
+        while len(b) > lim:
+            cut = lim
+            while (b[cut] & 0xC0) == 0x80:      # never split a UTF-8 character
+                cut -= 1
+            out.append(b[:cut])
+            b = b[cut:]
+            lim = 74                             # continuation lines start with a space
+        out.append(b)
+        return b'\r\n '.join(out).decode('utf-8')
+    by = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
+    lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//MTG TRIBE//Bitcoin Wealth Zoom schedule//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+             'X-WR-CALNAME:Bitcoin Wealth live on Zoom', 'X-WR-TIMEZONE:' + ZOOM_TZ,
+             'BEGIN:VTIMEZONE', 'TZID:' + ZOOM_TZ, 'X-LIC-LOCATION:' + ZOOM_TZ, 'BEGIN:STANDARD', 'DTSTART:19700101T000000',
+             'TZOFFSETFROM:+0200', 'TZOFFSETTO:+0200', 'TZNAME:SAST', 'END:STANDARD', 'END:VTIMEZONE']
+    stamp = ZOOM_FROM.replace('-', '') + 'T000000Z'
+    for z in zsessions():
+        st = zfirst(z)
+        extra = ' Questions are welcome in any language, like isiZulu.' if z['lang'] == 'English' and not z['eve'] else ''
+        lines += ['BEGIN:VEVENT', f'UID:bw-zoom-{z["day"].lower()}-{z["t"].replace(":", "")}-{z["code"]}@mtgtribe.com', 'DTSTAMP:' + stamp,
+                  f'DTSTART;TZID={ZOOM_TZ}:{st:%Y%m%dT%H%M%S}', f'DURATION:PT{ZOOM_MIN}M', 'RRULE:FREQ=WEEKLY;BYDAY=' + by[z['dow']],
+                  'SUMMARY:' + tx(f'Bitcoin Wealth Zoom: {z["lang"]} session ({z["full"]} {z["t"]})'),
+                  'DESCRIPTION:' + tx(f'Live Bitcoin Wealth session on Zoom in {z["lang"]}.{extra} The Zoom link is shared inside the MTG TRIBE '
+                                      f'WhatsApp group: {GROUP} or ask MTG on WhatsApp: {WA_MTG} Schedule and time zones: {url}'),
+                  'LOCATION:' + tx('Zoom (link in the MTG TRIBE WhatsApp group)'), 'URL:' + url, 'STATUS:CONFIRMED', 'TRANSP:OPAQUE', 'END:VEVENT']
+    lines.append('END:VCALENDAR')
+    return '\r\n'.join(fold(x) for x in lines) + '\r\n'
+
+
+def zoom_head(here):
+    """the page-only stylesheet, after bw.css"""
+    return f'\n<link rel="stylesheet" href="{A("assets/zoom-live.css", here)}">'
+
+
 def p_zoom(here):
-    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
-    grid = ''
-    for d in days:
-        sess = [z for z in ZOOM if z[0] == d]
-        cells = ''.join(f'<span class="zs{" eve" if t != "14:00" else ""}"><b>{t}</b>{lang}</span>' for _, t, lang in sorted(sess, key=lambda z: z[1]))
-        grid += f'<div class="zday glass"><h3>{d}</h3>{cells}</div>'
-    return f'''{phero("video", "Live on Zoom",
-        "Meet the community, ask anything and watch it explained live. Weekdays at 14:00, and five evenings a week in four languages.",
-        [("clock", "South African time (SAST)"), ("languages", "English, isiXhosa, isiZulu, Sesotho")])}
-{sec(f'<div class="zgrid">{grid}</div><p class="fine center">The 14:00 sessions are in English, and questions are welcome in any language, like isiZulu.</p>', "The weekly schedule")}
-{sec(f"""<div class="joinband glass"><div><h2 class="h3">How to get the Zoom link</h2><p>{ZOOM_LINE.replace(" below this video", "")} Links are only shared inside the group, never in public.</p></div>
-<div class="btn-row">{wa_group_btn(label='Join the MTG TRIBE', ring=True)}</div></div>""")}'''
+    ss = zsessions()
+    data = json.dumps({'tz': ZOOM_TZ, 's': [dict(d=(z['dow'] + 1) % 7, h=z['h'], m=z['m'], l=z['lang'], e=int(z['eve'])) for z in ss]},
+                      separators=(',', ':'), ensure_ascii=False)
+    legend = ''.join(f'<span><i class="l-{c}"></i>{n}</span>' for n, c in ZOOM_LANG.items())
+    hero_langs = ''.join(f'<span class="lg l-{c}">{n}</span>' for n, c in ZOOM_LANG.items())
+    ics = L(here + ZOOM_ICS, here)
+    wa_btn = btn('Message MTG on WhatsApp', WA_ZOOM, 'ghost', 'message-circle', 'lg', ext=True, attrs=f'data-wa-text="{esc(ZOOM_WA_TEXT)}"')
+    faq = ''.join(f'<details><summary><span>{q}</span>{ic("chevron-down")}</summary><div class="ans"><p>{a}</p></div></details>' for q, a in ZFAQ)
+    evening = '; '.join(f'{zdays_label([x["dow"] for x in g])} {g[0]["t"]} {g[0]["lang"]}' for g in zgroups() if g[0]['eve'])
+    rings = '<i></i>' * 10
+    return f'''<section class="sec zl zl-hero" aria-labelledby="zl-h1"><div class="wrap zl-q">
+ <div class="zl-hgrid">
+  <div class="zl-copy">
+   <div class="zl-emos" aria-hidden="true"><span>📣</span><span>🕗</span></div>
+   <p class="eyebrow">Live on Zoom · {len(ss)} sessions a week</p>
+   <h1 class="h1" id="zl-h1">Live on <span class="hl">Zoom</span></h1>
+   <p class="lead">Meet the community, ask anything and watch it explained live. Weekdays at 14:00 in English, and five evenings a week in four languages.</p>
+   <p class="zl-tz">{ic("clock")}<span>All times are South African time (SAST, UTC+2)</span></p>
+   <p class="zl-langs"><span class="sr">Languages: </span>{hero_langs}</p>
+   <div class="btn-row">{btn("Get the Zoom link", "#link", "gold", "whatsapp", "", True)}{btn("See the calendar", "#calendar", "ghost", "calendar-days")}</div>
+  </div>
+  <div class="glass nxcard" id="next" aria-labelledby="nx-name">
+   <p class="nx-lab"><span class="dot" aria-hidden="true"></span><span id="nx-lab">Next live session</span></p>
+   <h2 class="nx-h" id="nx-name">Every weekday on Zoom</h2>
+   <p class="nx-meta js-only" id="nx-meta"></p>
+   <p class="nx-when" id="nx-when">Monday to Friday at 14:00 in English. Evenings: {evening}. South African time.</p>
+   <p class="cd js-only" id="nx-cd" role="timer" aria-label="Time until the session starts">
+    <span class="cdu"><b id="cd-d">0</b><span>Days</span></span><span class="cdu"><b id="cd-h">0</b><span>Hours</span></span><span class="cdu"><b id="cd-m">0</b><span>Minutes</span></span>
+   </p>
+   <p class="nx-local js-only" id="nx-local"></p>
+   <p class="nx-after js-only" id="nx-after"></p>
+   {btn("Get the Zoom link", "#link", "gold", "whatsapp", "lg", cls="nx-btn")}
+  </div>
+ </div>
+</div></section>
+
+<section class="sec zl" id="calendar" aria-labelledby="cal-h"><div class="wrap zl-q">
+ <div class="sec-head"><p class="eyebrow">The weekly calendar</p><h2 class="h2" id="cal-h">{len(ss)} sessions. <span class="hl">Every week.</span></h2>
+  <p class="lead">Two sessions every weekday, one in the afternoon and one in the evening. Today is marked, and the dates follow South African time.</p></div>
+ <div class="cal-wrap">
+  <div class="cal">
+   <div class="rings" aria-hidden="true">{rings}</div>
+   <div class="band">
+    <div class="ttl"><p class="kick">Bitcoin Wealth · Live on Zoom</p><p class="bt">Weekly Zoom <span class="hl">calendar</span></p>
+     <p class="tzl">South African time (SAST, UTC+2)<span id="cal-week"></span></p></div>
+    <img class="cal-logo" src="{A("img/bitcoin-wealth-logo-192.png", here)}" width="96" height="96" alt="" loading="lazy" decoding="async">
+   </div>
+   <div class="days" role="list">
+{_zcal()}
+   </div>
+   <div class="cal-foot"><div class="legend">{legend}</div><span>Zoom link: in the WhatsApp group</span></div>
+  </div>
+ </div>
+ <p class="fine tznote">The 14:00 sessions are in English, and questions are welcome in any language, like isiZulu.</p>
+</div></section>
+
+<section class="sec zl" id="timezones" aria-labelledby="tz-h"><div class="wrap zl-q">
+ <div class="sec-head"><p class="eyebrow">Time zones</p><h2 class="h2" id="tz-h">What time is that <span class="hl">where you are?</span></h2>
+  <p class="lead">The same sessions in the tribe's biggest time zones. Daylight saving is taken care of: the times follow the clocks in each country.</p></div>
+ <div class="glass tzcard">{_ztable()}</div>
+ <p class="fine tznote">A day tag (like <span class="dy">Tue</span>) means the session falls on a different day there. Somewhere else? The Your time column works it out from your own device.</p>
+</div></section>
+
+<section class="sec zl" id="link" aria-labelledby="link-h"><div class="wrap zl-q">
+ <div class="sec-head"><p class="eyebrow">How to get the Zoom link</p><h2 class="h2" id="link-h">The link lives on <span class="hl">WhatsApp</span></h2>
+  <p class="lead">The Zoom links are only shared inside the MTG TRIBE WhatsApp group, never in public. Ask the person who invited you to add you to the group, or choose the way that suits you.</p></div>
+ <div class="ways">
+  <div class="glass way"><p class="eyebrow">Way 1 · The group</p><h3>Join the MTG TRIBE group</h3>
+   <div class="btn-row">{wa_group_btn(label='Join the MTG TRIBE', ring=True)}</div>
+   <p class="what">Opens WhatsApp and the MTG TRIBE group, where the Zoom links for the sessions are shared.</p></div>
+  <div class="glass way"><p class="eyebrow">Way 2 · One on one</p><h3>Ask MTG directly</h3>
+   <div class="btn-row">{wa_btn}</div>
+   <p class="what">Opens a private WhatsApp chat with MTG, with a short message asking for the Zoom link of the next session, ready to send.</p></div>
+ </div>
+</div></section>
+
+<section class="sec zl" id="add" aria-labelledby="add-h"><div class="wrap zl-q">
+ <div class="glass addcal"><span class="big" aria-hidden="true">🗓️</span>
+  <div><h2 class="h3" id="add-h">Add the schedule to <span class="gold">your calendar</span></h2>
+   <p>{len(ss)} weekly reminders, set in South African time, so your phone or computer shows each one in your own time. No Zoom link inside: the link is shared in the WhatsApp group.</p></div>
+  <a class="btn btn-gold btn-lg ring" href="{esc(ics)}" download="{ZOOM_ICS}">{ic("calendar-plus")}<span class="lbl">Add to my calendar</span></a>
+ </div>
+</div></section>
+
+<section class="sec zl" id="faq" aria-labelledby="faq-h"><div class="wrap zl-q">
+ <div class="sec-head"><p class="eyebrow">Questions</p><h2 class="h2" id="faq-h">Good to <span class="hl">know</span></h2></div>
+ <div class="faq">{faq}</div>
+</div></section>
+<script type="application/json" id="zl-data">{data}</script>
+<script src="{A("assets/zoom-live.js", here)}" defer></script>'''
 
 
 # ======================================================================= BW TRIBE PAGE
@@ -348,7 +616,9 @@ def order_page(here=''):
 <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{SITE}/">mtgtribe.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>window.BW={{"wa":"{WA_MTG}"}};window.BWV={{}};</script>
-<script src="{A('assets/bw.js', here)}" defer></script>'''
+<script src="{A('assets/bw.js', here)}" defer></script>
+<script src="/assets/zoom-cta.js?v=4" defer></script>
+<script src="/assets/wa-message.js?v=1" defer></script>'''
     desc = 'Order your BW Tribe Page: your own copy of the Bitcoin Wealth guide with your referral link built in. R1,000 once-off, paid only after it is built.'
     hd = head('Order your BW Tribe Page', desc, '', here, og_key='order')
     hd = hd.replace(f'<link rel="canonical" href="{SITE}{BASE}">', f'<link rel="canonical" href="{SITE}{ORDER}">').replace(

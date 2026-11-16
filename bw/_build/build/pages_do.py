@@ -136,7 +136,7 @@ def p_c_btc(here):
     return f'''{phero("bitcoin", "Bitcoin to Rand Converter", "What is 0.001 BTC in rand right now? Type any amount in Bitcoin, dollars or rand.",
         [("refresh-cw", "Live price"), ("pen-line", "Or type your own")])}
 {sec(f'<div class="calc one">{form}</div>')}
-{sec(notes)}'''
+{sec(notes, sr='How the converter works')}'''
 
 
 def p_c_slot(here):
@@ -172,7 +172,7 @@ def p_c_halv(here):
 {sec(f"""<div class="grid2">
  {box("Why it matters", "<p>Fewer new Bitcoin are made after each halving, while the 21 million limit never changes. Past halvings were followed by big price moves, up and down. That's history, not a promise.</p>", "trending-up")}
  {box("How it's estimated", "<p>A new block arrives about every 10 minutes on average, so the date is an estimate. The block number, 1,050,000, is exact. The reward drops from 3.125 to 1.5625 BTC per block.</p>", "calculator")}
-</div>""")}'''
+</div>""", sr="About the halving")}'''
 
 
 # ======================================================================= FAQ
@@ -243,7 +243,7 @@ def p_gloss(here):
         terms += f'<article class="term glass" id="{id_}" data-term="{esc(t.lower() + " " + d.lower())}"><h3>{ic(icn)}{t}</h3><p>{d}</p>{lk}</article>'
     return f'''{phero("book-open-text", "Glossary: crypto words in plain English", "Every word you'll hear in the videos and pages, with an everyday example where it helps.")}
 {sec(f"""<div class="gfilter"><label class="sr" for="gq">Find a word</label><input id="gq" class="field" type="search" placeholder="Find a word, like BTCB or slot" autocomplete="off" data-gfilter></div>
-<div class="gloss">{terms}</div><p class="fine" data-gempty hidden>No match. Try another word, or ask in the MTG TRIBE.</p>""")}'''
+<div class="gloss">{terms}</div><p class="fine" data-gempty hidden>No match. Try another word, or ask in the MTG TRIBE.</p>""", sr="All the words")}'''
 
 
 # ======================================================================= SAFETY
@@ -275,7 +275,7 @@ def p_tribe(here):
  {box("The WhatsApp group", f"<p>Ask questions, get the Zoom links, learn with others.</p><div class='btn-row'>{wa_group_btn(size='sm')}</div>", "whatsapp")}
  {box("WhatsApp MTG", f"<p>Messages and voice notes welcome (no calls): {WA_NUM}.</p><div class='btn-row'>{wa_mtg_btn(size='sm')}</div>", "message-circle")}
  {box("Follow along", f"<p>New videos land here first.</p><div class='btn-row'>{btn('TikTok', TIKTOK, 'ghost', 'tiktok', 'sm', ext=True)}{btn('YouTube', YOUTUBE, 'ghost', 'youtube', 'sm', ext=True)}{btn('Facebook', FACEBOOK, 'ghost', 'facebook', 'sm', ext=True)}{btn('Telegram', TELEGRAM, 'ghost', 'telegram', 'sm', ext=True)}</div>", "heart")}
-</div>""")}'''
+</div>""", sr="Ways to join in")}'''
 
 
 def p_disc(here):

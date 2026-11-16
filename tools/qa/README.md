@@ -52,3 +52,27 @@ It needs a static server that answers range requests (videos must seek), for exa
 Each case runs without and with the script; with it, every video's cover must come back to the same place on screen.
 To run only some cases, put part of their name in `ONLY`, for example `ONLY=BW node tools/qa/video-return-test.js http://127.0.0.1:8766`.
 
+
+# The whole video, always (MTG, 16 Nov 2026)
+
+MTG: "displayed in full, nothing hidden, but at the same time not too big ... even when they are maximized ... and the
+close button is still there." `player-check.js` plays every video on /bw (in the page and in the pop-up) at 21 screen
+sizes, phones upright and on their side, tablets and computers, and fails if anything is cut, covered or off screen:
+
+- the picture is whole and on screen, under the site's top bar, and the frame around it too;
+- the video is never cropped (`object-fit:contain`, no rounded corners) and the screen has the video's own shape;
+- nothing lies on the picture (it samples 81 points on it);
+- Full screen and Close are there, on screen, big enough, and not on the picture, also in full screen;
+- leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind.
+
+```bash
+node tools/qa/player-check.js
+```
+
+```bash
+FALLBACK=1 node tools/qa/player-check.js
+```
+
+The second run is a browser without full screen for page elements (some in-app browsers): the player must cover the
+window itself. Needs the same kind of server as above on port 8765 (`BASE=...` for another address); `VPS=360x640,740x360`
+runs only those sizes; `SHOT=folder` saves pictures. It must print `0 failures` before MTG sees a preview.

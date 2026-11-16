@@ -1,0 +1,1192 @@
+[
+ {
+  "text": "Did",
+  "startMs": 299,
+  "endMs": 427,
+  "timestampMs": 363,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 469,
+  "endMs": 597,
+  "timestampMs": 533,
+  "confidence": null
+ },
+ {
+  "text": " know",
+  "startMs": 640,
+  "endMs": 683,
+  "timestampMs": 661,
+  "confidence": null
+ },
+ {
+  "text": " some",
+  "startMs": 725,
+  "endMs": 896,
+  "timestampMs": 810,
+  "confidence": null
+ },
+ {
+  "text": " contracts",
+  "startMs": 939,
+  "endMs": 1408,
+  "timestampMs": 1173,
+  "confidence": null
+ },
+ {
+  "text": " don't",
+  "startMs": 1493,
+  "endMs": 1664,
+  "timestampMs": 1578,
+  "confidence": null
+ },
+ {
+  "text": " need",
+  "startMs": 1707,
+  "endMs": 1792,
+  "timestampMs": 1749,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 1835,
+  "endMs": 1877,
+  "timestampMs": 1856,
+  "confidence": null
+ },
+ {
+  "text": " lawyer,",
+  "startMs": 1920,
+  "endMs": 2176,
+  "timestampMs": 2048,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 2432,
+  "endMs": 2517,
+  "timestampMs": 2474,
+  "confidence": null
+ },
+ {
+  "text": " bank",
+  "startMs": 2560,
+  "endMs": 2816,
+  "timestampMs": 2688,
+  "confidence": null
+ },
+ {
+  "text": " or",
+  "startMs": 2987,
+  "endMs": 3115,
+  "timestampMs": 3051,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 3157,
+  "endMs": 3200,
+  "timestampMs": 3178,
+  "confidence": null
+ },
+ {
+  "text": " handshake?",
+  "startMs": 3243,
+  "endMs": 3627,
+  "timestampMs": 3435,
+  "confidence": null
+ },
+ {
+  "text": " About",
+  "startMs": 4181,
+  "endMs": 4480,
+  "timestampMs": 4330,
+  "confidence": null
+ },
+ {
+  "text": " $70 billion",
+  "startMs": 4523,
+  "endMs": 5589,
+  "timestampMs": 5056,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 5803,
+  "endMs": 5888,
+  "timestampMs": 5845,
+  "confidence": null
+ },
+ {
+  "text": " locked",
+  "startMs": 5931,
+  "endMs": 6101,
+  "timestampMs": 6016,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 6229,
+  "endMs": 6315,
+  "timestampMs": 6272,
+  "confidence": null
+ },
+ {
+  "text": " them",
+  "startMs": 6357,
+  "endMs": 6400,
+  "timestampMs": 6378,
+  "confidence": null
+ },
+ {
+  "text": " right",
+  "startMs": 6485,
+  "endMs": 6613,
+  "timestampMs": 6549,
+  "confidence": null
+ },
+ {
+  "text": " now.",
+  "startMs": 6656,
+  "endMs": 6827,
+  "timestampMs": 6741,
+  "confidence": null
+ },
+ {
+  "text": " They're",
+  "startMs": 7296,
+  "endMs": 7424,
+  "timestampMs": 7360,
+  "confidence": null
+ },
+ {
+  "text": " called",
+  "startMs": 7467,
+  "endMs": 7637,
+  "timestampMs": 7552,
+  "confidence": null
+ },
+ {
+  "text": " smart",
+  "startMs": 7723,
+  "endMs": 7979,
+  "timestampMs": 7851,
+  "confidence": null
+ },
+ {
+  "text": " contracts.",
+  "startMs": 8064,
+  "endMs": 8491,
+  "timestampMs": 8277,
+  "confidence": null
+ },
+ {
+  "text": " Think",
+  "startMs": 9045,
+  "endMs": 9216,
+  "timestampMs": 9130,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 9259,
+  "endMs": 9301,
+  "timestampMs": 9280,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 9344,
+  "endMs": 9429,
+  "timestampMs": 9386,
+  "confidence": null
+ },
+ {
+  "text": " vending",
+  "startMs": 9472,
+  "endMs": 9557,
+  "timestampMs": 9514,
+  "confidence": null
+ },
+ {
+  "text": " machine.",
+  "startMs": 9728,
+  "endMs": 9856,
+  "timestampMs": 9792,
+  "confidence": null
+ },
+ {
+  "text": " You",
+  "startMs": 10325,
+  "endMs": 10411,
+  "timestampMs": 10368,
+  "confidence": null
+ },
+ {
+  "text": " pay,",
+  "startMs": 10453,
+  "endMs": 10624,
+  "timestampMs": 10538,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 11051,
+  "endMs": 11179,
+  "timestampMs": 11115,
+  "confidence": null
+ },
+ {
+  "text": " pick,",
+  "startMs": 11221,
+  "endMs": 11392,
+  "timestampMs": 11306,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 11648,
+  "endMs": 11776,
+  "timestampMs": 11712,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 11819,
+  "endMs": 11904,
+  "timestampMs": 11861,
+  "confidence": null
+ },
+ {
+  "text": " drink",
+  "startMs": 11947,
+  "endMs": 12075,
+  "timestampMs": 12011,
+  "confidence": null
+ },
+ {
+  "text": " drops.",
+  "startMs": 12160,
+  "endMs": 12331,
+  "timestampMs": 12245,
+  "confidence": null
+ },
+ {
+  "text": " No",
+  "startMs": 12825,
+  "endMs": 12953,
+  "timestampMs": 12889,
+  "confidence": null
+ },
+ {
+  "text": " cashier",
+  "startMs": 12995,
+  "endMs": 13336,
+  "timestampMs": 13165,
+  "confidence": null
+ },
+ {
+  "text": " needed:",
+  "startMs": 13379,
+  "endMs": 13550,
+  "timestampMs": 13464,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 13934,
+  "endMs": 14062,
+  "timestampMs": 13998,
+  "confidence": null
+ },
+ {
+  "text": " rules",
+  "startMs": 14104,
+  "endMs": 14232,
+  "timestampMs": 14168,
+  "confidence": null
+ },
+ {
+  "text": " live",
+  "startMs": 14403,
+  "endMs": 14574,
+  "timestampMs": 14488,
+  "confidence": null
+ },
+ {
+  "text": " inside",
+  "startMs": 14617,
+  "endMs": 14745,
+  "timestampMs": 14681,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 14915,
+  "endMs": 15001,
+  "timestampMs": 14958,
+  "confidence": null
+ },
+ {
+  "text": " machine.",
+  "startMs": 15043,
+  "endMs": 15129,
+  "timestampMs": 15086,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 15939,
+  "endMs": 16238,
+  "timestampMs": 16088,
+  "confidence": null
+ },
+ {
+  "text": " smart",
+  "startMs": 16280,
+  "endMs": 16451,
+  "timestampMs": 16365,
+  "confidence": null
+ },
+ {
+  "text": " contract",
+  "startMs": 16537,
+  "endMs": 16750,
+  "timestampMs": 16643,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 17006,
+  "endMs": 17134,
+  "timestampMs": 17070,
+  "confidence": null
+ },
+ {
+  "text": " that",
+  "startMs": 17177,
+  "endMs": 17305,
+  "timestampMs": 17241,
+  "confidence": null
+ },
+ {
+  "text": " idea",
+  "startMs": 17347,
+  "endMs": 17475,
+  "timestampMs": 17411,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 17646,
+  "endMs": 17774,
+  "timestampMs": 17710,
+  "confidence": null
+ },
+ {
+  "text": " code,",
+  "startMs": 17817,
+  "endMs": 18030,
+  "timestampMs": 17923,
+  "confidence": null
+ },
+ {
+  "text": " on",
+  "startMs": 18328,
+  "endMs": 18414,
+  "timestampMs": 18371,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 18456,
+  "endMs": 18499,
+  "timestampMs": 18477,
+  "confidence": null
+ },
+ {
+  "text": " blockchain.",
+  "startMs": 18542,
+  "endMs": 18926,
+  "timestampMs": 18734,
+  "confidence": null
+ },
+ {
+  "text": " If",
+  "startMs": 19480,
+  "endMs": 19608,
+  "timestampMs": 19544,
+  "confidence": null
+ },
+ {
+  "text": " this",
+  "startMs": 19651,
+  "endMs": 19736,
+  "timestampMs": 19693,
+  "confidence": null
+ },
+ {
+  "text": " happens,",
+  "startMs": 19822,
+  "endMs": 19950,
+  "timestampMs": 19886,
+  "confidence": null
+ },
+ {
+  "text": " then",
+  "startMs": 20505,
+  "endMs": 20633,
+  "timestampMs": 20569,
+  "confidence": null
+ },
+ {
+  "text": " do",
+  "startMs": 20675,
+  "endMs": 20761,
+  "timestampMs": 20718,
+  "confidence": null
+ },
+ {
+  "text": " that.",
+  "startMs": 20803,
+  "endMs": 20931,
+  "timestampMs": 20867,
+  "confidence": null
+ },
+ {
+  "text": " Anyone",
+  "startMs": 21443,
+  "endMs": 21870,
+  "timestampMs": 21656,
+  "confidence": null
+ },
+ {
+  "text": " can",
+  "startMs": 21913,
+  "endMs": 21998,
+  "timestampMs": 21955,
+  "confidence": null
+ },
+ {
+  "text": " check",
+  "startMs": 22041,
+  "endMs": 22169,
+  "timestampMs": 22105,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 22254,
+  "endMs": 22339,
+  "timestampMs": 22296,
+  "confidence": null
+ },
+ {
+  "text": " rules,",
+  "startMs": 22382,
+  "endMs": 22510,
+  "timestampMs": 22446,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 22851,
+  "endMs": 22936,
+  "timestampMs": 22893,
+  "confidence": null
+ },
+ {
+  "text": " they",
+  "startMs": 22979,
+  "endMs": 23064,
+  "timestampMs": 23021,
+  "confidence": null
+ },
+ {
+  "text": " run",
+  "startMs": 23107,
+  "endMs": 23235,
+  "timestampMs": 23171,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 23278,
+  "endMs": 23363,
+  "timestampMs": 23320,
+  "confidence": null
+ },
+ {
+  "text": " same",
+  "startMs": 23406,
+  "endMs": 23534,
+  "timestampMs": 23470,
+  "confidence": null
+ },
+ {
+  "text": " for",
+  "startMs": 23619,
+  "endMs": 23704,
+  "timestampMs": 23661,
+  "confidence": null
+ },
+ {
+  "text": " everyone.",
+  "startMs": 23747,
+  "endMs": 24003,
+  "timestampMs": 23875,
+  "confidence": null
+ },
+ {
+  "text": " But",
+  "startMs": 24707,
+  "endMs": 24792,
+  "timestampMs": 24749,
+  "confidence": null
+ },
+ {
+  "text": " here's",
+  "startMs": 24835,
+  "endMs": 25048,
+  "timestampMs": 24941,
+  "confidence": null
+ },
+ {
+  "text": " where",
+  "startMs": 25091,
+  "endMs": 25176,
+  "timestampMs": 25133,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 25219,
+  "endMs": 25261,
+  "timestampMs": 25240,
+  "confidence": null
+ },
+ {
+  "text": " picture",
+  "startMs": 25304,
+  "endMs": 25432,
+  "timestampMs": 25368,
+  "confidence": null
+ },
+ {
+  "text": " stops.",
+  "startMs": 25560,
+  "endMs": 25816,
+  "timestampMs": 25688,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 26456,
+  "endMs": 26669,
+  "timestampMs": 26562,
+  "confidence": null
+ },
+ {
+  "text": " broken",
+  "startMs": 26712,
+  "endMs": 26883,
+  "timestampMs": 26797,
+  "confidence": null
+ },
+ {
+  "text": " vending",
+  "startMs": 27053,
+  "endMs": 27224,
+  "timestampMs": 27138,
+  "confidence": null
+ },
+ {
+  "text": " machine",
+  "startMs": 27395,
+  "endMs": 27523,
+  "timestampMs": 27459,
+  "confidence": null
+ },
+ {
+  "text": " gets",
+  "startMs": 27779,
+  "endMs": 27907,
+  "timestampMs": 27843,
+  "confidence": null
+ },
+ {
+  "text": " fixed.",
+  "startMs": 27992,
+  "endMs": 28291,
+  "timestampMs": 28141,
+  "confidence": null
+ },
+ {
+  "text": " A",
+  "startMs": 28675,
+  "endMs": 28717,
+  "timestampMs": 28696,
+  "confidence": null
+ },
+ {
+  "text": " smart",
+  "startMs": 28760,
+  "endMs": 28973,
+  "timestampMs": 28866,
+  "confidence": null
+ },
+ {
+  "text": " contract",
+  "startMs": 29059,
+  "endMs": 29229,
+  "timestampMs": 29144,
+  "confidence": null
+ },
+ {
+  "text": " usually",
+  "startMs": 29613,
+  "endMs": 29784,
+  "timestampMs": 29698,
+  "confidence": null
+ },
+ {
+  "text": " can't",
+  "startMs": 29955,
+  "endMs": 30168,
+  "timestampMs": 30061,
+  "confidence": null
+ },
+ {
+  "text": " be.",
+  "startMs": 30296,
+  "endMs": 30381,
+  "timestampMs": 30338,
+  "confidence": null
+ },
+ {
+  "text": " If",
+  "startMs": 30851,
+  "endMs": 31021,
+  "timestampMs": 30936,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 31064,
+  "endMs": 31149,
+  "timestampMs": 31106,
+  "confidence": null
+ },
+ {
+  "text": " code",
+  "startMs": 31192,
+  "endMs": 31363,
+  "timestampMs": 31277,
+  "confidence": null
+ },
+ {
+  "text": " has",
+  "startMs": 31448,
+  "endMs": 31533,
+  "timestampMs": 31490,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 31576,
+  "endMs": 31619,
+  "timestampMs": 31597,
+  "confidence": null
+ },
+ {
+  "text": " mistake,",
+  "startMs": 31661,
+  "endMs": 31960,
+  "timestampMs": 31810,
+  "confidence": null
+ },
+ {
+  "text": " it",
+  "startMs": 32301,
+  "endMs": 32429,
+  "timestampMs": 32365,
+  "confidence": null
+ },
+ {
+  "text": " stays.",
+  "startMs": 32515,
+  "endMs": 32728,
+  "timestampMs": 32621,
+  "confidence": null
+ },
+ {
+  "text": " So",
+  "startMs": 33428,
+  "endMs": 33556,
+  "timestampMs": 33492,
+  "confidence": null
+ },
+ {
+  "text": " here's",
+  "startMs": 33598,
+  "endMs": 33769,
+  "timestampMs": 33683,
+  "confidence": null
+ },
+ {
+  "text": " one",
+  "startMs": 33812,
+  "endMs": 33854,
+  "timestampMs": 33833,
+  "confidence": null
+ },
+ {
+  "text": " tip:",
+  "startMs": 33940,
+  "endMs": 34110,
+  "timestampMs": 34025,
+  "confidence": null
+ },
+ {
+  "text": " never",
+  "startMs": 34580,
+  "endMs": 35006,
+  "timestampMs": 34793,
+  "confidence": null
+ },
+ {
+  "text": " approve",
+  "startMs": 35177,
+  "endMs": 35518,
+  "timestampMs": 35347,
+  "confidence": null
+ },
+ {
+  "text": " anything",
+  "startMs": 35646,
+  "endMs": 35860,
+  "timestampMs": 35753,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 36073,
+  "endMs": 36116,
+  "timestampMs": 36094,
+  "confidence": null
+ },
+ {
+  "text": " your",
+  "startMs": 36158,
+  "endMs": 36244,
+  "timestampMs": 36201,
+  "confidence": null
+ },
+ {
+  "text": " wallet",
+  "startMs": 36286,
+  "endMs": 36585,
+  "timestampMs": 36435,
+  "confidence": null
+ },
+ {
+  "text": " that",
+  "startMs": 36628,
+  "endMs": 36713,
+  "timestampMs": 36670,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 36756,
+  "endMs": 36841,
+  "timestampMs": 36798,
+  "confidence": null
+ },
+ {
+  "text": " don't",
+  "startMs": 36884,
+  "endMs": 37054,
+  "timestampMs": 36969,
+  "confidence": null
+ },
+ {
+  "text": " understand.",
+  "startMs": 37097,
+  "endMs": 37524,
+  "timestampMs": 37310,
+  "confidence": null
+ },
+ {
+  "text": " If",
+  "startMs": 38100,
+  "endMs": 38270,
+  "timestampMs": 38185,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 38313,
+  "endMs": 38356,
+  "timestampMs": 38334,
+  "confidence": null
+ },
+ {
+  "text": " can't",
+  "startMs": 38398,
+  "endMs": 38526,
+  "timestampMs": 38462,
+  "confidence": null
+ },
+ {
+  "text": " explain",
+  "startMs": 38612,
+  "endMs": 38697,
+  "timestampMs": 38654,
+  "confidence": null
+ },
+ {
+  "text": " it,",
+  "startMs": 38910,
+  "endMs": 38996,
+  "timestampMs": 38953,
+  "confidence": null
+ },
+ {
+  "text": " don't",
+  "startMs": 39380,
+  "endMs": 39593,
+  "timestampMs": 39486,
+  "confidence": null
+ },
+ {
+  "text": " sign",
+  "startMs": 39636,
+  "endMs": 39806,
+  "timestampMs": 39721,
+  "confidence": null
+ },
+ {
+  "text": " it.",
+  "startMs": 39849,
+  "endMs": 39977,
+  "timestampMs": 39913,
+  "confidence": null
+ },
+ {
+  "text": " Did",
+  "startMs": 40477,
+  "endMs": 40605,
+  "timestampMs": 40541,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 40648,
+  "endMs": 40733,
+  "timestampMs": 40690,
+  "confidence": null
+ },
+ {
+  "text": " know",
+  "startMs": 40776,
+  "endMs": 40861,
+  "timestampMs": 40818,
+  "confidence": null
+ },
+ {
+  "text": " this?",
+  "startMs": 40904,
+  "endMs": 40989,
+  "timestampMs": 40946,
+  "confidence": null
+ },
+ {
+  "text": " Tell",
+  "startMs": 41331,
+  "endMs": 41459,
+  "timestampMs": 41395,
+  "confidence": null
+ },
+ {
+  "text": " me",
+  "startMs": 41501,
+  "endMs": 41587,
+  "timestampMs": 41544,
+  "confidence": null
+ },
+ {
+  "text": " below.",
+  "startMs": 41629,
+  "endMs": 41715,
+  "timestampMs": 41672,
+  "confidence": null
+ },
+ {
+  "text": " And",
+  "startMs": 42227,
+  "endMs": 42397,
+  "timestampMs": 42312,
+  "confidence": null
+ },
+ {
+  "text": " send",
+  "startMs": 42440,
+  "endMs": 42611,
+  "timestampMs": 42525,
+  "confidence": null
+ },
+ {
+  "text": " this",
+  "startMs": 42653,
+  "endMs": 42781,
+  "timestampMs": 42717,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 42824,
+  "endMs": 42909,
+  "timestampMs": 42866,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 42952,
+  "endMs": 42995,
+  "timestampMs": 42973,
+  "confidence": null
+ },
+ {
+  "text": " friend",
+  "startMs": 43037,
+  "endMs": 43251,
+  "timestampMs": 43144,
+  "confidence": null
+ },
+ {
+  "text": " who",
+  "startMs": 43379,
+  "endMs": 43464,
+  "timestampMs": 43421,
+  "confidence": null
+ },
+ {
+  "text": " thinks",
+  "startMs": 43507,
+  "endMs": 43677,
+  "timestampMs": 43592,
+  "confidence": null
+ },
+ {
+  "text": " crypto",
+  "startMs": 43763,
+  "endMs": 44104,
+  "timestampMs": 43933,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 44189,
+  "endMs": 44275,
+  "timestampMs": 44232,
+  "confidence": null
+ },
+ {
+  "text": " just",
+  "startMs": 44317,
+  "endMs": 44488,
+  "timestampMs": 44402,
+  "confidence": null
+ },
+ {
+  "text": " coins.",
+  "startMs": 44573,
+  "endMs": 44787,
+  "timestampMs": 44680,
+  "confidence": null
+ },
+ {
+  "text": " Then",
+  "startMs": 45939,
+  "endMs": 46109,
+  "timestampMs": 46024,
+  "confidence": null
+ },
+ {
+  "text": " join",
+  "startMs": 46152,
+  "endMs": 46280,
+  "timestampMs": 46216,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 46365,
+  "endMs": 46451,
+  "timestampMs": 46408,
+  "confidence": null
+ },
+ {
+  "text": " free",
+  "startMs": 46493,
+  "endMs": 46664,
+  "timestampMs": 46578,
+  "confidence": null
+ },
+ {
+  "text": " MTG",
+  "startMs": 46749,
+  "endMs": 47219,
+  "timestampMs": 46984,
+  "confidence": null
+ },
+ {
+  "text": " TRIBE",
+  "startMs": 47261,
+  "endMs": 47688,
+  "timestampMs": 47474,
+  "confidence": null
+ },
+ {
+  "text": " at",
+  "startMs": 47816,
+  "endMs": 47944,
+  "timestampMs": 47880,
+  "confidence": null
+ },
+ {
+  "text": " mtgtribe.com/group.",
+  "startMs": 47987,
+  "endMs": 50120,
+  "timestampMs": 49053,
+  "confidence": null
+ },
+ {
+  "text": " We",
+  "startMs": 50605,
+  "endMs": 50818,
+  "timestampMs": 50711,
+  "confidence": null
+ },
+ {
+  "text": " learn",
+  "startMs": 50861,
+  "endMs": 50989,
+  "timestampMs": 50925,
+  "confidence": null
+ },
+ {
+  "text": " crypto,",
+  "startMs": 51074,
+  "endMs": 51415,
+  "timestampMs": 51244,
+  "confidence": null
+ },
+ {
+  "text": " AI",
+  "startMs": 51757,
+  "endMs": 52141,
+  "timestampMs": 51949,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 52354,
+  "endMs": 52482,
+  "timestampMs": 52418,
+  "confidence": null
+ },
+ {
+  "text": " multiple",
+  "startMs": 52568,
+  "endMs": 52738,
+  "timestampMs": 52653,
+  "confidence": null
+ },
+ {
+  "text": " income",
+  "startMs": 52952,
+  "endMs": 53208,
+  "timestampMs": 53080,
+  "confidence": null
+ },
+ {
+  "text": " streams",
+  "startMs": 53293,
+  "endMs": 53549,
+  "timestampMs": 53421,
+  "confidence": null
+ },
+ {
+  "text": " together.",
+  "startMs": 53634,
+  "endMs": 53848,
+  "timestampMs": 53741,
+  "confidence": null
+ },
+ {
+  "text": " I'm",
+  "startMs": 54573,
+  "endMs": 54744,
+  "timestampMs": 54658,
+  "confidence": null
+ },
+ {
+  "text": " MTG,",
+  "startMs": 54786,
+  "endMs": 55213,
+  "timestampMs": 54999,
+  "confidence": null
+ },
+ {
+  "text": " Your",
+  "startMs": 55512,
+  "endMs": 55682,
+  "timestampMs": 55597,
+  "confidence": null
+ },
+ {
+  "text": " Digital",
+  "startMs": 55725,
+  "endMs": 55981,
+  "timestampMs": 55853,
+  "confidence": null
+ },
+ {
+  "text": " Architect.",
+  "startMs": 56109,
+  "endMs": 56493,
+  "timestampMs": 56301,
+  "confidence": null
+ },
+ {
+  "text": " Let's",
+  "startMs": 56962,
+  "endMs": 57175,
+  "timestampMs": 57068,
+  "confidence": null
+ },
+ {
+  "text": " Get",
+  "startMs": 57218,
+  "endMs": 57346,
+  "timestampMs": 57282,
+  "confidence": null
+ },
+ {
+  "text": " This",
+  "startMs": 57389,
+  "endMs": 57517,
+  "timestampMs": 57453,
+  "confidence": null
+ },
+ {
+  "text": " Crypto!",
+  "startMs": 57602,
+  "endMs": 57901,
+  "timestampMs": 57751,
+  "confidence": null
+ }
+]

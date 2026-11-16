@@ -38,6 +38,8 @@ The palette (what each one is for):
   gong       one soft, low gong with a slow bloom: the answer to a quiz lands (video 09)
   step       a soft footstep up a wooden stair: a first step, climbing (video 10)
   shrink     a warm glide down that settles with a friendly pop: something big made small (video 10)
+  vend       a can dropping into a vending machine's tray, a soft thunk and roll (video 11)
+  keypad     three soft, warm keypad beeps: a choice being made (video 11)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -612,6 +614,33 @@ def shrink():
     return lowpass(x, 1500)
 
 
+def vend():
+    """A can dropping into a vending machine's tray: a soft, rounded thunk and a short, muffled roll (never a clang)."""
+    d = 1.1
+    tt = t(d)
+    x = np.zeros(len(tt))
+    thunk = sine(lambda u: 140 + 70 * np.exp(-u * 30), 0.4) * env(int(0.4 * SR), 0.008, 0.18)
+    knock = band(noise(0.4), 250, 1000) * env(int(0.4 * SR), 0.006, 0.06) * 0.45
+    for at, a in ((0.05, 1.0), (0.32, 0.45)):
+        i = int(at * SR)
+        x[i:i + len(thunk)] += (thunk + knock)[:len(x) - i] * a
+    roll = band(noise(d), 180, 700) * np.clip((tt - 0.4) / 0.1, 0, 1) * np.exp(-np.clip(tt - 0.4, 0, None) * 5) * 0.25
+    return lowpass(x + roll, 1300)
+
+
+def keypad():
+    """Three soft keypad presses: rounded, low, warm beeps, the way a vending machine takes your choice."""
+    d = 0.9
+    x = np.zeros(int(d * SR))
+    for at, f in ((0.0, 587.3), (0.22, 659.3), (0.44, 784.0)):
+        n = int(0.16 * SR)
+        tt = np.arange(n) / SR
+        b = (np.sin(2 * np.pi * f * tt) + 0.15 * np.sin(2 * np.pi * 2 * f * tt)) * env(n, 0.01, 0.07)
+        i = int(at * SR)
+        x[i:i + n] += b
+    return lowpass(x, 1600)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -641,6 +670,8 @@ PALETTE = {
     'pour': (pour, 0.25), 'gong': (gong, 0.35),
     # made for video 10 (why most people never start a second income)
     'step': (step, 0.2), 'shrink': (shrink, 0.25),
+    # made for video 11 (did you know a contract can run itself?)
+    'vend': (vend, 0.2), 'keypad': (keypad, 0.15),
 }
 
 

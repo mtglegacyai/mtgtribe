@@ -1,0 +1,13 @@
+Did you know some contracts don't need a lawyer, a bank or a handshake? About seventy billion dollars is locked in them right now. They're called smart contracts.
+//
+Think of a vending machine. You pay, you pick, and the drink drops. No cashier needed: the rules live inside the machine.
+//
+A smart contract is that idea in code, on a blockchain. If this happens, then do that. Anyone can check the rules, and they run the same for everyone.
+//
+But here's where the picture stops. A broken vending machine gets fixed. A smart contract usually can't be. If the code has a mistake, it stays.
+// 0.7
+So here's one tip: never approve anything in your wallet that you don't understand. If you can't explain it, don't sign it.
+//
+Did you know this? Tell me below. And send this to a friend who thinks crypto is just coins.
+//
+Then join the free MTG TRIBE at MTG tribe dot com slash group. We learn crypto, AI and multiple income streams together. I'm MTG, Your Digital Architect. Let's Get This Crypto!

@@ -176,7 +176,7 @@ def render(dst):
     # sitemap for /bw (with the video), llms files
     urls = [''] + [NAVD[k][1] for k in PAGES]
     vids = {p: [c for c in (extra or []) if isinstance(extra, list)] for k, (t, fn, extra) in PAGES.items() for p in [NAVD[k][1]]}
-    vids[''] = ['t1']
+    vids[''] = ['p1', 't1']
 
     def vtag(c):
         v = V[c]

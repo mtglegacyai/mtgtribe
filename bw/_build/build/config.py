@@ -4,7 +4,7 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-15'
+TODAY = '2026-11-16'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
@@ -63,6 +63,12 @@ VIDEOS = [
      'Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.',
      357.2, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
      dict(poster='projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-9x16.jpg', date='2026-11-16')),
+    # a 34-second Bitcoin Wealth promo (MTG, 16 Nov 2026): four presenters, one short promo line each. The site calls it a
+    # promo video and never presents it as member testimonials
+    ('p1', 'bitcoin-wealth-in-34-seconds-promo', 'Bitcoin Wealth in 34 seconds',
+     'A short Bitcoin Wealth promo video: four short clips about starting small, from 0.001 BTC, with a smart contract doing the paying.',
+     34.3, 'projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-34-seconds.mp4',
+     dict(poster='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-9x16.jpg', label='Promo', short='Promo video', date='2026-11-16')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
@@ -73,7 +79,7 @@ PLANNED = [
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
 ]
-KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon'}
+KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo'}
 V = {}
 for _v in VIDEOS:
     _x = _v[6] if len(_v) > 6 else {}

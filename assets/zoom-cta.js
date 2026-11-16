@@ -9,7 +9,13 @@
   var d = document, w = window;
   if (w.__mtgzDone) return;
   var host = (location.hostname || '').replace(/^www\./, '');
-  if (host === 'mtgtribe.com' && /^\/(jetup\/zoom|jetuplive|zoom|group)(\/|$)/i.test(location.pathname)) return;
+  if (host === 'mtgtribe.com' && /^\/(jetup\/zoom|jetuplive|zoom|group|bw\/dashboard\/live-on-zoom)(\/|$)/i.test(location.pathname)) return;
+  // Bitcoin Wealth pages show the Bitcoin Wealth schedule (MTG, 16 Nov 2026: 'link it ... to all the mtgtribe.com/bw pages only')
+  var BW = /^\/(bw|bwcopy)(\/|$)/i.test(location.pathname) || /bitcoinwealth/i.test(host);
+  var D = BW ? {kick: 'Bitcoin Wealth · Weekly', name: 'Bitcoin Wealth', url: 'https://mtgtribe.com/bw/dashboard/live-on-zoom/',
+    days: 'Mon to Fri 14:00 English <span class="mtgz-dot" aria-hidden="true">·</span> Evenings in isiXhosa, English, isiZulu and Sesotho'}
+    : {kick: 'JetUP · Weekly', name: 'JetUP', url: 'https://mtgtribe.com/jetup/zoom/',
+    days: 'Tue <span class="mtgz-dot" aria-hidden="true">·</span> Thu <span class="mtgz-dot" aria-hidden="true">·</span> Sat 8pm <span class="mtgz-dot" aria-hidden="true">·</span> Sun 3pm international <span class="mtgz-dot" aria-hidden="true">·</span> Sun 8pm training'};
 
   var CSS = [
     '.mtgz{all:initial;display:block;box-sizing:border-box;width:auto;max-width:980px;margin:48px auto;margin-left:max(16px,calc((100% - 980px) / 2));margin-right:max(16px,calc((100% - 980px) / 2));',
@@ -59,13 +65,13 @@
       '<span class="mtgz-cal" aria-hidden="true"><span class="mtgz-rings"><i></i><i></i><i></i></span>' +
         '<span class="mtgz-page"><span class="mtgz-head">LIVE</span><span class="mtgz-face">🕗</span></span></span>' +
       '<span class="mtgz-txt">' +
-        '<span class="mtgz-kick">JetUP · Weekly</span>' +
-        '<span class="mtgz-title" role="heading" aria-level="2"><span aria-hidden="true">📣 </span><span class="mtgz-gold">JetUP</span> live on <span class="mtgz-gold">Zoom</span></span>' +
-        '<span class="mtgz-days">Tue <span class="mtgz-dot" aria-hidden="true">·</span> Thu <span class="mtgz-dot" aria-hidden="true">·</span> Sat 8pm <span class="mtgz-dot" aria-hidden="true">·</span> Sun 3pm international <span class="mtgz-dot" aria-hidden="true">·</span> Sun 8pm training</span>' +
+        '<span class="mtgz-kick">' + D.kick + '</span>' +
+        '<span class="mtgz-title" role="heading" aria-level="2"><span aria-hidden="true">📣 </span><span class="mtgz-gold">' + D.name + '</span> live on <span class="mtgz-gold">Zoom</span></span>' +
+        '<span class="mtgz-days">' + D.days + '</span>' +
         '<span class="mtgz-tz">South African time (SAST)</span>' +
       '</span>' +
       '<span class="mtgz-acts">' +
-        '<a class="mtgz-btn" href="https://mtgtribe.com/jetup/zoom/">' + CAL + 'See the full schedule</a>' +
+        '<a class="mtgz-btn" href="' + D.url + '">' + CAL + 'See the full schedule</a>' +
         '<a class="mtgz-link" href="https://mtgtribe.com/group/">' + WA + 'Get the Zoom link on WhatsApp</a>' +
       '</span>' +
     '</div>';
@@ -87,7 +93,7 @@
     }
     var box = d.createElement('aside');
     box.className = 'mtgz';
-    box.setAttribute('aria-label', 'JetUP live Zoom sessions');
+    box.setAttribute('aria-label', D.name + ' live Zoom sessions');
     box.innerHTML = HTML;
     var foot = d.querySelector('footer'), main = d.querySelector('main');
     if (foot && foot.parentNode) foot.parentNode.insertBefore(box, foot);

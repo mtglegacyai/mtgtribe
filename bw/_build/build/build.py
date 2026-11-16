@@ -154,6 +154,11 @@ def render(dst):
         core.HASH['assets/' + f] = hashlib.md5(open(SRC + '/assets/' + f, 'rb').read()).hexdigest()[:8]
     shutil.copytree(OUT + '/_img', base + '/img')
     shutil.copytree(OUT + '/_media', base + '/media')
+    # a video cover that changes must show at once, not after the browser's memory of the old one runs out
+    for v in V.values():
+        for f in sorted(os.listdir(OUT + '/_img')):
+            if f.startswith(v['slug']) and f.endswith('.webp'):
+                core.HASH['img/' + f] = hashlib.md5(open(OUT + '/_img/' + f, 'rb').read()).hexdigest()[:8]
     hd, body = landing()
     open(base + '/index.html', 'w').write(core.wrap_doc(hd, body, 'landing'))
     for key, (title, fn, extra) in PAGES.items():

@@ -213,11 +213,11 @@ def vlink(code, here):
 
 
 def video_data(here):
-    """JSON for the modal player and the progress tiles (o: 'h' = 16:9, plays in the laptop frame)"""
+    """JSON for the pop-up player and the progress tiles (o: 'h' = 16:9, plays in the laptop; p and pb: the small and the big cover)"""
     d = {}
     for k, v in V.items():
         big, small = poster(k, here)
-        d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, d=mmss(v['secs']))
+        d[k] = dict(t=v['title'], l=v['label'], st=v['short'], s=L(f'media/{v["slug"]}.mp4', here), p=small, pb=big, d=mmss(v['secs']))
         if v['o'] == 'h':
             d[k].update(o='h', hd=L(f'media/{v["slug"]}-1080p.mp4', here))
     return json.dumps(d, separators=(',', ':'))

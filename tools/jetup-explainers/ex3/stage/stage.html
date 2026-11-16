@@ -1,0 +1,257 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--red:#ff5f7a;--vio:#9b7cff;
+ --grad:linear-gradient(100deg,#8c6ce7 0%,#b56cf6 45%,#e371fc 100%);--goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);
+ --f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(900px 600px at 82% 18%,rgba(140,108,231,.30),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(232,194,90,.14),transparent 70%),
+ radial-gradient(700px 500px at 20% 15%,rgba(203,251,97,.07),transparent 70%),linear-gradient(160deg,#130c28,#0b0912 55%,#08060f)}
+#grid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(1100px 700px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;visibility:hidden;opacity:0;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.em{font-family:'Noto Color Emoji';font-style:normal}
+.card{border-radius:34px;background:linear-gradient(160deg,rgba(40,33,60,.96),rgba(20,17,30,.96));box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.10),0 22px 60px rgba(0,0,0,.45)}
+/* top bar */
+#top{left:56px;right:56px;top:40px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
+.who b{display:block;font:800 26px/1 var(--f-b)}.who small{display:block;margin-top:7px;font:800 15px/1 var(--f-b);color:var(--gold);letter-spacing:.1em}
+#chipT{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 20px/1 var(--f-b);letter-spacing:.14em}
+/* hi */
+#hdisc{left:760px;top:180px;width:400px;height:400px;border-radius:50%;padding:8px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);box-shadow:0 0 60px rgba(232,194,90,.45)}
+#hdisc img{width:384px;height:384px;border-radius:50%;display:block}
+#hhi{top:640px;font:800 84px/1 var(--f-b)}#harch{top:750px;font:800 38px/1 var(--f-b);letter-spacing:.16em}
+/* your turn */
+#ut{top:150px;font:400 140px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#ut span{color:var(--lime)}
+#useat{left:330px;top:340px;width:330px;height:330px;border-radius:50%;display:grid;place-items:center;font-size:170px;background:radial-gradient(circle,rgba(203,251,97,.22),rgba(203,251,97,.04) 70%);box-shadow:0 0 0 7px var(--lime),0 0 90px rgba(203,251,97,.45)}
+#uurl{left:820px;top:355px;width:800px;display:flex;justify-content:center}
+#uurl span{display:inline-flex;align-items:center;height:100px;padding:0 54px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 4px var(--lime),0 0 40px rgba(203,251,97,.25);font:800 60px/1 var(--f-b)}
+#uurl i{font-style:normal;color:var(--lime)}
+#ujoin{left:900px;top:510px;width:640px;height:150px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:22px;background:linear-gradient(180deg,#dcff86,#b5ec3c);color:#14190a;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.03em;box-shadow:0 22px 70px rgba(203,251,97,.4),0 0 0 6px rgba(203,251,97,.18)}
+#ujoin .em{font-size:72px}
+#uring{left:1150px;top:515px;width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 7px #fff}
+#uhand{left:1180px;top:560px;font-size:120px;transform-origin:30% 10%}
+
+.ttl{left:110px;top:140px;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}.ttl span{color:var(--lime)}
+.ttl span.p{display:inline-block}
+.bpill{left:0;right:0;top:900px;display:flex;justify-content:center}
+.bpill>span{display:inline-flex;align-items:center;gap:14px;height:84px;padding:0 36px;border-radius:999px;background:rgba(8,6,14,.82);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);font:800 36px/1 var(--f-b)}
+.bpill i{font-style:normal;color:var(--lime)}
+
+/* hook: $50 trades like $1,200 */
+#hkE{top:225px;font:800 30px/1 var(--f-b);letter-spacing:.24em;color:var(--gold)}
+#h50{left:150px;top:325px;width:540px;text-align:right;font:400 300px/1 var(--f-d);color:var(--lime);text-shadow:0 0 80px rgba(203,251,97,.35)}
+#hlk{left:700px;top:385px;width:270px;text-align:center}
+#hlk b{display:block;font:800 40px/1.15 var(--f-b);color:var(--body);letter-spacing:.04em}
+#hlk i{display:block;margin-top:6px;font:400 120px/1 var(--f-d);font-style:normal;color:rgba(255,255,255,.4)}
+#h12{left:980px;top:325px;width:860px;font:400 300px/1 var(--f-d)}
+#hkB{top:745px;font:400 92px/1 var(--f-d);text-transform:uppercase;letter-spacing:.02em}#hkB span{color:var(--lime)}
+
+/* the market stall */
+#stH{left:0;top:0;width:510px;height:394px;transform-origin:0 0}
+#stH .bk{position:absolute;left:30px;right:30px;top:100px;height:200px;background:linear-gradient(180deg,rgba(155,124,255,.30),rgba(155,124,255,.10))}
+#stH .po{position:absolute;top:100px;width:16px;height:200px;background:linear-gradient(90deg,#d6cdf0,#7e75a0)}
+#stH .po.l{left:22px}#stH .po.r{right:22px}
+#stH .kp{position:absolute;left:0;right:0;top:146px;text-align:center;font-size:140px;line-height:1}
+#stH .aw{position:absolute;left:0;top:0;width:510px;height:112px;border-radius:26px 26px 0 0;background:repeating-linear-gradient(90deg,#cbfb61 0 51px,#f6f3ff 51px 102px);box-shadow:inset 0 -12px 0 rgba(0,0,0,.07)}
+#stH .sc{position:absolute;left:0;top:111px;width:510px;height:28px;background:radial-gradient(circle at 25.5px 0,#cbfb61 0 25px,transparent 26px) 0 0/102px 28px repeat-x,radial-gradient(circle at 76.5px 0,#f6f3ff 0 25px,transparent 26px) 0 0/102px 28px repeat-x}
+#stH .ct{position:absolute;left:0;top:284px;width:510px;height:110px;border-radius:10px 10px 22px 22px;background:linear-gradient(180deg,#f3d27a,#c99a3a 60%,#a87a1e);box-shadow:inset 0 8px 0 rgba(255,255,255,.35);display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px}
+#stH .ct span{font:400 48px/1 var(--f-d);letter-spacing:.08em;color:#2a1d05}
+#stH .gd{position:absolute;left:0;right:0;top:226px;text-align:center;font-size:62px;line-height:1;letter-spacing:12px}
+#s1chip{left:0;right:0;top:716px;display:flex;justify-content:center}
+#s1chip span{display:inline-flex;align-items:center;gap:16px;height:92px;padding:0 44px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 3px var(--lime);font:800 40px/1 var(--f-b);letter-spacing:.06em}
+#s1chip i{font-style:normal;color:var(--lime)}
+#sgrid{position:absolute;left:110px;top:270px;width:980px;height:512px}
+.gst{position:absolute;width:150px;height:116px;border-radius:14px;overflow:hidden;visibility:hidden;opacity:0;border:3px dashed rgba(155,124,255,.85);background:rgba(155,124,255,.08)}
+.gst::before{content:'';position:absolute;left:0;right:0;top:0;height:30px;background:repeating-linear-gradient(90deg,rgba(155,124,255,.8) 0 15px,rgba(155,124,255,.3) 15px 30px)}
+.gst::after{content:'';position:absolute;left:0;right:0;bottom:0;height:24px;background:rgba(155,124,255,.32)}
+.gst b{position:absolute;left:0;right:0;top:36px;text-align:center;font:400 42px/1 var(--f-d);color:rgba(246,243,255,.88)}
+.gst.mine{border:3px solid #cbfb61;box-shadow:0 0 26px rgba(203,251,97,.45);background:rgba(203,251,97,.14)}
+.gst.mine::before{background:repeating-linear-gradient(90deg,#cbfb61 0 15px,#f6f3ff 15px 30px)}
+.gst.mine::after{background:linear-gradient(180deg,#f3d27a,#c99a3a)}
+.gst.mine b{color:#cbfb61}
+#s24{left:1170px;top:270px;width:640px;height:320px;border-radius:34px;padding:32px 44px;box-shadow:inset 0 0 0 3px rgba(232,194,90,.6),0 22px 60px rgba(0,0,0,.45)}
+#s24 .eb{font:800 24px/1 var(--f-b);letter-spacing:.16em;color:var(--gold)}
+#s24 b{display:inline-block;margin-top:4px;font:400 170px/1.05 var(--f-d)}
+#s24 p{font:800 32px/1.2 var(--f-b);color:var(--body)}
+.leg{left:1170px;width:640px;height:84px;display:flex;align-items:center;gap:20px;padding:0 30px;border-radius:24px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);font:800 34px/1 var(--f-b)}
+.leg i{flex:none;width:46px;height:36px;border-radius:8px}
+.leg i.l{background:var(--lime)}.leg i.v{border:3px dashed #9b7cff;background:rgba(155,124,255,.18)}
+.leg b{color:var(--lime)}
+#sl1{top:612px}#sl2{top:708px}
+
+/* the money plan */
+#pdep{left:110px;top:270px;width:560px;height:470px;border-radius:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;box-shadow:inset 0 0 0 3px rgba(232,194,90,.6),0 22px 60px rgba(0,0,0,.45)}
+#pdep small{font:800 28px/1 var(--f-b);letter-spacing:.16em;color:var(--gold)}
+#pdep b{font:400 230px/1.08 var(--f-d)}
+#pdep p{font:800 30px/1 var(--f-b);color:var(--body)}
+.prow{left:730px;height:104px;display:flex;align-items:center;gap:20px;padding:0 32px;border-radius:26px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);font:800 38px/1 var(--f-b);white-space:nowrap}
+.prow .em{font-size:50px}.prow b{color:var(--lime);font:400 58px/1 var(--f-d);letter-spacing:.02em}
+#pr1{top:270px;width:1080px}#pr2{top:392px;width:790px}#pr3{top:514px;width:790px}#pr4{top:636px;width:1080px}
+#p200{left:1540px;top:392px;width:270px;height:226px;border-radius:26px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;background:rgba(203,251,97,.12);box-shadow:inset 0 0 0 4px var(--lime),0 0 50px rgba(203,251,97,.25)}
+#p200 b{font:400 100px/1 var(--f-d);color:var(--lime)}#p200 small{font:800 20px/1 var(--f-b);letter-spacing:.12em;color:var(--body)}
+
+/* amplify 24x */
+.erow{left:210px;width:1500px;height:150px;border-radius:30px;display:flex;align-items:center;gap:34px;padding:0 50px;font:400 104px/1 var(--f-d)}
+.erow small{width:360px;font:800 26px/1.25 var(--f-b);letter-spacing:.12em;color:var(--gold)}
+.erow .o{color:rgba(255,255,255,.45)}.erow .y{color:var(--lime);display:inline-block;transform-origin:0 50%}
+#e1{top:270px}#e2{top:440px}
+#etot{left:0;right:0;top:618px;display:flex;justify-content:center;align-items:baseline;gap:28px}
+#etot b{display:inline-block;font:400 150px/1.05 var(--f-d)}#etot span{font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.02em}
+
+/* what is exposure */
+#egrid{left:110px;top:290px;width:980px;height:512px;transform-origin:0 0}
+#egrid .gst{visibility:inherit;opacity:1}
+#eleg{left:110px;top:724px;width:784px;display:flex;justify-content:space-between;font:800 28px/1 var(--f-b)}
+#eleg span{display:inline-flex;align-items:center;gap:12px}
+#eleg i{width:36px;height:28px;border-radius:7px}#eleg i.l{background:var(--lime)}#eleg i.v{border:3px dashed #9b7cff;background:rgba(155,124,255,.18)}
+#ecard{left:960px;top:270px;width:850px;height:300px;border-radius:34px;padding:34px 48px;box-shadow:inset 0 0 0 4px var(--lime),0 0 60px rgba(203,251,97,.2)}
+#ecard .eb{font:800 26px/1 var(--f-b);letter-spacing:.18em;color:var(--gold)}
+#ecard b{display:block;margin-top:6px;font:400 150px/1.05 var(--f-d);color:var(--lime)}
+#ecard p{font:800 38px/1.1 var(--f-b)}
+#enot{left:960px;top:596px;width:850px;height:112px;border-radius:999px;display:flex;align-items:center;justify-content:center;font:400 66px/1 var(--f-d);text-transform:uppercase;letter-spacing:.04em;color:var(--gold-hi);background:rgba(232,194,90,.10);box-shadow:inset 0 0 0 4px rgba(232,194,90,.7)}
+#eown{left:960px;top:730px;width:850px;text-align:center;font:800 34px/1 var(--f-b);color:var(--body)}#eown b{color:var(--text)}
+
+/* the calculator */
+#lap{left:460px;top:250px;width:1000px;height:598px}
+#lap .scr{position:absolute;left:0;top:0;width:1000px;height:572px;border-radius:24px;padding:10px;background:linear-gradient(160deg,#2d2840,#151221);box-shadow:inset 0 0 0 2px rgba(155,124,255,.5),0 30px 80px rgba(0,0,0,.6)}
+#lap .scr div{position:relative;width:980px;height:552px;border-radius:14px;overflow:hidden;background:#0b0912}
+#lap .scr img{position:absolute;inset:0;width:980px;height:552px;opacity:0}
+#lap .base{position:absolute;left:-60px;right:-60px;top:572px;height:26px;border-radius:0 0 26px 26px;background:linear-gradient(180deg,#bdb3dc,#7e75a0)}
+#ctap{left:0;top:0;width:90px;height:90px;border-radius:50%;box-shadow:inset 0 0 0 6px #fff,0 0 30px rgba(255,255,255,.4)}
+#cring{left:0;top:0;border-radius:18px;box-shadow:inset 0 0 0 5px var(--lime),0 0 40px rgba(203,251,97,.5)}
+#cnote{left:948px;top:580px;width:470px;height:232px;border-radius:18px 18px 14px 18px;background:#141022;box-shadow:inset 0 0 0 3px rgba(203,251,97,.75),0 -10px 40px rgba(0,0,0,.5)}
+#cnote div{position:absolute;inset:0;padding:28px 30px}
+#cnote small{display:block;font:800 20px/1 var(--f-b);letter-spacing:.14em;color:var(--gold)}
+#cnote b{display:block;margin-top:16px;font:400 52px/1 var(--f-d);white-space:nowrap;letter-spacing:.01em}#cnote b i{font-style:normal;color:var(--lime)}
+#cnote p{margin-top:16px;font:700 24px/1.25 var(--f-b);color:var(--body)}
+
+/* bigger exposure, bigger moves */
+.wcard{top:270px;width:760px;height:470px;border-radius:34px;padding:40px 46px}
+.wcard .eb{font:800 24px/1 var(--f-b);letter-spacing:.16em;color:var(--gold)}
+.wcard>b{display:block;margin-top:18px;font:400 124px/1 var(--f-d)}
+.wcard>small{display:block;margin-top:4px;font:800 26px/1 var(--f-b);color:var(--body)}
+.wcard p{margin-top:44px;font:800 30px/1 var(--f-b);color:var(--body)}.wcard p b{display:block;margin-top:10px;font:400 84px/1 var(--f-d);color:var(--text)}
+#wA{left:150px;box-shadow:inset 0 0 0 3px rgba(155,124,255,.6),0 22px 60px rgba(0,0,0,.45)}
+#wB{left:1010px;box-shadow:inset 0 0 0 4px var(--lime),0 0 60px rgba(203,251,97,.2)}#wB>b,#wB p b{color:var(--lime)}
+.wcard .bl{position:absolute;left:490px;width:230px;top:233px;height:4px;border-radius:2px;background:rgba(255,255,255,.4)}
+.wcard .ub{position:absolute;left:515px;bottom:237px;width:80px;border-radius:12px 12px 0 0;transform-origin:50% 100%;background:linear-gradient(180deg,#e9ff9e,#cbfb61 60%,#9fdc35)}
+.wcard .db{position:absolute;left:615px;top:237px;width:80px;border-radius:0 0 12px 12px;transform-origin:50% 0;background:linear-gradient(180deg,#b9a2ff,#9b7cff 55%,#7a5be8)}
+.wcard .ul,.wcard .dl{position:absolute;width:170px;text-align:center;font:800 24px/1 var(--f-b);letter-spacing:.04em}
+.wcard .ul{left:470px;color:var(--lime)}.wcard .dl{left:570px;color:#c9b8ff}
+#wA .ub,#wA .db{height:7px;border-radius:3px}#wB .ub,#wB .db{height:168px}
+#wA .ul{top:188px}#wA .dl{top:256px}#wB .ul{top:28px}#wB .dl{top:418px}
+
+/* the loss limit is written down */
+#lsub{left:110px;top:250px}
+#lsub span{display:inline-flex;align-items:center;gap:14px;height:76px;padding:0 32px;border-radius:999px;background:rgba(232,194,90,.10);box-shadow:inset 0 0 0 2px rgba(232,194,90,.55);font:800 32px/1 var(--f-b);color:var(--gold-hi)}
+.ltile{top:360px;width:720px;height:340px;border-radius:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center}
+.ltile b{font:400 200px/1.05 var(--f-d)}.ltile p{font:800 40px/1.15 var(--f-b)}
+#lt1{left:210px;box-shadow:inset 0 0 0 3px rgba(232,194,90,.6),0 22px 60px rgba(0,0,0,.45)}#lt2{left:990px;box-shadow:inset 0 0 0 3px rgba(155,124,255,.6),0 22px 60px rgba(0,0,0,.45)}
+#lfoot{top:736px;font:800 34px/1 var(--f-b);color:var(--body)}
+
+/* start small */
+#rdisc{left:210px;top:290px;width:320px;height:320px;border-radius:50%;display:grid;place-items:center;font-size:160px;background:radial-gradient(circle,rgba(203,251,97,.22),rgba(203,251,97,.04) 70%);box-shadow:0 0 0 6px var(--lime),0 0 80px rgba(203,251,97,.4)}
+.mrow2{left:620px;width:1150px;height:104px;display:flex;align-items:center;gap:22px;padding:0 34px;border-radius:26px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);font:800 40px/1 var(--f-b)}
+.mrow2 .em{font-size:48px}
+#mr1{top:330px}#mr2{top:466px}
+/* captions */
+#cap{left:0;right:0;top:900px;display:flex;justify-content:center;visibility:visible;opacity:1}
+#capbox{max-width:1560px;padding:14px 30px 16px;border-radius:20px;background:rgba(8,6,14,.72);text-align:center;font:800 44px/1.3 var(--f-b);color:rgba(255,255,255,.95);visibility:hidden}
+#capbox span{margin:0 .12em}#capbox .on{color:var(--lime)}#capbox .todo{color:rgba(255,255,255,.55)}
+</style></head><body><div id="v"><div id="grid"></div>
+<div class="ab" id="top"><div class="who"><img src="jetup-disc-small.png" alt=""><div><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div></div><span id="chipT">JETUP · AMPLIFY 24X</span></div>
+
+<!-- hook -->
+<div class="ab c" id="hkE">JETUP · HOW AMPLIFY WORKS</div>
+<div class="ab" id="h50">$50</div>
+<div class="ab" id="hlk"><b>trades<br>like</b><i>→</i></div>
+<div class="ab goldtxt" id="h12">$1,200</div>
+<div class="ab c" id="hkB">One word: <span>Amplify 24x</span></div>
+
+<!-- hi -->
+<div class="ab" id="hdisc"><img src="jetup-disc.png" alt="JetUP"></div>
+<div class="ab c" id="hhi">Hi, I'm MTG</div>
+<div class="ab c goldtxt" id="harch">YOUR DIGITAL ARCHITECT</div>
+
+<!-- the market stall -->
+<div class="ab ttl" id="att">Think of a <span>market stall</span></div>
+<div id="sgrid"></div>
+<div class="ab" id="stH"><div class="bk"></div><div class="po l"></div><div class="po r"></div><span class="em kp">🧑‍🌾</span><div class="aw"></div><div class="sc"></div><div class="ct"><span>YOUR STALL</span></div><span class="em gd">🍎🍊🍌</span></div>
+<div class="ab" id="s1chip"><span>You pay for <i>1 stall</i></span></div>
+<div class="ab card" id="s24"><p class="eb">AMPLIFY</p><b class="goldtxt">24x</b><p>You trade as if you had 24 stalls</p></div>
+<div class="ab leg" id="sl1"><i class="l"></i><span>1 stall = <b>your money</b></span></div>
+<div class="ab leg" id="sl2"><i class="v"></i><span>24 stalls = <b>your trading size</b></span></div>
+
+<!-- the money plan -->
+<div class="ab ttl" id="ptt">The <span>money plan</span></div>
+<div class="ab card" id="pdep"><small>YOU DEPOSIT</small><b class="goldtxt">$155</b><p>your own money</p></div>
+<div class="ab prow" id="pr1"><span class="em">🤖</span><b>$50</b>goes into the Sonic strategy</div>
+<div class="ab prow" id="pr2"><span class="em">💼</span><b>$100</b>stays in your balance</div>
+<div class="ab prow" id="pr3"><span class="em">🎁</span><b>+$100</b>Dennis Fast Start Promo</div>
+<div class="ab" id="p200"><b>$200</b><small>PROMO ACCOUNT</small></div>
+<div class="ab prow" id="pr4"><span class="em">🪙</span><b>$5</b>stays spare, for small fees</div>
+
+<!-- amplify 24x -->
+<div class="ab ttl" id="mtt">Amplify <span class="p" id="m24">24x</span></div>
+<div class="ab card erow" id="e1"><small>THE SONIC<br>STRATEGY</small><span>$50</span><span class="o">×</span><span>24</span><span class="o">=</span><span class="y" id="e1r">$1,200</span></div>
+<div class="ab card erow" id="e2"><small>THE PROMO<br>ACCOUNT</small><span>$200</span><span class="o">×</span><span>24</span><span class="o">=</span><span class="y" id="e2r">$4,800</span></div>
+<div class="ab" id="etot"><b class="goldtxt">$6,000</b><span>of exposure</span></div>
+
+<!-- what is exposure -->
+<div class="ab ttl" id="xtt">What is <span>exposure?</span></div>
+<div class="ab" id="egrid"></div>
+<div class="ab" id="eleg"><span><i class="l"></i>1 stall: your money</span><span><i class="v"></i>24 stalls: your trading size</span></div>
+<div class="ab card" id="ecard"><p class="eb">EXPOSURE</p><b>$6,000</b><p id="esub">the size you trade with</p></div>
+<div class="ab" id="enot">Not money you own</div>
+<div class="ab" id="eown">Your own money in: <b>$155</b></div>
+
+<!-- the calculator -->
+<div class="ab ttl" id="ctt">Try <span>your own numbers</span></div>
+<div class="ab" id="lap"><div class="scr"><div><img id="k0" src="calc/s0.png" alt=""><img id="k1" src="calc/s1.png" alt=""><img id="k2" src="calc/s2.png" alt=""></div></div><div class="base"></div></div>
+<div class="ab" id="cnote"><div id="cnA"><small>SONIC ONLY</small><b>$50 × 24 = <i>$1,200</i></b><p>Balance × multiplier = your trading size</p></div>
+ <div id="cnB"><small>THE TRAINING EXAMPLE</small><b>$250 × 24 = <i>$6,000</i></b><p>$50 in Sonic + the $200 promo account</p></div></div>
+<div class="ab" id="ctap"></div>
+<div class="ab" id="cring"></div>
+<div class="ab bpill" id="ccap"><span><span class="em">🧮</span>The <i>Exposure Calculator</i> on mtgtribe.com/jetup: tap an example, see your trading size</span></div>
+
+<!-- bigger exposure, bigger moves -->
+<div class="ab ttl" id="wtt">Bigger size, <span>bigger moves</span></div>
+<div class="ab card wcard" id="wA"><p class="eb">WITHOUT AMPLIFY</p><b>$250</b><small>trading size</small><p>A 1% move<b>$2.50</b></p>
+ <i class="bl"></i><i class="ub"></i><i class="db"></i><span class="ul">UP $2.50</span><span class="dl">DOWN $2.50</span></div>
+<div class="ab card wcard" id="wB"><p class="eb">WITH AMPLIFY 24X</p><b>$6,000</b><small>trading size</small><p>A 1% move<b>$60</b></p>
+ <i class="bl"></i><i class="ub"></i><i class="db"></i><span class="ul">UP $60</span><span class="dl">DOWN $60</span></div>
+
+<!-- the loss limit is written down -->
+<div class="ab ttl" id="ltt">The loss limit is <span>written down</span></div>
+<div class="ab" id="lsub"><span><span class="em">📋</span>In the rules, before you start</span></div>
+<div class="ab card ltile" id="lt1"><b class="goldtxt">10%</b><p>of the starting balance</p></div>
+<div class="ab card ltile" id="lt2"><b class="goldtxt">5%</b><p>with a community token</p></div>
+<div class="ab c" id="lfoot">You know the limit from day one.</div>
+
+<!-- start small -->
+<div class="ab ttl" id="rtt">A bigger size, <span>not extra money</span></div>
+<div class="ab em" id="rdisc">🌱</div>
+<div class="ab mrow2" id="mr1"><span class="em">💵</span><span id="mr1t">Start small, and do a small withdrawal early</span></div>
+<div class="ab mrow2" id="mr2"><span class="em">✅</span>Let the system prove itself to you</div>
+
+<!-- your turn -->
+<div class="ab c" id="ut">Now it's <span>your turn</span></div>
+<div class="ab em" id="useat">🙋</div>
+<div class="ab" id="uurl"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="ujoin"><span class="em">🚀</span>Join JetUP</div>
+<div class="ab" id="uring"></div>
+<div class="ab em" id="uhand">👆</div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

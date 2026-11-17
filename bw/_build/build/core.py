@@ -169,9 +169,12 @@ def cover(code, here):
     return L(f'img/{v["slug"]}-wide.webp', here), L(f'img/{v["slug"]}-wide-640.webp', here)
 
 
+BAR = {'t3': 'Activate slot 1'}      # a shorter name where the short name does not fit the bar of a 320 px phone with large text
+
+
 def bar_text(v):
-    """what the player's bar says beside the camera: the series and the short name ("Tutorial 3 · Swap, sign up, activate slot 1")"""
-    return f'{v["label"]} · {v["short"]}' if v['code'][0] in 'tek' else v['title']
+    """what the player's bar says beside the camera: the series and the short name ("Tutorial 2 · Buy BNB, send to SafePal")"""
+    return f'{v["label"]} · {BAR.get(v["code"], v["short"])}' if v['code'][0] in 'tek' else v['title']
 
 
 def player(wide=False, cover='', left='', right='', pid=''):

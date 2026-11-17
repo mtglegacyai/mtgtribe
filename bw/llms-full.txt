@@ -24,9 +24,9 @@ Ready to start?
 
 #### Join in 3 stages.
 About 30 minutes, all on your phone. Watch, tap, done.
-- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:10)
+- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:25)
 - 2 Stage 2 · 15 min Buy BNB, send it to SafePal Buy BNB with rand on VALR or Binance, then send it to your SafePal wallet. Watch Tutorial 2 (5:57) VALR Binance
-- 3 Stage 3 · 5 min Activate slot 1 Swap BNB for BTCB, paste the sign-up link into SafePal's browser and confirm twice. You pay 0.001 BTC, once. Watch Tutorial 3 (6:02) Copy Sign-Up Link Copied ✓
+- 3 Stage 3 · 5 min Activate slot 1 Swap BNB for BTCB, paste the sign-up link into SafePal's browser and confirm twice. You pay 0.001 BTC, once. Watch Tutorial 3 (6:10) Copy Sign-Up Link Copied ✓
 Every tap, step by step · Introduced by someone else? Use their link.
 Everything inside
 
@@ -52,9 +52,9 @@ A short cartoon by MTG. Leo and Thandi, and their voices, are made with AI.
 Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.
 
 #### Join in 3 stages
-- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:10)
+- 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:25)
 - 2 Stage 2 · 15 min Buy BNB, send it to SafePal Buy BNB with rand on VALR or Binance, then send it to your SafePal wallet. Watch Tutorial 2 (5:57) VALR Binance
-- 3 Stage 3 · 5 min Activate slot 1 Swap BNB for BTCB, paste the sign-up link into SafePal's browser and confirm twice. You pay 0.001 BTC, once. Watch Tutorial 3 (6:02) Copy Sign-Up Link Copied ✓
+- 3 Stage 3 · 5 min Activate slot 1 Swap BNB for BTCB, paste the sign-up link into SafePal's browser and confirm twice. You pay 0.001 BTC, once. Watch Tutorial 3 (6:10) Copy Sign-Up Link Copied ✓
 Every tap, step by step · Introduced by someone else? Use their link.
 
 #### Your progress
@@ -413,7 +413,7 @@ Three stages, five steps, from an empty phone to slot 1. Take them one at a time
 - A VALR or Binance account to buy with rand
 - The sign-up link of the person who introduced you
 On the recording day of Tutorial 1, Bitcoin was about $67,000, so 0.001 BTC was about $67. With fees and a little BNB, MTG suggested preparing about $76, about R1,300. Prices move every minute: check today's price in rand.
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### The five steps
 - Set up SafePal Download SafePal from safepal.com, create a wallet, back it up two ways and keep only BNB, USDT and BTCB. Tutorial 1 shows every tap.
@@ -441,7 +441,7 @@ Steps 4 and 5, tap by tap. Swap BNB for BTCB in SafePal, sign up with the link o
 - On the registration page, check the referrer: it is the member ID of the person who invited you
 - Your wallet asks twice: Approve, then Confirm again. Approve only the exact 0.001 BTC
 The button copies MTG's sign-up link. Introduced by someone else? Use their link, so they stay your sponsor.
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:02): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 
 ---
 
@@ -460,7 +460,7 @@ Download SafePal from the official site, create a wallet, back it up two ways, a
 - Two backups: Google Drive and paper
 - Rename the wallet Bitcoin Wealth
 - Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### Tutorial 2: Buy BNB on VALR and send it to SafePal
 Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
@@ -477,7 +477,7 @@ Swap BNB for BTCB in SafePal, sign up with the link of the person who invited yo
 - Keep some BNB in your wallet for network fees
 - On the registration page, check the referrer: it is the member ID of the person who invited you
 - Your wallet asks twice: Approve, then Confirm again. Approve only the exact 0.001 BTC
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:02): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 Do I really need to watch them all?
 Yes, even if you think you already know. Each one shows a screen you'll meet sooner or later. Then share them: we learn best when we teach others.
 
@@ -493,13 +493,13 @@ Video and written steps: download SafePal from the official site, create your wa
 Tutorial 1 of 3. Download SafePal from the official site, create a brand new wallet, back it up two ways, and keep only the three coins Bitcoin Wealth needs. Watch it, then follow every step in writing below.
 
 #### Watch the video
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### In this video
 - Download the official SafePal app 0:44
-- Back up your wallet, two ways 1:49
-- Clean up your wallet 3:51
-- What it costs to start 4:50
+- Back up your wallet, two ways 1:54
+- Clean up your wallet 4:00
+- What it costs to start 5:04
 Tap a time to start the video at that part. It plays in a phone frame and closes itself at the end.
 No VALR or Binance account yet? Open one now, so it is verified by the time you reach Tutorial 2.
 
@@ -512,39 +512,43 @@ In this video, I'll show you how to set up your SafePal wallet for Bitcoin Wealt
 - Why a Web3 wallet? 0:26 Why a Web3 wallet? A Web3 wallet is an app where you hold your own crypto, with your own keys. No bank, no company and no admin holds it for you. Bitcoin Wealth pays wallet to wallet, straight into yours. In this video, we use SafePal. Other Web3 wallets, like MetaMask, work too.
 
 ##### Part 1 Download the official SafePal app
-- 1 Go to safepal.com 0:46 Open your browser and go to safepal.com, the official website. Always download apps from the official website, never from a link someone sends you. Scroll down, and tap Download App.
-- 2 Get it on Google Play 0:57 On Android, tap Get it on Google Play. On iPhone, tap App Store.
-- 3 Check it, then Install 1:02 Before you install, check two things: the developer, SafePal Wallet, and more than 5 million downloads. That's how you know it's the real app. Then tap Install.
-- 4 Decline offer, then Open 1:12 If Google Play shows you an offer, tap Decline offer. Stay focused. When it's done, tap Open.
-- 5 Create New Wallet 1:17 Tap Create New Wallet. We're making a brand new wallet, just for Bitcoin Wealth.
-- 6 Set your 6-digit password 1:22 Create a 6-digit password, then type it again to confirm. It unlocks SafePal on this phone.
-- 7 Your Wallet is Ready! 1:28 Your wallet is ready. Read this with me: Secure your wallet by saving your mnemonic phrase. This unique set of words is your only key to access your funds. SafePal cannot store or recover it for you. Your mnemonic phrase is your 12 secret recovery words. Whoever has them, has your wallet. This is the most important part of this video, so save it now. It'll be here when you do it yourself.
+- Leo, the mascot: First, download the official app. Only from safepal.com.
+- 1 Go to safepal.com 0:52 Open your browser and go to safepal.com, the official website. Always download apps from the official website, never from a link someone sends you. Scroll down, and tap Download App.
+- 2 Get it on Google Play 1:03 On Android, tap Get it on Google Play. On iPhone, tap App Store.
+- 3 Check it, then Install 1:08 Before you install, check two things: the developer, SafePal Wallet, and more than 5 million downloads. That's how you know it's the real app. Then tap Install.
+- 4 Decline offer, then Open 1:17 If Google Play shows you an offer, tap Decline offer. Stay focused. When it's done, tap Open.
+- 5 Create New Wallet 1:23 Tap Create New Wallet. We're making a brand new wallet, just for Bitcoin Wealth.
+- 6 Set your 6-digit password 1:28 Create a 6-digit password, then type it again to confirm. It unlocks SafePal on this phone.
+- 7 Your Wallet is Ready! 1:33 Your wallet is ready. Read this with me: Secure your wallet by saving your mnemonic phrase. This unique set of words is your only key to access your funds. SafePal cannot store or recover it for you. Your mnemonic phrase is your 12 secret recovery words. Whoever has them, has your wallet. This is the most important part of this video, so save it now. It'll be here when you do it yourself.
 
 ##### Part 2 Back up your wallet, two ways
-- 8 Back Up Now 1:52 Tap Back Up Now. Never skip this. There are two ways to back up, and we'll do both.
-- 9 Back up to Google Drive 1:57 First, Back up to Google Drive. Choose your Google account, then enter your 6-digit password.
-- 10 Create a backup password 2:03 Now create a backup password. Easy for you to remember, hard for anyone to guess: at least 8 characters, with letters and numbers. Only tap the eye if nobody is around you. SafePal can't reset this password, so write it down. Your backup file is encrypted on your phone. Encrypted means locked with your password, so nobody can read it without it. Then it goes to your Google Drive. SafePal doesn't keep a copy. Tap Next.
-- 11 Read, tick, Start Backup 2:26 Read these before you tick them. The backup password is not your wallet password. It only restores your wallet from cloud storage, which means your Google Drive, online. It can't be changed or recovered. If you lose it, you can't restore from Google Drive. Tick all three, and tap Start Backup.
-- 12 First backup: done 2:42 Done. Your first backup is safe.
-- 13 Name it: Bitcoin Wealth 2:44 Now give your wallet a clear name. Tap the wallet name at the top, then the three dots next to your wallet, and the pencil. Type Bitcoin Wealth, and tap Confirm.
-- 14 Never share your private key 2:54 On this page you'll also see Export Private Key. Never share your private key with anyone. Like your 12 words, it opens your wallet.
-- 15 Back up manually 3:02 Now the second backup, on paper. Tap Backup, then Back up manually. Read these three: losing your mnemonic phrase means losing your assets for good. Deleting the app deletes the wallet data. And back up somewhere private, with no person and no camera around you. Tick them, tap Understood, and enter your 6-digit password.
-- Write your 12 words on paper 3:20 SafePal now shows your 12 words, and it hides this screen from recordings, to protect you. Write the 12 words on paper, in order, and keep them offline. Never take a screenshot, never copy them, never store them online, and never send them to anyone. Then tap Next, and tap the words in the same order, to prove you wrote them down correctly. Made a mistake? Clear them and try again. When they're right, tap Verify.
-- 16 Backup completed 3:43 Backup completed. Two green ticks: Google Drive, and manual. Well done. Most people skip this part, and you didn't.
+- Leo, the mascot: Now back it up, two ways. Never skip this.
+- 8 Back Up Now 2:00 Tap Back Up Now. Never skip this. There are two ways to back up, and we'll do both.
+- 9 Back up to Google Drive 2:05 First, Back up to Google Drive. Choose your Google account, then enter your 6-digit password.
+- 10 Create a backup password 2:11 Now create a backup password. Easy for you to remember, hard for anyone to guess: at least 8 characters, with letters and numbers. Only tap the eye if nobody is around you. SafePal can't reset this password, so write it down. Your backup file is encrypted on your phone. Encrypted means locked with your password, so nobody can read it without it. Then it goes to your Google Drive. SafePal doesn't keep a copy. Tap Next.
+- 11 Read, tick, Start Backup 2:34 Read these before you tick them. The backup password is not your wallet password. It only restores your wallet from cloud storage, which means your Google Drive, online. It can't be changed or recovered. If you lose it, you can't restore from Google Drive. Tick all three, and tap Start Backup.
+- 12 First backup: done 2:50 Done. Your first backup is safe.
+- 13 Name it: Bitcoin Wealth 2:53 Now give your wallet a clear name. Tap the wallet name at the top, then the three dots next to your wallet, and the pencil. Type Bitcoin Wealth, and tap Confirm.
+- 14 Never share your private key 3:02 On this page you'll also see Export Private Key. Never share your private key with anyone. Like your 12 words, it opens your wallet.
+- 15 Back up manually 3:10 Now the second backup, on paper. Tap Backup, then Back up manually. Read these three: losing your mnemonic phrase means losing your assets for good. Deleting the app deletes the wallet data. And back up somewhere private, with no person and no camera around you. Tick them, tap Understood, and enter your 6-digit password.
+- Write your 12 words on paper 3:29 SafePal now shows your 12 words, and it hides this screen from recordings, to protect you. Write the 12 words on paper, in order, and keep them offline. Never take a screenshot, never copy them, never store them online, and never send them to anyone. Then tap Next, and tap the words in the same order, to prove you wrote them down correctly. Made a mistake? Clear them and try again. When they're right, tap Verify.
+- 16 Backup completed 3:52 Backup completed. Two green ticks: Google Drive, and manual. Well done. Most people skip this part, and you didn't.
 
 ##### Part 3 Clean up your wallet
-- 17 Manage Coins: keep BNB 3:53 Now let's clean up your wallet, so it shows only what Bitcoin Wealth needs. On the wallet home, tap the three dots next to Search, then Manage Coins. Turn off every coin except BNB, BEP20. BNB pays the small network fees, called gas.
-- 18 Add USDT and BTCB (BEP20) 4:08 Tap the plus, search USDT, and turn on USDT, BEP20. BEP20 means it runs on BNB Smart Chain, Binance's blockchain. Then search BTC, and turn on BTCB, BEP20.
-- What is BTCB? 4:22 BTCB is Bitcoin's value on BNB Smart Chain. It follows the price of Bitcoin one to one, and it's what Bitcoin Wealth runs on.
-- 19 3 coins: BNB, BTCB, USDT 4:31 Back on the wallet home, you should see just three coins: BNB, BTCB and USDT. If yours looks like mine, comment DONE.
-- For builders: a website like this one 4:39 Builders, a website like this one, with your own name and your links, does the explaining for you. BW stands for Bitcoin Wealth, and you can order yours at mtgtribe.com/bwcopy.
+- Leo, the mascot: Now, clean up your wallet. You only need three coins.
+- 17 Manage Coins: keep BNB 4:07 Now let's clean up your wallet, so it shows only what Bitcoin Wealth needs. On the wallet home, tap the three dots next to Search, then Manage Coins. Turn off every coin except BNB, BEP20. BNB pays the small network fees, called gas.
+- 18 Add USDT and BTCB (BEP20) 4:22 Tap the plus, search USDT, and turn on USDT, BEP20. BEP20 means it runs on BNB Smart Chain, Binance's blockchain. Then search BTC, and turn on BTCB, BEP20.
+- What is BTCB? 4:36 BTCB is Bitcoin's value on BNB Smart Chain. It follows the price of Bitcoin one to one, and it's what Bitcoin Wealth runs on.
+- 19 3 coins: BNB, BTCB, USDT 4:45 Back on the wallet home, you should see just three coins: BNB, BTCB and USDT. If yours looks like mine, comment DONE.
+- For builders: a website like this one 4:53 Builders, a website like this one, with your own name and your links, does the explaining for you. BW stands for Bitcoin Wealth, and you can order yours at mtgtribe.com/bwcopy.
 
 ##### Part 4 What it costs to start
-- 20 Bitcoin on 14 Nov 2026 4:52 So what does it cost to get started? I checked on CoinGecko on 14 November 2026. Bitcoin was about $67,200. The minimum to start Bitcoin Wealth is 0.001 Bitcoin, 1 thousandth of a Bitcoin. That was about $67. And the 0.001 is a once-off. You never pay again to move up to the next slots.
-- 21 About R1,300 to start 5:14 That day, $1 was about R16.98. I'd prepare about $76, around R1,300. That covers the 0.001, the fees from your bank to VALR, and from VALR to SafePal, and a little BNB for gas. No VALR or Binance account yet? Tap the buttons below this video to open one. I use both. It's smart to have a backup, just like having more than one income stream.
-- Prices change every day 5:38 Prices change every day. The entry is fixed in Bitcoin, so when Bitcoin is lower, you need fewer rands to start, and when it's higher, you need more.
-- Ready to join? 5:46 Ready to join? If I invited you, go to mtgtribe.com/bw. If someone else invited you, use their link, so you join their team.
-- Live on Zoom 5:55 We meet live on Zoom 5 evenings a week, in 4 languages. Ask the person who invited you to add you to the WhatsApp group, or tap the WhatsApp button below this video.
+- Leo, the mascot: So, what does it cost to start?
+- 20 Bitcoin on 14 Nov 2026 5:08 So what does it cost to get started? I checked on CoinGecko on 14 November 2026. Bitcoin was about $67,200. The minimum to start Bitcoin Wealth is 0.001 Bitcoin, 1 thousandth of a Bitcoin. That was about $67. And the 0.001 is a once-off. You never pay again to move up to the next slots.
+- 21 About R1,300 to start 5:30 That day, $1 was about R16.98. I'd prepare about $76, around R1,300. That covers the 0.001, the fees from your bank to VALR, and from VALR to SafePal, and a little BNB for gas. No VALR or Binance account yet? Tap the buttons below this video to open one. I use both. It's smart to have a backup, just like having more than one income stream.
+- Prices change every day 5:54 Prices change every day. The entry is fixed in Bitcoin, so when Bitcoin is lower, you need fewer rands to start, and when it's higher, you need more.
+- Ready to join? 6:02 Ready to join? If I invited you, go to mtgtribe.com/bw. If someone else invited you, use their link, so you join their team.
+- Live on Zoom 6:11 We meet live on Zoom 5 evenings a week, in 4 languages. Ask the person who invited you to add you to the WhatsApp group, or tap the WhatsApp button below this video.
 
 ##### Recap
 Let's recap what we covered in this video. We downloaded the official SafePal app. We created a brand new wallet. We backed it up two ways, on Google Drive and on paper. And we cleaned it up to show BNB, BTCB and USDT.
@@ -559,9 +563,9 @@ And remember: everyone needs their own copy. mtgtribe.com/bwcopy.
 This video is for every team, so feel free to share it. Save this video, so it's here when you need it. Share it with someone who's ready to start. We learn best when we teach others. It pays to pay attention, and take action. Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto! 💪
 
 #### The 3 tutorials, in order
-- Tutorial 1 · 7:10 Set up SafePal You are here
+- Tutorial 1 · 7:25 Set up SafePal You are here
 - Tutorial 2 · 5:57 Buy BNB, send to SafePal Open it
-- Tutorial 3 · 6:02 Swap, sign up, activate slot 1 Open it
+- Tutorial 3 · 6:10 Swap, sign up, activate slot 1 Open it
 
 ---
 
@@ -639,9 +643,9 @@ And remember: everyone needs their own copy. mtgtribe.com/bwcopy.
 Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for every team, so feel free to share it. Save this video, so it's here when you need it. Share it with someone who's ready to start. We learn best when we teach others. It pays to pay attention, and take action. Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto! 💪
 
 #### The 3 tutorials, in order
-- Tutorial 1 · 7:10 Set up SafePal Open it
+- Tutorial 1 · 7:25 Set up SafePal Open it
 - Tutorial 2 · 5:57 Buy BNB, send to SafePal You are here
-- Tutorial 3 · 6:02 Swap, sign up, activate slot 1 Open it
+- Tutorial 3 · 6:10 Swap, sign up, activate slot 1 Open it
 
 ---
 
@@ -655,7 +659,7 @@ Video and written steps: swap BNB for BTCB in SafePal, sign up with your sponsor
 Tutorial 3 of 3, the final step. Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, and activate slot 1 with two confirmations. Then see how to get back into your dashboard, any time.
 
 #### Watch the video
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:02): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 
 #### In this video
 - Swap BNB for BTCB 0:38
@@ -700,9 +704,9 @@ In this video, I'll show you how to swap your BNB for BTCB, sign up with the lin
 - 18 Back to your wallet 4:09 To go back to your wallet, tap the close button at the top right, then Back, then Wallet. I still have a little BNB for fees, and a little BTCB. I'm leaving it there. We collect Bitcoin, together.
 
 ##### Part 4 Get back into your dashboard, any time
-- 19 Explore, then vowu.io 4:24 Bitcoin Wealth is a smart contract on BNB Chain, so you always open it through your Web3 wallet. In SafePal, tap Explore, then the search bar. Type vowu.io, tap Go, choose BNB Chain, and tap Confirm.
-- 20 Sign & Continue 4:38 Welcome back. Tap Sign & Continue, confirm in your wallet, and you're in.
-- 21 Next time: search history 4:42 Next time, it's even quicker. Explore, search, and tap vowu.io in your search history.
+- 19 Explore, then vowu.io 4:24 Bitcoin Wealth is a smart contract on BNB Chain, so you always open it through your Web3 wallet. Leo, the mascot: A Web3 wallet is an app where you hold your own crypto, with your own keys. SafePal is one. In SafePal, tap Explore, then the search bar. Type vowu.io, tap Go, choose BNB Chain, and tap Confirm.
+- 20 Sign & Continue 4:46 Welcome back. Tap Sign & Continue, confirm in your wallet, and you're in.
+- 21 Next time: search history 4:51 Next time, it's even quicker. Explore, search, and tap vowu.io in your search history.
 
 ##### Recap
 Let's recap what we covered in this video. We swapped BNB for BTCB. We signed up with our sponsor's link. We activated slot 1, with 2 confirmations. And we learned how to get back into the dashboard.
@@ -717,9 +721,9 @@ And remember: everyone needs their own copy. mtgtribe.com/bwcopy.
 Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for every team, so feel free to share it. Save this video, so it's here when you need it. Share it with someone who's ready to start. We learn best when we teach others. It pays to pay attention, and take action. Quick reminder: none of this is financial advice. Always do your own research. Thank you for tuning in, and for every like, share, and comment. Your support means everything. And thank yourself for taking massive action today to change your future! I wish you nothing but the best, because YOU are the best. I'm MTG, Your Digital Architect. See you on the next one. Let's Get This Crypto! 💪
 
 #### The 3 tutorials, in order
-- Tutorial 1 · 7:10 Set up SafePal Open it
+- Tutorial 1 · 7:25 Set up SafePal Open it
 - Tutorial 2 · 5:57 Buy BNB, send to SafePal Open it
-- Tutorial 3 · 6:02 Swap, sign up, activate slot 1 You are here
+- Tutorial 3 · 6:10 Swap, sign up, activate slot 1 You are here
 
 ---
 

@@ -43,7 +43,7 @@ const CASES = [
           await p.goto(B + url, { waitUntil: 'load', timeout: 30000 }); await p.waitForTimeout(600);
           await p.evaluate(() => { const i = document.querySelector('.intro,#intro'); if (i) i.remove(); document.documentElement.classList.remove('intro-on'); });
           const loc = which === 'last' ? p.locator(sel).last() : p.locator(sel).first();
-          await loc.evaluate(e => e.scrollIntoView({ block: 'center' })); await p.waitForTimeout(500);
+          await loc.evaluate(e => e.scrollIntoView({ block: 'center', behavior: 'instant' })); await p.waitForTimeout(500);      // instant: a long page with smooth scrolling is still moving after half a second
           const y0 = await p.evaluate(() => Math.round(scrollY)); const t0 = await loc.evaluate(e => Math.round(e.getBoundingClientRect().top));
           await loc.evaluate(el => document.addEventListener('pointerdown', () => { window.__t0 = el.getBoundingClientRect().top; window.__y0 = scrollY; }, { capture: true, once: true }));
           await loc.click(); await p.waitForTimeout(900);

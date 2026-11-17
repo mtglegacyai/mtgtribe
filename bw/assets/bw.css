@@ -1104,24 +1104,69 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 @keyframes pring{0%{transform:scale(.9);opacity:.95}70%,100%{transform:scale(1.75);opacity:0}}
 @media (prefers-reduced-motion:reduce){.vplay .pbtn:before,.vplay.pulse .pbtn,.vplay.pulse .pbtn:before,.vplay.pulse .pbtn:after{animation:none}.vplay.pulse .pbtn:after{display:none}}
 
-/* WIDE COVER: a 16:9 cover for a vertical video (MTG, 16 Nov 2026: "change the orientation of the video thumbnail to horizontal
-   so that it takes less space ... even though the video itself will play in vertical orientation"). Pressing it opens the video
-   in the pop-up, in the phone frame. The play button sits in the middle, breathing, with the same rings as on every cover. */
-.wcov{position:relative;display:block;width:min(100%,640px);margin:0 auto;padding:0;border:2px solid transparent;border-radius:22px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;font:inherit;color:inherit;
-  background:linear-gradient(#040404,#040404) padding-box,linear-gradient(140deg,#7a531c,#f6d88c 22%,#9a6a26 45%,#f2c66d 70%,#6b4615) border-box;
-  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 60px -30px rgba(0,0,0,.9),0 0 60px -14px rgba(255,161,1,.3);transition:transform .35s var(--ease),box-shadow .35s}
-.wcov:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 36px 64px -30px rgba(0,0,0,.9),0 0 70px -10px rgba(255,161,1,.45)}
-.wcov img{display:block;width:100%;height:100%;object-fit:cover}
-.wcov .pbtn{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:clamp(56px,15%,96px);aspect-ratio:1;border-radius:50%;color:#1f1300;transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 34% 28%,#fff3c4 0,#ffd257 34%,#ffa101 72%,#e07f00 100%);
-  box-shadow:0 0 0 clamp(4px,.9vw,9px) rgba(255,190,60,.22),0 0 46px 6px rgba(255,170,20,.55),0 12px 26px rgba(0,0,0,.5);animation:pbreathe 2.4s ease-in-out infinite}
-.wcov .pbtn:before,.wcov .pbtn:after{content:"";position:absolute;inset:-12%;border-radius:50%;border:2px solid rgba(255,214,110,.85);animation:pring 2.4s cubic-bezier(.2,.6,.3,1) infinite}
-.wcov .pbtn:after{border-color:rgba(255,214,110,.7);animation-delay:1.2s;opacity:0}
-.wcov .pbtn .ic{width:38%;height:38%;margin-left:7%;fill:currentColor}
-.wcov:hover .pbtn,.wcov:focus-visible .pbtn{animation-play-state:paused}
-.wcov:focus-visible{outline:3px solid #fff;outline-offset:4px}
-@supports not (aspect-ratio:1){.wcov .pbtn{width:60px;height:60px}}
-@media (prefers-reduced-motion:reduce){.wcov,.wcov .pbtn,.wcov .pbtn:before{animation:none;transition:none}.wcov .pbtn:after{display:none}}
+/* EVERY VIDEO IN THE LAPTOP (MTG, 17 Nov 2026: "all the videos must have a horizontal thumbnail and inside a laptop frame ...
+   to save space and to make the website look smaller and easy to browse up and down"). The page shows every video as a wide
+   cover in the laptop frame (core.vid). A 16:9 video plays in that laptop; a 9:16 video opens in the pop-up's phone. */
+.vid16 .vcap{max-width:none;padding:0 clamp(8px,1.4vw,20px)}                 /* the caption lines up with the laptop's screen */
+.promo .vid{max-width:680px;margin-left:auto;margin-right:auto}                /* the main page's promo: a calm width on a big screen */
+.hlink{color:inherit;text-decoration:none}.hlink:hover{color:var(--gold)}
+.vcap .mark{flex:none;white-space:nowrap}
+/* on a phone the video comes right after its heading and one line about it, before the checklist: the play button is the point */
+@media (max-width:900px){
+  .two.vfirst{gap:16px}
+  .two.vfirst>.stack{display:contents}
+  .two.vfirst>.stack>*{order:3}
+  .two.vfirst>.stack>.vhead,.two.vfirst>.stack>.vdesc{order:1}
+  .two.vfirst>.phone-wrap{order:2;margin-bottom:6px}
+}
+
+/* TUTORIAL PAGE: a video's own page (pages_watch.py): the video, then every step in writing with its time */
+.watch-top{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+@media (max-width:900px){.watch-top{grid-template-columns:minmax(0,1fr)}}
+.wcov-list li span{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.tjump{display:inline-flex;align-items:center;gap:5px;flex:none;min-height:32px;padding:0 11px 0 9px;border:0;border-radius:999px;cursor:pointer;
+  font:800 .8rem/1 var(--body);font-variant-numeric:tabular-nums;color:#1f1300;background:linear-gradient(140deg,var(--gold-hi),var(--gold));
+  box-shadow:0 6px 16px -8px rgba(255,161,1,.7);transition:transform .2s var(--ease),box-shadow .2s;-webkit-tap-highlight-color:transparent;position:relative}
+.tjump:after{content:"";position:absolute;top:-6px;bottom:-6px;left:-2px;right:-2px}        /* a finger-sized touch area */
+.tjump .ic{width:11px;height:11px;fill:currentColor;stroke:none}
+.tjump:hover{transform:translateY(-1px);box-shadow:0 10px 20px -8px rgba(255,161,1,.85)}
+.tjump:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.tjump.sm{min-height:26px;padding:0 9px 0 7px;font-size:.74rem;color:var(--gold-hi);background:rgba(255,161,1,.12);box-shadow:inset 0 0 0 1px rgba(255,176,64,.4)}
+.wlist{display:grid;gap:16px}
+.wsec{padding:clamp(16px,2.4vw,26px);min-width:0}
+.wsec-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.wsec-h .h3{margin:0;font-size:clamp(1.08rem,2vw,1.3rem);min-width:0;overflow-wrap:break-word}
+.wpart{display:block;margin-bottom:4px;font:800 .7rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.wsaid p,.wb p{margin:0 0 8px;color:var(--ice);font-size:.97rem;line-height:1.65}
+.wsaid p:last-child,.wb p:last-child{margin-bottom:0}
+.wsub{margin:16px 0 6px;font-size:1rem}
+.wsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.wstep{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;scroll-margin-top:calc(var(--hdr) + 12px)}
+.wn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:800 .92rem var(--body);color:#1f1300;background:linear-gradient(140deg,var(--gold-hi),var(--gold))}
+.wstep.aside .wn{color:var(--lime);background:rgba(192,255,114,.08);box-shadow:inset 0 0 0 1px rgba(192,255,114,.3)}
+.wstep.aside .wn .ic{width:17px;height:17px}
+.wst{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:36px;margin-bottom:4px}
+.wst h4{margin:0;font:800 1rem/1.35 var(--body);color:var(--text);min-width:0;overflow-wrap:break-word}
+.wb{min-width:0}
+.wb .leo,.wsaid .leo{padding:8px 12px;border-radius:12px;background:rgba(255,161,1,.07);box-shadow:inset 0 0 0 1px var(--line-2)}
+.wb .leo b,.wsaid .leo b{color:var(--gold-hi)}
+.wclose summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none}
+.wclose summary::-webkit-details-marker{display:none}
+.wclose summary .ic{width:20px;height:20px;color:var(--gold);transition:transform .25s var(--ease)}
+.wclose[open] summary .ic{transform:rotate(180deg)}
+.wclose[open] summary{margin-bottom:12px}
+.wclose summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:8px}
+.wtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px;padding:0;list-style:none}
+.wtiles li{display:grid;min-width:0}
+@media (max-width:760px){.wtiles{grid-template-columns:minmax(0,1fr)}}
+.wtile{display:grid;gap:6px;padding:16px 18px;min-width:0;color:inherit;text-decoration:none;transition:transform .25s var(--ease)}
+.wtile small{font:800 .72rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.wtile b{font:800 1.02rem/1.35 var(--body);color:var(--text);overflow-wrap:break-word}
+.wtile span{font-size:.84rem;font-weight:700;color:var(--gold)}
+a.wtile:hover{transform:translateY(-3px)}
+.wtile.on{box-shadow:inset 0 0 0 2px var(--gold)}
+.wtile.on span{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.tjump,.wtile,.wclose summary .ic{transition:none}}
 
 /* the pop-up: the same player in the middle of the screen, sized to the screen that is visible right now */
 .sheet.player{place-items:center;background:rgba(3,4,3,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}

@@ -70,7 +70,7 @@ def matrix(here, cycle_toggle=True):
 
 
 WHY = [
-    ('wallet', 'Paid to your own wallet', 'No dashboard balance, no withdraw button, no admin to ask. Payouts land in the wallet only you control.'),
+    ('wallet', 'Paid to your own wallet', 'No dashboard balance, no withdraw button, nobody to ask. Payouts land in the wallet only you control.'),
     ('badge-check', 'One entry, once', '0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.'),
     ('scan-search', 'Every payment public', 'The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.'),
     ('bitcoin', 'Priced in Bitcoin', 'Slots and payouts are in BTCB, Bitcoin\'s value on BNB Smart Chain. Not points, not a made-up coin.'),
@@ -95,16 +95,23 @@ def scorecard():
  </div>"""
 
 
+def watch_btn(code):
+    """the gold button of a stage: it opens that stage's tutorial"""
+    v = V[code]
+    return (f'<button type="button" class="btn btn-gold btn-sm" data-play="{code}">{ic("play")}'
+            f'<span class="lbl">Watch Tutorial {v["n"]} ({mmss(v["secs"])})</span></button>')
+
+
 def start3(here, head=True):
     """the joiner's fast lane: three stages (the Join page breaks them into five steps)"""
     v = V['t1']
     st = [
         ('wallet', 'Stage 1', '10 min', 'Set up your wallet', 'SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB.',
-         f'<button type="button" class="btn btn-gold btn-sm" data-play="t1">{ic("play")}<span class="lbl">Watch Tutorial 1 ({mmss(v["secs"])})</span></button>'),
-        ('coins', 'Stage 2', '15 min', 'Get BTCB and a little BNB', 'Buy BNB with rand on VALR or Binance, send it to SafePal, then swap most of it to BTCB.',
-         valr_btn(label='VALR') + binance_btn(label='Binance')),
-        ('rocket', 'Stage 3', '5 min', 'Activate slot 1', 'Paste the sign-up link into SafePal\'s browser and approve 0.001 BTC worth of BTCB. Once.',
-         copy_btn('signup', 'Copy sign-up link', size='sm', ring=False)),
+         watch_btn('t1')),
+        ('coins', 'Stage 2', '15 min', 'Buy BNB, send it to SafePal', 'Buy BNB with rand on VALR or Binance, then send it to your SafePal wallet.',
+         watch_btn('t2') + valr_btn(label='VALR') + binance_btn(label='Binance')),
+        ('rocket', 'Stage 3', '5 min', 'Activate slot 1', 'Swap BNB for BTCB, paste the sign-up link into SafePal\'s browser and confirm twice. You pay 0.001 BTC, once.',
+         watch_btn('t3') + copy_btn('signup', 'Copy sign-up link', size='sm', ring=False)),
     ]
     lis = ''.join(f'<li class="stg glass"><span class="sn">{i + 1}</span><div class="sbody"><p class="sk">{ic(icn)}<b>{k}</b> · {t}</p>'
                   f'<h3>{h}</h3><p>{d}</p><div class="btn-row">{acts}</div></div></li>' for i, (icn, k, t, h, d, acts) in enumerate(st))
@@ -157,7 +164,7 @@ def landing():
 <section class="sec lsec promo" id="in-34-seconds" aria-labelledby="promo-h"><div class="wrap">
  <div class="sec-head center"><p class="eyebrow">34 seconds</p><h2 class="h2" id="promo-h">Curious? <span class="hl">Hear it first.</span></h2>
  <p class="lead">Four short clips about Bitcoin Wealth. Then follow every step yourself, one tap at a time.</p></div>
- {wide_cover('p1', here)}
+ {vid('p1', here, cap=False, hero=True)}
  <div class="center-row"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/tutorials/', here)}">{ic('circle-play')}<span class="lbl">Watch The Step-By-Step Tutorials</span></a></div>
  <p class="fine promo-note">A short Bitcoin Wealth promo video. Don't just take anyone's word for it: <a class="inl" href="{A('dashboard/check-it-yourself/', here)}">check it yourself</a>.</p>
 </div></section>
@@ -197,5 +204,5 @@ def landing():
 {overlays(here)}"""
     from seo import SEO_DESC
     hd = head('Bitcoin Wealth explained by MTG: how it works, how to join, check it yourself', SEO_DESC['land'], '', here,
-              extra_ld=video_ld(['p1', 't1'], here), og_key='land')
+              extra_ld=video_ld(['p1', 't1', 't2', 't3'], here), og_key='land')
     return hd, body

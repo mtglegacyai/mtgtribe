@@ -4,7 +4,7 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-16'
+TODAY = '2026-11-17'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
@@ -45,37 +45,54 @@ SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide b
              "show how it works, how to join safely and how to check every payment yourself: https://mtgtribe.com/bw")
 
 # released videos: code, slug, title, one-line summary, seconds, source master (in mtg-studio), extras
-# extras: o='h' for a 16:9 video (laptop frame; 9:16 plays in the phone frame), poster (in mtg-studio), label, short, date
-# poster: the website cover: no address pill, and a clear band in the middle (y 780 to 1140 of 1920), where the play button sits
-# (MTG, 16 Nov 2026: impossible to miss). spot: another place for the button, in percent, only when a cover's picture needs it
-# wide: a 16:9 cover for a 9:16 video, for a page where the tall phone would take too much room (core.wide_cover): pressing it
-# opens the video in the phone pop-up. Its middle stays clear for the play button too
+# extras: o='h' for a 16:9 video (it plays in the laptop frame, in place; a 9:16 video plays in the phone frame, in the pop-up),
+# poster (in mtg-studio), label, short, date, name
+# EVERY video shows on the page as a wide (16:9) cover inside the laptop frame (MTG, 17 Nov 2026: "all the videos must have a
+# horizontal thumbnail and inside a laptop frame ... to save space and to make the website look smaller and easy to browse up and
+# down"). So a 9:16 video needs two covers:
+#   poster: its 9:16 cover (the pop-up's phone shows it while the video loads): no address pill, a clear band in the middle
+#   wide:   its 16:9 cover for the page (core.vid): the middle clear for the play button, every line short and compelling
+# spot: another place for the play button, in percent, only when a cover's picture needs it
+# name: the video's search name (structured data, video sitemap, watch page): written the way people search ("How to ...")
 _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
+_T = 'projects/bitcoin-wealth/tutorials/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
      86.8, _CARTOON + 'BW-cartoon-01-the-missing-piece-16x9.mp4',
      dict(o='h', poster=_CARTOON + 'BW-cartoon-01-website-poster-16x9.jpg', label='Cartoon', short='The Missing Piece', date='2026-11-15',
-          spot=(50.0, 75.7))),      # where the play button sits on the poster, in percent: the gap between the two friends
+          spot=(50.0, 75.7),        # where the play button sits on the poster, in percent: the gap between the two friends
+          name='The Missing Piece: a Bitcoin Wealth cartoon about building together')),
     ('t1', 'bitcoin-wealth-tutorial-1-safepal-wallet-setup', 'Set up your SafePal wallet for Bitcoin Wealth',
      'Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.',
-     429.6, 'projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
-     dict(poster='projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-website-poster-9x16.jpg')),
+     429.6, _T + '01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
+     dict(poster=_T + '01-safepal/final/BW-Tutorial-1-SafePal-website-poster-9x16.jpg',
+          wide=_T + '01-safepal/final/BW-Tutorial-1-SafePal-website-poster-16x9.jpg',
+          name='How to set up a SafePal wallet for Bitcoin Wealth (Tutorial 1)')),
     ('t2', 'bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal', 'Buy BNB on VALR and send it to SafePal',
      'Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.',
-     357.2, 'projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
-     dict(poster='projects/bitcoin-wealth/tutorials/02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-9x16.jpg', date='2026-11-16')),
+     357.2, _T + '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-MTG.mp4',
+     dict(poster=_T + '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-9x16.jpg', date='2026-11-16',
+          wide=_T + '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-website-poster-16x9.jpg',
+          name='How to buy BNB on VALR and send it to SafePal (Bitcoin Wealth Tutorial 2)')),
+    # Tutorial 3 (approved by MTG, 17 Nov 2026: "Very perfect ... I am approving this video. Please put it live")
+    ('t3', 'bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1', 'Swap BNB for BTCB, sign up and activate slot 1',
+     'Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time.',
+     361.8, _T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-MTG.mp4',
+     dict(poster=_T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-website-poster-9x16.jpg', date='2026-11-17',
+          wide=_T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-website-poster-16x9.jpg',
+          name='How to join Bitcoin Wealth: swap BNB for BTCB and activate slot 1 (Tutorial 3)')),
     # a 34-second Bitcoin Wealth promo (MTG, 16 Nov 2026): four presenters, one short promo line each. The site calls it a
     # promo video and never presents it as member testimonials
     ('p1', 'bitcoin-wealth-in-34-seconds-promo', 'Bitcoin Wealth in 34 seconds',
      'A short Bitcoin Wealth promo video: four short clips about starting small, from 0.001 BTC, with a smart contract doing the paying.',
      34.3, 'projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-34-seconds.mp4',
      dict(poster='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-9x16.jpg', label='Promo', short='Promo video', date='2026-11-16',
-          wide='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-16x9.jpg')),
+          wide='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-16x9.jpg',
+          name='Bitcoin Wealth in 34 seconds (promo video)')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('t3', 'Tutorial', 'Swap, sign up, activate slot 1', 'Swap BNB for BTCB in SafePal and keep a little BNB for fees, sign up with the link of the person who invited you, and activate slot 1.'),
     ('e1', 'Explainer', 'Bitcoin Wealth in two minutes', 'Bitcoin, BTCB, the smart contract and wallet to wallet payments, in one picture.'),
     ('e2', 'Explainer', 'How the 14 positions pay', 'Two, four, eight: where all fourteen payments go, and why nine point to you.'),
     ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
@@ -90,7 +107,9 @@ for _v in VIDEOS:
                     label=_x.get('label', KIND[_v[0][0]] + ' ' + _v[0][1:]), o=_x.get('o', 'v'), poster=_x.get('poster'),
                     date=_x.get('date', LAUNCHED), spot=_x.get('spot'), wide=_x.get('wide'))
     V[_v[0]]['short'] = _x.get('short', _v[2])
-SHORT = {'t1': 'Set up SafePal', 't2': 'Buy BNB, send to SafePal'}
+    V[_v[0]]['name'] = _x.get('name') or f"Bitcoin Wealth {V[_v[0]]['label']}: {_v[2]}"
+    assert V[_v[0]]['o'] == 'h' or V[_v[0]]['wide'], _v[0] + ': a 9:16 video needs a wide cover for the page'
+SHORT = {'t1': 'Set up SafePal', 't2': 'Buy BNB, send to SafePal', 't3': 'Swap, sign up, activate slot 1'}
 for _k, _s in SHORT.items():
     V[_k]['short'] = _s
 NV = len(VIDEOS)
@@ -139,6 +158,17 @@ NAV = [
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG'),
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG')]
+# A page of its own for each tutorial video: the video, and every step in writing with its time (MTG, 17 Nov 2026: "all the videos
+# must be named such that when people ... search for anything related to Bitcoin Wealth ... these videos can actually rank all by
+# themselves"). A search engine lists a video on its own only from a page where that video is the main thing. Not in the side
+# menu: they hang under Tutorial Videos. code: (path, page heading, chapters file in mtg-studio, written by tutorials/chapters.py)
+WATCH_PAGES = {
+    't1': ('dashboard/tutorials/safepal-wallet-setup/', 'How to set up your SafePal wallet for Bitcoin Wealth', _T + '01-safepal/final/chapters.json'),
+    't2': ('dashboard/tutorials/buy-bnb-send-to-safepal/', 'How to buy BNB on VALR and send it to SafePal', _T + '02-bank-to-valr/final/chapters.json'),
+    't3': ('dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/', 'How to swap BNB for BTCB and activate slot 1', _T + '03-swap-signup-activate/final/chapters.json'),
+}
+WATCH = {k: v[0] for k, v in WATCH_PAGES.items()}
+EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'Every step, in writing', 'circle-play', 'Get Started') for k, v in WATCH_PAGES.items()]
 NAVD = {n[0]: n for n in NAV + EXTRA}
 
 # Bitcoin Wealth programme facts (from the programme's own deck, as taught on bitcoinwealthpays.com)
@@ -167,3 +197,13 @@ ZOOM_LINE = ("We meet live on Zoom five evenings a week, in four languages. Ask 
              "WhatsApp group, or tap the WhatsApp button below this video.")
 
 INDEXNOW_KEY = 'f823902c04cfbce2c98af25999c7a9ae'
+
+
+def og_file(key):
+    """file name of a page's social preview picture, named for what the page is (MTG, 17 Nov 2026: every image named so search
+    can read it): bitcoin-wealth-<page>-preview.jpg. The main page keeps og-land.jpg (and og-bitcoin-wealth-guide.jpg, the default)."""
+    if key == 'land':
+        return 'og-land.jpg'
+    seg = 'bw-tribe-page-order' if key == 'order' else (NAVD[key][1].strip('/').split('/')[-1] if key in NAVD else key)
+    return (seg if seg.startswith('bitcoin') or 'bitcoin-wealth' in seg else 'bitcoin-wealth-' + seg) + '-preview.jpg'
+

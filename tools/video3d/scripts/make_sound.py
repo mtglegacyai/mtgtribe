@@ -40,7 +40,9 @@ The palette (what each one is for):
   shrink     a warm glide down that settles with a friendly pop: something big made small (video 10)
   vend       a can dropping into a vending machine's tray, a soft thunk and roll (video 11)
   keypad     three soft, warm keypad beeps: a choice being made (video 11)
-  land       a warm, low thump with a slow bloom: MTG's slogan landing on "Crypto!" (every video, from 16 Nov 2026)
+  land       a warm, low thump with a slow bloom (made for the slogan on 16 Nov 2026; MTG rejected it there, do not use on the slogan)
+  fizz       a bottle opening softly, then small round bubbles (video 12)
+  stamp      a rubber stamp pressed onto paper, padded and soft (video 12)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -651,6 +653,33 @@ def land():
     return lowpass(thump + bloom, 900)
 
 
+def fizz():
+    """A bottle opening softly: a short, low hiss of air, then small, round bubbles rising (no bright sizzle)."""
+    d = 1.6
+    tt = t(d)
+    hiss = band(noise(d), 300, 1300) * np.exp(-tt * 9) * 0.7
+    x = hiss
+    rng = np.random.default_rng(12)
+    for at in np.sort(rng.random(26) * 1.3 + 0.1):
+        dur = rng.uniform(0.03, 0.06)
+        bt = t(dur)
+        f0 = rng.uniform(380, 760)
+        b = np.sin(2 * np.pi * np.cumsum(f0 * (1 + 0.6 * bt / dur)) / SR) * np.sin(np.pi * bt / dur) ** 2
+        i = int(at * SR)
+        x[i:i + len(b)] += b[:len(x) - i] * rng.uniform(0.08, 0.2) * np.exp(-at * 1.2)
+    return lowpass(x * env(len(x), 0.01, 1.0, hold=0.2), 1500)
+
+
+def stamp():
+    """A rubber stamp pressed onto paper: a soft, padded knock with a tiny paper rustle (an official yes)."""
+    d = 0.7
+    tt = t(d)
+    knock = sine(lambda u: 150 + 60 * np.exp(-u * 35), d) * env(len(tt), 0.006, 0.12)
+    pad = band(noise(d), 200, 900) * env(len(tt), 0.005, 0.05) * 0.4
+    rustle = band(noise(d), 600, 1600) * np.clip((tt - 0.12) / 0.05, 0, 1) * np.exp(-np.clip(tt - 0.12, 0, None) * 12) * 0.12
+    return lowpass(knock + pad + rustle, 1500)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -684,6 +713,8 @@ PALETTE = {
     'vend': (vend, 0.2), 'keypad': (keypad, 0.15),
     # made for MTG's slogan (16 November 2026): every video, under "Crypto!"
     'land': (land, 0.25),
+    # made for video 12 (what if you owned a piece of the companies you use every day?)
+    'fizz': (fizz, 0.2), 'stamp': (stamp, 0.15),
 }
 
 

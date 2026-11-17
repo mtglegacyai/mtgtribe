@@ -1,0 +1,901 @@
+{
+"voice": null,
+"request": "5ea3631b25a44751a8de3ee44160c3f9",
+"duration": 54.873,
+"pauses_added": [
+0.0,
+0.0,
+0.031,
+0.0,
+0.0,
+0.0
+],
+"words": [
+{
+"text": "What",
+"start": 0.299,
+"end": 0.427
+},
+{
+"text": "if",
+"start": 0.469,
+"end": 0.512
+},
+{
+"text": "every",
+"start": 0.597,
+"end": 0.768
+},
+{
+"text": "time",
+"start": 0.853,
+"end": 1.024
+},
+{
+"text": "you",
+"start": 1.067,
+"end": 1.195
+},
+{
+"text": "bought",
+"start": 1.237,
+"end": 1.323
+},
+{
+"text": "a",
+"start": 1.365,
+"end": 1.408
+},
+{
+"text": "Coke,",
+"start": 1.451,
+"end": 1.621
+},
+{
+"text": "you",
+"start": 2.005,
+"end": 2.176
+},
+{
+"text": "owned",
+"start": 2.219,
+"end": 2.347
+},
+{
+"text": "a",
+"start": 2.389,
+"end": 2.432
+},
+{
+"text": "tiny",
+"start": 2.475,
+"end": 2.773
+},
+{
+"text": "piece",
+"start": 2.901,
+"end": 3.029
+},
+{
+"text": "of",
+"start": 3.115,
+"end": 3.157
+},
+{
+"text": "the",
+"start": 3.2,
+"end": 3.243
+},
+{
+"text": "company?",
+"start": 3.285,
+"end": 3.456
+},
+{
+"text": "Its",
+"start": 4.011,
+"end": 4.181
+},
+{
+"text": "drinks",
+"start": 4.267,
+"end": 4.523
+},
+{
+"text": "are",
+"start": 4.565,
+"end": 4.651
+},
+{
+"text": "served",
+"start": 4.693,
+"end": 4.949
+},
+{
+"text": "two",
+"start": 5.077,
+"end": 5.291
+},
+{
+"text": "point",
+"start": 5.333,
+"end": 5.504
+},
+{
+"text": "two",
+"start": 5.632,
+"end": 5.803
+},
+{
+"text": "billion",
+"start": 5.845,
+"end": 6.101
+},
+{
+"text": "times",
+"start": 6.272,
+"end": 6.485
+},
+{
+"text": "a",
+"start": 6.571,
+"end": 6.613
+},
+{
+"text": "day.",
+"start": 6.656,
+"end": 6.784
+},
+{
+"text": "That",
+"start": 7.339,
+"end": 7.467
+},
+{
+"text": "tiny",
+"start": 7.552,
+"end": 7.723
+},
+{
+"text": "piece",
+"start": 7.851,
+"end": 8.021
+},
+{
+"text": "is",
+"start": 8.149,
+"end": 8.235
+},
+{
+"text": "called",
+"start": 8.277,
+"end": 8.448
+},
+{
+"text": "a",
+"start": 8.491,
+"end": 8.533
+},
+{
+"text": "share.",
+"start": 8.576,
+"end": 8.789
+},
+{
+"text": "One",
+"start": 9.259,
+"end": 9.557
+},
+{
+"text": "share",
+"start": 9.643,
+"end": 9.856
+},
+{
+"text": "makes",
+"start": 9.941,
+"end": 10.069
+},
+{
+"text": "you",
+"start": 10.155,
+"end": 10.24
+},
+{
+"text": "part",
+"start": 10.283,
+"end": 10.496
+},
+{
+"text": "owner",
+"start": 10.581,
+"end": 10.837
+},
+{
+"text": "of",
+"start": 10.88,
+"end": 10.923
+},
+{
+"text": "the",
+"start": 10.965,
+"end": 11.051
+},
+{
+"text": "whole",
+"start": 11.093,
+"end": 11.264
+},
+{
+"text": "business.",
+"start": 11.349,
+"end": 11.477
+},
+{
+"text": "Some",
+"start": 11.981,
+"end": 12.151
+},
+{
+"text": "companies",
+"start": 12.237,
+"end": 12.45
+},
+{
+"text": "share",
+"start": 12.663,
+"end": 12.877
+},
+{
+"text": "their",
+"start": 12.919,
+"end": 13.047
+},
+{
+"text": "profits",
+"start": 13.09,
+"end": 13.389
+},
+{
+"text": "with",
+"start": 13.474,
+"end": 13.559
+},
+{
+"text": "their",
+"start": 13.602,
+"end": 13.687
+},
+{
+"text": "owners.",
+"start": 13.73,
+"end": 13.986
+},
+{
+"text": "That's",
+"start": 14.37,
+"end": 14.583
+},
+{
+"text": "a",
+"start": 14.626,
+"end": 14.669
+},
+{
+"text": "dividend.",
+"start": 14.711,
+"end": 14.967
+},
+{
+"text": "Coca-Cola",
+"start": 15.479,
+"end": 15.991
+},
+{
+"text": "has",
+"start": 16.034,
+"end": 16.162
+},
+{
+"text": "raised",
+"start": 16.205,
+"end": 16.375
+},
+{
+"text": "its",
+"start": 16.461,
+"end": 16.546
+},
+{
+"text": "dividend",
+"start": 16.631,
+"end": 16.973
+},
+{
+"text": "sixty-four",
+"start": 17.058,
+"end": 17.655
+},
+{
+"text": "years",
+"start": 17.698,
+"end": 17.869
+},
+{
+"text": "in",
+"start": 17.911,
+"end": 17.997
+},
+{
+"text": "a",
+"start": 18.039,
+"end": 18.082
+},
+{
+"text": "row.",
+"start": 18.125,
+"end": 18.253
+},
+{
+"text": "Can't",
+"start": 18.753,
+"end": 18.924
+},
+{
+"text": "pick",
+"start": 19.009,
+"end": 19.094
+},
+{
+"text": "one",
+"start": 19.18,
+"end": 19.308
+},
+{
+"text": "company?",
+"start": 19.393,
+"end": 19.606
+},
+{
+"text": "An",
+"start": 20.076,
+"end": 20.246
+},
+{
+"text": "index",
+"start": 20.289,
+"end": 20.63
+},
+{
+"text": "fund",
+"start": 20.758,
+"end": 20.972
+},
+{
+"text": "holds",
+"start": 21.057,
+"end": 21.27
+},
+{
+"text": "a",
+"start": 21.313,
+"end": 21.356
+},
+{
+"text": "little",
+"start": 21.398,
+"end": 21.484
+},
+{
+"text": "of",
+"start": 21.569,
+"end": 21.654
+},
+{
+"text": "hundreds",
+"start": 21.697,
+"end": 22.038
+},
+{
+"text": "at",
+"start": 22.124,
+"end": 22.209
+},
+{
+"text": "once.",
+"start": 22.252,
+"end": 22.38
+},
+{
+"text": "The",
+"start": 22.95,
+"end": 23.078
+},
+{
+"text": "S",
+"start": 23.12,
+"end": 23.206
+},
+{
+"text": "and",
+"start": 23.291,
+"end": 23.376
+},
+{
+"text": "P",
+"start": 23.419,
+"end": 23.547
+},
+{
+"text": "five",
+"start": 23.59,
+"end": 23.76
+},
+{
+"text": "hundred",
+"start": 23.888,
+"end": 24.016
+},
+{
+"text": "puts",
+"start": 24.272,
+"end": 24.486
+},
+{
+"text": "five",
+"start": 24.614,
+"end": 24.912
+},
+{
+"text": "hundred",
+"start": 25.04,
+"end": 25.168
+},
+{
+"text": "big",
+"start": 25.382,
+"end": 25.638
+},
+{
+"text": "American",
+"start": 25.723,
+"end": 25.894
+},
+{
+"text": "companies",
+"start": 26.064,
+"end": 26.363
+},
+{
+"text": "in",
+"start": 26.576,
+"end": 26.704
+},
+{
+"text": "one",
+"start": 26.747,
+"end": 26.918
+},
+{
+"text": "basket.",
+"start": 27.003,
+"end": 27.174
+},
+{
+"text": "Prices",
+"start": 27.856,
+"end": 28.07
+},
+{
+"text": "go",
+"start": 28.24,
+"end": 28.411
+},
+{
+"text": "up",
+"start": 28.454,
+"end": 28.582
+},
+{
+"text": "and",
+"start": 28.667,
+"end": 28.752
+},
+{
+"text": "down,",
+"start": 28.795,
+"end": 28.966
+},
+{
+"text": "and",
+"start": 29.392,
+"end": 29.52
+},
+{
+"text": "there",
+"start": 29.563,
+"end": 29.691
+},
+{
+"text": "are",
+"start": 29.734,
+"end": 29.776
+},
+{
+"text": "no",
+"start": 29.819,
+"end": 29.904
+},
+{
+"text": "promises.",
+"start": 29.99,
+"end": 30.288
+},
+{
+"text": "So",
+"start": 30.928,
+"end": 31.056
+},
+{
+"text": "start",
+"start": 31.099,
+"end": 31.27
+},
+{
+"text": "here:",
+"start": 31.355,
+"end": 31.526
+},
+{
+"text": "look",
+"start": 31.91,
+"end": 32.166
+},
+{
+"text": "up",
+"start": 32.208,
+"end": 32.294
+},
+{
+"text": "the",
+"start": 32.379,
+"end": 32.422
+},
+{
+"text": "companies",
+"start": 32.464,
+"end": 32.678
+},
+{
+"text": "behind",
+"start": 32.848,
+"end": 33.019
+},
+{
+"text": "the",
+"start": 33.275,
+"end": 33.36
+},
+{
+"text": "brands",
+"start": 33.403,
+"end": 33.659
+},
+{
+"text": "you",
+"start": 33.702,
+"end": 33.787
+},
+{
+"text": "use",
+"start": 33.83,
+"end": 34.043
+},
+{
+"text": "every",
+"start": 34.128,
+"end": 34.299
+},
+{
+"text": "day.",
+"start": 34.47,
+"end": 34.598
+},
+{
+"text": "That's",
+"start": 34.956,
+"end": 35.254
+},
+{
+"text": "how",
+"start": 35.297,
+"end": 35.34
+},
+{
+"text": "investors",
+"start": 35.382,
+"end": 35.852
+},
+{
+"text": "begin",
+"start": 35.894,
+"end": 36.022
+},
+{
+"text": "to",
+"start": 36.15,
+"end": 36.236
+},
+{
+"text": "think.",
+"start": 36.278,
+"end": 36.406
+},
+{
+"text": "Which",
+"start": 36.961,
+"end": 37.174
+},
+{
+"text": "company",
+"start": 37.259,
+"end": 37.473
+},
+{
+"text": "would",
+"start": 37.643,
+"end": 37.729
+},
+{
+"text": "you",
+"start": 37.771,
+"end": 37.857
+},
+{
+"text": "own",
+"start": 37.899,
+"end": 37.985
+},
+{
+"text": "a",
+"start": 38.027,
+"end": 38.07
+},
+{
+"text": "piece",
+"start": 38.113,
+"end": 38.241
+},
+{
+"text": "of?",
+"start": 38.326,
+"end": 38.411
+},
+{
+"text": "Tell",
+"start": 38.795,
+"end": 38.923
+},
+{
+"text": "me",
+"start": 38.966,
+"end": 39.051
+},
+{
+"text": "below.",
+"start": 39.094,
+"end": 39.179
+},
+{
+"text": "And",
+"start": 39.905,
+"end": 39.99
+},
+{
+"text": "send",
+"start": 40.033,
+"end": 40.246
+},
+{
+"text": "this",
+"start": 40.331,
+"end": 40.459
+},
+{
+"text": "to",
+"start": 40.502,
+"end": 40.587
+},
+{
+"text": "the",
+"start": 40.63,
+"end": 40.715
+},
+{
+"text": "friend",
+"start": 40.758,
+"end": 40.929
+},
+{
+"text": "who",
+"start": 41.1,
+"end": 41.185
+},
+{
+"text": "drinks",
+"start": 41.228,
+"end": 41.441
+},
+{
+"text": "the",
+"start": 41.526,
+"end": 41.611
+},
+{
+"text": "most",
+"start": 41.654,
+"end": 41.782
+},
+{
+"text": "Coke.",
+"start": 41.868,
+"end": 42.038
+},
+{
+"text": "Then",
+"start": 42.593,
+"end": 42.806
+},
+{
+"text": "join",
+"start": 42.849,
+"end": 43.02
+},
+{
+"text": "the",
+"start": 43.105,
+"end": 43.19
+},
+{
+"text": "free",
+"start": 43.233,
+"end": 43.404
+},
+{
+"text": "MTG",
+"start": 43.489,
+"end": 44.001
+},
+{
+"text": "TRIBE",
+"start": 44.044,
+"end": 44.47
+},
+{
+"text": "at",
+"start": 44.556,
+"end": 44.684
+},
+{
+"text": "MTG",
+"start": 44.812,
+"end": 45.451
+},
+{
+"text": "tribe",
+"start": 45.537,
+"end": 45.835
+},
+{
+"text": "dot",
+"start": 45.878,
+"end": 46.049
+},
+{
+"text": "com",
+"start": 46.134,
+"end": 46.305
+},
+{
+"text": "slash",
+"start": 46.603,
+"end": 46.902
+},
+{
+"text": "group.",
+"start": 47.03,
+"end": 47.201
+},
+{
+"text": "We",
+"start": 47.766,
+"end": 47.937
+},
+{
+"text": "learn",
+"start": 47.98,
+"end": 48.108
+},
+{
+"text": "crypto,",
+"start": 48.193,
+"end": 48.577
+},
+{
+"text": "AI",
+"start": 48.918,
+"end": 49.302
+},
+{
+"text": "and",
+"start": 49.473,
+"end": 49.601
+},
+{
+"text": "multiple",
+"start": 49.644,
+"end": 49.9
+},
+{
+"text": "income",
+"start": 50.113,
+"end": 50.412
+},
+{
+"text": "streams",
+"start": 50.454,
+"end": 50.71
+},
+{
+"text": "together.",
+"start": 50.796,
+"end": 51.052
+},
+{
+"text": "I'm",
+"start": 51.564,
+"end": 51.692
+},
+{
+"text": "MTG,",
+"start": 51.734,
+"end": 52.161
+},
+{
+"text": "Your",
+"start": 52.417,
+"end": 52.588
+},
+{
+"text": "Digital",
+"start": 52.63,
+"end": 52.801
+},
+{
+"text": "Architect.",
+"start": 52.929,
+"end": 53.313
+},
+{
+"text": "Let's",
+"start": 53.872,
+"end": 54.085
+},
+{
+"text": "Get",
+"start": 54.128,
+"end": 54.213
+},
+{
+"text": "This",
+"start": 54.256,
+"end": 54.341
+},
+{
+"text": "Crypto!",
+"start": 54.426,
+"end": 54.725
+}
+],
+"slogan": "slogan"
+}

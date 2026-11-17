@@ -14,6 +14,7 @@ import {Cover08, PizzaStory, SOP08_FPS, SOP08_FRAMES} from './compositions/sop08
 import {Cover09, CYG09_FPS, CYG09_FRAMES, GoldCube} from './compositions/cyg09/GoldCube';
 import {Cover10, SecondIncome, WMP10_FPS, WMP10_FRAMES} from './compositions/wmp10/SecondIncome';
 import {Cover11, DYK11_FPS, DYK11_FRAMES, SmartContracts} from './compositions/dyk11/SmartContracts';
+import {Cover12, OwnAPiece, WIF12_FPS, WIF12_FRAMES} from './compositions/wif12/OwnAPiece';
 import {NEWLOOK_FRAMES, NewLook} from './compositions/preview/NewLook';
 import {LEOMOMENTS_FRAMES, LeoMoments} from './compositions/preview/LeoMoments';
 import {Hook3D, HOOK3D_FRAMES} from './compositions/whatif01/Hook3D';
@@ -71,6 +72,10 @@ export const RemotionRoot: React.FC = () => (
 	<Folder name="Video11">
 		<Composition id="DYK11-9x16" component={SmartContracts} width={1080} height={1920} fps={DYK11_FPS} durationInFrames={DYK11_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
 		<Still id="Cover11-9x16" component={Cover11} width={1080} height={1920} />
+	</Folder>
+	<Folder name="Video12">
+		<Composition id="WIF12-9x16" component={OwnAPiece} width={1080} height={1920} fps={WIF12_FPS} durationInFrames={WIF12_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
+		<Still id="Cover12-9x16" component={Cover12} width={1080} height={1920} />
 	</Folder>
 	<Folder name="Real3D">
 		<Composition id="WhatIf01-3D-9x16" component={WhatIf01_3D} width={1080} height={1920} fps={30} durationInFrames={WHATIF01_3D_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />

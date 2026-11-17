@@ -1,0 +1,1136 @@
+[
+ {
+  "text": "What",
+  "startMs": 299,
+  "endMs": 427,
+  "timestampMs": 363,
+  "confidence": null
+ },
+ {
+  "text": " if",
+  "startMs": 469,
+  "endMs": 512,
+  "timestampMs": 490,
+  "confidence": null
+ },
+ {
+  "text": " every",
+  "startMs": 597,
+  "endMs": 768,
+  "timestampMs": 682,
+  "confidence": null
+ },
+ {
+  "text": " time",
+  "startMs": 853,
+  "endMs": 1024,
+  "timestampMs": 938,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 1067,
+  "endMs": 1195,
+  "timestampMs": 1131,
+  "confidence": null
+ },
+ {
+  "text": " bought",
+  "startMs": 1237,
+  "endMs": 1323,
+  "timestampMs": 1280,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 1365,
+  "endMs": 1408,
+  "timestampMs": 1386,
+  "confidence": null
+ },
+ {
+  "text": " Coke,",
+  "startMs": 1451,
+  "endMs": 1621,
+  "timestampMs": 1536,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 2005,
+  "endMs": 2176,
+  "timestampMs": 2090,
+  "confidence": null
+ },
+ {
+  "text": " owned",
+  "startMs": 2219,
+  "endMs": 2347,
+  "timestampMs": 2283,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 2389,
+  "endMs": 2432,
+  "timestampMs": 2410,
+  "confidence": null
+ },
+ {
+  "text": " tiny",
+  "startMs": 2475,
+  "endMs": 2773,
+  "timestampMs": 2624,
+  "confidence": null
+ },
+ {
+  "text": " piece",
+  "startMs": 2901,
+  "endMs": 3029,
+  "timestampMs": 2965,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 3115,
+  "endMs": 3157,
+  "timestampMs": 3136,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 3200,
+  "endMs": 3243,
+  "timestampMs": 3221,
+  "confidence": null
+ },
+ {
+  "text": " company?",
+  "startMs": 3285,
+  "endMs": 3456,
+  "timestampMs": 3370,
+  "confidence": null
+ },
+ {
+  "text": " Its",
+  "startMs": 4011,
+  "endMs": 4181,
+  "timestampMs": 4096,
+  "confidence": null
+ },
+ {
+  "text": " drinks",
+  "startMs": 4267,
+  "endMs": 4523,
+  "timestampMs": 4395,
+  "confidence": null
+ },
+ {
+  "text": " are",
+  "startMs": 4565,
+  "endMs": 4651,
+  "timestampMs": 4608,
+  "confidence": null
+ },
+ {
+  "text": " served",
+  "startMs": 4693,
+  "endMs": 4949,
+  "timestampMs": 4821,
+  "confidence": null
+ },
+ {
+  "text": " 2.2 billion",
+  "startMs": 5077,
+  "endMs": 6101,
+  "timestampMs": 5589,
+  "confidence": null
+ },
+ {
+  "text": " times",
+  "startMs": 6272,
+  "endMs": 6485,
+  "timestampMs": 6378,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 6571,
+  "endMs": 6613,
+  "timestampMs": 6592,
+  "confidence": null
+ },
+ {
+  "text": " day.",
+  "startMs": 6656,
+  "endMs": 6784,
+  "timestampMs": 6720,
+  "confidence": null
+ },
+ {
+  "text": " That",
+  "startMs": 7339,
+  "endMs": 7467,
+  "timestampMs": 7403,
+  "confidence": null
+ },
+ {
+  "text": " tiny",
+  "startMs": 7552,
+  "endMs": 7723,
+  "timestampMs": 7637,
+  "confidence": null
+ },
+ {
+  "text": " piece",
+  "startMs": 7851,
+  "endMs": 8021,
+  "timestampMs": 7936,
+  "confidence": null
+ },
+ {
+  "text": " is",
+  "startMs": 8149,
+  "endMs": 8235,
+  "timestampMs": 8192,
+  "confidence": null
+ },
+ {
+  "text": " called",
+  "startMs": 8277,
+  "endMs": 8448,
+  "timestampMs": 8362,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 8491,
+  "endMs": 8533,
+  "timestampMs": 8512,
+  "confidence": null
+ },
+ {
+  "text": " share.",
+  "startMs": 8576,
+  "endMs": 8789,
+  "timestampMs": 8682,
+  "confidence": null
+ },
+ {
+  "text": " One",
+  "startMs": 9259,
+  "endMs": 9557,
+  "timestampMs": 9408,
+  "confidence": null
+ },
+ {
+  "text": " share",
+  "startMs": 9643,
+  "endMs": 9856,
+  "timestampMs": 9749,
+  "confidence": null
+ },
+ {
+  "text": " makes",
+  "startMs": 9941,
+  "endMs": 10069,
+  "timestampMs": 10005,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 10155,
+  "endMs": 10240,
+  "timestampMs": 10197,
+  "confidence": null
+ },
+ {
+  "text": " part",
+  "startMs": 10283,
+  "endMs": 10496,
+  "timestampMs": 10389,
+  "confidence": null
+ },
+ {
+  "text": " owner",
+  "startMs": 10581,
+  "endMs": 10837,
+  "timestampMs": 10709,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 10880,
+  "endMs": 10923,
+  "timestampMs": 10901,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 10965,
+  "endMs": 11051,
+  "timestampMs": 11008,
+  "confidence": null
+ },
+ {
+  "text": " whole",
+  "startMs": 11093,
+  "endMs": 11264,
+  "timestampMs": 11178,
+  "confidence": null
+ },
+ {
+  "text": " business.",
+  "startMs": 11349,
+  "endMs": 11477,
+  "timestampMs": 11413,
+  "confidence": null
+ },
+ {
+  "text": " Some",
+  "startMs": 11981,
+  "endMs": 12151,
+  "timestampMs": 12066,
+  "confidence": null
+ },
+ {
+  "text": " companies",
+  "startMs": 12237,
+  "endMs": 12450,
+  "timestampMs": 12343,
+  "confidence": null
+ },
+ {
+  "text": " share",
+  "startMs": 12663,
+  "endMs": 12877,
+  "timestampMs": 12770,
+  "confidence": null
+ },
+ {
+  "text": " their",
+  "startMs": 12919,
+  "endMs": 13047,
+  "timestampMs": 12983,
+  "confidence": null
+ },
+ {
+  "text": " profits",
+  "startMs": 13090,
+  "endMs": 13389,
+  "timestampMs": 13239,
+  "confidence": null
+ },
+ {
+  "text": " with",
+  "startMs": 13474,
+  "endMs": 13559,
+  "timestampMs": 13516,
+  "confidence": null
+ },
+ {
+  "text": " their",
+  "startMs": 13602,
+  "endMs": 13687,
+  "timestampMs": 13644,
+  "confidence": null
+ },
+ {
+  "text": " owners.",
+  "startMs": 13730,
+  "endMs": 13986,
+  "timestampMs": 13858,
+  "confidence": null
+ },
+ {
+  "text": " That's",
+  "startMs": 14370,
+  "endMs": 14583,
+  "timestampMs": 14476,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 14626,
+  "endMs": 14669,
+  "timestampMs": 14647,
+  "confidence": null
+ },
+ {
+  "text": " dividend.",
+  "startMs": 14711,
+  "endMs": 14967,
+  "timestampMs": 14839,
+  "confidence": null
+ },
+ {
+  "text": " Coca-Cola",
+  "startMs": 15479,
+  "endMs": 15991,
+  "timestampMs": 15735,
+  "confidence": null
+ },
+ {
+  "text": " has",
+  "startMs": 16034,
+  "endMs": 16162,
+  "timestampMs": 16098,
+  "confidence": null
+ },
+ {
+  "text": " raised",
+  "startMs": 16205,
+  "endMs": 16375,
+  "timestampMs": 16290,
+  "confidence": null
+ },
+ {
+  "text": " its",
+  "startMs": 16461,
+  "endMs": 16546,
+  "timestampMs": 16503,
+  "confidence": null
+ },
+ {
+  "text": " dividend",
+  "startMs": 16631,
+  "endMs": 16973,
+  "timestampMs": 16802,
+  "confidence": null
+ },
+ {
+  "text": " 64 years",
+  "startMs": 17058,
+  "endMs": 17869,
+  "timestampMs": 17463,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 17911,
+  "endMs": 17997,
+  "timestampMs": 17954,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 18039,
+  "endMs": 18082,
+  "timestampMs": 18060,
+  "confidence": null
+ },
+ {
+  "text": " row.",
+  "startMs": 18125,
+  "endMs": 18253,
+  "timestampMs": 18189,
+  "confidence": null
+ },
+ {
+  "text": " Can't",
+  "startMs": 18753,
+  "endMs": 18924,
+  "timestampMs": 18838,
+  "confidence": null
+ },
+ {
+  "text": " pick",
+  "startMs": 19009,
+  "endMs": 19094,
+  "timestampMs": 19051,
+  "confidence": null
+ },
+ {
+  "text": " one",
+  "startMs": 19180,
+  "endMs": 19308,
+  "timestampMs": 19244,
+  "confidence": null
+ },
+ {
+  "text": " company?",
+  "startMs": 19393,
+  "endMs": 19606,
+  "timestampMs": 19499,
+  "confidence": null
+ },
+ {
+  "text": " An",
+  "startMs": 20076,
+  "endMs": 20246,
+  "timestampMs": 20161,
+  "confidence": null
+ },
+ {
+  "text": " index",
+  "startMs": 20289,
+  "endMs": 20630,
+  "timestampMs": 20459,
+  "confidence": null
+ },
+ {
+  "text": " fund",
+  "startMs": 20758,
+  "endMs": 20972,
+  "timestampMs": 20865,
+  "confidence": null
+ },
+ {
+  "text": " holds",
+  "startMs": 21057,
+  "endMs": 21270,
+  "timestampMs": 21163,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 21313,
+  "endMs": 21356,
+  "timestampMs": 21334,
+  "confidence": null
+ },
+ {
+  "text": " little",
+  "startMs": 21398,
+  "endMs": 21484,
+  "timestampMs": 21441,
+  "confidence": null
+ },
+ {
+  "text": " of",
+  "startMs": 21569,
+  "endMs": 21654,
+  "timestampMs": 21611,
+  "confidence": null
+ },
+ {
+  "text": " hundreds",
+  "startMs": 21697,
+  "endMs": 22038,
+  "timestampMs": 21867,
+  "confidence": null
+ },
+ {
+  "text": " at",
+  "startMs": 22124,
+  "endMs": 22209,
+  "timestampMs": 22166,
+  "confidence": null
+ },
+ {
+  "text": " once.",
+  "startMs": 22252,
+  "endMs": 22380,
+  "timestampMs": 22316,
+  "confidence": null
+ },
+ {
+  "text": " The",
+  "startMs": 22950,
+  "endMs": 23078,
+  "timestampMs": 23014,
+  "confidence": null
+ },
+ {
+  "text": " S&P 500",
+  "startMs": 23120,
+  "endMs": 24016,
+  "timestampMs": 23568,
+  "confidence": null
+ },
+ {
+  "text": " puts",
+  "startMs": 24272,
+  "endMs": 24486,
+  "timestampMs": 24379,
+  "confidence": null
+ },
+ {
+  "text": " 500 big",
+  "startMs": 24614,
+  "endMs": 25638,
+  "timestampMs": 25126,
+  "confidence": null
+ },
+ {
+  "text": " American",
+  "startMs": 25723,
+  "endMs": 25894,
+  "timestampMs": 25808,
+  "confidence": null
+ },
+ {
+  "text": " companies",
+  "startMs": 26064,
+  "endMs": 26363,
+  "timestampMs": 26213,
+  "confidence": null
+ },
+ {
+  "text": " in",
+  "startMs": 26576,
+  "endMs": 26704,
+  "timestampMs": 26640,
+  "confidence": null
+ },
+ {
+  "text": " one",
+  "startMs": 26747,
+  "endMs": 26918,
+  "timestampMs": 26832,
+  "confidence": null
+ },
+ {
+  "text": " basket.",
+  "startMs": 27003,
+  "endMs": 27174,
+  "timestampMs": 27088,
+  "confidence": null
+ },
+ {
+  "text": " Prices",
+  "startMs": 27856,
+  "endMs": 28070,
+  "timestampMs": 27963,
+  "confidence": null
+ },
+ {
+  "text": " go",
+  "startMs": 28240,
+  "endMs": 28411,
+  "timestampMs": 28325,
+  "confidence": null
+ },
+ {
+  "text": " up",
+  "startMs": 28454,
+  "endMs": 28582,
+  "timestampMs": 28518,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 28667,
+  "endMs": 28752,
+  "timestampMs": 28709,
+  "confidence": null
+ },
+ {
+  "text": " down,",
+  "startMs": 28795,
+  "endMs": 28966,
+  "timestampMs": 28880,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 29392,
+  "endMs": 29520,
+  "timestampMs": 29456,
+  "confidence": null
+ },
+ {
+  "text": " there",
+  "startMs": 29563,
+  "endMs": 29691,
+  "timestampMs": 29627,
+  "confidence": null
+ },
+ {
+  "text": " are",
+  "startMs": 29734,
+  "endMs": 29776,
+  "timestampMs": 29755,
+  "confidence": null
+ },
+ {
+  "text": " no",
+  "startMs": 29819,
+  "endMs": 29904,
+  "timestampMs": 29861,
+  "confidence": null
+ },
+ {
+  "text": " promises.",
+  "startMs": 29990,
+  "endMs": 30288,
+  "timestampMs": 30139,
+  "confidence": null
+ },
+ {
+  "text": " So",
+  "startMs": 30928,
+  "endMs": 31056,
+  "timestampMs": 30992,
+  "confidence": null
+ },
+ {
+  "text": " start",
+  "startMs": 31099,
+  "endMs": 31270,
+  "timestampMs": 31184,
+  "confidence": null
+ },
+ {
+  "text": " here:",
+  "startMs": 31355,
+  "endMs": 31526,
+  "timestampMs": 31440,
+  "confidence": null
+ },
+ {
+  "text": " look",
+  "startMs": 31910,
+  "endMs": 32166,
+  "timestampMs": 32038,
+  "confidence": null
+ },
+ {
+  "text": " up",
+  "startMs": 32208,
+  "endMs": 32294,
+  "timestampMs": 32251,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 32379,
+  "endMs": 32422,
+  "timestampMs": 32400,
+  "confidence": null
+ },
+ {
+  "text": " companies",
+  "startMs": 32464,
+  "endMs": 32678,
+  "timestampMs": 32571,
+  "confidence": null
+ },
+ {
+  "text": " behind",
+  "startMs": 32848,
+  "endMs": 33019,
+  "timestampMs": 32933,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 33275,
+  "endMs": 33360,
+  "timestampMs": 33317,
+  "confidence": null
+ },
+ {
+  "text": " brands",
+  "startMs": 33403,
+  "endMs": 33659,
+  "timestampMs": 33531,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 33702,
+  "endMs": 33787,
+  "timestampMs": 33744,
+  "confidence": null
+ },
+ {
+  "text": " use",
+  "startMs": 33830,
+  "endMs": 34043,
+  "timestampMs": 33936,
+  "confidence": null
+ },
+ {
+  "text": " every",
+  "startMs": 34128,
+  "endMs": 34299,
+  "timestampMs": 34213,
+  "confidence": null
+ },
+ {
+  "text": " day.",
+  "startMs": 34470,
+  "endMs": 34598,
+  "timestampMs": 34534,
+  "confidence": null
+ },
+ {
+  "text": " That's",
+  "startMs": 34956,
+  "endMs": 35254,
+  "timestampMs": 35105,
+  "confidence": null
+ },
+ {
+  "text": " how",
+  "startMs": 35297,
+  "endMs": 35340,
+  "timestampMs": 35318,
+  "confidence": null
+ },
+ {
+  "text": " investors",
+  "startMs": 35382,
+  "endMs": 35852,
+  "timestampMs": 35617,
+  "confidence": null
+ },
+ {
+  "text": " begin",
+  "startMs": 35894,
+  "endMs": 36022,
+  "timestampMs": 35958,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 36150,
+  "endMs": 36236,
+  "timestampMs": 36193,
+  "confidence": null
+ },
+ {
+  "text": " think.",
+  "startMs": 36278,
+  "endMs": 36406,
+  "timestampMs": 36342,
+  "confidence": null
+ },
+ {
+  "text": " Which",
+  "startMs": 36961,
+  "endMs": 37174,
+  "timestampMs": 37067,
+  "confidence": null
+ },
+ {
+  "text": " company",
+  "startMs": 37259,
+  "endMs": 37473,
+  "timestampMs": 37366,
+  "confidence": null
+ },
+ {
+  "text": " would",
+  "startMs": 37643,
+  "endMs": 37729,
+  "timestampMs": 37686,
+  "confidence": null
+ },
+ {
+  "text": " you",
+  "startMs": 37771,
+  "endMs": 37857,
+  "timestampMs": 37814,
+  "confidence": null
+ },
+ {
+  "text": " own",
+  "startMs": 37899,
+  "endMs": 37985,
+  "timestampMs": 37942,
+  "confidence": null
+ },
+ {
+  "text": " a",
+  "startMs": 38027,
+  "endMs": 38070,
+  "timestampMs": 38048,
+  "confidence": null
+ },
+ {
+  "text": " piece",
+  "startMs": 38113,
+  "endMs": 38241,
+  "timestampMs": 38177,
+  "confidence": null
+ },
+ {
+  "text": " of?",
+  "startMs": 38326,
+  "endMs": 38411,
+  "timestampMs": 38368,
+  "confidence": null
+ },
+ {
+  "text": " Tell",
+  "startMs": 38795,
+  "endMs": 38923,
+  "timestampMs": 38859,
+  "confidence": null
+ },
+ {
+  "text": " me",
+  "startMs": 38966,
+  "endMs": 39051,
+  "timestampMs": 39008,
+  "confidence": null
+ },
+ {
+  "text": " below.",
+  "startMs": 39094,
+  "endMs": 39179,
+  "timestampMs": 39136,
+  "confidence": null
+ },
+ {
+  "text": " And",
+  "startMs": 39905,
+  "endMs": 39990,
+  "timestampMs": 39947,
+  "confidence": null
+ },
+ {
+  "text": " send",
+  "startMs": 40033,
+  "endMs": 40246,
+  "timestampMs": 40139,
+  "confidence": null
+ },
+ {
+  "text": " this",
+  "startMs": 40331,
+  "endMs": 40459,
+  "timestampMs": 40395,
+  "confidence": null
+ },
+ {
+  "text": " to",
+  "startMs": 40502,
+  "endMs": 40587,
+  "timestampMs": 40544,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 40630,
+  "endMs": 40715,
+  "timestampMs": 40672,
+  "confidence": null
+ },
+ {
+  "text": " friend",
+  "startMs": 40758,
+  "endMs": 40929,
+  "timestampMs": 40843,
+  "confidence": null
+ },
+ {
+  "text": " who",
+  "startMs": 41100,
+  "endMs": 41185,
+  "timestampMs": 41142,
+  "confidence": null
+ },
+ {
+  "text": " drinks",
+  "startMs": 41228,
+  "endMs": 41441,
+  "timestampMs": 41334,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 41526,
+  "endMs": 41611,
+  "timestampMs": 41568,
+  "confidence": null
+ },
+ {
+  "text": " most",
+  "startMs": 41654,
+  "endMs": 41782,
+  "timestampMs": 41718,
+  "confidence": null
+ },
+ {
+  "text": " Coke.",
+  "startMs": 41868,
+  "endMs": 42038,
+  "timestampMs": 41953,
+  "confidence": null
+ },
+ {
+  "text": " Then",
+  "startMs": 42593,
+  "endMs": 42806,
+  "timestampMs": 42699,
+  "confidence": null
+ },
+ {
+  "text": " join",
+  "startMs": 42849,
+  "endMs": 43020,
+  "timestampMs": 42934,
+  "confidence": null
+ },
+ {
+  "text": " the",
+  "startMs": 43105,
+  "endMs": 43190,
+  "timestampMs": 43147,
+  "confidence": null
+ },
+ {
+  "text": " free",
+  "startMs": 43233,
+  "endMs": 43404,
+  "timestampMs": 43318,
+  "confidence": null
+ },
+ {
+  "text": " MTG",
+  "startMs": 43489,
+  "endMs": 44001,
+  "timestampMs": 43745,
+  "confidence": null
+ },
+ {
+  "text": " TRIBE",
+  "startMs": 44044,
+  "endMs": 44470,
+  "timestampMs": 44257,
+  "confidence": null
+ },
+ {
+  "text": " at",
+  "startMs": 44556,
+  "endMs": 44684,
+  "timestampMs": 44620,
+  "confidence": null
+ },
+ {
+  "text": " mtgtribe.com/group.",
+  "startMs": 44812,
+  "endMs": 47201,
+  "timestampMs": 46006,
+  "confidence": null
+ },
+ {
+  "text": " We",
+  "startMs": 47766,
+  "endMs": 47937,
+  "timestampMs": 47851,
+  "confidence": null
+ },
+ {
+  "text": " learn",
+  "startMs": 47980,
+  "endMs": 48108,
+  "timestampMs": 48044,
+  "confidence": null
+ },
+ {
+  "text": " crypto,",
+  "startMs": 48193,
+  "endMs": 48577,
+  "timestampMs": 48385,
+  "confidence": null
+ },
+ {
+  "text": " AI",
+  "startMs": 48918,
+  "endMs": 49302,
+  "timestampMs": 49110,
+  "confidence": null
+ },
+ {
+  "text": " and",
+  "startMs": 49473,
+  "endMs": 49601,
+  "timestampMs": 49537,
+  "confidence": null
+ },
+ {
+  "text": " multiple",
+  "startMs": 49644,
+  "endMs": 49900,
+  "timestampMs": 49772,
+  "confidence": null
+ },
+ {
+  "text": " income",
+  "startMs": 50113,
+  "endMs": 50412,
+  "timestampMs": 50262,
+  "confidence": null
+ },
+ {
+  "text": " streams",
+  "startMs": 50454,
+  "endMs": 50710,
+  "timestampMs": 50582,
+  "confidence": null
+ },
+ {
+  "text": " together.",
+  "startMs": 50796,
+  "endMs": 51052,
+  "timestampMs": 50924,
+  "confidence": null
+ },
+ {
+  "text": " I'm",
+  "startMs": 51564,
+  "endMs": 51692,
+  "timestampMs": 51628,
+  "confidence": null
+ },
+ {
+  "text": " MTG,",
+  "startMs": 51734,
+  "endMs": 52161,
+  "timestampMs": 51947,
+  "confidence": null
+ },
+ {
+  "text": " Your",
+  "startMs": 52417,
+  "endMs": 52588,
+  "timestampMs": 52502,
+  "confidence": null
+ },
+ {
+  "text": " Digital",
+  "startMs": 52630,
+  "endMs": 52801,
+  "timestampMs": 52715,
+  "confidence": null
+ },
+ {
+  "text": " Architect.",
+  "startMs": 52929,
+  "endMs": 53313,
+  "timestampMs": 53121,
+  "confidence": null
+ },
+ {
+  "text": " Let's",
+  "startMs": 53872,
+  "endMs": 54085,
+  "timestampMs": 53978,
+  "confidence": null
+ },
+ {
+  "text": " Get",
+  "startMs": 54128,
+  "endMs": 54213,
+  "timestampMs": 54170,
+  "confidence": null
+ },
+ {
+  "text": " This",
+  "startMs": 54256,
+  "endMs": 54341,
+  "timestampMs": 54298,
+  "confidence": null
+ },
+ {
+  "text": " Crypto!",
+  "startMs": 54426,
+  "endMs": 54725,
+  "timestampMs": 54575,
+  "confidence": null
+ }
+]

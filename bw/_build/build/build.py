@@ -141,7 +141,7 @@ def media(dst):
             jobs = [('', 'scale=720:1280:flags=lanczos', ['-crf', '27', '-maxrate', '900k', '-bufsize', '1800k'], '96k')]
         for suf, vf, rate, ab in jobs:
             out = dst + f'/{v["slug"]}{suf}.mp4'
-            if not os.path.exists(out):
+            if not os.path.exists(out) or os.path.getmtime(src) > os.path.getmtime(out):      # a changed master is encoded again
                 sh('ffmpeg', '-y', '-v', 'error', '-i', src, '-vf', vf, *x264, *rate, '-c:a', 'aac', '-b:a', ab, '-ac', '2', '-movflags', '+faststart', out)
 
 
@@ -162,6 +162,9 @@ def render(dst):
         for f in sorted(os.listdir(OUT + '/_img')):
             if f.startswith(v['slug']) and f.endswith('.webp'):
                 core.HASH['img/' + f] = hashlib.md5(open(OUT + '/_img/' + f, 'rb').read()).hexdigest()[:8]
+    # a video that changes (Leo's voice added to a tutorial) must play at once too, not the copy a browser kept
+    for f in sorted(os.listdir(OUT + '/_media')):
+        core.HASH['media/' + f] = hashlib.md5(open(OUT + '/_media/' + f, 'rb').read()).hexdigest()[:8]
     hd, body = landing()
     open(base + '/index.html', 'w').write(core.wrap_doc(hd, body, 'landing'))
     for key, (title, fn, extra) in PAGES.items():

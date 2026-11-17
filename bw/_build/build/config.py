@@ -65,7 +65,7 @@ VIDEOS = [
           name='The Missing Piece: a Bitcoin Wealth cartoon about building together')),
     ('t1', 'bitcoin-wealth-tutorial-1-safepal-wallet-setup', 'Set up your SafePal wallet for Bitcoin Wealth',
      'Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.',
-     429.6, _T + '01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',
+     445.3, _T + '01-safepal/final/BW-Tutorial-1-SafePal-MTG.mp4',      # 17 Nov 2026: Leo speaks on the four section cards (7:25, was 7:10)
      dict(poster=_T + '01-safepal/final/BW-Tutorial-1-SafePal-website-poster-9x16.jpg',
           wide=_T + '01-safepal/final/BW-Tutorial-1-SafePal-website-poster-16x9.jpg',
           name='How to set up a SafePal wallet for Bitcoin Wealth (Tutorial 1)')),
@@ -78,7 +78,7 @@ VIDEOS = [
     # Tutorial 3 (approved by MTG, 17 Nov 2026: "Very perfect ... I am approving this video. Please put it live")
     ('t3', 'bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1', 'Swap BNB for BTCB, sign up and activate slot 1',
      'Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time.',
-     361.8, _T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-MTG.mp4',
+     370.2, _T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-MTG.mp4',      # 17 Nov 2026: Leo explains the Web3 wallet (6:10, was 6:02)
      dict(poster=_T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-website-poster-9x16.jpg', date='2026-11-17',
           wide=_T + '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-website-poster-16x9.jpg',
           name='How to join Bitcoin Wealth: swap BNB for BTCB and activate slot 1 (Tutorial 3)')),

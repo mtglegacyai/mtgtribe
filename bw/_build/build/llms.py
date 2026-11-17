@@ -29,12 +29,12 @@ def _md(el, out):
         if isinstance(c, NavigableString) or not isinstance(c, Tag):
             continue
         cls = set(c.get('class') or [])
-        wide = c.name == 'button' and 'wcov' in cls and c.get('data-play') in V      # a wide cover that opens a video
-        if not wide and (c.name in SKIP_TAGS or cls & SKIP_CLASS or c.get('aria-hidden') == 'true' or c.has_attr('hidden')):
+        if c.name in SKIP_TAGS or cls & SKIP_CLASS or c.get('aria-hidden') == 'true' or c.has_attr('hidden'):
             continue
-        if wide or (c.name == 'figure' and c.get('data-vid') in V):
-            v = V[c['data-play'] if wide else c['data-vid']]
-            out.append(f'- Video: {v["label"]}, "{v["title"]}" ({mmss(v["secs"])}): {v["desc"]} {SITE}{BASE}media/{v["slug"]}.mp4')
+        if c.name == 'figure' and c.get('data-vid') in V:      # a video in its laptop frame
+            v = V[c['data-vid']]
+            page = f' Its own page, with every step in writing: {SITE}{BASE}{WATCH[v["code"]]}' if v['code'] in WATCH else ''
+            out.append(f'- Video: {v["label"]}, "{v["title"]}" ({mmss(v["secs"])}): {v["desc"]} {SITE}{BASE}media/{v["slug"]}.mp4{page}')
             continue
         if c.name in ('h1', 'h2', 'h3', 'h4'):
             t = _txt(c)
@@ -97,7 +97,10 @@ def build_llms(dst, pages_in_order):
             lines.append(f'- [{short(SEO_TITLE.get(k, label))}]({SITE}{BASE}{p}): {SEO_DESC.get(k, sub)}')
     lines += ['', '## Videos', '']
     for k, v in V.items():
-        lines.append(f'- [{v["label"]}: {v["title"]}]({SITE}{BASE}media/{v["slug"]}.mp4) ({mmss(v["secs"])}): {v["desc"]}')
+        if k in WATCH:      # a tutorial has a page of its own: the video, its key moments and every step in writing
+            lines.append(f'- [{v["name"]}]({SITE}{BASE}{WATCH[k]}) ({mmss(v["secs"])}): {v["desc"]} Video file: {SITE}{BASE}media/{v["slug"]}.mp4')
+        else:
+            lines.append(f'- [{v["name"]}]({SITE}{BASE}media/{v["slug"]}.mp4) ({mmss(v["secs"])}): {v["desc"]}')
     lines += ['', '## Community and contact', '',
               f'- [MTG TRIBE WhatsApp community]({SITE}/group/): a community for action takers to learn, ask and grow together.',
               f'- [MTG TRIBE on TikTok]({TIKTOK})', f'- [MTG TRIBE on YouTube]({YOUTUBE})', f'- [Order a BW Tribe Page]({SITE}{ORDER}): your own copy of this guide, R1,000 once-off, paid after it is built.', f'- [MusaTheGiant.com]({MTG_SITE}): MTG\'s own website.',

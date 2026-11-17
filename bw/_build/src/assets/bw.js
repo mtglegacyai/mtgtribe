@@ -329,28 +329,45 @@
     try { v.focus({ preventScroll: true }); } catch (e) {}
     fitOrMax(pl);
   }
+  /* a video in the pop-up: the phone for 9:16, the laptop for 16:9. at: start at this second (a step picked from a video's page) */
+  function openPop(k, at) {
+    var info = BWV[k], sheet = $('#player'), pop = $('#pl-pop'); if (!info || !sheet || !pop) return;
+    var open = $('.sheet.on'); if (open && open !== sheet) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
+    pop.classList.toggle('pl-h', info.o === 'h'); pop.classList.toggle('pl-v', info.o !== 'h');
+    sheet.setAttribute('aria-label', info.t + ' (' + info.d + ')');
+    openSheet(sheet);
+    var v = plOpen(pop, k, pickSrc(info.s, info.hd), info.pb || info.p);
+    if (at > 0) seekTo(v, at);
+    fitOrMax(pop);
+  }
+  function seekTo(v, at) {
+    var go = function () { try { if (isFinite(v.duration) && at < v.duration - 1) v.currentTime = at; } catch (e) {} };
+    if (v.readyState >= 1) go(); else on(v, 'loadedmetadata', go);
+  }
   on(d, 'click', function (e) {
     var t = e.target, b, pl;
-    if ((b = t.closest('.vplay'))) return startInline(b);
+    /* a cover in the laptop frame: a 16:9 video plays in place; a 9:16 video (its cover names it in data-play) opens the pop-up's phone */
+    if ((b = t.closest('.vplay')) && !b.hasAttribute('data-play')) return startInline(b);
     if ((b = t.closest('[data-pl-max]'))) { pl = b.closest('.pl'); return pl.classList.contains('max') ? leaveMax(pl) : enterMax(pl); }
     if ((b = t.closest('[data-pl-x]'))) return plClose(b.closest('.pl'));
-    /* a button beside a cover that starts that video in place: [data-start="code"] (a video that is already open just carries on) */
+    /* a button beside a cover that starts that video: [data-start="code"] (a video that is already open just carries on) */
     if ((b = t.closest('[data-start]'))) {
       var c = $('.vplay[data-code="' + b.getAttribute('data-start') + '"]'), pv; pl = c && c.closest('.pl'); pv = pl && $('video', pl);
+      if (c && c.hasAttribute('data-play')) return openPop(c.getAttribute('data-play'));
       if (pv) { quiet(pv.play()); plIntoView(pl); } else if (c) startInline(c);
       return;
     }
-    /* any [data-play="code"] opens that video in the pop-up: the phone for 9:16, the laptop for 16:9 */
-    if ((b = t.closest('[data-play]'))) {
-      var k = b.getAttribute('data-play'), info = BWV[k], sheet = $('#player'), pop = $('#pl-pop'); if (!info || !sheet || !pop) return;
-      var open = $('.sheet.on'); if (open && open !== sheet) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
-      pop.classList.toggle('pl-h', info.o === 'h'); pop.classList.toggle('pl-v', info.o !== 'h');
-      sheet.setAttribute('aria-label', info.t + ' (' + info.d + ')');
-      openSheet(sheet);
-      plOpen(pop, k, pickSrc(info.s, info.hd), info.pb || info.p);
-      fitOrMax(pop);
-    }
+    /* any [data-play="code"] opens that video in the pop-up; data-at="seconds" starts it at that step */
+    if ((b = t.closest('[data-play]'))) openPop(b.getAttribute('data-play'), parseFloat(b.getAttribute('data-at')) || 0);
   });
+  /* a link to a moment of a video's own page (…?t=97): the video opens at that second, ready to play */
+  (function () {
+    var m = /[?&]t=(\d+)/.exec(location.search), c = $('[data-watch]');
+    if (!m || !c) return;
+    var k = c.getAttribute('data-watch'), at = parseInt(m[1], 10);
+    if (!BWV[k] || !(at > 0)) return;
+    setTimeout(function () { openPop(k, at); }, 350);
+  })();
 
   /* ------------------------------------------------------------ scroll: progress bar, back to top, route map */
   var prog = $('.progress'), top = $('#totop'), route = $('[data-route]'), ticking = false;

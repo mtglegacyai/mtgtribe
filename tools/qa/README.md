@@ -65,9 +65,14 @@ sizes, phones upright and on their side, tablets and computers, and fails if any
 - Full Screen and Close are there, on screen, big enough, and not on the picture, also in full screen, and the words
   "Full Screen" (or "Exit Full Screen") show on the button at every size;
 - leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind;
-- the play button cannot be missed: in the middle of every vertical cover, wholly on the cover, at least 52 px wide.
-- a wide cover for a vertical video (`.wcov`, the promo on the /bw main page): 16:9, not wider than the screen, with its play
-  button in the middle, whole and at least 52 px wide; pressing it must open the phone pop-up, which gets all the checks above.
+- the play button cannot be missed: in the middle of every cover (or in the spot the cover names), wholly on the cover, at
+  least 52 px wide.
+- every video on the page is a 16:9 cover inside the laptop frame (MTG, 17 Nov 2026), not wider than the screen, and its
+  picture has loaded; pressing a vertical video's cover must open the pop-up's phone (which gets all the checks above), and
+  Close must bring the cover back.
+- on a video's own page (`/bw/dashboard/tutorials/<name>/`), a time button is finger sized and starts the video at its second.
+
+`PAGES=/bw/dashboard/tutorials/,/bw/ VPS=360x640,1366x768 node tools/qa/player-check.js` runs a part of it while you work.
 
 ```bash
 node tools/qa/player-check.js

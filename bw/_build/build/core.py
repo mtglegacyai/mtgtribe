@@ -155,9 +155,26 @@ def sec(body, title=None, lead=None, id=None, cls='', sr=None):
 
 
 def poster(code, here, size=720):
-    """(big, small) poster of a video: 720 and 360 wide for 9:16, 1280 and 640 wide for 16:9"""
+    """(big, small) poster of a video in its own shape: 720 and 360 wide for 9:16, 1280 and 640 wide for 16:9"""
     v = V[code]
     return L(f'img/{v["slug"]}.webp', here), L(f'img/{v["slug"]}-{"640" if v["o"] == "h" else "360"}.webp', here)
+
+
+def cover(code, here):
+    """(big, small) wide cover of a video, the one the page shows in the laptop frame: 1280 and 640 wide.
+    A 16:9 video's cover is its poster; a 9:16 video has its own wide cover (config: wide)."""
+    v = V[code]
+    if v['o'] == 'h':
+        return poster(code, here)
+    return L(f'img/{v["slug"]}-wide.webp', here), L(f'img/{v["slug"]}-wide-640.webp', here)
+
+
+BAR = {'t3': 'Activate slot 1'}      # a shorter name where the short name does not fit the bar of a 320 px phone with large text
+
+
+def bar_text(v):
+    """what the player's bar says beside the camera: the series and the short name ("Tutorial 2 · Buy BNB, send to SafePal")"""
+    return f'{v["label"]} · {BAR.get(v["code"], v["short"])}' if v['code'][0] in 'tek' else v['title']
 
 
 def player(wide=False, cover='', left='', right='', pid=''):
@@ -175,12 +192,15 @@ def player(wide=False, cover='', left='', right='', pid=''):
 
 
 def vid(code, here, cap=True, eager=False, hero=False):
-    """a video on its cover, in the player: it plays in place, closes itself at the end and puts the visitor back
-    where they pressed play. The bar shows what it is and how long; nothing covers the picture."""
+    """A video on the page: ALWAYS a wide (16:9) cover inside the laptop frame (MTG, 17 Nov 2026: "all the videos must have a
+    horizontal thumbnail and inside a laptop frame ... to save space and to make the website look smaller and easy to browse").
+    - a 16:9 video plays in place, in that laptop;
+    - a 9:16 video opens in the pop-up, in the phone frame ("they must be on a cell phone when they play").
+    Either way it closes itself at the end and the page is back where the visitor pressed play.
+    The bar shows what it is and how long; nothing covers the picture. hero: the pulsing play button."""
     v = V[code]
-    big, small = poster(code, here)
+    big, small = cover(code, here)
     wide = v['o'] == 'h'
-    src = L(f'media/{v["slug"]}.mp4', here)
     fc = ''
     if cap:
         fc = (f'<figcaption class="vcap"><span><b>{v["title"]}</b><br>{v["label"]}, {mmss(v["secs"])}</span>'
@@ -188,27 +208,21 @@ def vid(code, here, cap=True, eager=False, hero=False):
               f'<button type="button" class="mark" data-mark="{code}">Mark as watched</button></figcaption>')
     load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
     spot = f' style="--px:{v["spot"][0]}%;--py:{v["spot"][1]}%"' if v.get('spot') else ''
-    hd = ' data-src-hd="%s"' % esc(L('media/%s-1080p.mp4' % v['slug'], here)) if wide else ''
-    img = (f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 760px" width="1280" height="720" '
-           if wide else
-           f'<img src="{esc(small)}" srcset="{esc(small)} 360w, {esc(big)} 720w" sizes="(max-width:760px) 82vw, 310px" width="720" height="1280" ')
-    cover = (f'{img}{load} decoding="async" alt="{esc(v["title"])}: video cover">'
-             f'<button type="button" class="vplay{" pulse" if hero else ""}" data-src="{esc(src)}"{hd} data-code="{code}"{spot} '
-             f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})"><span class="pbtn">{ic("play")}</span></button>')
-    return (f'<figure class="vid{" vid16" if wide else ""}" data-vid="{code}">'
-            f'{player(wide, cover, esc(v["short"] if wide else v["label"]), mmss(v["secs"]))}{fc}</figure>')
+    if wide:        # plays in place: the light file for phones, the 1080p for big screens
+        how = f'data-src="{esc(L("media/%s.mp4" % v["slug"], here))}" data-src-hd="{esc(L("media/%s-1080p.mp4" % v["slug"], here))}"'
+    else:           # opens the pop-up's phone
+        how = f'data-play="{code}"'
+    img = (f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 640px" width="1280" height="720" '
+           f'{load} decoding="async" alt="{esc(v["name"])}: video cover">')
+    btn = (f'<button type="button" class="vplay{" pulse" if hero else ""}" {how} data-code="{code}"{spot} '
+           f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})"><span class="pbtn">{ic("play")}</span></button>')
+    return (f'<figure class="vid vid16" data-vid="{code}">'
+            f'{player(True, img + btn, esc(bar_text(v)), mmss(v["secs"]))}{fc}</figure>')
 
 
 def wide_cover(code, here):
-    """a wide (16:9) cover for a vertical video (MTG, 16 Nov 2026: "change the orientation of the video thumbnail to horizontal
-    so that it takes less space ... even though the video itself will play in vertical orientation"). Pressing it opens the
-    video in the pop-up, in the phone frame; at the end the player closes itself and the page is back at this cover.
-    Styles: "WIDE COVER" in bw.css."""
-    v = V[code]
-    big, small = L(f'img/{v["slug"]}-wide.webp', here), L(f'img/{v["slug"]}-wide-640.webp', here)
-    return (f'<button type="button" class="wcov" data-play="{code}" aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">'
-            f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:700px) 92vw, 640px" width="1280" height="720" '
-            f'loading="lazy" decoding="async" alt="{esc(v["title"])}: video cover"><span class="pbtn">{ic("play")}</span></button>')
+    """kept for older calls: every video is a wide cover in the laptop frame now (vid)"""
+    return vid(code, here, cap=False, hero=True)
 
 
 def play_btn(code, label=None, kind='ghost', size='sm'):
@@ -238,9 +252,9 @@ def video_data(here):
 # ---------------------------------------------------------------- head / SEO
 def og_image(key):
     """absolute URL (with a content version) of a page's social preview thumbnail"""
-    p = SCR + f'/out/_img/og-{key}.jpg'
+    p = SCR + '/out/_img/' + (og_file(key) if key else 'x')
     if key and os.path.exists(p):
-        return SITE + BASE + f'img/og-{key}.jpg?v=' + hashlib.md5(open(p, 'rb').read()).hexdigest()[:8]
+        return SITE + BASE + 'img/' + og_file(key) + '?v=' + hashlib.md5(open(p, 'rb').read()).hexdigest()[:8]
     return SITE + BASE + 'img/og-bitcoin-wealth-guide.jpg'
 
 
@@ -330,24 +344,37 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(',', ':'))}</script>'''
 
 
-def video_obj(code, name, desc, thumb, media, dur):
-    o = {'@type': 'VideoObject', '_code': code, 'name': name, 'description': desc,
-         'thumbnailUrl': [SITE + BASE + thumb], 'uploadDate': V[code]['date'] + 'T00:00:00+02:00',
-         'duration': dur, 'contentUrl': SITE + BASE + media, 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
+def video_thumbs(code):
+    """absolute URLs of a video's covers: the wide one first (search results show 16:9), then its own shape"""
+    v = V[code]
+    t = [SITE + BASE + f'img/{v["slug"]}.webp']
+    if v['o'] != 'h':
+        t.insert(0, SITE + BASE + f'img/{v["slug"]}-wide.webp')
+    return t
+
+
+def video_obj(code, here_url=None, extra=None):
+    """schema.org VideoObject of a released video. extra: more properties (a watch page adds the transcript and key moments)"""
+    v = V[code]
+    o = {'@type': 'VideoObject', '_code': code, 'name': v['name'], 'description': v['desc'],
+         'thumbnailUrl': video_thumbs(code), 'uploadDate': v['date'] + 'T00:00:00+02:00',
+         'duration': iso_dur(v['secs']), 'contentUrl': SITE + BASE + f'media/{v["slug"]}.mp4', 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
          'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
          'about': BW_THING}
+    if v['o'] != 'h':
+        o.update(width=720, height=1280)
+    else:
+        o.update(width=1280, height=720)
+    if code in WATCH:                     # the video's own page
+        o['url'] = SITE + BASE + WATCH[code]
     if code[0] == 'p':                    # a promo video is shown by MTG, not made by him
         del o['author']
+    o.update(extra or {})
     return o
 
 
 def video_ld(codes, here):
-    out = []
-    for k in codes:
-        v = V[k]
-        out.append(video_obj(k, f"Bitcoin Wealth {v['label']}: {v['title']}", v['desc'], f'img/{v["slug"]}.webp',
-                             f'media/{v["slug"]}.mp4', iso_dur(v['secs'])))
-    return out
+    return [video_obj(k) for k in codes]
 
 
 def crumbs_ld(items):
@@ -430,10 +457,12 @@ def sidebar(key, here):
 <div class="scrim" id="scrim"></div>"""
 
 
-def topbar(key, here):
+def topbar(key, here, parent=None):
     k, p, label, sub, icon, g = NAVD[key]
     crumb = f'<a href="{A("dashboard/", here)}">Dashboard</a>'
-    if key != 'home':
+    if parent:          # a page under a menu page (a tutorial's own page under Tutorial Videos)
+        crumb += f'{ic("chevron-right")}<a class="g" href="{A(NAVD[parent][1], here)}">{NAVD[parent][2]}</a>{ic("chevron-right")}<span>{label.split(":")[0]}</span>'
+    elif key != 'home':
         crumb += f'{ic("chevron-right")}<span class="g">{g}</span>{ic("chevron-right")}<span>{label}</span>'
     return f"""<header class="dtop">
  <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu" aria-controls="side" aria-expanded="false"><span class="bars" aria-hidden="true"></span><span class="mtx">Menu</span></button>
@@ -473,20 +502,22 @@ def next_band(here):
 </div></div></section>"""
 
 
-def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True):
+def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True, parent=None):
+    """parent: the menu page this page hangs under (lit in the menu, shown in the breadcrumb)"""
     k, path, label, sub, icon, g = NAVD[key]
     here = path
     global _used
     _used.clear()
-    crumbs = [('Bitcoin Wealth guide', ''), ('Dashboard', 'dashboard/')] + ([] if key == 'home' else [(label, path)])
+    crumbs = ([('Bitcoin Wealth guide', ''), ('Dashboard', 'dashboard/')] + ([(NAVD[parent][2], NAVD[parent][1])] if parent else [])
+              + ([] if key == 'home' else [(label, path)]))
     ld = [crumbs_ld(crumbs)] + (here_extra_ld or [])
     main = body(here) if callable(body) else body
     band = next_band(here) if show_band else ''
     content = f"""<div class="progress" aria-hidden="true"></div>
 <div class="dash" id="dash">
-{sidebar(key, here)}
+{sidebar(parent or key, here)}
 <div class="dmain">
-{topbar(key, here)}
+{topbar(key, here, parent)}
 <main id="main" tabindex="-1">
 {main}
 {band}

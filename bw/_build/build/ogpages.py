@@ -21,7 +21,10 @@ SPECS = {
     'diff': ('Works on any platform', ['5 checks', 'before you', 'start anywhere'], 'check'),
     'proof': ('Every payment is public', ['Check it', 'yourself on', 'BscScan'], 'proof'),
     'join': ('Step by step', ['Join Bitcoin', 'Wealth in', '5 steps'], 'thumb'),
-    'tut': ('Tutorial 1', ['Set up', 'SafePal', 'the safe way'], 'thumb'),
+    'tut': ('3 tutorial videos', ['Join Bitcoin', 'Wealth,', 'every tap shown'], 'thumb:3'),
+    'w-t1': ('Tutorial 1 of 3', ['Set up', 'SafePal,', 'the safe way'], 'thumb:1'),
+    'w-t2': ('Tutorial 2 of 3', ['Buy BNB.', 'Send it to', 'SafePal.'], 'thumb:2'),
+    'w-t3': ('Tutorial 3 of 3', ['Activate', 'slot 1,', 'step by step'], 'thumb:3'),
     'exp': ('Explainer videos', ['How it works,', 'in pictures'], 'tree'),
     'zoom': ('Meet the community', ['Live on Zoom.', '5 evenings,', '4 languages'], 'zoom'),
     'page': ('R1,000 once-off', ['Your own', 'Bitcoin Wealth', 'website'], 'mascot'),
@@ -145,9 +148,12 @@ def visual(im, kind):
             d.text((x + 42, 360), '19:00' if dd == 'Fri' else '20:00', font=font('Manrope[wght].ttf', 20, 800), fill=(192, 255, 114), anchor='mm')
             d.text((x + 42, 395), lg[:7], font=font('Manrope[wght].ttf', 15, 700), fill=(168, 162, 145), anchor='mm')
             x += 94
-    elif kind in ('mascot', 'thumb'):
+    elif kind == 'mascot' or kind.startswith('thumb'):
+        # thumb, thumb:1, thumb:2, thumb:3: the vertical thumbnail of that tutorial
+        THUMBS = {'1': '01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg', '2': '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-mtg-thumbnail-9x16.jpg',
+                  '3': '03-swap-signup-activate/final/BW-Tutorial-3-Activate-Slot-1-mtg-thumbnail-9x16.jpg'}
         src = (STUDIO + '/brand/mascot/mtg-mascot-bw.png') if kind == 'mascot' else \
-              (STUDIO + '/projects/bitcoin-wealth/tutorials/01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg')
+              (STUDIO + '/projects/bitcoin-wealth/tutorials/' + THUMBS[kind.partition(':')[2] or '1'])
         m = Image.open(src).convert('RGB')
         th, tw = 520, int(520 * 9 / 16)
         m = m.resize((tw, int(tw * m.height / m.width)), Image.LANCZOS).crop((0, 0, tw, th))
@@ -205,7 +211,7 @@ def build_all(dst):
             up = ORDER
         else:
             up = BASE + NAVD[key][1]
-        name = 'og-bitcoin-wealth-guide.jpg' if key == 'land' else f'og-{key}.jpg'
+        name = 'og-bitcoin-wealth-guide.jpg' if key == 'land' else og_file(key)
         sizes[key] = make(key, dst + '/' + name, up)
         if key == 'land':
             make(key, dst + '/og-land.jpg', up)

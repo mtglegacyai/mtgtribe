@@ -18,6 +18,7 @@
 ## Bitcoin Wealth Guide by MTG
 
 - [Bitcoin Wealth explained by MTG](https://mtgtribe.com/bw/): an independent, plain-English guide to Bitcoin Wealth: one 0.001 BTC once-off entry (slot 1), 14 positions per cycle (2, 4, 8), 12 slots from 0.001 to 2.048 BTC, payouts in BTCB straight to members' own wallets, and how to check every payment on BscScan. Join in 3 stages with SafePal, VALR or Binance. Live tools: Bitcoin to Rand Converter, Slot Calculator, Halving Countdown. Educational only, not official Bitcoin Wealth material and not financial advice.
+- [Bitcoin Wealth tutorial videos](https://mtgtribe.com/bw/dashboard/tutorials/): three step-by-step videos by MTG, each with a page of its own that has every step in writing: [set up a SafePal wallet](https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/), [buy BNB on VALR and send it to SafePal](https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/), [swap BNB for BTCB, sign up and activate slot 1](https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/).
 - [Full map of the Bitcoin Wealth guide](https://mtgtribe.com/bw/llms.txt) and [its full text](https://mtgtribe.com/bw/llms-full.txt).
 - [BW Tribe Page order form](https://mtgtribe.com/bwcopy/): your own copy of the guide with your referral link built in, R1,000 once-off, paid after it is built.
 

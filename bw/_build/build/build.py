@@ -8,6 +8,7 @@ from pages_learn import p_home, p_fit, p_back, p_what, p_hiw, p_slots, p_pool, p
 from pages_do import (p_join, p_tut, p_exp, p_zoom, p_page, p_c_btc, p_c_slot, p_c_halv, p_faq, faq_ld, p_gloss, p_safe,
                       p_card, p_tribe, p_disc, order_page, JOIN_STEPS, JOIN_NEEDS, GLOSS, zoom_ld, zoom_ics, zoom_head)
 from pages_land import landing
+from pages_watch import p_watch, watch_ld
 from seo import SEO_DESC
 
 SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/src'
@@ -15,7 +16,7 @@ OUT = SCR + '/out'
 FONTS = SCR + '/fonts/'
 
 PAGES = {
-    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['s1', 't1']),
+    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['s1', 't1', 't2', 't3']),
     'fit': ('Is Bitcoin Wealth right for me?', p_fit, None),
     'back': ('Welcome back to Bitcoin Wealth', p_back, None),
     'what': ('What is Bitcoin Wealth?', p_what, None),
@@ -25,8 +26,8 @@ PAGES = {
     'stokvel': ('Bitcoin Wealth vs a stokvel', p_stokvel, None),
     'diff': ('What makes Bitcoin Wealth different', p_diff, None),
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, None),
-    'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2']),
-    'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2']),
+    'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2', 't3']),
+    'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2', 't3']),
     'exp': ('Bitcoin Wealth explainer videos', p_exp, None),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
     'page': ('Your own BW Tribe Page', p_page, None),
@@ -97,7 +98,7 @@ def images(dst):
         for w, suf in (((1280, ''), (640, '-640')) if v['o'] == 'h' else ((720, ''), (360, '-360'))):
             h = w * 9 // 16 if v['o'] == 'h' else w * 16 // 9
             t.resize((w, h), Image.LANCZOS).save(dst + f'/{v["slug"]}{suf}.webp', quality=82 if not suf else 80, method=6)
-        if v.get('wide'):                 # a 16:9 cover for a 9:16 video (core.wide_cover)
+        if v.get('wide'):                 # the 16:9 cover the page shows for a 9:16 video (core.vid)
             t = Image.open(STUDIO + '/' + v['wide']).convert('RGB')
             for w, suf in ((1280, '-wide'), (640, '-wide-640')):
                 t.resize((w, w * 9 // 16), Image.LANCZOS).save(dst + f'/{v["slug"]}{suf}.webp', quality=82 if w > 640 else 80, method=6)
@@ -174,27 +175,46 @@ def render(dst):
             hd += zoom_head(here)
             open(base + '/' + here + ZOOM_ICS, 'w', newline='').write(zoom_ics(SITE + BASE + here))
         open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
+    # a page of its own for each tutorial video (pages_watch.py)
+    for code in WATCH_PAGES:
+        key = 'w-' + code; here = NAVD[key][1]
+        hd, content = core.dash_page(key, WATCH_PAGES[code][1], SEO_DESC[key], p_watch(code), watch_ld(code), parent='tut')
+        os.makedirs(base + '/' + here, exist_ok=True)
+        open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
     hd, body = order_page()
     os.makedirs(dst + ORDER, exist_ok=True)
     open(dst + ORDER + 'index.html', 'w').write(core.wrap_doc(hd, body, 'landing orderpage'))
-    # sitemap for /bw (with the video), llms files
-    urls = [''] + [NAVD[k][1] for k in PAGES]
-    vids = {p: [c for c in (extra or []) if isinstance(extra, list)] for k, (t, fn, extra) in PAGES.items() for p in [NAVD[k][1]]}
-    vids[''] = ['p1', 't1']
+    # sitemap for /bw, llms files. Each video is listed once, on the page where it is the main thing: a tutorial on its own
+    # page, the promo on the main page, the cartoon on the dashboard
+    wkeys = ['w-' + c for c in WATCH_PAGES]
+    urls = [''] + [NAVD[k][1] for k in PAGES] + [NAVD[k][1] for k in wkeys]
+    vids = {'': ['p1'], NAVD['home'][1]: ['s1']}
+    vids.update({WATCH[c]: [c] for c in WATCH_PAGES})
 
     def vtag(c):
         v = V[c]
-        return (f'<video:video><video:thumbnail_loc>{SITE}{BASE}img/{v["slug"]}.webp</video:thumbnail_loc><video:title>{core.esc("Bitcoin Wealth " + v["label"] + ": " + v["title"])}</video:title>'
+        return (f'<video:video><video:thumbnail_loc>{core.video_thumbs(c)[0]}</video:thumbnail_loc><video:title>{core.esc(v["name"])}</video:title>'
                 f'<video:description>{core.esc(v["desc"])}</video:description><video:content_loc>{SITE}{BASE}media/{v["slug"]}.mp4</video:content_loc>'
                 f'<video:duration>{int(round(v["secs"]))}</video:duration><video:publication_date>{v["date"]}T00:00:00+02:00</video:publication_date>'
                 f'<video:family_friendly>yes</video:family_friendly><video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video>')
+    key_of = {NAVD[k][1]: k for k in list(PAGES) + wkeys}; key_of[''] = 'land'
+
+    def itags(u):
+        """the pictures of a page, for image search: its preview picture, and the covers of the videos it is the home of"""
+        locs = [core.og_image(key_of[u]).split('?')[0]] + [t for c in vids.get(u, []) for t in core.video_thumbs(c)]
+        return ''.join(f'<image:image><image:loc>{core.esc(x)}</image:loc></image:image>' for x in locs)
     sm = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
-          'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + ''.join(
-              f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod>' + ''.join(vtag(c) for c in vids.get(u, [])) + '</url>\n' for u in urls)
+          'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n' + ''.join(
+              f'<url><loc>{SITE}{BASE}{u}</loc><lastmod>{TODAY}</lastmod>{itags(u)}' + ''.join(vtag(c) for c in vids.get(u, [])) + '</url>\n' for u in urls)
           + f'<url><loc>{SITE}{ORDER}</loc><lastmod>{TODAY}</lastmod></url>\n</urlset>\n')
     open(base + '/sitemap.xml', 'w').write(sm)
     import llms
-    llms.build_llms(dst, [('land', '')] + [(k, NAVD[k][1]) for k in PAGES])
+    order = [('land', '')]
+    for k in PAGES:      # the tutorial pages come right after Tutorial Videos
+        order.append((k, NAVD[k][1]))
+        if k == 'tut':
+            order += [(w, NAVD[w][1]) for w in wkeys]
+    llms.build_llms(dst, order)
 
 
 def check(dst):
@@ -240,7 +260,7 @@ def render_preview(dst):
     shutil.copy(REPO + '/assets/video-return.js', dst + '/assets/video-return.js')
     os.makedirs(dst + '/img', exist_ok=True)
     for f in os.listdir(OUT + '/_img'):
-        if not f.startswith('og-'):
+        if not f.startswith('og-') and not f.endswith('-preview.jpg'):
             shutil.copy(OUT + '/_img/' + f, dst + '/img/' + f)
     os.makedirs(dst + '/media', exist_ok=True)
     for k, v in V.items():
@@ -257,6 +277,10 @@ def render_preview(dst):
             os.makedirs(dst + '/' + here, exist_ok=True)
             open(dst + '/' + here + ZOOM_ICS, 'w', newline='').write(zoom_ics(SITE + BASE + here))
         files[here + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
+    for code in WATCH_PAGES:
+        key = 'w-' + code
+        hd, content = core.dash_page(key, WATCH_PAGES[code][1], SEO_DESC[key], p_watch(code), [], parent='tut')
+        files[NAVD[key][1] + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
     hd, body = order_page('bwcopy/')
     files['bwcopy/index.html'] = core.wrap_doc(hd, body, 'landing orderpage')
     for path, html in files.items():

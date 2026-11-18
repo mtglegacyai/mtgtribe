@@ -12,6 +12,7 @@ def build_checks():
     path = '/jetup/five-checks/'
     tick = lambda n: '<button type="button" class="tick" data-id="c%s" aria-pressed="false" style="margin-top:6px"><span class="bx">%s</span>I checked this</button>' % (n, icon('i-check2'))
     c1 = section('check-1', 'Check 1 of 5', 'Who holds my money?', f'''
+<div style="margin:4px 0 18px">{laptop('who', 'Who holds what, as one minibus taxi, explained by MTG (2:08)')}</div>
 <p>Your deposit goes into an <b>MT5 account at TAG Markets, in your own name</b>. MT5 means MetaTrader 5, the trading app many brokers use. JetUP is the community: it does not trade, and it does not take your money.</p>
 <p><b>Check it yourself:</b> don't take my word for it. Log in at portal.tagmarkets.com and see your own balance.</p>
 <div class="call info">{icon('i-search')}<p>JetUP's own one-pager says: your money does not sit with JetUP, it sits in your own account at TAG Markets. <a href="/jetup/downloads/">Download the one-pager</a>.</p></div>
@@ -96,7 +97,7 @@ def build_checks():
            ('How big are the moves with 24x Amplify?', '24x Amplify makes every move bigger, in both directions. A built-in loss limit closes the account at a 10% loss of the starting balance (5% with a community token), and the broker\'s insolvency cover is $1,000,000 for all clients together.')]
     return page(path, 'JetUP and TAG Markets Review: 5 Checks Before You Start | MTG',
                 'An honest JetUP and TAG Markets review in 5 checks: who holds your money, TAG Markets regulation (FSC, FSCA), Sonic AI results on Myfxbook, 24x Amplify explained and withdrawals.',
-                main, crumbs_l, [ld_video('5checks'), ld_video('amplify'), ld_video('withdraw'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
+                main, crumbs_l, [ld_video('5checks'), ld_video('who'), ld_video('amplify'), ld_video('withdraw'), ld_faq(faq, SITE + path)], og_img='/jetup/img/cover-5-checks-v5-3.jpg', og_alt='Lost money before? Check these 5 things before you try again')
 
 def build_how():
     path = '/jetup/how-it-works/'
@@ -268,7 +269,9 @@ def build_promo():
  <li>In the Dashboard open the <kbd>Dennis Promo</kbd> tab and apply with one tap. Your status shows there too.</li>
  <li>When the confirmation email arrives, open CopyX, Follower Hub, Strategies: you'll see your $50 account and your $200 promo account, created for you automatically.</li>
 </ol>
-<p><a href="/jetup/get-started/#part-6">Open part 6 with the screenshots</a></p>''', 'i-rocket2')}
+<p><a href="/jetup/get-started/#part-6">Open part 6 with the screenshots</a></p>
+<p class="small" style="margin-top:14px"><b>Partners:</b> the JetUP Assistant in your Dashboard explains your team's Dennis Promo in plain words and checks it with Check 100+100.</p>
+<p style="margin:10px 0 0">''' + video_btn('assistant', 'btn btn-ghost btn-sm', icon('i-play2') + 'Watch the JetUP Assistant (0:51)', "Play JetUP's own video: Meet your JetUP Assistant (0:51)") + '''</p>''', 'i-rocket2')}
  <div class="card lime-edge pad promo rv">
   <span class="hourglass" aria-hidden="true">⏳</span>
   <div><p class="eyebrow">And remember</p><h2 class="h2" style="margin-top:10px;font-size:clamp(1.9rem,4vw,2.8rem)">A promo is <span class="lime">a promo.</span></h2>
@@ -284,7 +287,7 @@ def build_promo():
 {tribe_cta()}'''
     return page(path, 'JetUP Dennis Fast Start Promo: $100 Bonus Rules | MTG',
                 'The JetUP Dennis Fast Start Promo explained: your $100 plus a $100 bonus, 24x Amplify on TAG Markets, the 12-month rule, how to claim it with your CU number on jet-up.ai, and the risks.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Dennis Fast Start Promo', None)], [ld_video('promo')], og_img='/jetup/img/cover-explainer-100-promo.jpg', og_alt='The $100 Fast Start Promo, explained by MTG')
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Dennis Fast Start Promo', None)], [ld_video('promo'), ld_video('assistant')], og_img='/jetup/img/cover-explainer-100-promo.jpg', og_alt='The $100 Fast Start Promo, explained by MTG')
 
 def build_bix():
     path = '/jetup/bix-card/'

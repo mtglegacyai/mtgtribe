@@ -1,0 +1,108 @@
+{
+ "title": "The Infinity Bonus: two strong wheels",
+ "next_chip": "Next: step-by-step, part 1",
+ "emoji_pops": [
+  {
+   "phrase": "no depth limit",
+   "emoji": "♾️"
+  },
+  {
+   "phrase": "bicycle",
+   "emoji": "🚲"
+  },
+  {
+   "phrase": "resets every month",
+   "emoji": "🗓️"
+  },
+  {
+   "phrase": "two strong wheels",
+   "emoji": "⚖️"
+  }
+ ],
+ "lines": [
+  {
+   "key": "nhook",
+   "kind": "new",
+   "text": "Ten levels is not the limit. Meet the Infinity Bonus: no depth limit at all.",
+   "scene": "Hook",
+   "on_screen": "The ten glass floors from explainer #6 glow, then the top opens upward to an infinity sign; title 'The Infinity Bonus'."
+  },
+  {
+   "key": "hi",
+   "kind": "shared",
+   "text": "Hi, I'm MTG, Your Digital Architect.",
+   "scene": "Hi",
+   "on_screen": "The JetUP logo disc, MTG crown | Your Digital Architect, the title. No photo."
+  },
+  {
+   "key": "nshare",
+   "kind": "recorded",
+   "text": "And Profit Share: one and a half percent of the strategy's profit on every open level, paid from the thirty percent share, never from client deposits.",
+   "scene": "The base: Profit Share",
+   "on_screen": "Ten level bars at 1.5% each, label \"Paid from the 30% share, never from client deposits\"."
+  },
+  {
+   "key": "ntop",
+   "kind": "new",
+   "text": "It's a leadership bonus on top of the Profit Share, from level one, all the way down.",
+   "scene": "On top of Profit Share",
+   "on_screen": "A second lime layer settles on top of the bars and runs down past level 10 with no end: \"Infinity: from level 1, unlimited depth\"."
+  },
+  {
+   "key": "nbike",
+   "kind": "new",
+   "text": "Think of a bicycle with gears. Your gear is your rate, set by your team's new volume each month: from one and a half percent at fifty thousand dollars, to seven and a half at forty million.",
+   "scene": "The bicycle",
+   "on_screen": "A polished bicycle; its gear cassette shows the rates: $50K 1.5%, $200K 3%, $500K 4%, $1M 5%, then $3M 5.5% up to $40M 7.5%. The chain shifts up a gear on each number."
+  },
+  {
+   "key": "nmonth",
+   "kind": "new",
+   "text": "And the trip meter resets every month: only that month's new volume counts, paid once a month.",
+   "scene": "Monthly",
+   "on_screen": "The handlebar trip meter counts a month of new volume, then resets to 0 on a calendar flip: \"Only the month's new volume counts\", \"Paid once a month\"."
+  },
+  {
+   "key": "nfifty",
+   "kind": "new",
+   "text": "Rule one, the fifty percent rule: your strongest line counts for at most half. A bike needs two strong wheels.",
+   "scene": "Rule 1: two strong wheels",
+   "on_screen": "The two wheels are two lines; the bigger one is capped at half: \"Your strongest line counts for at most 50%\" (example: for $1M, at most $500K from one line)."
+  },
+  {
+   "key": "ndiff",
+   "kind": "new",
+   "text": "Rule two, the difference rule: if a partner in your line reaches their own rate, you earn the difference on their structure. Three percent minus their one and a half leaves you one and a half.",
+   "scene": "Rule 2: the difference",
+   "on_screen": "A second rider in your line on their own bicycle in a lower gear: 3% minus 1.5% = 1.5% on their structure; chip \"All your other lines: your full rate\"."
+  },
+  {
+   "key": "nrecap",
+   "kind": "new",
+   "text": "So that's Infinity: your gear on your whole team, two strong wheels, and the difference rule.",
+   "scene": "Recap",
+   "on_screen": "Three ticked cards: Your gear on your whole team (monthly), Two strong wheels (50% rule), The difference rule. Small chip: JetUP's figures, check your partner account."
+  },
+  {
+   "key": "n_turn2",
+   "kind": "shared",
+   "text": "Simple, right? Now it's your turn.",
+   "scene": "Your turn",
+   "on_screen": "Buttons 'See the partner plan' and 'Join JetUP', mtgtribe.com/jetup pill."
+  },
+  {
+   "key": "l_ifme",
+   "kind": "shared",
+   "text": "If I invited you, go to MTG tribe dot com slash jet up, and tap any Join Jet Up button.",
+   "scene": "Your turn",
+   "on_screen": "The Join JetUP button is tapped on its words."
+  },
+  {
+   "key": "every",
+   "kind": "shared",
+   "text": "Invited by someone else? Use their link. This video is for every team, so feel free to share it.",
+   "scene": "Fair play and signature ending",
+   "on_screen": "The fixed signature ending, links off, Next: step-by-step, part 1."
+  }
+ ]
+}

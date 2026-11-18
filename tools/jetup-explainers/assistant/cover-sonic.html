@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Cover of JetUP's own video "Sonic AI: the full picture" (16:9, the laptop cover on mtgtribe.com/jetup; the video itself is 9:16
+     and plays in the phone). The middle stays clear for the play button. The phone shows the video's own picture
+     (frame at 20 s: three closed Sonic trades, a plus and a minus). Never MTG's photo: the JetUP disc. Shoot with shoot_cover.js. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden}
+body{font-family:'Manrope',sans-serif;color:#fff;position:relative;background:
+ radial-gradient(900px 700px at 76% 50%,rgba(140,108,231,.5),transparent 70%),radial-gradient(800px 600px at 6% 96%,rgba(232,194,90,.2),transparent 70%),
+ radial-gradient(700px 500px at 30% 10%,rgba(203,251,97,.08),transparent 70%),linear-gradient(160deg,#150d2c,#0b0912 55%,#07050f)}
+.grid{position:absolute;inset:0;opacity:.08;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px}
+.pill{position:absolute;left:96px;top:92px;display:inline-flex;align-items:center;height:64px;padding:0 30px;border-radius:999px;background:#cbfb61;color:#14110b;font:800 28px/1 'Manrope';letter-spacing:.16em}
+.h{position:absolute;left:92px;top:184px;font:400 116px/.98 'Anton';text-transform:uppercase;white-space:nowrap}
+.h .g{background:linear-gradient(180deg,#f1e6ff,#c9a6ff 40%,#8c6ce7);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(140,108,231,.45))}
+.h .gold{background:linear-gradient(180deg,#fff3c4,#f3d27a 38%,#c99a2e);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 30px rgba(232,194,90,.35))}
+.beta{display:inline-block;vertical-align:top;margin:16px 0 0 16px;padding:10px 16px;border-radius:14px;background:rgba(232,194,90,.16);box-shadow:inset 0 0 0 2px rgba(232,194,90,.7);color:#ffe08f;font:800 28px/1 'Manrope';letter-spacing:.14em}
+.sub{position:absolute;left:96px;top:680px;font:800 44px/1.25 'Manrope';color:#e9e3ff;white-space:nowrap}
+.sub b{color:#cbfb61}
+.em{font-style:normal;font-family:'Noto Color Emoji'}
+.chips{position:absolute;left:96px;top:784px;display:flex;gap:16px}
+.chips span{display:inline-flex;align-items:center;gap:12px;height:72px;padding:0 26px;border-radius:22px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);font:800 31px/1 'Manrope';white-space:nowrap}
+.brand{position:absolute;left:100px;bottom:150px;font:800 26px/1 'Manrope';letter-spacing:.16em;color:#e8c25a;white-space:nowrap}
+.brand .sep{display:inline-block;width:3px;height:24px;margin:0 .5em 0 .32em;vertical-align:-3px;border-radius:2px;background:rgba(232,194,90,.75)}
+/* the phone, slim gold-titanium rim */
+.ph{position:absolute;left:1238px;top:70px;width:470px;height:940px;border-radius:66px;padding:9px;transform:rotate(4deg);
+ background:linear-gradient(145deg,#fff1b8,#c99a2e 30%,#f7dd8d 55%,#9c6f1f 80%,#e8c25a);box-shadow:0 50px 110px rgba(0,0,0,.6),0 0 120px rgba(140,108,231,.45)}
+.ph .bz{width:100%;height:100%;border-radius:58px;background:#050407;padding:12px;position:relative}
+.ph .sc{width:100%;height:100%;border-radius:47px;overflow:hidden;background:#fff;position:relative}
+.ph .sc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ph .isl{position:absolute;left:50%;top:22px;width:120px;height:32px;margin-left:-60px;border-radius:20px;background:#050407;z-index:2}
+.ph i{position:absolute;right:-5px;width:5px;border-radius:0 3px 3px 0;background:#c99a2e}
+.disc{position:absolute;left:1660px;top:700px;width:190px;height:190px;border-radius:50%;padding:7px;background:conic-gradient(from 210deg,#fff1b8,#c99a2e,#f7dd8d,#9c6f1f,#fff1b8);box-shadow:0 0 90px rgba(232,194,90,.45),0 30px 70px rgba(0,0,0,.55);z-index:5}
+.disc img{width:100%;height:100%;border-radius:50%;display:block}
+.bub{position:absolute;left:700px;top:96px;z-index:6;padding:20px 26px;border-radius:26px 26px 6px 26px;background:linear-gradient(160deg,#8c6ce7,#5a3cc0);font:800 30px/1.25 'Manrope';box-shadow:0 20px 50px rgba(0,0,0,.45);white-space:nowrap}
+</style></head><body>
+<div class="grid"></div>
+<div class="pill" id="pill">JETUP'S OWN VIDEO · 2:20</div>
+<div class="h">Sonic AI:<br><span class="g gold">the full picture</span></div>
+<div class="sub">How JetUP's <b>gold strategy</b> works</div>
+<div class="chips"><span><i class="em">🥇</i>Trades gold</span><span><i class="em">📊</i>Every trade on Myfxbook</span></div>
+<div class="brand">MTG <i class="em">👑</i><span class="sep"></span>YOUR DIGITAL ARCHITECT</div>
+<div class="ph"><div class="bz"><span class="isl"></span><div class="sc"><img src="frame-sonic.png" alt="" style="object-position:center 30%"></div></div><i style="top:200px;height:90px"></i><i style="top:310px;height:60px"></i></div>
+<div class="disc"><img src="jetup-disc.png" alt=""></div>
+</body></html>

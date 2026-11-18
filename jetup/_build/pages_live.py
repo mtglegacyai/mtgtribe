@@ -218,6 +218,14 @@ def build_live():
  </div>
 </section>
 
+<section class="sec tight lv" id="watch-first" aria-labelledby="wf-h">
+ <div class="narrow">
+  <div class="shead"><p class="eyebrow rv">Before your first Zoom</p><h2 class="h2 rv" style="--d:1" id="wf-h">New here? <span class="grad">Watch this first.</span></h2></div>
+  <div class="rv">{laptop('simple', 'JetUP and TAG Markets: the simple picture, explained by MTG (1:39)')}</div>
+  <p class="small center rv" style="margin:10px 0 0">Who does what, where your money sits and how the 70/30 split works, so the presentation makes sense from minute one.</p>
+ </div>
+</section>
+
 <section class="sec tight lv" id="add" aria-labelledby="add-h">
  <div class="wrap lv-aq">
   <div class="card glass pad addcal rv">
@@ -242,6 +250,6 @@ def build_live():
     foot = '\n<script src="/jetup/assets/zoom-live.js?v=%s" defer></script>' % ver('/jetup/assets/zoom-live.js')
     return page(path, 'JetUP Live on Zoom: Presentations & Training Schedule | MTG',
                 'JetUP live on Zoom, five sessions a week: presentations Tuesday, Thursday and Saturday at 8pm, a Sunday 3pm international presentation and a Sunday 8pm training night (SA time).',
-                main, [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Live on Zoom', path)], _ld(),
+                main, [('MTG TRIBE', '/'), ('JetUP Guide', '/jetup/'), ('Live on Zoom', path)], _ld() + [ld_video('simple')],
                 keywords='JetUP Zoom, JetUP live, JetUP presentation, JetUP training, JetUP Zoom schedule, JetUP Zoom link, JetUP SA time, TAG Markets, MTG TRIBE',
                 head_extra=head, foot_extra=foot)

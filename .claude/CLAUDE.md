@@ -179,6 +179,21 @@ TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp mtgtribe.com/group, **Telegram
 **Facebook facebook.com/mtgtribe**: the same on every website page and on every video end card. The older
 t.me/mtgtribez and facebook.com/Musa.TheMTG are no longer used anywhere.
 
+## Standing rule: the best possible result, every time (MTG, 18 Nov 2026)
+
+"Do not give me mediocre results or designs. Go out of your way to deliver the most compelling, most eye-catching, most
+scroll-stopping of anything we create, design, craft, and publish ... I want to replace my full-time job salary with these
+income streams, and eventually quit my job, so please treat everything we do, big and small, very seriously." So:
+
+- **No first drafts as final.** Look at every design, page and video at full size and at phone size, find what is weak and
+  improve it before MTG sees it. Ask: would this stop the scroll next to ten competitors? If not, it is not done.
+- **Every piece is built to convert and to be found:** a clear hook, one strong call to action, high click-through
+  (titles, thumbnails, social previews), and search and AI search discoverability (titles, descriptions, structured data,
+  FAQ answers, internal links, sitemaps), on every job, big or small, without being asked.
+- **Show the idea, don't just name it.** A thumbnail, cover or preview explains its subject in one glance (a flow, a
+  before/after, the product). The approved formula and templates: `tools/youtube-thumbnails/` (README).
+- Still honest: no income promises, no fake numbers, no "best ever", MTG's compliance and privacy rules always apply.
+
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 
 When MTG asks for a message to send a prospect (WhatsApp, DM, comment reply), give it like this, every time:

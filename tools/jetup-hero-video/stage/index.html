@@ -1,0 +1,140 @@
+<!doctype html><html><head><meta charset="utf-8"><title>JetUP hero background</title>
+<style>html,body{margin:0;background:#06040f;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js"}}</script></head><body>
+<script type="module">
+// JetUP hero background (MTG, 10 Nov 2026): a night Earth (NASA public-domain city lights), purple network arcs with
+// travelling light, a gold beam rising from Durban, twinkling stars, and a slow camera drift that loops seamlessly.
+import * as THREE from 'three';
+const W = +(new URLSearchParams(location.search).get('w') || 1920), H = +(new URLSearchParams(location.search).get('h') || 1080);
+const T = 20;                                   // loop length in seconds
+const R = 10;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(0x06040f, 1);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(+(new URLSearchParams(location.search).get('fov') || 32), W / H, 0.1, 2000);
+
+// lat/lon -> direction, matching three.js sphere UVs (equirectangular, lon -180 at u = 0)
+function dir(lat, lon) {
+  const phi = (lon + 180) / 360 * Math.PI * 2, th = (90 - lat) / 180 * Math.PI;
+  return new THREE.Vector3(-Math.cos(phi) * Math.sin(th), Math.cos(th), Math.sin(phi) * Math.sin(th));
+}
+const tilt = new THREE.Group(), earth = new THREE.Group(); tilt.add(earth); scene.add(tilt);
+const Q = new URLSearchParams(location.search), num = (k, d) => (Q.has(k) ? +Q.get(k) : d);
+const LAT0 = num('lat0', -30), LON0 = num('lon0', 31);   // this point faces the camera; north stays up
+{ const f = dir(LAT0, LON0), n = new THREE.Vector3(0, 1, 0);
+  const right = new THREE.Vector3().crossVectors(n, f).normalize(), upv = new THREE.Vector3().crossVectors(f, right).normalize();
+  const m = new THREE.Matrix4().makeBasis(right, upv, f).transpose(); earth.quaternion.setFromRotationMatrix(m); }
+
+const tex = await new THREE.TextureLoader().loadAsync('night.jpg');
+tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
+const earthMat = new THREE.ShaderMaterial({
+  uniforms: { map: { value: tex } },
+  vertexShader: `varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+    void main(){ vUv = uv; vec4 wp = modelMatrix * vec4(position,1.); vN = normalize(mat3(modelMatrix) * normal);
+      vV = normalize(cameraPosition - wp.xyz); gl_Position = projectionMatrix * viewMatrix * wp; }`,
+  fragmentShader: `uniform sampler2D map; varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+    void main(){ vec3 c = texture2D(map, vUv).rgb;
+      float l = dot(c, vec3(.299,.587,.114));
+      vec3 lights = vec3(1.0,.62,.22) * smoothstep(.045,.5,l) * 2.2;       // city lights: warm gold
+      vec3 base = c * vec3(.30,.27,.55);                                     // land and sea: deep night blue
+      float rim = pow(1. - max(dot(vN, vV), 0.), 3.0);
+      vec3 col = base + lights + vec3(.30,.20,.85) * rim * .22;
+      gl_FragColor = vec4(col, 1.);
+      #include <colorspace_fragment>
+    }`
+});
+earth.add(new THREE.Mesh(new THREE.SphereGeometry(R, 160, 120), earthMat));
+
+// atmosphere: a soft violet halo around the limb
+const atmo = new THREE.Mesh(new THREE.SphereGeometry(R * 1.018, 96, 72), new THREE.ShaderMaterial({
+  side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
+  vertexShader: `varying vec3 vN; varying vec3 vV; void main(){ vec4 wp = modelMatrix*vec4(position,1.); vN = normalize(mat3(modelMatrix)*normal); vV = normalize(cameraPosition-wp.xyz); gl_Position = projectionMatrix*viewMatrix*wp; }`,
+  fragmentShader: `varying vec3 vN; varying vec3 vV; void main(){ float i = pow(clamp(.58 + dot(vN, vV), 0., 1.), 6.0); gl_FragColor = vec4(vec3(.50,.38,1.0) * i * 2.2, 1.); }`
+}));
+tilt.add(atmo);
+
+// cities and arcs
+const C = { durban: [-29.86, 31.02], jhb: [-26.2, 28.05], lagos: [6.52, 3.38], nairobi: [-1.29, 36.82], cairo: [30.04, 31.24],
+  dubai: [25.2, 55.27], london: [51.5, -0.12], paris: [48.85, 2.35], frankfurt: [50.11, 8.68], istanbul: [41.0, 28.98],
+  mumbai: [19.07, 72.88], delhi: [28.61, 77.2], singapore: [1.35, 103.82], hk: [22.32, 114.17], saopaulo: [-23.55, -46.63],
+  newyork: [40.71, -74.0], moscow: [55.75, 37.62], riyadh: [24.71, 46.67], capetown: [-33.92, 18.42], kinshasa: [-4.44, 15.27] };
+const BEAM = Q.get('beam') || 'cairo';
+const LINKS = [['cairo','london'],['cairo','dubai'],['cairo','lagos'],['cairo','nairobi'],['cairo','mumbai'],['cairo','moscow'],
+  ['durban','cairo'],['jhb','dubai'],['lagos','london'],['nairobi','dubai'],['istanbul','delhi'],['dubai','singapore'],
+  ['frankfurt','moscow'],['paris','newyork'],['riyadh','paris'],['kinshasa','cairo'],['dubai','hk'],['lagos','saopaulo']];
+const arcMat = (seed, speed) => new THREE.ShaderMaterial({
+  uniforms: { t: { value: 0 }, seed: { value: seed }, speed: { value: speed } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  vertexShader: `varying float s; void main(){ s = uv.x; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+  fragmentShader: `uniform float t; uniform float seed; uniform float speed; varying float s;
+    void main(){ float p = fract(t*speed + seed);                       // a pulse travelling along the arc, loop-safe
+      float d = s - p; float head = exp(-d*d/0.0016); float tail = (d < 0. && d > -.22) ? exp(d*9.) * .55 : 0.;
+      float ends = smoothstep(0.,.06,s) * smoothstep(1.,.94,s);
+      vec3 col = mix(vec3(.45,.33,1.0), vec3(.86,.80,1.0), head);
+      gl_FragColor = vec4(col * (0.13 + 1.5*head + tail) * ends, 1.); }`
+});
+const arcs = [];
+LINKS.forEach(([a, b], i) => {
+  const A = dir(...C[a]), B = dir(...C[b]); const ang = A.angleTo(B);
+  const pts = []; for (let k = 0; k <= 96; k++) { const s = k / 96;
+    const v = new THREE.Vector3().copy(A).lerp(B, s).normalize();
+    // slerp for long arcs
+    const q = new THREE.Quaternion().setFromUnitVectors(A, B); const qs = new THREE.Quaternion().slerp(q, s); const w = A.clone().applyQuaternion(qs);
+    pts.push(w.multiplyScalar(R * (1.003 + (0.04 + 0.30 * ang / Math.PI) * Math.sin(Math.PI * s)))); }
+  const curve = new THREE.CatmullRomCurve3(pts);
+  const m = arcMat((i * 0.137) % 1, [1, 2, 1, 3][i % 4] / T);
+  const mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, 160, R * 0.0016, 5, false), m);
+  earth.add(mesh); arcs.push(m);
+});
+// glowing city nodes
+function glowTex(c1, c2) { const cv = document.createElement('canvas'); cv.width = cv.height = 128; const g = cv.getContext('2d');
+  const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, c1); gr.addColorStop(.25, c2); gr.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128); const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t; }
+const nodeTex = glowTex('rgba(255,245,230,1)', 'rgba(170,140,255,.55)'), goldTex = glowTex('rgba(255,250,235,1)', 'rgba(255,190,80,.6)');
+const nodes = [];
+Object.entries(C).forEach(([k, ll], i) => { const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: k === BEAM ? goldTex : nodeTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+  sp.position.copy(dir(...ll).multiplyScalar(R * 1.006)); const s0 = k === BEAM ? R * 0.11 : R * 0.03; sp.scale.set(s0, s0, 1); sp.userData = { s0, ph: i * .7 }; earth.add(sp); nodes.push(sp); });
+
+// the gold beam rising from Durban
+const beamGroup = new THREE.Group(); earth.add(beamGroup);
+const up = dir(...C[BEAM]); beamGroup.position.copy(up.clone().multiplyScalar(R)); beamGroup.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
+const beamMat = (w, a) => new THREE.ShaderMaterial({ uniforms: { t: { value: 0 }, a: { value: a } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+  vertexShader: `varying vec2 vUv; varying vec3 vN; varying vec3 vV; void main(){ vUv = uv; vec4 wp = modelMatrix*vec4(position,1.); vN = normalize(mat3(modelMatrix)*normal); vV = normalize(cameraPosition-wp.xyz); gl_Position = projectionMatrix*viewMatrix*wp; }`,
+  fragmentShader: `uniform float t; uniform float a; varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+    void main(){ float core = pow(abs(dot(vN, vV)), 2.2);                  // bright in the middle, soft at the sides
+      float h = vUv.y; float fade = smoothstep(1.,.15,h) * smoothstep(0.,.02,h);
+      float shimmer = .88 + .12*sin(6.2831*(t*3./20. - h*5.));
+      float pulse = exp(-pow((h - fract(t/5.)) * 9., 2.)) * .9;             // energy rising up the beam, 4 times per loop
+      gl_FragColor = vec4(vec3(1.0,.80,.42) * core * fade * (shimmer + pulse) * a, 1.); }` });
+const L = R * 1.9;
+[[R * 0.0042, 2.6], [R * 0.014, .75], [R * 0.045, .16]].forEach(([r, a]) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, L, 32, 1, true), beamMat(r, a)); m.position.y = L / 2; beamGroup.add(m); });
+const baseGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map: goldTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+baseGlow.scale.set(R * .2, R * .2, 1); beamGroup.add(baseGlow);
+
+// stars
+const N = 2600, sp = new Float32Array(N * 3), ph = new Float32Array(N), sz = new Float32Array(N);
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+for (let i = 0; i < N; i++) { const th = rnd() * Math.PI * 2, z = rnd() * 2 - 1, rr = 400; const s = Math.sqrt(1 - z * z);
+  sp[i * 3] = Math.cos(th) * s * rr; sp[i * 3 + 1] = z * rr; sp[i * 3 + 2] = Math.sin(th) * s * rr - 120; ph[i] = rnd(); sz[i] = 0.6 + rnd() * rnd() * 2.6; }
+const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3)); sg.setAttribute('ph', new THREE.BufferAttribute(ph, 1)); sg.setAttribute('sz', new THREE.BufferAttribute(sz, 1));
+const starMat = new THREE.ShaderMaterial({ uniforms: { t: { value: 0 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  vertexShader: `attribute float ph; attribute float sz; uniform float t; varying float b; void main(){ b = .45 + .55*sin(6.2831*(t/20.*float(1+int(ph*3.)) + ph*9.)); vec4 mv = modelViewMatrix*vec4(position,1.); gl_PointSize = sz; gl_Position = projectionMatrix*mv; }`,
+  fragmentShader: `varying float b; void main(){ vec2 c = gl_PointCoord-.5; float d = length(c); if (d > .5) discard; gl_FragColor = vec4(vec3(.85,.86,1.) * b * (1.-d*2.), 1.); }` });
+scene.add(new THREE.Points(sg, starMat));
+
+// the camera drifts on a small closed path, so the end meets the start
+const base = { y: R * num('cy', .55), z: R * num('cz', 1.6), ty: R * num('ty', .92) };
+window.R = (t) => {
+  const a = 2 * Math.PI * (t / T);
+  camera.position.set(R * 0.10 * Math.sin(a), base.y + R * 0.025 * Math.sin(2 * a), base.z + R * 0.04 * Math.cos(a));
+  camera.lookAt(R * 0.03 * Math.sin(a), base.ty, 0);
+  arcs.forEach(m => m.uniforms.t.value = t); starMat.uniforms.t.value = t;
+  beamGroup.children.forEach(c => { if (c.material.uniforms) c.material.uniforms.t.value = t; });
+  nodes.forEach(n => { const k = 1 + 0.18 * Math.sin(a * 2 + n.userData.ph); n.scale.set(n.userData.s0 * k, n.userData.s0 * k, 1); });
+  baseGlow.scale.setScalar(R * (.19 + .02 * Math.sin(a * 4)));
+  renderer.render(scene, camera);
+};
+window.TL = { T, fps: 30 }; window.DBG = { earth, dir, THREE, camera, tilt };
+window.R(0); window.READY = true;
+</script></body></html>

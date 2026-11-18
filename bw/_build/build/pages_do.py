@@ -9,10 +9,21 @@ JOIN_NEEDS = ['A smartphone with the SafePal app', '0.001 BTC worth of BTCB, plu
 JOIN_STEPS = [
     ('Set up SafePal', 'Download SafePal from safepal.com, create a wallet, back it up two ways and keep only BNB, USDT and BTCB. Tutorial 1 shows every tap.'),
     ('Open a VALR or Binance account', 'Both let you buy crypto with rand. Many members keep both, as a backup.'),
-    ('Buy BNB and send it to SafePal', 'Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20). Send a small test first. Tutorial 2 shows every tap.'),
-    ('Swap BNB to BTCB in SafePal', 'Swap most of it to BTCB, and keep a little BNB for network fees. Never empty your BNB.'),
-    ('Activate slot 1', 'Copy the sign-up link, paste it into SafePal\'s browser, connect your wallet, approve the exact amount and activate slot 1.'),
+    ('Buy BNB and send it to SafePal', 'Buy enough BNB for 0.001 BTC plus fees, then withdraw it to your SafePal BNB address on BNB Smart Chain (BEP20), and check the first and last characters of the address. Tutorial 2 shows every tap.'),
+    ('Swap BNB to BTCB in SafePal', 'Swap a little more than you need (type 0.0011 BTCB), and keep some BNB for network fees. Never empty your BNB. Tutorial 3 shows every tap.'),
+    ('Activate slot 1', 'Copy the sign-up link, paste it into SafePal\'s Explore tab, choose BNB Chain, check the referrer, then confirm twice in your wallet. Tutorial 3 shows every tap.'),
 ]
+
+T3_CHECKS = ["Swap a little more than you need: type 0.0011 BTCB, so a little over 0.001 arrives", "Keep some BNB in your wallet for network fees",
+             "On the registration page, check the referrer: it is the member ID of the person who invited you",
+             "Your wallet asks twice: Approve, then Confirm again. Approve only the exact 0.001 BTC"]
+T1_CHECKS = ["Download from safepal.com, never from a link in a message", "Two backups: Google Drive and paper", "Rename the wallet Bitcoin Wealth", "Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)"]
+
+
+def written(code, here, label='Every step, in writing'):
+    """the link from a video to its own page (the steps and the words, in writing)"""
+    return f'<a class="btn btn-ghost btn-sm" href="{A(WATCH[code], here)}">{ic("list-checks")}<span class="lbl">{label}</span></a>'
+
 
 T2_CHECKS = ["Pay by EFT from a bank account in your own name", "Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours",
              "Buy BNB with your rand", "Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters"]
@@ -20,42 +31,46 @@ T2_CHECKS = ["Pay by EFT from a bank account in your own name", "Type your VALR 
 
 def p_join(here):
     st = steps([(t, f'<p>{d}</p>') for t, d in JOIN_STEPS])
-    return f'''{phero("rocket", "Join step by step",
+    return f'''{phero("rocket", "How to join Bitcoin Wealth, step by step",
         "Three stages, five steps, from an empty phone to slot 1. Take them one at a time, and watch the tutorial for each before you tap anything.",
         [("badge-check", "0.001 BTC once-off"), ("clock", "About 30 minutes"), ("smartphone", "All on your phone")])}
-{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">What you need</h2>{checks(JOIN_NEEDS)}
+{sec(f"""<div class="two vstart"><div class="stack"><h3 class="h3">What you need</h3>{checks(JOIN_NEEDS)}
 <p class="fine">On the recording day of Tutorial 1, Bitcoin was about $67,000, so 0.001 BTC was about $67. With fees and a little BNB, MTG suggested preparing <b>about $76, about R1,300</b>. Prices move every minute: <a class="inl" href="{A('dashboard/tools/bitcoin-to-rand/', here)}">check today's price in rand</a>.</p>
-<div class="btn-row">{valr_btn()}{binance_btn()}</div></div>
+<div class="btn-row">{valr_btn()}{binance_btn()}{written('t1', here)}</div></div>
 <div class="phone-wrap">{vid('t1', here)}</div></div>""", "Before you start")}
 {sec(st, "The five steps")}
-{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 2: {V['t2']['title']}</h2><p>Steps 2 and 3, tap by tap. {V['t2']['desc']}</p>
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead">Tutorial 2: {V['t2']['title']}</h3><p class="vdesc">Steps 2 and 3, tap by tap. {V['t2']['desc']}</p>
 {checks(T2_CHECKS)}
-<div class="btn-row">{valr_btn()}{binance_btn()}</div></div>
+<div class="btn-row">{valr_btn()}{binance_btn()}{written('t2', here)}</div></div>
 <div class="phone-wrap">{vid('t2', here)}</div></div>""", "Fund your SafePal")}
-{sec(f'<div class="grid2">{soon("t3")}</div>', "Tutorial 3", "Swapping to BTCB, signing up and activating slot 1, recorded on MTG's phone, is on the way. Meanwhile, ask in the MTG TRIBE.")}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead">Tutorial 3: {V['t3']['title']}</h3><p class="vdesc">Steps 4 and 5, tap by tap. {V['t3']['desc']}</p>
+{checks(T3_CHECKS)}
+<div class="btn-row">{copy_btn('signup', 'Copy sign-up link', size='sm')}{written('t3', here)}</div>
+<p class="fine">The button copies MTG's sign-up link. Introduced by someone else? Use their link, so they stay your sponsor.</p></div>
+<div class="phone-wrap">{vid('t3', here)}</div></div>""", "Swap, sign up, activate slot 1", id="activate")}
 {sec(honest("Before you activate.", "Approve only the exact amount you are paying, keep a little BNB for fees, and if someone else introduced you, use their link so they stay your sponsor."))}'''
 
 
 # ======================================================================= VIDEOS
 def p_tut(here):
-    return f'''{phero("circle-play", "Tutorial videos",
-        "Step-by-step trainings recorded on MTG's own phone, with every private detail hidden. Pause after each step and try it yourself.",
-        [("film", f"{len(TUT)} ready, 1 on the way"), ("eye-off", "Private details hidden")])}
-{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 1: {V['t1']['title']}</h2><p>{V['t1']['desc']}</p>
-{checks(["Download from safepal.com, never from a link in a message", "Two backups: Google Drive and paper", "Rename the wallet Bitcoin Wealth", "Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)"])}</div>
-<div class="phone-wrap">{vid('t1', here)}</div></div>""")}
-{sec(f"""<div class="two vstart"><div class="stack"><h2 class="h3">Tutorial 2: {V['t2']['title']}</h2><p>{V['t2']['desc']}</p>
-{checks(T2_CHECKS)}
-<p>Using Binance instead? The steps are very similar.</p>
-<div class="btn-row">{valr_btn()}{binance_btn()}{wa_group_btn(size='sm')}</div></div>
-<div class="phone-wrap">{vid('t2', here)}</div></div>""")}
-{sec(f'<div class="grid2">{soon("t3")}</div>', "Coming next")}
+    def block(code, n, checks_, extra=''):
+        v = V[code]
+        return sec(f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH[code], here)}">Tutorial {n}: {v['title']}</a></h2><p class="vdesc">{v['desc']}</p>
+{checks(checks_)}{extra}
+<div class="btn-row">{written(code, here)}</div></div>
+<div class="phone-wrap">{vid(code, here, eager=(n == 1))}</div></div>""", id=f"tutorial-{n}")
+    return f'''{phero("circle-play", "Bitcoin Wealth tutorial videos",
+        "Three step-by-step videos take you from an empty phone to slot 1. Recorded on MTG's own phone, with every private detail hidden. Pause after each step and do it yourself.",
+        [("film", f"{len(TUT)} tutorials, about {round(sum(V[k]['secs'] for k in TUT) / 60)} minutes"), ("list-checks", "Every step also in writing"), ("eye-off", "Private details hidden")])}
+{block('t1', 1, T1_CHECKS)}
+{block('t2', 2, T2_CHECKS, f'<p>Using Binance instead? The steps are very similar.</p><div class="btn-row">{valr_btn()}{binance_btn()}</div>')}
+{block('t3', 3, T3_CHECKS, f'<div class="btn-row">{copy_btn("signup", "Copy sign-up link", size="sm")}{wa_group_btn(size="sm")}</div>')}
 {sec(think("Do I really need to watch them all?", "<p>Yes, even if you think you already know. Each one shows a screen you'll meet sooner or later. Then share them: we learn best when we teach others.</p>"))}'''
 
 
 def p_exp(here):
     cards = ''.join(soon(p[0]) for p in PLANNED if p[0][0] == 'e')
-    return f'''{phero("film", "Explainer videos",
+    return f'''{phero("film", "Bitcoin Wealth explainer videos",
         "Short animated explainers, one idea at a time, in MTG's voice. They're being made now. Until they're ready, every page in How it works shows the same idea with live diagrams.",
         [("film", "5 explainers on the way"), ("triangle-alert", "Risks included")])}
 {sec(f'<div class="grid2">{cards}</div>', "On the way")}
@@ -369,8 +384,7 @@ def p_page(here):
  <h2 class="h2">How it works</h2>
  {steps([("Fill in the order form", "<p>Two minutes. Your details go straight to MTG on WhatsApp.</p>"), ("MTG builds your page", "<p>You agree the payment method together on WhatsApp.</p>"), ("You check it", "<p>Love it? Then you pay. Changed your mind? MTG deletes it. Nothing to lose.</p>"), ("Share your one link", "<p>Send it to potential business partners, post it in your groups and on your socials.</p>")])}
 </div></div>""", "Everything, up front")}
-{sec(f"""<div class="lionrow"><div class="lion"><video data-deco autoplay muted loop playsinline preload="none" poster="{A('img/bitcoin-wealth-mascot-lion-bw.webp', here)}" width="540" height="960" aria-hidden="true"><source src="{L('media/bitcoin-wealth-mascot-lion-wave.mp4', here)}" type="video/mp4"></video></div>
-<div class="secret glass big">{ic('lock-keyhole')}<div><b>The part we only tell owners</b><p>MTG uses a traffic source that makes it much easier to put a page like yours in front of people who already watch crypto ads all day. It has its own income stream too. No guarantee those visitors join. Once your BW Tribe Page is built, paid and yours, MTG shows you how it works, with its own tutorials and explainers.</p></div></div></div>""")}'''
+{sec(f"""<div class="secret glass big">{ic('lock-keyhole')}<div><b>The part we only tell owners</b><p>MTG uses a traffic source that makes it much easier to put a page like yours in front of people who already watch crypto ads all day. It has its own income stream too. No guarantee those visitors join. Once your BW Tribe Page is built, paid and yours, MTG shows you how it works, with its own tutorials and explainers.</p></div></div>""")}'''
 
 
 # ======================================================================= TOOLS
@@ -421,7 +435,7 @@ def p_c_slot(here):
  <div class="rrow"><span>Each later cycle: to your wallet (7 payments)</span><b><span data-out="cn"></span> <small data-out="cnz"></small></b></div>
  <div class="rrow"><span>What has to be paid in by members</span><b data-out="paid"></b></div>
 </div></form>'''
-    return f'''{phero("calculator", "Slot Calculator", "Every Bitcoin Wealth slot in BTC and rand, and what a completed cycle sends to your wallet, at today's Bitcoin price.",
+    return f'''{phero("calculator", "Bitcoin Wealth Slot Calculator", "Every Bitcoin Wealth slot in BTC and rand, and what a completed cycle sends to your wallet, at today's Bitcoin price.",
         [("layers", "12 slots"), ("refresh-cw", "Live price")])}
 {sec(f'<div class="calc one">{form}</div>')}
 {sec(honest("How to read this.", "These amounts arrive as the 14 positions below you fill, each with a member paying the slot price. Cycles fill at the pace your team and spillover grow. It's arithmetic, not a promise."))}'''
@@ -449,6 +463,8 @@ FAQ = [
         ('What is Bitcoin Wealth in one sentence?', 'A smart contract on BNB Smart Chain where members activate slots with BTCB, and each payment goes straight to other members\' wallets by fixed rules.'),
         ('How much does it cost to start?', 'Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It\'s a once-off: slots 2 to 12 are bought automatically from the cycle below, once it fills.'),
         ('Is it guaranteed to pay?', 'No. Every payout comes from another member\'s slot payment. If new activations slow down, payouts slow down. Only use money you can afford to lose.'),
+        ('How do I join Bitcoin Wealth?', 'In three stages, all on your phone: set up a SafePal wallet, buy BNB with rand on VALR or Binance and send it to SafePal, then swap it to BTCB and activate slot 1 with the link of the person who invited you. Three tutorial videos show every tap, and each has its steps in writing.'),
+        ('How do you earn Bitcoin with Bitcoin Wealth?', 'By the plan\'s rules, when the 14 positions below you fill, six of those payments land in your own wallet as BTCB (Bitcoin\'s value on BNB Smart Chain), two buy your next slot and one recycles you. Every payment comes from another member activating a slot, so it depends on those positions filling: nothing is guaranteed.'),
         ('Do I have to introduce people?', 'Sponsoring two people is the first qualifier (Ignite) and switches on spillover. There\'s no upper limit, and nobody should ever be pressured.'),
     ]),
     ('Money and wallets', [
@@ -470,7 +486,7 @@ def p_faq(here):
     for g, qs in FAQ:
         items = ''.join(f'<details><summary>{q}{ic("chevron-down")}</summary><div class="ans"><p>{a}</p></div></details>' for q, a in qs)
         out += f'<h2 class="h3 faqh">{g}</h2><div class="faq">{items}</div>'
-    return f'''{phero("circle-help", "FAQ: straight answers", "The questions people ask most, answered plainly. Can't find yours? Ask in the MTG TRIBE.")}
+    return f'''{phero("circle-help", "Bitcoin Wealth FAQ: straight answers", "The questions people ask most, answered plainly. Can't find yours? Ask in the MTG TRIBE.")}
 {sec(f'<div class="stack">{out}</div>')}'''
 
 
@@ -525,7 +541,7 @@ def p_safe(here):
         ('eye-off', 'Hide before you share', 'Cover addresses, balances and emails before you post a screenshot.'),
     ]
     h = ''.join(f'<div class="wcard glass">{ped(i)}<h3 class="h3">{t}</h3><p>{d}</p></div>' for i, t, d in habits)
-    return f'''{phero("shield-check", "Safety centre", "Six habits that protect your wallet, whatever you use it for.")}
+    return f'''{phero("shield-check", "Bitcoin Wealth safety centre", "Six habits that protect your wallet, whatever you use it for.")}
 {sec(f'<div class="wgrid">{h}</div>', "Six safety habits")}
 {sec(f"""<div class="grid2">{box("Walk away if someone", checks(["Asks for your recovery phrase or a screenshot of it", "Promises a fixed daily or weekly return", "Pressures you to decide today", "Asks you to send crypto to unlock a payout"], no=True), "ban")}
 {box("Learn more, free", f"<p>MTG's <a class='inl' href='{esc(CRYPTO101)}' target='_blank' rel='noopener'>Crypto 101 crash course</a> covers wallets, scams, wallet drainers and token approvals in 15 short lessons.</p>", "graduation-cap")}</div>""", "Scam patterns")}'''

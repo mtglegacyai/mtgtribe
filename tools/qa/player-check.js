@@ -2,7 +2,7 @@
 const { chromium } = require('playwright');
 const BASE = process.env.BASE || 'http://127.0.0.1:8765';
 const VPS = (process.env.VPS || '320x568,360x600,360x640,360x700,375x667,390x664,393x760,412x732,412x840,430x800,568x320,640x360,740x360,800x360,915x412,768x1024,820x1180,1024x768,1280x720,1366x768,1920x1080').split(',').map(s => s.split('x').map(Number));
-const PAGES = ['/bw/dashboard/tutorials/', '/bw/dashboard/join/', '/bw/dashboard/', '/bw/'];
+const PAGES = (process.env.PAGES || '/bw/dashboard/tutorials/,/bw/dashboard/join/,/bw/dashboard/,/bw/,/bw/dashboard/tutorials/safepal-wallet-setup/,/bw/dashboard/tutorials/buy-bnb-send-to-safepal/,/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/').split(',');
 const SHOT = process.env.SHOT, ONLYSHOT = (process.env.SHOTVP || '').split(',');
 let bad = 0, checks = 0;
 const fail = (ctx, msg) => { bad++; console.log('FAIL', ctx, msg); };
@@ -73,18 +73,36 @@ function judge(ctx, m, { inline }) {
       for (let i = 0; i < n; i++) {
         await p.goto(BASE + path, { waitUntil: 'load' }); await p.waitForTimeout(250);
         const btn = p.locator('.vplay').nth(i); const code = await btn.getAttribute('data-code');
-        const tag = `${w}x${h} ${path} inline ${code}`;
-        // the cover: the frame fits the screen under the top bar
+        const pops = await btn.getAttribute('data-play');      // a vertical video's wide cover: pressing it opens the pop-up's phone
+        const tag = `${w}x${h} ${path} ${pops ? 'cover' : 'inline'} ${code}`;
+        // the cover: the frame fits the screen under the top bar (covers further down load when they come into view)
+        await btn.scrollIntoViewIfNeeded(); await btn.evaluate(el => { const i = el.closest('.pl').querySelector('.pl-scr img'); return i && !i.complete ? new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); setTimeout(r, 5000); }) : null; });
         const cov = await btn.evaluate(el => { const pl = el.closest('.pl'), dev = pl.querySelector('.pl-dev').getBoundingClientRect(), deck = pl.querySelector('.pl-deck'), dk = getComputedStyle(deck).display !== 'none' ? deck.getBoundingClientRect().height : 0, scr = pl.querySelector('.pl-scr').getBoundingClientRect(), pb = el.querySelector('.pbtn').getBoundingClientRect(); return { h: dev.height + dk, w: pl.getBoundingClientRect().width, sw: scr.width, sh: scr.height, vh: innerHeight, vw: innerWidth, sb: pl.getBoundingClientRect().left,
-          tall: pl.classList.contains('pl-v'), spot: !!el.getAttribute('style'), bx: (pb.left + pb.width / 2 - scr.left) / scr.width, by: (pb.top + pb.height / 2 - scr.top) / scr.height, bw: pb.width, inside: pb.left >= scr.left && pb.right <= scr.right && pb.top >= scr.top && pb.bottom <= scr.bottom }; });
+          tall: pl.classList.contains('pl-v'), laptop: pl.classList.contains('pl-h') && getComputedStyle(deck).display !== 'none', img: (i => !!i && i.complete && i.naturalWidth > 0 && Math.abs(i.naturalWidth / i.naturalHeight / (16 / 9) - 1) < 0.02)(pl.querySelector('.pl-scr img')), spot: !!el.getAttribute('style'), bx: (pb.left + pb.width / 2 - scr.left) / scr.width, by: (pb.top + pb.height / 2 - scr.top) / scr.height, bw: pb.width, inside: pb.left >= scr.left && pb.right <= scr.right && pb.top >= scr.top && pb.bottom <= scr.bottom }; });
         // the play button cannot be missed (MTG, 16 Nov 2026): on a vertical cover it sits in the middle; on any cover it is whole and big enough
         checks++;
         if (!cov.inside) fail(tag, 'the play button is not wholly on the cover');
         if (cov.bw < 52) fail(tag, `the play button is only ${Math.round(cov.bw)} px wide`);
         if (cov.tall && !cov.spot && (Math.abs(cov.bx - 0.5) > 0.03 || Math.abs(cov.by - 0.5) > 0.05)) fail(tag, `the play button is not in the middle of the vertical cover: ${Math.round(cov.bx * 100)}%, ${Math.round(cov.by * 100)}%`);
+        // every video on the page is a wide cover in the laptop frame (MTG, 17 Nov 2026), with the play button in its middle unless the cover names a spot
+        checks++;
+        if (!cov.laptop) fail(tag, 'the cover is not in the laptop frame');
+        if (Math.abs(cov.sw / cov.sh / (16 / 9) - 1) > 0.02) fail(tag, `the cover is not 16:9 (${(cov.sw / cov.sh).toFixed(3)})`);
+        if (!cov.img) fail(tag, 'the cover picture did not load, or is not 16:9');
+        if (!cov.spot && (Math.abs(cov.bx - 0.5) > 0.03 || Math.abs(cov.by - 0.5) > 0.05)) fail(tag, `the play button is not in the middle of the cover: ${Math.round(cov.bx * 100)}%, ${Math.round(cov.by * 100)}%`);
         checks++;
         const short = cov.h > cov.vh - 66 + 0.75;      // the screen is too short for the smallest frame (a phone on its side): play must go straight to full screen
-        if (cov.w > cov.vw) fail(tag, 'cover frame wider than the screen');
+        if (cov.w > cov.vw || cov.sb < -0.75) fail(tag, 'cover frame wider than the screen');
+        if (pops) {      // the pop-up loop below plays it; here: the press really opens the phone frame, and Close brings the cover back
+          await btn.scrollIntoViewIfNeeded(); await btn.click(); await p.waitForFunction(() => { const v = document.querySelector('#pl-pop video'); return v && v.videoWidth > 0; }, null, { timeout: 15000 }).catch(() => {});
+          await p.waitForTimeout(500);
+          const st = await p.evaluate(() => { const pop = document.querySelector('#pl-pop'), v = pop && pop.querySelector('video'); return { phone: !!pop && pop.classList.contains('pl-v'), on: !!pop && pop.classList.contains('on'), tall: !!v && v.videoHeight > v.videoWidth, inline: !!document.querySelector('.vid .pl.on') }; });
+          checks++; if (!st.on || !st.phone || !st.tall || st.inline) fail(tag, 'pressing the cover did not open the vertical video in the phone frame ' + JSON.stringify(st));
+          await p.locator('#pl-pop [data-pl-x]').click(); await p.waitForTimeout(500);
+          const back = await p.evaluate(() => ({ sheet: document.querySelector('#player').classList.contains('on'), vids: document.querySelectorAll('.pl video').length }));
+          checks++; if (back.sheet || back.vids) fail(tag, 'Close did not bring the cover back ' + JSON.stringify(back));
+          continue;
+        }
         await btn.scrollIntoViewIfNeeded(); await btn.click(); await p.waitForFunction(() => { const v = document.querySelector('.pl.on video'); return v && v.videoWidth > 0; }, null, { timeout: 15000 }).catch(() => {});
         await p.waitForTimeout(900);
         let m = await p.evaluate(probe);
@@ -106,6 +124,20 @@ function judge(ctx, m, { inline }) {
         await p.locator('.pl.on [data-pl-x]').click(); await p.waitForTimeout(300);
         const closed = await p.evaluate(() => ({ on: !!document.querySelector('.pl.on'), vids: document.querySelectorAll('.pl video').length, cls: document.documentElement.className, cover: !!document.querySelector('.vplay') && getComputedStyle(document.querySelector('.vplay')).display !== 'none' }));
         checks++; if (closed.on || closed.vids || /pl-playing/.test(closed.cls) || !closed.cover) fail(tag, 'close did not return to the cover ' + JSON.stringify(closed));
+      }
+      // a time button on a video's own page starts the video at that step
+      const jumps = await p.locator('.wsec .tjump[data-at]').count();
+      if (jumps > 3) {
+        await p.goto(BASE + path, { waitUntil: 'load' }); await p.waitForTimeout(250);
+        const j = p.locator('.wsec .tjump[data-at]').nth(Math.min(jumps - 1, 6)); const at = parseFloat(await j.getAttribute('data-at'));
+        const tag = `${w}x${h} ${path} time button ${at}`;
+        const jb = await j.evaluate(el => { const r = el.getBoundingClientRect(); return { w: r.width, h: r.height }; });
+        checks++; if (jb.w < 44 || jb.h < 30) fail(tag, `the time button is only ${Math.round(jb.w)}x${Math.round(jb.h)}`);
+        await j.scrollIntoViewIfNeeded(); await j.click();
+        await p.waitForFunction(a => { const v = document.querySelector('#pl-pop video'); return v && v.videoWidth > 0 && v.currentTime >= a - 0.5; }, at, { timeout: 15000 }).catch(() => {});
+        const ct = await p.evaluate(() => { const v = document.querySelector('#pl-pop video'); return v ? v.currentTime : -1; });
+        checks++; if (!(ct >= at - 0.5 && ct < at + 20)) fail(tag, `the video did not start at ${at} s (it is at ${ct.toFixed(1)} s)`);
+        await p.locator('#pl-pop [data-pl-x]').click(); await p.waitForTimeout(400);
       }
       // the pop-up
       const keys = await p.evaluate(() => [...new Set([...document.querySelectorAll('[data-play]')].filter(e => e.getBoundingClientRect().width > 0).map(e => e.dataset.play))]);

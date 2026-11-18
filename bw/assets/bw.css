@@ -728,8 +728,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 /* ---------- offer (BW Tribe Page) ---------- */
 .offer{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,48px);padding:clamp(20px,4vw,44px);align-items:center}
 .offer-copy{display:grid;gap:16px;align-content:start}
-.lion{width:min(100%,300px);border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,190,90,.3),0 30px 60px -20px rgba(0,0,0,.8),0 0 50px -10px rgba(255,161,1,.35)}
-.lion video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#120c08}
 .price{display:flex;gap:14px;align-items:center;padding:14px 18px;border-radius:18px;background:rgba(255,161,1,.08);box-shadow:inset 0 0 0 1px rgba(255,161,1,.35);width:fit-content;max-width:100%}
 .price>b{font:800 clamp(2rem,4.6vw,2.8rem)/1 var(--display);background:linear-gradient(120deg,var(--hero),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .price span{font-weight:800;color:var(--text);line-height:1.3}
@@ -822,7 +820,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .sent{display:flex;gap:12px;padding:16px;margin-top:10px}.sent>.ic{color:var(--electric);flex:none;width:24px;height:24px}
 .orderpage .secret{max-width:760px;margin:0 auto}
 @media (max-width:560px){.cube{width:50px;--h:25px}.coin2{width:26px;height:26px;margin:-13px 0 0 -13px}.coin2 b{font-size:14px}}
-.lion{width:min(100%,250px)}
 .dlogo .blogo img{display:block}
 /* calm info notes (MTG, 9 Nov 2026: inform, never frighten) */
 .note{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding:14px 16px;border-radius:16px;margin-top:16px;font-size:.93rem;color:var(--ice);
@@ -903,6 +900,10 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .tile .go{color:var(--gold);width:18px;height:18px;transition:transform .3s var(--ease)}.tile:hover .go{transform:translate(2px,-2px)}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.tiles{grid-template-columns:minmax(0,1fr)}}
+/* one card on its own (MTG, 16 Nov 2026: the home page keeps only Join Step-By-Step): centred, a little larger, its gold edge always lit */
+.tiles.one{grid-template-columns:minmax(0,560px);justify-content:center}
+.tiles.one .tile{padding:22px 24px;background:linear-gradient(160deg,rgba(255,161,1,.10),rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 1px rgba(255,161,1,.45),0 24px 40px -18px rgba(255,161,1,.35)}
+.tiles.one .tile b{font-size:1.14rem}.tiles.one .tile small{font-size:.92rem}
 
 /* BW Tribe Page band */
 .tribeband{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,3vw,32px);align-items:center;padding:clamp(16px,3vw,26px) clamp(16px,3vw,30px)}
@@ -914,9 +915,6 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 
 /* slim footer */
 .lfoot.slim .lfoot-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
-.lionrow{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center}
-.lionrow .lion{width:min(200px,40vw)}
-@media (max-width:640px){.lionrow{grid-template-columns:minmax(0,1fr);justify-items:center}}
 
 /* phone quick bar (like JetUp) */
 .bnav{display:none}
@@ -1013,12 +1011,17 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 .vid{position:relative;display:grid;justify-items:center;gap:12px;min-width:0;margin:0}
 .vid16{justify-items:stretch;gap:8px;max-width:100%}
 .phone-wrap{display:grid;place-items:center;min-width:0}
+.phone-wrap>.vid{justify-self:stretch}                             /* the figure takes the whole column, so the player has a width to measure itself against (also without a caption) */
 .vcap{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:320px;font-size:.86rem;color:var(--muted)}
 
 .pl{position:relative;display:block;min-width:0;margin-left:auto;margin-right:auto;
   --rim:2px;--bez:5px;--bar:44px;--chin:14px;--rad:28px;
   --wide:100%;                                                   /* the width the player may use */
-  --room:calc(var(--svh) - var(--hdr) - 20px)}                   /* the height it may use: the visible screen under the top bar */
+  --room:calc(var(--svh) - var(--hdr) - var(--foot,0px) - 20px)} /* the height it may use: the visible screen under the top bar, above a fixed bottom bar */
+@media (max-width:760px){.landing{--foot:calc(64px + env(safe-area-inset-bottom,0px))}}      /* the landing page's quick menu at the bottom of a phone */
+.promo{scroll-margin-top:30px}                                   /* a link to #in-34-seconds lands with its small heading clear of the top bar */
+.promo .center-row{margin-top:22px}
+.promo-note{max-width:46ch;margin:14px auto 0;text-align:center}
 .pl-v{--ar:.5625;width:280px;max-width:100%;width:max(var(--pl-min,200px),min(var(--pl-w,320px),var(--wide),calc((var(--room) - var(--bar) - var(--chin) - 2 * var(--rim)) * var(--ar) + 2 * (var(--bez) + var(--rim)))))}
 .pl-h{--ar:1.77778;--rim:1.5px;--bez:clamp(4px,.9vw,8px);--bar:40px;--rad:14px;--deck:clamp(9px,1.3vw,14px);--lip:clamp(8px,1.4vw,20px);padding:0 var(--lip);width:100%;
   width:max(var(--pl-min,240px),min(var(--pl-w,100%),var(--wide),calc((var(--room) - var(--bar) - var(--bez) - 2 * var(--rim) - var(--deck)) * var(--ar) + 2 * (var(--bez) + var(--rim) + var(--lip)))))}
@@ -1100,6 +1103,70 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
 @keyframes pbreathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.085)}}
 @keyframes pring{0%{transform:scale(.9);opacity:.95}70%,100%{transform:scale(1.75);opacity:0}}
 @media (prefers-reduced-motion:reduce){.vplay .pbtn:before,.vplay.pulse .pbtn,.vplay.pulse .pbtn:before,.vplay.pulse .pbtn:after{animation:none}.vplay.pulse .pbtn:after{display:none}}
+
+/* EVERY VIDEO IN THE LAPTOP (MTG, 17 Nov 2026: "all the videos must have a horizontal thumbnail and inside a laptop frame ...
+   to save space and to make the website look smaller and easy to browse up and down"). The page shows every video as a wide
+   cover in the laptop frame (core.vid). A 16:9 video plays in that laptop; a 9:16 video opens in the pop-up's phone. */
+.vid16 .vcap{max-width:none;padding:0 clamp(8px,1.4vw,20px)}                 /* the caption lines up with the laptop's screen */
+.promo .vid{max-width:680px;margin-left:auto;margin-right:auto}                /* the main page's promo: a calm width on a big screen */
+.hlink{color:inherit;text-decoration:none}.hlink:hover{color:var(--gold)}
+.vcap .mark{flex:none;white-space:nowrap}
+/* on a phone the video comes right after its heading and one line about it, before the checklist: the play button is the point */
+@media (max-width:900px){
+  .two.vfirst{gap:16px}
+  .two.vfirst>.stack{display:contents}
+  .two.vfirst>.stack>*{order:3}
+  .two.vfirst>.stack>.vhead,.two.vfirst>.stack>.vdesc{order:1}
+  .two.vfirst>.phone-wrap{order:2;margin-bottom:6px}
+}
+
+/* TUTORIAL PAGE: a video's own page (pages_watch.py): the video, then every step in writing with its time */
+.watch-top{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+@media (max-width:900px){.watch-top{grid-template-columns:minmax(0,1fr)}}
+.wcov-list li span{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.tjump{display:inline-flex;align-items:center;gap:5px;flex:none;min-height:32px;padding:0 11px 0 9px;border:0;border-radius:999px;cursor:pointer;
+  font:800 .8rem/1 var(--body);font-variant-numeric:tabular-nums;color:#1f1300;background:linear-gradient(140deg,var(--gold-hi),var(--gold));
+  box-shadow:0 6px 16px -8px rgba(255,161,1,.7);transition:transform .2s var(--ease),box-shadow .2s;-webkit-tap-highlight-color:transparent;position:relative}
+.tjump:after{content:"";position:absolute;top:-6px;bottom:-6px;left:-2px;right:-2px}        /* a finger-sized touch area */
+.tjump .ic{width:11px;height:11px;fill:currentColor;stroke:none}
+.tjump:hover{transform:translateY(-1px);box-shadow:0 10px 20px -8px rgba(255,161,1,.85)}
+.tjump:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.tjump.sm{min-height:26px;padding:0 9px 0 7px;font-size:.74rem;color:var(--gold-hi);background:rgba(255,161,1,.12);box-shadow:inset 0 0 0 1px rgba(255,176,64,.4)}
+.wlist{display:grid;gap:16px}
+.wsec{padding:clamp(16px,2.4vw,26px);min-width:0}
+.wsec-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.wsec-h .h3{margin:0;font-size:clamp(1.08rem,2vw,1.3rem);min-width:0;overflow-wrap:break-word}
+.wpart{display:block;margin-bottom:4px;font:800 .7rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.wsaid p,.wb p{margin:0 0 8px;color:var(--ice);font-size:.97rem;line-height:1.65}
+.wsaid p:last-child,.wb p:last-child{margin-bottom:0}
+.wsub{margin:16px 0 6px;font-size:1rem}
+.wsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.wstep{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;scroll-margin-top:calc(var(--hdr) + 12px)}
+.wn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:800 .92rem var(--body);color:#1f1300;background:linear-gradient(140deg,var(--gold-hi),var(--gold))}
+.wstep.aside .wn{color:var(--lime);background:rgba(192,255,114,.08);box-shadow:inset 0 0 0 1px rgba(192,255,114,.3)}
+.wstep.aside .wn .ic{width:17px;height:17px}
+.wst{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:36px;margin-bottom:4px}
+.wst h4{margin:0;font:800 1rem/1.35 var(--body);color:var(--text);min-width:0;overflow-wrap:break-word}
+.wb{min-width:0}
+.wb .leo,.wsaid .leo{padding:8px 12px;border-radius:12px;background:rgba(255,161,1,.07);box-shadow:inset 0 0 0 1px var(--line-2)}
+.wb .leo b,.wsaid .leo b{color:var(--gold-hi)}
+.wclose summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none}
+.wclose summary::-webkit-details-marker{display:none}
+.wclose summary .ic{width:20px;height:20px;color:var(--gold);transition:transform .25s var(--ease)}
+.wclose[open] summary .ic{transform:rotate(180deg)}
+.wclose[open] summary{margin-bottom:12px}
+.wclose summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:8px}
+.wtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px;padding:0;list-style:none}
+.wtiles li{display:grid;min-width:0}
+@media (max-width:760px){.wtiles{grid-template-columns:minmax(0,1fr)}}
+.wtile{display:grid;gap:6px;padding:16px 18px;min-width:0;color:inherit;text-decoration:none;transition:transform .25s var(--ease)}
+.wtile small{font:800 .72rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.wtile b{font:800 1.02rem/1.35 var(--body);color:var(--text);overflow-wrap:break-word}
+.wtile span{font-size:.84rem;font-weight:700;color:var(--gold)}
+a.wtile:hover{transform:translateY(-3px)}
+.wtile.on{box-shadow:inset 0 0 0 2px var(--gold)}
+.wtile.on span{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.tjump,.wtile,.wclose summary .ic{transition:none}}
 
 /* the pop-up: the same player in the middle of the screen, sized to the screen that is visible right now */
 .sheet.player{place-items:center;background:rgba(3,4,3,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}

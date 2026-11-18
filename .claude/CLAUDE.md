@@ -53,14 +53,42 @@ publish without approval.
   is drawn with a **clear band in the middle** for it (on a 1080 x 1920 cover: y 780 to 1140; headline above, characters and
   phone below, no address pill). On a wide cover it sits in the middle too, or in the clear spot the cover names (`spot`).
   Keep its pulse and rings as they are (he likes them). `player-check.js` fails when the button is not in the middle of a
-  vertical cover, not wholly on the cover, or smaller than 52 px.
+  cover, not wholly on the cover, or smaller than 52 px.
+- **Every video shows on the page as a horizontal cover inside a laptop frame (MTG, 17 Nov 2026):** "all the videos must have a
+  horizontal thumbnail and inside a laptop frame. Even though some of the videos actually play inside a cell phone frame when
+  they play, but just to save space and to make the website look smaller and easy to browse up and down ... And the ones that
+  are actually vertical when they play, they must be on a cell phone when they play. As soon as it starts playing, just like
+  the ones that are already in place." So, on /bw: `core.vid(code, here)` always draws the laptop (`.pl.pl-h`) with a 16:9 cover.
+  A 16:9 video plays in that laptop; a 9:16 video's cover carries `data-play` and opens the pop-up's phone (`#pl-pop`), closes
+  itself at the end, and the page is back at the cover. Every 9:16 video therefore needs two covers in `config.py`: `poster`
+  (9:16, shown in the pop-up while it loads) and `wide` (16:9, the middle clear for the play button, every line short and
+  compelling, a label a phone can read; the build stops without it). The tutorials' wide covers are drawn by
+  `tutorials/wide_cover.py` in mtg-studio. On a phone the video comes right after its heading (`.two.vfirst`).
+  `player-check.js` fails when a cover is not in the laptop frame, not 16:9, its button is not in the middle (unless the cover
+  names a `spot`), or pressing a vertical video's cover does not open the phone.
+- **A video gets found on its own from a page of its own (MTG, 17 Nov 2026):** "all the videos must be named such that when
+  people ... search for anything related to Bitcoin Wealth ... these videos can actually rank all by themselves, leading to my
+  Bitcoin Wealth website." On /bw every tutorial has its own page (`WATCH_PAGES` in `config.py`, `pages_watch.py`): its search
+  name as the heading ("How to ..."), the video, its sections as key moments, and every step in writing with a time button
+  that starts the video at that step (`data-at`; a link with `?t=97` opens it there). The words come from the tutorial's own
+  build (`tutorials/chapters.py` in mtg-studio writes `final/chapters.json`): never retype them. Each video has a search `name`
+  in `config.py` (structured data, video sitemap), is listed once in `sitemap.xml` on the page where it is the main thing, and
+  the sitemap carries every page's pictures. A new tutorial is not finished without its page, its `name`, its wide cover and
+  its social preview (`ogpages.py`; previews are named `bitcoin-wealth-<page>-preview.jpg`).
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 - On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in
-  the laptop (`.pl.pl-h`), it plays in place, and the pop-up player becomes a laptop for it; 9:16 videos get the phone (`.pl.pl-v`).
+  the laptop (`.pl.pl-h`), it plays in place, and the pop-up player becomes a laptop for it; 9:16 videos play in the pop-up's phone (`.pl.pl-v`).
   Two files are made (720p for phones, `-1080p` for screens 1200 px and wider). `hero=True` gives the pulsing play button; the
   cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
   button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
+
+## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
+
+"Show me a real preview first ... I mean a live preview on a temporal web link." Before a website change goes live, give MTG
+a private link he can open and tap through on his phone (the built pages, published as a private page only he can open). A
+screen recording or screenshots are not a preview for him. For /bw: `build.render_preview()` in `bw/_build/build/build.py`;
+the steps and the host's limits are in `tools/qa/README.md` ("Private preview link"). Say what differs from the real site.
 
 ## Learning system: explainer videos, tutorial clips, PDF companion (MTG, 6 November 2026)
 

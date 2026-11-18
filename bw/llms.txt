@@ -21,9 +21,12 @@ Always give the full address mtgtribe.com/bw for these pages.
 
 - [Bitcoin Wealth dashboard: start here](https://mtgtribe.com/bw/dashboard/): Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
 - [How to join Bitcoin Wealth with SafePal, step by step](https://mtgtribe.com/bw/dashboard/join/): Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
-- [Bitcoin Wealth tutorial videos: SafePal, BTCB, joining](https://mtgtribe.com/bw/dashboard/tutorials/): Step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal now, with funding, swapping to BTCB and joining on the way.
+- [Bitcoin Wealth tutorial videos: join step by step](https://mtgtribe.com/bw/dashboard/tutorials/): Three step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal, buy BNB with rand, swap to BTCB and activate slot 1. Every tap shown.
 - [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.
 - [Bitcoin Wealth live on Zoom: schedule and languages](https://mtgtribe.com/bw/dashboard/live-on-zoom/): Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho, in SA time and yours.
+- [How to set up SafePal for Bitcoin Wealth: Tutorial 1](https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/): Video and written steps: download SafePal from the official site, create your wallet, back it up two ways and keep only BNB, USDT and BTCB.
+- [Buy BNB on VALR and send it to SafePal: Tutorial 2](https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/): Video and written steps: send rand from your bank to VALR with your own reference, buy BNB, and send it to SafePal on BNB Smart Chain.
+- [Swap BNB for BTCB and activate slot 1: Tutorial 3](https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/): Video and written steps: swap BNB for BTCB in SafePal, sign up with your sponsor's link, activate slot 1 for 0.001 BTC, and log back in.
 
 ## Before You Join
 
@@ -58,15 +61,17 @@ Always give the full address mtgtribe.com/bw for these pages.
 
 ## More From MTG
 
-- [Spend your crypto with a crypto card](https://mtgtribe.com/bw/dashboard/crypto-card/): A shorter road from crypto to spending: a crypto debit card guide by MTG, with its own income opportunity.
+- [Spend your crypto with a crypto card](https://mtgtribe.com/bw/dashboard/crypto-card/): A shorter road from crypto to everyday spending: MTG's step-by-step guide to a crypto debit card, on its own website, with its own income opportunity.
 - [Join the MTG TRIBE WhatsApp community](https://mtgtribe.com/bw/dashboard/tribe/): The MTG TRIBE: a free WhatsApp community for action takers. Join the group, meet on Zoom, WhatsApp MTG, or follow on TikTok and YouTube.
 - [Disclaimer](https://mtgtribe.com/bw/dashboard/disclaimer/): This independent Bitcoin Wealth guide is educational, not official and not financial advice. Referral links, risk and privacy explained.
 
 ## Videos
 
-- [Cartoon: The Missing Piece](https://mtgtribe.com/bw/media/bitcoin-wealth-the-missing-piece-cartoon.mp4) (1:27): A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.
-- [Tutorial 1: Set up your SafePal wallet for Bitcoin Wealth](https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4) (7:10): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB.
-- [Tutorial 2: Buy BNB on VALR and send it to SafePal](https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4) (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
+- [The Missing Piece: a Bitcoin Wealth cartoon about building together](https://mtgtribe.com/bw/media/bitcoin-wealth-the-missing-piece-cartoon.mp4) (1:27): A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.
+- [How to set up a SafePal wallet for Bitcoin Wealth (Tutorial 1)](https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/) (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. Video file: https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4
+- [How to buy BNB on VALR and send it to SafePal (Bitcoin Wealth Tutorial 2)](https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/) (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. Video file: https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4
+- [How to join Bitcoin Wealth: swap BNB for BTCB and activate slot 1 (Tutorial 3)](https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/) (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. Video file: https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4
+- [Bitcoin Wealth in 34 seconds (promo video)](https://mtgtribe.com/bw/media/bitcoin-wealth-in-34-seconds-promo.mp4) (0:34): A short Bitcoin Wealth promo video: four short clips about starting small, from 0.001 BTC, with a smart contract doing the paying.
 
 ## Community and contact
 

@@ -41,7 +41,7 @@ def p_home(here):
         ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words.</p>'),
         ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill.</p>'),
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
-        ('Join step by step', f'<p>SafePal first (Tutorial 1 is ready), then BNB, BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
+        ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
         ('Teach someone else', f'<p>We learn best when we teach others. Share this guide, or get your own <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">BW Tribe Page</a> with your link inside.</p>'),
     ])
@@ -57,6 +57,9 @@ def p_home(here):
 </div></div></section>"""
     stile = (f'<button type="button" class="vtile story" data-play="s1" data-vid="s1" title="{esc(story["desc"])}">'
              f'<span class="vn">{ic("play")}</span><span class="vt">{story["short"]} ({mmss(story["secs"])})</span>{ic("circle-check")}</button>')
+    promo = V['p1']
+    stile += (f'<button type="button" class="vtile story" data-play="p1" data-vid="p1" title="{esc(promo["desc"])}">'
+              f'<span class="vn">{ic("play")}</span><span class="vt">{promo["short"]} ({mmss(promo["secs"])})</span>{ic("circle-check")}</button>')
     return f'''{feat}
 {phero("compass", "Welcome. Let's get you started.",
         "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.",
@@ -153,7 +156,7 @@ def p_what(here):
 def p_hiw(here):
     rows = [[f'<b>{n}</b>', str(c1), str(cn)] for (n, c1, _), (_, cn, _) in zip(CYCLE1, CYCLEN)]
     rows[2][0] = '<b>Your next slot</b> (first cycle) / <b>Royal Pool</b> (later)'
-    return f'''{phero("network", "The 14 positions",
+    return f'''{phero("network", "How Bitcoin Wealth works: the 14 positions",
         "Below you sit 2, then 4, then 8 positions: 14 in all. Each position is one member paying the slot price, and each one produces one payment. Here's where all fourteen go.",
         [("users", "2 + 4 + 8 = 14"), ("wallet", "6 to your wallet"), ("arrow-up", "2 buy your next slot")])}
 {sec(matrix(here), "Watch the positions fill", "Then switch between the first cycle and later cycles.")}
@@ -172,7 +175,7 @@ def p_hiw(here):
 def p_slots(here):
     cells = ''.join(f'<div class="slotc glass{" one" if i == 0 else ""}" style="--i:{i}"><small>Slot {i + 1}</small><b>{s:g} BTC</b><em>{"You pay this once" if i == 0 else "Auto entry"}</em></div>'
                     for i, s in enumerate(SLOTS))
-    return f'''{phero("layers", "The 12 slots, and the once-off",
+    return f'''{phero("layers", "The 12 Bitcoin Wealth slots, and the once-off",
         "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.",
         [("badge-check", "You pay 0.001 BTC once"), ("layers", f"Full ladder {LADDER} BTC"), ("refresh-cw", "Slots never expire")])}
 {sec(f'<div class="ladder">{cells}</div>' + src_fact(f"Slot 1 is a plain entry. Slots 2 to 12 are marked Auto Entry: each is bought with two of the fourteen payments from your first cycle at the slot below. The full ladder totals {LADDER} BTC."),
@@ -188,7 +191,7 @@ def p_slots(here):
 
 # ======================================================================= RECYCLING AND ROYAL POOL
 def p_pool(here):
-    return f'''{phero("refresh-cw", "Recycling and the Royal Pool",
+    return f'''{phero("refresh-cw", "Bitcoin Wealth recycling and the Royal Pool",
         "When a cycle completes, one payment puts you back into the same slot, so it can pay again. From your second cycle at a slot, the split changes slightly.",
         [("wallet", "7 to your wallet"), ("crown", "1 to the Royal Pool"), ("refresh-cw", "1 recycles you")])}
 {sec(matrix(here), "First cycle vs later cycles", "Switch to Later cycles: your next slot is already bought, so one payment moves to your wallet and one to the Royal Pool.")}
@@ -209,7 +212,7 @@ def p_stokvel(here):
         ['How much do you put in?', 'Every month, for the whole cycle', '<b>0.001 BTC, once</b>'],
         ['How are payouts funded?', 'Members take turns with the same pot', 'Members activating the positions below you'],
     ]
-    return f'''{phero("users", "Better than a stokvel?",
+    return f'''{phero("users", "Is Bitcoin Wealth better than a stokvel?",
         "Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin Wealth shares the spirit: ordinary people pooling, no bank in the middle. Here's where it does better, and how each one is funded.")}
 {sec(scorecard(), "Side by side")}
 {sec(f"""<div class="grid2">
@@ -241,7 +244,7 @@ def p_diff(here):
 
 # ======================================================================= CHECK IT YOURSELF
 def p_proof(here):
-    return f'''{phero("scan-search", "Check it yourself",
+    return f'''{phero("scan-search", "Check Bitcoin Wealth yourself",
         "Don't take anyone's word for it, including MTG's. Bitcoin Wealth runs on a public blockchain, so you can look at the contract and every payment yourself. Here's what we found, and how to find it.",
         [("calendar", f"Checked {CHECKED}"), ("blocks", "BNB Smart Chain")])}
 {sec(f"""<div class="addr glass"><small>The Bitcoin Wealth contract (from the programme's own deck)</small><code>{CONTRACT}</code>

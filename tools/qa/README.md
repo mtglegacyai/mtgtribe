@@ -65,7 +65,14 @@ sizes, phones upright and on their side, tablets and computers, and fails if any
 - Full Screen and Close are there, on screen, big enough, and not on the picture, also in full screen, and the words
   "Full Screen" (or "Exit Full Screen") show on the button at every size;
 - leaving full screen keeps the video playing; Close returns to the cover and leaves nothing behind;
-- the play button cannot be missed: in the middle of every vertical cover, wholly on the cover, at least 52 px wide.
+- the play button cannot be missed: in the middle of every cover (or in the spot the cover names), wholly on the cover, at
+  least 52 px wide.
+- every video on the page is a 16:9 cover inside the laptop frame (MTG, 17 Nov 2026), not wider than the screen, and its
+  picture has loaded; pressing a vertical video's cover must open the pop-up's phone (which gets all the checks above), and
+  Close must bring the cover back.
+- on a video's own page (`/bw/dashboard/tutorials/<name>/`), a time button is finger sized and starts the video at its second.
+
+`PAGES=/bw/dashboard/tutorials/,/bw/ VPS=360x640,1366x768 node tools/qa/player-check.js` runs a part of it while you work.
 
 ```bash
 node tools/qa/player-check.js
@@ -96,3 +103,24 @@ Uses every interactive tool on a phone and on a computer with a fixed Bitcoin pr
 to Rand converter (all three boxes, presets, own price, comma decimals, bad input), the slot calculator (slots 1, 5
 and 12), the halving countdown, the glossary search, the fit check, the copy sheet, Mark as watched and the progress
 ring, the menu, Back to top, the order form's WhatsApp message and the live slot price. It must print `0 failures`.
+
+
+# Private preview link (MTG, 16 Nov 2026)
+
+MTG: "I mean a live preview on a temporal web link." Before a /bw change goes live he gets a private link with the built
+pages, to tap through on his phone. How:
+
+1. In `bw/_build/build`: `import build; build.render_preview(SCR + '/out/preview')` (set `sys.argv = ['x']` first). It writes
+   the whole guide with relative links: 26 pages, assets, covers and videos.
+2. Give the main page a short `<title>` ("Bitcoin Wealth Guide").
+3. The host takes no file over 15 MB and at most 64 MB in one go: make lighter copies of the long videos for the link only
+   (the video under review stays the real file), and tell MTG which ones are lighter.
+4. The host serves no `.ics` file and blocks scripts from other websites: leave the Zoom calendar file out, copy
+   `assets/wa-message.js` and `assets/zoom-cta.js` into the copy's `assets/`, point the pages at them, and in that copy of
+   `zoom-cta.js` set `var BW = true;` (the script reads the address to know it is a Bitcoin Wealth page).
+5. Test the copy on a local server with range requests (play, auto close, buttons), then publish `index.html` with every
+   other file as a supporting file.
+6. Tell MTG what differs from the real site: live prices cannot load there, some videos are lighter copies, and the page sits
+   inside a viewer, so Full Screen can behave differently. The link cannot be opened from the session: say the same files
+   were tested locally, not that the link was tested.
+

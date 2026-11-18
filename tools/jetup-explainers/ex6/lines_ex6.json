@@ -1,0 +1,74 @@
+{
+ "nhook": {
+  "file": "v_nhook.wav",
+  "src": "explainers/ex6v3",
+  "a": 0.206,
+  "b": 5.496,
+  "dur": 5.29,
+  "text": "Ten levels deep. But on day one, only three of them are open. Here's the rule most people miss."
+ },
+ "nlevel": {
+  "file": "v_nlevel.wav",
+  "src": "explainers/ex6v3",
+  "a": 6.137,
+  "b": 15.355,
+  "dur": 9.218,
+  "text": "First, what's a level? The people you invite yourself are your direct partners. That's level one. The people they invite are level two, and so on, ten levels deep."
+ },
+ "nfloors": {
+  "file": "v_nfloors.wav",
+  "src": "explainers/ex6v3",
+  "a": 15.868,
+  "b": 21.158,
+  "dur": 5.29,
+  "text": "Think of a building with ten floors, and an access card. Your card only opens the floors you've unlocked."
+ },
+ "nqual": {
+  "file": "v_nqual.wav",
+  "src": "explainers/ex6v3",
+  "a": 21.526,
+  "b": 28.352,
+  "dur": 6.826,
+  "text": "With at least two hundred and fifty dollars of active trading, you qualify as a partner, and floors one to three open straight away."
+ },
+ "nfourth": {
+  "file": "v_nfourth.wav",
+  "src": "explainers/ex6v3",
+  "a": 28.651,
+  "b": 38.394,
+  "dur": 9.743,
+  "text": "One, two or three direct partners? Still three floors. From your fourth direct partner, every new one opens the next floor. Ten direct partners open all ten."
+ },
+ "nlots": {
+  "file": "v_nlots.wav",
+  "src": "explainers/ex6v3",
+  "a": 38.779,
+  "b": 51.095,
+  "dur": 12.316,
+  "text": "So what do open floors pay? Lot commission: two dollars per lot on level one, one dollar on levels two to four, and fifty cents on levels five to ten. Up to eight dollars per lot, from real trading, not from deposits."
+ },
+ "nshare": {
+  "file": "v_nshare.wav",
+  "src": "explainers/ex6v3",
+  "a": 51.584,
+  "b": 59.69,
+  "dur": 8.106,
+  "text": "And Profit Share: one and a half percent of the strategy's profit on every open level, paid from the thirty percent share, never from client deposits."
+ },
+ "nclient": {
+  "file": "v_nclient.wav",
+  "src": "explainers/ex6v3",
+  "a": 60.095,
+  "b": 68.713,
+  "dur": 8.618,
+  "text": "Good to know: the sign-up training starts you as a client, with one hundred and fifty five dollars. To earn as a partner, check the current qualification in your partner account."
+ },
+ "nrecap": {
+  "file": "v_nrecap.wav",
+  "src": "explainers/ex6v3",
+  "a": 69.171,
+  "b": 75.955,
+  "dur": 6.784,
+  "text": "So that's the rule: two hundred and fifty dollars opens three levels, and from your fourth direct partner, each new one opens the next."
+ }
+}

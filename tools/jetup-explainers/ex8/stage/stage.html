@@ -1,0 +1,225 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=block" rel="stylesheet">
+<style>
+@font-face{font-family:'Anton';src:url(Anton-Regular.ttf)}
+:root{--bg:#0b0912;--text:#f6f3ff;--body:#cfc8e6;--muted:#9c95b8;--lime:#cbfb61;--gold:#e8c25a;--gold-hi:#ffe08f;--vio:#9b7cff;--straw:#f0c879;
+ --goldg:linear-gradient(180deg,#fff1bf 0%,#ffe08f 35%,#e8c25a 70%,#c99a3a 100%);--f-d:'Anton',Impact,sans-serif;--f-b:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--f-b);color:var(--text);-webkit-font-smoothing:antialiased}
+#v{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(900px 600px at 82% 18%,rgba(140,108,231,.30),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(232,194,90,.14),transparent 70%),
+ radial-gradient(700px 500px at 20% 15%,rgba(203,251,97,.07),transparent 70%),linear-gradient(160deg,#130c28,#0b0912 55%,#08060f)}
+#grid{position:absolute;inset:0;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;-webkit-mask-image:radial-gradient(1100px 700px at 50% 45%,#000 30%,transparent 80%)}
+.ab{position:absolute;visibility:hidden;opacity:0;will-change:transform,opacity}
+.c{left:0;right:0;text-align:center}
+.goldtxt{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.em{font-family:'Noto Color Emoji';font-style:normal}
+/* edge-lit glass (MTG approved the glass style, 10 Nov 2026) */
+.glass{border-radius:30px;background:linear-gradient(158deg,rgba(203,251,97,.13),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(203,251,97,.07)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(203,251,97,.85),0 0 34px rgba(203,251,97,.25),inset 0 0 26px rgba(203,251,97,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass:before{content:"";position:absolute;inset:9px;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(203,251,97,.32);pointer-events:none}
+.glass.v{background:linear-gradient(158deg,rgba(155,124,255,.2),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(155,124,255,.08)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(155,124,255,.9),0 0 34px rgba(155,124,255,.28),inset 0 0 26px rgba(155,124,255,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass.v:before{box-shadow:inset 0 0 0 1px rgba(155,124,255,.32)}
+.glass.g{background:linear-gradient(158deg,rgba(232,194,90,.2),rgba(255,255,255,.03) 34%,rgba(20,16,32,0) 70%,rgba(232,194,90,.08)),#15112a;box-shadow:inset 0 0 0 2.5px rgba(255,224,143,.9),0 0 34px rgba(232,194,90,.28),inset 0 0 26px rgba(232,194,90,.12),0 30px 70px rgba(0,0,0,.5)}
+.glass.g:before{box-shadow:inset 0 0 0 1px rgba(255,224,143,.32)}
+/* top bar */
+#top{left:56px;right:56px;top:40px;height:70px;display:flex;align-items:center;justify-content:space-between;z-index:40}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 3px #e8c25a,0 0 18px rgba(232,194,90,.45)}
+.who b{display:block;font:800 26px/1 var(--f-b)}.who small{display:block;margin-top:7px;font:800 15px/1 var(--f-b);color:var(--gold);letter-spacing:.1em}
+#chipT{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:999px;background:var(--lime);color:#14110b;font:800 20px/1 var(--f-b);letter-spacing:.14em}
+
+/* the world: one illustration that persists and grows (camera = translate + scale of #world) */
+#world{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;will-change:transform,opacity}
+#world>svg{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+#leaves{position:absolute;left:0;top:0;width:1920px;height:1080px;perspective:1100px;perspective-origin:1218px 700px}
+.gl{position:absolute;top:640px;width:118px;height:130px;backface-visibility:visible}
+.gl svg{position:absolute;left:0;top:0;width:118px;height:130px;overflow:visible}
+#hand{position:absolute;left:0;top:0;font:104px/1 'Noto Color Emoji';visibility:hidden;transform-origin:50% 50%}
+
+/* hook */
+#hkQ{left:110px;top:300px;width:900px;font:400 168px/.98 var(--f-d);text-transform:uppercase;letter-spacing:.005em}
+#hkQ span{display:inline-block;margin-right:.22em;color:rgba(246,243,255,.26);transform-origin:50% 80%}
+#hkQ span.g{color:rgba(255,224,143,.24)}
+#hkQ span.lit{color:#fff;text-shadow:0 0 40px rgba(255,255,255,.18)}
+#hkQ span.g.lit{color:#ffe08f;text-shadow:0 0 44px rgba(232,194,90,.45)}
+#hkE{left:116px;top:236px;font:800 30px/1 var(--f-b);letter-spacing:.24em;color:var(--gold)}
+#door{left:1270px;top:330px;width:250px;height:290px}
+#door b{position:absolute;left:0;top:0;width:250px;height:250px;border-radius:64px;display:grid;place-items:center;color:var(--lime);
+ background:linear-gradient(160deg,rgba(203,251,97,.42),rgba(203,251,97,.08));box-shadow:inset 0 0 0 3px rgba(255,255,255,.22),inset 0 -26px 46px rgba(0,0,0,.28),0 30px 70px rgba(0,0,0,.45),0 0 70px rgba(203,251,97,.18)}
+#door b svg{width:132px;height:132px}
+#door:after{content:"";position:absolute;left:6px;right:6px;bottom:0;height:64px;border-radius:50%;background:radial-gradient(closest-side,rgba(203,251,97,.45),transparent);box-shadow:inset 0 0 0 2px rgba(203,251,97,.5);z-index:-1}
+
+/* hi */
+#hdisc{left:780px;top:150px;width:360px;height:360px;border-radius:50%;padding:8px;background:linear-gradient(145deg,#fae496,#e8c25a 45%,#c48e2c);box-shadow:0 0 60px rgba(232,194,90,.45)}
+#hdisc img{width:344px;height:344px;border-radius:50%;display:block}
+#hwho{top:556px;font:800 36px/1 var(--f-b);letter-spacing:.14em;color:var(--gold)}
+#hwho .em{letter-spacing:0;margin-right:.1em}#hwho .sep{display:inline-block;width:3px;height:34px;margin:0 .55em 0 .2em;vertical-align:-5px;border-radius:2px;background:rgba(232,194,90,.7)}
+#httl{top:630px;font:400 112px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}
+
+/* labels (screen space, never scaled by the camera) */
+.lab{display:inline-flex;align-items:center;gap:16px;min-height:84px;padding:16px 30px;border-radius:26px;font:800 40px/1.15 var(--f-b);white-space:nowrap}
+.lab .em{font-size:44px}
+.lab.two{flex-direction:column;align-items:flex-start;gap:8px;padding:20px 32px 22px}
+.lab small{display:block;font:700 32px/1.2 var(--f-b);color:var(--body)}
+.lab b{font-weight:800}
+.lab.lime b{color:var(--lime)}.lab.gold b{color:var(--gold-hi)}.lab.vio b{color:#d2c4ff}
+.tagsrc{display:inline-flex;align-items:center;height:44px;padding:0 18px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.22);font:800 30px/1 var(--f-b);color:var(--body)}
+.pill{display:inline-flex;align-items:center;gap:14px;height:76px;padding:0 30px;border-radius:999px;font:800 38px/1 var(--f-b);white-space:nowrap}
+.pill.lime{background:var(--lime);color:#14190a;box-shadow:0 0 40px rgba(203,251,97,.45)}
+.pill.gold{background:linear-gradient(180deg,#fff1bf,#e8c25a);color:#1a1405;box-shadow:0 0 40px rgba(232,194,90,.45)}
+.pill.line{background:rgba(20,16,34,.86);box-shadow:inset 0 0 0 3px var(--lime),0 0 30px rgba(203,251,97,.25);color:#f6f3ff}
+#lead{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible;pointer-events:none}
+#illus{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 24px;border-radius:999px;background:rgba(20,16,34,.8);box-shadow:inset 0 0 0 2px rgba(255,255,255,.3);font:800 30px/1 var(--f-b);letter-spacing:.14em;color:var(--body)}
+.net{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 20px;border-radius:999px;font:800 30px/1 var(--f-b);color:#b6aecf;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 2px rgba(255,255,255,.2)}
+.net i{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.25)}
+.net.on{color:#14190a;background:var(--lime);box-shadow:0 0 30px rgba(203,251,97,.6)}
+.net.on i{background:#14190a}
+.dots{font:800 30px/1 var(--f-b);letter-spacing:.08em;color:var(--body)}
+/* my advice */
+#adv{left:1250px;top:210px;display:flex;align-items:center;gap:26px;padding:22px 40px 22px 24px;border-radius:999px}
+#adv img{width:96px;height:96px;border-radius:50%;box-shadow:0 0 0 4px #e8c25a,0 0 26px rgba(232,194,90,.5)}
+#adv b{font:400 76px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}
+/* the real screen in a slim phone frame (thin gold-titanium rim, thin black bezel, camera island, side buttons) */
+#phone{left:1290px;top:150px;width:470px;height:684px;border-radius:66px;padding:3px;
+ background:linear-gradient(145deg,#f6e4b0,#b8955a 30%,#e9d3a0 52%,#8d6d3c 78%,#e2c88e);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,194,90,.18)}
+#phone .bz{position:absolute;inset:3px;border-radius:63px;background:#050507;padding:11px}
+#phone .sc{position:relative;width:100%;height:100%;border-radius:53px;overflow:hidden;background:#efefef}
+#phone .sc img{position:absolute;left:0;top:0;width:100%;height:auto;display:block}
+#phone .isl{position:absolute;left:50%;top:22px;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#050507;z-index:3;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+#phone .isl:after{content:"";position:absolute;right:14px;top:10px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#2a3a5a,#05070d 70%)}
+#phone .btn{position:absolute;width:4px;border-radius:2px;background:linear-gradient(90deg,#8d6d3c,#e9d3a0)}
+#phone .glare{position:absolute;inset:0;border-radius:53px;background:linear-gradient(115deg,rgba(255,255,255,.10),transparent 32%);pointer-events:none;z-index:4}
+/* recap */
+#rtt{top:136px;font:400 92px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em}#rtt span{color:var(--lime)}
+.rc{top:340px;width:520px;height:420px;padding:40px 36px 30px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center}
+.rc .em{font-size:118px;line-height:1;filter:drop-shadow(0 12px 22px rgba(0,0,0,.45))}
+.rc h3{margin-top:26px;font:800 46px/1.12 var(--f-b);white-space:normal}
+.rc p{margin-top:16px;font:700 34px/1.22 var(--f-b);color:var(--body)}
+#rc1{left:130px}#rc2{left:700px}#rc3{left:1270px}
+.rc .ok{position:absolute;right:22px;top:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#14190a;font:800 34px/1 var(--f-b);box-shadow:0 0 24px rgba(203,251,97,.6)}
+/* your turn */
+#ut{left:1010px;top:176px;width:880px;text-align:center;font:400 100px/1 var(--f-d);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}#ut span{color:var(--lime)}
+#ujoin{left:1130px;top:330px;width:640px;height:150px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:22px;background:linear-gradient(180deg,#dcff86,#b5ec3c);color:#14190a;font:400 84px/1 var(--f-d);text-transform:uppercase;letter-spacing:.03em;box-shadow:0 22px 70px rgba(203,251,97,.4),0 0 0 6px rgba(203,251,97,.18)}
+#ujoin .em{font-size:72px}
+#uurl{left:1050px;top:536px;width:800px;display:flex;justify-content:center}
+#uurl span{display:inline-flex;align-items:center;height:96px;padding:0 50px;border-radius:999px;background:rgba(203,251,97,.10);box-shadow:inset 0 0 0 4px var(--lime),0 0 40px rgba(203,251,97,.25);font:800 56px/1 var(--f-b)}
+#uurl i{font-style:normal;color:var(--lime)}
+#uring{left:1380px;top:335px;width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 7px #fff}
+#uhand{left:1410px;top:380px;font-size:120px;transform-origin:30% 10%}
+
+/* captions */
+#cap{left:0;right:0;top:900px;display:flex;justify-content:center;visibility:visible;opacity:1;z-index:50}
+#capbox{max-width:1560px;padding:14px 30px 16px;border-radius:20px;background:rgba(8,6,14,.72);text-align:center;font:800 44px/1.3 var(--f-b);color:rgba(255,255,255,.95);visibility:hidden}
+#capbox span{margin:0 .12em}#capbox .on{color:var(--lime)}#capbox .todo{color:rgba(255,255,255,.55)}
+#v *{font-feature-settings:"calt" 0}   /* one apostrophe shape everywhere (Manrope's contextual alternates curl some and not others) */
+</style></head><body><div id="v"><div id="grid"></div>
+
+<svg width="0" height="0" style="position:absolute"><filter id="fMB" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feGaussianBlur id="fMBg" stdDeviation="0 0"/></filter></svg>
+<!-- the backyard (world space) -->
+<div id="world">
+ <svg id="wback" viewBox="0 0 1920 1080"><defs>
+  <linearGradient id="gLawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e4a24" stop-opacity="0"/><stop offset=".35" stop-color="#1d4a24"/><stop offset="1" stop-color="#10301a"/></linearGradient>
+  <linearGradient id="gGround" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231a3c"/><stop offset=".55" stop-color="#150f26"/><stop offset="1" stop-color="#0b0912" stop-opacity="0"/></linearGradient>
+  <linearGradient id="gPicket" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c194"/><stop offset=".14" stop-color="#b98a5d"/><stop offset=".7" stop-color="#7d5536"/><stop offset="1" stop-color="#4f3322"/></linearGradient>
+  <linearGradient id="gPicketS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
+  <linearGradient id="gRail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5235"/><stop offset="1" stop-color="#3f2819"/></linearGradient>
+  <linearGradient id="gPost" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a3b26"/><stop offset=".35" stop-color="#8d6140"/><stop offset=".7" stop-color="#6b4730"/><stop offset="1" stop-color="#3a2516"/></linearGradient>
+  <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1bf"/><stop offset=".45" stop-color="#e8c25a"/><stop offset="1" stop-color="#a8792a"/></linearGradient>
+  <linearGradient id="gGoldH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4cc"/><stop offset=".4" stop-color="#ecc865"/><stop offset=".75" stop-color="#c39437"/><stop offset="1" stop-color="#8e6420"/></linearGradient>
+  <linearGradient id="gSign" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2046"/><stop offset="1" stop-color="#140e25"/></linearGradient>
+  <linearGradient id="gTrunk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f2817"/><stop offset=".3" stop-color="#7c5233"/><stop offset=".55" stop-color="#946640"/><stop offset=".8" stop-color="#5e3d25"/><stop offset="1" stop-color="#2f1d10"/></linearGradient>
+  <linearGradient id="gBranch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#946640"/><stop offset="1" stop-color="#4f331f"/></linearGradient>
+  <radialGradient id="gBlobD" cx=".42" cy=".36" r=".7"><stop offset="0" stop-color="#2c7432"/><stop offset=".65" stop-color="#18512a"/><stop offset="1" stop-color="#0d3119"/></radialGradient>
+  <radialGradient id="gBlobM" cx=".38" cy=".3" r=".75"><stop offset="0" stop-color="#3f9440"/><stop offset=".6" stop-color="#226231"/><stop offset="1" stop-color="#123d1f"/></radialGradient>
+  <radialGradient id="gBlobL" cx=".35" cy=".28" r=".8"><stop offset="0" stop-color="#6cbc4c"/><stop offset=".5" stop-color="#36883a"/><stop offset="1" stop-color="#1b5428" stop-opacity=".0"/></radialGradient>
+  <linearGradient id="gRipe" x1=".85" y1=".05" x2=".2" y2=".98"><stop offset="0" stop-color="#ee4f2a"/><stop offset=".3" stop-color="#f98a2a"/><stop offset=".62" stop-color="#ffc93e"/><stop offset=".86" stop-color="#f3d64a"/><stop offset="1" stop-color="#a9c83a"/></linearGradient>
+  <radialGradient id="gHi" cx=".36" cy=".34" r=".5"><stop offset="0" stop-color="#fff6c4" stop-opacity=".7"/><stop offset="1" stop-color="#fff6c4" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6cc04a"/><stop offset="1" stop-color="#2c7a30"/></linearGradient>
+  <radialGradient id="gRaw" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#d6f28e"/><stop offset=".5" stop-color="#8cc446"/><stop offset="1" stop-color="#4a8a2c"/></radialGradient>
+  <radialGradient id="gBlush" cx=".7" cy=".12" r=".6"><stop offset="0" stop-color="#ef5a2c" stop-opacity=".7"/><stop offset="1" stop-color="#ef5a2c" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gGlowGold"><stop offset="0" stop-color="#ffe08f" stop-opacity=".75"/><stop offset=".45" stop-color="#e8c25a" stop-opacity=".28"/><stop offset="1" stop-color="#e8c25a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gGlowLime"><stop offset="0" stop-color="#cbfb61" stop-opacity=".6"/><stop offset=".5" stop-color="#cbfb61" stop-opacity=".2"/><stop offset="1" stop-color="#cbfb61" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gGlowVio"><stop offset="0" stop-color="#b39cff" stop-opacity=".6"/><stop offset=".5" stop-color="#9b7cff" stop-opacity=".2"/><stop offset="1" stop-color="#9b7cff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gYard" cx=".5" cy=".55" r=".55"><stop offset="0" stop-color="#cbfb61" stop-opacity=".16"/><stop offset="1" stop-color="#cbfb61" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gStraw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3cf86"/><stop offset=".45" stop-color="#cf9548"/><stop offset="1" stop-color="#7f5221"/></linearGradient>
+  <linearGradient id="gStrawS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset=".22" stop-color="#000" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".14"/><stop offset=".8" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
+  <radialGradient id="gBasketIn" cx=".5" cy=".3" r=".7"><stop offset="0" stop-color="#3f2810"/><stop offset="1" stop-color="#160d05"/></radialGradient>
+  <linearGradient id="gGift" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7b4ff"/><stop offset=".5" stop-color="#9b7cff"/><stop offset="1" stop-color="#6a4fd0"/></linearGradient>
+  <linearGradient id="gRibbon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9ff9e"/><stop offset=".5" stop-color="#cbfb61"/><stop offset="1" stop-color="#8fcf2a"/></linearGradient>
+  <filter id="fShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".5"/></filter>
+  <filter id="fSoft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".45"/></filter>
+  <filter id="fBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <filter id="fBlur3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  <clipPath id="cTrunk"><rect id="cTrunkR" x="0" y="0" width="1920" height="1080"/></clipPath>
+  <clipPath id="cCrown"><circle id="cCrownC" cx="700" cy="430" r="0"/></clipPath>
+  <mask id="mPath" maskUnits="userSpaceOnUse" x="-200" y="-200" width="2400" height="1500"><path id="mPathP" fill="none" stroke="#fff" stroke-width="40" stroke-linecap="round"/></mask>
+ </defs>
+  <g id="wGround"></g>
+  <g id="wTree"></g>
+  <g id="wFence"></g>
+ </svg>
+ <div id="leaves"><div class="gl" id="glL"></div><div class="gl" id="glR"></div></div>
+ <svg id="wfront" viewBox="0 0 1920 1080"><g id="wFront"></g></svg>
+ <div id="hand">🫴</div>
+</div>
+
+<!-- top bar -->
+<div class="ab" id="top"><div class="who"><img src="jetup-disc-small.png" alt=""><div><b>MTG</b><small>YOUR DIGITAL ARCHITECT</small></div></div><span id="chipT">JETUP · GETTING YOUR MONEY OUT</span></div>
+
+<!-- hook: the visitor's own question, beside the site's check 5 door icon -->
+<div class="ab" id="hkE">CHECK 5 OF 5</div>
+<div class="ab" id="hkQ"><span>Can</span><span>I</span><span>get</span><span>my</span><br><span class="g">money</span><span class="g">out?</span></div>
+<div class="ab" id="door"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.56v16.16a1 1 0 0 1-1.24.97L5 20V5.56a2 2 0 0 1 1.52-1.94l4-1A2 2 0 0 1 13 4.56Z"/></svg></b></div>
+
+<!-- hi -->
+<div class="ab" id="hdisc"><img src="jetup-disc.png" alt="JetUP"></div>
+<div class="ab c" id="hwho">MTG <span class="em">👑</span><span class="sep"></span>YOUR DIGITAL ARCHITECT</div>
+<div class="ab c" id="httl">Getting your <span class="goldtxt">money out</span></div>
+
+<!-- labels and leader lines -->
+<svg id="lead" viewBox="0 0 1920 1080"></svg>
+<!-- the fruit tree -->
+<div class="ab lab glass v" id="Lplate"><span class="em">🏡</span><span><b>Your account,</b><br><b>in your own name</b></span></div>
+<div class="ab lab glass" id="Ltrunk"><span class="em">🌳</span><b>Your own money</b></div>
+<div class="ab lab two glass g" id="Lprofit"><b>Your profit,</b><b>when the strategy makes one</b></div>
+<div class="ab pill gold" id="Lany"><span class="em">🥭</span>Profits: withdraw any time</div>
+<!-- the gift branch -->
+<div class="ab" id="Gq"><span class="pill line">And the promo?</span></div>
+<div class="ab lab two glass" id="Gtag"><b>+$100 bonus with your own $100</b><small style="font-size:30px">Dennis Fast Start Promo · new partners, once</small></div>
+<div class="ab pill gold" id="Grel"><span class="em">🗓️</span>Released after 12 months</div>
+<div class="ab lab two glass" id="Gkeep"><b>Keep your own money in</b><b>for 12 months to keep the promo</b></div>
+<div class="ab lab two glass v" id="Gphone"><span style="display:flex;align-items:center;gap:16px"><span class="em">📱</span><b>Rules can change:</b></span><small>check your dashboard and jet-up.ai</small></div>
+<!-- into your basket -->
+<div class="ab pill gold" id="Bbasket">Your crypto wallet</div>
+<div class="ab" id="illus">ILLUSTRATION</div>
+<div class="ab lab glass v" id="Bacct" style="gap:18px"><span class="em">🏡</span><span><b>Your account</b><br><b>at TAG Markets</b></span><span class="net" id="net1"><i></i>Network</span></div>
+<div class="ab lab two glass g" id="Bwal"><b>Your crypto wallet</b><small>(for example your BIX wallet)</small><span style="display:flex;align-items:center;gap:18px;margin-top:6px"><span class="dots">ADDRESS ••••••••</span><span class="net" id="net2"><i></i>Network</span></span></div>
+<div class="ab pill lime" id="Bsafe">Arrives safely ✓</div>
+<div class="ab lab two glass" id="Bclock"><b>About 48 hours on average</b><span class="tagsrc">JetUP's one-pager</span></div>
+<div class="ab lab glass v" id="Bfees"><b>Fees and limits: the broker's terms</b></div>
+<!-- one small fruit first -->
+<div class="ab glass g" id="adv"><img src="jetup-disc-small.png" alt=""><b>My advice?</b></div>
+<div class="ab pill lime" id="Stest">Test a small withdrawal early</div>
+<div class="ab lab glass" id="Sprove"><b>Let the system prove itself to you</b></div>
+<div class="ab" id="phone"><div class="btn" style="left:-3px;top:150px;height:56px"></div><div class="btn" style="left:-3px;top:226px;height:56px"></div><div class="btn" style="right:-3px;top:190px;height:86px"></div>
+ <div class="bz"><div class="sc"><div class="isl"></div><img src="tag-balance.png" alt="TAG Markets: My wallet balances"><div class="glare"></div></div></div></div>
+<div class="ab pill lime" id="Ssee"><span class="em">🔑</span>See your own balance</div>
+<!-- recap -->
+<div class="ab c" id="rtt">So that's <span>the picture</span></div>
+<div class="ab glass g rc" id="rc1"><span class="ok">✓</span><span class="em">🥭</span><h3>Pick the fruit<br>any time</h3><p>Profits: withdraw any time</p></div>
+<div class="ab glass rc" id="rc2"><span class="ok">✓</span><span class="em">🌳</span><h3>Let your tree stand<br>12 months</h3><p>Your own money in:<br>to keep the promo</p></div>
+<div class="ab glass g rc" id="rc3"><span class="ok">✓</span><span class="em">🧺</span><h3>One small<br>withdrawal first</h3><p>Let the system prove itself</p></div>
+<!-- your turn -->
+<div class="ab" id="ut">Now it's <span>your turn</span></div>
+<div class="ab" id="ujoin"><span class="em">🚀</span>Join JetUP</div>
+<div class="ab" id="uurl"><span>mtgtribe.com/<i>jetup</i></span></div>
+<div class="ab" id="uring"></div>
+<div class="ab em" id="uhand">👆</div>
+
+<div class="ab" id="cap"><div id="capbox"></div></div>
+</div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+</body></html>

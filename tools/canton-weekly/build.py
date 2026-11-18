@@ -105,6 +105,12 @@ INVESTORS_URL = "https://crypto-fundraising.info/projects/canton-network/"
 INVESTORS_CARD = '<a class="rel-guide" style="margin:0 0 12px" href="https://crypto-fundraising.info/projects/canton-network/" target="_blank" rel="noopener" aria-label="See who has invested in Canton Network on Crypto-Fundraising (opens in a new tab)"><span><span class="k">Do your own research</span><b>Who has invested in Canton Network?</b><span class="upd">See every funding round behind Digital Asset, the company that built Canton Network. Lead investors include a16z crypto, Goldman Sachs, Blackstone, DRW and Tradeweb.</span></span><span class="go">See the investors<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></span></a><p class="upd">These firms invested in Digital Asset, the company. Buying CC or CNTN does not make you a Digital Asset shareholder, and big backers do not guarantee any price.</p>'
 INVESTORS_SRC = '<li><a class="tx" href="https://crypto-fundraising.info/projects/canton-network/" target="_blank" rel="noopener">Crypto-Fundraising: Canton Network (Digital Asset) funding rounds and investors</a></li>'
 
+# CantonCap (MTG, 18 Nov 2026): independent Canton market data, every venue quoting CC. Not in the official ecosystem
+# directory yet, so it is always called independent. Shown under the live CC chart and in every report's sources.
+CANTONCAP_URL = "https://www.cantoncap.cc/assets/cc"
+CANTONCAP_LINE = '<p class="upd" data-nolink>Want every market quoting CC in one place, including Canton\'s own DEXs? See <a class="tx" href="https://www.cantoncap.cc/assets/cc" target="_blank" rel="noopener">CC on CantonCap</a>, an independent Canton market-data site.</p>'
+CANTONCAP_SRC = '<li><a class="tx" href="https://www.cantoncap.cc/assets/cc" target="_blank" rel="noopener">CantonCap: CC price across every Canton venue (independent market data)</a></li>'
+
 def tip(t, icon="bulb"):
     return f'<div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-{icon}"/></svg><span>{t}</span></div>'
 
@@ -207,7 +213,7 @@ def report(d, head, sprite, header, footer, nav_top="", nav_bottom=""):
   {table(["Canton Coin (CC)", d["date_h"]], s)}
   <div class="chartbox">{legend}{chart_svg(d)}</div>
   <p class="upd">{d["snapshot_note"]}</p>
-  <h3 class="part">CC right now</h3><p class="upd">The numbers above are from {esc(d["date_h"])}. This chart is live, so you can compare.</p>{CC_CARD}
+  <h3 class="part">CC right now</h3><p class="upd">The numbers above are from {esc(d["date_h"])}. This chart is live, so you can compare.</p>{CC_CARD}{CANTONCAP_LINE}
  </section>
  <section class="sec" id="changed" aria-labelledby="ch-h"><h2 id="ch-h">What changed since last week</h2><ul class="do">{changed}</ul></section>
  <section class="sec" id="technicals" aria-labelledby="t-h"><h2 id="t-h">Technical analysis</h2>{tech}<h3 class="part">Key levels</h3>{levels}</section>
@@ -220,7 +226,7 @@ def report(d, head, sprite, header, footer, nav_top="", nav_bottom=""):
   <div><h2 id="join-h">Want this every Sunday?</h2><p>Join the MTG TRIBE on WhatsApp. The new Canton report lands there first, and we learn and take action together.</p></div>
   <span class="cta-w"><span class="halo" aria-hidden="true"></span><a class="cta" href="/group/"><span class="wa"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>Join the MTG TRIBE<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></span>
  </section>
- <section class="sec" id="sources" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="src">{src}{INVESTORS_SRC if INVESTORS_URL not in src else ""}</ul>
+ <section class="sec" id="sources" aria-labelledby="src-h"><h2 id="src-h">Sources</h2><ul class="src">{src}{CANTONCAP_SRC if CANTONCAP_URL not in src else ""}{INVESTORS_SRC if INVESTORS_URL not in src else ""}</ul>
   <p class="upd" style="margin-top:20px"><a class="tx" href="/canton-weekly/">All Canton weekly reports</a></p></section>
  <p class="disc">Education only, not financial advice. MTG is not a financial adviser. Crypto and small-company shares move a lot, so start small and always do your own research. The VALR and Bellver Card links are MTG's referral links: MTG may earn a commission at no extra cost to you.</p>
 </div></div>
@@ -328,7 +334,7 @@ def hub(reports, head, sprite, header, footer):
  <section class="answer" aria-labelledby="qa"><h2 id="qa">Latest: {esc(latest["date_h"])}</h2><p>{latest["summary"]}</p></section>
  {hub_video(latest)}
  {learn_cards()}
- <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}</section>
+ <section class="sec" aria-labelledby="cc-live-h"><h2 id="cc-live-h">Canton Coin right now</h2><p>The live CC price and the last month, between reports.</p>{CC_CARD}{CANTONCAP_LINE}</section>
  <section class="sec" aria-labelledby="cl-h"><h2 id="cl-h">CNTN stock right now</h2><p>Canton Strategic Holdings (Nasdaq: CNTN) holds Canton Coin, so its share price tends to follow CC. Here is the live price and the last month.</p>{CNTN_CARD}</section>
  <section class="sec" id="all" aria-labelledby="ar-h"><h2 id="ar-h">All reports</h2><ul class="arch">{arch}</ul></section>
  <section class="join" aria-labelledby="join-h"><div><h2 id="join-h">Get it first every Sunday</h2><p>Join the MTG TRIBE on WhatsApp and the new report lands in the group first.</p></div>

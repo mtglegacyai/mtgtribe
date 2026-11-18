@@ -178,3 +178,25 @@ tags (V3 does not support them: one paragraph per pause, cut with the word times
 TikTok @joinmtgtribe, YouTube @mtgtribe, WhatsApp mtgtribe.com/group, **Telegram t.me/mtgtribe (@mtgtribe)**,
 **Facebook facebook.com/mtgtribe**: the same on every website page and on every video end card. The older
 t.me/mtgtribez and facebook.com/Musa.TheMTG are no longer used anywhere.
+
+## Standing rule: replies to prospects (MTG, 18 Nov 2026)
+
+When MTG asks for a message to send a prospect (WhatsApp, DM, comment reply), give it like this, every time:
+
+- **Plain text only, in a code block** so he can copy it: no bold, no asterisks, no markdown (WhatsApp shows them as stray characters).
+- **Short, no fluff, with blank lines between parts.** "People are lazy to read": explain at the basic level in a few lines,
+  then let the link do the heavy lifting. One clear CTA to the most relevant page, ideally a link that opens right at
+  the explainer video (for example mtgtribe.com/jetup/how-it-works/#who). Check the link is live first.
+- **Always end with his signature, exactly:**
+
+```text
+Let's Get This Crypto! 💪
+
+Crypto-Regards,
+MTG 👑 | Your Digital Architect
+```
+
+Reference message (JetUP / TAG Markets / Sonic AI): "Great question 😊 / It's Sonic AI copy trading. / 1. JetUP: the community
+2. TAG Markets: the broker, where your account is opened in your own name 3. Sonic AI: the AI trader you copy / Sonic AI's
+trades are copied into your account automatically. You don't need any trading experience. / This 2 minute video explains
+it all 👇 / https://mtgtribe.com/jetup/how-it-works/#who", then the signature.

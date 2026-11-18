@@ -287,6 +287,12 @@ VIDEOS = {
  'training': dict(src='/jetup/media/jetup-tag-markets-signup-training-mtg-v4-4.mp4', poster='/jetup/img/cover-signup-training-v4-4.webp', jpg='/jetup/img/cover-signup-training-v4-4.jpg', dur='9:09', iso='PT9M9S', orient='h',
    title='JetUP and TAG Markets sign-up training: every tap shown',
    desc='Step-by-step training by MTG: create your JetUP account, link TAG Markets, verify your identity, fund your account, connect Sonic AI and claim the Dennis Fast Start Promo.'),
+ 'assistant': dict(src='/jetup/media/jetup-assistant-beta.mp4', poster='/jetup/img/cover-jetup-assistant.webp', jpg='/jetup/img/cover-jetup-assistant.jpg', vposter='/jetup/img/poster-jetup-assistant.webp', dur='0:51', iso='PT51S', orient='v',
+   title="Meet your JetUP Assistant (Beta): JetUP's own video",
+   desc="JetUP's official 51-second video on the JetUP Assistant, the AI helper in your JetUP Dashboard: give it a name, set a goal, get one next step every day, track your incentive progress, find people in your branch, see who is close to the next level and check your team's Dennis Promo (Check 100+100). The names and numbers in the video are JetUP's demo data."),
+ 'sonicfull': dict(src='/jetup/media/jetup-sonic-ai-full-picture.mp4', poster='/jetup/img/cover-sonic-ai-full-picture.webp', jpg='/jetup/img/cover-sonic-ai-full-picture.jpg', vposter='/jetup/img/poster-sonic-ai-full-picture.webp', dur='2:20', iso='PT2M20S', orient='v',
+   title="Sonic AI, the full picture: JetUP's own video",
+   desc="JetUP's official 2:20 video on Sonic AI: why gold, how Sonic AI combines algorithmic trading with human traders, how copy trading repeats every trade in your own account, the last six closed months (JetUP's figures, May to October 2026, at 24x and before the 70/30 split), every trade on Myfxbook, the 70/30 split, how to start through the JetUP IB portal, TAG Markets and CopyX, the Dennis Promo and Amplify."),
  'profitshare': dict(src='/jetup/media/jetup-profit-share-explained.mp4', poster='/jetup/img/cover-profit-share.webp', jpg='/jetup/img/cover-profit-share.webp', dur='1:14', iso='PT1M14S', orient='v',
    title="Profit Share explained: JetUP's own 74-second video",
    desc="JetUP's official short explainer of the Sonic AI Profit Share across 10 levels, and how direct partners unlock them."),
@@ -301,7 +307,7 @@ def video_btn(k, cls='vcard', inner=None, label=None):
     v = VIDEOS[k]
     lab = label or ('Play: %s (%s)' % (v['title'], v['dur']))
     return '<button type="button" class="%s" data-video="%s" data-poster="%s" data-orient="%s" data-title="%s" aria-label="%s">%s</button>' % (
-        cls, v['src'], v['poster'], v['orient'], v['title'].replace('"', '&quot;'), lab.replace('"', '&quot;'), inner or '')
+        cls, v['src'], v.get('vposter', v['poster']), v['orient'], v['title'].replace('"', '&quot;'), lab.replace('"', '&quot;'), inner or '')
 
 def laptop(k, caption=None, eager=False):
     v = VIDEOS[k]
@@ -492,6 +498,15 @@ def sonic_card(eyebrow="JetUP's own video · 1:04", title='Meet the driver: <spa
    <p class="lede">Sonic AI copy trades one market: gold (XAU/USD). When it trades, your TAG Markets account copies it automatically, and your money stays in your own account, in your name.</p>
    <p class="small" style="margin-top:12px">{SONIC_NOTE}</p>{join}</div>
  </div>'''
+
+def sonic_full_card():
+    """JetUP's 2:20 Sonic AI video (MTG, 18 Nov 2026): the wide cover in the laptop, it plays in the phone, with MTG's note."""
+    return f'''<div style="margin-top:22px" id="sonic-video">
+ <p class="eyebrow">Watch it · JetUP's own video · 2:20</p><h3 class="h3" style="margin:10px 0 14px">Sonic AI: <span class="grad">the full picture</span></h3>
+ {laptop('sonicfull', "Gold, Sonic AI, the record, the 70/30 split and how to start, in JetUP's own words (2:20)")}
+ <p class="small" style="margin-top:12px"><b>The monthly figures in the video are JetUP's own</b> (the last six closed months, May to October 2026, shown at the 24x setting and before the 70/30 split). Every trade is published on <a href="https://www.myfxbook.com/" target="_blank" rel="noopener">Myfxbook</a>, so check the record yourself, and do <a href="/jetup/five-checks/">the 5 checks</a> first.</p>
+ <p class="small" style="margin-top:8px"><b>Community token:</b> the video shows JetUP's general token, #JETUP. If MTG invited you, use your team's codes in <a href="/jetup/get-started/#part-5">part 5</a> of the sign-up training.</p>
+</div>'''
 
 def join_cta(title='Ready to start? <span class="lime">Join JetUP.</span>', text='Learn first, then decide for yourself. When you are ready, create your account and follow the sign-up training one tap at a time.'):
     return f'''<section class="sec tight"><div class="wrap"><div class="glass-stack rv"><span class="gl-layer l2" aria-hidden="true"></span><span class="gl-layer l1" aria-hidden="true"></span><div class="card tribe joincta glass">

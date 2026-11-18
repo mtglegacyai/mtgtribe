@@ -123,7 +123,7 @@ def build_how():
  <li><b>XAU/USD</b> is gold, priced in US dollars. XAU means gold, USD means US dollar.</li>
  <li>The Sonic AI terms in the training: a 30% performance fee from profits only, no management fee, no join fee, a one month minimum, and an Amplify account.</li>
  <li>The second agreement you tick says CopyX trades come from traders who are not part of TAG Markets, and TAG Markets bears no responsibility for them.</li>
-</ul>''' + sonic_card(eyebrow="Watch it · JetUP's own video · 1:04", title='Sonic AI <span class="grad">in 64 seconds</span>', framed=False), 'i-copyx')}
+</ul>''' + sonic_full_card(), 'i-copyx')}
  {section('split', 'Where the money goes', 'The 70/30 split', f'''
 <div style="margin:4px 0 18px">{laptop('split', 'The 70/30 split, explained by MTG (2:16)')}</div>
 <p>When the strategy makes a profit, <b>70% is yours</b>. <b>30% pays the broker, the strategy provider and the partner program</b>. So if the strategy makes $10, $7 is yours. And if it makes a loss, nobody charges you a performance fee on that loss.</p>
@@ -146,7 +146,7 @@ def build_how():
 {tribe_cta()}'''
     return page(path, 'How JetUP and TAG Markets Work: CopyX, Sonic AI, 70/30 | MTG',
                 'How JetUP and TAG Markets fit together: your own TAG Markets account, CopyX copy trading, Sonic AI on gold (XAU/USD), the 70/30 profit split, 24x Amplify exposure and the loss limit.',
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('copy'), ld_video('split'), ld_video('amplify'), ld_video('withdraw'), ld_video('sonic')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('How It Works', None)], [ld_video('who'), ld_video('copy'), ld_video('split'), ld_video('amplify'), ld_video('withdraw'), ld_video('sonicfull')])
 
 def build_plan():
     path = '/jetup/partner-plan/'
@@ -208,6 +208,16 @@ def build_plan():
  {section('bix', 'Income 5 · BIX Card', 'Commissions from card sales and spending', '''
 <p>Half of the fees BIX collects (the 3% spending fee and the card purchases) goes into the plan: <b>15%</b> on level 1, <b>10%</b> on level 2, <b>2.5%</b> on each of levels 3 to 10, and <b>5%</b> to a leadership pool, as shown in a JetUP partner presentation (November 2026).</p>
 <p>It only counts once your BixPay wallet is linked to the JetUP portal. <a href="/jetup/bix-card/#link">How to link it, even from a phone</a>.</p>''', 'i-card2')}
+ {section('assistant', "Track it all · JetUP's own video", 'Meet your JetUP Assistant', f'''
+<div style="margin:4px 0 18px">{laptop('assistant', "JetUP's own video: the JetUP Assistant, Beta (0:51)")}</div>
+<p>JetUP's new AI helper lives in your JetUP Dashboard. Give it a name, set a goal together, and it brings you one next step every day.</p>
+<ul>
+ <li>📈 <b>Your numbers in one place:</b> your Infinity Bonus, Global Pool, PowerUp and JetUP Boost progress, updated every day.</li>
+ <li>🔎 <b>Your team, when you're an active leader:</b> type a name to find someone in your branch, see who is close to the next level, who grew this week and where your weak leg is.</li>
+ <li>🎁 <b>Your team's Dennis Promo:</b> explained in plain words, with a quick Check 100+100 by CU number.</li>
+ <li>🔒 <b>You stay in control:</b> it remembers you, and you can see and erase what it remembers at any time.</li>
+</ul>
+<p class="small" style="margin-top:12px">It's in Beta. Open it from your JetUP Dashboard on jet-up.ai, the same Dashboard you sign up for to claim the promo (<a href="/jetup/get-started/#part-6">part 6</a>). The names and numbers in the video are JetUP's demo data.</p>''', 'i-bot', 'lime')}
  {section('rewards', 'Lifestyle rewards', "JetUP's rewards, and what they really are", '''
 <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Reward</th><th>Team volume</th><th>For</th></tr></thead><tbody>
 <tr><td>Travel voucher up to $2,000</td><td class="n">$50K</td><td>3 months in a row</td></tr>
@@ -225,7 +235,7 @@ def build_plan():
            ('How do I qualify as a JetUP partner?', "JetUP's plan says everyone needs at least $250 of active trading. A $250 own deposit opens 3 levels; from the 4th direct partner each new direct partner opens one more level, and 10 direct partners open all 10.")]
     return page(path, 'JetUP Partner Plan Explained: Lot Commission, Profit Share | MTG',
                 "JetUP's optional partner plan in plain English: no need to refer anyone to earn as a client. Lot Commission over 10 levels, 1.5% Profit Share, the Infinity Bonus, the Global Pool and the $250 rule.",
-                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('infinity'), ld_video('profitshare')])
+                main, [('MTG TRIBE', '/'), ('JetUP and TAG Markets', '/jetup/'), ('Partner Plan', None)], [ld_faq(faq, SITE + path), ld_video('partnerplan'), ld_video('infinity'), ld_video('profitshare'), ld_video('assistant')])
 
 def build_promo():
     path = '/jetup/promo/'

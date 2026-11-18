@@ -43,6 +43,8 @@ The palette (what each one is for):
   land       a warm, low thump with a slow bloom (made for the slogan on 16 Nov 2026; MTG rejected it there, do not use on the slogan)
   fizz       a bottle opening softly, then small round bubbles (video 12)
   stamp      a rubber stamp pressed onto paper, padded and soft (video 12)
+  tickbox    a box ticked with a soft pen and a small warm note (video 13)
+  mirror     one note, then its softer echo: a trade copied across (video 13)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -680,6 +682,31 @@ def stamp():
     return lowpass(knock + pad + rustle, 1500)
 
 
+def tickbox():
+    """A box being ticked with a soft pen: a short, padded scratch and a small warm note (a check done)."""
+    d = 0.6
+    tt = t(d)
+    scratch = band(noise(d), 400, 1500) * np.clip(tt / 0.02, 0, 1) * np.exp(-tt * 18) * 0.35
+    note = sine(lambda u: 659.3, d) * env(len(tt), 0.01, 0.25) * 0.4 + sine(lambda u: 987.8, d) * env(len(tt), 0.01, 0.18) * 0.12
+    i = int(0.07 * SR)
+    x = scratch.copy()
+    x[i:] += note[:len(x) - i]
+    return lowpass(x, 1600)
+
+
+def mirror():
+    """A trade copied across: one soft note, then its echo a beat later, a little lower and quieter (same move, your size)."""
+    d = 1.0
+    x = np.zeros(int(d * SR))
+    for at, f, a in ((0.0, 587.3, 1.0), (0.22, 440.0, 0.6)):
+        n = int(0.5 * SR)
+        tt = np.arange(n) / SR
+        b = (np.sin(2 * np.pi * f * tt) + 0.25 * np.sin(2 * np.pi * 2 * f * tt)) * env(n, 0.012, 0.3)
+        i = int(at * SR)
+        x[i:i + n] += b[:len(x) - i] * a
+    return lowpass(x, 1500)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -715,6 +742,8 @@ PALETTE = {
     'land': (land, 0.25),
     # made for video 12 (what if you owned a piece of the companies you use every day?)
     'fizz': (fizz, 0.2), 'stamp': (stamp, 0.15),
+    # made for video 13 (what everyone ought to know about copy trading)
+    'tickbox': (tickbox, 0.15), 'mirror': (mirror, 0.3),
 }
 
 

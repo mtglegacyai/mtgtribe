@@ -1,0 +1,916 @@
+{
+"voice": null,
+"request": "75716c4f60e04c3e8490b450976e0391",
+"duration": 58.739,
+"pauses_added": [
+0.0,
+0.0,
+0.0,
+0.031,
+0.0,
+0.0
+],
+"words": [
+{
+"text": "What",
+"start": 0.256,
+"end": 0.469
+},
+{
+"text": "everyone",
+"start": 0.512,
+"end": 0.725
+},
+{
+"text": "ought",
+"start": 0.853,
+"end": 0.981
+},
+{
+"text": "to",
+"start": 1.024,
+"end": 1.109
+},
+{
+"text": "know",
+"start": 1.152,
+"end": 1.237
+},
+{
+"text": "about",
+"start": 1.323,
+"end": 1.451
+},
+{
+"text": "copy",
+"start": 1.536,
+"end": 1.749
+},
+{
+"text": "trading.",
+"start": 1.792,
+"end": 2.048
+},
+{
+"text": "Every",
+"start": 2.773,
+"end": 2.901
+},
+{
+"text": "day,",
+"start": 3.029,
+"end": 3.157
+},
+{
+"text": "about",
+"start": 3.627,
+"end": 3.755
+},
+{
+"text": "nine",
+"start": 3.84,
+"end": 4.053
+},
+{
+"text": "and",
+"start": 4.181,
+"end": 4.224
+},
+{
+"text": "a",
+"start": 4.267,
+"end": 4.309
+},
+{
+"text": "half",
+"start": 4.352,
+"end": 4.523
+},
+{
+"text": "trillion",
+"start": 4.651,
+"end": 5.035
+},
+{
+"text": "dollars",
+"start": 5.12,
+"end": 5.248
+},
+{
+"text": "are",
+"start": 5.504,
+"end": 5.632
+},
+{
+"text": "traded",
+"start": 5.675,
+"end": 5.888
+},
+{
+"text": "in",
+"start": 5.973,
+"end": 6.101
+},
+{
+"text": "currency",
+"start": 6.144,
+"end": 6.485
+},
+{
+"text": "markets.",
+"start": 6.571,
+"end": 6.699
+},
+{
+"text": "Most",
+"start": 7.424,
+"end": 7.595
+},
+{
+"text": "people",
+"start": 7.637,
+"end": 7.765
+},
+{
+"text": "never",
+"start": 7.893,
+"end": 7.979
+},
+{
+"text": "learn",
+"start": 8.064,
+"end": 8.277
+},
+{
+"text": "how",
+"start": 8.32,
+"end": 8.448
+},
+{
+"text": "it",
+"start": 8.491,
+"end": 8.533
+},
+{
+"text": "works.",
+"start": 8.576,
+"end": 8.747
+},
+{
+"text": "Here",
+"start": 9.515,
+"end": 9.643
+},
+{
+"text": "it",
+"start": 9.685,
+"end": 9.728
+},
+{
+"text": "is,",
+"start": 9.771,
+"end": 9.856
+},
+{
+"text": "simply.",
+"start": 10.155,
+"end": 10.368
+},
+{
+"text": "Think",
+"start": 10.965,
+"end": 11.349
+},
+{
+"text": "of",
+"start": 11.392,
+"end": 11.435
+},
+{
+"text": "a",
+"start": 11.477,
+"end": 11.52
+},
+{
+"text": "minibus",
+"start": 11.563,
+"end": 11.819
+},
+{
+"text": "taxi.",
+"start": 11.904,
+"end": 12.203
+},
+{
+"text": "You",
+"start": 12.587,
+"end": 12.715
+},
+{
+"text": "don't",
+"start": 12.757,
+"end": 12.928
+},
+{
+"text": "drive.",
+"start": 12.928,
+"end": 13.099
+},
+{
+"text": "You",
+"start": 13.602,
+"end": 13.688
+},
+{
+"text": "pick",
+"start": 13.73,
+"end": 13.858
+},
+{
+"text": "a",
+"start": 13.901,
+"end": 13.944
+},
+{
+"text": "driver,",
+"start": 13.986,
+"end": 14.2
+},
+{
+"text": "take",
+"start": 14.584,
+"end": 14.712
+},
+{
+"text": "your",
+"start": 14.797,
+"end": 14.882
+},
+{
+"text": "seat,",
+"start": 14.925,
+"end": 15.096
+},
+{
+"text": "and",
+"start": 15.352,
+"end": 15.608
+},
+{
+"text": "the",
+"start": 15.65,
+"end": 15.736
+},
+{
+"text": "driver",
+"start": 15.778,
+"end": 15.992
+},
+{
+"text": "does",
+"start": 16.034,
+"end": 16.162
+},
+{
+"text": "the",
+"start": 16.205,
+"end": 16.333
+},
+{
+"text": "driving.",
+"start": 16.376,
+"end": 16.504
+},
+{
+"text": "Copy",
+"start": 17.144,
+"end": 17.4
+},
+{
+"text": "trading",
+"start": 17.442,
+"end": 17.656
+},
+{
+"text": "works",
+"start": 17.741,
+"end": 17.912
+},
+{
+"text": "the",
+"start": 17.997,
+"end": 18.082
+},
+{
+"text": "same",
+"start": 18.125,
+"end": 18.253
+},
+{
+"text": "way.",
+"start": 18.338,
+"end": 18.466
+},
+{
+"text": "You",
+"start": 18.893,
+"end": 19.021
+},
+{
+"text": "choose",
+"start": 19.064,
+"end": 19.234
+},
+{
+"text": "a",
+"start": 19.277,
+"end": 19.362
+},
+{
+"text": "strategy,",
+"start": 19.405,
+"end": 19.661
+},
+{
+"text": "and",
+"start": 20.088,
+"end": 20.173
+},
+{
+"text": "its",
+"start": 20.216,
+"end": 20.258
+},
+{
+"text": "trades",
+"start": 20.386,
+"end": 20.642
+},
+{
+"text": "are",
+"start": 20.728,
+"end": 20.813
+},
+{
+"text": "copied",
+"start": 20.856,
+"end": 21.154
+},
+{
+"text": "into",
+"start": 21.197,
+"end": 21.325
+},
+{
+"text": "your",
+"start": 21.41,
+"end": 21.496
+},
+{
+"text": "account",
+"start": 21.581,
+"end": 21.794
+},
+{
+"text": "automatically,",
+"start": 21.922,
+"end": 22.434
+},
+{
+"text": "sized",
+"start": 22.818,
+"end": 23.074
+},
+{
+"text": "to",
+"start": 23.245,
+"end": 23.373
+},
+{
+"text": "your",
+"start": 23.416,
+"end": 23.458
+},
+{
+"text": "balance.",
+"start": 23.501,
+"end": 23.629
+},
+{
+"text": "Before",
+"start": 24.378,
+"end": 24.506
+},
+{
+"text": "you",
+"start": 24.676,
+"end": 24.762
+},
+{
+"text": "take",
+"start": 24.804,
+"end": 24.932
+},
+{
+"text": "a",
+"start": 24.975,
+"end": 25.017
+},
+{
+"text": "seat,",
+"start": 25.06,
+"end": 25.231
+},
+{
+"text": "ask",
+"start": 25.615,
+"end": 25.785
+},
+{
+"text": "five",
+"start": 25.956,
+"end": 26.169
+},
+{
+"text": "questions.",
+"start": 26.297,
+"end": 26.511
+},
+{
+"text": "Who",
+"start": 27.151,
+"end": 27.45
+},
+{
+"text": "holds",
+"start": 27.492,
+"end": 27.706
+},
+{
+"text": "my",
+"start": 27.791,
+"end": 27.876
+},
+{
+"text": "money?",
+"start": 27.919,
+"end": 28.047
+},
+{
+"text": "Who",
+"start": 28.644,
+"end": 28.815
+},
+{
+"text": "regulates",
+"start": 28.858,
+"end": 29.241
+},
+{
+"text": "the",
+"start": 29.327,
+"end": 29.455
+},
+{
+"text": "broker?",
+"start": 29.497,
+"end": 29.711
+},
+{
+"text": "Are",
+"start": 30.137,
+"end": 30.308
+},
+{
+"text": "the",
+"start": 30.351,
+"end": 30.393
+},
+{
+"text": "results",
+"start": 30.436,
+"end": 30.564
+},
+{
+"text": "real?",
+"start": 30.735,
+"end": 30.905
+},
+{
+"text": "How",
+"start": 31.503,
+"end": 31.674
+},
+{
+"text": "big",
+"start": 31.716,
+"end": 31.844
+},
+{
+"text": "are",
+"start": 31.887,
+"end": 31.972
+},
+{
+"text": "the",
+"start": 32.015,
+"end": 32.057
+},
+{
+"text": "moves?",
+"start": 32.1,
+"end": 32.228
+},
+{
+"text": "Can",
+"start": 32.783,
+"end": 32.868
+},
+{
+"text": "I",
+"start": 32.911,
+"end": 32.996
+},
+{
+"text": "get",
+"start": 33.039,
+"end": 33.124
+},
+{
+"text": "out?",
+"start": 33.167,
+"end": 33.252
+},
+{
+"text": "Trading",
+"start": 33.752,
+"end": 34.008
+},
+{
+"text": "carries",
+"start": 34.094,
+"end": 34.392
+},
+{
+"text": "risk,",
+"start": 34.478,
+"end": 34.648
+},
+{
+"text": "so",
+"start": 35.118,
+"end": 35.246
+},
+{
+"text": "start",
+"start": 35.289,
+"end": 35.545
+},
+{
+"text": "small",
+"start": 35.63,
+"end": 35.886
+},
+{
+"text": "and",
+"start": 36.099,
+"end": 36.313
+},
+{
+"text": "learn",
+"start": 36.355,
+"end": 36.569
+},
+{
+"text": "first.",
+"start": 36.654,
+"end": 36.867
+},
+{
+"text": "My",
+"start": 37.521,
+"end": 37.649
+},
+{
+"text": "full",
+"start": 37.692,
+"end": 37.905
+},
+{
+"text": "guide",
+"start": 37.948,
+"end": 38.161
+},
+{
+"text": "to",
+"start": 38.289,
+"end": 38.375
+},
+{
+"text": "these",
+"start": 38.417,
+"end": 38.503
+},
+{
+"text": "five",
+"start": 38.588,
+"end": 38.801
+},
+{
+"text": "checks",
+"start": 38.887,
+"end": 39.185
+},
+{
+"text": "is",
+"start": 39.271,
+"end": 39.399
+},
+{
+"text": "waiting",
+"start": 39.441,
+"end": 39.655
+},
+{
+"text": "for",
+"start": 39.783,
+"end": 39.911
+},
+{
+"text": "you",
+"start": 39.953,
+"end": 40.081
+},
+{
+"text": "in",
+"start": 40.167,
+"end": 40.209
+},
+{
+"text": "the",
+"start": 40.252,
+"end": 40.295
+},
+{
+"text": "free",
+"start": 40.337,
+"end": 40.465
+},
+{
+"text": "tribe.",
+"start": 40.551,
+"end": 40.764
+},
+{
+"text": "Which",
+"start": 41.276,
+"end": 41.447
+},
+{
+"text": "question",
+"start": 41.532,
+"end": 41.703
+},
+{
+"text": "would",
+"start": 41.873,
+"end": 41.959
+},
+{
+"text": "you",
+"start": 42.001,
+"end": 42.087
+},
+{
+"text": "ask",
+"start": 42.129,
+"end": 42.215
+},
+{
+"text": "first?",
+"start": 42.343,
+"end": 42.513
+},
+{
+"text": "Tell",
+"start": 43.025,
+"end": 43.111
+},
+{
+"text": "me",
+"start": 43.153,
+"end": 43.239
+},
+{
+"text": "below.",
+"start": 43.281,
+"end": 43.409
+},
+{
+"text": "And",
+"start": 43.921,
+"end": 44.092
+},
+{
+"text": "send",
+"start": 44.135,
+"end": 44.305
+},
+{
+"text": "this",
+"start": 44.391,
+"end": 44.476
+},
+{
+"text": "to",
+"start": 44.519,
+"end": 44.647
+},
+{
+"text": "a",
+"start": 44.689,
+"end": 44.732
+},
+{
+"text": "friend",
+"start": 44.775,
+"end": 44.945
+},
+{
+"text": "who's",
+"start": 45.073,
+"end": 45.244
+},
+{
+"text": "curious",
+"start": 45.287,
+"end": 45.543
+},
+{
+"text": "about",
+"start": 45.799,
+"end": 45.927
+},
+{
+"text": "trading.",
+"start": 45.969,
+"end": 46.183
+},
+{
+"text": "Then",
+"start": 46.811,
+"end": 46.981
+},
+{
+"text": "join",
+"start": 47.067,
+"end": 47.195
+},
+{
+"text": "the",
+"start": 47.28,
+"end": 47.365
+},
+{
+"text": "free",
+"start": 47.408,
+"end": 47.579
+},
+{
+"text": "MTG",
+"start": 47.707,
+"end": 48.219
+},
+{
+"text": "TRIBE",
+"start": 48.347,
+"end": 48.859
+},
+{
+"text": "at",
+"start": 48.944,
+"end": 49.029
+},
+{
+"text": "MTG",
+"start": 49.115,
+"end": 49.541
+},
+{
+"text": "tribe",
+"start": 49.584,
+"end": 49.883
+},
+{
+"text": "dot",
+"start": 50.011,
+"end": 50.139
+},
+{
+"text": "com",
+"start": 50.267,
+"end": 50.437
+},
+{
+"text": "slash",
+"start": 50.651,
+"end": 50.907
+},
+{
+"text": "group.",
+"start": 50.992,
+"end": 51.205
+},
+{
+"text": "We",
+"start": 51.632,
+"end": 51.803
+},
+{
+"text": "learn",
+"start": 51.845,
+"end": 51.973
+},
+{
+"text": "crypto,",
+"start": 52.059,
+"end": 52.357
+},
+{
+"text": "AI",
+"start": 52.656,
+"end": 53.04
+},
+{
+"text": "and",
+"start": 53.253,
+"end": 53.381
+},
+{
+"text": "multiple",
+"start": 53.467,
+"end": 53.637
+},
+{
+"text": "income",
+"start": 53.893,
+"end": 54.149
+},
+{
+"text": "streams",
+"start": 54.192,
+"end": 54.448
+},
+{
+"text": "together.",
+"start": 54.533,
+"end": 54.747
+},
+{
+"text": "I'm",
+"start": 55.216,
+"end": 55.515
+},
+{
+"text": "MTG,",
+"start": 55.557,
+"end": 55.899
+},
+{
+"text": "Your",
+"start": 56.197,
+"end": 56.368
+},
+{
+"text": "Digital",
+"start": 56.496,
+"end": 56.667
+},
+{
+"text": "Architect.",
+"start": 56.795,
+"end": 57.179
+},
+{
+"text": "Let's",
+"start": 57.738,
+"end": 57.951
+},
+{
+"text": "Get",
+"start": 57.994,
+"end": 58.079
+},
+{
+"text": "This",
+"start": 58.122,
+"end": 58.207
+},
+{
+"text": "Crypto!",
+"start": 58.292,
+"end": 58.591
+}
+],
+"slogan": "slogan"
+}

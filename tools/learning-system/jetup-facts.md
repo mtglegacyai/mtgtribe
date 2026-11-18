@@ -52,6 +52,7 @@ the voice bank).
 | Partner earnings | JetUP portal Wallet, Withdraw to the TAG wallet or an MT5 account; add your own crypto wallet under Wallets first | get-started #earnings, FAQ | Sunday training |
 | Reinvest | Adds a strategy's profit back into it and starts a new one month minimum | get-started #earnings | Sunday training; CopyX terms |
 | Withdrawal time | About 48 hours on average (JetUP's one-pager); fees and limits are the broker's terms | how-it-works, FAQ | JetUP one-pager |
+| JetUP Assistant | Beta. JetUP's AI helper in the JetUP Dashboard (jet-up.ai): give it a name, set a goal, one next step a day; tracks Infinity, Global Pool, PowerUp and JetUP Boost progress; active leaders see their structure (find a name in the branch, who is close to the next level, who grew, the weak leg); explains the team's Dennis Promo, Check 100+100 by CU number; you can see and erase what it remembers. Video names and numbers are demo data | partner-plan #assistant, videos #assistant | JetUP's own video (MTG, 18 Nov 2026) |
 
 ## Partner plan (JetUP's figures, as of 4 Oct 2026)
 
@@ -108,6 +109,10 @@ the voice bank).
 4. Risk percentage: the CopyX sync tick box says "80% of retail investors lose money"; TAG Markets' KYC reminder (and this
    site) says 88% of retail investor accounts lose money when trading CFDs. Both are TAG texts on different screens. Keep 88%
    where the site quotes the KYC reminder; quote 80% only when showing that tick box.
+5. Community token: JetUP's Sonic AI video (18 Nov 2026) says to connect Sonic with the general token #JETUP; MTG's team
+   uses #9M then 9MPromo (MTG's guide). The site keeps the team codes and says so next to the video.
+6. Amplify: the same video says TAG Markets' standard is 12x and 24x is the broker's current promotion. The site says 24x
+   (what members get today). If the promotion ends, update every 24x on the site, the calculators and the explainers.
 3. BIX commission figures come from a presentation slide. Confirm them in the partner account or an official JetUP document.
 
 ## Never import from third-party trainings
@@ -137,3 +142,8 @@ questions" for MTG.
   label, SONIC first in the list, the $10 minimum note, promo approval time, MetaTrader 5 view, more strategies, withdraw and
   reinvest, BIX phone-only linking, why to link early, top-ups from TAG, private key, the portal's BIX view, BIX commissions.
   Left out: everything under "Never import".
+- 18 Nov 2026: two JetUP official videos from MTG. "JetUP Assistant (Beta)" (0:51, the AI helper in the JetUP Dashboard) and
+  "Sonic AI, the full picture" (2:20: gold, algorithmic trading plus human traders, the last six closed months May to October
+  2026 at 24x before the 70/30 split, 196 trades and 171 won as on jet-up.ai/sonic, Myfxbook, 70/30, start in the JetUP IB
+  portal, token #JETUP, the Dennis Promo, 12x standard and 24x promotion). Placed on partner-plan #assistant, how-it-works
+  #sonic-video (replaces the 1:04 video there) and the Videos page (6 and 7).

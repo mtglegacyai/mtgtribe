@@ -1,0 +1,896 @@
+{
+"voice": null,
+"request": "0f56ee2b88b24f7087832925fe613b1b",
+"duration": 61.172,
+"pauses_added": [
+0.0,
+0.0,
+0.0,
+0.273,
+0.0,
+0.0
+],
+"words": [
+{
+"text": "Myth",
+"start": 0.256,
+"end": 0.512
+},
+{
+"text": "or",
+"start": 0.725,
+"end": 0.811
+},
+{
+"text": "fact:",
+"start": 0.853,
+"end": 1.067
+},
+{
+"text": "you",
+"start": 1.835,
+"end": 1.963
+},
+{
+"text": "need",
+"start": 2.005,
+"end": 2.091
+},
+{
+"text": "money",
+"start": 2.176,
+"end": 2.304
+},
+{
+"text": "to",
+"start": 2.432,
+"end": 2.56
+},
+{
+"text": "make",
+"start": 2.603,
+"end": 2.688
+},
+{
+"text": "money",
+"start": 2.773,
+"end": 2.859
+},
+{
+"text": "online?",
+"start": 2.987,
+"end": 3.115
+},
+{
+"text": "In",
+"start": 3.755,
+"end": 3.84
+},
+{
+"text": "one",
+"start": 3.883,
+"end": 4.053
+},
+{
+"text": "survey,",
+"start": 4.139,
+"end": 4.523
+},
+{
+"text": "forty-four",
+"start": 4.907,
+"end": 5.333
+},
+{
+"text": "percent",
+"start": 5.376,
+"end": 5.504
+},
+{
+"text": "said",
+"start": 5.803,
+"end": 6.016
+},
+{
+"text": "not",
+"start": 6.059,
+"end": 6.229
+},
+{
+"text": "enough",
+"start": 6.315,
+"end": 6.443
+},
+{
+"text": "money",
+"start": 6.528,
+"end": 6.656
+},
+{
+"text": "is",
+"start": 6.827,
+"end": 6.869
+},
+{
+"text": "what",
+"start": 6.912,
+"end": 7.04
+},
+{
+"text": "stopped",
+"start": 7.083,
+"end": 7.296
+},
+{
+"text": "them",
+"start": 7.381,
+"end": 7.467
+},
+{
+"text": "from",
+"start": 7.509,
+"end": 7.637
+},
+{
+"text": "starting.",
+"start": 7.68,
+"end": 7.893
+},
+{
+"text": "Let's",
+"start": 8.363,
+"end": 8.576
+},
+{
+"text": "check.",
+"start": 8.619,
+"end": 8.704
+},
+{
+"text": "Fact",
+"start": 9.344,
+"end": 9.6
+},
+{
+"text": "check",
+"start": 9.643,
+"end": 9.813
+},
+{
+"text": "one:",
+"start": 9.899,
+"end": 10.027
+},
+{
+"text": "what",
+"start": 10.368,
+"end": 10.624
+},
+{
+"text": "you",
+"start": 10.667,
+"end": 10.752
+},
+{
+"text": "really",
+"start": 10.795,
+"end": 11.008
+},
+{
+"text": "need.",
+"start": 11.136,
+"end": 11.264
+},
+{
+"text": "A",
+"start": 11.636,
+"end": 11.764
+},
+{
+"text": "phone",
+"start": 11.807,
+"end": 12.063
+},
+{
+"text": "or",
+"start": 12.276,
+"end": 12.362
+},
+{
+"text": "a",
+"start": 12.404,
+"end": 12.447
+},
+{
+"text": "laptop,",
+"start": 12.49,
+"end": 12.874
+},
+{
+"text": "an",
+"start": 13.215,
+"end": 13.386
+},
+{
+"text": "internet",
+"start": 13.428,
+"end": 13.727
+},
+{
+"text": "connection,",
+"start": 13.812,
+"end": 14.026
+},
+{
+"text": "and",
+"start": 14.58,
+"end": 14.751
+},
+{
+"text": "one",
+"start": 14.794,
+"end": 15.007
+},
+{
+"text": "skill",
+"start": 15.135,
+"end": 15.391
+},
+{
+"text": "that",
+"start": 15.476,
+"end": 15.562
+},
+{
+"text": "people",
+"start": 15.604,
+"end": 15.732
+},
+{
+"text": "need.",
+"start": 15.903,
+"end": 16.031
+},
+{
+"text": "Fact",
+"start": 16.671,
+"end": 16.97
+},
+{
+"text": "check",
+"start": 17.055,
+"end": 17.226
+},
+{
+"text": "two:",
+"start": 17.311,
+"end": 17.439
+},
+{
+"text": "the",
+"start": 17.866,
+"end": 17.994
+},
+{
+"text": "tools.",
+"start": 18.036,
+"end": 18.207
+},
+{
+"text": "Many",
+"start": 18.89,
+"end": 19.103
+},
+{
+"text": "of",
+"start": 19.188,
+"end": 19.231
+},
+{
+"text": "the",
+"start": 19.274,
+"end": 19.359
+},
+{
+"text": "best",
+"start": 19.402,
+"end": 19.53
+},
+{
+"text": "ones",
+"start": 19.658,
+"end": 19.828
+},
+{
+"text": "have",
+"start": 19.956,
+"end": 20.084
+},
+{
+"text": "free",
+"start": 20.127,
+"end": 20.298
+},
+{
+"text": "plans:",
+"start": 20.34,
+"end": 20.554
+},
+{
+"text": "free",
+"start": 21.023,
+"end": 21.236
+},
+{
+"text": "design",
+"start": 21.279,
+"end": 21.364
+},
+{
+"text": "apps,",
+"start": 21.578,
+"end": 21.834
+},
+{
+"text": "free",
+"start": 22.218,
+"end": 22.431
+},
+{
+"text": "AI",
+"start": 22.474,
+"end": 22.772
+},
+{
+"text": "assistants,",
+"start": 22.9,
+"end": 23.284
+},
+{
+"text": "free",
+"start": 23.711,
+"end": 23.882
+},
+{
+"text": "places",
+"start": 23.924,
+"end": 24.138
+},
+{
+"text": "to",
+"start": 24.266,
+"end": 24.394
+},
+{
+"text": "show",
+"start": 24.436,
+"end": 24.564
+},
+{
+"text": "your",
+"start": 24.607,
+"end": 24.735
+},
+{
+"text": "work.",
+"start": 24.778,
+"end": 24.991
+},
+{
+"text": "Fact",
+"start": 25.562,
+"end": 25.818
+},
+{
+"text": "check",
+"start": 25.903,
+"end": 26.074
+},
+{
+"text": "three:",
+"start": 26.159,
+"end": 26.33
+},
+{
+"text": "the",
+"start": 26.799,
+"end": 26.927
+},
+{
+"text": "real",
+"start": 26.97,
+"end": 27.183
+},
+{
+"text": "cost.",
+"start": 27.268,
+"end": 27.524
+},
+{
+"text": "A",
+"start": 28.122,
+"end": 28.335
+},
+{
+"text": "website",
+"start": 28.378,
+"end": 28.548
+},
+{
+"text": "name",
+"start": 28.762,
+"end": 28.932
+},
+{
+"text": "is",
+"start": 29.06,
+"end": 29.103
+},
+{
+"text": "about",
+"start": 29.188,
+"end": 29.316
+},
+{
+"text": "twenty",
+"start": 29.402,
+"end": 29.615
+},
+{
+"text": "dollars",
+"start": 29.743,
+"end": 29.871
+},
+{
+"text": "a",
+"start": 29.999,
+"end": 30.084
+},
+{
+"text": "year",
+"start": 30.127,
+"end": 30.298
+},
+{
+"text": "or",
+"start": 30.383,
+"end": 30.468
+},
+{
+"text": "less.",
+"start": 30.511,
+"end": 30.639
+},
+{
+"text": "The",
+"start": 31.194,
+"end": 31.322
+},
+{
+"text": "biggest",
+"start": 31.364,
+"end": 31.492
+},
+{
+"text": "cost",
+"start": 31.663,
+"end": 31.876
+},
+{
+"text": "is",
+"start": 32.09,
+"end": 32.26
+},
+{
+"text": "your",
+"start": 32.303,
+"end": 32.388
+},
+{
+"text": "time.",
+"start": 32.431,
+"end": 32.687
+},
+{
+"text": "So,",
+"start": 33.387,
+"end": 33.557
+},
+{
+"text": "myth",
+"start": 33.941,
+"end": 34.112
+},
+{
+"text": "or",
+"start": 34.197,
+"end": 34.283
+},
+{
+"text": "fact?",
+"start": 34.325,
+"end": 34.496
+},
+{
+"text": "Mostly",
+"start": 35.008,
+"end": 35.264
+},
+{
+"text": "myth.",
+"start": 35.349,
+"end": 35.52
+},
+{
+"text": "Money",
+"start": 36.245,
+"end": 36.416
+},
+{
+"text": "can",
+"start": 36.544,
+"end": 36.629
+},
+{
+"text": "help",
+"start": 36.672,
+"end": 36.8
+},
+{
+"text": "you",
+"start": 36.885,
+"end": 36.971
+},
+{
+"text": "go",
+"start": 37.013,
+"end": 37.099
+},
+{
+"text": "faster,",
+"start": 37.141,
+"end": 37.568
+},
+{
+"text": "but",
+"start": 38.037,
+"end": 38.165
+},
+{
+"text": "skills",
+"start": 38.251,
+"end": 38.464
+},
+{
+"text": "and",
+"start": 38.677,
+"end": 38.763
+},
+{
+"text": "time",
+"start": 38.805,
+"end": 39.104
+},
+{
+"text": "get",
+"start": 39.36,
+"end": 39.445
+},
+{
+"text": "you",
+"start": 39.488,
+"end": 39.616
+},
+{
+"text": "started.",
+"start": 39.616,
+"end": 39.872
+},
+{
+"text": "Results",
+"start": 40.561,
+"end": 40.945
+},
+{
+"text": "take",
+"start": 41.073,
+"end": 41.244
+},
+{
+"text": "patience,",
+"start": 41.329,
+"end": 41.713
+},
+{
+"text": "and",
+"start": 42.055,
+"end": 42.225
+},
+{
+"text": "there",
+"start": 42.268,
+"end": 42.396
+},
+{
+"text": "are",
+"start": 42.439,
+"end": 42.481
+},
+{
+"text": "no",
+"start": 42.524,
+"end": 42.652
+},
+{
+"text": "promises.",
+"start": 42.737,
+"end": 43.036
+},
+{
+"text": "Did",
+"start": 43.676,
+"end": 43.761
+},
+{
+"text": "you",
+"start": 43.804,
+"end": 43.889
+},
+{
+"text": "believe",
+"start": 43.932,
+"end": 44.06
+},
+{
+"text": "this",
+"start": 44.145,
+"end": 44.273
+},
+{
+"text": "one?",
+"start": 44.316,
+"end": 44.444
+},
+{
+"text": "Tell",
+"start": 44.7,
+"end": 44.828
+},
+{
+"text": "me",
+"start": 44.871,
+"end": 44.956
+},
+{
+"text": "below.",
+"start": 44.999,
+"end": 45.084
+},
+{
+"text": "And",
+"start": 45.511,
+"end": 45.681
+},
+{
+"text": "send",
+"start": 45.724,
+"end": 45.895
+},
+{
+"text": "this",
+"start": 45.937,
+"end": 46.023
+},
+{
+"text": "to",
+"start": 46.065,
+"end": 46.151
+},
+{
+"text": "a",
+"start": 46.193,
+"end": 46.236
+},
+{
+"text": "friend",
+"start": 46.279,
+"end": 46.492
+},
+{
+"text": "who",
+"start": 46.62,
+"end": 46.705
+},
+{
+"text": "says:",
+"start": 46.748,
+"end": 46.919
+},
+{
+"text": "I'll",
+"start": 47.26,
+"end": 47.644
+},
+{
+"text": "start",
+"start": 47.687,
+"end": 47.9
+},
+{
+"text": "when",
+"start": 47.985,
+"end": 48.071
+},
+{
+"text": "I",
+"start": 48.113,
+"end": 48.156
+},
+{
+"text": "have",
+"start": 48.199,
+"end": 48.284
+},
+{
+"text": "money.",
+"start": 48.327,
+"end": 48.455
+},
+{
+"text": "Then",
+"start": 49.009,
+"end": 49.137
+},
+{
+"text": "join",
+"start": 49.223,
+"end": 49.351
+},
+{
+"text": "the",
+"start": 49.436,
+"end": 49.521
+},
+{
+"text": "free",
+"start": 49.564,
+"end": 49.777
+},
+{
+"text": "MTG",
+"start": 49.948,
+"end": 50.46
+},
+{
+"text": "TRIBE",
+"start": 50.503,
+"end": 50.929
+},
+{
+"text": "at",
+"start": 51.015,
+"end": 51.185
+},
+{
+"text": "MTG",
+"start": 51.228,
+"end": 51.612
+},
+{
+"text": "tribe",
+"start": 51.655,
+"end": 51.953
+},
+{
+"text": "dot",
+"start": 51.996,
+"end": 52.167
+},
+{
+"text": "com",
+"start": 52.252,
+"end": 52.423
+},
+{
+"text": "slash",
+"start": 52.679,
+"end": 52.935
+},
+{
+"text": "group.",
+"start": 53.063,
+"end": 53.233
+},
+{
+"text": "We",
+"start": 53.767,
+"end": 53.98
+},
+{
+"text": "learn",
+"start": 54.023,
+"end": 54.108
+},
+{
+"text": "crypto,",
+"start": 54.194,
+"end": 54.578
+},
+{
+"text": "AI",
+"start": 54.919,
+"end": 55.303
+},
+{
+"text": "and",
+"start": 55.559,
+"end": 55.687
+},
+{
+"text": "multiple",
+"start": 55.772,
+"end": 55.986
+},
+{
+"text": "income",
+"start": 56.199,
+"end": 56.498
+},
+{
+"text": "streams",
+"start": 56.583,
+"end": 56.839
+},
+{
+"text": "together.",
+"start": 56.967,
+"end": 57.18
+},
+{
+"text": "I'm",
+"start": 57.692,
+"end": 57.863
+},
+{
+"text": "MTG,",
+"start": 57.906,
+"end": 58.332
+},
+{
+"text": "Your",
+"start": 58.631,
+"end": 58.802
+},
+{
+"text": "Digital",
+"start": 58.887,
+"end": 59.1
+},
+{
+"text": "Architect.",
+"start": 59.228,
+"end": 59.612
+},
+{
+"text": "Let's",
+"start": 60.171,
+"end": 60.384
+},
+{
+"text": "Get",
+"start": 60.427,
+"end": 60.512
+},
+{
+"text": "This",
+"start": 60.555,
+"end": 60.64
+},
+{
+"text": "Crypto!",
+"start": 60.725,
+"end": 61.024
+}
+],
+"slogan": "slogan"
+}

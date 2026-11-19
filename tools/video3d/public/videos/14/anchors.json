@@ -1,0 +1,9 @@
+{
+ "hook": "Myth or fact", "needMoney": "you need money", "online": "online", "survey": "In one survey", "pct": "forty-four", "notEnough": "not enough money", "stopped": "stopped them", "check": "Let's check",
+ "f1": ["Fact check one", 1], "really": "really need", "phone": "A phone", "laptop": "laptop", "internet": "an internet", "skill": "one skill", "people": "that people need",
+ "f2": ["Fact check two", 1], "tools": "the tools", "freePlans": "free plans", "design": "free design", "ai": "free AI", "places": "free places", "work": "your work",
+ "f3": ["Fact check three", 1], "realCost": "the real cost", "website": "A website name", "twenty": "twenty dollars", "less": "or less", "biggest": "The biggest", "time": "your time",
+ "so": "So, myth", "mostly": "Mostly myth", "faster": "go faster", "skills": "but skills", "started": "get you started", "results": "Results take", "promises": "no promises",
+ "did": "Did you believe", "tell": "Tell me", "send": "And send", "says": "who says", "illStart": "I'll start",
+ "join": "Then join", "site": ["MTG tribe", 2], "weLearn": "We learn", "im": "I'm MTG", "slogan": "Let's Get"
+}

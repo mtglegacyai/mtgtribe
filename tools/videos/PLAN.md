@@ -28,7 +28,7 @@ topic. Facts marked "to verify" are checked during that video's research, never 
 | 11 | Did You Know (1) | Smart contracts | Did You Know a Contract Can Run Itself? | "Did you know some contracts don't need a lawyer, a bank or a handshake?" | Made 16 Nov 2026 (`11-did-you-know-smart-contracts/`) |
 | 12 | What If (2) | Stocks | What If You Owned a Piece of the Companies You Use Every Day? | "What if every time you bought a Coke, you owned a tiny piece of the company?" | Made 17 Nov 2026 (`12-what-if-you-owned-a-piece/`) |
 | 13 | What Everyone Ought to Know About (3) | Trading | What Everyone Ought to Know About Copy Trading | "What everyone ought to know about copy trading." | Made 18 Nov 2026 (`13-what-everyone-ought-to-know-copy-trading/`), built on MTG's minibus taxi picture and his 5 checks |
-| 14 | Myth or Fact (4) | Side hustles + AI | Myth or Fact: You Need Money to Make Money Online | "Myth or fact: you need money to make money online?" | Time, skills, small costs, risks; no income claims |
+| 14 | Myth or Fact (4) | Side hustles + AI | Myth or Fact: You Need Money to Make Money Online | "Myth or fact: you need money to make money online?" | Made 19 Nov 2026 (`14-myth-or-fact-money-to-make-money/`) |
 | 15 | How ... Really Works (5) | Crypto 101: wallets and approvals | How Wallet Drainers Really Work (and the One Click to Avoid) | "One click on 'Approve' can empty your wallet. Here's how." | Crypto 101 lesson 9; facts to verify |
 | 16 | The Hidden Cost of (6) | Money + diversifying | The Hidden Cost of Keeping All Your Savings in One Place | "All your savings in one place? Here is what that quietly costs you." | Diversifying, calmly; facts to verify |
 

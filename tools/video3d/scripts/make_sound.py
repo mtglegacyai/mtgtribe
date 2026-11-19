@@ -45,6 +45,8 @@ The palette (what each one is for):
   stamp      a rubber stamp pressed onto paper, padded and soft (video 12)
   tickbox    a box ticked with a soft pen and a small warm note (video 13)
   mirror     one note, then its softer echo: a trade copied across (video 13)
+  pricetag   a price tag flipping to $0, a flick and a little ding (video 14)
+  verdict    two rising notes and a warm chord: a soft ta-da for an answer (video 14)
 
 Every video gets effects that fit ITS story (MTG, 7 November 2026: "do not just use one and the same sound effects,
 even if they do not fit"). When a moment needs a sound the palette does not have, add a new soft one here (with the
@@ -707,6 +709,31 @@ def mirror():
     return lowpass(x, 1500)
 
 
+def pricetag():
+    """A small price tag flipping over to show $0: a soft card flick and a little round ding."""
+    d = 0.8
+    tt = t(d)
+    flick = band(noise(d), 500, 1500) * np.clip(tt / 0.01, 0, 1) * np.exp(-tt * 30) * 0.35
+    ding = (sine(lambda u: 784.0, d) + 0.2 * sine(lambda u: 1568.0, d)) * env(len(tt), 0.008, 0.35) * 0.45
+    i = int(0.06 * SR)
+    x = flick.copy()
+    x[i:] += ding[:len(x) - i]
+    return lowpass(x, 1700)
+
+
+def verdict():
+    """The answer is in: two gentle rising notes and a warm chord (a soft, friendly ta-da)."""
+    d = 1.6
+    x = np.zeros(int(d * SR))
+    for at, fs, a in ((0.0, (392.0,), 0.6), (0.16, (523.3,), 0.7), (0.34, (523.3, 659.3, 784.0), 0.5)):
+        n = int((d - at) * SR)
+        tt = np.arange(n) / SR
+        b = sum(np.sin(2 * np.pi * f * tt) for f in fs) / len(fs) * env(n, 0.012, 0.6 if len(fs) > 1 else 0.15)
+        i = int(at * SR)
+        x[i:i + n] += b[:len(x) - i] * a
+    return lowpass(x, 1600)
+
+
 PALETTE = {
     'air': (air, 0.30), 'swell': (swell, 0.30), 'tension': (tension, 0.20), 'reveal': (reveal, 0.35),
     'drop': (drop, 0.15), 'glow': (glow, 0.35), 'chime': (chime, 0.30),
@@ -744,6 +771,8 @@ PALETTE = {
     'fizz': (fizz, 0.2), 'stamp': (stamp, 0.15),
     # made for video 13 (what everyone ought to know about copy trading)
     'tickbox': (tickbox, 0.15), 'mirror': (mirror, 0.3),
+    # made for video 14 (myth or fact: you need money to make money online)
+    'pricetag': (pricetag, 0.15), 'verdict': (verdict, 0.35),
 }
 
 

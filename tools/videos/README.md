@@ -24,5 +24,6 @@ Daily routine: when MTG says "let's create today's video", the next video follow
 | 11 | Did You Know | Did You Know a Contract Can Run Itself? | smart contracts (Crypto 101), wallet safety | 9:16 Short, 1:01 | Preview sent to MTG (16 Nov 2026) with cover and posting pack |
 | 12 | What If | What If You Owned a Piece of the Companies You Use Every Day? | stocks: shares, dividends, index funds | 9:16 Short, 0:58 | Preview sent to MTG (17 Nov 2026) with cover and posting pack |
 | 13 | What Everyone Ought to Know About | What Everyone Ought to Know About Copy Trading | trading: copy trading and the 5 checks | 9:16 Short, 1:01 | Preview sent to MTG (18 Nov 2026) with cover and posting pack |
+| 14 | Myth or Fact | Myth or Fact: You Need Money to Make Money Online | side hustles: what you need, free tools, real costs | 9:16 Short, 1:04 | Preview sent to MTG (19 Nov 2026) with cover and posting pack |
 
 This repository is public: keep private strategy in MTG's Google Drive.

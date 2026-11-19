@@ -16,6 +16,7 @@ import {Cover10, SecondIncome, WMP10_FPS, WMP10_FRAMES} from './compositions/wmp
 import {Cover11, DYK11_FPS, DYK11_FRAMES, SmartContracts} from './compositions/dyk11/SmartContracts';
 import {Cover12, OwnAPiece, WIF12_FPS, WIF12_FRAMES} from './compositions/wif12/OwnAPiece';
 import {CopyTrading, Cover13, WEK13_FPS, WEK13_FRAMES} from './compositions/wek13/CopyTrading';
+import {Cover14, MOF14_FPS, MOF14_FRAMES, MoneyMyth} from './compositions/mof14/MoneyMyth';
 import {NEWLOOK_FRAMES, NewLook} from './compositions/preview/NewLook';
 import {LEOMOMENTS_FRAMES, LeoMoments} from './compositions/preview/LeoMoments';
 import {Hook3D, HOOK3D_FRAMES} from './compositions/whatif01/Hook3D';
@@ -81,6 +82,10 @@ export const RemotionRoot: React.FC = () => (
 	<Folder name="Video13">
 		<Composition id="WEK13-9x16" component={CopyTrading} width={1080} height={1920} fps={WEK13_FPS} durationInFrames={WEK13_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
 		<Still id="Cover13-9x16" component={Cover13} width={1080} height={1920} />
+	</Folder>
+	<Folder name="Video14">
+		<Composition id="MOF14-9x16" component={MoneyMyth} width={1080} height={1920} fps={MOF14_FPS} durationInFrames={MOF14_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />
+		<Still id="Cover14-9x16" component={Cover14} width={1080} height={1920} />
 	</Folder>
 	<Folder name="Real3D">
 		<Composition id="WhatIf01-3D-9x16" component={WhatIf01_3D} width={1080} height={1920} fps={30} durationInFrames={WHATIF01_3D_FRAMES} defaultProps={{closingTrack: FILES.closingTrack}} />

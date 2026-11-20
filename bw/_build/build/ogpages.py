@@ -26,6 +26,7 @@ SPECS = {
     'w-t2': ('Tutorial 2 of 3', ['Buy BNB.', 'Send it to', 'SafePal.'], 'thumb:2'),
     'w-t3': ('Tutorial 3 of 3', ['Activate', 'slot 1,', 'step by step'], 'thumb:3'),
     'exp': ('Explainer videos', ['How it works,', 'in pictures'], 'tree'),
+    'w-i1': ('Explained in 5 minutes', ['How Bitcoin', 'Wealth', 'works'], 'leo'),
     'zoom': ('Meet the community', ['Live on Zoom.', '5 evenings,', '4 languages'], 'zoom'),
     'page': ('R1,000 once-off', ['Your own', 'Bitcoin Wealth', 'website'], 'mascot'),
     'order': ('Pay after it is built', ['Order your', 'BW Tribe Page'], 'mascot'),
@@ -148,6 +149,14 @@ def visual(im, kind):
             d.text((x + 42, 360), '19:00' if dd == 'Fri' else '20:00', font=font('Manrope[wght].ttf', 20, 800), fill=(192, 255, 114), anchor='mm')
             d.text((x + 42, 395), lg[:7], font=font('Manrope[wght].ttf', 15, 700), fill=(168, 162, 145), anchor='mm')
             x += 94
+    elif kind == 'leo':
+        # Leo as he presents the Bitcoin Wealth presentation (the cut-out of its thumbnails), standing on the picture's bottom edge
+        m = Image.open(STUDIO + '/projects/bitcoin-wealth/videos/intro-remake-leo/thumbs/assets/leo-hello.png').convert('RGBA')
+        hgt = 600; m = m.resize((int(m.width * hgt / m.height), hgt), Image.LANCZOS)
+        glow = Image.new('RGBA', (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
+        gd.ellipse((cx - 250, 120, cx + 250, 620), fill=(255, 161, 1, 95))
+        glow = glow.filter(ImageFilter.GaussianBlur(70)); im.paste(glow, (0, 0), glow)
+        im.paste(m, (cx - m.width // 2, H - hgt + 40), m)
     elif kind == 'mascot' or kind.startswith('thumb'):
         # thumb, thumb:1, thumb:2, thumb:3: the vertical thumbnail of that tutorial
         THUMBS = {'1': '01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg', '2': '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-mtg-thumbnail-9x16.jpg',

@@ -35,6 +35,10 @@ const CASES = [
   ['BW tutorials page, Tutorial 3 from its laptop cover (sheet, phone frame)', '/bw/dashboard/tutorials/', '.vplay[data-play="t3"]'],
   ['BW Tutorial 3 page, a step\'s time button (sheet, phone frame)', '/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/', '#step-14 .tjump'],
   ['BW dashboard, promo video from its tile (sheet, phone frame)', '/bw/dashboard/', '.vtile[data-play="p1"]'],
+  ['BW presentation page, the presentation (inline, laptop frame)', '/bw/dashboard/explainers/bitcoin-wealth-presentation/', '.vplay[data-code="i1"]'],
+  ['BW presentation page, a chapter\'s time button (sheet, laptop frame)', '/bw/dashboard/explainers/bitcoin-wealth-presentation/', '#chapter-7 .tjump'],
+  ['BW landing, the presentation from its button (sheet, laptop frame)', '/bw/', '.promo-acts [data-play="i1"]'],
+  ['BW 14 positions, the presentation from its watch-this-part card (sheet, laptop frame)', '/bw/dashboard/how-it-works/', '.vjump[data-play="i1"]'],
 ].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {
   const b = await chromium.launch(); const rows = []; let bad = 0;

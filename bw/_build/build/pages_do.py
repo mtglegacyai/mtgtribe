@@ -68,11 +68,24 @@ def p_tut(here):
 {sec(think("Do I really need to watch them all?", "<p>Yes, even if you think you already know. Each one shows a screen you'll meet sooner or later. Then share them: we learn best when we teach others.</p>"))}'''
 
 
+PRESENT_CHECKS = ["What Bitcoin Wealth is, in plain pictures", "Where the 14 positions of a cycle pay", "The 12 slots, from 0.001 BTC up",
+                  "Where to get more information, Zoom presentations and training"]
+
+
 def p_exp(here):
     cards = ''.join(soon(p[0]) for p in PLANNED if p[0][0] == 'e')
+    v = V['i1']
+    # the presentation with Leo is the first video here that plays (MTG, 20 Nov 2026: "put it live on my website")
+    first = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['i1'], here)}">{v['title']}: the presentation, with Leo</a></h2>
+<p class="vdesc">The whole Bitcoin Wealth presentation in {round(v['secs'] / 60)} minutes. Leo shows it, slide by slide, and every moving part is drawn as he says it.</p>
+{checks(PRESENT_CHECKS)}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
+<p class="fine">The programme's own presentation, presented by Leo. Leo and his voice are made with AI.</p></div>
+<div class="phone-wrap">{vid('i1', here, eager=True, hero=True)}</div></div>"""
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Short animated explainers, one idea at a time, in MTG's voice. They're being made now. Until they're ready, every page in How it works shows the same idea with live diagrams.",
-        [("film", "5 explainers on the way"), ("triangle-alert", "Risks included")])}
+        "Start with the presentation: Leo shows how Bitcoin Wealth works in 5 minutes. Short explainers, one idea at a time, are being made now.",
+        [("circle-play", "1 ready to watch"), ("film", "5 explainers on the way")])}
+{sec(first, id="presentation", sr="Ready to watch: the presentation")}
 {sec(f'<div class="grid2">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
  {box("The 14 positions", f"<p>Watch the positions fill, live. <a class='inl' href='{A('dashboard/how-it-works/', here)}'>Open</a></p>", "network")}

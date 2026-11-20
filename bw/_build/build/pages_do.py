@@ -80,7 +80,7 @@ def p_exp(here):
 <p class="vdesc">The whole Bitcoin Wealth presentation in {round(v['secs'] / 60)} minutes. Leo shows it, slide by slide, and every moving part is drawn as he says it.</p>
 {checks(PRESENT_CHECKS)}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
-<p class="fine">The programme's own presentation, in its own words. Leo and his voice are made with AI.</p></div>
+<p class="fine">The programme's own presentation, presented by Leo. Leo and his voice are made with AI.</p></div>
 <div class="phone-wrap">{vid('i1', here, eager=True, hero=True)}</div></div>"""
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
         "Start with the presentation: Leo shows how Bitcoin Wealth works in 5 minutes. Short explainers, one idea at a time, are being made now.",

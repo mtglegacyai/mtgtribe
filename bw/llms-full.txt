@@ -1,6 +1,6 @@
 # Bitcoin Wealth Guide by MTG: full text
 
-Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-17.
+Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-20.
 
 ---
 
@@ -49,13 +49,20 @@ Thandi did everything right and still had to start again. See what Leo shows her
 A short cartoon by MTG. Leo and Thandi, and their voices, are made with AI.
 
 ### Welcome. Let's get you started.
-Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.
+Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Leo shows how it works in 5 minutes, just below.
 
 #### Join in 3 stages
 - 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:25)
 - 2 Stage 2 · 15 min Buy BNB, send it to SafePal Buy BNB with rand on VALR or Binance, then send it to your SafePal wallet. Watch Tutorial 2 (5:57) VALR Binance
 - 3 Stage 3 · 5 min Activate slot 1 Swap BNB for BTCB, paste the sign-up link into SafePal's browser and confirm twice. You pay 0.001 BTC, once. Watch Tutorial 3 (6:10) Copy Sign-Up Link Copied ✓
 Every tap, step by step · Introduced by someone else? Use their link.
+
+#### Want to understand it first?
+
+##### How Bitcoin Wealth works, in 5 minutes
+Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.
+The programme's own presentation, in its own words. Leo and his voice are made with AI.
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 #### Your progress
 Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only. New videos appear here as they're released.
@@ -66,7 +73,7 @@ Explainers
 #### Your route, in order
 Seven stops. Each one builds on the last, so go in order the first time.
 - Check the fit Start honest. Is it right for me? takes two minutes.
-- Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words.
+- Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? Watch the 5-minute presentation.
 - See how it pays The 14 positions, then the 12 slots. Watch the positions fill.
 - Compare it honestly Against a stokvel and against the newer copycats, then check it yourself on BscScan.
 - Join step by step Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. Open the join guide.
@@ -199,7 +206,11 @@ The money. Lives on its own blockchain. You can buy it, hold it and send it.
 A set of rules in code. It doesn't create Bitcoin. It moves members' BTCB from one wallet to another, the moment a slot is activated.
 
 #### Watch it explained
-Want the Bitcoin basics first? MTG's free Crypto 101 crash course has 15 short lessons.
+
+##### How Bitcoin Wealth works, in 5 minutes
+Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.
+The programme's own presentation, in its own words. Want the Bitcoin basics first? MTG's free Crypto 101 crash course has 15 short lessons.
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 ---
 
@@ -243,6 +254,8 @@ The contract splits each payment in the same transaction and sends it to the mem
 Positions below you can be filled by people you didn't introduce, when your upline's team overflows. It changes who fills a seat, not that someone has to.
 
 #### Good to know
+
+#### Watch it explained
 
 ---
 
@@ -291,6 +304,8 @@ Position 14 places you at the bottom of a fresh cycle at the same slot. The prog
 
 ##### The Royal Pool
 In later cycles, one payment goes to the Royal Pool, held in the contract. Members who reach slot 3 and qualify by the 21st share it on the last day of the month.
+
+#### Watch it explained
 
 ---
 
@@ -731,10 +746,21 @@ Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/
 
-Short Bitcoin Wealth explainer videos by MTG: the 14 positions, the 12 slots, the stokvel comparison and how to check it on BscScan.
+Bitcoin Wealth explainer videos: start with the 5-minute presentation with Leo, then short explainers on the 14 positions, the 12 slots and more.
 
 ### Bitcoin Wealth explainer videos
-Short animated explainers, one idea at a time, in MTG's voice. They're being made now. Until they're ready, every page in How it works shows the same idea with live diagrams.
+Start with the presentation: Leo shows how Bitcoin Wealth works in 5 minutes. Short explainers, one idea at a time, are being made now.
+
+#### Ready to watch: the presentation
+
+#### How Bitcoin Wealth works: the presentation, with Leo
+The whole Bitcoin Wealth presentation in 5 minutes. Leo shows it, slide by slide, and every moving part is drawn as he says it.
+- What Bitcoin Wealth is, in plain pictures
+- Where the 14 positions of a cycle pay
+- The 12 slots, from 0.001 BTC up
+- Where to get more information, Zoom presentations and training
+The programme's own presentation, in its own words. Leo and his voice are made with AI.
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 #### On the way
 
@@ -748,6 +774,85 @@ Every slot and the once-off. Open
 
 ##### Better than a stokvel?
 The honest scorecard. Open
+
+---
+
+## How Bitcoin Wealth works: the 5-minute presentation video
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+
+Watch how Bitcoin Wealth works in 5 minutes: the presentation with Leo, in 10 chapters, from the smart contract and the 14 positions to the 12 slots.
+
+### How Bitcoin Wealth works: the presentation, in 5 minutes
+The Bitcoin Wealth presentation from start to finish, presented by Leo: what it is, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. Watch it, then tap any chapter to see that part again.
+
+#### Watch the video
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+
+#### In this video
+- What Bitcoin Wealth is, and who it is built for
+- How the Vow Unity smart contract moves each payment
+- Where the 14 positions of a cycle pay, and how the 12 slots work
+- Where to get more information, Zoom presentations and training
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Chapter by chapter
+Tap a time to start the video at that part. Each chapter links to the page that explains it.
+
+##### Chapter 1 · 0:00 Welcome to Bitcoin Wealth
+Leo opens with the idea: people collecting Bitcoin's value together, by fixed rules, with every payment in public.
+On this site: What Is Bitcoin Wealth?
+
+##### Chapter 2 · 0:24 Vow Unity: the engine behind it
+Vow Unity is the engine: the smart contract that places members and moves each payment from wallet to wallet.
+On this site: What Is Bitcoin Wealth?
+
+##### Chapter 3 · 0:43 Built on the blockchain: the key features
+The features the programme lists, from automatic payments to fast execution. Every payment is public, so you can check them yourself.
+On this site: Check It Yourself
+
+##### Chapter 4 · 1:10 Where everyone starts: 0.001 Bitcoin
+One entry of 0.001 BTC. It is the only slot you pay for yourself.
+On this site: Bitcoin To Rand Converter
+
+##### Chapter 5 · 1:28 Cycle 1: where the 14 positions pay
+Position by position: 2 payments go to your upline, 6 to your wallet, 2 buy your next slot, 3 go to members below you and 1 recycles you.
+On this site: The 14 Positions
+
+##### Chapter 6 · 2:47 The next cycles and the Royal Pool
+From the second cycle of a slot, 7 payments go to your wallet and 1 to the Royal Pool. Then the cycle starts again.
+On this site: Recycling And Royal Pool
+
+##### Chapter 7 · 3:13 The 12 slots
+Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. Every slot after the first is bought from the cycle below.
+On this site: The 12 Slots
+
+##### Chapter 8 · 3:31 Moving up the slots
+The programme's tables: what each slot's cycle adds up to when every position fills.
+On this site: Slot Calculator
+
+##### Chapter 9 · 4:06 Ranks, rewards and key advantages
+Ranks and monthly rewards from the Royal Pool, then the programme's own summary of what sets it apart.
+On this site: What Makes It Different
+
+##### Chapter 10 · 4:28 Your next step
+Leo's invitation: join the community, and ask to be added to the WhatsApp groups for more information, Zoom presentations and training.
+On this site: Live On Zoom
+
+#### Your next step
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+
+##### Meet the community first
+Live on Zoom five evenings a week, in four languages.
+See the Zoom schedule
+
+##### Check it yourself
+Open the contract on BscScan and read a real payment with your own eyes.
+How to check it
 
 ---
 

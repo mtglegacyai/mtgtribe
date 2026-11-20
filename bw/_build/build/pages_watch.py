@@ -213,7 +213,7 @@ def p_present(code):
 <p class="fine">It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.</p>
 <div class="btn-row"><a class="btn btn-gold ring" href="{A('dashboard/join/', here)}">{ic('rocket')}<span class="lbl">Join Step-By-Step</span></a>{wa_group_btn(size='sm', label='Ask the MTG TRIBE')}</div>
 <p class="fine">Invited by someone else? Join with their link, so they stay your sponsor.</p></div></div>
-{honest("About this video.", f"It is the programme's own presentation, in its own words, presented by Leo. Its totals show what the plan's design allows when every position fills: not a typical result, and nothing is guaranteed. This guide's own facts are the ones checked on chain: <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>check it yourself</a>. Leo and his voice are made with AI.")}"""
+{honest("About this video.", f"It follows the programme's own presentation, slide by slide, presented by Leo. Its totals show what the plan's design allows when every position fills: not a typical result, and nothing is guaranteed. This guide's own facts are the ones checked on chain: <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>check it yourself</a>. Leo and his voice are made with AI.")}"""
         cards = ''
         for i, c in enumerate(chs):
             line, key = PRESENT_CH[c['key']]

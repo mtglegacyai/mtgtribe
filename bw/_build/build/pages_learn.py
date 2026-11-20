@@ -67,7 +67,7 @@ def p_home(here):
 <p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
 <div class="btn-row"><button type="button" class="btn btn-gold ring" data-start="i1">{ic('play')}<span class="lbl">Watch How It Works</span></button>
 <a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
-<p class="fine">The programme's own presentation, in its own words. Leo and his voice are made with AI.</p></div>
+<p class="fine">The programme's own presentation, presented by Leo. Leo and his voice are made with AI.</p></div>
 <div class="phone-wrap">{vid('i1', here, cap=False)}</div></div>"""
     return f'''{feat}
 {phero("compass", "Welcome. Let's get you started.",
@@ -162,7 +162,7 @@ def p_what(here):
 {sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['i1'], here)}">{V['i1']['title']}, in 5 minutes</a></h3>
 <p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
-<p class="fine">The programme's own presentation, in its own words. Want the Bitcoin basics first? MTG's free <a class="inl" href="{esc(CRYPTO101)}" target="_blank" rel="noopener">Crypto 101 crash course</a> has 15 short lessons.</p></div>
+<p class="fine">The programme's own presentation, presented by Leo. Want the Bitcoin basics first? MTG's free <a class="inl" href="{esc(CRYPTO101)}" target="_blank" rel="noopener">Crypto 101 crash course</a> has 15 short lessons.</p></div>
 <div class="phone-wrap">{vid('i1', here)}</div></div>""", "Watch it explained", id="watch")}'''
 
 

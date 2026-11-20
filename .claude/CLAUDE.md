@@ -75,6 +75,16 @@ publish without approval.
   in `config.py` (structured data, video sitemap), is listed once in `sitemap.xml` on the page where it is the main thing, and
   the sitemap carries every page's pictures. A new tutorial is not finished without its page, its `name`, its wide cover and
   its social preview (`ogpages.py`; previews are named `bitcoin-wealth-<page>-preview.jpg`).
+- **The Bitcoin Wealth presentation with Leo (MTG, 20 Nov 2026: "This is the final version of the video and the thumbnails ... put
+  it live on my website"):** video `i1` in `config.py` (16:9, it plays in the laptop, in place). Its own page is
+  `/bw/dashboard/explainers/bitcoin-wealth-presentation/` (`PRESENT` in `config.py`, `p_present` in `pages_watch.py`): the video,
+  its ten chapters with time buttons (times from the video's own cues: mtg-studio `videos/intro-remake-leo/tools/chapters.py`),
+  and for each chapter one line in the site's own words with the page that explains it. **The site never prints this video's
+  script:** it is the programme's own presentation, word for word ("no admin control", "since 2024", its totals), and the site
+  keeps the wording checked on chain; one calm note on its page says so. `core.jump_card()` is the "watch this part" card: it
+  opens a video in the pop-up at one moment (14 positions at 1:28, 12 slots at 3:13, Royal Pool at 2:47). It also sits on the
+  main page (a second, quieter button under the promo), the dashboard ("Want to understand it first?"), Explainer Videos and
+  What Is Bitcoin Wealth?
 - Reference implementation on mtgtribe.com: the invite pop-up in `index.html` (`#vm`, `.vm-vid.phone` / `.vm-vid.laptop`).
   Any link with `data-invite` opens it; `data-src`, `data-poster` and `data-orient="h"` play another video in it.
 - On the Bitcoin Wealth guide (/bw): a video marked `o='h'` in `bw/_build/build/config.py` (VIDEOS) is 16:9. `core.vid()` puts it in

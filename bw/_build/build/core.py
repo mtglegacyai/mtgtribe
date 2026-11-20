@@ -225,6 +225,22 @@ def wide_cover(code, here):
     return vid(code, here, cap=False, hero=True)
 
 
+def clock(t):
+    """a moment of a video the way its player shows it (seconds dropped, never rounded up): 88.7 is 1:28"""
+    return f'{int(t) // 60}:{int(t) % 60:02d}'
+
+
+def jump_card(code, at, title, text, here):
+    """A "watch this part" card (MTG, 20 Nov 2026: the presentation on the pages it explains). The whole card is one button:
+    it opens that video in the pop-up at that second. The picture is the video's own cover, so the card shows what plays."""
+    v = V[code]
+    big, small = cover(code, here)
+    return (f'<button type="button" class="vjump glass" data-play="{code}" data-at="{at:.1f}" aria-label="Play {esc(v["title"])} from {clock(at)}: {esc(title)}">'
+            f'<img src="{esc(small)}" width="640" height="360" loading="lazy" decoding="async" alt="">'
+            f'<span class="vj-t"><small>{v["label"]} · from {clock(at)}</small><b>{title}</b><span>{text}</span></span>'
+            f'<span class="btn btn-gold btn-sm">{ic("play")}<span class="lbl">Watch from {clock(at)}</span></span></button>')
+
+
 def play_btn(code, label=None, kind='ghost', size='sm'):
     v = V[code]
     label = label or v['short']

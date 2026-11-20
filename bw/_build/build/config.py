@@ -4,7 +4,7 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-17'
+TODAY = '2026-11-20'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
@@ -56,6 +56,7 @@ SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide b
 # name: the video's search name (structured data, video sitemap, watch page): written the way people search ("How to ...")
 _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 _T = 'projects/bitcoin-wealth/tutorials/'
+_INTRO = 'projects/bitcoin-wealth/videos/intro-remake-leo/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -90,6 +91,14 @@ VIDEOS = [
      dict(poster='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-9x16.jpg', label='Promo', short='Promo video', date='2026-11-16',
           wide='projects/bitcoin-wealth/videos/promo-01-34-seconds/final/BW-promo-01-website-poster-16x9.jpg',
           name='Bitcoin Wealth in 34 seconds (promo video)')),
+    # the Bitcoin Wealth presentation, remade with Leo (MTG, 20 Nov 2026: "This is the final version of the video and the thumbnails
+    # ... put it live on my website"). It is the programme's own presentation, word for word, so the site shows it as that and
+    # never prints its script (the site's own wording is the one checked on chain). 16:9: it plays in the laptop, in place
+    ('i1', 'how-bitcoin-wealth-works-presentation', 'How Bitcoin Wealth works',
+     'The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information.',
+     319.6, _INTRO + 'final/Bitcoin-Wealth-intro-with-Leo-1080p.mp4',
+     dict(o='h', poster=_INTRO + 'thumbs/out/Bitcoin-Wealth-intro-website-cover-16x9.jpg', label='Presentation', short='How it works', date='2026-11-20',
+          name='How Bitcoin Wealth works: the presentation in 5 minutes, with Leo')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
@@ -99,7 +108,7 @@ PLANNED = [
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
 ]
-KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo'}
+KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo', 'i': 'Presentation'}
 V = {}
 for _v in VIDEOS:
     _x = _v[6] if len(_v) > 6 else {}
@@ -169,6 +178,16 @@ WATCH_PAGES = {
 }
 WATCH = {k: v[0] for k, v in WATCH_PAGES.items()}
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'Every step, in writing', 'circle-play', 'Get Started') for k, v in WATCH_PAGES.items()]
+# The presentation's own page (MTG, 20 Nov 2026), under Explainer Videos: the video, its chapters with time buttons, and where
+# each chapter is explained on the site. code: (path, page heading, chapters file in mtg-studio, written by the video's
+# tools/chapters.py from its own cue times). CH: a chapter's start in seconds, for the "watch this part" cards on other pages
+PRESENT = {
+    'i1': ('dashboard/explainers/bitcoin-wealth-presentation/', 'How Bitcoin Wealth works: the presentation, in 5 minutes', _INTRO + 'final/chapters.json'),
+}
+WATCH.update({k: v[0] for k, v in PRESENT.items()})
+EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]
+import json as _json
+CH = {c['key']: c['start'] for c in _json.load(open(STUDIO + '/' + PRESENT['i1'][2], encoding='utf-8'))['chapters']}
 NAVD = {n[0]: n for n in NAV + EXTRA}
 
 # Bitcoin Wealth programme facts (from the programme's own deck, as taught on bitcoinwealthpays.com)

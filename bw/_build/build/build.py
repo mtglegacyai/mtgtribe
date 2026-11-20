@@ -8,7 +8,7 @@ from pages_learn import p_home, p_fit, p_back, p_what, p_hiw, p_slots, p_pool, p
 from pages_do import (p_join, p_tut, p_exp, p_zoom, p_page, p_c_btc, p_c_slot, p_c_halv, p_faq, faq_ld, p_gloss, p_safe,
                       p_card, p_tribe, p_disc, order_page, JOIN_STEPS, JOIN_NEEDS, GLOSS, zoom_ld, zoom_ics, zoom_head)
 from pages_land import landing
-from pages_watch import p_watch, watch_ld
+from pages_watch import p_watch, watch_ld, p_present, present_ld
 from seo import SEO_DESC
 
 SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/src'
@@ -16,10 +16,10 @@ OUT = SCR + '/out'
 FONTS = SCR + '/fonts/'
 
 PAGES = {
-    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['s1', 't1', 't2', 't3']),
+    'home': ('Bitcoin Wealth dashboard: start here', p_home, ['s1', 'i1', 't1', 't2', 't3']),
     'fit': ('Is Bitcoin Wealth right for me?', p_fit, None),
     'back': ('Welcome back to Bitcoin Wealth', p_back, None),
-    'what': ('What is Bitcoin Wealth?', p_what, None),
+    'what': ('What is Bitcoin Wealth?', p_what, ['i1']),
     'hiw': ('How Bitcoin Wealth works: the 14 positions', p_hiw, None),
     'slots': ('The 12 slots and the once-off', p_slots, None),
     'pool': ('Recycling and the Royal Pool', p_pool, None),
@@ -28,7 +28,7 @@ PAGES = {
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, None),
     'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2', 't3']),
     'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2', 't3']),
-    'exp': ('Bitcoin Wealth explainer videos', p_exp, None),
+    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['i1']),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
     'page': ('Your own BW Tribe Page', p_page, None),
     'c-btc': ('Bitcoin to Rand Converter', p_c_btc, None),
@@ -184,15 +184,22 @@ def render(dst):
         hd, content = core.dash_page(key, WATCH_PAGES[code][1], SEO_DESC[key], p_watch(code), watch_ld(code), parent='tut')
         os.makedirs(base + '/' + here, exist_ok=True)
         open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
+    # the presentation's own page, under Explainer Videos (pages_watch.py)
+    for code in PRESENT:
+        key = 'w-' + code; here = NAVD[key][1]
+        hd, content = core.dash_page(key, PRESENT[code][1], SEO_DESC[key], p_present(code), present_ld(code), parent='exp')
+        os.makedirs(base + '/' + here, exist_ok=True)
+        open(base + '/' + here + 'index.html', 'w').write(core.wrap_doc(hd, content, 'dashpage'))
     hd, body = order_page()
     os.makedirs(dst + ORDER, exist_ok=True)
     open(dst + ORDER + 'index.html', 'w').write(core.wrap_doc(hd, body, 'landing orderpage'))
-    # sitemap for /bw, llms files. Each video is listed once, on the page where it is the main thing: a tutorial on its own
-    # page, the promo on the main page, the cartoon on the dashboard
+    # sitemap for /bw, llms files. Each video is listed once, on the page where it is the main thing: a tutorial and the
+    # presentation on their own pages, the promo on the main page, the cartoon on the dashboard
     wkeys = ['w-' + c for c in WATCH_PAGES]
-    urls = [''] + [NAVD[k][1] for k in PAGES] + [NAVD[k][1] for k in wkeys]
+    pkeys = ['w-' + c for c in PRESENT]
+    urls = [''] + [NAVD[k][1] for k in PAGES] + [NAVD[k][1] for k in wkeys + pkeys]
     vids = {'': ['p1'], NAVD['home'][1]: ['s1']}
-    vids.update({WATCH[c]: [c] for c in WATCH_PAGES})
+    vids.update({WATCH[c]: [c] for c in list(WATCH_PAGES) + list(PRESENT)})
 
     def vtag(c):
         v = V[c]
@@ -200,7 +207,7 @@ def render(dst):
                 f'<video:description>{core.esc(v["desc"])}</video:description><video:content_loc>{SITE}{BASE}media/{v["slug"]}.mp4</video:content_loc>'
                 f'<video:duration>{int(round(v["secs"]))}</video:duration><video:publication_date>{v["date"]}T00:00:00+02:00</video:publication_date>'
                 f'<video:family_friendly>yes</video:family_friendly><video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video>')
-    key_of = {NAVD[k][1]: k for k in list(PAGES) + wkeys}; key_of[''] = 'land'
+    key_of = {NAVD[k][1]: k for k in list(PAGES) + wkeys + pkeys}; key_of[''] = 'land'
 
     def itags(u):
         """the pictures of a page, for image search: its preview picture, and the covers of the videos it is the home of"""
@@ -217,6 +224,8 @@ def render(dst):
         order.append((k, NAVD[k][1]))
         if k == 'tut':
             order += [(w, NAVD[w][1]) for w in wkeys]
+        if k == 'exp':      # the presentation's page comes right after Explainer Videos
+            order += [(w, NAVD[w][1]) for w in pkeys]
     llms.build_llms(dst, order)
 
 
@@ -283,6 +292,10 @@ def render_preview(dst):
     for code in WATCH_PAGES:
         key = 'w-' + code
         hd, content = core.dash_page(key, WATCH_PAGES[code][1], SEO_DESC[key], p_watch(code), [], parent='tut')
+        files[NAVD[key][1] + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
+    for code in PRESENT:
+        key = 'w-' + code
+        hd, content = core.dash_page(key, PRESENT[code][1], SEO_DESC[key], p_present(code), [], parent='exp')
         files[NAVD[key][1] + 'index.html'] = core.wrap_doc(hd, content, 'dashpage')
     hd, body = order_page('bwcopy/')
     files['bwcopy/index.html'] = core.wrap_doc(hd, body, 'landing orderpage')

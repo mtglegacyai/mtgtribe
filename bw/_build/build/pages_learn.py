@@ -38,7 +38,7 @@ def p_home(here):
                      for p in PLANNED if p[0][0] == 'e')
     route = steps([
         ('Check the fit', f'<p>Start honest. <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> takes two minutes.</p>'),
-        ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words.</p>'),
+        ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? <a class="inl" href="{A(WATCH["i1"], here)}">Watch the 5-minute presentation</a>.</p>'),
         ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill.</p>'),
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
         ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
@@ -60,11 +60,21 @@ def p_home(here):
     promo = V['p1']
     stile += (f'<button type="button" class="vtile story" data-play="p1" data-vid="p1" title="{esc(promo["desc"])}">'
               f'<span class="vn">{ic("play")}</span><span class="vt">{promo["short"]} ({mmss(promo["secs"])})</span>{ic("circle-check")}</button>')
+    pres = V['i1']      # the presentation with Leo (MTG, 20 Nov 2026)
+    stile += (f'<button type="button" class="vtile story" data-play="i1" data-vid="i1" title="{esc(pres["desc"])}">'
+              f'<span class="vn">{ic("play")}</span><span class="vt">{pres["short"]} ({mmss(pres["secs"])})</span>{ic("circle-check")}</button>')
+    understand = f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['i1'], here)}">{pres['title']}, in 5 minutes</a></h3>
+<p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
+<div class="btn-row"><button type="button" class="btn btn-gold ring" data-start="i1">{ic('play')}<span class="lbl">Watch How It Works</span></button>
+<a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
+<p class="fine">The programme's own presentation, in its own words. Leo and his voice are made with AI.</p></div>
+<div class="phone-wrap">{vid('i1', here, cap=False)}</div></div>"""
     return f'''{feat}
 {phero("compass", "Welcome. Let's get you started.",
-        "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Everything else is in the menu, in order.",
+        "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Leo shows how it works in 5 minutes, just below.",
         [("users", f"{MEMBERS} member IDs ({CHECKED})"), ("badge-check", "0.001 BTC once-off"), ("info", "Independent, not official")])}
 {sec(start3(here, head=False), "Join in 3 stages", id="start")}
+{sec(understand, "Want to understand it first?", id="how-it-works")}
 {sec(f"""<div class="panel pad prog-panel glass"><div class="prog">
  <div class="pring" data-ring><svg viewBox="0 0 118 118" aria-hidden="true"><defs><linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#3fc11f"/><stop offset="1" stop-color="#ffa101"/></linearGradient></defs><circle class="bg" cx="59" cy="59" r="50"/><circle class="fg" cx="59" cy="59" r="50"/></svg>
  <div class="val"><b data-k="n">0</b><small>of {NV} watched</small></div></div>
@@ -149,7 +159,11 @@ def p_what(here):
 </div></div>
 {honest("Where the money comes from.", "Every payout is another member's slot payment, moved wallet to wallet by the contract. No product, trading or mining is involved.")}""",
     "Bitcoin vs Bitcoin Wealth")}
-{sec(f"""<div class="stack">{soon('e1')}<p class="fine">Want the Bitcoin basics first? MTG's free <a class="inl" href="{esc(CRYPTO101)}" target="_blank" rel="noopener">Crypto 101 crash course</a> has 15 short lessons.</p></div>""", "Watch it explained")}'''
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['i1'], here)}">{V['i1']['title']}, in 5 minutes</a></h3>
+<p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
+<p class="fine">The programme's own presentation, in its own words. Want the Bitcoin basics first? MTG's free <a class="inl" href="{esc(CRYPTO101)}" target="_blank" rel="noopener">Crypto 101 crash course</a> has 15 short lessons.</p></div>
+<div class="phone-wrap">{vid('i1', here)}</div></div>""", "Watch it explained", id="watch")}'''
 
 
 # ======================================================================= THE 14 POSITIONS
@@ -168,7 +182,8 @@ def p_hiw(here):
  {box("No withdraw button", "<p>The contract splits each payment in the same transaction and sends it to the members' own wallets. You don't request anything.</p>", "zap")}
  {box("Spillover", "<p>Positions below you can be filled by people you didn't introduce, when your upline's team overflows. It changes who fills a seat, not that someone has to.</p>", "git-merge")}
 </div>""", "Three things to remember")}
-{sec(honest("How a cycle completes.", "Each of the 14 positions is filled by a member taking that seat, whether you introduced them or spillover brings them. That's why sharing and teaching others matter.") + soon('e2'), "Good to know")}'''
+{sec(honest("How a cycle completes.", "Each of the 14 positions is filled by a member taking that seat, whether you introduced them or spillover brings them. That's why sharing and teaching others matter."), "Good to know")}
+{sec(f'<div class="stack">{jump_card("i1", CH["cycle1"], "Leo walks through all 14 positions", "Position by position, with every payment drawn as it moves. About a minute and a half.", here)}{soon("e2")}</div>', "Watch it explained", id="watch")}'''
 
 
 # ======================================================================= THE 12 SLOTS
@@ -186,7 +201,7 @@ def p_slots(here):
 </div>
 <div class="btn-row center-row"><a class="btn btn-gold ring" href="{A('dashboard/tools/slot-calculator/', here)}">{ic('calculator')}<span class="lbl">See every slot in rand</span></a></div>""",
     "What it costs you")}
-{sec(soon('e3'), "Watch it explained")}'''
+{sec(f'<div class="stack">{jump_card("i1", CH["slots"], "Leo shows the 12 slots", "Each slot double the one before, and how the upgrades happen. Under a minute.", here)}{soon("e3")}</div>', "Watch it explained", id="watch")}'''
 
 
 # ======================================================================= RECYCLING AND ROYAL POOL
@@ -199,7 +214,8 @@ def p_pool(here):
  {box("Recycling", "<p>Position 14 places you at the bottom of a fresh cycle at the same slot. The programme says there's no limit on recycles and no expiry on slots.</p>", "refresh-cw")}
  {box("The Royal Pool", "<p>In later cycles, one payment goes to the Royal Pool, held in the contract. Members who reach slot 3 and qualify by the 21st share it on the last day of the month.</p>", "crown")}
 </div>""" + honest("Good to know.", f"The monthly Royal Pool rules come from a member's written explanation, not the deck itself. The pool waits in the contract until month-end. <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>See what the contract allows</a>.") ,
-    "Two ideas, plainly")}'''
+    "Two ideas, plainly")}
+{sec(jump_card("i1", CH["cycles"], "Leo shows the later cycles and the Royal Pool", "Where position 4 and position 5 go from your second cycle on. Half a minute.", here), "Watch it explained", id="watch")}'''
 
 
 # ======================================================================= STOKVEL

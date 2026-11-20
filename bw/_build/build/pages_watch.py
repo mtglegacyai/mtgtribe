@@ -162,3 +162,73 @@ def p_watch(code):
 {sec(f'<div class="wlist">{blocks}</div>', "Every step, in writing", "The words MTG says in the video, step by step. Tap a time to watch that step.", id="steps")}
 {sec(f'<ul class="wtiles">{nav}</ul>{honest(after[0], after[1])}', "The 3 tutorials, in order", id="more")}'''
     return page
+
+
+# ================================================================================ THE PRESENTATION'S OWN PAGE (MTG, 20 Nov 2026)
+# "This is the final version of the video and the thumbnails ... put it live on my website." The Bitcoin Wealth presentation,
+# remade with Leo, gets a page where it is the main thing: the video in the laptop frame, its chapters with time buttons, and for
+# each chapter one line in the SITE'S own words with the page that explains it. The video keeps the programme's wording; the site
+# never prints its script (the site's facts are the ones checked on chain, MTG's approved wording of 14 Nov 2026).
+# Chapter times: the video's own cue times (mtg-studio, videos/intro-remake-leo/tools/chapters.py). Config: PRESENT.
+PRESENT_CH = {      # chapter key: (one line in the site's words, the page that explains it)
+    'welcome': ("Leo opens with the idea: people collecting Bitcoin's value together, by fixed rules, with every payment in public.", 'what'),
+    'vow': ("Vow Unity is the engine: the smart contract that places members and moves each payment from wallet to wallet.", 'what'),
+    'features': ("The features the programme lists, from automatic payments to fast execution. Every payment is public, so you can check them yourself.", 'proof'),
+    'start': ("One entry of 0.001 BTC. It is the only slot you pay for yourself.", 'c-btc'),
+    'cycle1': ("Position by position: 2 payments go to your upline, 6 to your wallet, 2 buy your next slot, 3 go to members below you and 1 recycles you.", 'hiw'),
+    'cycles': ("From the second cycle of a slot, 7 payments go to your wallet and 1 to the Royal Pool. Then the cycle starts again.", 'pool'),
+    'slots': ("Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. Every slot after the first is bought from the cycle below.", 'slots'),
+    'numbers': ("The programme's tables: what each slot's cycle adds up to when every position fills.", 'c-slot'),
+    'ranks': ("Ranks and monthly rewards from the Royal Pool, then the programme's own summary of what sets it apart.", 'diff'),
+    'next': ("Leo's invitation: join the community, and ask to be added to the WhatsApp groups for more information, Zoom presentations and training.", 'zoom'),
+}
+PRESENT_LEAD = ("The Bitcoin Wealth presentation from start to finish, presented by Leo: what it is, where the 14 positions of a cycle pay, "
+                "the 12 slots, and where to get more information. Watch it, then tap any chapter to see that part again.")
+PRESENT_COVERS = ["What Bitcoin Wealth is, and who it is built for", "How the Vow Unity smart contract moves each payment",
+                  "Where the 14 positions of a cycle pay, and how the 12 slots work", "Where to get more information, Zoom presentations and training"]
+
+
+def chapters(code):
+    """the video's chapters (key, start, end, title), from its own build"""
+    d = json.load(open(STUDIO + '/' + PRESENT[code][2], encoding='utf-8'))
+    assert abs(d['total'] - V[code]['secs']) < 1.5, (code, d['total'], V[code]['secs'])
+    assert [c['key'] for c in d['chapters']] == list(PRESENT_CH), 'the chapters of the video and of the page differ'
+    return d['chapters']
+
+
+def present_ld(code):
+    """the video with its chapters as key moments, for search engines and AI search (no transcript: the site does not print the script)"""
+    url = SITE + BASE + WATCH[code]
+    clips = [{'@type': 'Clip', 'name': c['title'], 'startOffset': int(c['start']), 'endOffset': int(c['end']), 'url': f'{url}?t={int(c["start"])}'}
+             for c in chapters(code)]
+    return [video_obj(code, extra={'hasPart': clips})]
+
+
+def p_present(code):
+    def page(here):
+        v = V[code]; path, h1, _ = PRESENT[code]
+        chs = chapters(code)
+        top = f"""<div class="two vstart watch-top"><div class="phone-wrap" data-watch="{code}">{vid(code, here, eager=True, hero=True)}</div>
+<div class="stack"><h2 class="h3">In this video</h2>{checks(PRESENT_COVERS)}
+<p class="fine">It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.</p>
+<div class="btn-row"><a class="btn btn-gold ring" href="{A('dashboard/join/', here)}">{ic('rocket')}<span class="lbl">Join Step-By-Step</span></a>{wa_group_btn(size='sm', label='Ask the MTG TRIBE')}</div>
+<p class="fine">Invited by someone else? Join with their link, so they stay your sponsor.</p></div></div>
+{honest("About this video.", f"It is the programme's own presentation, in its own words, presented by Leo. Its totals show what the plan's design allows when every position fills: not a typical result, and nothing is guaranteed. This guide's own facts are the ones checked on chain: <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>check it yourself</a>. Leo and his voice are made with AI.")}"""
+        cards = ''
+        for i, c in enumerate(chs):
+            line, key = PRESENT_CH[c['key']]
+            cards += (f'<div class="wsec glass" id="chapter-{i + 1}"><div class="wsec-h"><h3 class="h3"><span class="wpart">Chapter {i + 1} · {clock(c["start"])}</span>{esc(c["title"])}</h3>'
+                      f'<button type="button" class="tjump" data-play="{code}" data-at="{c["start"]:.1f}" aria-label="Play from {clock(c["start"])}: {esc(c["title"])}">'
+                      f'{ic("play")}<span>{clock(c["start"])}</span></button></div>'
+                      f'<div class="wsaid"><p>{line}</p><p><a class="inl" href="{A(NAVD[key][1], here)}">On this site: {NAVD[key][2]}</a></p></div></div>')
+        nxt = f"""<div class="grid3">
+ {box("Ready to join?", f"<p>Three tutorials show every tap: your wallet, your BNB, then slot 1.</p><p><a class='inl' href='{A('dashboard/join/', here)}'>Join step by step</a></p>", "rocket")}
+ {box("Meet the community first", f"<p>Live on Zoom five evenings a week, in four languages.</p><p><a class='inl' href='{A('dashboard/live-on-zoom/', here)}'>See the Zoom schedule</a></p>", "video")}
+ {box("Check it yourself", f"<p>Open the contract on BscScan and read a real payment with your own eyes.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>How to check it</a></p>", "scan-search")}
+</div>"""
+        return f'''{phero("film", h1, PRESENT_LEAD,
+        [("clock", f"{mmss(v['secs'])} video"), ("list-checks", f"{len(chs)} chapters"), ("sparkles", "Presented by Leo")])}
+{sec(top, sr="Watch the video")}
+{sec(f'<div class="wlist wl2">{cards}</div>', "Chapter by chapter", "Tap a time to start the video at that part. Each chapter links to the page that explains it.", id="chapters")}
+{sec(nxt, "Your next step", id="next")}'''
+    return page

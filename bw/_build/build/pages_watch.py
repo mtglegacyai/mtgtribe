@@ -232,3 +232,63 @@ def p_present(code):
 {sec(f'<div class="wlist wl2">{cards}</div>', "Chapter by chapter", "Tap a time to start the video at that part. Each chapter links to the page that explains it.", id="chapters")}
 {sec(nxt, "Your next step", id="next")}'''
     return page
+
+
+# ================================================================================ THE EXPLAINERS' OWN PAGES (MTG, 21 Nov 2026)
+# "Push the explainer video live." The Thandi and Leo explainers are our own scripts, every fact from the site's facts register,
+# so each gets a page where it is the main thing AND every word is written out: the video in the laptop frame, its chapters with
+# time buttons, the whole conversation (who says what), and the next steps. A search engine can list the video on its own, and
+# an AI search tool can quote the answer. The words come from the episode's own build (mtg-studio, the episode's
+# tools/chapters.py writes final/chapters.json): never retype them here. Config: EXPLAIN.
+EXPLAIN_LEAD = {
+    'e1': ("Explainer 1 of the Thandi and Leo series. Thandi asks what everyone asks: is it a coin, can I buy it, where does the money "
+           "come from? Leo answers in plain words, in 3 minutes. Watch it, then read every word below."),
+}
+EXPLAIN_COVERS = {
+    'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
+           "Where the money comes from, and what it costs to start", "How to check every payment yourself"],
+}
+
+
+def explain_data(code):
+    d = json.load(open(STUDIO + '/' + EXPLAIN[code][2], encoding='utf-8'))
+    assert abs(d['total'] - V[code]['secs']) < 1.5, (code, d['total'], V[code]['secs'])
+    return d
+
+
+def explain_ld(code):
+    """the video with every word and its chapters as key moments, for search engines and AI search"""
+    d = explain_data(code); url = SITE + BASE + WATCH[code]
+    clips = [{'@type': 'Clip', 'name': c['title'], 'startOffset': int(c['start']), 'endOffset': int(c['end']), 'url': f'{url}?t={int(c["start"])}'} for c in d['chapters']]
+    words = ' '.join(f'{l["who"]}: {l["text"]}' for c in d['chapters'] for l in c['lines'])
+    return [video_obj(code, extra={'transcript': words, 'hasPart': clips})]
+
+
+def p_explain(code):
+    def page(here):
+        v = V[code]; path, h1, _ = EXPLAIN[code]
+        d = explain_data(code); chs = d['chapters']
+        top = f"""<div class="two vstart watch-top"><div class="phone-wrap" data-watch="{code}">{vid(code, here, eager=True, hero=True)}</div>
+<div class="stack"><h2 class="h3">In this video</h2>{checks(EXPLAIN_COVERS[code])}
+<p class="fine">It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.</p>
+<div class="btn-row"><a class="btn btn-gold ring" href="{A('dashboard/join/', here)}">{ic('rocket')}<span class="lbl">Join Step-By-Step</span></a>{wa_group_btn(size='sm', label='Ask the MTG TRIBE')}</div>
+<p class="fine">Invited by someone else? Join with their link, so they stay your sponsor.</p></div></div>"""
+        cards = ''
+        for i, c in enumerate(chs):
+            said_ = ''.join(f'<p class="{"leo" if l["who"] == "Leo" else "thandi"}"><b>{l["who"]}:</b> {esc(l["text"])}</p>' for l in c['lines'])
+            cards += (f'<div class="wsec glass" id="chapter-{i + 1}"><div class="wsec-h"><h3 class="h3"><span class="wpart">Chapter {i + 1} · {clock(c["start"])}</span>{esc(c["title"])}</h3>'
+                      f'<button type="button" class="tjump" data-play="{code}" data-at="{c["start"]:.1f}" aria-label="Play from {clock(c["start"])}: {esc(c["title"])}">'
+                      f'{ic("play")}<span>{clock(c["start"])}</span></button></div><div class="wsaid">{said_}</div></div>')
+        nxt = f"""<div class="grid3">
+ {box("The whole plan, in 5 minutes", f"<p>Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he says them.</p><p><a class='inl' href='{A(WATCH['i1'], here)}'>Watch the presentation</a></p>", "film")}
+ {box("Check it yourself", f"<p>Open the contract on BscScan and read a real payment with your own eyes.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>How to check it</a></p>", "scan-search")}
+ {box("Ready to join?", f"<p>Three tutorials show every tap: your wallet, your BNB, then slot 1.</p><p><a class='inl' href='{A('dashboard/join/', here)}'>Join step by step</a></p>", "rocket")}
+</div>
+{honest("Next in the series.", f"How the 14 positions pay. Until it is ready, <a class='inl' href='{A('dashboard/how-it-works/', here)}'>watch the positions fill</a> on the 14 Positions page.")}
+<p class="fine center">Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.</p>"""
+        return f'''{phero("film", h1, EXPLAIN_LEAD[code],
+        [("clock", f"{mmss(v['secs'])} video"), ("list-checks", f"{len(chs)} chapters"), ("message-circle", "Thandi asks, Leo answers")])}
+{sec(top, sr="Watch the video")}
+{sec(f'<div class="wlist wl2">{cards}</div>', "Every word, chapter by chapter", "Tap a time to start the video at that part.", id="chapters")}
+{sec(nxt, "Your next step", id="next")}'''
+    return page

@@ -81,11 +81,21 @@ def p_exp(here):
 {checks(PRESENT_CHECKS)}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
 <p class="fine">The programme's own presentation, presented by Leo. Leo and his voice are made with AI.</p></div>
-<div class="phone-wrap">{vid('i1', here, eager=True, hero=True)}</div></div>"""
+<div class="phone-wrap">{vid('i1', here)}</div></div>"""
+    e = V['e1']
+    # Explainer 1 comes first (MTG, 21 Nov 2026: "Push the explainer video live"): the plain-words start, then the whole plan
+    e1 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e1'], here)}">Explainer 1: What is Bitcoin Wealth? It's not a coin</a></h2>
+<p class="vdesc">Thandi asks what everyone asks, and Leo answers in plain words, in {mmss(e['secs'])}. Start here if you are new.</p>
+{checks(["Why Bitcoin Wealth is not a coin, but a smart contract", "Bitcoin, BTCB and BNB, in plain words", "Where the money comes from, and what it costs to start"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e1'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e1', here, eager=True, hero=True)}</div></div>"""
+    n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with the presentation: Leo shows how Bitcoin Wealth works in 5 minutes. Short explainers, one idea at a time, are being made now.",
-        [("circle-play", "1 ready to watch"), ("film", "5 explainers on the way")])}
-{sec(first, id="presentation", sr="Ready to watch: the presentation")}
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Then watch the whole plan in Leo's 5-minute presentation.",
+        [("circle-play", "2 ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
+{sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
+{sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="grid2">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
  {box("The 14 positions", f"<p>Watch the positions fill, live. <a class='inl' href='{A('dashboard/how-it-works/', here)}'>Open</a></p>", "network")}

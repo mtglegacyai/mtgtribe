@@ -34,6 +34,7 @@ def _md(el, out):
         if c.name == 'figure' and c.get('data-vid') in V:      # a video in its laptop frame
             v = V[c['data-vid']]
             page = '' if v['code'] not in WATCH else (f' Its own page, chapter by chapter: {SITE}{BASE}{WATCH[v["code"]]}' if v['code'] in PRESENT
+                                                      else f' Its own page, with every word in writing: {SITE}{BASE}{WATCH[v["code"]]}' if v['code'] in EXPLAIN
                                                       else f' Its own page, with every step in writing: {SITE}{BASE}{WATCH[v["code"]]}')
             out.append(f'- Video: {v["label"]}, "{v["title"]}" ({mmss(v["secs"])}): {v["desc"]} {SITE}{BASE}media/{v["slug"]}.mp4{page}')
             continue

@@ -1,6 +1,6 @@
 # Bitcoin Wealth Guide by MTG: full text
 
-Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-20.
+Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-21.
 
 ---
 
@@ -49,7 +49,7 @@ Thandi did everything right and still had to start again. See what Leo shows her
 A short cartoon by MTG. Leo and Thandi, and their voices, are made with AI.
 
 ### Welcome. Let's get you started.
-Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Leo shows how it works in 5 minutes, just below.
+Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Thandi and Leo explain it in 3 minutes, just below.
 
 #### Join in 3 stages
 - 1 Stage 1 · 10 min Set up your wallet SafePal from the official site, backed up two ways, with only BNB, USDT and BTCB. Watch Tutorial 1 (7:25)
@@ -59,10 +59,10 @@ Every tap, step by step · Introduced by someone else? Use their link.
 
 #### Want to understand it first?
 
-##### How Bitcoin Wealth works, in 5 minutes
-Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.
-The programme's own presentation, presented by Leo. Leo and his voice are made with AI.
-- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+##### What is Bitcoin Wealth? In 3 minutes
+Thandi asks, Leo answers: why it is not a coin, Bitcoin, BTCB and BNB in plain words, and where the money comes from.
+Then the whole plan: Leo's 5-minute presentation, the 14 positions and the 12 slots. Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
 
 #### Your progress
 Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only. New videos appear here as they're released.
@@ -73,7 +73,7 @@ Explainers
 #### Your route, in order
 Seven stops. Each one builds on the last, so go in order the first time.
 - Check the fit Start honest. Is it right for me? takes two minutes.
-- Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? Watch the 5-minute presentation.
+- Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? Thandi and Leo explain it in 3 minutes, then the 5-minute presentation.
 - See how it pays The 14 positions, then the 12 slots. Watch the positions fill.
 - Compare it honestly Against a stokvel and against the newer copycats, then check it yourself on BscScan.
 - Join step by step Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. Open the join guide.
@@ -176,6 +176,13 @@ What is Bitcoin Wealth? A plain explanation of Bitcoin, BTCB, BNB Smart Chain an
 ### What is Bitcoin Wealth?
 A community way to collect Bitcoin's value. A smart contract on BNB Smart Chain takes each member's slot payment and sends it straight to other members' wallets, by fixed rules, in public.
 
+#### Watch it in 3 minutes
+
+##### It's not a coin. Here's what it is.
+Thandi asks what everyone asks, and Leo answers in 3 minutes: Bitcoin, the smart contract, BTCB and BNB, where the money comes from, and how to check it yourself.
+Thandi and Leo, and their voices, are made with AI. Prefer reading? Everything below says the same, in more detail.
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+
 #### The idea in four moves
 Tap a step to see it.
 - 1 A member activates slot 1 They send 0.001 BTC worth of BTCB from their own wallet. Once.
@@ -205,7 +212,7 @@ The money. Lives on its own blockchain. You can buy it, hold it and send it.
 ##### Bitcoin Wealth
 A set of rules in code. It doesn't create Bitcoin. It moves members' BTCB from one wallet to another, the moment a slot is activated.
 
-#### Watch it explained
+#### The whole plan, in 5 minutes
 
 ##### How Bitcoin Wealth works, in 5 minutes
 Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.
@@ -746,12 +753,22 @@ Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/
 
-Bitcoin Wealth explainer videos: start with the 5-minute presentation with Leo, then short explainers on the 14 positions, the 12 slots and more.
+Bitcoin Wealth explainer videos: what Bitcoin Wealth is in 3 minutes with Thandi and Leo, the 5-minute presentation, and short explainers on the way.
 
 ### Bitcoin Wealth explainer videos
-Start with the presentation: Leo shows how Bitcoin Wealth works in 5 minutes. Short explainers, one idea at a time, are being made now.
+Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Then watch the whole plan in Leo's 5-minute presentation.
 
-#### Ready to watch: the presentation
+#### Start here: Explainer 1
+
+#### Explainer 1: What is Bitcoin Wealth? It's not a coin
+Thandi asks what everyone asks, and Leo answers in plain words, in 3:00. Start here if you are new.
+- Why Bitcoin Wealth is not a coin, but a smart contract
+- Bitcoin, BTCB and BNB, in plain words
+- Where the money comes from, and what it costs to start
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+
+#### The whole plan, in 5 minutes
 
 #### How Bitcoin Wealth works: the presentation, with Leo
 The whole Bitcoin Wealth presentation in 5 minutes. Leo shows it, slide by slide, and every moving part is drawn as he says it.
@@ -774,6 +791,92 @@ Every slot and the once-off. Open
 
 ##### Better than a stokvel?
 The honest scorecard. Open
+
+---
+
+## What is Bitcoin Wealth? It's not a coin. Explained in 3 minutes
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+
+Is Bitcoin Wealth a coin? No. Thandi asks, Leo answers in 3 minutes: the smart contract, BTCB and BNB, where the money comes from, and every word in writing.
+
+### What is Bitcoin Wealth? It's not a coin, explained in 3 minutes
+Explainer 1 of the Thandi and Leo series. Thandi asks what everyone asks: is it a coin, can I buy it, where does the money come from? Leo answers in plain words, in 3 minutes. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+
+#### In this video
+- What Bitcoin is, in one picture
+- Why Bitcoin Wealth is not a coin, but a smart contract
+- What BTCB and BNB are, in plain words
+- Where the money comes from, and what it costs to start
+- How to check every payment yourself
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 Is Bitcoin Wealth a coin?
+Thandi: Leo, everybody keeps talking about Bitcoin Wealth. Is it a coin? Can I buy it?
+Leo: No, Thandi. You can't buy Bitcoin Wealth. And once you see why, it all clicks.
+
+##### Chapter 2 · 0:15 What is Bitcoin?
+Thandi: Okay. Then start at the beginning. What is Bitcoin?
+Leo: Bitcoin is digital money that no bank controls.
+Leo: It started in 2009, and only 21 million will ever exist. That's why people call it digital gold.
+
+##### Chapter 3 · 0:31 The stokvel, the tin and the book
+Thandi: So where does Bitcoin Wealth come in?
+Leo: You know a stokvel. People put money together, a treasurer holds it, and she keeps the book.
+Thandi: And everybody prays she's honest!
+
+##### Chapter 4 · 0:45 Not a coin: a smart contract
+Leo: Exactly. Bitcoin Wealth is not a coin. It's a smart contract.
+Leo: A program on the blockchain that follows fixed rules. When a member pays for a slot, the program sends that payment straight to other members' own wallets. And the book is open for anyone to read.
+
+##### Chapter 5 · 1:03 BTCB and BNB, in plain words
+Thandi: And it pays in real Bitcoin?
+Leo: It pays in BTCB. That's Bitcoin's value on BNB Smart Chain. One BTCB tracks one Bitcoin, and you can swap it for Bitcoin.
+Thandi: And BNB? I keep hearing BNB.
+Leo: BNB pays the network fee. It's the postage stamp. No stamp, nothing moves.
+
+##### Chapter 6 · 1:25 Where does the money come from?
+Thandi: Now be straight with me, Leo. Where does the money come from?
+Leo: From members. Every payout is another member's slot payment, passed on by the program.
+Leo: No trading. No mining. So it grows when the community grows, and nothing is guaranteed.
+Thandi: And what does it cost to start?
+Leo: One entry. 0.001 Bitcoin, once.
+
+##### Chapter 7 · 1:50 Check it yourself, then say it back
+Thandi: And I must just take your word for it?
+Leo: Never. Every payment is public. You can check it yourself, any time.
+Thandi: So let me say it back. Bitcoin is the money. Bitcoin Wealth is the program that passes it on, wallet to wallet.
+Thandi: BTCB is Bitcoin's value on BNB Smart Chain. And BNB is the stamp.
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+
+##### Chapter 8 · 2:22 Your next step
+Leo: This is education, not financial advice. So take your time, and do your own research.
+Thandi: What's next, Leo?
+Leo: Next: how the 14 positions pay.
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+
+#### Your next step
+
+##### The whole plan, in 5 minutes
+Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he says them.
+Watch the presentation
+
+##### Check it yourself
+Open the contract on BscScan and read a real payment with your own eyes.
+How to check it
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
 
 ---
 

@@ -34,11 +34,13 @@ def p_home(here):
                     f'<span class="vn">{V[k]["n"]}</span><span class="vt">{V[k]["short"]}</span>{ic("circle-check")}</button>' for k in TUT)
     tiles += ''.join(f'<span class="vtile off" title="{esc(p[3])}"><span class="vn">{p[0][1:]}</span><span class="vt">{p[2]}</span><small>Soon</small></span>'
                      for p in PLANNED if p[0][0] == 't')
-    etiles = ''.join(f'<span class="vtile off" title="{esc(p[3])}"><span class="vn">{p[0][1:]}</span><span class="vt">{p[2]}</span><small>Soon</small></span>'
-                     for p in PLANNED if p[0][0] == 'e')
+    etiles = ''.join(f'<button type="button" class="vtile" data-play="{k}" data-vid="{k}" title="{esc(V[k]["desc"])}">'
+                     f'<span class="vn">{V[k]["n"]}</span><span class="vt">{V[k]["short"]}</span>{ic("circle-check")}</button>' for k in V if k[0] == 'e')
+    etiles += ''.join(f'<span class="vtile off" title="{esc(p[3])}"><span class="vn">{p[0][1:]}</span><span class="vt">{p[2]}</span><small>Soon</small></span>'
+                      for p in PLANNED if p[0][0] == 'e')
     route = steps([
         ('Check the fit', f'<p>Start honest. <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> takes two minutes.</p>'),
-        ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? <a class="inl" href="{A(WATCH["i1"], here)}">Watch the 5-minute presentation</a>.</p>'),
+        ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? <a class="inl" href="{A(WATCH["e1"], here)}">Thandi and Leo explain it in 3 minutes</a>, then <a class="inl" href="{A(WATCH["i1"], here)}">the 5-minute presentation</a>.</p>'),
         ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill.</p>'),
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
         ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
@@ -63,15 +65,15 @@ def p_home(here):
     pres = V['i1']      # the presentation with Leo (MTG, 20 Nov 2026)
     stile += (f'<button type="button" class="vtile story" data-play="i1" data-vid="i1" title="{esc(pres["desc"])}">'
               f'<span class="vn">{ic("play")}</span><span class="vt">{pres["short"]} ({mmss(pres["secs"])})</span>{ic("circle-check")}</button>')
-    understand = f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['i1'], here)}">{pres['title']}, in 5 minutes</a></h3>
-<p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
-<div class="btn-row"><button type="button" class="btn btn-gold ring" data-start="i1">{ic('play')}<span class="lbl">Watch How It Works</span></button>
-<a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
-<p class="fine">The programme's own presentation, presented by Leo. Leo and his voice are made with AI.</p></div>
-<div class="phone-wrap">{vid('i1', here, cap=False)}</div></div>"""
+    understand = f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e1'], here)}">What is Bitcoin Wealth? In 3 minutes</a></h3>
+<p class="vdesc">Thandi asks, Leo answers: why it is not a coin, Bitcoin, BTCB and BNB in plain words, and where the money comes from.</p>
+<div class="btn-row"><button type="button" class="btn btn-gold ring" data-start="e1">{ic('play')}<span class="lbl">Watch What Is Bitcoin Wealth?</span></button>
+<button type="button" class="btn btn-ghost btn-sm" data-play="i1">{ic('circle-play')}<span class="lbl">The Whole Plan ({mmss(pres['secs'])})</span></button></div>
+<p class="fine">Then the whole plan: Leo's 5-minute presentation, the 14 positions and the 12 slots. Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e1', here, cap=False)}</div></div>"""
     return f'''{feat}
 {phero("compass", "Welcome. Let's get you started.",
-        "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Leo shows how it works in 5 minutes, just below.",
+        "Join in three stages, about 30 minutes, all on your phone. Want to understand it first? Thandi and Leo explain it in 3 minutes, just below.",
         [("users", f"{MEMBERS} member IDs ({CHECKED})"), ("badge-check", "0.001 BTC once-off"), ("info", "Independent, not official")])}
 {sec(start3(here, head=False), "Join in 3 stages", id="start")}
 {sec(understand, "Want to understand it first?", id="how-it-works")}
@@ -146,6 +148,11 @@ def p_what(here):
     return f'''{phero("bitcoin", "What is Bitcoin Wealth?",
         "A community way to collect Bitcoin's value. A smart contract on BNB Smart Chain takes each member's slot payment and sends it straight to other members' wallets, by fixed rules, in public.",
         [("badge-check", "0.001 BTC once-off"), ("wallet", "Wallet to wallet"), ("scan-search", "Public on BscScan")])}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e1'], here)}">It's not a coin. Here's what it is.</a></h3>
+<p class="vdesc">Thandi asks what everyone asks, and Leo answers in 3 minutes: Bitcoin, the smart contract, BTCB and BNB, where the money comes from, and how to check it yourself.</p>
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e1'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI. Prefer reading? Everything below says the same, in more detail.</p></div>
+<div class="phone-wrap">{vid('e1', here, eager=True, hero=True)}</div></div>""", "Watch it in 3 minutes", id="video")}
 {sec(flow_stage(here), "The idea in four moves", "Tap a step to see it.")}
 {sec(f"""<div class="grid2">
  {box("Bitcoin is the money", "<p>Bitcoin is digital money with no bank behind it. It started in January 2009, after the 2008 financial crisis. Only 21 million will ever exist, and every four years the halving cuts how many new ones are made. That's why people call it digital gold.</p>", "bitcoin")}
@@ -163,7 +170,7 @@ def p_what(here):
 <p class="vdesc">Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.</p>
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['i1'], here)}">{ic("list-checks")}<span class="lbl">All 10 chapters</span></a></div>
 <p class="fine">The programme's own presentation, presented by Leo. Want the Bitcoin basics first? MTG's free <a class="inl" href="{esc(CRYPTO101)}" target="_blank" rel="noopener">Crypto 101 crash course</a> has 15 short lessons.</p></div>
-<div class="phone-wrap">{vid('i1', here)}</div></div>""", "Watch it explained", id="watch")}'''
+<div class="phone-wrap">{vid('i1', here)}</div></div>""", "The whole plan, in 5 minutes", id="watch")}'''
 
 
 # ======================================================================= THE 14 POSITIONS
@@ -235,7 +242,7 @@ def p_stokvel(here):
  {box("Where Bitcoin Wealth wins", checks(["Transparency: every payment public, nobody has to be trusted to report it", "Peer to peer: payouts go straight to members' wallets", "No middleman holding the pot, no bank charges", "One small entry instead of monthly contributions", "Priced in Bitcoin's value, not rand"]), "trophy")}
  {box("How each one is funded", checks(["A stokvel is a closed circle: the same members take turns with the same pot", "Bitcoin Wealth is open: each cycle is completed by members activating the positions below you", "So it grows as the community grows, which is why teaching others matters"]), "info")}
 </div>""", "The verdict")}
-{sec(soon('e4'), "Watch it explained")}'''
+{sec(f'<div class="stack">{jump_card("e1", 31.0, "Leo explains it with a stokvel", "The tin, the book, and what changes when the book is a smart contract that anyone can read. Half a minute.", here)}{soon("e4")}</div>', "Watch it explained")}'''
 
 
 # ======================================================================= WHAT MAKES IT DIFFERENT

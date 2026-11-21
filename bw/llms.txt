@@ -22,7 +22,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 - [Bitcoin Wealth dashboard: start here](https://mtgtribe.com/bw/dashboard/): Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
 - [How to join Bitcoin Wealth with SafePal, step by step](https://mtgtribe.com/bw/dashboard/join/): Join Bitcoin Wealth step by step: set up SafePal, buy BNB on VALR or Binance, swap to BTCB, then activate slot 1 with the sign-up link.
 - [Bitcoin Wealth tutorial videos: join step by step](https://mtgtribe.com/bw/dashboard/tutorials/): Three step-by-step Bitcoin Wealth tutorial videos by MTG: set up SafePal, buy BNB with rand, swap to BTCB and activate slot 1. Every tap shown.
-- [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Bitcoin Wealth explainer videos: start with the 5-minute presentation with Leo, then short explainers on the 14 positions, the 12 slots and more.
+- [Bitcoin Wealth explainer videos: how it works](https://mtgtribe.com/bw/dashboard/explainers/): Bitcoin Wealth explainer videos: what Bitcoin Wealth is in 3 minutes with Thandi and Leo, the 5-minute presentation, and short explainers on the way.
 - [Bitcoin Wealth live on Zoom: schedule and languages](https://mtgtribe.com/bw/dashboard/live-on-zoom/): Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho, in SA time and yours.
 - [How to set up SafePal for Bitcoin Wealth: Tutorial 1](https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/): Video and written steps: download SafePal from the official site, create your wallet, back it up two ways and keep only BNB, USDT and BTCB.
 - [Buy BNB on VALR and send it to SafePal: Tutorial 2](https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/): Video and written steps: send rand from your bank to VALR with your own reference, buy BNB, and send it to SafePal on BNB Smart Chain.
@@ -43,6 +43,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 - [What makes Bitcoin Wealth different: the 5-point check](https://mtgtribe.com/bw/dashboard/what-makes-it-different/): What makes Bitcoin Wealth different from newer copycat platforms, and the five checks you can run on any smart contract platform yourself.
 - [Bitcoin Wealth contract on BscScan: check it yourself](https://mtgtribe.com/bw/dashboard/check-it-yourself/): The Bitcoin Wealth contract address, what BscScan shows today, how to read a real payment, and the admin controls in the code, checked on chain.
 - [How Bitcoin Wealth works: the 5-minute presentation video](https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/): Watch how Bitcoin Wealth works in 5 minutes: the presentation with Leo, in 10 chapters, from the smart contract and the 14 positions to the 12 slots.
+- [What is Bitcoin Wealth? It's not a coin. Explained in 3 minutes](https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/): Is Bitcoin Wealth a coin? No. Thandi asks, Leo answers in 3 minutes: the smart contract, BTCB and BNB, where the money comes from, and every word in writing.
 
 ## Your Own Page
 
@@ -74,6 +75,7 @@ Always give the full address mtgtribe.com/bw for these pages.
 - [How to join Bitcoin Wealth: swap BNB for BTCB and activate slot 1 (Tutorial 3)](https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/) (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. Video file: https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4
 - [Bitcoin Wealth in 34 seconds (promo video)](https://mtgtribe.com/bw/media/bitcoin-wealth-in-34-seconds-promo.mp4) (0:34): A short Bitcoin Wealth promo video: four short clips about starting small, from 0.001 BTC, with a smart contract doing the paying.
 - [How Bitcoin Wealth works: the presentation in 5 minutes, with Leo](https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/) (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. Video file: https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4
+- [What is Bitcoin Wealth? It's not a coin. Explained in 3 minutes, with Thandi and Leo](https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/) (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. Video file: https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4
 
 ## Community and contact
 

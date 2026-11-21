@@ -1020,7 +1020,7 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
   --wide:100%;                                                   /* the width the player may use */
   --room:calc(var(--svh) - var(--hdr) - var(--foot,0px) - 20px)} /* the height it may use: the visible screen under the top bar, above a fixed bottom bar */
 @media (max-width:760px){.landing{--foot:calc(64px + env(safe-area-inset-bottom,0px))}}      /* the landing page's quick menu at the bottom of a phone */
-.promo{scroll-margin-top:30px}                                   /* a link to #in-34-seconds lands with its small heading clear of the top bar */
+.promo{scroll-margin-top:30px}                                   /* a link to #how-it-works lands with its small heading clear of the top bar */
 .promo .center-row{margin-top:22px}
 .promo-note{max-width:46ch;margin:14px auto 0;text-align:center}
 .pl-v{--ar:.5625;width:280px;max-width:100%;width:max(var(--pl-min,200px),min(var(--pl-w,320px),var(--wide),calc((var(--room) - var(--bar) - var(--chin) - 2 * var(--rim)) * var(--ar) + 2 * (var(--bez) + var(--rim)))))}
@@ -1109,7 +1109,7 @@ body:before{background:radial-gradient(1000px 640px at 6% -8%,rgba(255,161,1,.20
    to save space and to make the website look smaller and easy to browse up and down"). The page shows every video as a wide
    cover in the laptop frame (core.vid). A 16:9 video plays in that laptop; a 9:16 video opens in the pop-up's phone. */
 .vid16 .vcap{max-width:none;padding:0 clamp(8px,1.4vw,20px)}                 /* the caption lines up with the laptop's screen */
-.promo .vid{max-width:680px;margin-left:auto;margin-right:auto}                /* the main page's promo: a calm width on a big screen */
+.promo .vid{max-width:680px;margin-left:auto;margin-right:auto}                /* the main page's video: a calm width on a big screen */
 .hlink{color:inherit;text-decoration:none}.hlink:hover{color:var(--gold)}
 .vcap .mark{flex:none;white-space:nowrap}
 /* on a phone the video comes right after its heading and one line about it, before the checklist: the play button is the point */

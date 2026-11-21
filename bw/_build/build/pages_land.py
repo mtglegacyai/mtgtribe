@@ -161,13 +161,13 @@ def landing():
 </section>
 <div class="tape" aria-label="Bitcoin Wealth in short"><div class="tape-in">{tape_one}<span aria-hidden="true" class="dup">{tape_one}</span></div></div>
 
-<section class="sec lsec promo" id="in-34-seconds" aria-labelledby="promo-h"><div class="wrap">
- <div class="sec-head center"><p class="eyebrow">34 seconds</p><h2 class="h2" id="promo-h">Curious? <span class="hl">Hear it first.</span></h2>
- <p class="lead">Four short clips about Bitcoin Wealth. Then follow every step yourself, one tap at a time.</p></div>
- {vid('p1', here, cap=False, hero=True)}
+<section class="sec lsec promo" id="how-it-works" aria-labelledby="promo-h"><div class="wrap">
+ <div class="sec-head center"><p class="eyebrow">{round(V['i1']['secs'] / 60)} minutes</p><h2 class="h2" id="promo-h">Curious? <span class="hl">See how it works.</span></h2>
+ <p class="lead">Leo shows the whole Bitcoin Wealth plan, slide by slide. Then follow every step yourself, one tap at a time.</p></div>
+ {vid('i1', here, cap=False, hero=True)}
  <div class="center-row promo-acts"><a class="btn btn-gold btn-lg ring" href="{A('dashboard/tutorials/', here)}">{ic('circle-play')}<span class="lbl">Watch The Step-By-Step Tutorials</span></a>
- <button type="button" class="btn btn-ghost btn-lg" data-play="i1">{ic('play')}<span class="lbl">How It Works ({mmss(V['i1']['secs'])})</span></button></div>
- <p class="fine promo-note">A short Bitcoin Wealth promo video. Don't just take anyone's word for it: <a class="inl" href="{A('dashboard/check-it-yourself/', here)}">check it yourself</a>.</p>
+ <button type="button" class="btn btn-ghost btn-lg" data-play="p1">{ic('play')}<span class="lbl">Bitcoin Wealth In 34 Seconds</span></button></div>
+ <p class="fine promo-note">The video is the programme's own presentation, presented by Leo; the 34-second button plays a short promo video. Leo and his voice are made with AI. Don't just take anyone's word for it: <a class="inl" href="{A('dashboard/check-it-yourself/', here)}">check it yourself</a>.</p>
 </div></section>
 
 <section class="sec lsec" id="start"><div class="wrap">{start3(here)}</div></section>

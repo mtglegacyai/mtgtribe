@@ -4,7 +4,7 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-20'
+TODAY = '2026-11-21'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
@@ -57,6 +57,7 @@ SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide b
 _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 _T = 'projects/bitcoin-wealth/tutorials/'
 _INTRO = 'projects/bitcoin-wealth/videos/intro-remake-leo/'
+_E1 = 'projects/bitcoin-wealth/videos/explainer-01-what-is-bitcoin-wealth/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -99,10 +100,16 @@ VIDEOS = [
      319.6, _INTRO + 'final/Bitcoin-Wealth-intro-with-Leo-1080p.mp4',
      dict(o='h', poster=_INTRO + 'thumbs/out/Bitcoin-Wealth-intro-website-cover-16x9.jpg', label='Presentation', short='How it works', date='2026-11-20',
           name='How Bitcoin Wealth works: the presentation in 5 minutes, with Leo')),
+    # Explainer 1, the first of the Thandi and Leo series (MTG, 21 Nov 2026: "Push the explainer video live"). Our own script, every
+    # fact from the site's facts register, so the site prints the whole conversation on its page. 16:9: it plays in the laptop, in place
+    ('e1', 'what-is-bitcoin-wealth-explained-in-3-minutes', 'What is Bitcoin Wealth?',
+     "Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself.",
+     179.8, _E1 + 'final/What-is-Bitcoin-Wealth-explainer-1-1080p.mp4',
+     dict(o='h', poster=_E1 + 'thumbs/out/What-is-Bitcoin-Wealth-website-cover-16x9.jpg', short='What is Bitcoin Wealth?', date='2026-11-21',
+          name="What is Bitcoin Wealth? It's not a coin. Explained in 3 minutes, with Thandi and Leo")),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('e1', 'Explainer', 'Bitcoin Wealth in two minutes', 'Bitcoin, BTCB, the smart contract and wallet to wallet payments, in one picture.'),
     ('e2', 'Explainer', 'How the 14 positions pay', 'Two, four, eight: where all fourteen payments go, and why nine point to you.'),
     ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
@@ -185,7 +192,14 @@ PRESENT = {
     'i1': ('dashboard/explainers/bitcoin-wealth-presentation/', 'How Bitcoin Wealth works: the presentation, in 5 minutes', _INTRO + 'final/chapters.json'),
 }
 WATCH.update({k: v[0] for k, v in PRESENT.items()})
+# The explainers' own pages (MTG, 21 Nov 2026), under Explainer Videos: the video, its chapters with time buttons, and the whole
+# conversation in writing (from the episode's own build: mtg-studio, the episode's tools/chapters.py). code: (path, heading, file)
+EXPLAIN = {
+    'e1': ('dashboard/explainers/what-is-bitcoin-wealth-video/', "What is Bitcoin Wealth? It's not a coin, explained in 3 minutes", _E1 + 'final/chapters.json'),
+}
+WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]
+EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video and every word of it', 'film', 'How It Works') for k, v in EXPLAIN.items()]
 import json as _json
 CH = {c['key']: c['start'] for c in _json.load(open(STUDIO + '/' + PRESENT['i1'][2], encoding='utf-8'))['chapters']}
 NAVD = {n[0]: n for n in NAV + EXTRA}

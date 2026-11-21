@@ -2,7 +2,7 @@
 const { chromium } = require('playwright');
 const BASE = process.env.BASE || 'http://127.0.0.1:8765';
 const VPS = (process.env.VPS || '320x568,360x600,360x640,360x700,375x667,390x664,393x760,412x732,412x840,430x800,568x320,640x360,740x360,800x360,915x412,768x1024,820x1180,1024x768,1280x720,1366x768,1920x1080').split(',').map(s => s.split('x').map(Number));
-const PAGES = (process.env.PAGES || '/bw/dashboard/tutorials/,/bw/dashboard/join/,/bw/dashboard/,/bw/,/bw/dashboard/tutorials/safepal-wallet-setup/,/bw/dashboard/tutorials/buy-bnb-send-to-safepal/,/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/,/bw/dashboard/explainers/,/bw/dashboard/explainers/bitcoin-wealth-presentation/,/bw/dashboard/what-is-bitcoin-wealth/,/bw/dashboard/how-it-works/').split(',');
+const PAGES = (process.env.PAGES || '/bw/dashboard/tutorials/,/bw/dashboard/join/,/bw/dashboard/,/bw/,/bw/dashboard/tutorials/safepal-wallet-setup/,/bw/dashboard/tutorials/buy-bnb-send-to-safepal/,/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/,/bw/dashboard/explainers/,/bw/dashboard/explainers/bitcoin-wealth-presentation/,/bw/dashboard/explainers/what-is-bitcoin-wealth-video/,/bw/dashboard/what-is-bitcoin-wealth/,/bw/dashboard/how-it-works/,/bw/dashboard/stokvel/').split(',');
 const SHOT = process.env.SHOT, ONLYSHOT = (process.env.SHOTVP || '').split(',');
 let bad = 0, checks = 0;
 const fail = (ctx, msg) => { bad++; console.log('FAIL', ctx, msg); };

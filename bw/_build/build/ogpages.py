@@ -27,6 +27,7 @@ SPECS = {
     'w-t3': ('Tutorial 3 of 3', ['Activate', 'slot 1,', 'step by step'], 'thumb:3'),
     'exp': ('Explainer videos', ['How it works,', 'in pictures'], 'tree'),
     'w-i1': ('Explained in 5 minutes', ['How Bitcoin', 'Wealth', 'works'], 'leo'),
+    'w-e1': ('Thandi asks, Leo answers', ["It's not", 'a coin.', 'So what is it?'], 'duo'),
     'zoom': ('Meet the community', ['Live on Zoom.', '5 evenings,', '4 languages'], 'zoom'),
     'page': ('R1,000 once-off', ['Your own', 'Bitcoin Wealth', 'website'], 'mascot'),
     'order': ('Pay after it is built', ['Order your', 'BW Tribe Page'], 'mascot'),
@@ -157,6 +158,15 @@ def visual(im, kind):
         gd.ellipse((cx - 250, 120, cx + 250, 620), fill=(255, 161, 1, 95))
         glow = glow.filter(ImageFilter.GaussianBlur(70)); im.paste(glow, (0, 0), glow)
         im.paste(m, (cx - m.width // 2, H - hgt + 40), m)
+    elif kind == 'duo':
+        # Thandi and Leo, as on the explainer's thumbnails (their cut-outs), side by side on the picture's bottom edge
+        A = STUDIO + '/projects/bitcoin-wealth/videos/explainer-01-what-is-bitcoin-wealth/thumbs/assets/'
+        glow = Image.new('RGBA', (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
+        gd.ellipse((cx - 330, 140, cx + 330, 640), fill=(255, 161, 1, 85))
+        glow = glow.filter(ImageFilter.GaussianBlur(70)); im.paste(glow, (0, 0), glow)
+        for f, x, sz, row in (('leo-smile.png', cx + 115, 560, 880), ('thandi-asks.png', cx - 150, 530, 885)):
+            m = Image.open(A + f).convert('RGBA').crop((0, 0, 1080, row)); m = m.resize((int(1080 * sz / 1080), int(row * sz / 1080)), Image.LANCZOS)
+            im.paste(m, (x - m.width // 2, H - m.height), m)
     elif kind == 'mascot' or kind.startswith('thumb'):
         # thumb, thumb:1, thumb:2, thumb:3: the vertical thumbnail of that tutorial
         THUMBS = {'1': '01-safepal/final/BW-Tutorial-1-SafePal-mtg-thumbnail-9x16.jpg', '2': '02-bank-to-valr/final/BW-Tutorial-2-Bank-to-SafePal-mtg-thumbnail-9x16.jpg',

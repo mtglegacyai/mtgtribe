@@ -58,6 +58,7 @@ _CARTOON = 'projects/bitcoin-wealth/videos/cartoon-01-the-missing-piece/final/'
 _T = 'projects/bitcoin-wealth/tutorials/'
 _INTRO = 'projects/bitcoin-wealth/videos/intro-remake-leo/'
 _E1 = 'projects/bitcoin-wealth/videos/explainer-01-what-is-bitcoin-wealth/'
+_E2 = 'projects/bitcoin-wealth/videos/explainer-02-how-the-14-positions-pay/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -107,10 +108,16 @@ VIDEOS = [
      179.8, _E1 + 'final/What-is-Bitcoin-Wealth-explainer-1-1080p.mp4',
      dict(o='h', poster=_E1 + 'thumbs/out/What-is-Bitcoin-Wealth-website-cover-16x9.jpg', short='What is Bitcoin Wealth?', date='2026-11-21',
           name="What is Bitcoin Wealth? It's not a coin. Explained in 3 minutes, with Thandi and Leo")),
+    # Explainer 2 (MTG, 21 Nov 2026: "Too nice, I found the complete video. Put it live"). Our own script, every fact from the site's
+    # facts register (the 14 positions table on dashboard/how-it-works/). 16:9: it plays in the laptop, in place
+    ('e2', 'how-bitcoin-wealth-pays-14-positions-explained', 'How the 14 positions pay',
+     "Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button.",
+     199.0, _E2 + 'final/How-Bitcoin-Wealth-pays-14-positions-explainer-2-1080p.mp4',
+     dict(o='h', poster=_E2 + 'thumbs/out/How-Bitcoin-Wealth-pays-14-positions-website-cover-16x9.jpg', short='The 14 positions', date='2026-11-21',
+          name='How Bitcoin Wealth pays: the 14 positions explained in 3 minutes, with Thandi and Leo')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('e2', 'Explainer', 'How the 14 positions pay', 'Two, four, eight: where all fourteen payments go, and why nine point to you.'),
     ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
@@ -196,6 +203,7 @@ WATCH.update({k: v[0] for k, v in PRESENT.items()})
 # conversation in writing (from the episode's own build: mtg-studio, the episode's tools/chapters.py). code: (path, heading, file)
 EXPLAIN = {
     'e1': ('dashboard/explainers/what-is-bitcoin-wealth-video/', "What is Bitcoin Wealth? It's not a coin, explained in 3 minutes", _E1 + 'final/chapters.json'),
+    'e2': ('dashboard/explainers/how-the-14-positions-pay-video/', 'How Bitcoin Wealth pays: the 14 positions, explained in 3 minutes', _E2 + 'final/chapters.json'),
 }
 WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]

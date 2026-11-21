@@ -74,7 +74,7 @@ Explainers
 Seven stops. Each one builds on the last, so go in order the first time.
 - Check the fit Start honest. Is it right for me? takes two minutes.
 - Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? Thandi and Leo explain it in 3 minutes, then the 5-minute presentation.
-- See how it pays The 14 positions, then the 12 slots. Watch the positions fill.
+- See how it pays The 14 positions, then the 12 slots. Watch the positions fill, or let Thandi and Leo fill all 14 seats in 3 minutes.
 - Compare it honestly Against a stokvel and against the newer copycats, then check it yourself on BscScan.
 - Join step by step Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. Open the join guide.
 - Meet the community Live on Zoom five evenings a week, and every day in the MTG TRIBE.
@@ -230,6 +230,16 @@ How Bitcoin Wealth works: 14 positions in rows of 2, 4 and 8, where each of the 
 ### How Bitcoin Wealth works: the 14 positions
 Below you sit 2, then 4, then 8 positions: 14 in all. Each position is one member paying the slot price, and each one produces one payment. Here's where all fourteen go.
 
+#### Watch it in 3 minutes
+
+##### Thandi and Leo fill all 14 seats
+Thandi asks who pays who. Leo fills the seats with her, row by row, until every payment has a place. 3:19.
+- Where each of the 14 payments goes
+- What changes from your second cycle
+- Who fills the seats, and why there is no withdraw button
+Explainer 2 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+
 #### Watch the positions fill
 Then switch between the first cycle and later cycles.
 14 positions: 2, then 4, then 8
@@ -262,7 +272,7 @@ Positions below you can be filled by people you didn't introduce, when your upli
 
 #### Good to know
 
-#### Watch it explained
+#### The presentation's part on it
 
 ---
 
@@ -756,7 +766,7 @@ URL: https://mtgtribe.com/bw/dashboard/explainers/
 Bitcoin Wealth explainer videos: what Bitcoin Wealth is in 3 minutes with Thandi and Leo, the 5-minute presentation, and short explainers on the way.
 
 ### Bitcoin Wealth explainer videos
-Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Then watch the whole plan in Leo's 5-minute presentation.
+Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go. Then watch the whole plan in Leo's 5-minute presentation.
 
 #### Start here: Explainer 1
 
@@ -767,6 +777,16 @@ Thandi asks what everyone asks, and Leo answers in plain words, in 3:00. Start h
 - Where the money comes from, and what it costs to start
 Thandi and Leo, and their voices, are made with AI.
 - Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+
+#### Then: where all 14 payments go
+
+#### Explainer 2: How the 14 positions pay
+Thandi asks who pays who, and Leo fills 14 seats with her, row by row, in 3:19. Watch this when you want to see where every payment goes.
+- The 14 seats under you: 2, then 4, then 8
+- Where each of the 14 payments goes
+- The Royal Pool, spillover, and why there is no withdraw button
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
 
 #### The whole plan, in 5 minutes
 
@@ -868,6 +888,91 @@ Thandi: See you there!
 ##### The whole plan, in 5 minutes
 Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he says them.
 Watch the presentation
+
+##### Check it yourself
+Open the contract on BscScan and read a real payment with your own eyes.
+How to check it
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
+
+---
+
+## How Bitcoin Wealth pays: the 14 positions explained in 3 minutes
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+
+Where do the 14 payments of a Bitcoin Wealth cycle go? Thandi asks, Leo shows it seat by seat: Royal Pool, spillover, no withdraw button. Every word written.
+
+### How Bitcoin Wealth pays: the 14 positions, explained in 3 minutes
+Explainer 2 of the Thandi and Leo series. Thandi asks who pays who, and Leo fills 14 seats with her, row by row, so she sees where every single payment goes. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+
+#### In this video
+- The 14 seats under you: 2, then 4, then 8
+- Where each of the 14 payments goes, row by row
+- What changes from your second cycle: the Royal Pool
+- Who fills the seats, and what spillover means
+- Why there is no withdraw button
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 Who pays who? 14 seats, 14 payments
+Thandi: Leo, you said every payout is another member's slot payment. So who pays who?
+Leo: Picture 14 seats. Fill them with me, and you'll see where every single payment goes.
+Thandi: 14 seats? Where are they?
+Leo: Below you sit 2 seats, then 4, then 8. 14 in all. Each seat is one member paying the slot price, and each seat makes one payment.
+
+##### Chapter 2 · 0:27 Where each of the 14 payments goes
+Thandi: Okay. So where does each payment go?
+Leo: Row 1. Seats 1 and 2 pay your upline, the two members above you.
+Leo: Row 2. Seats 3 and 6 go straight to your wallet. Seats 4 and 5 buy your next slot.
+Leo: Row 3. Seats 8, 9, 11 and 12 go to your wallet too. 7, 10 and 13 go to members below you. And seat 14 puts you back into the same slot, so it can fill again.
+
+##### Chapter 3 · 0:55 9 of 14 point to you
+Thandi: Wait. So how many of the 14 come to me?
+Leo: Nine. 6 to your wallet, 2 buy your next slot, and 1 starts you again.
+Thandi: And the other five?
+Leo: 2 go up, to your upline. 3 go down, to members below you. The same rules, for every member.
+
+##### Chapter 4 · 1:14 From your second cycle: the Royal Pool
+Thandi: And when seat 14 starts me again?
+Leo: From your second cycle in a slot, seat 4 goes to the Royal Pool and seat 5 goes to your wallet. So 7 to your wallet. Your next slot is already bought.
+
+##### Chapter 5 · 1:27 Who fills the seats? Spillover
+Thandi: Okay, Leo, honestly. Who fills all these seats?
+Leo: Members. The people you introduce, and sometimes people from your upline's team, when it overflows. That's called spillover.
+Leo: But every seat needs a real member. Nothing fills by itself, and nothing is guaranteed. That's why sharing and teaching matter.
+
+##### Chapter 6 · 1:49 No withdraw button
+Thandi: And I don't have to ask anyone for my payment?
+Leo: No. There's no withdraw button. The contract splits each payment and sends it straight to members' own wallets, in the same transaction.
+
+##### Chapter 7 · 2:01 Thandi says it back
+Thandi: Let me say it back. 2, 4, 8: 14 seats, 14 payments. 2 go up, 3 go down. 6 to my wallet, 2 buy my next slot, and 1 starts me again.
+
+##### Chapter 8 · 2:14 Your next step
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+Leo: This is education, not financial advice. So take your time, and do your own research.
+Thandi: What's next, Leo?
+Leo: Next: the 12 slots, and why you only pay once.
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+Leo: If you want to go fast, go alone. If you want to go far, go together.
+Leo: Thank you for watching. Take good care of yourself, and of the people you love. We can't wait to welcome you. Goodbye for now.
+
+#### Your next step
+
+##### Watch the positions fill
+The 14 Positions page: the seats fill one by one, then switch to later cycles. All fourteen in one table.
+Open the 14 Positions
 
 ##### Check it yourself
 Open the contract on BscScan and read a real payment with your own eyes.

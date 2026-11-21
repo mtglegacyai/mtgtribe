@@ -90,11 +90,20 @@ def p_exp(here):
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e1'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e1', here, eager=True, hero=True)}</div></div>"""
+    e = V['e2']
+    # Explainer 2 (MTG, 21 Nov 2026: "Put it live"): the 14 positions, seat by seat, right after the plain-words start
+    e2 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e2'], here)}">Explainer 2: How the 14 positions pay</a></h2>
+<p class="vdesc">Thandi asks who pays who, and Leo fills 14 seats with her, row by row, in {mmss(e['secs'])}. Watch this when you want to see where every payment goes.</p>
+{checks(["The 14 seats under you: 2, then 4, then 8", "Where each of the 14 payments goes", "The Royal Pool, spillover, and why there is no withdraw button"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e2'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e2', here)}</div></div>"""
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Then watch the whole plan in Leo's 5-minute presentation.",
-        [("circle-play", "2 ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go. Then watch the whole plan in Leo's 5-minute presentation.",
+        [("circle-play", "3 ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
+{sec(e2, "Then: where all 14 payments go", id="explainer-2")}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="grid2">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">

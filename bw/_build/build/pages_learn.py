@@ -41,7 +41,7 @@ def p_home(here):
     route = steps([
         ('Check the fit', f'<p>Start honest. <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> takes two minutes.</p>'),
         ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? <a class="inl" href="{A(WATCH["e1"], here)}">Thandi and Leo explain it in 3 minutes</a>, then <a class="inl" href="{A(WATCH["i1"], here)}">the 5-minute presentation</a>.</p>'),
-        ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill.</p>'),
+        ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill, or <a class="inl" href="{A(WATCH["e2"], here)}">let Thandi and Leo fill all 14 seats in 3 minutes</a>.</p>'),
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
         ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
@@ -180,6 +180,12 @@ def p_hiw(here):
     return f'''{phero("network", "How Bitcoin Wealth works: the 14 positions",
         "Below you sit 2, then 4, then 8 positions: 14 in all. Each position is one member paying the slot price, and each one produces one payment. Here's where all fourteen go.",
         [("users", "2 + 4 + 8 = 14"), ("wallet", "6 to your wallet"), ("arrow-up", "2 buy your next slot")])}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e2'], here)}">Thandi and Leo fill all 14 seats</a></h3>
+<p class="vdesc">Thandi asks who pays who. Leo fills the seats with her, row by row, until every payment has a place. {mmss(V['e2']['secs'])}.</p>
+{checks(["Where each of the 14 payments goes", "What changes from your second cycle", "Who fills the seats, and why there is no withdraw button"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e2'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Explainer 2 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e2', here, eager=True, hero=True)}</div></div>""", "Watch it in 3 minutes", id="video")}
 {sec(matrix(here), "Watch the positions fill", "Then switch between the first cycle and later cycles.")}
 {sec(table(["Where the payment goes", "First cycle", "Later cycles"], rows + [["<b>Total</b>", "14", "14"]], hl=1, caption="Where the 14 payments go") +
      src_fact("Cycle 1: 2 to your upline, 6 to your wallet, 2 to your next slot, 3 to members below you, 1 recycles you. Later cycles: 7 to your wallet and 1 to the Royal Pool instead of the next slot."),
@@ -190,7 +196,7 @@ def p_hiw(here):
  {box("Spillover", "<p>Positions below you can be filled by people you didn't introduce, when your upline's team overflows. It changes who fills a seat, not that someone has to.</p>", "git-merge")}
 </div>""", "Three things to remember")}
 {sec(honest("How a cycle completes.", "Each of the 14 positions is filled by a member taking that seat, whether you introduced them or spillover brings them. That's why sharing and teaching others matter."), "Good to know")}
-{sec(f'<div class="stack">{jump_card("i1", CH["cycle1"], "Leo walks through all 14 positions", "Position by position, with every payment drawn as it moves. About a minute and a half.", here)}{soon("e2")}</div>', "Watch it explained", id="watch")}'''
+{sec(f'<div class="stack">{jump_card("i1", CH["cycle1"], "Leo walks through all 14 positions", "Position by position, with every payment drawn as it moves. About a minute and a half.", here)}</div>', "The presentation's part on it", id="watch")}'''
 
 
 # ======================================================================= THE 12 SLOTS

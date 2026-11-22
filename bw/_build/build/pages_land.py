@@ -194,7 +194,7 @@ def landing():
   <div class="socials"><a href="{esc(GROUP)}" target="_blank" rel="noopener" aria-label="Join the MTG TRIBE WhatsApp group">{ic('whatsapp')}</a><a href="{esc(TIKTOK)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on TikTok">{ic('tiktok')}</a><a href="{esc(YOUTUBE)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on YouTube">{ic('youtube')}</a><a href="{esc(FACEBOOK)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on Facebook">{ic('facebook')}</a><a href="{esc(TELEGRAM)}" target="_blank" rel="noopener" aria-label="MTG TRIBE on Telegram">{ic('telegram')}</a></div>
  </div>
  <p class="disc">{DISCLAIMER} <a href="{A('dashboard/disclaimer/', here)}">Full disclaimer</a>.</p>
- <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{SITE}/">mtgtribe.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>
+ <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{HUB}/">mtgtribe.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>
 </div></footer>
 <nav class="bnav" aria-label="Quick menu">
  <a href="{A('', here)}" aria-current="page">{ic('house')}<span>Home</span></a>

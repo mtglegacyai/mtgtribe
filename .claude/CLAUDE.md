@@ -25,9 +25,11 @@ his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
-## Reminder for MTG: a Cloudflare account for ClickBaitPays (saved 22 November 2026, at MTG's request)
+## ClickBaitPays' own Cloudflare account (asked for 22 Nov 2026, set up with MTG the same day)
 
-**Remind MTG after the Bitcoin Wealth Cloudflare account is set up.** MTG wants ClickBaitPays to have its own Cloudflare
+**Done 22 Nov 2026:** account, clickbaitpaysus.com on Cloudflare, bucket `clickbaitpays-media`, videos at
+media.clickbaitpaysus.com: `tools/cbp/CLOUDFLARE.md`. Next: MTG shares each YouTube video from Google Drive, one at a time,
+and it moves to Cloudflare. The original note: MTG wants ClickBaitPays to have its own Cloudflare
 account (like Bellver has, and Bitcoin Wealth will have), so every ClickBaitPays video plays from Cloudflare instead of
 YouTube: "if YouTube decides that they're gonna take down my channel, then that will be a problem." Order: Bitcoin Wealth
 first, then ClickBaitPays. Walk MTG through creating and configuring it step by step, as for Bellver. Today the 3 main

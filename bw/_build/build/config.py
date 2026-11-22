@@ -4,13 +4,19 @@ import os
 SITE = 'https://mtgtribe.com'
 BASE = '/bw/'                 # prod path prefix
 NAME = 'Bitcoin Wealth Guide by MTG'
-TODAY = '2026-11-21'
+TODAY = '2026-11-22'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
 
 # where the build reads its inputs and writes its output (outside the public repo)
 SCR = os.environ.get('BW_SCR') or '/tmp/claude-0/-home-user/612e96d5-9b21-5852-ab8a-e6cd65a7a534/scratchpad/bwsite'  # BW_SCR: another session's scratch
 STUDIO = '/home/user/mtg-studio'
 REPO = '/home/user/mtgtribe'
+# The videos are served from Cloudflare R2, not from GitHub Pages (MTG, 22 Nov 2026: "Perfect! Put it live!", on moving the /bw
+# videos to R2 before Explainer 3): the published site had reached GitHub Pages' 1 GB limit. MTG's bucket bellveraffiliates-media,
+# at media.bellveraffiliates.com (the only domain of his on Cloudflare), under mtgtribe/bw/media/. r2.py uploads new or changed
+# files (the API token is on MTG's Default cloud environment). A video's address on the page keeps its ?v= content version.
+MEDIA_URL = 'https://media.bellveraffiliates.com/mtgtribe/bw/media/'
+KEEP_LOCAL_MEDIA = True       # step 1: the old copies stay on GitHub Pages until the pages that point at R2 are live; then False
 
 # MTG's links (confirmed current by MTG, 14 Nov 2026)
 REF = 'https://vowu.io/register?ref=14638'
@@ -59,6 +65,7 @@ _T = 'projects/bitcoin-wealth/tutorials/'
 _INTRO = 'projects/bitcoin-wealth/videos/intro-remake-leo/'
 _E1 = 'projects/bitcoin-wealth/videos/explainer-01-what-is-bitcoin-wealth/'
 _E2 = 'projects/bitcoin-wealth/videos/explainer-02-how-the-14-positions-pay/'
+_E3 = 'projects/bitcoin-wealth/videos/explainer-03-the-12-slots-and-the-once-off/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -115,10 +122,17 @@ VIDEOS = [
      199.0, _E2 + 'final/How-Bitcoin-Wealth-pays-14-positions-explainer-2-1080p.mp4',
      dict(o='h', poster=_E2 + 'thumbs/out/How-Bitcoin-Wealth-pays-14-positions-website-cover-16x9.jpg', short='The 14 positions', date='2026-11-21',
           name='How Bitcoin Wealth pays: the 14 positions explained in 3 minutes, with Thandi and Leo')),
+    # Explainer 3 (MTG, 22 Nov 2026: "Perfect! Put it live!"). Our own script, every fact from the site's facts register (the 12 Slots
+    # page: 12 slots doubling from 0.001 to 2.048 BTC, slot 1 paid once, slots 2 to 12 auto entry). From this episode on the close
+    # has the hug. 16:9: it plays in the laptop, in place
+    ('e3', 'bitcoin-wealth-12-slots-why-you-only-pay-once', 'The 12 slots and the once-off',
+     "Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up.",
+     193.8, _E3 + 'final/Bitcoin-Wealth-12-slots-explainer-3-1080p.mp4',
+     dict(o='h', poster=_E3 + 'thumbs/out/Bitcoin-Wealth-12-slots-website-cover-16x9.jpg', short='The 12 slots', date='2026-11-22',
+          name='The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes, with Thandi and Leo')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('e3', 'Explainer', 'The 12 slots and the once-off', 'Why 0.001 BTC is the only slot you pay for, and what has to happen for the rest.'),
     ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
     ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
 ]
@@ -204,6 +218,7 @@ WATCH.update({k: v[0] for k, v in PRESENT.items()})
 EXPLAIN = {
     'e1': ('dashboard/explainers/what-is-bitcoin-wealth-video/', "What is Bitcoin Wealth? It's not a coin, explained in 3 minutes", _E1 + 'final/chapters.json'),
     'e2': ('dashboard/explainers/how-the-14-positions-pay-video/', 'How Bitcoin Wealth pays: the 14 positions, explained in 3 minutes', _E2 + 'final/chapters.json'),
+    'e3': ('dashboard/explainers/the-12-slots-video/', 'The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes', _E3 + 'final/chapters.json'),
 }
 WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]

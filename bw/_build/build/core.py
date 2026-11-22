@@ -26,6 +26,8 @@ def L(target, here):
     if target.startswith('http') or target.startswith('mailto:'):
         return target + frag
     is_page = target == '' or target.endswith('/')
+    if MODE == 'prod' and target.startswith('media/'):      # the videos live on Cloudflare R2 (config MEDIA_URL)
+        return MEDIA_URL + target[6:] + ('?v=' + HASH[target] if target in HASH else '') + frag
     if MODE == 'prod':
         url = BASE + target
         if not is_page and target in HASH:
@@ -374,7 +376,7 @@ def video_obj(code, here_url=None, extra=None):
     v = V[code]
     o = {'@type': 'VideoObject', '_code': code, 'name': v['name'], 'description': v['desc'],
          'thumbnailUrl': video_thumbs(code), 'uploadDate': v['date'] + 'T00:00:00+02:00',
-         'duration': iso_dur(v['secs']), 'contentUrl': SITE + BASE + f'media/{v["slug"]}.mp4', 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
+         'duration': iso_dur(v['secs']), 'contentUrl': MEDIA_URL + f'{v["slug"]}.mp4', 'encodingFormat': 'video/mp4', 'inLanguage': 'en-ZA',
          'isFamilyFriendly': True, 'isAccessibleForFree': True, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
          'about': BW_THING}
     if v['o'] != 'h':

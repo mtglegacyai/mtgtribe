@@ -1,6 +1,6 @@
 # Bitcoin Wealth Guide by MTG: full text
 
-Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-21.
+Source: https://mtgtribe.com/bw/. Independent guide by MTG, Your Digital Architect. Educational only, not official Bitcoin Wealth material and not financial advice. Updated 2026-11-22.
 
 ---
 
@@ -18,7 +18,7 @@ Bitcoin Wealth, explained in short videos. One once-off entry of 0.001 BTC, payo
 
 #### Curious? See how it works.
 Leo shows the whole Bitcoin Wealth plan, slide by slide. Then follow every step yourself, one tap at a time.
-- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 The video is the programme's own presentation, presented by Leo; the 34-second button plays a short promo video. Leo and his voice are made with AI. Don't just take anyone's word for it: check it yourself.
 Ready to start?
 
@@ -41,7 +41,7 @@ URL: https://mtgtribe.com/bw/dashboard/
 
 Start the Bitcoin Wealth guide here: the pages and videos in the right order, your progress saved on your phone, and a clear route to joining safely.
 
-- Video: Cartoon, "The Missing Piece" (1:27): A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together. https://mtgtribe.com/bw/media/bitcoin-wealth-the-missing-piece-cartoon.mp4
+- Video: Cartoon, "The Missing Piece" (1:27): A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-the-missing-piece-cartoon.mp4
 Watch this first · 1:27
 
 #### You may be missing one piece.
@@ -62,7 +62,7 @@ Every tap, step by step · Introduced by someone else? Use their link.
 ##### What is Bitcoin Wealth? In 3 minutes
 Thandi asks, Leo answers: why it is not a coin, Bitcoin, BTCB and BNB in plain words, and where the money comes from.
 Then the whole plan: Leo's 5-minute presentation, the 14 positions and the 12 slots. Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://media.bellveraffiliates.com/mtgtribe/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
 
 #### Your progress
 Tap a video to play it. A tick appears when you finish one. Progress is saved on this device only. New videos appear here as they're released.
@@ -74,7 +74,7 @@ Explainers
 Seven stops. Each one builds on the last, so go in order the first time.
 - Check the fit Start honest. Is it right for me? takes two minutes.
 - Understand the idea What is Bitcoin Wealth? Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? Thandi and Leo explain it in 3 minutes, then the 5-minute presentation.
-- See how it pays The 14 positions, then the 12 slots. Watch the positions fill, or let Thandi and Leo fill all 14 seats in 3 minutes.
+- See how it pays The 14 positions, then the 12 slots. Watch the positions fill, or let Thandi and Leo fill all 14 seats in 3 minutes, then see why you only pay for slot 1.
 - Compare it honestly Against a stokvel and against the newer copycats, then check it yourself on BscScan.
 - Join step by step Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. Open the join guide.
 - Meet the community Live on Zoom five evenings a week, and every day in the MTG TRIBE.
@@ -181,7 +181,7 @@ A community way to collect Bitcoin's value. A smart contract on BNB Smart Chain 
 ##### It's not a coin. Here's what it is.
 Thandi asks what everyone asks, and Leo answers in 3 minutes: Bitcoin, the smart contract, BTCB and BNB, where the money comes from, and how to check it yourself.
 Thandi and Leo, and their voices, are made with AI. Prefer reading? Everything below says the same, in more detail.
-- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://media.bellveraffiliates.com/mtgtribe/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
 
 #### The idea in four moves
 Tap a step to see it.
@@ -217,7 +217,7 @@ A set of rules in code. It doesn't create Bitcoin. It moves members' BTCB from o
 ##### How Bitcoin Wealth works, in 5 minutes
 Leo presents the whole thing, slide by slide: the idea, the smart contract, the 14 positions and the 12 slots.
 The programme's own presentation, presented by Leo. Want the Bitcoin basics first? MTG's free Crypto 101 crash course has 15 short lessons.
-- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 ---
 
@@ -238,7 +238,7 @@ Thandi asks who pays who. Leo fills the seats with her, row by row, until every 
 - What changes from your second cycle
 - Who fills the seats, and why there is no withdraw button
 Explainer 2 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
 
 #### Watch the positions fill
 Then switch between the first cycle and later cycles.
@@ -285,6 +285,16 @@ The 12 Bitcoin Wealth slots from 0.001 BTC to 2.048 BTC, why the 0.001 BTC entry
 ### The 12 Bitcoin Wealth slots, and the once-off
 Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.
 
+#### Watch it in 3 minutes
+
+##### Thandi asks who pays for slots 2 to 12
+Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. 3:14.
+- Who pays for slot 2, and every slot after it
+- What you actually pay: 0.001 BTC, once
+- The one thing that has to happen to move up
+Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+
 #### Every slot, side by side
 From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 are marked Auto Entry: each is bought with two of the fourteen payments from your first cycle at the slot below. The full ladder totals 4.095 BTC.
 
@@ -296,7 +306,7 @@ From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 ar
 ##### What moves you up
 Auto entry buys slot 2 when your slot 1 cycle fills with 14 members. Your first two business partners and spillover from above fill it.
 
-#### Watch it explained
+#### In the presentation
 
 ---
 
@@ -445,7 +455,7 @@ Three stages, five steps, from an empty phone to slot 1. Take them one at a time
 - A VALR or Binance account to buy with rand
 - The sign-up link of the person who introduced you
 On the recording day of Tutorial 1, Bitcoin was about $67,000, so 0.001 BTC was about $67. With fees and a little BNB, MTG suggested preparing about $76, about R1,300. Prices move every minute: check today's price in rand.
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### The five steps
 - Set up SafePal Download SafePal from safepal.com, create a wallet, back it up two ways and keep only BNB, USDT and BTCB. Tutorial 1 shows every tap.
@@ -462,7 +472,7 @@ Steps 2 and 3, tap by tap. Send rand from your bank to VALR with your own refere
 - Type your VALR reference exactly as VALR shows it: it is how VALR knows the money is yours
 - Buy BNB with your rand
 - Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
-- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
 
 #### Swap, sign up, activate slot 1
 
@@ -473,7 +483,7 @@ Steps 4 and 5, tap by tap. Swap BNB for BTCB in SafePal, sign up with the link o
 - On the registration page, check the referrer: it is the member ID of the person who invited you
 - Your wallet asks twice: Approve, then Confirm again. Approve only the exact 0.001 BTC
 The button copies MTG's sign-up link. Introduced by someone else? Use their link, so they stay your sponsor.
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 
 ---
 
@@ -492,7 +502,7 @@ Download SafePal from the official site, create a wallet, back it up two ways, a
 - Two backups: Google Drive and paper
 - Rename the wallet Bitcoin Wealth
 - Keep only BNB (BEP20), USDT (BEP20) and BTCB (BEP20)
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### Tutorial 2: Buy BNB on VALR and send it to SafePal
 Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain.
@@ -501,7 +511,7 @@ Send rand from your bank to VALR with your own reference, buy BNB with it, and s
 - Buy BNB with your rand
 - Withdraw to your SafePal BNB (BEP20) address on BNB Smart Chain, and check the first and last characters
 Using Binance instead? The steps are very similar.
-- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
 
 #### Tutorial 3: Swap BNB for BTCB, sign up and activate slot 1
 Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time.
@@ -509,7 +519,7 @@ Swap BNB for BTCB in SafePal, sign up with the link of the person who invited yo
 - Keep some BNB in your wallet for network fees
 - On the registration page, check the referrer: it is the member ID of the person who invited you
 - Your wallet asks twice: Approve, then Confirm again. Approve only the exact 0.001 BTC
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 Do I really need to watch them all?
 Yes, even if you think you already know. Each one shows a screen you'll meet sooner or later. Then share them: we learn best when we teach others.
 
@@ -525,7 +535,7 @@ Video and written steps: download SafePal from the official site, create your wa
 Tutorial 1 of 3. Download SafePal from the official site, create a brand new wallet, back it up two ways, and keep only the three coins Bitcoin Wealth needs. Watch it, then follow every step in writing below.
 
 #### Watch the video
-- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
+- Video: Tutorial 1, "Set up your SafePal wallet for Bitcoin Wealth" (7:25): Download SafePal from the official site, create a wallet, back it up two ways, and keep only BNB, USDT and BTCB. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-1-safepal-wallet-setup.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/safepal-wallet-setup/
 
 #### In this video
 - Download the official SafePal app 0:44
@@ -611,7 +621,7 @@ Video and written steps: send rand from your bank to VALR with your own referenc
 Tutorial 2 of 3. Send rand from your bank to VALR with your own reference, buy BNB with it, and send that BNB to your SafePal wallet on BNB Smart Chain. Watch it, then follow every step in writing below.
 
 #### Watch the video
-- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
+- Video: Tutorial 2, "Buy BNB on VALR and send it to SafePal" (5:57): Send rand from your bank to VALR with your own reference, buy BNB with it, and send the BNB to your SafePal wallet on BNB Smart Chain. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-2-buy-bnb-send-to-safepal.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/buy-bnb-send-to-safepal/
 
 #### In this video
 - Deposit rand into VALR 0:22
@@ -691,7 +701,7 @@ Video and written steps: swap BNB for BTCB in SafePal, sign up with your sponsor
 Tutorial 3 of 3, the final step. Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, and activate slot 1 with two confirmations. Then see how to get back into your dashboard, any time.
 
 #### Watch the video
-- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://mtgtribe.com/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
+- Video: Tutorial 3, "Swap BNB for BTCB, sign up and activate slot 1" (6:10): Swap BNB for BTCB in SafePal, sign up with the link of the person who invited you, activate slot 1 with two confirmations, and get back into your dashboard any time. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-tutorial-3-swap-bnb-to-btcb-activate-slot-1.mp4 Its own page, with every step in writing: https://mtgtribe.com/bw/dashboard/tutorials/swap-bnb-to-btcb-activate-slot-1/
 
 #### In this video
 - Swap BNB for BTCB 0:38
@@ -763,10 +773,10 @@ Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/
 
-Bitcoin Wealth explainer videos: what Bitcoin Wealth is in 3 minutes with Thandi and Leo, the 5-minute presentation, and short explainers on the way.
+Bitcoin Wealth explainer videos with Thandi and Leo: what it is, how the 14 positions pay and why you pay once for 12 slots, plus the 5-minute presentation.
 
 ### Bitcoin Wealth explainer videos
-Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go. Then watch the whole plan in Leo's 5-minute presentation.
+Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, and Explainer 3 why you only pay for slot 1. Then watch the whole plan in Leo's 5-minute presentation.
 
 #### Start here: Explainer 1
 
@@ -776,7 +786,7 @@ Thandi asks what everyone asks, and Leo answers in plain words, in 3:00. Start h
 - Bitcoin, BTCB and BNB, in plain words
 - Where the money comes from, and what it costs to start
 Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://media.bellveraffiliates.com/mtgtribe/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
 
 #### Then: where all 14 payments go
 
@@ -786,7 +796,17 @@ Thandi asks who pays who, and Leo fills 14 seats with her, row by row, in 3:19. 
 - Where each of the 14 payments goes
 - The Royal Pool, spillover, and why there is no withdraw button
 Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+
+#### Then: the 12 slots, and what you actually pay
+
+#### Explainer 3: The 12 slots and the once-off
+Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in 3:14. Watch this when you want to know what you actually pay.
+- The 12 slots, each double the one before
+- Who pays for slot 2, and every slot after it
+- What you pay: 0.001 BTC, once, plus small BNB fees
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### The whole plan, in 5 minutes
 
@@ -797,7 +817,7 @@ The whole Bitcoin Wealth presentation in 5 minutes. Leo shows it, slide by slide
 - The 12 slots, from 0.001 BTC up
 - Where to get more information, Zoom presentations and training
 The programme's own presentation, presented by Leo. Leo and his voice are made with AI.
-- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 #### On the way
 
@@ -824,7 +844,7 @@ Is Bitcoin Wealth a coin? No. Thandi asks, Leo answers in 3 minutes: the smart c
 Explainer 1 of the Thandi and Leo series. Thandi asks what everyone asks: is it a coin, can I buy it, where does the money come from? Leo answers in plain words, in 3 minutes. Watch it, then read every word below.
 
 #### Watch the video
-- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://mtgtribe.com/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
+- Video: Explainer 1, "What is Bitcoin Wealth?" (3:00): Thandi asks, Leo answers: Bitcoin Wealth is not a coin but a smart contract. Bitcoin, BTCB and BNB in plain words, where the money comes from, what it costs to start, and how to check every payment yourself. https://media.bellveraffiliates.com/mtgtribe/bw/media/what-is-bitcoin-wealth-explained-in-3-minutes.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/what-is-bitcoin-wealth-video/
 
 #### In this video
 - What Bitcoin is, in one picture
@@ -910,7 +930,7 @@ Where do the 14 payments of a Bitcoin Wealth cycle go? Thandi asks, Leo shows it
 Explainer 2 of the Thandi and Leo series. Thandi asks who pays who, and Leo fills 14 seats with her, row by row, so she sees where every single payment goes. Watch it, then read every word below.
 
 #### Watch the video
-- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://mtgtribe.com/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
+- Video: Explainer 2, "How the 14 positions pay" (3:19): Thandi asks, Leo draws it out seat by seat: 2, then 4, then 8 positions under you, where each of the 14 payments goes, the Royal Pool from your second cycle, who fills the seats, and why there is no withdraw button. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-pays-14-positions-explained.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/how-the-14-positions-pay-video/
 
 #### In this video
 - The 14 seats under you: 2, then 4, then 8
@@ -985,6 +1005,85 @@ Thandi and Leo, and their voices, are made with AI. Education only, not financia
 
 ---
 
+## The 12 Bitcoin Wealth slots: why you only pay once, in 3 minutes
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+
+12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows it with two coins and one full cycle. Every word written.
+
+### The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes
+Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bellveraffiliates.com/mtgtribe/bw/media/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+
+#### In this video
+- The 12 slots, each double the one before
+- Who pays for slot 2: two payments from your first cycle
+- What you actually pay: 0.001 BTC, once, plus small BNB fees
+- The one thing that has to happen to move up
+- Why the programme says slots never expire
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 How many slots? 12, each one double
+Thandi: Leo, you said seats 4 and 5 buy my next slot. How many slots are there?
+Leo: 12. And here's the best part: you only pay for the first one.
+Thandi: Only the first one? Show me.
+Leo: Slot 1 costs 0.001 Bitcoin. Every slot after it costs double: 0.002, 0.004, and so on, up to slot 12, 2.048 Bitcoin.
+
+##### Chapter 2 · 0:30 Who pays for slot 2?
+Thandi: Double every time? So who pays for slot 2?
+Leo: Your first cycle does. Seats 4 and 5 are two members, each paying 0.001. Together that's 0.002: exactly the price of slot 2. So slot 2 is bought for you, automatically.
+Thandi: Oh! So that's why every slot is double!
+Leo: Exactly. Two payments at one slot buy the next one. Slot 2's first cycle buys slot 3, and so on, all the way up.
+
+##### Chapter 3 · 1:04 What you actually pay: 0.001 BTC, once
+Thandi: So what do I actually pay?
+Leo: 0.001 Bitcoin, once, plus small network fees in BNB. No monthly fee, and no upgrade fees.
+
+##### Chapter 4 · 1:16 What has to happen to move up
+Thandi: Okay, Leo, be straight with me. What has to happen for me to move up?
+Leo: One thing. Your first cycle at the slot below has to fill: 14 seats, 14 real members.
+Leo: Your business partners fill seats, and sometimes spillover from above. Until that cycle fills, the next slot waits. Nothing moves by itself, and nothing is guaranteed.
+
+##### Chapter 5 · 1:41 Can you lose a slot?
+Thandi: And once I'm in a slot, can I lose it?
+Leo: The programme says slots never expire. Each time a cycle completes, seat 14 starts you again in the same slot.
+
+##### Chapter 6 · 1:55 Thandi says it back
+Thandi: Let me say it back. 12 slots, each one double. I pay for slot 1 only, once. Two payments from each first cycle buy the next slot. And every cycle needs 14 real members.
+
+##### Chapter 7 · 2:09 Your next step
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+Leo: This is education, not financial advice. So take your time, and do your own research.
+Thandi: What's next, Leo?
+Leo: Next: Bitcoin Wealth and the stokvel, side by side.
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+Leo: If you want to go fast, go alone. If you want to go far, go together.
+Leo: Thank you for watching. Take good care of yourself, and of the people you love. We can't wait to welcome you. Goodbye for now.
+
+#### Your next step
+
+##### See every slot
+The 12 Slots page: every slot and its price side by side, and the calculator that shows each one in rand.
+Open the 12 Slots
+
+##### Check it yourself
+Open the contract on BscScan and read a real payment with your own eyes.
+How to check it
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
+
+---
+
 ## How Bitcoin Wealth works: the 5-minute presentation video
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
@@ -995,7 +1094,7 @@ Watch how Bitcoin Wealth works in 5 minutes: the presentation with Leo, in 10 ch
 The Bitcoin Wealth presentation from start to finish, presented by Leo: what it is, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. Watch it, then tap any chapter to see that part again.
 
 #### Watch the video
-- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://mtgtribe.com/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
+- Video: Presentation, "How Bitcoin Wealth works" (5:20): The Bitcoin Wealth presentation in 5 minutes, presented by Leo: what it is, the Vow Unity smart contract, where the 14 positions of a cycle pay, the 12 slots, and where to get more information. https://media.bellveraffiliates.com/mtgtribe/bw/media/how-bitcoin-wealth-works-presentation.mp4 Its own page, chapter by chapter: https://mtgtribe.com/bw/dashboard/explainers/bitcoin-wealth-presentation/
 
 #### In this video
 - What Bitcoin Wealth is, and who it is built for

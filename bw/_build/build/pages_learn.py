@@ -41,7 +41,7 @@ def p_home(here):
     route = steps([
         ('Check the fit', f'<p>Start honest. <a class="inl" href="{A("dashboard/is-it-right-for-me/", here)}">Is it right for me?</a> takes two minutes.</p>'),
         ('Understand the idea', f'<p><a class="inl" href="{A("dashboard/what-is-bitcoin-wealth/", here)}">What is Bitcoin Wealth?</a> Bitcoin, BTCB and the smart contract, in plain words. Prefer a video? <a class="inl" href="{A(WATCH["e1"], here)}">Thandi and Leo explain it in 3 minutes</a>, then <a class="inl" href="{A(WATCH["i1"], here)}">the 5-minute presentation</a>.</p>'),
-        ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill, or <a class="inl" href="{A(WATCH["e2"], here)}">let Thandi and Leo fill all 14 seats in 3 minutes</a>.</p>'),
+        ('See how it pays', f'<p><a class="inl" href="{A("dashboard/how-it-works/", here)}">The 14 positions</a>, then <a class="inl" href="{A("dashboard/12-slots/", here)}">the 12 slots</a>. Watch the positions fill, or <a class="inl" href="{A(WATCH["e2"], here)}">let Thandi and Leo fill all 14 seats in 3 minutes</a>, then <a class="inl" href="{A(WATCH["e3"], here)}">see why you only pay for slot 1</a>.</p>'),
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
         ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
@@ -206,6 +206,12 @@ def p_slots(here):
     return f'''{phero("layers", "The 12 Bitcoin Wealth slots, and the once-off",
         "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.",
         [("badge-check", "You pay 0.001 BTC once"), ("layers", f"Full ladder {LADDER} BTC"), ("refresh-cw", "Slots never expire")])}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Thandi asks who pays for slots 2 to 12</a></h3>
+<p class="vdesc">Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. {mmss(V['e3']['secs'])}.</p>
+{checks(["Who pays for slot 2, and every slot after it", "What you actually pay: 0.001 BTC, once", "The one thing that has to happen to move up"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e3', here, eager=True, hero=True)}</div></div>""", "Watch it in 3 minutes", id="video")}
 {sec(f'<div class="ladder">{cells}</div>' + src_fact(f"Slot 1 is a plain entry. Slots 2 to 12 are marked Auto Entry: each is bought with two of the fourteen payments from your first cycle at the slot below. The full ladder totals {LADDER} BTC."),
      "Every slot, side by side")}
 {sec(f"""<div class="grid2">
@@ -214,7 +220,7 @@ def p_slots(here):
 </div>
 <div class="btn-row center-row"><a class="btn btn-gold ring" href="{A('dashboard/tools/slot-calculator/', here)}">{ic('calculator')}<span class="lbl">See every slot in rand</span></a></div>""",
     "What it costs you")}
-{sec(f'<div class="stack">{jump_card("i1", CH["slots"], "Leo shows the 12 slots", "Each slot double the one before, and how the upgrades happen. Under a minute.", here)}{soon("e3")}</div>', "Watch it explained", id="watch")}'''
+{sec(f'<div class="stack">{jump_card("i1", CH["slots"], "Leo shows the 12 slots", "Each slot double the one before, and how the upgrades happen. Under a minute.", here)}</div>', "In the presentation", id="watch")}'''
 
 
 # ======================================================================= RECYCLING AND ROYAL POOL

@@ -245,19 +245,25 @@ EXPLAIN_LEAD = {
            "come from? Leo answers in plain words, in 3 minutes. Watch it, then read every word below."),
     'e2': ("Explainer 2 of the Thandi and Leo series. Thandi asks who pays who, and Leo fills 14 seats with her, row by row, so she sees "
            "where every single payment goes. Watch it, then read every word below."),
+    'e3': ("Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, "
+           "and Leo shows it with two coins and one full cycle. Watch it, then read every word below."),
 }
 EXPLAIN_COVERS = {
     'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
            "Where the money comes from, and what it costs to start", "How to check every payment yourself"],
     'e2': ["The 14 seats under you: 2, then 4, then 8", "Where each of the 14 payments goes, row by row", "What changes from your second cycle: the Royal Pool",
            "Who fills the seats, and what spillover means", "Why there is no withdraw button"],
+    'e3': ["The 12 slots, each double the one before", "Who pays for slot 2: two payments from your first cycle", "What you actually pay: 0.001 BTC, once, plus small BNB fees",
+           "The one thing that has to happen to move up", "Why the programme says slots never expire"],
 }
 # the first "next step" card and the series line under them, per episode
 EXPLAIN_NEXT = {
     'e1': (("The whole plan, in 5 minutes", "<p>Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he says them.</p>", 'i1', 'Watch the presentation', 'film'),
            "How the 14 positions pay.", 'e2', 'Watch Explainer 2'),
     'e2': (("Watch the positions fill", "<p>The 14 Positions page: the seats fill one by one, then switch to later cycles. All fourteen in one table.</p>", 'dashboard/how-it-works/', 'Open the 14 Positions', 'network'),
-           "The 12 slots, and why you only pay once.", None, 'dashboard/12-slots/'),
+           "The 12 slots, and why you only pay once.", 'e3', 'Watch Explainer 3'),
+    'e3': (("See every slot", "<p>The 12 Slots page: every slot and its price side by side, and the calculator that shows each one in rand.</p>", 'dashboard/12-slots/', 'Open the 12 Slots', 'layers'),
+           "Bitcoin Wealth and the stokvel, side by side.", None, ('dashboard/stokvel/', 'see the scorecard', 'Better Than A Stokvel? page')),
 }
 
 
@@ -293,7 +299,9 @@ def p_explain(code):
         (bt, btxt, bto, blab, bic), nline, ncode, nalt = EXPLAIN_NEXT[code]
         bhref = A(WATCH[bto] if bto in WATCH else bto, here)
         if ncode in V: series = f"{nline} <a class='inl' href='{A(WATCH[ncode], here)}'>{nalt}</a>, Thandi and Leo again."
-        else: series = f"{nline} Until it is ready, <a class='inl' href='{A(nalt, here)}'>see every slot</a> on the 12 Slots page."
+        else:
+            nhref, ntxt, npage = nalt if isinstance(nalt, tuple) else (nalt, 'see every slot', '12 Slots page')
+            series = f"{nline} Until it is ready, <a class='inl' href='{A(nhref, here)}'>{ntxt}</a> on the {npage}."
         nxt = f"""<div class="grid3">
  {box(bt, f"{btxt}<p><a class='inl' href='{bhref}'>{blab}</a></p>", bic)}
  {box("Check it yourself", f"<p>Open the contract on BscScan and read a real payment with your own eyes.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>How to check it</a></p>", "scan-search")}

@@ -98,12 +98,22 @@ def p_exp(here):
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e2'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e2', here)}</div></div>"""
+    e = V['e3']
+    # Explainer 3 (MTG, 22 Nov 2026: "Perfect! Put it live!"): the 12 slots and the once-off, right after where the payments go
+    e3 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Explainer 3: The 12 slots and the once-off</a></h2>
+<p class="vdesc">Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in {mmss(e['secs'])}. Watch this when you want to know what you actually pay.</p>
+{checks(["The 12 slots, each double the one before", "Who pays for slot 2, and every slot after it", "What you pay: 0.001 BTC, once, plus small BNB fees"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e3', here)}</div></div>"""
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
+    n_ready = sum(1 for k in V if k[0] in 'ei')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go. Then watch the whole plan in Leo's 5-minute presentation.",
-        [("circle-play", "3 ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, and Explainer 3 why you only pay for slot 1. Then watch the whole plan in Leo's 5-minute presentation.",
+        [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
 {sec(e2, "Then: where all 14 payments go", id="explainer-2")}
+{sec(e3, "Then: the 12 slots, and what you actually pay", id="explainer-3")}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="grid2">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">

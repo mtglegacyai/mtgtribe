@@ -21,14 +21,14 @@ PAGES = {
     'back': ('Welcome back to Bitcoin Wealth', p_back, None),
     'what': ('What is Bitcoin Wealth?', p_what, ['e1', 'i1']),
     'hiw': ('How Bitcoin Wealth works: the 14 positions', p_hiw, ['e2', 'i1']),
-    'slots': ('The 12 slots and the once-off', p_slots, None),
+    'slots': ('The 12 slots and the once-off', p_slots, ['e3', 'i1']),
     'pool': ('Recycling and the Royal Pool', p_pool, None),
     'stokvel': ('Bitcoin Wealth vs a stokvel', p_stokvel, ['e1']),
     'diff': ('What makes Bitcoin Wealth different', p_diff, None),
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, None),
     'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2', 't3']),
     'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2', 't3']),
-    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['e1', 'e2', 'i1']),
+    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['e1', 'e2', 'e3', 'i1']),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
     'page': ('Your own BW Tribe Page', p_page, None),
     'c-btc': ('Bitcoin to Rand Converter', p_c_btc, None),
@@ -156,7 +156,11 @@ def render(dst):
         shutil.copy(SRC + '/assets/' + f, base + '/assets/' + f)
         core.HASH['assets/' + f] = hashlib.md5(open(SRC + '/assets/' + f, 'rb').read()).hexdigest()[:8]
     shutil.copytree(OUT + '/_img', base + '/img')
-    shutil.copytree(OUT + '/_media', base + '/media')
+    if KEEP_LOCAL_MEDIA:      # the videos play from Cloudflare R2 (config MEDIA_URL); the OLD copies stay here only until that is live
+        old = set(os.listdir(REPO + BASE + 'media')) if os.path.isdir(REPO + BASE + 'media') else set()
+        os.makedirs(base + '/media', exist_ok=True)
+        for f in sorted(old & set(os.listdir(OUT + '/_media'))):      # never a new file: new videos live on R2 only
+            shutil.copy(OUT + '/_media/' + f, base + '/media/' + f)
     # a video cover that changes must show at once, not after the browser's memory of the old one runs out
     for v in V.values():
         for f in sorted(os.listdir(OUT + '/_img')):
@@ -210,7 +214,7 @@ def render(dst):
     def vtag(c):
         v = V[c]
         return (f'<video:video><video:thumbnail_loc>{core.video_thumbs(c)[0]}</video:thumbnail_loc><video:title>{core.esc(v["name"])}</video:title>'
-                f'<video:description>{core.esc(v["desc"])}</video:description><video:content_loc>{SITE}{BASE}media/{v["slug"]}.mp4</video:content_loc>'
+                f'<video:description>{core.esc(v["desc"])}</video:description><video:content_loc>{MEDIA_URL}{v["slug"]}.mp4</video:content_loc>'
                 f'<video:duration>{int(round(v["secs"]))}</video:duration><video:publication_date>{v["date"]}T00:00:00+02:00</video:publication_date>'
                 f'<video:family_friendly>yes</video:family_friendly><video:uploader info="{MTG_SITE}">MTG</video:uploader></video:video>')
     key_of = {NAVD[k][1]: k for k in list(PAGES) + wkeys + pkeys}; key_of[''] = 'land'

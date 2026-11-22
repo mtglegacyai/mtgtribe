@@ -46,6 +46,9 @@ const CASES = [
   ['BW Explainer 2 page, the explainer (inline, laptop frame)', '/bw/dashboard/explainers/how-the-14-positions-pay-video/', '.vplay[data-code="e2"]'],
   ['BW Explainer 2 page, a chapter\'s time button (sheet, laptop frame)', '/bw/dashboard/explainers/how-the-14-positions-pay-video/', '#chapter-5 .tjump'],
   ['BW 14 positions, Explainer 2 at the top (inline, laptop frame)', '/bw/dashboard/how-it-works/', '.vplay[data-code="e2"]'],
+  ['BW Explainer 3 page, the explainer (inline, laptop frame)', '/bw/dashboard/explainers/the-12-slots-video/', '.vplay[data-code="e3"]'],
+  ['BW Explainer 3 page, a chapter\'s time button (sheet, laptop frame)', '/bw/dashboard/explainers/the-12-slots-video/', '#chapter-4 .tjump'],
+  ['BW 12 slots, Explainer 3 at the top (inline, laptop frame)', '/bw/dashboard/12-slots/', '.vplay[data-code="e3"]'],
 ].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {
   const b = await chromium.launch(); const rows = []; let bad = 0;

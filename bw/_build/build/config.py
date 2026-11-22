@@ -1,8 +1,18 @@
 """Bitcoin Wealth guide by MTG (mtgtribe.com/bw): site configuration (links, facts, videos, menu)."""
 import os
 
-SITE = 'https://mtgtribe.com'
-BASE = '/bw/'                 # prod path prefix
+# The same guide is published twice (MTG, 22 Nov 2026: "replicate it onto bitcoinwealthpays.com ... when we update the BW website,
+# make sure that you always also automatically update the Bitcoin Wealth Pays website as well"): mtgtribe.com/bw, the master, and the
+# root of bitcoinwealthpays.com (repo MusaTheGiant/bitcoinwealthpays). build.py builds both; BW_TARGET=bwp selects the second.
+TARGET = os.environ.get('BW_TARGET', 'mtgtribe')
+HUB = 'https://mtgtribe.com'  # MTG's main site (the WhatsApp group, his other guides): the same from both copies
+if TARGET == 'bwp':
+    SITE, BASE = 'https://bitcoinwealthpays.com', '/'
+else:
+    SITE, BASE = 'https://mtgtribe.com', '/bw/'   # BASE: prod path prefix
+HOST = SITE.split('//', 1)[1]
+SITE_LABEL = HOST + BASE.rstrip('/')               # mtgtribe.com/bw or bitcoinwealthpays.com
+BWP_REPO = '/home/user/bitcoinwealthpays'          # the bitcoinwealthpays.com repo, when it is cloned here
 NAME = 'Bitcoin Wealth Guide by MTG'
 TODAY = '2026-11-22'
 LAUNCHED = '2026-11-14'       # first draft; update to the real go-live date when MTG approves
@@ -27,7 +37,7 @@ VALR = 'https://www.valr.com/invite/VAKM6VZY'
 BINANCE = 'https://accounts.binance.com/register?ref=11139868'
 WA_MTG = 'https://wa.me/27721714626'
 WA_NUM = '072 171 4626'
-WA_MTG_MSG = 'Hi MTG, I found your Bitcoin Wealth guide on mtgtribe.com/bw and I have a question.'
+WA_MTG_MSG = f'Hi MTG, I found your Bitcoin Wealth guide on {SITE_LABEL} and I have a question.'
 GROUP = 'https://mtgtribe.com/group/'      # MTG TRIBE WhatsApp group (Zoom links are shared there)
 TIKTOK = 'https://www.tiktok.com/@joinmtgtribe'
 YOUTUBE = 'https://www.youtube.com/@mtgtribe'
@@ -51,7 +61,7 @@ CREATED = '15 April 2026'
 PRICE_ZAR = 1000          # BW Tribe Page, once-off (MTG: "R1000 is the fixed one")
 
 SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide by MTG. Short videos and plain pages "
-             "show how it works, how to join safely and how to check every payment yourself: https://mtgtribe.com/bw")
+             "show how it works, how to join safely and how to check every payment yourself: " + SITE + BASE.rstrip("/"))
 
 # released videos: code, slug, title, one-line summary, seconds, source master (in mtg-studio), extras
 # extras: o='h' for a 16:9 video (it plays in the laptop frame, in place; a 9:16 video plays in the phone frame, in the pop-up),

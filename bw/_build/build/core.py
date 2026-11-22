@@ -321,7 +321,7 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
             'inLanguage': 'en-ZA', 'isPartOf': {'@id': SITE_ID}, 'author': {'@id': PERSON_ID}, 'publisher': {'@id': PERSON_ID},
             'about': BW_THING, 'isAccessibleForFree': True, 'datePublished': LAUNCHED, 'dateModified': TODAY}
     ld = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'WebSite', '@id': SITE_ID, 'url': SITE + BASE, 'name': NAME, 'alternateName': ['Bitcoin Wealth Guide', 'MTG Bitcoin Wealth', 'mtgtribe.com/bw'],
+        {'@type': 'WebSite', '@id': SITE_ID, 'url': SITE + BASE, 'name': NAME, 'alternateName': ['Bitcoin Wealth Guide', 'MTG Bitcoin Wealth', SITE_LABEL],
          'description': 'Independent, plain-English Bitcoin Wealth education by MTG: how it works, how to join safely, free tools, and how to check every payment on the blockchain.',
          'inLanguage': 'en-ZA', 'publisher': {'@id': PERSON_ID}, 'author': {'@id': PERSON_ID}},
         person_ld(), page,
@@ -358,7 +358,7 @@ def head(title, desc, path, here, extra_ld=None, noindex=False, og_type='website
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@600;700&display=swap">
 <link rel="stylesheet" href="{esc(css)}">
-<script>if(location.protocol==='http:'&&location.hostname==='mtgtribe.com')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');try{{if(localStorage.getItem('mtg-side')==='off'&&innerWidth>1060)document.documentElement.classList.add('side-off')}}catch(e){{}}</script>
+<script>if(location.protocol==='http:'&&location.hostname==='{HOST}')location.replace('https:'+location.href.slice(5));document.documentElement.classList.add('js');try{{if(localStorage.getItem('mtg-side')==='off'&&innerWidth>1060)document.documentElement.classList.add('side-off')}}catch(e){{}}</script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(',', ':'))}</script>'''
 
 

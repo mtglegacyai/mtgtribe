@@ -16,7 +16,7 @@ REPO = '/home/user/mtgtribe'
 # at media.bellveraffiliates.com (the only domain of his on Cloudflare), under mtgtribe/bw/media/. r2.py uploads new or changed
 # files (the API token is on MTG's Default cloud environment). A video's address on the page keeps its ?v= content version.
 MEDIA_URL = 'https://media.bellveraffiliates.com/mtgtribe/bw/media/'
-KEEP_LOCAL_MEDIA = True       # step 1: the old copies stay on GitHub Pages until the pages that point at R2 are live; then False
+KEEP_LOCAL_MEDIA = False      # the old copies on GitHub Pages were removed once the pages pointing at R2 were live (22 Nov 2026)
 
 # MTG's links (confirmed current by MTG, 14 Nov 2026)
 REF = 'https://vowu.io/register?ref=14638'

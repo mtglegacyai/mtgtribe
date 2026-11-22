@@ -755,3 +755,43 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
 .md-top{overflow-x:clip}
 @supports not (overflow:clip){.md-top{contain:paint}}
 .top{overflow-x:clip}
+
+/* ======================================================================= ROUND 3: the big selling point (MTG, 22 Nov 2026) */
+/* if it has a link, it belongs here: every kind of program as a glowing chip that pops in */
+.pchips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.pchips li{padding:9px 16px;border-radius:999px;background:rgba(16,5,37,.85);border:1.5px solid rgba(0,229,255,.45);box-shadow:0 0 18px rgba(0,229,255,.14);
+  color:var(--text);font:700 clamp(.82rem,2.2vw,.95rem)/1.2 var(--display);letter-spacing:.02em;text-align:center;overflow-wrap:break-word;max-width:100%}
+.pchips li:nth-child(3n+2){border-color:rgba(255,0,255,.5);box-shadow:0 0 18px rgba(255,0,255,.16)}
+.pchips li:nth-child(3n){border-color:rgba(255,216,102,.5);box-shadow:0 0 18px rgba(255,216,102,.14)}
+.pchips li.you{color:#05000e;background:linear-gradient(90deg,var(--cyan),var(--aqua));border-color:transparent;box-shadow:0 0 26px rgba(0,229,255,.5)}
+.dsec .pchips{justify-content:flex-start}
+@media (prefers-reduced-motion:no-preference){
+  .pchips li{transition:opacity .5s var(--ease) calc(var(--i) * 60ms),transform .5s var(--spring,cubic-bezier(.34,1.56,.64,1)) calc(var(--i) * 60ms)}
+  .pchips.pre{opacity:1;transform:none}
+  .pchips.pre li{opacity:0;transform:translateY(14px) scale(.9)}
+  .pchips li.you{animation:youglow 2.8s ease-in-out infinite}
+}
+@keyframes youglow{0%,100%{box-shadow:0 0 18px rgba(0,229,255,.4)}50%{box-shadow:0 0 34px rgba(0,229,255,.8)}}
+
+/* MTG's own proof */
+.proof{padding:6px 0 30px}
+.story{display:grid;gap:14px;max-width:900px;margin:0 auto;padding:clamp(22px,4vw,40px);border-radius:26px;
+  background:radial-gradient(500px 220px at 0% 0%,rgba(255,216,102,.14),transparent 70%),radial-gradient(500px 220px at 100% 100%,rgba(255,0,255,.14),transparent 70%),rgba(16,5,37,.85);
+  border:1px solid rgba(255,216,102,.45);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.story .q{position:absolute;right:22px;top:-6px;font:900 7rem/1 var(--display);color:rgba(255,216,102,.18);pointer-events:none}
+.story blockquote{margin:0}
+.story blockquote p{margin:0;font:600 clamp(1.05rem,2.6vw,1.3rem)/1.55 var(--font);color:var(--text)}
+.story figcaption{display:flex;align-items:center;gap:12px;min-width:0}
+.story figcaption img{flex:none;width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,216,102,.7)}
+.story figcaption span{display:grid;min-width:0}
+.story figcaption b{font:800 .95rem/1.3 var(--display);color:var(--gold)}
+.story figcaption small{font-size:.8rem;color:var(--muted)}
+.dsec .story{margin:16px 0 0}
+
+/* who needs this: anyone with a link */
+.niches .pcard{background:linear-gradient(180deg,rgba(0,229,255,.08),rgba(16,5,37,.85))}
+.niches .pcard:nth-child(3n+2){background:linear-gradient(180deg,rgba(255,0,255,.09),rgba(16,5,37,.85))}
+.niches .pcard:nth-child(3n){background:linear-gradient(180deg,rgba(255,216,102,.09),rgba(16,5,37,.85))}
+.niches .pcard>.ic{color:var(--cyan)}
+.niches .pcard:nth-child(3n+2)>.ic{color:#ff8af0}
+.streams .pcard>.ic{color:var(--green)}

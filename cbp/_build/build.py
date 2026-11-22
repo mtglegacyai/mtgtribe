@@ -112,6 +112,21 @@ STREAMS = [
     ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from 0.48 to 13.50 per click, by level, every click day.'),
     ('users', 'Your referrals pay', 'Share your ClickBaitPays link and receive 10% of the campaigns your referrals buy. Optional, and it stacks.'),
 ]
+# MTG's own income streams (MTG, 22 Nov 2026): name, accent, picture, line, three facts, button, link. The list grows.
+MY_STREAMS = [
+    dict(key='bellver', name='BellverCards', tag='The crypto card that can pay your bills', img='bellver-card.webp', w=640, h=385, accent='gold',
+         line='Spend your crypto like cash with your own card, and earn monthly rewards when the people you refer use theirs. MTG found it through an ad on ClickBaitPays.',
+         facts=['Spend crypto like cash', 'Monthly rewards from your referrals', 'Order from $99'],
+         cta='Open The BellverCards Guide', url='https://bellveraffiliates.com/', ext=True),
+    dict(key='jetup', name='JetUP × TAG Markets', tag='AI copy trading, explained before you commit', img='jetup-logo.webp', w=240, h=189, accent='lime',
+         line='Copy trading with Sonic AI, an account opened in your own name at TAG Markets, and the JetUP community and partner plan, every rule in plain English.',
+         facts=['Sonic AI copy trading', 'Your account, in your own name', '17 videos, 6-part training'],
+         cta='Open The JetUP Guide', url='/jetup/', ext=False),
+    dict(key='bw', name='Bitcoin Wealth', tag='A different way to stack Bitcoin', img='bitcoin-wealth-logo.webp', w=192, h=192, accent='orange',
+         line='One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public on the blockchain for anyone to check.',
+         facts=['Once-off 0.001 BTC entry', 'Paid to your own wallet', 'Every payment public'],
+         cta='Open The Bitcoin Wealth Guide', url='/bw/', ext=False),
+]
 CLONE = ['It sells the real reason people join: traffic for what they already promote',
          'Every step on video, in laptop and phone players that close themselves at the end',
          'A compensation plan page with the numbers, a 3D level staircase and a calculator',
@@ -155,6 +170,7 @@ NAV = [
     ('legit', 'dashboard/is-clickbaitpays-legit/', 'Is It Legit?', 'Check it for yourself', 'shield', 'Help'),
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers, and the live Q&A', 'help', 'Help'),
     ('disc', 'disclaimer/', 'Disclaimer', 'The small print, in plain words', 'info', 'Help'),
+    ('streams', 'dashboard/my-income-streams/', 'My Income Streams', 'BellverCards, JetUP, Bitcoin Wealth', 'trend', 'More From MTG'),
     ('copy', 'cbpcopy/', 'Get This Website', 'Your own copy, your link', 'globe', 'More From MTG'),
 ]
 MENU_EXT = [('tribe', GROUP, 'Join The MTG TRIBE', 'WhatsApp community', 'whatsapp', 'More From MTG')]   # in the menu, not in the page order
@@ -208,6 +224,8 @@ SEO = {
               'Is ClickBaitPays legit or a scam? What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.'),
     'faq': ('ClickBaitPays FAQ: Straight Answers to the Top Questions',
             'ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, logging in, Login Ads and referrals. Plus a live Q&A.'),
+    'streams': ('MTG\'s Income Streams: BellverCards, JetUP and Bitcoin Wealth',
+                'Need something to promote on ClickBaitPays? Add MTG\'s own income streams, each with a full guide: BellverCards, JetUP with TAG Markets, and Bitcoin Wealth.'),
     'copy': ('Get This ClickBaitPays Website: Your Link, R1,000 Once-Off',
              'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at mtgtribe.com/cbp/yourname. Pay only if you like it.'),
     'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
@@ -626,10 +644,33 @@ def streams():
             for k, (i, t, b) in enumerate(STREAMS)) + '</div>')
 
 
+def stream_cards(here):
+    out = ''
+    for st in MY_STREAMS:
+        tgt = ' target="_blank" rel="noopener"' if st['ext'] else ''
+        href = st['url']                                   # the other guides live on their own addresses
+        pic = f'<img src="{A("assets/s/" + st["img"], here)}" alt="{esc(st["name"])}" width="{st["w"]}" height="{st["h"]}" loading="lazy" decoding="async">'
+        facts = ''.join(f'<li>{ic("check")}<span>{f}</span></li>' for f in st['facts'])
+        out += (f'<article class="scard t3d a-{st["accent"]}" id="{st["key"]}"><a class="sc-pic sc-{st["key"]}" href="{href}"{tgt} tabindex="-1" aria-hidden="true">{pic}<i class="shine"></i></a>'
+                f'<div class="sc-body"><h2>{st["name"]}</h2><p class="sc-tag">{st["tag"]}</p><p>{st["line"]}</p><ul class="sc-facts">{facts}</ul>'
+                f'<a class="btn btn-gold ring sc-go" href="{href}"{tgt}>{ic("arrow")}<span>{st["cta"]}</span>{"<span class=sr> (opens in a new tab)</span>" if st["ext"] else ""}</a></div></article>')
+    return f'<div class="scards">{out}</div>'
+
+
+def streams_band(here):
+    """a small band on other pages: MTG's income streams, one tap away"""
+    pics = ''.join(f'<img src="{A("assets/s/" + st["img"], here)}" alt="" width="{st["w"]}" height="{st["h"]}" loading="lazy" decoding="async">' for st in MY_STREAMS)
+    names = ', '.join(st['name'] for st in MY_STREAMS[:-1]) + ' and ' + MY_STREAMS[-1]['name']
+    return (f'<section class="sband rv" aria-label="MTG\'s income streams"><div class="sb-pics">{pics}</div>'
+            f'<div class="sb-t"><h2>Nothing to promote yet? Start with mine.</h2><p>{names}: the income streams MTG builds himself, each with a full guide.</p></div>'
+            f'<a class="btn btn-dash ring" href="{page_link("streams", here)}">{ic("trend")}<span>See My Income Streams</span></a></section>')
+
+
 def endband(here, show_copy=True):
     """the end of every page: two clear next steps, join, or own this exact website (MTG, 22 Nov 2026: "I want to sell it like hotcakes")"""
     join = (f'<div class="eb t3d"><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="56" height="56" loading="lazy">'
-            f'<h2>Got a link? Get it seen.</h2><p>Promote BellverCards, Bitcoin Wealth, JetUP or any program with a link, and get paid in USDT to view ads while you do.</p>{join_btn()}{fair()}</div>')
+            f'<h2>Got a link? Get it seen.</h2><p>Promote BellverCards, Bitcoin Wealth, JetUP or any program with a link, and get paid in USDT to view ads while you do.</p>{join_btn()}{fair()}'
+            + ('' if here == NAVD['streams'][1] else f'<a class="more-l eb-more" href="{page_link("streams", here)}">Nothing to promote yet? See MTG\'s income streams{ic("chr")}</a>') + '</div>')
     own = (f'<div class="eb eb-own t3d"><span class="eb-ic">{ic("globe")}</span><h2>Want this exact website, with your link?</h2>'
            f'<p>The ClickBaitPays guide that sells the real reason people join: traffic for what they already promote. Your link on every button. R1,000 or $50 once-off, and you pay only if you like it.</p>{copy_btn(here)}</div>')
     return f'<section class="endband rv" aria-label="Your next step">{join}{own if show_copy else ""}</section>'
@@ -806,7 +847,7 @@ def p_landing():
     howto = {'@type': 'HowTo', 'name': 'How ClickBaitPays works, step by step', 'inLanguage': 'en-ZA',
              'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': plain(t), 'url': SITE + prod_url(NAVD[k][1])} for i, (ico, n, t, k) in enumerate(STEPS)]}
     hd = head('landing', '', here, [howto, crumbs_ld([('MTG TRIBE', SITE + '/'), ('ClickBaitPays guide', '')])])
-    tiles = [('grow', 'Promote Your Link'), ('plan', 'Compensation Plan'), ('levels', 'The 7 Levels'),
+    tiles = [('grow', 'Promote Your Link'), ('plan', 'Compensation Plan'), ('streams', 'My Income Streams'),
              ('join', 'How To Join'), ('tutorials', 'Step-By-Step Tutorials'), ('legit', 'Is It Legit?')]
     tl = ''.join(f'<a class="tile t3d" href="{page_link(k, here)}"><span class="ti">{ic(NAVD[k][4])}</span><b>{t}</b><small>{NAVD[k][3]}</small>{ic("chr", "ic go")}</a>' for k, t in tiles)
     flow = [('eye', 'Your link gets seen', 'Members open your page and stay for a 15-second countdown. Real people, real eyes, every single click day.'),
@@ -840,6 +881,7 @@ def p_landing():
  <div class="vgrid">{vid('strategy', here, num='2')}{vid('backoffice', here, num='3')}</div>
 </div></section>
 <section class="proof rv" aria-label="MTG's own story"><div class="wrap">{story(here)}</div></section>
+<section class="streams-land"><div class="wrap">{streams_band(here)}</div></section>
 <section class="dband rv" aria-labelledby="db-h" data-final><div class="wrap">
  <div class="db-in">
   <div class="db-copy"><p class="eye">{ic('layers')}Next: the dashboard</p><h2 id="db-h">Everything else, one short page at a time</h2>
@@ -932,6 +974,7 @@ def p_grow(here):
             + two(vid('e1', here), side_box('What you get', ['Real people opening your page, every click day', 'Sign-ups, sales and team members from the ones it speaks to', 'USDT for viewing ads while your ad works', 'From 13 USDT for 12 click days'], 'mega'))
             + sec('If it has a link, it belongs here', pchips() + bill)
             + sec('Who needs this? Anyone with a link.', niches(), lead='Every business needs eyes. Every team needs sign-ups. Every affiliate needs clicks.')
+            + streams_band(here)
             + sec('It worked on MTG', story(here))
             + sec('Why these visitors act', f'<div class="pcards">{cards}</div>')
             + sec('Three streams of income, one account', streams())
@@ -1141,6 +1184,27 @@ def p_faq(here):
             + sec('Watch the live Q&amp;A', two(vid('qa', here), side_box('Answered live', ['Ad viewing', 'Affiliates and referrals', 'Pay It Forward', 'Withdrawals and strategy'], 'film'))))
 
 
+def p_streams(here):
+    soc = {k: (l, u) for k, l, u in SOCIAL}
+    intro = (f'<div class="me t3d"><img class="mtg" src="{A("assets/mtg-photo.webp", here)}" alt="MTG" width="96" height="96" loading="lazy">'
+             f'<div class="me-t"><p class="me-hi">Hi, I am MTG 👑</p><p>Like many of you, I do not rely on one income. ClickBaitPays is one of my streams, and the traffic source behind the rest. '
+             f'These are the others I build myself, every day, each with a full guide I made so you can start the right way.</p>'
+             f'<p class="me-grow">{ic("refresh")}<span><b>This list grows.</b> I add every new stream I build, so come back often.</span></p></div></div>')
+    here_card = (f'<a class="youhere t3d" href="{page_link("grow", here)}"><span class="yh-b">You are here</span><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="56" height="56" loading="lazy">'
+                 f'<span class="yh-t"><b>ClickBaitPays</b><span>The traffic source behind all of them: promote any stream above here, and get paid in USDT while you do.</span></span>{ic("chr", "ic go")}</a>')
+    stay = (f'<div class="stay rv"><h2 class="h2">New streams land here first</h2><p class="slead">Join the MTG TRIBE to hear about every new one, and follow MTG for the daily updates.</p>'
+            f'<div class="cta-row"><a class="btn btn-join ring" href="{GROUP}" target="_blank" rel="noopener">{ic("whatsapp")}<span>Join The MTG TRIBE</span></a>'
+            f'<a class="btn btn-ghost" href="{soc["tiktok"][1]}" target="_blank" rel="noopener">{ic("tiktok")}<span>TikTok</span></a>'
+            f'<a class="btn btn-ghost" href="{soc["youtube"][1]}" target="_blank" rel="noopener">{ic("youtube")}<span>YouTube</span></a></div>'
+            f'<p class="more-t"><a href="#streams">Back to my income streams</a></p></div>')
+    return (phead('streams', here, 'My income streams. Add them to yours.',
+                  'Viewing ads on ClickBaitPays is one stream. Promoting something on it is where it multiplies. Not promoting anything yet, or ready for more? Start with the programs MTG builds himself.', 'More From MTG')
+            + intro
+            + f'<section class="dsec" id="streams" aria-label="MTG\'s income streams">{stream_cards(here)}{here_card}</section>'
+            + note('<b>Join one, then promote it here.</b> Put your own link for it on ClickBaitPays: real people for your new stream, and USDT for your clicks while they come in.', 'mega', 'soft')
+            + stay)
+
+
 def p_copy(here):
     how = [('Send the form', 'Two minutes. It goes straight to MTG on WhatsApp.'),
            ('MTG builds your copy', 'Your name, your referral link on every Join button, your contact links. You get your link to check.'),
@@ -1225,6 +1289,8 @@ def page_specs():
              'join': (p_join, [], 'WebPage', False), 'levels': (p_levels, [], 'WebPage', True), 'timeline': (p_timeline, [], 'WebPage', True),
              'plan': (p_plan, [], 'WebPage', True), 'calc': (p_calc, [app], 'WebPage', True), 'daily': (p_daily, [], 'WebPage', True),
              'grow': (p_grow, [], 'WebPage', True), 'legit': (p_legit, [], 'WebPage', True),
+             'streams': (p_streams, [{'@type': 'ItemList', 'name': 'MTG\'s income streams', 'itemListElement': [
+                 {'@type': 'ListItem', 'position': i + 1, 'name': st['name'], 'url': st['url'] if st['ext'] else SITE + st['url']} for i, st in enumerate(MY_STREAMS)]}], 'CollectionPage', True),
              'tutorials': (p_tutorials, [tut_list], 'CollectionPage', True), 'videos': (p_videos, [], 'CollectionPage', True),
              'faq': (p_faq, [faq_ld], 'FAQPage', True), 'copy': (p_copy, [prod], 'WebPage', 'join'), 'disc': (p_disc, [], 'WebPage', True)}
     for k in TUT:
@@ -1238,7 +1304,7 @@ def page_specs():
 def sitemap():
     def img(code):
         return f'<image:image><image:loc>{SITE}{BASE}assets/v/{code}.webp</image:loc></image:image>'
-    vids = {'home': 'tour', 'what': 'welcome', 'grow': 'e1', 'how': 'presentation', 'join': 'e2', 'levels': 'e3', 'timeline': 'e4', 'plan': 'strategy', 'legit': 'qa',
+    vids = {'streams': 'welcome', 'home': 'tour', 'what': 'welcome', 'grow': 'e1', 'how': 'presentation', 'join': 'e2', 'levels': 'e3', 'timeline': 'e4', 'plan': 'strategy', 'legit': 'qa',
             'daily': 't3', 'faq': 'qa', **{k: TUT[k].get('video', k) for k in TUT}}
     urls = [(SITE + BASE, img('welcome') + img('strategy') + img('backoffice'))]
     urls += [(SITE + prod_url(p), img(vids[k]) if k in vids else '') for k, p, *_ in NAV]
@@ -1288,10 +1354,12 @@ def manifest():
 # ============================================================== build
 def copy_assets(dst):
     os.makedirs(dst + '/og', exist_ok=True)
+    os.makedirs(dst + '/s', exist_ok=True)
     pairs = [('favicon-cursor.ico', 'favicon.ico'), ('favicon-cursor-32.png', 'favicon-32.png'), ('apple-touch-icon.png', 'apple-touch-icon.png'),
              ('icon-192.png', 'icon-192.png'), ('icon-512.png', 'icon-512.png'), ('icon-maskable-512.png', 'icon-maskable-512.png'),
              ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp'),
-             ('mtg-photo-256.webp', 'mtg-photo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
+             ('mtg-photo-256.webp', 'mtg-photo.webp'), ('streams/bellver-card.webp', 's/bellver-card.webp'),
+             ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
     for a, b in pairs:
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))
     for f in ('cbp.css', 'cbp.js'):

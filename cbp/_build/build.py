@@ -613,7 +613,7 @@ def pchips():
 def story(here):
     """MTG's own proof: he found BellverCards through an ad on ClickBaitPays"""
     return (f'<figure class="story t3d rv"><span class="q" aria-hidden="true">“</span><blockquote><p>{STORY}</p></blockquote>'
-            f'<figcaption><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="44" height="44" loading="lazy"><span><b>MTG 👑 | Your Digital Architect</b>'
+            f'<figcaption><img class="mtg" src="{A("assets/mtg-photo.webp", here)}" alt="MTG" width="64" height="64" loading="lazy"><span><b>MTG 👑 | Your Digital Architect</b>'
             f'<small>His own experience, not a promise: what you get depends on your offer and your ad.</small></span></figcaption></figure>')
 
 
@@ -1290,7 +1290,8 @@ def copy_assets(dst):
     os.makedirs(dst + '/og', exist_ok=True)
     pairs = [('favicon-cursor.ico', 'favicon.ico'), ('favicon-cursor-32.png', 'favicon-32.png'), ('apple-touch-icon.png', 'apple-touch-icon.png'),
              ('icon-192.png', 'icon-192.png'), ('icon-512.png', 'icon-512.png'), ('icon-maskable-512.png', 'icon-maskable-512.png'),
-             ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp')]
+             ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp'),
+             ('mtg-photo-256.webp', 'mtg-photo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
     for a, b in pairs:
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))
     for f in ('cbp.css', 'cbp.js'):

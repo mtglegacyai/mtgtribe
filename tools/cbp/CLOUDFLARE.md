@@ -18,7 +18,9 @@ it, make a 720p file for phones and a `-1080p` file for screens 1200 px and wide
 bucket shows "Object not found": normal, it is a storage shelf, not a website.
 
 Open items:
-- `https://www.clickbaitpaysus.com` fails with a certificate error, as it did before the move: the www record points to
+- `https://www.clickbaitpaysus.com` failed with a certificate error, as it did before the move: the www record pointed to
   clickbaitpaysus.com instead of musathegiant.github.io, so GitHub Pages never made a certificate for www (http://www
-  redirects fine). Fix, waiting for MTG's yes: www CNAME to musathegiant.github.io, DNS only (as bitcoinwealthpays.com).
+  redirected fine). MTG said "yes, fix www" (22 Nov 2026): www CNAME now points to musathegiant.github.io, DNS only (as
+  bitcoinwealthpays.com). GitHub issues the www certificate on its own; if it still fails after a day, remove and re-add
+  the custom domain in the repo's Settings > Pages to trigger it.
 - `videos/_test.mp4` (2 seconds, 30 KB) is the setup test; remove it once the first real video is up.

@@ -206,7 +206,7 @@ def make(key, path, url_path):
         col = (255, 161, 1) if i == len(lines) - 1 else (255, 255, 255)
         d.text((70, y), t.upper(), font=fh, fill=col)
         y += int(size * 1.08)
-    url = ('mtgtribe.com' + url_path).rstrip('/')
+    url = (HOST + url_path).rstrip('/')
     fu = font('Manrope[wght].ttf', 28, 800)
     while d.textlength(url, font=fu) > 560:
         fu = font('Manrope[wght].ttf', fu.size - 2, 800)

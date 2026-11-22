@@ -12,7 +12,8 @@ from pages_watch import p_watch, watch_ld, p_present, present_ld, p_explain, exp
 from seo import SEO_DESC
 
 SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/src'
-OUT = SCR + '/out'
+OUT = SCR + ('/out-bwp' if TARGET == 'bwp' else '/out')   # each site its own pages and social previews
+MEDIA_DIR = SCR + '/out/_media'                             # the videos (on R2): one set for both sites
 FONTS = SCR + '/fonts/'
 
 PAGES = {
@@ -159,16 +160,16 @@ def render(dst):
     if KEEP_LOCAL_MEDIA:      # the videos play from Cloudflare R2 (config MEDIA_URL); the OLD copies stay here only until that is live
         old = set(os.listdir(REPO + BASE + 'media')) if os.path.isdir(REPO + BASE + 'media') else set()
         os.makedirs(base + '/media', exist_ok=True)
-        for f in sorted(old & set(os.listdir(OUT + '/_media'))):      # never a new file: new videos live on R2 only
-            shutil.copy(OUT + '/_media/' + f, base + '/media/' + f)
+        for f in sorted(old & set(os.listdir(MEDIA_DIR))):      # never a new file: new videos live on R2 only
+            shutil.copy(MEDIA_DIR + '/' + f, base + '/media/' + f)
     # a video cover that changes must show at once, not after the browser's memory of the old one runs out
     for v in V.values():
         for f in sorted(os.listdir(OUT + '/_img')):
             if f.startswith(v['slug']) and f.endswith('.webp'):
                 core.HASH['img/' + f] = hashlib.md5(open(OUT + '/_img/' + f, 'rb').read()).hexdigest()[:8]
     # a video that changes (Leo's voice added to a tutorial) must play at once too, not the copy a browser kept
-    for f in sorted(os.listdir(OUT + '/_media')):
-        core.HASH['media/' + f] = hashlib.md5(open(OUT + '/_media/' + f, 'rb').read()).hexdigest()[:8]
+    for f in sorted(os.listdir(MEDIA_DIR)):
+        core.HASH['media/' + f] = hashlib.md5(open(MEDIA_DIR + '/' + f, 'rb').read()).hexdigest()[:8]
     hd, body = landing()
     open(base + '/index.html', 'w').write(core.wrap_doc(hd, body, 'landing'))
     for key, (title, fn, extra) in PAGES.items():
@@ -269,6 +270,73 @@ def install(dst):
             shutil.copytree(s, t) if os.path.isdir(s) else shutil.copy(s, t)
 
 
+# ------------------------------------------------------------------ bitcoinwealthpays.com (the same guide at the domain's root)
+# The old pages of bitcoinwealthpays.com (before 22 Nov 2026) and where each now lives, so links people saved and search results keep
+# working: each old address gets a tiny page that sends the visitor on (and tells search engines the new address).
+BWP_OLD = {
+    'dashboard.html': 'dashboard/', 'what-is-bitcoin-wealth.html': 'dashboard/what-is-bitcoin-wealth/', 'video-tutorials.html': 'dashboard/tutorials/',
+    'glossary.html': 'dashboard/glossary/', 'faq.html': 'dashboard/faq/', 'course/index.html': 'dashboard/', 'videos/videos.html': 'dashboard/explainers/',
+    'topics/index.html': 'dashboard/', 'topics/how-to-read-this-site.html': 'dashboard/', 'topics/what-you-now-know.html': 'dashboard/',
+    'topics/bitcoin-blockchain-smart-contract-matrix.html': 'dashboard/what-is-bitcoin-wealth/', 'topics/bitcoin-btcb-and-bnb-smart-chain.html': 'dashboard/what-is-bitcoin-wealth/',
+    'topics/the-programme-in-its-own-words.html': 'dashboard/explainers/bitcoin-wealth-presentation/', 'topics/vow-unity-and-the-feature-list.html': 'dashboard/what-makes-it-different/',
+    'topics/the-14-positions.html': 'dashboard/how-it-works/', 'topics/where-the-money-actually-goes.html': 'dashboard/how-it-works/',
+    'topics/subsequent-cycles-and-the-royal-pool.html': 'dashboard/recycling-royal-pool/', 'topics/the-61-btc-recycling-table.html': 'dashboard/recycling-royal-pool/',
+    'topics/ranks-and-rewards.html': 'dashboard/recycling-royal-pool/', 'topics/the-12-slots-and-auto-entry.html': 'dashboard/12-slots/',
+    'topics/the-profit-potential-table.html': 'dashboard/tools/slot-calculator/', 'topics/is-this-a-stokvel.html': 'dashboard/stokvel/',
+    'topics/wallets-and-exchanges.html': 'dashboard/join/', 'topics/gas-fees-and-why-you-need-bnb.html': 'dashboard/glossary/', 'topics/questions-worth-asking.html': 'dashboard/faq/',
+    'guides/index.html': 'dashboard/tutorials/', 'guides/safepal-wallet.html': 'dashboard/tutorials/safepal-wallet-setup/', 'guides/metamask-web3-wallet.html': 'dashboard/join/',
+    'guides/binance-account.html': 'dashboard/join/', 'guides/valr-account.html': 'dashboard/tutorials/buy-bnb-send-to-safepal/',
+    'mtg/index.html': '', 'mtg/video-tutorials/index.html': 'dashboard/tutorials/', 'mtg/faq/index.html': 'dashboard/faq/', 'mtg/glossary/index.html': 'dashboard/glossary/',
+    'mtg/request-a-copy/index.html': ORDER.strip('/') + '/', 'mtg/share/index.html': '', 'mtg/setup-guides/index.html': 'dashboard/join/',
+    'mtg/setup-guides/safepal-wallet/index.html': 'dashboard/tutorials/safepal-wallet-setup/', 'mtg/setup-guides/metamask-web3-wallet/index.html': 'dashboard/join/',
+    'mtg/setup-guides/binance-account/index.html': 'dashboard/join/', 'mtg/setup-guides/valr-account/index.html': 'dashboard/tutorials/buy-bnb-send-to-safepal/',
+}
+BWP_KEEP = {'.git', 'CNAME', 'logo.png', 'favicon.ico'}      # the domain's setting, and the logo other pages link to (POSITIONING.md)
+INDEXNOW_KEY = 'f823902c04cfbce2c98af25999c7a9ae'
+
+
+def moved_page(to):
+    url = SITE + '/' + to
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>This page has moved | Bitcoin Wealth Guide by MTG</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="{url}">'
+            f'<meta http-equiv="refresh" content="0; url=/{to}"><script>location.replace("/{to}" + location.hash)</script>'
+            '<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#050705;color:#F5F1E8;font:16px/1.5 system-ui,sans-serif;'
+            'text-align:center;padding:16px}a{color:#FFA101}</style></head>'
+            f'<body><p>This page has moved to <a href="/{to}">{HOST}/{to}</a>.</p></body></html>\n')
+
+
+def install_bwp(dst):
+    """bitcoinwealthpays.com = the guide at the root: everything old goes, except the domain setting and the logo; the old addresses
+    send visitors on; its own robots.txt, IndexNow key, 404 page and .nojekyll (the files are served as they are)"""
+    if not os.path.isdir(BWP_REPO + '/.git'):
+        sys.exit('bitcoinwealthpays.com repo not found at ' + BWP_REPO)
+    for x in os.listdir(BWP_REPO):
+        if x not in BWP_KEEP:
+            p = BWP_REPO + '/' + x
+            shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
+    for x in os.listdir(dst):
+        s, t = dst + '/' + x, BWP_REPO + '/' + x
+        shutil.copytree(s, t) if os.path.isdir(s) else shutil.copy(s, t)
+    shutil.copy(REPO + '/assets/video-return.js', BWP_REPO + '/assets/video-return.js')
+    for old, to in BWP_OLD.items():
+        assert to == '' or os.path.exists(dst + '/' + to + 'index.html'), ('no page for', old, to)
+        if not os.path.exists(BWP_REPO + '/' + old):          # never over a page of the new guide
+            os.makedirs(os.path.dirname(BWP_REPO + '/' + old) or BWP_REPO, exist_ok=True)
+            open(BWP_REPO + '/' + old, 'w').write(moved_page(to))
+    open(BWP_REPO + '/robots.txt', 'w').write('User-agent: *\nAllow: /\n\nSitemap: ' + SITE + '/sitemap.xml\n')
+    open(BWP_REPO + '/' + INDEXNOW_KEY + '.txt', 'w').write(INDEXNOW_KEY)
+    open(BWP_REPO + '/.nojekyll', 'w').write('')
+    open(BWP_REPO + '/README.md', 'w').write(
+        '# bitcoinwealthpays.com\n\nThe Bitcoin Wealth Guide by MTG, the same guide as https://mtgtribe.com/bw, at this domain\'s root.\n\n'
+        '**Do not edit these files by hand.** They are built from mtglegacyai/mtgtribe (`bw/_build/build/build.py`), which builds\n'
+        'mtgtribe.com/bw and then this copy every time, so the two never drift apart (MTG, 22 Nov 2026). The videos play from\n'
+        'https://media.bitcoinwealthpays.com/videos/ (Cloudflare R2). The old site (before 22 Nov 2026) is in this repo\'s history,\n'
+        'commit c432ecc; its old addresses forward to the new pages.\n')
+    nf = open(dst + '/index.html', encoding='utf-8').read()      # 404: the guide's own front page, so a lost visitor lands somewhere useful
+    nf = nf.replace('<meta name="robots" content="index,follow', '<meta name="robots" content="noindex,follow', 1)
+    open(BWP_REPO + '/404.html', 'w').write(nf)
+
+
 def render_preview(dst):
     """private review copy (relative links, lighter video), for MTG to tap through before anything goes live"""
     import posixpath
@@ -287,7 +355,7 @@ def render_preview(dst):
     os.makedirs(dst + '/media', exist_ok=True)
     for k, v in V.items():
         for suf in (('', '-1080p') if v['o'] == 'h' else ('',)):      # the review copy uses the same files as the live site
-            shutil.copy(OUT + f'/_media/{v["slug"]}{suf}.mp4', dst + f'/media/{v["slug"]}{suf}.mp4')
+            shutil.copy(MEDIA_DIR + f'/{v["slug"]}{suf}.mp4', dst + f'/media/{v["slug"]}{suf}.mp4')
     files = {}
     hd, body = landing()
     files['index.html'] = core.wrap_doc(hd, body, 'landing', main_page=True)
@@ -329,9 +397,19 @@ if __name__ == '__main__':
         if os.path.exists(OUT + '/_img'):
             shutil.rmtree(OUT + '/_img')
         images(OUT + '/_img')
-    media(OUT + '/_media')
+    if TARGET != 'bwp':
+        media(MEDIA_DIR)
     render(OUT + '/prod')
     probs = check(OUT + '/prod')
     print('\n'.join(probs) if probs else 'CHECK OK: no dashes, no banned words')
-    install(OUT + '/prod')
-    print('installed into', REPO)
+    if TARGET == 'bwp':
+        install_bwp(OUT + '/prod')
+        print('installed into', BWP_REPO)
+    else:
+        install(OUT + '/prod')
+        print('installed into', REPO)
+        # and always the same guide for bitcoinwealthpays.com too, so it never misses an update (MTG, 22 Nov 2026)
+        if os.path.isdir(BWP_REPO + '/.git') and '--no-bwp' not in sys.argv:
+            subprocess.run([sys.executable, os.path.abspath(__file__)] + sys.argv[1:], env=dict(os.environ, BW_TARGET='bwp'), check=True)
+        elif '--no-bwp' not in sys.argv:
+            print('NOTE: bitcoinwealthpays.com not built: clone MusaTheGiant/bitcoinwealthpays to', BWP_REPO)

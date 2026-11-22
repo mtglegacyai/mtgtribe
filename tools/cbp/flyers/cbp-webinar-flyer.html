@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CBP Saturday Webinar flyer</title>
+<!-- Square flyer template (1080x1080). Edit EVENT below for each week, then render with render.js. -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080015; --surf:#100525; --surf2:#180a31; --cyan:#00e5ff; --aqua:#00ffee; --pink:#ff00ff; --pink-soft:#f71aad;
+  --green:#46f2ad; --gold:#ffd866; --text:#ffffff; --muted:#c9c4dc;
+  --emoji:"Noto Color Emoji","Apple Color Emoji","Segoe UI Emoji";
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1080px;background:var(--bg);overflow:hidden}
+body{font-family:"Poppins",var(--emoji),sans-serif;color:var(--text)}
+.flyer{position:relative;width:1080px;height:1080px;padding:40px 48px 34px;overflow:hidden;
+  background:
+    radial-gradient(620px 420px at 6% 0%, rgba(255,0,255,.30), transparent 70%),
+    radial-gradient(700px 520px at 100% 100%, rgba(0,229,255,.24), transparent 70%),
+    radial-gradient(500px 360px at 92% 18%, rgba(255,216,102,.10), transparent 70%),
+    linear-gradient(160deg,#0d0226 0%,#080015 55%,#05000e 100%);}
+/* circuit lines */
+.circuit{position:absolute;inset:0;opacity:.16;pointer-events:none}
+/* neon frame */
+.frame{position:absolute;inset:14px;border-radius:30px;pointer-events:none;
+  border:2px solid transparent;
+  background:linear-gradient(135deg,var(--cyan),var(--pink) 50%,var(--cyan)) border-box;
+  -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  box-shadow:0 0 30px rgba(0,229,255,.25)}
+.content{position:relative;height:100%;display:flex;flex-direction:column}
+
+/* header */
+.head{display:flex;align-items:center;gap:28px}
+.logo{width:172px;height:172px;border-radius:50%;flex:none;
+  box-shadow:0 0 0 3px rgba(0,229,255,.9),0 0 34px rgba(0,229,255,.55),0 0 70px rgba(255,0,255,.35)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:800 18px "Orbitron",var(--emoji),sans-serif;letter-spacing:.14em;
+  color:#05000e;background:linear-gradient(90deg,var(--cyan),var(--aqua));padding:7px 16px 6px;border-radius:999px}
+.kicker .dot{width:11px;height:11px;border-radius:50%;background:#ff2d55;box-shadow:0 0 0 3px rgba(255,45,85,.3)}
+h1{margin-top:10px;font:900 64px/1.02 "Orbitron",sans-serif;white-space:nowrap;letter-spacing:.01em;
+  background:linear-gradient(180deg,#ffffff 0%,#d9fbff 60%,#8ff4ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 18px rgba(0,229,255,.45))}
+h1 .cbp{background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:6px;font:800 29px "Orbitron",sans-serif;letter-spacing:.24em;color:var(--gold);text-shadow:0 0 16px rgba(255,216,102,.35)}
+
+/* date */
+.date{margin-top:20px;display:flex;align-items:center;justify-content:center;gap:16px;
+  font:800 36px "Poppins",var(--emoji),sans-serif;letter-spacing:.02em;
+  padding:10px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(255,0,255,.20),rgba(0,229,255,.20));
+  border:1.5px solid rgba(255,255,255,.18)}
+.cal{display:inline-flex;flex-direction:column;width:52px;border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.2);line-height:1}
+.cal b{display:block;background:var(--pink-soft);color:#fff;font:800 13px "Orbitron",sans-serif;letter-spacing:.08em;padding:4px 0 3px;text-align:center}
+.cal i{display:block;font:900 26px "Orbitron",sans-serif;font-style:normal;color:#0b0220;text-align:center;padding:3px 0 4px}
+
+/* time cards */
+.times{margin-top:16px;display:grid;grid-template-columns:1.12fr 1fr 1fr;gap:16px}
+.t{position:relative;border-radius:20px;padding:12px 18px 12px;background:linear-gradient(180deg,var(--surf2),var(--surf));
+  border:1.5px solid rgba(0,229,255,.35)}
+.t.main{border-color:var(--gold);box-shadow:0 0 0 1px rgba(255,216,102,.25),0 0 26px rgba(255,216,102,.18)}
+.t .where{display:flex;align-items:center;gap:10px;font:600 21px "Poppins",var(--emoji),sans-serif;color:var(--muted)}
+.t .flag{font-family:var(--emoji);font-size:30px;line-height:1}
+.t .time{margin-top:4px;font:900 46px/1 "Orbitron",sans-serif;color:#fff;white-space:nowrap}
+.t.main .time{color:var(--gold)}
+.t .zone{margin-top:6px;font:700 18px "Orbitron",sans-serif;letter-spacing:.12em;color:var(--cyan)}
+.t .next{position:absolute;top:12px;right:12px;font:800 15px "Poppins",sans-serif;color:#05000e;background:var(--pink-soft);
+  padding:3px 10px;border-radius:999px;color:#fff}
+
+/* middle */
+.mid{margin-top:16px;display:grid;grid-template-columns:1fr 350px;gap:20px;flex:1;min-height:0}
+.panel{border-radius:22px;background:rgba(16,5,37,.82);border:1.5px solid rgba(255,255,255,.12);padding:16px 20px}
+.people .row{display:flex;gap:14px;align-items:flex-start}
+.people .row+.row{margin-top:10px}
+.people .ic{font-family:var(--emoji);font-size:32px;line-height:1.1;flex:none}
+.people .lab{font:700 16px "Orbitron",sans-serif;letter-spacing:.16em;color:var(--cyan)}
+.people .name{font:800 31px/1.15 "Poppins",sans-serif}
+.people .name.sm{font-size:25px;font-weight:700}
+.about{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);font:500 20px/1.42 "Poppins",var(--emoji),sans-serif;color:#ece9f6}
+.about b{color:var(--green);font-weight:700}
+
+.zoom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(180deg,rgba(0,229,255,.16),rgba(16,5,37,.9) 60%);border-color:rgba(0,229,255,.55)}
+.zoom .zt{font:900 22px "Orbitron",var(--emoji),sans-serif;letter-spacing:.10em;color:#fff}
+.qr{margin-top:12px;width:204px;height:204px;background:#fff;border-radius:16px;padding:9px;box-shadow:0 0 0 3px var(--cyan),0 0 24px rgba(0,229,255,.45)}
+.qr img{width:100%;height:100%;display:block}
+.scan{margin-top:8px;font:600 16px "Poppins",sans-serif;color:var(--muted)}
+.mid-lab{margin-top:12px;font:700 15px "Orbitron",sans-serif;letter-spacing:.16em;color:var(--cyan)}
+.mid-id{font:900 31px "Orbitron",sans-serif;letter-spacing:.04em;color:#fff;white-space:nowrap}
+.link{margin-top:4px;font:600 18px "Poppins",sans-serif;color:var(--aqua);word-break:break-all}
+
+/* notes */
+.good{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+.good .lab{font:700 15px "Orbitron",sans-serif;letter-spacing:.16em;color:var(--gold);margin-bottom:6px}
+.g{display:flex;align-items:center;gap:12px;font:500 20px/1.3 "Poppins",var(--emoji),sans-serif;color:#ece9f6;padding:3px 0}
+.g b{color:#fff;font-weight:700}
+.g .e{font-family:var(--emoji);font-size:24px;flex:none;width:30px;text-align:center}
+.n{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  font:600 18px/1.22 "Poppins",var(--emoji),sans-serif}
+.n .e{font-family:var(--emoji);font-size:26px;flex:none}
+
+/* footer */
+.foot{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.url{display:inline-flex;align-items:center;gap:10px;font:900 28px "Orbitron",var(--emoji),sans-serif;letter-spacing:.02em;color:#05000e;
+  background:linear-gradient(90deg,var(--cyan),var(--aqua));padding:11px 22px 10px;border-radius:999px;box-shadow:0 0 26px rgba(0,229,255,.45)}
+.url .e{font-family:var(--emoji);font-size:28px}
+.tag{font:700 18px "Orbitron",sans-serif;letter-spacing:.12em;color:var(--muted);text-align:right;line-height:1.5}
+.tag b{color:#fff}
+.shared{font:600 16px "Poppins",var(--emoji),sans-serif;color:var(--muted);letter-spacing:0;text-transform:none}
+.shared span{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="flyer">
+  <svg class="circuit" viewBox="0 0 1080 1080" aria-hidden="true">
+    <g fill="none" stroke="#00e5ff" stroke-width="2">
+      <path d="M0 140 H180 L230 190 H420"/><circle cx="420" cy="190" r="6"/>
+      <path d="M1080 300 H900 L860 260 H700"/><circle cx="700" cy="260" r="6"/>
+      <path d="M0 760 H120 L170 810 H300"/><circle cx="300" cy="810" r="6"/>
+      <path d="M1080 860 H960 L920 900 H820"/><circle cx="820" cy="900" r="6"/>
+    </g>
+    <g fill="none" stroke="#ff00ff" stroke-width="2">
+      <path d="M760 0 V90 L800 130 V220"/><circle cx="800" cy="220" r="6"/>
+      <path d="M260 1080 V990 L220 950 V880"/><circle cx="220" cy="880" r="6"/>
+    </g>
+  </svg>
+  <div class="frame"></div>
+
+  <div class="content">
+    <div class="head">
+      <img class="logo" src="../brand/clickbaitpays-logo-disc-video.png" alt="ClickBaitPays logo">
+      <div>
+        <span class="kicker"><span class="dot"></span>LIVE ON ZOOM</span>
+        <h1><span class="cbp">CBP</span> SATURDAY<br>WEBINAR</h1>
+        <div class="sub">PRESENTATION</div>
+      </div>
+    </div>
+
+    <div class="date"><span class="cal" aria-hidden="true"><b id="calm"></b><i id="cald"></i></span><span id="date"></span></div>
+
+    <div class="times" id="times"></div>
+
+    <div class="mid">
+      <div class="panel people">
+        <div class="row"><div class="ic">🎤</div><div><div class="lab">PRESENTER</div><div class="name" id="presenter"></div></div></div>
+        <div class="row"><div class="ic">👥</div><div><div class="lab">HOSTS</div><div class="name sm" id="hosts"></div></div></div>
+        <div class="about">Our weekly <b>ClickBaitPays (CBP)</b> webinar, open to members and anyone curious to learn more. <b>Bring a friend</b> and discover what the platform has to offer.</div>
+        <div class="good">
+          <div class="lab">GOOD TO KNOW</div>
+          <div class="g"><span class="e">⏰</span><span>Log in at least <b>10 minutes early</b></span></div>
+          <div class="g"><span class="e">🚪</span><span>Zoom closes <b>30 minutes</b> after the start</span></div>
+          <div class="g"><span class="e">🔴</span><span>Live only: recordings are not shared</span></div>
+        </div>
+      </div>
+      <div class="panel zoom">
+        <div class="zt">JOIN ON ZOOM 👇</div>
+        <div class="qr"><img id="qr" alt="QR code for the Zoom meeting link"></div>
+        <div class="scan">Scan with your phone camera</div>
+        <div class="mid-lab">MEETING ID</div>
+        <div class="mid-id" id="mid"></div>
+        <div class="link" id="link"></div>
+      </div>
+    </div>
+
+
+    <div class="foot">
+      <div class="url"><span class="e">🌐</span><span id="site"></span></div>
+      <div class="tag"><b>CBP</b> | WEEKLY WEBINAR | COMMUNITY<br><span class="shared">Shared by <span>MTG 👑</span> | Your Digital Architect</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== Edit these for each week ===== */
+const EVENT = {
+  date: "Saturday, 21 November 2026",
+  cal: { month: "NOV", day: "21" },
+  times: [
+    { flag: "🇿🇦", where: "South Africa", time: "10:00 PM", zone: "SAST", main: true },
+    { flag: "🇳🇬", where: "West Africa", time: "9:00 PM", zone: "WAT" },
+    { flag: "🇮🇳", where: "India", time: "1:30 AM", zone: "IST", next: "Sunday" }
+  ],
+  presenter: "Russ Curran",
+  hosts: "RC Williams & Earline Cooley",
+  meetingId: "572 474 3247",
+  link: "us02web.zoom.us/j/5724743247",
+  qr: "zoom-qr-5724743247.svg",
+  site: "ClickBaitPaysUs.com"
+};
+/* ==================================== */
+document.getElementById("date").textContent = EVENT.date.toUpperCase();
+document.getElementById("calm").textContent = EVENT.cal.month;
+document.getElementById("cald").textContent = EVENT.cal.day;
+document.getElementById("times").innerHTML = EVENT.times.map(t =>
+  `<div class="t${t.main ? " main" : ""}">${t.next ? `<span class="next">${t.next}</span>` : ""}
+     <div class="where"><span class="flag">${t.flag}</span>${t.where}</div>
+     <div class="time">${t.time}</div><div class="zone">${t.zone}</div></div>`).join("");
+document.getElementById("presenter").textContent = EVENT.presenter;
+document.getElementById("hosts").textContent = EVENT.hosts;
+document.getElementById("mid").textContent = EVENT.meetingId;
+document.getElementById("link").textContent = EVENT.link;
+document.getElementById("qr").src = EVENT.qr;
+document.getElementById("site").textContent = EVENT.site;
+</script>
+</body>
+</html>

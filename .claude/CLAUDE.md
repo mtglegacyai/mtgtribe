@@ -25,6 +25,15 @@ his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
+## Reminder for MTG: a Cloudflare account for ClickBaitPays (saved 22 November 2026, at MTG's request)
+
+**Remind MTG after the Bitcoin Wealth Cloudflare account is set up.** MTG wants ClickBaitPays to have its own Cloudflare
+account (like Bellver has, and Bitcoin Wealth will have), so every ClickBaitPays video plays from Cloudflare instead of
+YouTube: "if YouTube decides that they're gonna take down my channel, then that will be a problem." Order: Bitcoin Wealth
+first, then ClickBaitPays. Walk MTG through creating and configuring it step by step, as for Bellver. Today the 3 main
+page videos, the presentation and the live Q&A on mtgtribe.com/cbp play from the ClickBaitPays Us YouTube channel (`yt` in
+`cbp/_build/build.py`); once the account exists they move to `src` files on Cloudflare (the player already plays both).
+
 ## Standing rule: how videos are shown on MTG's websites (MTG, 5 November 2026)
 
 - **Vertical (9:16) videos** play inside a slim, premium phone frame: thin gold-titanium rim, thin black bezel,
@@ -229,6 +238,15 @@ How to buy Canton Coin, step by step:
   @joinmtgtribe) stays on one line. Links carry no trailing slash.
 - Emoji bullets for the "In this report" list, the risk line, then his signature (Let's Get This Crypto! 💪, Crypto-Regards,
   MTG 👑 | Your Digital Architect), hashtags last.
+
+## Standing rule: the ClickBaitPays message (MTG, 22 Nov 2026)
+
+"If you have a link for it, you can promote it on ClickBaitPays, get traffic, while you make money with ClickBaitPays at the
+same time, increasing your streams of income ... this is my biggest selling point." Every ClickBaitPays page, script and
+video (tutorials, explainers, reels, shorts, ads, promos) follows `tools/cbp/MESSAGE.md`: Got a link? Get it seen. Name the
+programs people really promote (BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvels,
+MLM and affiliate programs, digital products), use MTG's own BellverCards story as proof, and sell the website copy as the
+guide that sells the real reason people join. A traffic source, never an investment; no income promises.
 
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 

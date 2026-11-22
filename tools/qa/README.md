@@ -16,10 +16,10 @@ find . -name "*.html" -not -path "./tools/*" -not -path "./.git/*" -not -path "*
 ```
 
 ```bash
-node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
+node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,384,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
 ```
 
-Add 880, 912 and 960 for the widths between tablets and small laptops. To check another address (for example the live site),
+Add 880, 912 and 960 for the widths between tablets and small laptops. Keep 384 in the list: MTG's own phone shows pages 384 px wide (22 Nov 2026: a glow ring 6 px past the edge showed up only there, with large text). To check another address (for example the live site),
 put `BASE=https://mtgtribe.com/` in front of the command.
 
 The check measures against the real screen width (`documentElement.clientWidth`). Until 11 Nov 2026 it used `innerWidth`,
@@ -38,6 +38,19 @@ itself. `/group/` forwards to WhatsApp, so what the check measures there is What
   Tables that fit stay normal tables, so desktop looks the same as before.
 - Canton guides and weekly reports: their own stacked layout now applies up to 640 px (the weekly builder copies it
   from `cntn/index.html`).
+
+# Things lying on each other (MTG, 22 Nov 2026)
+
+MTG: "the top right button that takes the visitor to the dashboard is overlapping the website title ... look for any other
+areas ... that might have some objects overlapping each other." `overlap.js` finds text, icons, pictures and buttons whose
+boxes overlap when they should not, line by line, at phone widths and with Android's larger text:
+
+```bash
+node tools/qa/overlap.js /tmp/pages.txt 320,360,375,384,390,412,430,768,1100 1,1.3
+```
+
+Designed overlays are not overlaps: a play button on its cover, a badge inside its card, a list that scrolls under a sticky
+panel (`.md-bot` or `[data-scroll-under]`), the quick bar, anything marked `data-overlay`. It must print `0 with an overlap`.
 
 # Back to the video when it ends (MTG, 10 Nov 2026)
 
@@ -85,6 +98,10 @@ FALLBACK=1 node tools/qa/player-check.js
 The second run is a browser without full screen for page elements (some in-app browsers): the player must cover the
 window itself. Needs the same kind of server as above on port 8765 (`BASE=...` for another address); `VPS=360x640,740x360`
 runs only those sizes; `SHOT=folder` saves pictures. It must print `0 failures` before MTG sees a preview.
+
+The ClickBaitPays guide (/cbp) plays YouTube videos in the same player, so it has its own copy of this check:
+`node tools/qa/cbp-player-check.js` (same options, same rules). YouTube does not play in the test browser, so the
+check treats the YouTube player's box as the picture; it must print `0 failures` too.
 
 # The Bitcoin Wealth guide (/bw): two more checks (16 Nov 2026)
 

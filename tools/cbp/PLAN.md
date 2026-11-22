@@ -155,7 +155,7 @@ or with the rebuild.
 | Shift AI | Hidden in Video 4, no mention |
 | Site | The lean 5-page site (section 3) is approved |
 
-## 8. Website build (22 Nov 2026): preview built, NOT live
+## 8. First website build (22 Nov 2026, went live the same day; replaced by section 9)
 
 Built with `python3 cbp/_build/build.py` (pages) and `python3 cbp/_build/og.py` (social previews, needs Playwright).
 Every fact, price, link and video lives once in the CONFIG block of `cbp/_build/build.py`.
@@ -189,3 +189,51 @@ mtgtribe.com/cbp and clickbaitpaysus.com before the sync (recommendation: mtgtri
 clickbaitpaysus.com points its canonical to it); link /cbp/ from the mtgtribe.com home and tribe dashboard (today the
 ClickBaitPays card points to clickbaitpaysus.com); then the auto-sync to clickbaitpaysus.com (needs push access to
 MusaTheGiant/clickbaitpays) with redirects from its 30 old pages.
+
+---
+
+## 9. The short-page layout (MTG, 22 Nov 2026)
+
+MTG on the first layout: "the pages are so long ... The home page is supposed to have only 3 videos: the welcome video, the
+income strategy, and the dashboard walkthrough. Then after that, you just redirect people to the dashboard ... Each page
+must target one section, one idea at a time. And if there's a video relevant to that, put the video on that page ... the
+navigation arrows back and forward, up and down." And the laptop frame had to match /bw (slim, thin gold rim).
+
+What changed (builder: `cbp/_build/build.py`; covers: `covers.py`; previews: `og.py`):
+
+| Part | Now |
+|---|---|
+| Main page /cbp/ | Hero, then exactly 3 videos from the ClickBaitPays Us YouTube channel: Welcome to ClickBaitPays (5:51), Income Strategy and Commission Plan (7:37), Back Office Walkthrough (11:26). Then the way into the dashboard (6 topic tiles). About a quarter of the old length |
+| Dashboard | 21 short pages in the menu order (`NAV`): Start Here (Welcome, What Is ClickBaitPays?, How It Works, How To Join), Levels And Earnings (The 7 Levels, The 12 + 7 Timeline, Income Strategy, Calculator), Every Day (Your Daily Routine), Tutorials (All Tutorials, Tutorials 1 to 7, each its own page with its steps in writing), Help (Video Library, FAQ with the live Q&A, Your Own Copy, Disclaimer) |
+| Navigation | Previous and Next arrows beside every page heading (with "5 / 21"), the Previous and Next pager at the bottom, the menu, and the floating Up and Down buttons (Down: the next part of the page; they step aside over a video) |
+| Player | The /bw player (`.pl`): slim laptop with a thin gold-titanium rim, Full Screen and Close in the bar above the picture, YouTube plays in place from youtube-nocookie.com (YouTube's own full-screen button off), closes itself at the end and puts the page back where play was pressed. 9:16 videos open the pop-up's phone |
+| Covers | Every video has a designed 16:9 cover (src/v, middle kept clear for the play button). A video still being made shows "Coming soon" or "Being recorded" where the play button will be |
+| Videos per page | What Is ClickBaitPays: Welcome. How It Works: the 14 Sept presentation. Income Strategy: the strategy video. Tutorial 1: the Back Office Walkthrough until MTG's own tour is recorded. FAQ: the 29 Aug live Q&A. The rest wait for MTG's explainers and tutorials (placeholders) |
+| Old links | The old one-page anchors (/cbp/#levels, /cbp/dashboard/#t5 ...) forward to the topic's page |
+
+To make a placeholder playable: give its entry in `V` a `yt` (YouTube id) or `src` (video file) and its `secs`, remove
+`status`, draw a cover in `covers.py` if it needs a new one, and rebuild. Checks: `tools/qa/cbp-player-check.js` (the
+player check for YouTube players), `tools/qa/hscroll.js`, `python3 tools/og/check_og.py`.
+
+---
+
+## 10. Round 2 (MTG, 22 Nov 2026, live the same day)
+
+MTG: optimise for phones (the Dashboard button overlapped the site title), a menu as rich as Bitcoin Wealth, Bellver and
+ALTRUVA (Member Login, a button to get this website, social buttons), 3D and smooth motion without overdoing it, the
+compensation plan and the videos easy to reach, copy where every word earns its place, ClickBaitPays positioned as the
+traffic source behind everything a visitor already promotes (not an investment), the website copy sold across the site,
+headings in the official clickbaitpays.me font (Orbitron), and outranking every other ClickBaitPays site.
+
+| Part | Now |
+|---|---|
+| Fonts | Orbitron for every heading, cover and preview (as on clickbaitpays.me), Poppins for text |
+| Phones | The site title shortens instead of running under the buttons; the quick bar at the bottom: Home, Videos, Join Free, Plan, Menu. New check: `tools/qa/overlap.js` (things lying on each other, at phone widths and with large text) |
+| Menu | Pages in 6 groups (Start Here now holds Grow What You Promote and the Compensation Plan), More From MTG (Get This Website, Join The MTG TRIBE), then a grid of 10 buttons: Member Login, Get This Website, Go Home, MTG TRIBE, WhatsApp MTG, Telegram, TikTok, YouTube, Facebook, Disclaimer |
+| Money page | /cbp/dashboard/compensation-plan/ (was income-strategy, which forwards): the video, numbers that count up, 3 ways it pays, the 3D staircase of the 7 levels, the table, the 12 + 7 timeline, the presentation and the live Q&A. A gold Plan button in every top bar |
+| New pages | Grow What You Promote (the traffic source idea, Ad Campaign or Login Ad, ads that get the click) and Is It Legit? (the facts, what MTG sees, check it yourself in 4 steps; answers bad reviews calmly) |
+| Your own copy | Get This Website in the menu, the quick bar end of every page, a band on the main page with a 3D browser showing mtgtribe.com/cbp/yourname, and a rebuilt order page (how it works, pay only if you like it, what you get) |
+| Motion | Cards tilt in 3D toward the mouse and catch the light; sections lift into place as they scroll in; the first view rises in; pages glide into each other (view transitions); numbers count up; all of it off with reduced motion |
+| Copy | Generic examples of what visitors promote (an affiliate offer, a shop, YouTube, a WhatsApp group), so every personal copy stays right for its owner |
+
+Still waiting: MTG's own explainers and tutorials (placeholders), the Cloudflare account for the videos (see CLAUDE.md).

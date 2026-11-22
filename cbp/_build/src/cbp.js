@@ -346,8 +346,8 @@
   if (tool) {
     var L = JSON.parse(tool.getAttribute('data-calc')), nIn = $('#c-n', tool), dIn = $('#c-d', tool);
     var cents = function (x) { return Math.round(x * 100) / 100; };
-    var usdt = function (x) { return cents(x).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USDT'; };
-    var num = function (x) { return cents(x).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+    var usdt = function (x) { return '$' + cents(x).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USDT'; };
+    var num = function (x) { return '$' + cents(x).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
     var iso = function (dt) { return dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0'); };
     var out = function (k, v) { var el = $('[data-o="' + k + '"]', tool); if (el) el.textContent = v; };
     var today = function () { return iso(new Date()); };

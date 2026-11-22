@@ -47,6 +47,9 @@ Working rules for this project:
 
 ## 2. Video lineup (PROPOSED, awaiting MTG)
 
+**Superseded on 22 Nov 2026 by `tools/cbp/VIDEOS.md`** (new Tutorial 1 Create and protect your account, 8 tutorials, 6
+explainers, the script standard). Kept below for history.
+
 Tutorial E needs two versions: the members' version (website) with the earnings example, and a social version without it.
 
 Tutorials, in watch order (a member's journey: look around, fund, first campaign, grow, cash out, advertise, help your team):

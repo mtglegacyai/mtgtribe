@@ -23,8 +23,8 @@
 - [Deposit USDT](https://mtgtribe.com/cbp/dashboard/tutorials/deposit/): How to deposit USDT into ClickBaitPays safely: enter the amount, pay through NOWPayments, use a fresh address every time and wait for the confirmation.
 - [Your First Campaign](https://mtgtribe.com/cbp/dashboard/tutorials/first-campaign/): Buy your first ClickBaitPays ad campaign on a new level, activate earning once, and click your daily ads: title, link, Preview, Confirm Purchase, step by step.
 - [Another Campaign](https://mtgtribe.com/cbp/dashboard/tutorials/another-campaign/): Buy another ClickBaitPays campaign on a level you already activated: no activation fee the second time, two tabs on Click Ads, and the 12 + 7 timeline.
-- [Withdraw](https://mtgtribe.com/cbp/dashboard/tutorials/withdraw/): How to request a ClickBaitPays withdrawal: once a week, a 10 USDT minimum and a 10% fee, your wallet address and your Security PIN, step by step.
-- [Create A Login Ad](https://mtgtribe.com/cbp/dashboard/tutorials/login-ad/): Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for 20 USDT. Title, link, Preview, step by step.
+- [Withdraw](https://mtgtribe.com/cbp/dashboard/tutorials/withdraw/): How to request a ClickBaitPays withdrawal: once a week, a $10 USDT minimum and a 10% fee, your wallet address and your Security PIN, step by step.
+- [Create A Login Ad](https://mtgtribe.com/cbp/dashboard/tutorials/login-ad/): Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for $20 USDT. Title, link, Preview, step by step.
 - [Pay It Forward](https://mtgtribe.com/cbp/dashboard/tutorials/pay-it-forward/): Pay It Forward on ClickBaitPays: send funds from your Available Balance to another member. Check the username twice, add a message, confirm with your PIN.
 - [Video Library](https://mtgtribe.com/cbp/dashboard/videos/): Every ClickBaitPays video in one place: the welcome video, income strategy, back office walkthrough, the full presentation, the live Q&A and the tutorials.
 - [Is It Legit?](https://mtgtribe.com/cbp/dashboard/is-clickbaitpays-legit/): Is ClickBaitPays legit or a scam? What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.
@@ -39,15 +39,15 @@
 - Each campaign runs 12 click days. A click day counts when all of that level's daily clicks are done; clicks reset at midnight Panama time (7:00 AM in South Africa).
 - Each in-dashboard ad has a 15-second countdown, then Confirm & Earn. Members receive 90% of the advertiser's cost per click.
 - To earn at a level, pay its one-time activation fee once; it never expires. These fees also support the platform's sustainability.
-- After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum 10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
-- Login Ads: 20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
+- After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum $10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
+- Login Ads: $20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
 - Referrals are optional; sponsors receive 10% of the campaigns their referrals buy.
 - What members promote: any program with a link, for example BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products and their own businesses. Each view is a real member opening the advertiser's page for a 15-second countdown.
 - MTG's own experience: he found BellverCards through an ad on ClickBaitPays, joined, and is earning and ranking up (his experience, not a promise).
-- Level 1: campaign 13 USDT, one-time activation 1 USDT, 0.48 USDT per click, 3 clicks a day, campaign total 17.17 USDT (platform figures)
-- Level 2: campaign 77 USDT, one-time activation 7 USDT, 2.83 USDT per click, 3 clicks a day, campaign total 101.74 USDT (platform figures)
-- Level 3: campaign 150 USDT, one-time activation 15 USDT, 5.40 USDT per click, 3 clicks a day, campaign total 194.40 USDT (platform figures)
-- Level 4: campaign 300 USDT, one-time activation 30 USDT, 6.48 USDT per click, 5 clicks a day, campaign total 388.80 USDT (platform figures)
-- Level 5: campaign 600 USDT, one-time activation 60 USDT, 10.80 USDT per click, 6 clicks a day, campaign total 777.60 USDT (platform figures)
-- Level 6: campaign 1,200 USDT, one-time activation 120 USDT, 12.96 USDT per click, 10 clicks a day, campaign total 1,555.20 USDT (platform figures)
-- Level 7: campaign 2,400 USDT, one-time activation 240 USDT, 13.50 USDT per click, 20 clicks a day, campaign total 3,240.00 USDT (platform figures)
+- Level 1: campaign $13 USDT, one-time activation $1 USDT, $0.48 USDT per click, 3 clicks a day, campaign total $17.17 USDT (platform figures)
+- Level 2: campaign $77 USDT, one-time activation $7 USDT, $2.83 USDT per click, 3 clicks a day, campaign total $101.74 USDT (platform figures)
+- Level 3: campaign $150 USDT, one-time activation $15 USDT, $5.40 USDT per click, 3 clicks a day, campaign total $194.40 USDT (platform figures)
+- Level 4: campaign $300 USDT, one-time activation $30 USDT, $6.48 USDT per click, 5 clicks a day, campaign total $388.80 USDT (platform figures)
+- Level 5: campaign $600 USDT, one-time activation $60 USDT, $10.80 USDT per click, 6 clicks a day, campaign total $777.60 USDT (platform figures)
+- Level 6: campaign $1,200 USDT, one-time activation $120 USDT, $12.96 USDT per click, 10 clicks a day, campaign total $1,555.20 USDT (platform figures)
+- Level 7: campaign $2,400 USDT, one-time activation $240 USDT, $13.50 USDT per click, 20 clicks a day, campaign total $3,240.00 USDT (platform figures)

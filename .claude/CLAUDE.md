@@ -204,6 +204,29 @@ income streams, and eventually quit my job, so please treat everything we do, bi
   before/after, the product). The approved formula and templates: `tools/youtube-thumbnails/` (README).
 - Still honest: no income promises, no fake numbers, no "best ever", MTG's compliance and privacy rules always apply.
 
+## Standing rule: post descriptions, pointing fingers and spaces (MTG, 22 Nov 2026)
+
+Every description or caption MTG posts (YouTube, WhatsApp, TikTok, Facebook, Telegram, any platform) is laid out so the eye
+can scan it and find each link fast:
+
+- Plain text in a code block, ready to copy. No markdown.
+- The label on its own line, then a blank line, then 👉 and the link on its own line, then a blank line before the next label:
+
+```text
+Full written report with charts and sources:
+
+👉 https://mtgtribe.com/canton-weekly/2026-11-22
+
+How to buy Canton Coin, step by step:
+
+👉 https://mtgtribe.com/cc
+```
+
+- Every link gets this treatment, social links too (WhatsApp group, Telegram, Facebook). A handle that is not a link (TikTok
+  @joinmtgtribe) stays on one line. Links carry no trailing slash.
+- Emoji bullets for the "In this report" list, the risk line, then his signature (Let's Get This Crypto! 💪, Crypto-Regards,
+  MTG 👑 | Your Digital Architect), hashtags last.
+
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 
 When MTG asks for a message to send a prospect (WhatsApp, DM, comment reply), give it like this, every time:

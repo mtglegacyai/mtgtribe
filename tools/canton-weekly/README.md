@@ -33,6 +33,13 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
    `git push origin main`. Then confirm the four URLs load and send MTG the "it is live" notification.
    If the push is still refused, do not work around it: notify MTG that the report is ready on its branch.
 
+## Posting pack (MTG, 22 Nov 2026)
+
+With every report, give MTG the YouTube thumbnail (canton-weekly/DATE/poster.jpg), the WhatsApp image (og.jpg), a YouTube
+title (under 70 characters), description and tags, a WhatsApp message and a WhatsApp Status caption. Lay every description
+out with pointing fingers and spaces as the "post descriptions" rule in `.claude/CLAUDE.md` shows: label, blank line,
+👉 link on its own line, blank line.
+
 ## Prices on the guides
 
 - /cc/ loads the live Canton Coin price from CoinGecko in the visitor's browser (no credits used). If that fails,

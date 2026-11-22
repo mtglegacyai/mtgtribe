@@ -8,13 +8,14 @@
 
 ## Dashboard pages (one topic each)
 
-- [Welcome](https://mtgtribe.com/cbp/dashboard/): The ClickBaitPays dashboard by MTG: one short page per topic, from what it is and how to join to the 7 levels, the 12 + 7 timeline and every tutorial.
-- [What Is ClickBaitPays?](https://mtgtribe.com/cbp/dashboard/what-is-clickbaitpays/): ClickBaitPays explained simply: members advertise their own link to each other and get paid in USDT for viewing each other's ads. Watch the welcome video.
+- [Welcome](https://mtgtribe.com/cbp/dashboard/): The ClickBaitPays dashboard by MTG: one short page per topic, from the compensation plan and how to join to the 7 levels, the 12 + 7 timeline and tutorials.
+- [What Is ClickBaitPays?](https://mtgtribe.com/cbp/dashboard/what-is-clickbaitpays/): ClickBaitPays explained simply: advertisers get traffic, viewers get paid in USDT, and every member does both. Watch the welcome video, then see the plan.
+- [Grow What You Promote](https://mtgtribe.com/cbp/dashboard/grow-what-you-promote/): Use ClickBaitPays as a traffic source: put your affiliate link, business, YouTube channel or WhatsApp group in front of members who already use crypto.
+- [Compensation Plan](https://mtgtribe.com/cbp/dashboard/compensation-plan/): The ClickBaitPays compensation plan in plain English: pay per click at all 7 levels, the one-time activation, the 10% referral commission and the 12 + 7 payout.
 - [How It Works](https://mtgtribe.com/cbp/dashboard/how-it-works/): How ClickBaitPays works in 5 steps: join free, fund your account, buy and activate a campaign, click your daily ads, then use your Available Balance.
 - [How To Join](https://mtgtribe.com/cbp/dashboard/join/): Join ClickBaitPays free in 3 steps through a member's link. The house rules: home Wi-Fi only, one account per person, up to 3 per household, same sponsor.
 - [The 7 Levels](https://mtgtribe.com/cbp/dashboard/levels/): All 7 ClickBaitPays levels in one table: the campaign price, the one-time activation fee, pay per click, clicks a day and the platform's own campaign total.
 - [The 12 + 7 Timeline](https://mtgtribe.com/cbp/dashboard/timeline/): Click your ClickBaitPays ads on 12 days, the earnings rest 7 days, then they reach your Available Balance. Clicks reset at 7:00 AM in South Africa.
-- [Income Strategy](https://mtgtribe.com/cbp/dashboard/income-strategy/): The ClickBaitPays income strategy: start at a level you are comfortable with, grow from your Available Balance, and the optional 10% referral commission.
 - [Calculator](https://mtgtribe.com/cbp/calculator/): Pick a ClickBaitPays level and see what you pay today, your clicks a day, the platform's campaign total and roughly when it reaches your Available Balance.
 - [Your Daily Routine](https://mtgtribe.com/cbp/dashboard/daily-routine/): Your ClickBaitPays daily routine in 4 steps: log in, open Click Ads, view each ad for 15 seconds, Confirm and Earn. New clicks every day from 7:00 AM SAST.
 - [All Tutorials](https://mtgtribe.com/cbp/dashboard/tutorials/): Every ClickBaitPays tutorial in order: back office tour, deposit, your first campaign, another campaign, withdrawal, Login Ads and Pay It Forward.
@@ -26,9 +27,10 @@
 - [Create A Login Ad](https://mtgtribe.com/cbp/dashboard/tutorials/login-ad/): Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for 20 USDT. Title, link, Preview, step by step.
 - [Pay It Forward](https://mtgtribe.com/cbp/dashboard/tutorials/pay-it-forward/): Pay It Forward on ClickBaitPays: send funds from your Available Balance to another member. Check the username twice, add a message, confirm with your PIN.
 - [Video Library](https://mtgtribe.com/cbp/dashboard/videos/): Every ClickBaitPays video in one place: the welcome video, income strategy, back office walkthrough, the full presentation, the live Q&A and the tutorials.
-- [FAQ](https://mtgtribe.com/cbp/dashboard/faq/): ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, click resets, Login Ads and referrals. Plus a live Q&A.
-- [Your Own Copy](https://mtgtribe.com/cbpcopy/): This ClickBaitPays guide with your referral link on every Join button and your contact links, at mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname.
+- [Is It Legit?](https://mtgtribe.com/cbp/dashboard/is-clickbaitpays-legit/): Is ClickBaitPays legit or a scam? What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.
+- [FAQ](https://mtgtribe.com/cbp/dashboard/faq/): ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, logging in, Login Ads and referrals. Plus a live Q&A.
 - [Disclaimer](https://mtgtribe.com/cbp/disclaimer/): The small print in plain words: an independent ClickBaitPays guide, the referral link disclosure, where the figures come from and what this site stores.
+- [Get This Website](https://mtgtribe.com/cbpcopy/): Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at mtgtribe.com/cbp/yourname. Pay only if you like it.
 
 ## Key facts
 

@@ -112,6 +112,18 @@ page videos, the presentation and the live Q&A on mtgtribe.com/cbp play from the
   cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
   button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
 
+## Standing rule: clickbaitpaysus.com is the same guide as mtgtribe.com/cbp, always (MTG, 22 Nov 2026)
+
+"Remove everything that is currently on clickbaitpaysus.com and replace it with ... everything that is on mtgtribe.com/cbp ...
+the clickbaitpaysus.com website also gets the same updates at the exact same time." `cbp/_build/build.py` builds /cbp, then
+the same guide for the root of clickbaitpaysus.com (`CBP_TARGET=cbpus`) and installs it into `/home/user/clickbaitpays` (repo
+MusaTheGiant/clickbaitpays, GitHub Pages, CNAME kept: add it to the session with push access and clone it there first; the
+build says so when it is missing). Its social previews carry its own address: after changing a page's preview, run og.py
+twice (`python3 cbp/_build/og.py`, then `CBP_TARGET=cbpus python3 cbp/_build/og.py`, which writes `cbp/_build/og-cbpus/`).
+The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's history) forward to the new pages (`CBPUS_OLD`).
+**Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
+clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`).
+
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 
 "Show me a real preview first ... I mean a live preview on a temporal web link." Before a website change goes live, give MTG

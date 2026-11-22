@@ -23,21 +23,21 @@ body{font-family:Poppins,sans-serif;color:#fff}
 .kick{display:inline-flex;align-items:center;gap:14px;padding:8px 24px 8px 10px;border-radius:999px;background:rgba(7,0,26,.78);border:2px solid rgba(0,229,255,.6);
  box-shadow:0 0 24px rgba(0,229,255,.35);font:800 27px Orbitron;letter-spacing:.1em;color:#7ff4ff}
 .kick img{width:46px;height:46px;border-radius:50%}
-h1{font:900 italic 108px/0.98 "Exo 2";letter-spacing:-.01em;text-transform:uppercase;
+h1{font:900 88px/1.02 Orbitron,sans-serif;letter-spacing:.01em;text-transform:uppercase;white-space:nowrap;
  background:linear-gradient(180deg,#ffffff 8%,#9ff7ff 46%,#00e5ff 62%,#ff4dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
  filter:drop-shadow(0 0 18px rgba(0,229,255,.45)) drop-shadow(0 6px 0 rgba(60,0,90,.9))}
-h1 .w{display:block;font-size:.58em;line-height:1.05;background:none;color:#fff;-webkit-text-fill-color:#fff}
-h1.sm{font-size:92px}
+h1 .w{display:block;font-size:.56em;line-height:1.15;letter-spacing:.04em;background:none;color:#fff;-webkit-text-fill-color:#fff}
+h1.sm{font-size:76px}
 .mid{position:absolute;left:50%;top:360px;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;
  background:radial-gradient(circle,rgba(0,229,255,.18),rgba(255,0,255,.06) 55%,transparent 70%)}
 .bot{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:center;align-items:flex-end;gap:22px}
 .chip{display:inline-flex;align-items:center;gap:14px;padding:15px 28px;border-radius:20px;background:rgba(10,2,34,.88);border:2px solid rgba(0,229,255,.55);
- box-shadow:0 0 26px rgba(0,229,255,.25),inset 0 0 18px rgba(0,229,255,.12);font:800 46px/1 "Exo 2";font-style:italic;text-transform:uppercase;letter-spacing:.02em}
+ box-shadow:0 0 26px rgba(0,229,255,.25),inset 0 0 18px rgba(0,229,255,.12);font:800 34px/1 Orbitron,sans-serif;text-transform:uppercase;letter-spacing:.03em}
 .chip.p{border-color:rgba(255,0,255,.6);box-shadow:0 0 26px rgba(255,0,255,.3),inset 0 0 18px rgba(255,0,255,.12)}
 .chip.g{border-color:rgba(255,216,102,.7);color:#ffe28a;box-shadow:0 0 26px rgba(255,216,102,.28)}
 .chip svg{width:44px;height:44px;flex:none}
 .chip b{font-weight:900;color:#00e5ff}.chip.p b{color:#ff6bff}
-.arrow{font:900 46px "Exo 2";color:#ffd866;filter:drop-shadow(0 0 10px rgba(255,216,102,.6));align-self:center}
+.arrow{font:900 46px Orbitron,sans-serif;color:#ffd866;filter:drop-shadow(0 0 10px rgba(255,216,102,.6));align-self:center}
 .bars{display:flex;align-items:flex-end;gap:14px;height:200px}
 .bars i{display:grid;align-content:end;justify-items:center;width:78px;border-radius:12px 12px 4px 4px;font:900 30px Orbitron;font-style:normal;color:#07001a;padding-bottom:8px;
  background:linear-gradient(180deg,#7ff4ff,#00e5ff 40%,#ff00ff);box-shadow:0 0 22px rgba(0,229,255,.45)}
@@ -45,7 +45,7 @@ h1.sm{font-size:92px}
 .dots i{width:34px;height:34px;border-radius:50%;background:#00e5ff;box-shadow:0 0 12px #00e5ff}
 .dots i.h{background:#ff00ff;box-shadow:0 0 12px #ff00ff;width:30px;height:30px}
 .dots i.e{display:grid;place-items:center;width:52px;height:52px;background:#46f2ad;box-shadow:0 0 18px #46f2ad;font:900 30px Poppins;font-style:normal;color:#03140c}
-.keys{display:flex;gap:40px;font:800 38px "Exo 2";font-style:italic;text-transform:uppercase}
+.keys{display:flex;gap:40px;font:800 32px Orbitron,sans-serif;text-transform:uppercase}
 .keys span:nth-child(1){color:#00e5ff}.keys span:nth-child(2){color:#ff6bff}.keys span:nth-child(3){color:#46f2ad}
 .stack{display:grid;justify-items:center;gap:16px}
 .dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:1000px}
@@ -80,6 +80,7 @@ I = {   # simple line icons (Lucide shapes), drawn in the chips
     'layers': '<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/>',
     'menu': '<path d="M4 6h16M4 12h16M4 18h16"/>',
     'rocket': '<path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/>',
+    'trend': '<path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/>',
     'repeat': '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
 }
 
@@ -143,7 +144,7 @@ def dots():
 COVERS = {
     'welcome': ('VIDEO 1 · START HERE', 'Welcome to', 'ClickBaitPays',
                 chip('cursor', 'Click') + chip('eye', 'Watch', 'p') + chip('coins', 'Earn', 'g'), ''),
-    'strategy': ('VIDEO 2 · THE PLAN', 'Income', 'Strategy', '<div class="stack">' + bars(['1', '2', '3', '4', '5', '6', '7']) + '</div>', ''),
+    'strategy': ('VIDEO 2 · THE MONEY VIDEO', 'Income strategy &', 'Compensation plan', '<div class="stack">' + bars(['1', '2', '3', '4', '5', '6', '7']) + '</div>', ''),
     'backoffice': ('VIDEO 3 · LOOK AROUND', 'Back office', 'Walkthrough',
                    '<div class="dash"><span class="k"><small>Ads to click</small><b>•••</b></span><span class="k"><small>Earned wallet</small><b>•••</b></span>'
                    '<span class="k"><small>Available</small><b>•••</b></span><span class="k"><small>Campaigns</small><b>•••</b></span></div>', ''),
@@ -151,6 +152,7 @@ COVERS = {
     'presentation': ('PRESENTATION · 14 SEPT 2026', 'The full', 'Presentation', chip('mega', 'Ads') + chip('layers', 'Campaigns', 'p') + chip('wallet', 'Withdrawals', 'g'), ''),
     'tour': ('SITE TOUR · START HERE', 'How to use', 'This guide',
              '<div class="br"><div class="t"><i></i><i></i><i></i></div><div class="b"><div class="s"><i></i><i></i><i></i><i></i></div><div class="m"><i></i><i></i><i></i><i></i></div></div></div>', 'sm'),
+    'e1': ('EXPLAINER · YOUR TRAFFIC SOURCE', 'Grow what you', 'Promote', chip('link', 'Your link') + '<span class="arrow">➜</span>' + chip('eye', 'Real eyes', 'p') + '<span class="arrow">➜</span>' + chip('trend', 'Growth', 'g'), ''),
     'e2': ('EXPLAINER · GET STARTED', 'How to', 'Join free', chip('link', '1 Tap Join') + chip('user', '2 Sign up', 'p') + chip('play', '3 Start', 'g'), ''),
     'e3': ('EXPLAINER · THE LEVELS', '7 levels', 'One activation', '<div class="stack">' + bars(['13', '77', '150', '300', '600', '1.2K', '2.4K']) + '</div>', 'sm'),
     'e4': ('EXPLAINER · THE TIMELINE', '12 click days', '+ 7 day hold', '<div class="stack">' + dots() + '<div class="keys"><span>Click</span><span>Hold</span><span>Yours</span></div></div>', 'sm'),
@@ -166,7 +168,7 @@ COVERS = {
            f'<span class="av">{svg("user")}</span><span class="arrow">➜</span>{chip("heart", "Help your team", "p")}<span class="arrow">➜</span><span class="av p">{svg("user", "#ff6bff")}</span>', 'sm'),
 }
 
-FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800;1,900&family=Orbitron:wght@800;900'
+FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900'
          '&family=Poppins:wght@700;800&display=swap" rel="stylesheet">')
 
 
@@ -183,7 +185,7 @@ def main():
     js = os.path.join(tmp, 'shot.js')
     open(js, 'w').write('''const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const jobs=%s;
 for(const [h,o] of jobs){const p=await b.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});await p.goto('file://'+h);
-await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(400);
+await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(400);await p.evaluate(()=>{const h=document.querySelector('h1');let f=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>1180&&f>40){f-=2;h.style.fontSize=f+'px';}});
 const over=await p.evaluate(()=>{const t=document.querySelector('.top').getBoundingClientRect(),b=document.querySelector('.bot').getBoundingClientRect();
  const w=[...document.querySelectorAll('.bot>*,.top>*')].some(e=>{const r=e.getBoundingClientRect();return r.left<0||r.right>1280});return {top:Math.round(t.bottom),bot:Math.round(b.top),wide:w}});
 console.log(o.split('/').pop(),JSON.stringify(over));await p.screenshot({path:o});await p.close();}await b.close();})();''' % json.dumps(jobs))

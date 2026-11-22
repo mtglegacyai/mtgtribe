@@ -74,6 +74,7 @@
   var IPHONE = /iP(hone|od)/.test(navigator.userAgent || '');
   function fsElement() { return d.fullscreenElement || d.webkitFullscreenElement || null; }
   function hdrHeight() { var t = $('.md-top') || $('.top'); return t ? t.getBoundingClientRect().height : 64; }
+  function footHeight() { var q = $('.qbar'); return q && getComputedStyle(q).display !== 'none' ? q.getBoundingClientRect().height : 0; }      // the quick bar on phones
   if (!(w.CSS && CSS.supports && CSS.supports('height', '100svh'))) {
     var vhFix = function () { var h = (w.innerHeight || html.clientHeight) + 'px'; html.style.setProperty('--svh', h); html.style.setProperty('--dvh', h); };
     vhFix(); on(w, 'resize', vhFix);
@@ -230,11 +231,11 @@
     return v;
   }
   function plIntoView(pl) {
-    var r = pl.getBoundingClientRect(), top = hdrHeight() + 10, bot = (w.innerHeight || html.clientHeight) - 8;
+    var r = pl.getBoundingClientRect(), top = hdrHeight() + 10, bot = (w.innerHeight || html.clientHeight) - footHeight() - 8;
     var dy = r.top < top ? r.top - top : (r.bottom > bot ? Math.min(r.bottom - bot, r.top - top) : 0);
     if (Math.abs(dy) > 2) { try { w.scrollBy({ top: dy, behavior: RM ? 'auto' : 'smooth' }); } catch (e) { w.scrollBy(0, dy); } }
   }
-  function plRoom(pl) { return (w.innerHeight || html.clientHeight) - (pl.id === 'pl-pop' ? 16 : hdrHeight()); }
+  function plRoom(pl) { return (w.innerHeight || html.clientHeight) - (pl.id === 'pl-pop' ? 16 : hdrHeight() + footHeight()); }
   function fitOrMax(pl) { if (pl.getBoundingClientRect().height > plRoom(pl)) enterMax(pl); else if (pl.id !== 'pl-pop') plIntoView(pl); }
   var fitT;
   on(w, 'resize', function () {
@@ -297,6 +298,48 @@
   });
   on(w, 'scroll', function () { if (!udT) { udT = true; requestAnimationFrame(paintUd); } }, { passive: true });
   on(w, 'resize', paintUd); paintUd();
+
+  /* ------------------------------------------------------------ the quick bar's Menu opens the dashboard menu */
+  on(d, 'click', function (e) { var q = e.target.closest && e.target.closest('[data-qmenu]'); if (q) { var m = $('.md-menu'); if (m) m.click(); } });
+
+  /* ------------------------------------------------------------ 3D: cards tilt toward the pointer and catch the light (mouse and trackpad only) */
+  if (!RM && w.matchMedia && w.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var tilted = null;
+    var untilt = function (el) { if (!el) return; el.classList.remove('lit'); ['--rx', '--ry', '--mx', '--my'].forEach(function (p) { el.style.removeProperty(p); }); };
+    on(d, 'pointermove', function (e) {
+      var el = e.target.closest && e.target.closest('.t3d');
+      if (el !== tilted) { untilt(tilted); tilted = el; }
+      if (!el) return;
+      var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      var k = Math.min(1, 320 / Math.max(r.width, 1));                 // big panels tilt less than small cards
+      el.style.setProperty('--rx', ((0.5 - y) * 9 * k).toFixed(2) + 'deg');
+      el.style.setProperty('--ry', ((x - 0.5) * 11 * k).toFixed(2) + 'deg');
+      el.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); el.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+      el.classList.add('lit');
+    }, { passive: true });
+    on(d, 'pointerleave', function () { untilt(tilted); tilted = null; });
+  }
+
+  /* ------------------------------------------------------------ reveal: what is below the first screen lifts gently into place */
+  if ('IntersectionObserver' in w && !RM) {
+    var rvs = $$('.rv').filter(function (el) { return el.getBoundingClientRect().top > (w.innerHeight || 800) * 0.92; });
+    rvs.forEach(function (el) { el.classList.add('pre'); });
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.remove('pre'); rio.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rvs.forEach(function (el) { rio.observe(el); });
+  }
+
+  /* ------------------------------------------------------------ numbers count up when they come into view */
+  var counts = $$('[data-count]');
+  if (counts.length && 'IntersectionObserver' in w && !RM) {
+    var runCount = function (el) {
+      var end = +el.getAttribute('data-count'), t0 = null;
+      (function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1300), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(end * e); if (k < 1) requestAnimationFrame(step); })(performance.now());
+    };
+    var cio = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { runCount(en.target); cio.unobserve(en.target); } }); }, { threshold: 0.5 });
+    counts.forEach(function (el) { cio.observe(el); });
+  }
 
   /* ------------------------------------------------------------ calculator */
   var tool = $('[data-calc]');

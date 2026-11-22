@@ -39,6 +39,19 @@ itself. `/group/` forwards to WhatsApp, so what the check measures there is What
 - Canton guides and weekly reports: their own stacked layout now applies up to 640 px (the weekly builder copies it
   from `cntn/index.html`).
 
+# Things lying on each other (MTG, 22 Nov 2026)
+
+MTG: "the top right button that takes the visitor to the dashboard is overlapping the website title ... look for any other
+areas ... that might have some objects overlapping each other." `overlap.js` finds text, icons, pictures and buttons whose
+boxes overlap when they should not, line by line, at phone widths and with Android's larger text:
+
+```bash
+node tools/qa/overlap.js /tmp/pages.txt 320,360,375,384,390,412,430,768,1100 1,1.3
+```
+
+Designed overlays are not overlaps: a play button on its cover, a badge inside its card, a list that scrolls under a sticky
+panel (`.md-bot` or `[data-scroll-under]`), the quick bar, anything marked `data-overlay`. It must print `0 with an overlap`.
+
 # Back to the video when it ends (MTG, 10 Nov 2026)
 
 `/assets/video-return.js` brings the page back to exactly where the visitor pressed play when a video ends (pop-up,

@@ -36,7 +36,7 @@ body{font-family:Poppins,sans-serif;color:#fff}
 .c:after{content:"";position:absolute;inset:14px;border-radius:28px;border:2px solid rgba(0,229,255,.42);box-shadow:0 0 30px rgba(0,229,255,.18) inset;pointer-events:none}
 .eye{display:inline-flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:999px;background:rgba(0,229,255,.12);border:2px solid rgba(0,229,255,.5);font:800 20px Orbitron;letter-spacing:.08em;color:#7ff4ff}
 .eye img{width:40px;height:40px;border-radius:50%}
-h1{margin-top:24px;font:900 italic 68px/1.02 "Exo 2";text-transform:uppercase;letter-spacing:-.005em;max-width:520px}
+h1{margin-top:24px;font:900 50px/1.12 Orbitron,sans-serif;text-transform:uppercase;letter-spacing:.01em;max-width:520px}
 h1 em{font-style:inherit;background:linear-gradient(180deg,#fff 5%,#9ff7ff 45%,#00e5ff 62%,#ff4dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sub{margin-top:16px;font:600 26px/1.35 Poppins;color:#e6e2f2;max-width:500px}
 .pill{position:absolute;left:56px;bottom:46px;max-width:1088px;padding:12px 26px;border-radius:999px;background:linear-gradient(90deg,#00e5ff,#00ffee);color:#05000e;font:900 28px Orbitron;white-space:nowrap;box-shadow:0 0 34px rgba(0,229,255,.5)}
@@ -79,7 +79,7 @@ def laptop(code):
 
 
 # page key: (headline, one line, visual)
-VIDEO_OF = {'home': 'tour', 'what': 'welcome', 'how': 'presentation', 'join': 'e2', 'levels': 'e3', 'timeline': 'e4', 'plan': 'strategy',
+VIDEO_OF = {'home': 'tour', 'what': 'welcome', 'grow': 'e1', 'legit': 'qa', 'how': 'presentation', 'join': 'e2', 'levels': 'e3', 'timeline': 'e4', 'plan': 'strategy',
             'daily': 't3', 'faq': 'qa', **{k: build.TUT[k].get('video', k) for k in build.TUT}}
 COPY = {
     'landing': ('ClickBaitPays in <em>3 videos</em>', 'What it is, the strategy, the back office.'),
@@ -89,7 +89,9 @@ COPY = {
     'join': ('Join <em>free</em> in 3 steps', 'Through a member\'s link, and the house rules.'),
     'levels': ('All <em>7 levels</em> in one table', 'From 13 USDT. Activate a level once.'),
     'timeline': ('<em>12 + 7</em>: when it is yours', '12 click days, a 7-day hold, then your balance.'),
-    'plan': ('The income <em>strategy</em>', 'Grow level by level, and the 10% commission.'),
+    'plan': ('The compensation <em>plan</em>', 'How you earn at every level, on video.'),
+    'grow': ('Grow what you <em>promote</em>', 'Your link in front of members who already use crypto.'),
+    'legit': ('Is it <em>legit?</em>', 'The facts, and how to check it yourself.'),
     'calc': ('ClickBaitPays <em>calculator</em>', 'What you pay today, your clicks and your payout date.'),
     'daily': ('Your <em>daily</em> routine', 'Log in, click, done. New clicks at 7:00 AM.'),
     'tutorials': ('7 step-by-step <em>tutorials</em>', 'Every ClickBaitPays job, in the right order.'),
@@ -102,7 +104,7 @@ COPY = {
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
-    'copy': ('Your own <em>ClickBaitPays</em> guide', 'This guide with your link on every Join button.'),
+    'copy': ('Get <em>this website</em>', 'Your link on every Join button. Pay only if you like it.'),
     'disc': ('The small print, in <em>plain words</em>', 'Independent guide, the referral link and your privacy.'),
 }
 
@@ -127,7 +129,7 @@ def visual(key):
     return laptop(VIDEO_OF[key])
 
 
-FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800;1,900&family=Orbitron:wght@800;900'
+FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900'
          '&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">')
 
 
@@ -151,7 +153,7 @@ def main():
     js = os.path.join(tmp, 'shot.js')
     open(js, 'w').write('''const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const jobs=%s;
 for(const [h,o,k] of jobs){const p=await b.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});await p.goto('file://'+h);
-await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
+await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);await p.evaluate(()=>{const h=document.querySelector('h1');let f=parseFloat(getComputedStyle(h).fontSize);const words=[...h.querySelectorAll('*')];while((h.scrollWidth>520||h.getBoundingClientRect().height>250)&&f>30){f-=2;h.style.fontSize=f+'px';}});
 const r=await p.evaluate(()=>{const q=s=>document.querySelector(s).getBoundingClientRect();const h=q('h1'),s=q('.sub'),v=q('.vis'),pl=q('.pill');
  return {textRight:Math.round(Math.max(h.right,s.right)),visLeft:Math.round(v.left),subBottom:Math.round(s.bottom),pillTop:Math.round(pl.top),visBottom:Math.round(v.bottom),pillRight:Math.round(pl.right),visTop:Math.round(v.top)}});
 const warn=(r.textRight>r.visLeft-10?' TEXT/VISUAL OVERLAP':'')+(r.subBottom>r.pillTop-8?' TEXT/PILL OVERLAP':'')+(r.visBottom>r.pillTop-6&&r.pillRight>r.visLeft?' VISUAL/PILL OVERLAP':'')+(r.visTop<20?' VISUAL TOO HIGH':'');

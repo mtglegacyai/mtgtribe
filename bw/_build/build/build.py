@@ -326,6 +326,12 @@ def install_bwp(dst):
     open(BWP_REPO + '/robots.txt', 'w').write('User-agent: *\nAllow: /\n\nSitemap: ' + SITE + '/sitemap.xml\n')
     open(BWP_REPO + '/' + INDEXNOW_KEY + '.txt', 'w').write(INDEXNOW_KEY)
     open(BWP_REPO + '/.nojekyll', 'w').write('')
+    open(BWP_REPO + '/README.md', 'w').write(
+        '# bitcoinwealthpays.com\n\nThe Bitcoin Wealth Guide by MTG, the same guide as https://mtgtribe.com/bw, at this domain\'s root.\n\n'
+        '**Do not edit these files by hand.** They are built from mtglegacyai/mtgtribe (`bw/_build/build/build.py`), which builds\n'
+        'mtgtribe.com/bw and then this copy every time, so the two never drift apart (MTG, 22 Nov 2026). The videos play from\n'
+        'https://media.bitcoinwealthpays.com/videos/ (Cloudflare R2). The old site (before 22 Nov 2026) is in this repo\'s history,\n'
+        'commit c432ecc; its old addresses forward to the new pages.\n')
     nf = open(dst + '/index.html', encoding='utf-8').read()      # 404: the guide's own front page, so a lost visitor lands somewhere useful
     nf = nf.replace('<meta name="robots" content="index,follow', '<meta name="robots" content="noindex,follow', 1)
     open(BWP_REPO + '/404.html', 'w').write(nf)

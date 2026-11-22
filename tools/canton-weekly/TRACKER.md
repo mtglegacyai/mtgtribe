@@ -4,7 +4,7 @@
 
 | Date | CC price | 7d | CNTN | Key event | Web page |
 |---|---|---|---|---|---|
-| 2026-11-22 | $0.0736 | -8% | $1.21 (20 Nov) | $0.075 support broke 20 Nov, low $0.071 (lowest since Dec 2025); CapConnect+ approved as Super Validator (CIP-0131, 18 Nov); CIP-0132 universal burn Phase 1 proposed; Talos, Marex, Broadridge tokenized Treasury plan; CNTN Q3 first positive adj. EBITDA | Published automatically |
+| 2026-11-22 | $0.0736 | -8% | $1.21 (20 Nov) | $0.075 support broke 20 Nov, low $0.071 (lowest since Dec 2025); CapConnect+ approved as Super Validator (CIP-0131, 18 Nov); CIP-0132 universal burn Phase 1 proposed; Talos, Marex, Broadridge tokenized Treasury plan; CNTN Q3 first positive adj. EBITDA | Published after MTG said put it live |
 | 2026-11-15 | $0.0801 | -14% | $1.71 (13 Nov) | Market-wide sell-off (BTC -14%, Fear and Greed 10), CC lowest since Dec 2025; Nomura approved as Super Validator (CIP-0130); DA and Progmat tokenized JGB MOU | Published automatically |
 | 2026-11-08 | $0.0927 | -5% | $2.06 (6 Nov) | SEC staff no-action letter on CC (3 Nov), DTCC live on Canton, first tokenized CNTN trades on TSV (4 Nov) | Live |
 | 2026-11-01 | $0.0962 | -5% | $1.98 (30 Oct) | CIP-0129 universal burn approved, tokenized CNTN announced | Live (first report) |

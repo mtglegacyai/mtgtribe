@@ -39,6 +39,22 @@
       ? '<span class="dev phone"><span class="btns" aria-hidden="true"></span><span class="scr" data-scr></span><span class="island" aria-hidden="true"></span></span>'
       : '<span class="dev laptop"><span class="scr" data-scr></span><span class="base"><i></i></span></span>';
   }
+  /* the player's own Full Screen (MTG, 16 Nov 2026): the bar keeps Exit Full Screen and Close, the whole video fills the rest.
+     Where a phone cannot put a page element in full screen (iPhone), the pop-up fills the window instead. */
+  var fsBtn = vm && $('[data-fs]', vm);
+  function realFs() { return !!(d.fullscreenElement || d.webkitFullscreenElement); }
+  function isFs() { return realFs() || (vm && vm.classList.contains('vm-max')); }
+  function paintFs() { if (!vm) return; var onFs = isFs(); vm.classList.toggle('is-fs', onFs); if (fsBtn) $('.lbl', fsBtn).textContent = onFs ? 'Exit Full Screen' : 'Full Screen'; }
+  function toggleFs() {
+    var box = $('.vm-box', vm);
+    if (isFs()) { if (realFs()) exitFs(); vm.classList.remove('vm-max'); setTimeout(paintFs, 50); return; }
+    var req = box.requestFullscreen || box.webkitRequestFullscreen;
+    if (req) {
+      try { var pr = req.call(box); if (pr && pr.catch) pr.catch(function () { vm.classList.add('vm-max'); paintFs(); }); }
+      catch (e) { vm.classList.add('vm-max'); }
+    } else vm.classList.add('vm-max');
+    paintFs();
+  }
   function exitFs() {
     try { if (d.fullscreenElement) d.exitFullscreen(); else if (d.webkitFullscreenElement) d.webkitExitFullscreen(); } catch (e) {}
   }
@@ -46,7 +62,7 @@
     if (!vm || vm.hidden) return;
     exitFs();
     if (ytPlayer) { try { ytPlayer.destroy(); } catch (e) {} ytPlayer = null; }
-    devBox.innerHTML = ''; vm.hidden = true; d.documentElement.style.overflow = '';
+    devBox.innerHTML = ''; vm.hidden = true; vm.classList.remove('vm-max'); paintFs(); d.documentElement.style.overflow = '';
     setTimeout(function () {
       w.scrollTo({ top: savedY, behavior: 'instant' });
       if (opener) { try { opener.focus({ preventScroll: true }); } catch (e) { opener.focus(); } }
@@ -56,7 +72,7 @@
     opener = btn; savedY = w.pageYOffset || d.documentElement.scrollTop || 0;
     devBox.innerHTML = frameHtml(orient); vm.hidden = false; d.documentElement.style.overflow = 'hidden';
     build($('[data-scr]', devBox));
-    var x = $('.vm-x', vm); if (x) x.focus();
+    var x = $('.vm-close', vm); if (x) x.focus();
   }
   function loadYT(cb) {
     if (w.YT && w.YT.Player) return cb();
@@ -68,11 +84,14 @@
   }
   if (vm) {
     $$('[data-close]', vm).forEach(function (el) { on(el, 'click', closeVm); });
-    on(d, 'keydown', function (e) { if (e.key === 'Escape' && !vm.hidden) closeVm(); });
+    on(fsBtn, 'click', toggleFs);
+    on(d, 'fullscreenchange', paintFs); on(d, 'webkitfullscreenchange', paintFs);
+    on(d, 'keydown', function (e) { if (e.key === 'Escape' && !vm.hidden) { if (vm.classList.contains('vm-max')) { vm.classList.remove('vm-max'); paintFs(); } else if (!realFs()) closeVm(); } });
     $$('.vbtn[data-src]').forEach(function (b) {
       on(b, 'click', function () {
         openVm(b, function (scr) {
           var v = d.createElement('video');
+          v.setAttribute('controlslist', 'nofullscreen'); v.disablePictureInPicture = true;
           v.src = b.getAttribute('data-src'); v.controls = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline', '');
           if (b.getAttribute('data-poster')) v.poster = b.getAttribute('data-poster');
           on(v, 'ended', closeVm); scr.appendChild(v);
@@ -89,7 +108,7 @@
             if (vm.hidden) return;
             ytPlayer = new w.YT.Player(holder, {
               host: 'https://www.youtube-nocookie.com', videoId: id, width: '100%', height: '100%',
-              playerVars: { autoplay: 1, rel: 0, playsinline: 1, modestbranding: 1 },
+              playerVars: { autoplay: 1, rel: 0, playsinline: 1, modestbranding: 1, fs: 0 },
               events: { onStateChange: function (e) { if (e.data === 0) closeVm(); } }
             });
           });

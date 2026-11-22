@@ -79,6 +79,8 @@ SHORT = {'t1': 'Back office tour', 't2': 'Deposit', 't3': 'First campaign and ac
 
 # ============================================================== small helpers
 ICONS = json.load(open(os.path.join(SRC, 'icons.json'), encoding='utf-8'))
+_LINE = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+ICONS['i-expand'] = {'attrs': _LINE, 'body': '<path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/>'}
 USED_ICONS = set()
 HASH = {}
 
@@ -147,7 +149,7 @@ def table(head, rows, caption, cls=''):
 def frame(v, size='', label=True):
     """A device-framed video cover: laptop for 16:9, slim phone for 9:16. Placeholder until v has a src."""
     code, kind, title, line, orient, status, learn, src, poster = v
-    dev = 'phone' if orient == 'v' else 'laptop'
+    dev = 'laptop'
     playable = bool(src)
     scr = (f'<img src="{esc(poster)}" alt="" loading="lazy">' if poster else
            f'<span class="ph"><img class="ph-logo" src="{asset("logo-disc-256.webp")}" alt="" width="96" height="96" loading="lazy">'
@@ -155,10 +157,7 @@ def frame(v, size='', label=True):
     badge = '' if playable else f'<span class="soon">{ic("timer")}{STATUS[status]}</span>'
     play = f'<span class="play">{ic("play")}</span>'
     inner = f'<span class="scr">{scr}{play}{badge}</span>'
-    if dev == 'laptop':
-        body = f'<span class="dev laptop {size}">{inner}<span class="base"><i></i></span></span>'
-    else:
-        body = f'<span class="dev phone {size}"><span class="btns" aria-hidden="true"></span>{inner}<span class="island" aria-hidden="true"></span></span>'
+    body = f'<span class="dev laptop {size}">{inner}<span class="base"><i></i></span></span>'
     if playable:
         return (f'<button type="button" class="vbtn" data-src="{esc(src)}" data-poster="{esc(poster)}" data-orient="{orient}" '
                 f'aria-label="Play: {esc(title)}">{body}</button>')
@@ -294,8 +293,8 @@ def modal():
     return f'''<div class="vm" id="vm" role="dialog" aria-modal="true" aria-label="Video player" hidden>
  <div class="vm-bg" data-close></div>
  <div class="vm-box">
-  <button type="button" class="vm-x" data-close aria-label="Close the video">{ic("x")}</button>
   <div class="vm-dev" data-dev></div>
+  <div class="vm-bar"><button type="button" class="vm-b" data-fs>{ic("expand")}<span class="lbl">Full Screen</span></button><button type="button" class="vm-b vm-close" data-close>{ic("x")}<span>Close</span></button></div>
  </div>
 </div>
 '''
@@ -306,7 +305,8 @@ def sticky():
 
 
 def tail(scripts=True):
-    js = f'<script src="{asset("cbp.js")}" defer></script>\n<script src="/assets/video-return.js?v=1" defer></script>\n' if scripts else ''
+    js = (f'<script src="{asset("cbp.js")}" defer></script>\n<script src="/assets/video-return.js?v=1" defer></script>\n'
+          '<script src="/assets/zoom-cta.js?v=5" defer></script>\n<script src="/assets/wa-message.js?v=3" defer></script>\n') if scripts else ''
     return f'{modal()}{sprite()}\n{js}</body>\n</html>\n'
 
 
@@ -529,8 +529,8 @@ def p_dashboard():
     def card(v, i=None):
         learn = ''.join(f'<li>{ic("check")}{esc(x)}</li>' for x in v[6])
         ul = f'<ul class="learn">{learn}</ul>' if learn else ''
-        fmt = ('Vertical, recorded on a phone' if v[4] == 'v' else 'Widescreen, recorded on a computer')
-        return (f'<article class="dcard{" vert" if v[4] == "v" else ""}" id="{v[0]}" aria-labelledby="{v[0]}-h">'
+        fmt = ('Recorded on a phone: plays upright in a phone frame' if v[4] == 'v' else 'Widescreen, recorded on a computer')
+        return (f'<article class="dcard" id="{v[0]}" aria-labelledby="{v[0]}-h">'
                 f'<div class="dcard-vid">{frame(v)}</div><div class="dcard-copy"><p class="tno">{v[1]} <span class="st st-{v[5]}">{ic("timer")}{STATUS[v[5]]}</span></p>'
                 f'<h3 id="{v[0]}-h">{esc(v[2])}</h3><p>{esc(v[3])}</p>{ul}<p class="fmt">{ic("phone" if v[4] == "v" else "laptop")}{fmt}</p></div></article>')
     out += '<section class="dsec" aria-labelledby="tut-h"><h2 id="tut-h" class="dh2">' + ic('film') + 'Tutorials</h2><p class="dlead">Watch them in this order. Videos appear here as soon as each one is ready.</p>'

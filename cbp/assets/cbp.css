@@ -573,10 +573,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
   .has-qbar{--foot:calc(66px + env(safe-area-inset-bottom,0px))}
   .qbar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:end;
     padding:4px max(4px,env(safe-area-inset-right,0px)) calc(4px + env(safe-area-inset-bottom,0px)) max(4px,env(safe-area-inset-left,0px));
-    background:rgba(8,0,21,.95);border-top:1px solid rgba(0,229,255,.25);box-shadow:0 -14px 30px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);view-transition-name:cbp-qbar}
+    background:rgba(8,0,21,.95);border-top:1px solid rgba(0,229,255,.25);box-shadow:0 -14px 30px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);view-transition-name:cbp-qbar;
+    contain:inline-size}      /* the bar takes the screen's width, whatever its labels ask for (large text on a 384 px phone) */
   .qb{position:relative;display:grid;justify-items:center;align-content:end;gap:3px;min-width:0;min-height:56px;padding:6px 2px 4px;border:0;border-radius:12px;background:none;
     color:var(--muted);font:600 .7rem/1.15 var(--font);text-align:center;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
-  .qb span{display:block;max-width:100%;overflow-wrap:break-word}
+  .qb span{display:block;max-width:100%;overflow-wrap:anywhere}
   .qb .ic{width:22px;height:22px}
   .qb[aria-current]{color:var(--cyan)}
   .qb[aria-current]:before{content:"";position:absolute;top:0;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
@@ -750,3 +751,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
 @media (min-width:1300px){.dmain .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .checks li>span,.vr-t b,.vr-t small,.dblock h2,.dblock h3,.dblock p,.eb h2,.eb p,.fcard h3,.pcard h3,.ccard b{min-width:0;overflow-wrap:break-word}
 .own-copy .checks li>span{overflow-wrap:anywhere}
+/* the glow rings of the top bar's buttons never push the page wider on a small phone with large text (MTG's 384 px phone) */
+.md-top{overflow-x:clip}
+@supports not (overflow:clip){.md-top{contain:paint}}
+.top{overflow-x:clip}

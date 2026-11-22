@@ -95,11 +95,11 @@
       var h = d.createElement('div'); h.className = 'pl-hold'; h.style.height = pl.offsetHeight + 'px';
       pl.parentNode.insertBefore(h, pl); pl._hold = h;
       if (pl.id !== 'pl-pop') d.body.appendChild(pl);
-      html.classList.add('pl-lock');
+      pl.classList.add('cover-win'); html.classList.add('pl-lock');
       if (!maxHist) { try { history.pushState({ cbpMax: 1 }, ''); maxHist = true; } catch (e) {} }
     } else if (!yes && pl._hold) {
       if (pl.id !== 'pl-pop') pl._hold.parentNode.replaceChild(pl, pl._hold); else pl._hold.parentNode.removeChild(pl._hold);
-      pl._hold = null; html.classList.remove('pl-lock');
+      pl._hold = null; pl.classList.remove('cover-win'); html.classList.remove('pl-lock');
       if (maxHist && !fromPop) { maxHist = false; ownBack(); }
     }
     setMax(pl, yes);

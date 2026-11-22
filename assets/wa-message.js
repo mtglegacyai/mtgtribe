@@ -12,13 +12,13 @@
      Thank you 😊
 
    A link can set its own words: data-wa-text="..." is used exactly as written (the JetUP Zoom buttons), and
-   data-wa-need="..." replaces only the need line. data-wa-keep leaves a link as it is. The BW order page (/bwcopy/)
-   is skipped: its form writes the order into the message itself.
+   data-wa-need="..." replaces only the need line. data-wa-keep leaves a link as it is. The BW and ClickBaitPays order pages
+   (/bwcopy/, /cbpcopy/) are skipped: their forms write the order into the message itself.
    One line on any page:  <script src="/assets/wa-message.js" defer></script> */
 (function () {
   if (window.__mtgWaDone) return; window.__mtgWaDone = true;
   var P = location.pathname, NUM = 'https://wa.me/27721714626';
-  if (/^\/bwcopy(\/|$)/i.test(P)) return;
+  if (/^\/(bwcopy|cbpcopy)(\/|$)/i.test(P)) return;
   var ZOOM = 'Hi MTG,\n\nPlease send me the Zoom link for your next JetUp session.\n\nThank you 😊';
   // income stream and the default need, by the start of the address
   var S = [
@@ -28,6 +28,7 @@
     [/^\/jetup(\/|$)/i, 'JetUP and TAG Markets guide', 'I have a question about JetUP and TAG Markets. Can you please help me?'],
     [/^\/altruva(\/|$)/i, 'ALTRUVA guide', 'I have a question about ALTRUVA. Can you please help me?'],
     [/^\/bw(\/|$)/i, 'Bitcoin Wealth guide', 'I have a question about Bitcoin Wealth. Can you please help me?'],
+    [/^\/cbp(\/|$)/i, 'ClickBaitPays guide', 'I have a question about ClickBaitPays. Can you please help me?'],
     [/^\/canton-weekly(\/|$)/i, 'Canton Coin weekly report', 'I have a question about Canton Coin (CC) and CNTN. Can you please help me?'],
     [/^\/cc(\/|$)/i, 'How to buy Canton Coin guide', 'I need help buying Canton Coin (CC). Can you please help me?'],
     [/^\/cntn(\/|$)/i, 'How to buy CNTN stock guide', 'I need help buying CNTN stock. Can you please help me?'],

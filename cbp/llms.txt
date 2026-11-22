@@ -1,0 +1,28 @@
+# ClickBaitPays Guide by MTG (mtgtribe.com/cbp)
+
+> An independent, plain-English guide to ClickBaitPays (clickbaitpays.me), a paid-to-click advertising platform: members buy ad campaigns to advertise their own link and are paid in USDT for viewing other members' ads. By MTG (MusaTheGiant), "Your Digital Architect", an active member. Education only, not official ClickBaitPays material, not financial advice. Figures checked 21 November 2026.
+
+## Pages
+
+- [ClickBaitPays explained](https://mtgtribe.com/cbp/): how it works in 5 steps, the 7 levels, Login Ads vs Ad Campaigns, how to join free, videos and FAQ.
+- [Tutorials dashboard](https://mtgtribe.com/cbp/dashboard/): step-by-step tutorials in order (back office tour, deposit, first campaign and activation, another campaign on an active level, withdrawal, Login Ads, Pay It Forward) and explainers.
+- [ClickBaitPays Calculator](https://mtgtribe.com/cbp/calculator/): pay today, clicks a day, the platform's campaign total and the approximate date it reaches the Available Balance.
+- [Disclaimer and privacy](https://mtgtribe.com/cbp/disclaimer/)
+- [Get your own copy of this guide](https://mtgtribe.com/cbpcopy/): R1,000 or $50 once-off.
+
+## Key facts
+
+- Joining is free, through a member's referral link. Register from home Wi-Fi (no VPN or mobile data during sign-up). One account per person, up to 3 per household under the same sponsor.
+- Each campaign runs 12 click days. A click day counts when all of that level's daily clicks are done; clicks reset at midnight Panama time (7:00 AM in South Africa).
+- Each in-dashboard ad has a 15-second countdown, then Confirm & Earn. Members receive 90% of the advertiser's cost per click.
+- To earn at a level, pay its one-time activation fee once; it never expires. These fees also support the platform's sustainability.
+- After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum 10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
+- Login Ads: 20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
+- Referrals are optional; sponsors receive 10% of the campaigns their referrals buy.
+- Level 1: campaign 13 USDT, one-time activation 1 USDT, 0.48 USDT per click, 3 clicks a day, campaign total 17.17 USDT (platform figures)
+- Level 2: campaign 77 USDT, one-time activation 7 USDT, 2.83 USDT per click, 3 clicks a day, campaign total 101.74 USDT (platform figures)
+- Level 3: campaign 150 USDT, one-time activation 15 USDT, 5.40 USDT per click, 3 clicks a day, campaign total 194.40 USDT (platform figures)
+- Level 4: campaign 300 USDT, one-time activation 30 USDT, 6.48 USDT per click, 5 clicks a day, campaign total 388.80 USDT (platform figures)
+- Level 5: campaign 600 USDT, one-time activation 60 USDT, 10.80 USDT per click, 6 clicks a day, campaign total 777.60 USDT (platform figures)
+- Level 6: campaign 1,200 USDT, one-time activation 120 USDT, 12.96 USDT per click, 10 clicks a day, campaign total 1,555.20 USDT (platform figures)
+- Level 7: campaign 2,400 USDT, one-time activation 240 USDT, 13.50 USDT per click, 20 clicks a day, campaign total 3,240.00 USDT (platform figures)

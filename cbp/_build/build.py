@@ -822,7 +822,7 @@ def p_landing():
  <div class="hero-copy">
   <p class="eye">{ic('cursor')}Independent guide by MTG 👑</p>
   <h1 id="hero-h"><span class="h1-k">ClickBaitPays</span><span class="h1-big">Got a link? <em>Get it seen.</em></span></h1>
-  <p class="lead"><b>BellverCards. Bitcoin Wealth. JetUP. A stokvel, an MLM, an affiliate offer, a digital product.</b> If it has a link, ClickBaitPays puts it in front of real people who open it, every single day. And you get paid in USDT to view their ads while it happens.</p>
+  <p class="lead"><b>BellverCards. Bitcoin Wealth. JetUP. XFUSION. A stokvel, an MLM, an affiliate offer, a digital product.</b> If it has a link, ClickBaitPays puts it in front of real people who open it, every single day. And you get paid in USDT to view their ads while it happens.</p>
   <div class="cta-row">{join_btn()}{plan_btn(here, 'Compensation Plan')}</div>
   {fair()}
   <ul class="facts" aria-label="Key facts"><li>{ic('mega')}<b>Any link</b> gets seen</li><li>{ic('coins')}Paid in <b>USDT</b></li><li>{ic('gift')}<b>Free</b> to join</li></ul>

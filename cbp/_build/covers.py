@@ -152,7 +152,7 @@ COVERS = {
     'presentation': ('PRESENTATION · 14 SEPT 2026', 'The full', 'Presentation', chip('mega', 'Ads') + chip('layers', 'Campaigns', 'p') + chip('wallet', 'Withdrawals', 'g'), ''),
     'tour': ('SITE TOUR · START HERE', 'How to use', 'This guide',
              '<div class="br"><div class="t"><i></i><i></i><i></i></div><div class="b"><div class="s"><i></i><i></i><i></i><i></i></div><div class="m"><i></i><i></i><i></i><i></i></div></div></div>', 'sm'),
-    'e1': ('EXPLAINER · YOUR TRAFFIC SOURCE', 'Grow what you', 'Promote', chip('link', 'Your link') + '<span class="arrow">➜</span>' + chip('eye', 'Real eyes', 'p') + '<span class="arrow">➜</span>' + chip('trend', 'Growth', 'g'), ''),
+    'e1': ('EXPLAINER · PROMOTE YOUR LINK', 'Got a link?', 'Get it seen', chip('link', 'Any link') + '<span class="arrow">➜</span>' + chip('eye', 'Real eyes', 'p') + '<span class="arrow">➜</span>' + chip('coins', 'Paid too', 'g'), ''),
     'e2': ('EXPLAINER · GET STARTED', 'How to', 'Join free', chip('link', '1 Tap Join') + chip('user', '2 Sign up', 'p') + chip('play', '3 Start', 'g'), ''),
     'e3': ('EXPLAINER · THE LEVELS', '7 levels', 'One activation', '<div class="stack">' + bars(['13', '77', '150', '300', '600', '1.2K', '2.4K']) + '</div>', 'sm'),
     'e4': ('EXPLAINER · THE TIMELINE', '12 click days', '+ 7 day hold', '<div class="stack">' + dots() + '<div class="keys"><span>Click</span><span>Hold</span><span>Yours</span></div></div>', 'sm'),

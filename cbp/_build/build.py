@@ -71,11 +71,11 @@ MEDIA_VER = json.load(open(os.path.join(HERE_DIR, 'media.json')))   # each file'
 V = {
     'welcome': dict(label='Video 1', title='Welcome to ClickBaitPays', short='Welcome', src='welcome', secs=351,   # was YouTube gWkLEgBFVEY
                     line='What ClickBaitPays is, who it is for, and how a click turns into USDT.'),
-    'strategy': dict(label='Video 2', title='Compensation plan and income strategy', short='Compensation plan', yt='MiUja2RnWXY', secs=457,
+    'strategy': dict(label='Video 2', title='Compensation plan and income strategy', short='Compensation plan', src='strategy', secs=457,   # was YouTube MiUja2RnWXY
                      line='The plan with real-world examples, and the 10% referral commission.'),
-    'backoffice': dict(label='Video 3', title='Back office walkthrough', short='Back office', yt='EDnb9e03B0E', secs=686,
+    'backoffice': dict(label='Video 3', title='Back office walkthrough', short='Back office', src='backoffice', secs=686,   # was YouTube EDnb9e03B0E (1114 x 720, one file)
                        line='Every part of the member back office, so you know your way around before you start.'),
-    'presentation': dict(label='Presentation', title='The full presentation (14 Sept 2026)', short='Presentation', yt='25wXab2hAB8', secs=947,
+    'presentation': dict(label='Presentation', title='The full presentation (14 Sept 2026)', short='Presentation', src='presentation', secs=947,   # was YouTube 25wXab2hAB8
                          line='How it works from start to finish: ads, campaigns and withdrawals.'),
     'qa': dict(label='Live Q&A', title='Members\' questions answered (29 Aug 2026)', short='Live Q&A', yt='8rftor87kKQ', secs=1361,
                line='Ad viewing, affiliates, Pay It Forward, withdrawals and strategy, answered live.'),

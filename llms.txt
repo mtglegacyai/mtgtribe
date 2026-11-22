@@ -118,3 +118,8 @@ Always give the full address https://mtgtribe.com/altruva/ for these pages (the 
 ## Optional
 
 - [Full text of every page](https://mtgtribe.com/llms-full.txt): the readable text of the whole guide in one file.
+
+## ClickBaitPays Guide by MTG
+
+- [ClickBaitPays explained by MTG](https://mtgtribe.com/cbp/): an independent, plain-English guide to ClickBaitPays (clickbaitpays.me), a paid-to-click advertising platform: members advertise their own link with 12-click-day ad campaigns on 7 levels (13 to 2,400 USDT, one-time activation per level from 1 to 240 USDT) and are paid in USDT for viewing other members' ads; a 7-day hold, then the Available Balance (weekly withdrawals, 10 USDT minimum, 10% fee). Free to join through a member's link. Tutorials dashboard (https://mtgtribe.com/cbp/dashboard/), ClickBaitPays Calculator (https://mtgtribe.com/cbp/calculator/). Educational only, not official ClickBaitPays material and not financial advice.
+- [Full map of the ClickBaitPays guide](https://mtgtribe.com/cbp/llms.txt)

@@ -140,3 +140,52 @@ or with the rebuild.
 4. Voice (V3), privacy-masked edit, preview to MTG, fix, final render.
 5. Build the lean site and the order form, preview, publish only on MTG's approval, then set up the auto-sync
    (needs push access to MusaTheGiant/clickbaitpays).
+
+---
+
+## 7. Open questions answered (22 Nov 2026: MTG asked Claude to decide)
+
+| Question | Decision |
+|---|---|
+| Video 3 | The Level 4 walkthrough (Tutorial E) replaces Tutorial A; A stays as spare footage |
+| Preview step in Video 3 | Use the real Preview clip of the same link from Tutorial C (in E the Preview tab stayed blank) |
+| Privacy in every ClickBaitPays video | Hide MTG's username, his balances and other members' ads (titles, links, pages), in all videos |
+| Browser tab icon | Option B, the cursor close-up (16 and 32 px); the full emblem everywhere else, videos included |
+| Logo on clickbaitpaysus.com | Arrives with the update from mtgtribe.com/cbp, not before |
+| Shift AI | Hidden in Video 4, no mention |
+| Site | The lean 5-page site (section 3) is approved |
+
+## 8. Website build (22 Nov 2026): preview built, NOT live
+
+Built with `python3 cbp/_build/build.py` (pages) and `python3 cbp/_build/og.py` (social previews, needs Playwright).
+Every fact, price, link and video lives once in the CONFIG block of `cbp/_build/build.py`.
+
+| Page | Address | Notes |
+|---|---|---|
+| Landing | /cbp/ | Hero with site tour placeholder, what it is (E1), how it works in 5 steps + 12+7 timeline (E3, E4), the 7 levels table, Login Ads vs Ad Campaigns, how to join (E2), tutorials teaser, 5 YouTube videos, 12-question FAQ, final call to action |
+| Dashboard | /cbp/dashboard/ | MTG Dashboard Standard (shared mtg-dash.css/js) in ClickBaitPays colours; site tour, daily routine, tutorials 1 to 7, explainers, YouTube |
+| Calculator | /cbp/calculator/ | Pay today, clicks a day, earned per click day, platform campaign total, release date (first click day + 18 days), net after the 10% withdrawal fee |
+| Disclaimer and privacy | /cbp/disclaimer/ | Independent guide, referral disclosure (10%), figures, risk, privacy |
+| Order a copy | /cbpcopy/ | R1,000 or $50, pay after it is built, 5 free edits, address choice, Rand / USDT BEP20 / USDT TRC20, sends to WhatsApp, stores nothing |
+
+Videos: every slot is a placeholder in a laptop frame (16:9) or slim gold phone frame (9:16, Tutorial 7). To make one
+playable, set its `src` and `poster` in CONFIG and rebuild. The pop-up player closes itself at the end and returns the
+visitor to where they pressed play (YouTube through the IFrame API on youtube-nocookie.com; MP4 through /assets/video-return.js).
+
+SEO and conversion: unique title (51 to 60 characters) and description (155 to 159) per page, canonical, Open Graph and
+X cards with a designed 1200x630 preview per page, JSON-LD (Person, WebSite, WebPage, FAQPage, HowTo, ItemList,
+WebApplication, Product with ZAR and USD offers, breadcrumbs), /cbp/sitemap.xml (added to /sitemap.xml and robots.txt),
+/cbp/llms.txt (and a section in /llms.txt), web app manifest, self-hosted YouTube thumbnails, Join buttons with
+rel="sponsored", sticky Join bar on phones, fair-play line next to every Join button, calm info notes, one risk line.
+
+Checks run on 22 Nov 2026 (local server): tools/qa/hscroll.js at 17 widths (320 to 1024) x 2 text sizes, 0 problems in
+170 page views; tools/og/check_og.py, all 5 pages OK; 43 functional browser tests pass (menus, sticky bar, video pop-up
+open, close, scroll return and focus, calculator maths and edge cases, order form validation and WhatsApp message,
+dashboard collapse and drawer, JSON-LD parses, internal links, anchors and images); no browser console errors; no em or
+en dashes (the build refuses them). Not run yet: tools/qa/video-return-test.js (needs the first real video), Lighthouse.
+
+Before going live: MTG approves the preview; re-check level figures on the live site; decide the canonical between
+mtgtribe.com/cbp and clickbaitpaysus.com before the sync (recommendation: mtgtribe.com/cbp is canonical, the copy on
+clickbaitpaysus.com points its canonical to it); link /cbp/ from the mtgtribe.com home and tribe dashboard (today the
+ClickBaitPays card points to clickbaitpaysus.com); then the auto-sync to clickbaitpaysus.com (needs push access to
+MusaTheGiant/clickbaitpays) with redirects from its 30 old pages.

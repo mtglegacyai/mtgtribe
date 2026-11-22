@@ -1,22 +1,29 @@
-"""ClickBaitPays Guide by MTG (mtgtribe.com/cbp): lean static site builder.
+"""ClickBaitPays Guide by MTG (mtgtribe.com/cbp): static site builder.
 
-python3 cbp/_build/build.py            builds /cbp/ and /cbpcopy/ into the repo
-python3 cbp/_build/og.py               renders the social preview images (needs Playwright)
+python3 cbp/_build/build.py                 builds /cbp/ and /cbpcopy/ into the repo
+python3 cbp/_build/build.py --preview DIR   writes a private review copy with relative links (tools/qa/README.md)
+NODE_PATH=$(npm root -g) python3 cbp/_build/covers.py   draws the wide video covers (assets/v/*.webp)
+NODE_PATH=$(npm root -g) python3 cbp/_build/og.py       draws every page's social preview (assets/og/*.jpg)
 
-One source of truth for every fact, price and link (CONFIG below). Pages: landing, dashboard (tutorials and explainers),
-calculator, disclaimer and privacy, and the order form for personal copies. Videos are placeholders until MTG approves
-each one: set `src` (and `poster`) on a video below and it becomes playable everywhere.
+Layout (MTG, 22 Nov 2026: "clean pages, to the point pages. Each page must target one section, one idea at a time ... the
+dashboard navigation menu is there for a reason ... navigation arrows back and forward, up and down"):
+- the main page is short: three videos (Welcome, Income Strategy, Back Office Walkthrough), then the way into the dashboard;
+- the dashboard holds everything else, one short page per topic, each with its video, one call to action, the Previous and
+  Next arrows (top and bottom of the page) and the Up and Down buttons;
+- every video is a wide cover in the slim laptop frame (CLAUDE.md, 17 Nov 2026); 16:9 videos play in place, 9:16 videos
+  open the pop-up's phone; the player has its own Full Screen and Close bar and closes itself at the end.
+One source of truth for every fact, price and link: CONFIG below.
 """
-import hashlib, html, json, os, re, shutil
+import hashlib, html, json, os, posixpath, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # repo root
-SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src')
+HERE_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE_DIR, 'src')
 BRAND = os.path.join(ROOT, 'tools', 'cbp', 'brand')
 
 # ============================================================== CONFIG (facts checked 21 and 22 November 2026)
 SITE = 'https://mtgtribe.com'
 BASE = '/cbp/'
-ORDER = '/cbpcopy/'
 NAME = 'ClickBaitPays Guide by MTG'
 TODAY = '2026-11-22'
 CHECKED = '21 November 2026'          # level figures read in the back office (Level 4 recording)
@@ -42,47 +49,150 @@ LEVELS = [(1, 13, 1, 0.48, 3, 17.17), (2, 77, 7, 2.83, 3, 101.74), (3, 150, 15, 
           (4, 300, 30, 6.48, 5, 388.80), (5, 600, 60, 10.80, 6, 777.60), (6, 1200, 120, 12.96, 10, 1555.20),
           (7, 2400, 240, 13.50, 20, 3240.00)]
 
-# videos: code, kind, title, one line, orientation ('h' 16:9 laptop, 'v' 9:16 phone), status, learn points, src, poster
-TOUR = ('tour', 'Site tour', 'How to use this guide, click by click', 'A two-minute walk through this guide: where everything is and the order to watch the tutorials.', 'h', 'soon', [], '', '')
-TUTORIALS = [
-    ('t1', 'Tutorial 1', 'Your ClickBaitPays back office: a quick tour', 'Every menu item, so you always know where things are.', 'h', 'record',
-     ['Your dashboard stats explained', 'Buy Ad Campaigns, Activate Earnings and Buy Login Ads', 'Click Ads, Saved Ads and Click History', 'Deposit, Withdraw, Purchase History and Pay It Forward'], '', ''),
-    ('t2', 'Tutorial 2', 'How to deposit into ClickBaitPays', 'Fund your account through the Deposit page, safely.', 'h', 'record',
-     ['Enter the USDT amount on the Deposit page', 'Pay through NOWPayments', 'Copy the new address every time, never reuse one', 'Wait for the confirmation'], '', ''),
-    ('t3', 'Tutorial 3', 'Your first campaign on a new level: buy it, activate earning, click your daily ads', 'MTG buys a Level 4 campaign, activates Level 4 once and clicks his 5 ads.', 'h', 'soon',
-     ['Log in and the 30-second login ad', 'Buy a Level 4 campaign: title, link and Preview', 'Activate Level 4 earning once (30 USDT)', 'Click your 5 daily ads and save the ones you like'], '', ''),
-    ('t4', 'Tutorial 4', 'Buy another campaign on a level you already activated', 'Why the second campaign at a level needs no activation fee.', 'h', 'soon',
-     ['No activation fee the second time', 'Two campaigns, two tabs on Click Ads', 'Your daily routine for 12 days', 'The 7-day hold, then your Available Balance'], '', ''),
-    ('t5', 'Tutorial 5', 'How to request a withdrawal', 'Move your Available Balance to your own wallet.', 'h', 'record',
-     ['Withdrawals are requested once a week', 'The 10 USDT minimum and the 10% fee', 'Your wallet address and Security PIN', 'What happens after you request'], '', ''),
-    ('t6', 'Tutorial 6', 'How to create a Login Ad', 'Every member sees your link for 30 seconds when they log in, for 30 days.', 'h', 'soon',
-     ['20 USDT for 30 days of guaranteed views', 'Title (30 characters) and link, then Preview', 'The two tick boxes before you buy', 'Login Ad or Ad Campaign: the difference'], '', ''),
-    ('t7', 'Tutorial 7', 'How to Pay It Forward: send funds to another member', 'Help a team member get started from your Available Balance.', 'v', 'soon',
-     ['Open Pay It Forward from the menu', 'Check the username twice', 'Add an optional message', 'Your Security PIN, then confirm (it cannot be undone)'], '', ''),
-]
-EXPLAINERS = [
-    ('e1', 'Explainer', 'What is ClickBaitPays?', 'Advertisers get traffic, viewers get paid: the whole idea in one picture.', 'h', 'soon', [], '', ''),
-    ('e2', 'Explainer', 'How to join ClickBaitPays', 'Free sign-up through a sponsor link, the house rules, and your first steps.', 'h', 'soon', [], '', ''),
-    ('e3', 'Explainer', 'How it works: levels, activation and earnings', 'Seven levels, one activation per level, and what each click pays.', 'h', 'soon', [], '', ''),
-    ('e4', 'Explainer', 'The 12 + 7 timeline', 'Click for 12 days, a 7-day hold, then your Available Balance.', 'h', 'soon', [], '', ''),
-]
-YOUTUBE = [   # ClickBaitPays Us channel (titles from YouTube, 14 Nov 2026)
-    ('gWkLEgBFVEY', 'ClickBaitPays overview', 'The platform in a few minutes: who it is for and how it works.'),
-    ('EDnb9e03B0E', 'ClickBaitPays back office walkthrough', 'A tour of the member back office.'),
-    ('MiUja2RnWXY', 'ClickBaitPays income and commission plan', 'How campaigns, clicks and referral commission work.'),
-    ('8rftor87kKQ', 'ClickBaitPays Q&A (29 August 2026)', 'Members\' questions answered.'),
-    ('25wXab2hAB8', 'ClickBaitPays presentation (14 September 2026)', 'The full presentation.'),
-]
+# Videos. yt: a YouTube video on the ClickBaitPays Us channel (plays in place, from youtube-nocookie.com).
+# src: a video file (when MTG's own tutorials are ready). Neither: a placeholder ("Coming soon" or "Being recorded").
+# o: 'h' 16:9 (plays in the laptop) or 'v' 9:16 (opens the pop-up's phone). Cover: assets/v/<code>.webp (covers.py).
+V = {
+    'welcome': dict(label='Video 1', title='Welcome to ClickBaitPays', short='Welcome', yt='gWkLEgBFVEY', secs=351,
+                    line='What ClickBaitPays is, who it is for, and how a click turns into USDT.'),
+    'strategy': dict(label='Video 2', title='Income strategy and commission plan', short='Income strategy', yt='MiUja2RnWXY', secs=457,
+                     line='The plan with real-world examples, and the 10% referral commission.'),
+    'backoffice': dict(label='Video 3', title='Back office walkthrough', short='Back office', yt='EDnb9e03B0E', secs=686,
+                       line='Every part of the member back office, so you know your way around before you start.'),
+    'presentation': dict(label='Presentation', title='The full presentation (14 Sept 2026)', short='Presentation', yt='25wXab2hAB8', secs=947,
+                         line='How it works from start to finish: ads, campaigns and withdrawals.'),
+    'qa': dict(label='Live Q&A', title='Members\' questions answered (29 Aug 2026)', short='Live Q&A', yt='8rftor87kKQ', secs=1361,
+               line='Ad viewing, affiliates, Pay It Forward, withdrawals and strategy, answered live.'),
+    'tour': dict(label='Site tour', title='How to use this guide', short='How to use this guide', status='soon',
+                 line='Where everything is, and the order to watch the tutorials.'),
+    'e2': dict(label='Explainer', title='How to join ClickBaitPays', short='How to join', status='soon',
+               line='Free sign-up through a member\'s link, the house rules and your first steps.'),
+    'e3': dict(label='Explainer', title='Levels, activation and earnings', short='The levels', status='soon',
+               line='Seven levels, one activation per level, and what each click pays.'),
+    'e4': dict(label='Explainer', title='The 12 + 7 timeline', short='12 + 7 timeline', status='soon',
+               line='Click for 12 days, a 7-day hold, then your Available Balance.'),
+    't1': dict(label='Tutorial 1', title='Your back office: a quick tour', short='Back office tour', status='record',
+               line='Every menu item, so you always know where things are.'),
+    't2': dict(label='Tutorial 2', title='How to deposit USDT', short='Deposit', status='record',
+               line='Fund your account through the Deposit page, safely.'),
+    't3': dict(label='Tutorial 3', title='Your first campaign on a new level', short='First campaign', status='soon',
+               line='Buy a Level 4 campaign, activate Level 4 once and click the 5 daily ads.'),
+    't4': dict(label='Tutorial 4', title='Another campaign on an active level', short='Another campaign', status='soon',
+               line='Why the second campaign at a level needs no activation fee.'),
+    't5': dict(label='Tutorial 5', title='How to request a withdrawal', short='Withdraw', status='record',
+               line='Move your Available Balance to your own wallet.'),
+    't6': dict(label='Tutorial 6', title='How to create a Login Ad', short='Login Ad', status='soon',
+               line='Every member sees your link for 30 seconds when they log in, for 30 days.'),
+    't7': dict(label='Tutorial 7', title='How to Pay It Forward', short='Pay It Forward', status='soon', o='v',
+               line='Help a team member get started from your Available Balance.'),
+}
+for _k, _v in V.items():
+    _v.setdefault('o', 'h')
+    _v['code'] = _k
 STATUS = {'soon': 'Coming soon', 'record': 'Being recorded'}
-SHORT = {'t1': 'Back office tour', 't2': 'Deposit', 't3': 'First campaign and activation', 't4': 'Another campaign, same level',
-         't5': 'Withdraw', 't6': 'Login Ads', 't7': 'Pay It Forward'}
+
+
+def mmss(s):
+    return f'{s // 60}:{s % 60:02d}'
+
+
+def playable(code):
+    return bool(V[code].get('yt') or V[code].get('src'))
+
+
+# The menu, in reading order: (key, page path under /cbp/ ('cbpcopy/' is the order page at /cbpcopy/), menu label, menu line, icon, group).
+# The Previous and Next arrows follow this order.
+NAV = [
+    ('home', 'dashboard/', 'Welcome', 'Start here, in order', 'compass', 'Start Here'),
+    ('what', 'dashboard/what-is-clickbaitpays/', 'What Is ClickBaitPays?', 'Advertise, view, get paid', 'cursor', 'Start Here'),
+    ('how', 'dashboard/how-it-works/', 'How It Works', 'Five steps, start to payout', 'map', 'Start Here'),
+    ('join', 'dashboard/join/', 'How To Join', 'Free, through a member\'s link', 'userplus', 'Start Here'),
+    ('levels', 'dashboard/levels/', 'The 7 Levels', 'Prices, clicks and activation', 'layers', 'Levels And Earnings'),
+    ('timeline', 'dashboard/timeline/', 'The 12 + 7 Timeline', 'When your earnings are yours', 'cal', 'Levels And Earnings'),
+    ('plan', 'dashboard/income-strategy/', 'Income Strategy', 'Grow it, and the 10% commission', 'trend', 'Levels And Earnings'),
+    ('calc', 'calculator/', 'Calculator', 'Cost, clicks and payout date', 'calc', 'Levels And Earnings'),
+    ('daily', 'dashboard/daily-routine/', 'Your Daily Routine', 'Log in, click, done', 'repeat', 'Every Day'),
+    ('tutorials', 'dashboard/tutorials/', 'All Tutorials', 'Seven, in the right order', 'film', 'Tutorials'),
+    ('t1', 'dashboard/tutorials/back-office-tour/', 'Back Office Tour', 'Tutorial 1', 'n1', 'Tutorials'),
+    ('t2', 'dashboard/tutorials/deposit/', 'Deposit USDT', 'Tutorial 2', 'n2', 'Tutorials'),
+    ('t3', 'dashboard/tutorials/first-campaign/', 'Your First Campaign', 'Tutorial 3', 'n3', 'Tutorials'),
+    ('t4', 'dashboard/tutorials/another-campaign/', 'Another Campaign', 'Tutorial 4', 'n4', 'Tutorials'),
+    ('t5', 'dashboard/tutorials/withdraw/', 'Withdraw', 'Tutorial 5', 'n5', 'Tutorials'),
+    ('t6', 'dashboard/tutorials/login-ad/', 'Create A Login Ad', 'Tutorial 6', 'n6', 'Tutorials'),
+    ('t7', 'dashboard/tutorials/pay-it-forward/', 'Pay It Forward', 'Tutorial 7', 'n7', 'Tutorials'),
+    ('videos', 'dashboard/videos/', 'Video Library', 'Every video in one place', 'youtube', 'Help'),
+    ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers, and the live Q&A', 'help', 'Help'),
+    ('copy', 'cbpcopy/', 'Your Own Copy', 'This guide with your link', 'globe', 'Help'),
+    ('disc', 'disclaimer/', 'Disclaimer', 'The small print, in plain words', 'shield', 'Help'),
+]
+NAVD = {n[0]: n for n in NAV}
+KEYS = [n[0] for n in NAV]
+
+# search titles (60 characters at most) and descriptions (about 155 characters) for every page
+SEO = {
+    'landing': ('ClickBaitPays: How It Works and How to Join, in 3 Videos',
+                'ClickBaitPays in 3 short videos: what it is, the income strategy and the back office. Then a free dashboard: the 7 levels, tutorials, calculator and FAQ.'),
+    'home': ('ClickBaitPays Dashboard: Every Topic and Tutorial, in Order',
+             'The ClickBaitPays dashboard by MTG: one short page per topic, from what it is and how to join to the 7 levels, the 12 + 7 timeline and every tutorial.'),
+    'what': ('What Is ClickBaitPays? The Paid-to-Click Platform Explained',
+             'ClickBaitPays explained simply: members advertise their own link to each other and get paid in USDT for viewing each other\'s ads. Watch the welcome video.'),
+    'how': ('How ClickBaitPays Works: 5 Steps From Sign-Up to Payout',
+            'How ClickBaitPays works in 5 steps: join free, fund your account, buy and activate a campaign, click your daily ads, then use your Available Balance.'),
+    'join': ('How to Join ClickBaitPays Free: 3 Steps and the House Rules',
+             'Join ClickBaitPays free in 3 steps through a member\'s link. The house rules: home Wi-Fi only, one account per person, up to 3 per household, same sponsor.'),
+    'levels': ('ClickBaitPays Levels: Prices, Activation and Pay Per Click',
+               'All 7 ClickBaitPays levels in one table: the campaign price, the one-time activation fee, pay per click, clicks a day and the platform\'s own campaign total.'),
+    'timeline': ('ClickBaitPays 12 + 7 Timeline: When Your Earnings Are Yours',
+                 'Click your ClickBaitPays ads on 12 days, the earnings rest 7 days, then they reach your Available Balance. Clicks reset at 7:00 AM in South Africa.'),
+    'plan': ('ClickBaitPays Income Strategy and 10% Referral Commission',
+             'The ClickBaitPays income strategy: start at a level you are comfortable with, grow from your Available Balance, and the optional 10% referral commission.'),
+    'calc': ('ClickBaitPays Calculator: Cost, Daily Clicks and Payout Date',
+             'Pick a ClickBaitPays level and see what you pay today, your clicks a day, the platform\'s campaign total and roughly when it reaches your Available Balance.'),
+    'daily': ('ClickBaitPays Daily Routine: How to Click Your Ads Each Day',
+              'Your ClickBaitPays daily routine in 4 steps: log in, open Click Ads, view each ad for 15 seconds, Confirm and Earn. New clicks every day from 7:00 AM SAST.'),
+    'tutorials': ('ClickBaitPays Tutorials: 7 Step-by-Step Videos, in Order',
+                  'Every ClickBaitPays tutorial in order: back office tour, deposit, your first campaign, another campaign, withdrawal, Login Ads and Pay It Forward.'),
+    't1': ('ClickBaitPays Back Office Tour: Every Menu Item Explained',
+           'A quick tour of the ClickBaitPays back office: your dashboard, ad campaigns, activation, Click Ads, deposits, withdrawals and Pay It Forward, step by step.'),
+    't2': ('How to Deposit USDT Into ClickBaitPays, Step by Step',
+           'How to deposit USDT into ClickBaitPays safely: enter the amount, pay through NOWPayments, use a fresh address every time and wait for the confirmation.'),
+    't3': ('How to Buy and Activate Your First ClickBaitPays Campaign',
+           'Buy your first ClickBaitPays ad campaign on a new level, activate earning once, and click your daily ads: title, link, Preview, Confirm Purchase, step by step.'),
+    't4': ('ClickBaitPays: Buy Another Campaign on an Active Level',
+           'Buy another ClickBaitPays campaign on a level you already activated: no activation fee the second time, two tabs on Click Ads, and the 12 + 7 timeline.'),
+    't5': ('How to Withdraw From ClickBaitPays: Rules and Steps',
+           'How to request a ClickBaitPays withdrawal: once a week, a 10 USDT minimum and a 10% fee, your wallet address and your Security PIN, step by step.'),
+    't6': ('How to Create a ClickBaitPays Login Ad (20 USDT, 30 Days)',
+           'Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for 20 USDT. Title, link, Preview, step by step.'),
+    't7': ('How to Pay It Forward on ClickBaitPays: Send to a Member',
+           'Pay It Forward on ClickBaitPays: send funds from your Available Balance to another member. Check the username twice, add a message, confirm with your PIN.'),
+    'videos': ('ClickBaitPays Videos: Overview, Strategy, Tutorials and Q&A',
+               'Every ClickBaitPays video in one place: the welcome video, income strategy, back office walkthrough, the full presentation, the live Q&A and the tutorials.'),
+    'faq': ('ClickBaitPays FAQ: Straight Answers to the Top 12 Questions',
+            'ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, click resets, Login Ads and referrals. Plus a live Q&A.'),
+    'copy': ('Get Your Own ClickBaitPays Guide Website | R1,000 Once-Off',
+             'This ClickBaitPays guide with your referral link on every Join button and your contact links, at mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname.'),
+    'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
+             'The small print in plain words: an independent ClickBaitPays guide, the referral link disclosure, where the figures come from and what this site stores.'),
+}
 
 # ============================================================== small helpers
 ICONS = json.load(open(os.path.join(SRC, 'icons.json'), encoding='utf-8'))
 _LINE = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
-ICONS['i-expand'] = {'attrs': _LINE, 'body': '<path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/>'}
+ICONS.update({
+    'i-max': {'attrs': _LINE, 'body': '<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>'},
+    'i-min': {'attrs': _LINE, 'body': '<path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/>'},
+    'i-up': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>'},
+    'i-dn': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>'},
+    'i-chl': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="m15 18-6-6 6-6"/>'},
+    'i-chr': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="m9 18 6-6-6-6"/>'},
+    'i-pf': {'attrs': 'viewBox="0 0 24 24" fill="currentColor" stroke="none"', 'body': '<path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/>'},
+})
+for _n in range(1, 8):      # number badges for the tutorials in the menu
+    ICONS[f'i-n{_n}'] = {'attrs': 'viewBox="0 0 24 24"', 'body': f'<text x="12" y="17" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="900" font-size="14" fill="currentColor">{_n}</text>'}
 USED_ICONS = set()
 HASH = {}
+MODE = 'prod'          # 'prod' or 'preview'
 
 
 def esc(s):
@@ -91,7 +201,7 @@ def esc(s):
 
 def ic(name, cls='ic'):
     USED_ICONS.add(name)
-    return f'<svg class="{cls}" aria-hidden="true"><use href="#i-{name}"/></svg>'
+    return f'<svg class="{cls}" aria-hidden="true" focusable="false"><use href="#i-{name}"/></svg>'
 
 
 def sprite():
@@ -103,35 +213,72 @@ def sprite():
 
 
 def money(v):
-    s = f'{v:,.2f}'
-    return s
+    return f'{v:,.2f}'
 
 
 def plain(s):
-    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s)).strip()
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', s))).strip()
 
 
-def asset(path):
-    return f'{BASE}assets/{path}?v={HASH.get(path, "1")}'
+def prod_url(path):
+    """the live address of a page or file path under /cbp/ ('cbpcopy/...' lives at /cbpcopy/)"""
+    return '/' + path if path.startswith('cbpcopy/') else BASE + path
 
 
-def join_btn(label='Join ClickBaitPays free', cls='', size=''):
+def L(target, here):
+    """link from the page at `here` to `target` (page paths end in '/', files do not; '#frag' allowed).
+    Live: absolute addresses with a content version on files. Preview: relative links to files."""
+    frag = ''
+    if '#' in target:
+        target, frag = target.split('#', 1)
+        frag = '#' + frag
+    if target.startswith(('http', 'mailto:')):
+        return target + frag
+    is_page = target == '' or target.endswith('/')
+    if MODE == 'prod':
+        url = prod_url(target)
+        if not is_page and target.startswith('assets/') and target[7:] in HASH:
+            url += '?v=' + HASH[target[7:]]
+        return url + frag
+    tgt = (target + 'index.html') if is_page else target
+    if target == '' and frag and here == '':
+        return frag
+    return posixpath.relpath(tgt, here.rstrip('/') or '.') + frag
+
+
+def A(target, here):
+    return esc(L(target, here))
+
+
+def page_link(key, here):
+    return A(NAVD[key][1], here)
+
+
+# ============================================================== components
+def btn(label, href, kind='ghost', icon=None, cls='', ext=False, attrs=''):
+    tgt = ' target="_blank" rel="noopener"' if ext else ''
+    return f'<a class="btn btn-{kind} {cls}" href="{href}"{tgt} {attrs}>{ic(icon) if icon else ""}<span>{label}</span></a>'
+
+
+def join_btn(label='Join ClickBaitPays Free', cls='', size=''):
     return (f'<a class="btn btn-join ring {size} {cls}" href="{esc(OWNER["ref"])}" target="_blank" rel="sponsored noopener" '
             f'data-join>{ic("userplus")}<span>{label}</span><span class="sr"> (opens the official sign-up page in a new tab)</span></a>')
 
 
+def dash_btn(here, label='Open The Dashboard', cls='', size=''):
+    return f'<a class="btn btn-dash ring {size} {cls}" href="{A("dashboard/", here)}">{ic("layers")}<span>{label}</span></a>'
+
+
 def fair(cls=''):
-    return f'<p class="fair {cls}">{ic("check")}Free account. Invited by someone else? Please use their link.</p>'
+    return f'<p class="fair {cls}">{ic("check")}<span>Free account. Invited by someone else? Please use their link.</span></p>'
 
 
 def note(body, icon='info', cls=''):
     return f'<div class="note {cls}">{ic(icon)}<div>{body}</div></div>'
 
 
-def sec(id_, eyebrow, title, lead, body, cls=''):
-    lead_html = f'<p class="lead">{lead}</p>' if lead else ''
-    return (f'<section class="sec {cls}" id="{id_}" aria-labelledby="{id_}-h"><div class="wrap">'
-            f'<p class="eye">{eyebrow}</p><h2 id="{id_}-h">{title}</h2>{lead_html}{body}</div></section>')
+def checks(items):
+    return '<ul class="checks">' + ''.join(f'<li>{ic("check")}<span>{i}</span></li>' for i in items) + '</ul>'
 
 
 def table(head, rows, caption, cls=''):
@@ -146,29 +293,65 @@ def table(head, rows, caption, cls=''):
     return f'<div class="tbl-wrap {cls}"><table class="tbl"><caption class="sr">{caption}</caption><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>'
 
 
-def frame(v, size='', label=True):
-    """A device-framed video cover: laptop for 16:9, slim phone for 9:16. Placeholder until v has a src."""
-    code, kind, title, line, orient, status, learn, src, poster = v
-    dev = 'laptop'
-    playable = bool(src)
-    scr = (f'<img src="{esc(poster)}" alt="" loading="lazy">' if poster else
-           f'<span class="ph"><img class="ph-logo" src="{asset("logo-disc-256.webp")}" alt="" width="96" height="96" loading="lazy">'
-           f'<b>{esc(kind)}</b><span class="ph-t">{esc(title)}</span></span>')
-    badge = '' if playable else f'<span class="soon">{ic("timer")}{STATUS[status]}</span>'
-    play = f'<span class="play">{ic("play")}</span>'
-    inner = f'<span class="scr">{scr}{play}{badge}</span>'
-    body = f'<span class="dev laptop {size}">{inner}<span class="base"><i></i></span></span>'
-    if playable:
-        return (f'<button type="button" class="vbtn" data-src="{esc(src)}" data-poster="{esc(poster)}" data-orient="{orient}" '
-                f'aria-label="Play: {esc(title)}">{body}</button>')
-    return f'<div class="vbtn is-soon" role="img" aria-label="{esc(kind)}: {esc(title)}. {STATUS[status]}.">{body}</div>'
+def cover(code, here):
+    return L(f'assets/v/{code}.webp', here), L(f'assets/v/{code}-640.webp', here)
 
 
-def yt_card(vid, title, line):
-    thumb = asset(f'yt/{vid}.webp')
-    return (f'<li class="yt"><button type="button" class="ytb" data-yt="{vid}" aria-label="Play on this page: {esc(title)}">'
-            f'<span class="yt-img"><img src="{thumb}" alt="" loading="lazy" width="480" height="270"><span class="play">{ic("play")}</span></span>'
-            f'<span class="yt-t">{esc(title)}</span><span class="yt-l">{esc(line)}</span></button></li>')
+def bar_text(v):
+    return f'{v["label"]} · {v["short"]}'
+
+
+def player(wide=True, inner='', left='', right='', pid=''):
+    """The one video player (MTG, 16 Nov 2026), as on /bw: the slim laptop for a 16:9 video, the slim phone for a 9:16 one.
+    The screen has the video's own shape and nothing lies on the picture: the camera, Full Screen and Close sit in the bar."""
+    idattr = f' id="{pid}"' if pid else ''
+    return (f'<div class="pl {"pl-h" if wide else "pl-v"}"{idattr}><div class="pl-dev"><div class="pl-bar">'
+            f'<span class="pl-l"><span class="pl-tx">{left}</span>'
+            f'<button type="button" class="pl-b pl-max" data-pl-max aria-label="Full Screen">{ic("max", "ic i-max")}{ic("min", "ic i-min")}'
+            f'<span class="t t-max">Full Screen</span><span class="t t-min">Exit Full Screen</span></button></span>'
+            f'<i class="pl-cam" aria-hidden="true"></i>'
+            f'<span class="pl-r"><span class="pl-tx">{right}</span>'
+            f'<button type="button" class="pl-b pl-x" data-pl-x aria-label="Close the video"><span class="t">Close</span>{ic("x")}</button></span>'
+            f'</div><div class="pl-scr">{inner}</div></div><i class="pl-deck" aria-hidden="true"><i></i></i></div>')
+
+
+def vid(code, here, hero=False, cap=True, eager=False, num=None):
+    """A video on the page: ALWAYS a wide cover in the slim laptop frame (CLAUDE.md, 17 Nov 2026).
+    A 16:9 video plays in place; a 9:16 video opens the pop-up's phone; a placeholder says when it is coming."""
+    v = V[code]
+    big, small = cover(code, here)
+    load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    img = (f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 680px" width="1280" height="720" '
+           f'{load} decoding="async" alt="{esc(v["title"])}: video cover">')
+    if playable(code):
+        how = (f'data-yt="{v["yt"]}"' if v.get('yt') else f'data-src="{esc(L(v["src"], here))}"') if v['o'] == 'h' else f'data-play="{code}"'
+        ctl = (f'<button type="button" class="vplay{" pulse" if hero else ""}" {how} data-code="{code}" '
+               f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})"><span class="pbtn">{ic("pf")}</span></button>')
+        right = mmss(v['secs'])
+    else:
+        ctl = (f'<button type="button" class="vsoon" data-soon="{esc(v["title"])}" aria-label="{esc(v["title"])}: {STATUS[v["status"]]}">'
+               f'<span class="vs-in">{ic("timer")}<b>{STATUS[v["status"]]}</b></span></button>')
+        right = STATUS[v['status']]
+    fc = ''
+    if cap:
+        n = f'<span class="vnum">{num}</span>' if num else ''
+        fc = (f'<figcaption class="vcap">{n}<span class="vct"><b>{esc(v["title"])}</b><small>{esc(v["label"])} · '
+              f'{mmss(v["secs"]) if playable(code) else STATUS[v["status"]]}</small></span></figcaption>')
+    return f'<figure class="vid" data-vid="{code}">{player(True, img + ctl, esc(bar_text(v)), right)}{fc}</figure>'
+
+
+def vrow(code, here, href=None):
+    """a compact video row: the cover, what it is, one button. Plays in the pop-up (real) or links to its page (coming)."""
+    v = V[code]
+    big, small = cover(code, here)
+    meta = f'{v["label"]} · {mmss(v["secs"]) if playable(code) else STATUS[v["status"]]}'
+    img = f'<img src="{esc(small)}" width="640" height="360" loading="lazy" decoding="async" alt="">'
+    if playable(code):
+        return (f'<button type="button" class="vrow" data-play="{code}" aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})">{img}'
+                f'<span class="vr-t"><small>{esc(meta)}</small><b>{esc(v["title"])}</b><span>{esc(v["line"])}</span></span>'
+                f'<span class="vr-go play">{ic("pf")}<span>Play</span></span></button>')
+    return (f'<a class="vrow soon" href="{href}">{img}<span class="vr-t"><small>{esc(meta)}</small><b>{esc(v["title"])}</b><span>{esc(v["line"])}</span></span>'
+            f'<span class="vr-go">{ic("chr")}<span>Open</span></span></a>')
 
 
 def social_row(cls='soc'):
@@ -176,7 +359,22 @@ def social_row(cls='soc'):
     return f'<div class="{cls}">{items}</div>'
 
 
-# ============================================================== head, header, footer
+def video_data(here):
+    """what the pop-up player needs to play a video by its code"""
+    d = {}
+    for k, v in V.items():
+        if not playable(k):
+            continue
+        big, small = cover(k, here)
+        d[k] = dict(t=v['title'], o=v['o'], d=mmss(v['secs']), p=big, bar=bar_text(v))
+        if v.get('yt'):
+            d[k]['yt'] = v['yt']
+        else:
+            d[k]['s'] = L(v['src'], here)
+    return json.dumps(d, separators=(',', ':'), ensure_ascii=False)
+
+
+# ============================================================== head
 PERSON_ID = SITE + BASE + '#mtg'
 SITE_ID = SITE + BASE + '#site'
 CBP_THING = {'@type': 'Organization', 'name': 'ClickBaitPays', 'url': OFFICIAL, 'sameAs': [OFFICIAL]}
@@ -187,31 +385,38 @@ def person_ld():
             'jobTitle': 'Your Digital Architect', 'url': SITE + '/', 'sameAs': [u for k, l, u in SOCIAL if k != 'whatsapp']}
 
 
-def crumbs(items):
+def crumbs_ld(items):
     return {'@type': 'BreadcrumbList', 'itemListElement': [
-        {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': SITE + p} for i, (n, p) in enumerate(items)]}
+        {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': p if p.startswith('http') else SITE + prod_url(p)} for i, (n, p) in enumerate(items)]}
 
 
-def head(title, desc, path, og_key, ld, page_type='WebPage', noindex=False, extra_head=''):
-    url = SITE + path
-    og = f'{SITE}{BASE}assets/og/{og_key}.jpg?v={HASH.get("og/" + og_key + ".jpg", "1")}'
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800;1,900&family=Orbitron:wght@700;800;900'
+         '&family=Poppins:wght@400;500;600;700;800&display=swap">')
+
+
+def head(key, path, here, ld, page_type='WebPage', extra=''):
+    title, desc = SEO[key]
+    url = SITE + prod_url(path)
+    og = f'{SITE}{BASE}assets/og/cbp-{key}.jpg?v={HASH.get("og/cbp-" + key + ".jpg", "1")}'
     graph = [person_ld(),
              {'@type': 'WebSite', '@id': SITE_ID, 'name': NAME, 'url': SITE + BASE, 'inLanguage': 'en-ZA', 'publisher': {'@id': PERSON_ID}},
              {'@type': page_type, '@id': url + '#page', 'url': url, 'name': title, 'description': desc, 'inLanguage': 'en-ZA',
               'isPartOf': {'@id': SITE_ID}, 'about': CBP_THING, 'author': {'@id': PERSON_ID}, 'dateModified': TODAY,
-              'primaryImageOfPage': og}] + ld
-    robots = 'noindex,follow' if noindex else 'index,follow,max-image-preview:large,max-snippet:-1'
-    return f'''<!doctype html>
-<html lang="en-ZA">
-<head>
-<meta charset="utf-8">
+              'primaryImageOfPage': {'@type': 'ImageObject', 'url': og, 'width': 1200, 'height': 630}}] + ld
+    for x in ld:
+        if x.get('@type') == 'BreadcrumbList':
+            x['@id'] = url + '#breadcrumb'
+            graph[2]['breadcrumb'] = {'@id': x['@id']}
+    return f'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="{robots}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="MTG (MusaTheGiant)">
 <meta name="theme-color" content="#080015">
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{esc(NAME)}">
 <meta property="og:locale" content="en_ZA">
@@ -228,94 +433,173 @@ def head(title, desc, path, og_key, ld, page_type='WebPage', noindex=False, extr
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{og}">
-<link rel="icon" href="{asset('favicon.ico')}" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="{asset('favicon-32.png')}">
-<link rel="apple-touch-icon" href="{asset('apple-touch-icon.png')}">
-<link rel="manifest" href="{BASE}manifest.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap">
-{extra_head}<link rel="stylesheet" href="{asset('cbp.css')}">
-<script type="application/ld+json">{json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, separators=(',', ':'))}</script>
-</head>
-'''
+<link rel="icon" href="{A('assets/favicon.ico', here)}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{A('assets/favicon-32.png', here)}">
+<link rel="apple-touch-icon" href="{A('assets/apple-touch-icon.png', here)}">
+<link rel="manifest" href="{A('manifest.webmanifest', here)}">
+{FONTS}
+{extra}<link rel="stylesheet" href="{A('assets/cbp.css', here)}">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, separators=(',', ':'))}</script>'''
 
 
-NAV = [('How it works', BASE + '#how'), ('Levels', BASE + '#levels'), ('Join', BASE + '#join'), ('Videos', BASE + '#videos'),
-       ('FAQ', BASE + '#faq'), ('Calculator', BASE + 'calculator/')]
-
-
-def brand():
-    return (f'<a class="brand" href="{BASE}" aria-label="{esc(NAME)}: home"><img src="{asset("logo-disc-256.webp")}" alt="" width="44" height="44">'
+# ============================================================== shared pieces of every page
+def brand(here, cls='brand'):
+    return (f'<a class="{cls}" href="{A("", here)}" aria-label="{esc(NAME)}: home"><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="44" height="44">'
             f'<span><b>ClickBaitPays</b><small>Guide by MTG 👑</small></span></a>')
 
 
-def header(active=''):
-    cur = ' aria-current="page"'
-    links = ''.join(f'<a href="{h}"{cur if active == t else ""}>{t}</a>' for t, h in NAV)
-    return f'''<a class="skip" href="#main">Skip to content</a>
-<header class="top" data-top>
- <div class="wrap top-in">
-  {brand()}
-  <nav class="nav" id="site-nav" aria-label="Main">{links}</nav>
-  <div class="top-act">
-   <a class="btn btn-dash ring sm" href="{BASE}dashboard/">{ic("layers")}<span>Dashboard</span></a>
-   <button type="button" class="menu" aria-controls="site-nav" aria-expanded="false" data-menu>{ic("menu")}<span class="sr">Open the menu</span></button>
-  </div>
+def updown():
+    """the Up and Down buttons (MTG, 22 Nov 2026: "navigation arrows ... up and down"): Up goes to the top, Down to the next part"""
+    return (f'<div class="ud" data-ud><button type="button" class="ud-b" data-up aria-label="Up: back to the top" title="Back to the top">{ic("up")}</button>'
+            f'<button type="button" class="ud-b" data-down aria-label="Down: the next part of this page" title="Next part">{ic("dn")}</button></div>')
+
+
+def popup():
+    return (f'<div class="sheet player" id="player" role="dialog" aria-modal="true" aria-label="Video player" hidden><div class="sheet-in">'
+            f'{player(True, pid="pl-pop")}</div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>')
+
+
+def scripts(here):
+    flag = 'window.CBP_PREVIEW=1;' if MODE == 'preview' else ''      # the private preview cannot embed YouTube
+    js = f'<script>{flag}window.CBPV={video_data(here)};</script>\n<script src="{A("assets/cbp.js", here)}" defer></script>\n'
+    if MODE == 'prod':
+        js += ('<script src="/assets/video-return.js?v=1" defer></script>\n<script src="/assets/zoom-cta.js?v=5" defer></script>\n'
+               '<script src="/assets/wa-message.js?v=3" defer></script>\n')
+    else:
+        js += f'<script src="{A("assets/video-return.js", here)}" defer></script>\n<script src="{A("assets/wa-message.js", here)}" defer></script>\n'
+    return js
+
+
+RISK = ('ClickBaitPays is an advertising platform, not an investment. Figures shown are the platform\'s own; what you earn depends '
+        'on the ads you view, and nothing is guaranteed. The Join buttons carry MTG\'s referral link.')
+
+
+def doc(head_html, body_cls, body):
+    """the whole page. In a preview, the main page leaves out the document skeleton (the host adds it)."""
+    page = f'<a class="skip" href="#main">Skip to content</a>{sprite()}{body}'
+    return f'<!doctype html>\n<html lang="en-ZA">\n<head>\n{head_html}\n</head>\n<body class="{body_cls}">\n{page}\n</body>\n</html>\n'
+
+
+# ---------------------------------------------------------------- dashboard shell
+def sidebar(key, here):
+    out, group = [], None
+    for k, p, label, sub, icon, g in NAV:
+        if g != group:
+            out.append(f'<p class="md-label">{g}</p>')
+            group = g
+        cur = ' aria-current="page"' if k == key else ''
+        cls = ' tut' if k[0] == 't' and k[1:].isdigit() else ''
+        out.append(f'<a class="md-nav{cls}" href="{A(p, here)}"{cur}><span class="ic">{ic(icon)}</span><span class="tx"><b>{label}</b><small>{sub}</small></span></a>')
+    return f'''<aside class="md-side" id="cbp-menu" aria-label="Dashboard menu">
+ <a class="side-brand" href="{A('', here)}" aria-label="{esc(NAME)}: home"><img src="{A('assets/logo-disc-256.webp', here)}" alt="" width="44" height="44"><span><b>ClickBaitPays</b><small>Dashboard by MTG 👑</small></span></a>
+ <nav aria-label="Dashboard pages">{''.join(out)}</nav>
+ <div class="md-bot">
+  <a class="side-join" href="{esc(OWNER['ref'])}" target="_blank" rel="sponsored noopener">{ic('userplus')}Join ClickBaitPays Free</a>
+  <a class="md-btn md-home" href="{A('', here)}"><span class="emo" aria-hidden="true">🏡</span>Go Home</a>
+  {social_row('row')}
+ </div>
+</aside>
+<button type="button" class="md-toggle" aria-controls="cbp-menu" aria-expanded="true" aria-label="Collapse menu" title="Collapse menu">{ic('chl')}</button>
+<div class="md-scrim" aria-hidden="true"></div>'''
+
+
+def neighbours(key):
+    i = KEYS.index(key)
+    return (NAVD[KEYS[i - 1]] if i > 0 else None), (NAVD[KEYS[i + 1]] if i < len(KEYS) - 1 else None), i
+
+
+def arrows(key, here):
+    """Previous and Next at the top of the page, beside its heading"""
+    p, n, i = neighbours(key)
+    a = f'<a class="pa" href="{A(p[1], here)}" rel="prev" aria-label="Previous page: {esc(p[2])}" title="Previous: {esc(p[2])}">{ic("chl")}</a>' if p else '<span class="pa off" aria-hidden="true">' + ic('chl') + '</span>'
+    b = f'<a class="pa" href="{A(n[1], here)}" rel="next" aria-label="Next page: {esc(n[2])}" title="Next: {esc(n[2])}">{ic("chr")}</a>' if n else '<span class="pa off" aria-hidden="true">' + ic('chr') + '</span>'
+    return f'<nav class="parr" aria-label="Previous and next page">{a}<span class="pc">{i + 1} / {len(KEYS)}</span>{b}</nav>'
+
+
+def pager(key, here):
+    p, n, i = neighbours(key)
+    out = '<nav class="pager" aria-label="Previous and next page">'
+    out += (f'<a class="pg prev" href="{A(p[1], here)}"><small>{ic("chl")}Previous</small><b>{p[2]}</b></a>' if p else '<span></span>')
+    out += (f'<a class="pg next" href="{A(n[1], here)}"><small>Next{ic("chr")}</small><b>{n[2]}</b></a>' if n else
+            f'<a class="pg next" href="{A("dashboard/", here)}"><small>Back to the start{ic("chr")}</small><b>Welcome</b></a>')
+    return out + '</nav>'
+
+
+def phead(key, here, h1, lead, eyebrow=None):
+    k, p, label, sub, icon, g = NAVD[key]
+    eb = eyebrow or g
+    icon = 'film' if icon.startswith('n') and icon[1:].isdigit() else icon
+    return (f'<header class="phead"><div class="ph-top"><p class="eye">{ic(icon)}{eb}</p>{arrows(key, here)}</div>'
+            f'<h1>{h1}</h1><p class="lead">{lead}</p></header>')
+
+
+def joinband(here, title='Ready when you are', text='Join free with MTG, then follow the tutorials one step at a time.'):
+    return (f'<section class="jband" aria-label="Join ClickBaitPays"><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="64" height="64" loading="lazy">'
+            f'<div class="jb-t"><h2>{title}</h2><p>{text}</p></div><div class="jb-a">{join_btn()}{fair()}</div></section>')
+
+
+def dash_page(key, here_ld, main, page_type='WebPage', band=True, band_kw=None):
+    k, path, label, sub, icon, g = NAVD[key]
+    here = path
+    USED_ICONS.clear()
+    crumbs = [('ClickBaitPays guide', ''), ('Dashboard', 'dashboard/')] + ([] if key == 'home' else [(label, path)])
+    ld = [crumbs_ld(crumbs)] + (here_ld or [])
+    hd = head(key, path, here, ld, page_type, extra=f'<link rel="stylesheet" href="{A("assets/mtg-dash.css", here) if MODE == "preview" else "/assets/mtg-dash.css?v=1"}">\n')
+    body_main = main(here) if callable(main) else main
+    crumb = f'<a href="{A("", here)}">Guide</a>{ic("chr")}' + (f'<a href="{A("dashboard/", here)}">Dashboard</a>{ic("chr")}<span>{label}</span>' if key != 'home' else '<span>Dashboard</span>')
+    jb = joinband(here, **(band_kw or {})) if band else ''
+    body = f'''<div class="md-shell">
+<script>try{{if(localStorage.getItem('mtg-side')==='off'&&matchMedia('(min-width:1061px)').matches)document.currentScript.parentNode.classList.add('md-off')}}catch(e){{}}</script>
+{sidebar(key, here)}
+<div class="md-main">
+<header class="md-top">
+ <button type="button" class="md-menu" aria-controls="cbp-menu" aria-expanded="false" aria-label="Open menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+ <a class="top-logo" href="{A('', here)}" aria-label="{esc(NAME)}: home"><img src="{A('assets/logo-disc-256.webp', here)}" alt="" width="36" height="36"></a>
+ <nav class="md-crumb" aria-label="Breadcrumb">{crumb}</nav>
+ <div class="md-act">
+  <a class="md-btn md-join" href="{esc(OWNER['ref'])}" target="_blank" rel="sponsored noopener">{ic('userplus')}<span>Join Free</span></a>
+  <a class="md-btn md-home" href="{A('', here)}"><span class="emo" aria-hidden="true">🏡</span><span class="lbl">Go Home</span></a>
  </div>
 </header>
-'''
-
-
-def footer():
-    return f'''<footer class="foot">
- <div class="wrap">
-  <div class="foot-grid">
-   <div class="foot-brand">{brand()}
-    <p>An independent, plain-English guide to ClickBaitPays by MTG 👑 | Your Digital Architect. Not the official ClickBaitPays website: that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>.</p>
-    {social_row()}
-   </div>
-   <nav class="foot-nav" aria-label="Guide">
-    <b>Guide</b><a href="{BASE}">Home</a><a href="{BASE}dashboard/">Tutorials and explainers</a><a href="{BASE}calculator/">Calculator</a><a href="{BASE}#faq">FAQ</a>
-   </nav>
-   <nav class="foot-nav" aria-label="More">
-    <b>More</b><a href="{ORDER}">Get your own copy</a><a href="{GROUP}">Join the MTG TRIBE</a><a href="{LOGIN}" target="_blank" rel="noopener">ClickBaitPays login</a><a href="{BASE}disclaimer/">Disclaimer and privacy</a>
-   </nav>
-  </div>
-  <p class="risk">{ic("info")}<span>ClickBaitPays is an advertising platform, not an investment. Figures shown are the platform's own; what you earn depends on the ads you view, and nothing is guaranteed. The Join buttons carry MTG's referral link.</span></p>
-  <p class="sig">Made with ❤️ by MTG 👑 | Your Digital Architect · Let's Get This Crypto! 💪</p>
- </div>
-</footer>
-'''
-
-
-def modal():
-    return f'''<div class="vm" id="vm" role="dialog" aria-modal="true" aria-label="Video player" hidden>
- <div class="vm-bg" data-close></div>
- <div class="vm-box">
-  <div class="vm-dev" data-dev></div>
-  <div class="vm-bar"><button type="button" class="vm-b" data-fs>{ic("expand")}<span class="lbl">Full Screen</span></button><button type="button" class="vm-b vm-close" data-close>{ic("x")}<span>Close</span></button></div>
- </div>
+<main id="main" class="dmain" tabindex="-1">
+{body_main}
+{jb}
+{pager(key, here)}
+</main>
+<footer class="dfoot"><p class="risk">{ic('info')}<span>{RISK} <a href="{A('disclaimer/', here)}">Disclaimer</a>.</span></p>
+<p class="sig">© 2026 MTG 👑 | Your Digital Architect · Let's Get This Crypto! 💪</p></footer>
 </div>
-'''
+</div>
+{updown()}{popup()}
+<script src="{A('assets/mtg-dash.js', here) if MODE == 'preview' else '/assets/mtg-dash.js?v=1'}" defer></script>
+{scripts(here)}'''
+    return doc(hd, 'cbp cbp-dash', body)
 
 
-def sticky():
-    return f'<div class="stick" data-stick hidden>{join_btn("Join ClickBaitPays free", size="sm")}<a class="stick-d" href="{BASE}dashboard/" aria-label="Open the tutorials dashboard">{ic("layers")}</a></div>'
+def two(video_html, side_html):
+    """the video and what it covers, side by side on a computer; on a phone the video comes first"""
+    return f'<div class="two">{video_html}<div class="side">{side_html}</div></div>'
 
 
-def tail(scripts=True):
-    js = (f'<script src="{asset("cbp.js")}" defer></script>\n<script src="/assets/video-return.js?v=1" defer></script>\n'
-          '<script src="/assets/zoom-cta.js?v=5" defer></script>\n<script src="/assets/wa-message.js?v=3" defer></script>\n') if scripts else ''
-    return f'{modal()}{sprite()}\n{js}</body>\n</html>\n'
+def side_box(title, items, icon='info'):
+    return f'<div class="sbox"><h2 class="h3">{ic(icon)}{title}</h2>{checks(items)}</div>'
 
 
-# ============================================================== page: landing
-def levels_table():
-    rows = [[f'Level {l}', f'{money(p)} USDT', f'{money(a)} USDT', f'{money(c)}', f'{n}', f'<b>{money(t)}</b>'] for l, p, a, c, n, t in LEVELS]
-    return table(['Level', 'Campaign', 'Activation (once)', 'Per click', 'Clicks a day', 'Campaign total*'], rows,
-                 'The 7 ClickBaitPays levels: price, one-time activation fee, pay per click, clicks a day and campaign total', 'levels')
+def sec(title, body, id_=None, lead=None):
+    i = f' id="{id_}"' if id_ else ''
+    ld = f'<p class="slead">{lead}</p>' if lead else ''
+    return f'<section class="dsec"{i}><h2 class="h2">{title}</h2>{ld}{body}</section>'
 
+
+# ============================================================== content
+STEPS = [
+    ('userplus', 'Join free', 'Use a Join button in this guide, or the link of the person who invited you. Register from your home Wi-Fi.', 'join'),
+    ('wallet', 'Fund your account', 'Deposit crypto on the Deposit page. Your balance shows in USDT.', 't2'),
+    ('layers', 'Buy a campaign and activate the level', 'Pick a level, add your ad title (30 characters at most) and link, tap <b>Preview</b>, then <b>Confirm Purchase</b>. The first time at a level, pay its one-time activation fee so you can earn from clicking.', 't3'),
+    ('cursor', 'Click your daily ads', 'Log in once a day, open each ad, wait for the 15-second countdown and tap <b>Confirm &amp; Earn</b>.', 'daily'),
+    ('coins', 'Use your Available Balance', 'After 12 click days and a 7-day hold, the earnings are yours: withdraw them, Pay It Forward, or buy your next campaign.', 'timeline'),
+]
 
 FAQ = [
     ('Is ClickBaitPays free to join?',
@@ -344,315 +628,328 @@ FAQ = [
      'Almost any website: your affiliate link, your business or a cause you care about. Illegal or harmful content and big sites such as Google or Facebook are not allowed. Ad titles are 30 characters at most.'),
 ]
 
+# every tutorial page: its video (a tutorial's own recording when ready; until then the closest real video), what it covers, and every step in writing
+TUT = {
+    't1': dict(video='backoffice', h1='Your ClickBaitPays back office: a quick tour',
+               lead='Know your way around before you spend a cent: every menu item and what it is for.',
+               learn=['Your dashboard: stats and your referral link', 'Where you advertise and unlock earning', 'Where you click your daily ads', 'Where your money comes and goes'],
+               steps=[('Log in', f'Go to <a href="{LOGIN}" target="_blank" rel="noopener">clickbaitpays.me/login.php</a>. A login ad shows for 30 seconds, then your dashboard opens.'),
+                      ('Your dashboard', 'Your stats at a glance, and your referral link with a <b>Copy</b> button.'),
+                      ('Advertise and unlock earning', '<b>Buy Ad Campaigns</b>, <b>Activate Earnings</b> and <b>Buy Login Ads</b>.'),
+                      ('Your daily clicks', '<b>Click Ads</b>, <b>Saved Ads</b> and <b>Click History</b>.'),
+                      ('Your money', '<b>Deposit</b>, <b>Withdraw</b>, <b>Purchase History</b> and <b>Pay It Forward</b>.'),
+                      ('On a phone', 'Tap the menu button (the three lines) to open the menu.')],
+               soon='MTG\'s own click-by-click tour is being recorded. Until then, the Back Office Walkthrough above shows every part of it.'),
+    't2': dict(h1='How to deposit USDT into ClickBaitPays',
+               lead='Fund your account through the Deposit page, safely, in a few minutes.',
+               learn=['Enter the USDT amount', 'Pay through NOWPayments', 'A fresh address every time', 'Wait for the confirmation'],
+               steps=[('Open Deposit', 'In the menu, tap <b>Deposit</b> and enter the amount in USDT.'),
+                      ('Pay through NOWPayments', 'The payment page opens with the address and the network to send on.'),
+                      ('Copy the new address', 'Copy the address shown for this deposit. Never reuse an old one: every deposit gets its own.'),
+                      ('Send from your wallet', 'Send the exact amount on the network shown, from your wallet or exchange.'),
+                      ('Wait for the confirmation', 'Once the network confirms, your balance shows in USDT.')]),
+    't3': dict(h1='How to buy and activate your first ClickBaitPays campaign',
+               lead='MTG buys a Level 4 campaign, activates Level 4 once, and clicks his 5 daily ads.',
+               learn=['Log in and the 30-second login ad', 'Buy a campaign: title, link and Preview', 'Activate the level once', 'Click your daily ads and save the ones you like'],
+               steps=[('Log in', 'View the login ad for 30 seconds.'),
+                      ('Buy Ad Campaigns', 'Pick your level, for example Level 4 at 300 USDT.'),
+                      ('Your ad', 'Add your ad title (30 characters at most) and your link.'),
+                      ('Preview first', 'Tap <b>Preview</b> and check your ad, then tap <b>Confirm Purchase</b>.'),
+                      ('Activate the level', 'Open <b>Activate Earnings</b> and activate the level once (Level 4: 30 USDT). It never expires.'),
+                      ('Click your ads', 'Open <b>Click Ads</b>. For each ad: <b>View &amp; Earn</b>, <b>Open Ad</b>, wait 15 seconds, <b>Confirm &amp; Earn</b>.'),
+                      ('Save what you like', 'Save any ad you want to come back to later.')]),
+    't4': dict(h1='How to buy another campaign on a level you already activated',
+               lead='Your second campaign at a level needs no activation fee: buy it and click.',
+               learn=['No activation fee the second time', 'Two campaigns, two tabs on Click Ads', 'Your routine for 12 click days', 'The 7-day hold, then your Available Balance'],
+               steps=[('Buy Ad Campaigns', 'Pick the level you already activated and buy the campaign (title, link, Preview, Confirm Purchase).'),
+                      ('No activation fee', 'The level is already active, so there is nothing more to pay.'),
+                      ('Two tabs', '<b>Click Ads</b> now shows a tab for each campaign. Complete the clicks of each one every day.'),
+                      ('12 + 7', 'Each campaign runs 12 click days, then its earnings rest 7 days before they reach your Available Balance.')]),
+    't5': dict(h1='How to request a withdrawal from ClickBaitPays',
+               lead='Move your Available Balance to your own wallet, once a week.',
+               learn=['Once a week', 'The 10 USDT minimum and the 10% fee', 'Your wallet address and Security PIN', 'After you request'],
+               steps=[('Open Withdraw', 'In the menu, tap <b>Withdraw</b>.'),
+                      ('Know the rules', 'Withdrawals are requested once a week. The minimum is 10 USDT and the fee is 10%.'),
+                      ('Your wallet address', 'Paste your wallet address and check it twice: crypto sent to a wrong address cannot be returned.'),
+                      ('Your Security PIN', 'Enter your Security PIN and submit the request.')]),
+    't6': dict(h1='How to create a ClickBaitPays Login Ad',
+               lead='20 USDT puts your link in front of every member for 30 seconds when they log in, for 30 days.',
+               learn=['20 USDT for 30 days of views', 'Title (30 characters) and link, then Preview', 'The two tick boxes before you buy', 'Login Ad or Ad Campaign: the difference'],
+               steps=[('Open Buy Login Ads', 'In the menu, tap <b>Buy Login Ads</b>.'),
+                      ('Your ad', 'Add your title (30 characters at most) and your link.'),
+                      ('Preview first', 'Tap <b>Preview</b> and check it.'),
+                      ('Tick and buy', 'Tick the two boxes, then buy. Your Login Ad runs for 30 days.')]),
+    't7': dict(h1='How to Pay It Forward on ClickBaitPays',
+               lead='Send funds from your Available Balance to another member, to help them get started.',
+               learn=['Open Pay It Forward', 'Check the username twice', 'Add an optional message', 'Your Security PIN, then confirm'],
+               steps=[('Open Pay It Forward', 'In the menu, tap <b>Pay It Forward</b>.'),
+                      ('The username', 'Enter the member\'s username and check it twice.'),
+                      ('Amount and message', 'Enter the amount, and a message if you like.'),
+                      ('Confirm', 'Enter your Security PIN and confirm. A payment cannot be undone.')]),
+}
 
-def faq_html():
-    items = ''.join(f'<details class="qa"><summary><span>{esc(q)}</span>{ic("chev", "ic chev")}</summary><div class="qa-a"><p>{esc(a)}</p></div></details>' for q, a in FAQ)
-    return f'<div class="faq">{items}</div><p class="more">More answers in the <a href="{OFFICIAL_FAQ}" target="_blank" rel="noopener">official ClickBaitPays FAQ</a>.</p>'
+
+# ============================================================== pages
+def old_links(here, m):
+    """links shared before 22 Nov 2026 pointed at sections of one long page (/cbp/#levels): they now open that topic's page"""
+    j = json.dumps({h: L(NAVD[k][1], here) for h, k in m.items()})
+    return f'<script>(function(){{var m={j},h=location.hash.slice(1);if(m[h])location.replace(m[h])}})()</script>'
 
 
 def p_landing():
-    title = 'ClickBaitPays: How It Works, the 7 Levels and How to Join'
-    desc = 'ClickBaitPays in plain English: advertise your link, view members\' ads daily, get paid in USDT. The 7 levels from 13 USDT, fees, timeline and how to join free.'
-    faq_ld = {'@type': 'FAQPage', '@id': SITE + BASE + '#faq', 'mainEntity': [
-        {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in FAQ]}
-    howto = {'@type': 'HowTo', '@id': SITE + BASE + '#how', 'name': 'How ClickBaitPays works, step by step', 'inLanguage': 'en-ZA',
-             'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': plain(t)} for i, (ico, n, t) in enumerate(STEPS)]}
-    out = head(title, desc, BASE, 'cbp-home', [faq_ld, howto, crumbs([('MTG TRIBE', '/'), ('ClickBaitPays guide', BASE)])])
-    out += '<body class="cbp">\n' + header()
-    out += f'''<main id="main" tabindex="-1">
-<section class="hero" aria-labelledby="hero-h">
- <div class="wrap hero-in">
-  <div class="hero-copy">
-   <p class="eye">{ic("cursor")}Independent guide by MTG 👑 · checked {CHECKED}</p>
-   <h1 id="hero-h"><span class="h1-big">ClickBaitPays</span> <span class="h1-sub">explained: how it works, the 7 levels and how to join</span></h1>
-   <p class="lead">Advertise your link to other members, view their ads each day, and get paid in USDT for every ad you view. Everything you need in plain English, from a member who clicks his own ads every day.</p>
-   <div class="cta-row">{join_btn()}<a class="btn btn-ghost" href="#how">{ic("play")}<span>See how it works</span></a></div>
-   {fair()}
-   <ul class="facts" aria-label="Key facts">
-    <li>{ic("gift")}<b>Free</b> to join</li><li>{ic("layers")}<b>7 levels</b> from 13 USDT</li><li>{ic("cal")}<b>12</b> click days</li><li>{ic("coins")}Paid in <b>USDT</b></li>
-   </ul>
-  </div>
-  <div class="hero-vid">{frame(TOUR, 'xl')}<p class="cap">{ic("film")}<span>Site tour: how to use this guide <span class="dim">(video coming soon)</span></span></p></div>
+    """the main page: short. Three videos, then the way into the dashboard (MTG, 22 Nov 2026)."""
+    here = ''
+    USED_ICONS.clear()
+    howto = {'@type': 'HowTo', 'name': 'How ClickBaitPays works, step by step', 'inLanguage': 'en-ZA',
+             'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': plain(t), 'url': SITE + prod_url(NAVD[k][1])} for i, (ico, n, t, k) in enumerate(STEPS)]}
+    hd = head('landing', '', here, [howto, crumbs_ld([('MTG TRIBE', SITE + '/'), ('ClickBaitPays guide', '')])])
+    tiles = [('what', 'What Is ClickBaitPays?'), ('how', 'How It Works'), ('levels', 'The 7 Levels'),
+             ('join', 'How To Join'), ('tutorials', 'Step-By-Step Tutorials'), ('calc', 'Calculator')]
+    tl = ''.join(f'<a class="tile" href="{page_link(k, here)}"><span class="ti">{ic(NAVD[k][4])}</span><b>{t}</b><small>{NAVD[k][3]}</small>{ic("chr", "ic go")}</a>' for k, t in tiles)
+    body = f'''<header class="top"><div class="wrap top-in">{brand(here)}
+ <div class="top-act"><a class="btn btn-dash ring sm" href="{A('dashboard/', here)}">{ic('layers')}<span>Dashboard</span></a>
+ <a class="btn btn-join sm hide-xs" href="{esc(OWNER['ref'])}" target="_blank" rel="sponsored noopener">{ic('userplus')}<span>Join Free</span></a></div>
+</div></header>
+<main id="main" tabindex="-1">
+<section class="hero" aria-labelledby="hero-h"><div class="wrap hero-in">
+ <div class="hero-copy">
+  <p class="eye">{ic('cursor')}Independent guide by MTG 👑</p>
+  <h1 id="hero-h"><span class="h1-k">ClickBaitPays</span><span class="h1-big">Click. Watch. <em>Earn.</em></span></h1>
+  <p class="lead">Advertise your link to other members, view their ads every day, and get paid in USDT. Start with these 3 short videos, then open the dashboard for every step.</p>
+  <div class="cta-row">{join_btn()}{dash_btn(here, cls='hide-sm')}</div>
+  {fair()}
+  <ul class="facts" aria-label="Key facts"><li>{ic('gift')}<b>Free</b> to join</li><li>{ic('layers')}<b>7 levels</b> from 13 USDT</li><li>{ic('coins')}Paid in <b>USDT</b></li></ul>
  </div>
-</section>
-'''
-    what = f'''<div class="two">
- <div>
-  <div class="roles">
-   <article class="role">{ic("mega")}<h3>Advertisers get traffic</h3><p>Buy an ad campaign and members view your link every day for 12 click days. Or buy a Login Ad that every member sees when they log in.</p></article>
-   <article class="role pink">{ic("cursor")}<h3>Viewers get paid</h3><p>Open each ad, wait for the 15-second countdown, tap <b>Confirm &amp; Earn</b>. Every member does both: you advertise your link and view everyone else's.</p></article>
-  </div>
-  {note('<b>Think of a community noticeboard.</b> You pin your poster where members pass by, and members are paid for the time they spend reading each other\'s posters. <span class="dim">Where the picture stops: reading a noticeboard is free, while here you first buy a campaign and activate your level.</span>', 'msg', 'soft')}
-  <p class="body">The ads come from members promoting real products, businesses and causes, so it is worth a look when something catches your eye. You can save any ad and come back to it later.</p>
+ <div class="hero-vid">{vid('welcome', here, hero=True, eager=True, num='1')}</div>
+</div></section>
+<section class="more" aria-labelledby="more-h"><div class="wrap">
+ <div class="more-head"><h2 id="more-h">Then these two, and you know it all</h2><p>The plan, then the back office. About 20 minutes together.</p></div>
+ <div class="vgrid">{vid('strategy', here, num='2')}{vid('backoffice', here, num='3')}</div>
+</div></section>
+<section class="dband" aria-labelledby="db-h" data-final><div class="wrap">
+ <div class="db-in">
+  <div class="db-copy"><p class="eye">{ic('layers')}Next: the dashboard</p><h2 id="db-h">Everything else, one short page at a time</h2>
+   <p>Pick a topic, watch its video, tap Next. The levels, how to join, every tutorial step by step, the calculator and the FAQ.</p>
+   <div class="cta-row">{dash_btn(here, size='lg')}</div></div>
+  <div class="tiles">{tl}</div>
  </div>
- <div class="side-vid">{frame(EXPLAINERS[0])}<p class="cap">{ic("film")}<span>Explainer: {EXPLAINERS[0][2]} <span class="dim">(coming soon)</span></span></p></div>
-</div>'''
-    out += sec('what', 'The idea', 'What is ClickBaitPays?', 'A paid-to-click advertising platform: two sides, one simple trade.', what)
-
-    steps = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{ic(ico)}{n}</h3><p>{t}</p></div></li>' for i, (ico, n, t) in enumerate(STEPS))
-    timeline = '''<figure class="tl" aria-labelledby="tl-cap">
- <div class="tl-bar" aria-hidden="true">''' + ''.join(f'<i class="d c" style="--i:{k}">{k + 1}</i>' for k in range(12)) + ''.join(f'<i class="d h" style="--i:{12 + k}"></i>' for k in range(7)) + '''<i class="d end">✓</i></div>
- <div class="tl-key"><span class="k c">12 click days</span><span class="k h">7-day hold</span><span class="k e">Available Balance</span></div>
- <figcaption id="tl-cap">Click your ads on 12 days, the earnings rest for 7 days, then they are yours to withdraw, Pay It Forward or reinvest in a new campaign.</figcaption>
-</figure>'''
-    how = f'''<div class="two">
- <div><ol class="steps">{steps}</ol></div>
- <div class="side-vid">{frame(EXPLAINERS[2])}<p class="cap">{ic("film")}<span>Explainer: {EXPLAINERS[2][2]} <span class="dim">(coming soon)</span></span></p>
-  {timeline}
-  {frame(EXPLAINERS[3])}<p class="cap">{ic("film")}<span>Explainer: {EXPLAINERS[3][2]} <span class="dim">(coming soon)</span></span></p>
- </div>
-</div>
-{note('<b>Miss a day? No stress.</b> Your 12 click days simply take a little longer. Daily clicks reset at midnight Panama time, which is <b>7:00 AM in South Africa</b>.', 'timer')}'''
-    out += sec('how', 'Step by step', 'How ClickBaitPays works', 'Five steps, from free sign-up to your Available Balance.', how)
-
-    lv = f'''{levels_table()}
-<p class="tnote">* The platform's own figures, read in the back office on {CHECKED}. "Per click" is the 90% of the advertiser's cost that members receive; the campaign total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>
-<div class="calc-strip">
- <div class="eg"><b>Your first campaign at a level</b> = campaign + activation<span class="eqs"><span>Level 1: 13 + 1 = <b>14 USDT</b></span><span>Level 3: 150 + 15 = <b>165 USDT</b></span><span>Level 4: 300 + 30 = <b>330 USDT</b></span></span></div>
- <a class="btn btn-ghost" href="{BASE}calculator/">{ic("calc")}<span>Work out your numbers</span></a>
-</div>
-{note('<b>Start at any level.</b> You do not have to go 1, 2, 3. Each level is activated once and never expires, so your next campaign at that level needs no activation fee.', 'layers')}'''
-    out += sec('levels', 'Costs and figures', 'The 7 ClickBaitPays levels', 'Every level runs for 12 click days with unlimited views. Higher levels pay more per click and give you more clicks a day.', lv)
-
-    cmp_rows = [['Cost', '20 USDT', 'From 13 USDT (Level 1)'], ['Runs for', '30 days', '12 click days'],
-                ['Who sees it', 'Every member, for 30 seconds at login', 'Members clicking ads at that level'],
-                ['Pays you?', 'No, it buys views for your link', 'Yes, once the level is activated']]
-    out += sec('login-ads', 'Two ways to advertise', 'Login Ads or Ad Campaigns?', 'Both put your link in front of members. Only one of them also pays you to click.',
-               table(['', 'Login Ad', 'Ad Campaign'], cmp_rows, 'Login Ads compared with Ad Campaigns', 'cmp'), 'alt')
-
-    joinsteps = [('link', 'Tap Join', f'The official sign-up page opens on clickbaitpays.me with MTG as your sponsor.'),
-                 ('userplus', 'Create your free account', 'Sign up from your home Wi-Fi (no VPN or mobile data while you register). One account per person.'),
-                 ('play', 'Follow the tutorials', f'Log in at clickbaitpays.me/login.php, then follow Tutorial 3 to buy and activate your first campaign.')]
-    js = ''.join(f'<li class="jstep"><span class="num">{i + 1}</span>{ic(a)}<h3>{b}</h3><p>{c}</p></li>' for i, (a, b, c) in enumerate(joinsteps))
-    joinb = f'''<div class="two">
- <div><ol class="jsteps">{js}</ol>
-  <div class="join-box">{join_btn('Join ClickBaitPays free', size='lg')}<p class="fair-big">{ic("users")}<span><b>Invited by someone else?</b> Please use their link instead. Fair is fair. 🤝</span></p></div>
-  <p class="disc">The Join buttons carry MTG's referral link (sponsor code <b>{OWNER["code"]}</b>). If you join through it, MTG becomes your sponsor and receives 10% of the campaigns you buy. Your prices stay exactly the same.</p>
- </div>
- <div class="side-vid">{frame(EXPLAINERS[1])}<p class="cap">{ic("film")}<span>Explainer: {EXPLAINERS[1][2]} <span class="dim">(coming soon)</span></span></p></div>
-</div>'''
-    out += sec('join', 'Get started', 'How to join ClickBaitPays (free)', 'ClickBaitPays is joined through a member\'s link. Three steps and you are in.', joinb)
-
-    tut = ''.join(f'<li class="tcard"><a href="{BASE}dashboard/#{v[0]}"><span class="tno">{v[1]}</span><b>{esc(v[2])}</b><span class="st st-{v[5]}">{ic("timer")}{STATUS[v[5]]}</span></a></li>' for v in TUTORIALS)
-    yts = ''.join(yt_card(*y) for y in YOUTUBE)
-    vids = f'''<h3 class="h3">{ic("film")}Step-by-step tutorials</h3>
-<ol class="tgrid">{tut}</ol>
-<p class="center"><a class="btn btn-dash ring" href="{BASE}dashboard/">{ic("layers")}<span>Open the tutorials dashboard</span></a></p>
-<h3 class="h3">{ic("youtube")}Watch now on YouTube</h3>
-<ul class="ygrid">{yts}</ul>
-<p class="more">More on the <a href="{CBP_YT}" target="_blank" rel="noopener">ClickBaitPays Us YouTube channel</a>.</p>'''
-    out += sec('videos', 'Watch and learn', 'ClickBaitPays videos', 'MTG\'s screen-recorded tutorials are on their way. Start with these five videos today.', vids, 'alt')
-    out += sec('faq', 'Questions', 'ClickBaitPays FAQ', 'Straight answers to what people ask most.', faq_html())
-    out += f'''<section class="final" aria-labelledby="final-h" data-final>
- <div class="wrap final-in">
-  <img src="{asset('logo-disc-256.webp')}" alt="" width="120" height="120" loading="lazy">
-  <div><h2 id="final-h">Ready to put your link in front of members?</h2>
-   <p>Join free, then follow the tutorials one step at a time. We learn best when we teach others.</p>
-   <div class="cta-row">{join_btn()}<a class="btn btn-ghost" href="{GROUP}">{ic("whatsapp")}<span>Questions? Join the MTG TRIBE</span></a></div>
-   {fair()}
-  </div>
- </div>
-</section>
-</main>
-'''
-    out += footer() + sticky() + tail()
-    return out
-
-
-STEPS = [
-    ('userplus', 'Join free', 'Use a Join button on this page, or the link of the person who invited you. Register from your home Wi-Fi.'),
-    ('wallet', 'Fund your account', 'Deposit crypto on the Deposit page. Your balance shows in USDT.'),
-    ('layers', 'Buy a campaign and activate the level', 'Pick a level, add your ad title (30 characters max) and link, tap <b>Preview</b>, then <b>Confirm Purchase</b>. The first time at a level, pay its one-time activation fee so you can earn from clicking.'),
-    ('cursor', 'Click your daily ads', 'Log in once a day, open each ad, wait for the 15-second countdown and tap <b>Confirm &amp; Earn</b>.'),
-    ('coins', 'Use your Available Balance', 'After 12 click days and a 7-day hold, the earnings are yours: withdraw them, Pay It Forward, or buy your next campaign.'),
-]
-
-
-# ============================================================== page: dashboard
-def p_dashboard():
-    title = 'ClickBaitPays Tutorials: Step-by-Step Videos by MTG'
-    desc = 'Every ClickBaitPays tutorial in order: back office tour, deposit, your first campaign and activation, daily clicks, Login Ads, withdrawals and Pay It Forward.'
-    items = [{'@type': 'ListItem', 'position': i + 1, 'name': v[2], 'url': SITE + BASE + 'dashboard/#' + v[0]} for i, v in enumerate(TUTORIALS)]
-    ld = [{'@type': 'ItemList', '@id': SITE + BASE + 'dashboard/#tutorials', 'name': 'ClickBaitPays tutorials by MTG', 'itemListElement': items},
-          crumbs([('ClickBaitPays guide', BASE), ('Dashboard', BASE + 'dashboard/')])]
-    out = head(title, desc, BASE + 'dashboard/', 'cbp-dashboard', ld, 'CollectionPage',
-               extra_head='<link rel="stylesheet" href="/assets/mtg-dash.css?v=1">\n')
-    out += '<body class="cbp cbp-dash">\n<a class="skip" href="#main">Skip to content</a>\n'
-    nav = lambda h, i, b, s, em='': f'<a class="md-nav" href="{h}"><span class="ic">{i}</span><span class="tx"><b>{b}</b><small>{s}</small></span>{em}</a>'
-    side = ''.join([
-        '<p class="md-label">Start here</p>', nav('#tour', ic('compass'), 'Welcome', 'Site tour and your daily routine'),
-        '<p class="md-label">Tutorials</p>'] + [nav('#' + v[0], f'<span class="rk">{i + 1}</span>', esc(SHORT[v[0]]), esc(STATUS[v[5]])) for i, v in enumerate(TUTORIALS)] + [
-        '<p class="md-label">Explainers</p>'] + [nav('#' + v[0], ic('film'), esc(v[2]), esc(STATUS[v[5]])) for v in EXPLAINERS] + [
-        '<p class="md-label">More</p>', nav('#yt', ic('youtube'), 'YouTube videos', 'Watch these today'),
-        nav(BASE + 'calculator/', ic('calc'), 'Calculator', 'Cost, clicks and payout date'),
-        nav(ORDER, ic('globe'), 'Get your own copy', 'This guide with your link'),
-        nav(BASE + 'disclaimer/', ic('shield'), 'Disclaimer and privacy', 'The small print, in plain words')])
-    out += f'''{sprite_placeholder()}<div class="md-shell">
-<script>try{{if(localStorage.getItem('mtg-side')==='off'&&matchMedia('(min-width:1061px)').matches)document.currentScript.parentNode.classList.add('md-off')}}catch(e){{}}</script>
-<aside class="md-side" id="cbp-menu" aria-label="Dashboard menu">
- <a class="side-brand" href="{BASE}" aria-label="{esc(NAME)}: home"><img src="{asset('logo-disc-256.webp')}" alt="" width="44" height="44"><span><b>ClickBaitPays</b><small>Dashboard by MTG 👑</small></span></a>
- {side}
- <div class="md-bot">
-  <a class="md-btn md-home" href="{BASE}"><span class="emo" aria-hidden="true">🏡</span>Go Home</a>
-  <a class="side-join" href="{esc(OWNER['ref'])}" target="_blank" rel="sponsored noopener">{ic('userplus')}Join ClickBaitPays free</a>
-  {social_row('row')}
- </div>
-</aside>
-<button type="button" class="md-toggle" aria-controls="cbp-menu" aria-expanded="true" aria-label="Collapse menu" title="Collapse menu">{ic('chev')}</button>
-<div class="md-scrim" aria-hidden="true"></div>
-<div class="md-main">
-<header class="md-top">
- <button type="button" class="md-menu" aria-controls="cbp-menu" aria-expanded="false" aria-label="Open menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
- <nav class="md-crumb" aria-label="Breadcrumb"><a href="{BASE}">ClickBaitPays guide</a>{ic('chevr')}<span>Dashboard</span></nav>
- <div class="md-act">
-  <a class="md-btn md-join md-hide-sm" href="{esc(OWNER['ref'])}" target="_blank" rel="sponsored noopener">{ic('userplus')}Join free</a>
-  <a class="md-btn md-home" href="{BASE}"><span class="emo" aria-hidden="true">🏡</span>Go Home</a>
- </div>
-</header>
-<main id="main" class="dmain" tabindex="-1">
-<section class="dhero" id="tour" aria-labelledby="dh-h">
- <div class="dhero-copy">
-  <p class="eye">{ic('compass')}Start here</p>
-  <h1 id="dh-h">ClickBaitPays dashboard: every tutorial, in order</h1>
-  <p class="lead">Watch the site tour first, then follow the tutorials from 1 to 7. Each one shows one job in the ClickBaitPays back office, click by click, recorded by MTG on his own account.</p>
-  <div class="routine" aria-labelledby="rt-h">
-   <h2 id="rt-h">{ic('repeat')}Your daily routine</h2>
-   <ol><li>Log in at <a href="{LOGIN}" target="_blank" rel="noopener">clickbaitpays.me/login.php</a> and view the login ad (30 seconds)</li>
-    <li>Open <b>Click Ads</b> (or tap <b>Start Clicking</b>)</li>
-    <li>For each ad: <b>View &amp; Earn</b>, <b>Open Ad</b>, wait 15 seconds, <b>Confirm &amp; Earn</b></li>
-    <li>Done for today when it says <b>Click day complete</b>. New clicks from 7:00 AM (South Africa)</li></ol>
-  </div>
- </div>
- <div class="dhero-vid">{frame(TOUR, 'xl')}<p class="cap">{ic('film')}<span>Site tour <span class="dim">(coming soon)</span></span></p></div>
-</section>
-'''
-    def card(v, i=None):
-        learn = ''.join(f'<li>{ic("check")}{esc(x)}</li>' for x in v[6])
-        ul = f'<ul class="learn">{learn}</ul>' if learn else ''
-        fmt = ('Recorded on a phone: plays upright in a phone frame' if v[4] == 'v' else 'Widescreen, recorded on a computer')
-        return (f'<article class="dcard" id="{v[0]}" aria-labelledby="{v[0]}-h">'
-                f'<div class="dcard-vid">{frame(v)}</div><div class="dcard-copy"><p class="tno">{v[1]} <span class="st st-{v[5]}">{ic("timer")}{STATUS[v[5]]}</span></p>'
-                f'<h3 id="{v[0]}-h">{esc(v[2])}</h3><p>{esc(v[3])}</p>{ul}<p class="fmt">{ic("phone" if v[4] == "v" else "laptop")}{fmt}</p></div></article>')
-    out += '<section class="dsec" aria-labelledby="tut-h"><h2 id="tut-h" class="dh2">' + ic('film') + 'Tutorials</h2><p class="dlead">Watch them in this order. Videos appear here as soon as each one is ready.</p>'
-    out += ''.join(card(v) for v in TUTORIALS) + '</section>'
-    out += '<section class="dsec" aria-labelledby="exp-h"><h2 id="exp-h" class="dh2">' + ic('compass') + 'Explainers</h2><p class="dlead">Short videos that make the big ideas click.</p><div class="egrid">'
-    out += ''.join(f'<article class="ecard" id="{v[0]}" aria-labelledby="{v[0]}-h">{frame(v)}<h3 id="{v[0]}-h">{esc(v[2])}</h3><p>{esc(v[3])}</p></article>' for v in EXPLAINERS) + '</div></section>'
-    yts = ''.join(yt_card(*y) for y in YOUTUBE)
-    out += f'<section class="dsec" id="yt" aria-labelledby="yt-h"><h2 id="yt-h" class="dh2">{ic("youtube")}Watch today on YouTube</h2><ul class="ygrid">{yts}</ul></section>'
-    out += f'''<section class="dsec dcta" aria-labelledby="dc-h"><h2 id="dc-h">Not a member yet?</h2><p>Join free with MTG, then come back here and follow Tutorial 3.</p>
-<div class="cta-row">{join_btn()}<a class="btn btn-ghost" href="{BASE}calculator/">{ic('calc')}<span>Open the calculator</span></a></div>{fair()}
-<p class="risk">{ic('info')}<span>ClickBaitPays is an advertising platform, not an investment. Figures are the platform's own and nothing is guaranteed. The Join buttons carry MTG's referral link. <a href="{BASE}disclaimer/">Disclaimer</a>.</span></p></section>
-</main>
-</div>
-</div>
-<script src="/assets/mtg-dash.js?v=1" defer></script>
-'''
-    out += tail()
-    return out
-
-
-def sprite_placeholder():
-    return '<!--SPRITE-->'
-
-
-# ============================================================== page: calculator
-def p_calc():
-    title = 'ClickBaitPays Calculator: Cost, Daily Clicks and Payout Date'
-    desc = 'Pick a ClickBaitPays level and see what you pay today, your clicks a day, the platform\'s campaign total, and roughly when it reaches your Available Balance.'
-    app = {'@type': 'WebApplication', 'name': 'ClickBaitPays Calculator', 'url': SITE + BASE + 'calculator/', 'description': desc,
-           'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any (runs in a web browser)', 'browserRequirements': 'Requires JavaScript',
-           'isAccessibleForFree': True, 'inLanguage': 'en-ZA', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}, 'author': {'@id': PERSON_ID}}
-    out = head(title, desc, BASE + 'calculator/', 'cbp-calculator', [app, crumbs([('ClickBaitPays guide', BASE), ('Calculator', BASE + 'calculator/')])], 'WebPage')
-    out += '<body class="cbp">\n' + header('Calculator')
-    chips = ''.join(f'<label class="lv"><input type="radio" name="lvl" value="{l}"{" checked" if l == 4 else ""}><span><b>Level {l}</b><small>{p:,} USDT</small></span></label>' for l, p, a, c, n, t in LEVELS)
-    data = json.dumps([{'l': l, 'p': p, 'a': a, 'c': c, 'n': n, 't': t} for l, p, a, c, n, t in LEVELS])
-    out += f'''<main id="main" tabindex="-1">
-<section class="sec calc" aria-labelledby="c-h"><div class="wrap">
- <p class="eye">{ic('calc')}Free tool</p>
- <h1 id="c-h">ClickBaitPays calculator</h1>
- <p class="lead">Pick a level and see what you pay today, your clicks a day, the platform's campaign total and roughly when it reaches your Available Balance. It uses the platform's own figures from {CHECKED}.</p>
- <div class="tool" data-calc='{data}'>
-  <form class="tool-in" onsubmit="return false" aria-describedby="c-note">
-   <fieldset class="lvs"><legend>1. Choose a level</legend>{chips}</fieldset>
-   <fieldset class="opt"><legend>2. Is this your first campaign at this level?</legend>
-    <label class="tog"><input type="radio" name="first" value="1" checked><span>Yes, add the one-time activation</span></label>
-    <label class="tog"><input type="radio" name="first" value="0"><span>No, this level is already active</span></label>
-   </fieldset>
-   <div class="row2">
-    <div class="fld"><label for="c-n">3. Campaigns at this level</label>
-     <div class="step-in"><button type="button" data-dec aria-label="One campaign less">−</button><input id="c-n" type="number" inputmode="numeric" min="1" max="5" value="1" aria-describedby="c-n-h"><button type="button" data-inc aria-label="One campaign more">+</button></div>
-     <small id="c-n-h">From 1 to 5. Each campaign brings its own daily clicks.</small></div>
-    <div class="fld"><label for="c-d">4. First click day</label><input id="c-d" type="date"><small>Usually the day you buy.</small></div>
-   </div>
-   <button type="button" class="btn btn-ghost sm reset" data-reset>{ic('refresh')}<span>Reset</span></button>
-  </form>
-  <div class="res" aria-live="polite">
-   <div class="tile big"><span>Pay today</span><b data-o="pay">0</b><small data-o="payx"></small></div>
-   <div class="tile"><span>Clicks a day</span><b data-o="clicks">0</b><small>about 15 seconds each</small></div>
-   <div class="tile"><span>Earned per click day</span><b data-o="day">0</b><small data-o="dayx"></small></div>
-   <div class="tile"><span>Campaign total (platform figure)</span><b data-o="tot">0</b><small data-o="totx"></small></div>
-   <div class="tile"><span>Reaches your Available Balance</span><b data-o="date">-</b><small>about 19 days from your first click day, if you click every day</small></div>
-   <div class="tile"><span>If you then withdraw it all</span><b data-o="net">0</b><small>after the 10% withdrawal fee</small></div>
-   <p class="formula" data-o="formula"></p>
-  </div>
- </div>
- {note('<b>How to read this.</b> These are the platform\'s own figures, assuming you complete every click day. You are paid only for the ads you view, nothing is guaranteed, and a missed day moves your date back by a day. Your back office always shows your exact release date. At Levels 1 and 2 the site\'s campaign total is a few cents under 12 click days, because of rounding: we show the site\'s own total.', 'info', '')}
- <p class="center"><a class="btn btn-dash ring" href="{BASE}dashboard/">{ic('layers')}<span>Watch the tutorials</span></a> {join_btn()}</p>
- {fair('center')}
 </div></section>
 </main>
-'''
-    out += footer() + sticky() + tail()
-    return out
+<footer class="foot"><div class="wrap">
+ <div class="foot-in">{brand(here)}
+  <nav class="foot-nav" aria-label="Guide"><a href="{A('dashboard/', here)}">Dashboard</a><a href="{page_link('tutorials', here)}">Tutorials</a><a href="{page_link('calc', here)}">Calculator</a><a href="{page_link('faq', here)}">FAQ</a><a href="{page_link('copy', here)}">Your Own Copy</a><a href="{page_link('disc', here)}">Disclaimer</a></nav>
+  {social_row()}
+ </div>
+ <p class="risk">{ic('info')}<span>{RISK} Independent guide, not the official site (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>).</span></p>
+ <p class="sig">© 2026 MTG 👑 | Your Digital Architect · Let's Get This Crypto! 💪</p>
+</div></footer>
+{updown()}{popup()}
+{old_links(here, {'what': 'what', 'how': 'how', 'levels': 'levels', 'login-ads': 't6', 'join': 'join', 'videos': 'videos', 'faq': 'faq'})}
+{scripts(here)}'''
+    return doc(hd, 'cbp cbp-land', body)
 
 
-# ============================================================== page: disclaimer and privacy
-def p_disc():
-    title = 'Disclaimer and Privacy | ClickBaitPays Guide by MTG'
-    desc = 'The small print in plain words: an independent guide, the referral link disclosure, where the figures come from, and what this site stores (nothing personal).'
-    out = head(title, desc, BASE + 'disclaimer/', 'cbp-disclaimer', [crumbs([('ClickBaitPays guide', BASE), ('Disclaimer and privacy', BASE + 'disclaimer/')])])
-    out += '<body class="cbp">\n' + header()
-    blocks = [
-        ('shield', 'An independent guide', f'This is MTG\'s own guide to ClickBaitPays, made to educate. It is not the official ClickBaitPays website (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>) and it is not run by ClickBaitPays. Rules, prices and features can change: the official site always has the final word.'),
-        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. Invited by someone else? Please use their link instead.'),
-        ('layers', 'About the figures', f'Prices, activation fees, pay per click, clicks a day and campaign totals are the platform\'s own figures, read in the ClickBaitPays back office on {CHECKED}. Campaign totals assume all 12 click days. They describe how the platform pays; they are not a promise of what you will earn.'),
-        ('info', 'Advertising, not an investment', 'ClickBaitPays is an advertising platform: you buy advertising for your link and are paid for viewing other members\' ads. Nothing on this site is financial advice. Results depend on the ads you view and on the platform, and nothing is guaranteed. Start with an amount you are comfortable with and only use money you can afford to lose.'),
-        ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. YouTube videos load from youtube-nocookie.com only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
-        ('msg', 'Questions', f'Message MTG on WhatsApp at <a href="{OWNER["wa"]}" target="_blank" rel="noopener">{OWNER["wa_num"]}</a>, or join the MTG TRIBE at <a href="{GROUP}">mtgtribe.com/group</a>. For account issues, contact ClickBaitPays support through the official site.'),
-    ]
-    body = ''.join(f'<article class="dblock">{ic(i)}<div><h2>{t}</h2><p>{b}</p></div></article>' for i, t, b in blocks)
-    out += f'''<main id="main" tabindex="-1"><section class="sec" aria-labelledby="d-h"><div class="wrap narrow">
-<p class="eye">{ic('shield')}The small print</p><h1 id="d-h">Disclaimer and privacy</h1>
-<p class="lead">Plain words about this guide, the links on it and your privacy. Last updated {TODAY[8:10].lstrip("0")} November 2026.</p>
-{body}
-<p class="center">{join_btn()}</p>{fair('center')}
-</div></section></main>
-'''
-    out += footer() + tail()
-    return out
+def p_home(here):
+    first = [('what', 'What is ClickBaitPays?'), ('how', 'How it works, in 5 steps'), ('levels', 'The 7 levels and what they cost'), ('join', 'How to join, free')]
+    fl = ''.join(f'<li><a href="{page_link(k, here)}"><span class="n">{i + 1}</span><span>{t}</span>{ic("chr")}</a></li>' for i, (k, t) in enumerate(first))
+    groups, out = [], ''
+    for k, p, label, sub, icon, g in NAV:
+        if k == 'home':
+            continue
+        if not groups or groups[-1][0] != g:
+            groups.append((g, []))
+        groups[-1][1].append((k, p, label, sub, icon))
+    for g, items in groups:
+        tl = ''.join(f'<a class="tile" href="{A(p, here)}"><span class="ti">{ic(icon)}</span><b>{label}</b><small>{sub}</small>{ic("chr", "ic go")}</a>' for k, p, label, sub, icon in items)
+        out += f'<div class="tgroup"><h3 class="tg-h">{g}</h3><div class="tiles">{tl}</div></div>'
+    return (phead('home', here, 'Welcome to your ClickBaitPays dashboard',
+                  'One topic per page, in order. Use the menu, or the arrows to go forward and back.', 'Start here')
+            + two(vid('tour', here, hero=True), f'<div class="sbox"><h2 class="h3">{ic("compass")}Your first 4 pages</h2><ol class="first">{fl}</ol></div>')
+            + sec('Every topic', out, 'topics')
+            + old_links(here, {**{k: k for k in TUT}, 'tour': 'home', 'e1': 'what', 'e2': 'join', 'e3': 'levels', 'e4': 'timeline', 'yt': 'videos'}))
 
 
-# ============================================================== page: order a copy
-def p_order():
-    title = 'Get Your Own ClickBaitPays Guide Website | R1,000 Once-Off'
-    desc = 'This ClickBaitPays guide with your referral link on every Join button and your contact links, at mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname.'
-    prod = {'@type': 'Product', 'name': 'Your own ClickBaitPays guide website', 'description': desc, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
-            'image': f'{SITE}{BASE}assets/og/cbp-copy.jpg',
-            'offers': [{'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + ORDER, 'availability': 'https://schema.org/InStock'},
-                       {'@type': 'Offer', 'price': str(PRICE_USD), 'priceCurrency': 'USD', 'url': SITE + ORDER, 'availability': 'https://schema.org/InStock'}]}
-    out = head(title, desc, ORDER, 'cbp-copy', [prod, crumbs([('ClickBaitPays guide', BASE), ('Get your own copy', ORDER)])])
-    out += f'<body class="cbp">\n' + header()
+def p_what(here):
+    roles = (f'<div class="roles"><article class="role">{ic("mega")}<h3>Advertisers get traffic</h3><p>Buy an ad campaign and members view your link every day for 12 click days.</p></article>'
+             f'<article class="role pink">{ic("cursor")}<h3>Viewers get paid</h3><p>Open each ad, wait for the 15-second countdown, tap <b>Confirm &amp; Earn</b>.</p></article></div>'
+             + note('<b>Every member does both.</b> Think of a community noticeboard: you pin your poster where members pass by, and members are paid for the time they spend reading each other\'s posters.', 'msg', 'soft'))
+    return (phead('what', here, 'What is ClickBaitPays?', 'A paid-to-click advertising platform: members advertise their own link to each other, and get paid in USDT for viewing each other\'s ads.')
+            + two(vid('welcome', here, hero=True), side_box('In 30 seconds', ['Advertisers get traffic', 'Viewers get paid in USDT', 'Joining is free', 'Campaigns start at 13 USDT'], 'timer'))
+            + sec('Two sides, one simple trade', roles))
+
+
+def p_how(here):
+    steps = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{n}</h3><p>{t}</p><a class="more-l" href="{page_link(k, here)}">{NAVD[k][2]}{ic("chr")}</a></div></li>'
+                    for i, (ico, n, t, k) in enumerate(STEPS))
+    return (phead('how', here, 'How ClickBaitPays works, in 5 steps', 'From free sign-up to your Available Balance. Each step has its own page.')
+            + two(vid('presentation', here, hero=True), side_box('In this presentation', ['How the ads work', 'Campaigns and levels', 'How withdrawals work', 'The full picture in one go'], 'film'))
+            + sec('The 5 steps', f'<ol class="steps">{steps}</ol>'))
+
+
+def p_join(here):
+    js = [('Tap Join', 'The official sign-up page opens on clickbaitpays.me with MTG as your sponsor.'),
+          ('Create your free account', 'From your home Wi-Fi: no VPN or mobile data while you register.'),
+          ('Follow the tutorials', 'Log in, then follow Tutorial 2 (deposit) and Tutorial 3 (your first campaign).')]
+    st = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(js))
+    box = (f'<div class="join-box">{join_btn(size="lg")}<p class="fair-big">{ic("users")}<span><b>Invited by someone else?</b> Please use their link instead. Fair is fair. 🤝</span></p></div>'
+           f'<p class="disc">The Join buttons carry MTG\'s referral link (sponsor code <b>{OWNER["code"]}</b>). If you join through it, MTG becomes your sponsor and receives 10% of the campaigns you buy. Your prices stay exactly the same.</p>')
+    return (phead('join', here, 'How to join ClickBaitPays (free)', 'ClickBaitPays is joined through a member\'s link. Three steps and you are in.')
+            + two(vid('e2', here), side_box('The house rules', ['Sign up from your home Wi-Fi', 'One account per person', 'Up to 3 per household, each adult with their own email', 'All under the same sponsor']))
+            + sec('3 steps', f'<ol class="steps">{st}</ol>{box}'))
+
+
+def levels_table():
+    """the table on a computer; on a phone the same figures as two columns of level cards (shorter than a stacked table)"""
+    rows = [[f'Level {l}', f'{money(p)} USDT', f'{money(a)} USDT', f'{money(c)}', f'{n}', f'<b>{money(t)}</b>'] for l, p, a, c, n, t in LEVELS]
+    tbl = table(['Level', 'Campaign', 'Activation (once)', 'Per click', 'Clicks a day', 'Campaign total*'], rows,
+                'The 7 ClickBaitPays levels: price, one-time activation fee, pay per click, clicks a day and campaign total', 'levels')
+    cards = ''.join(f'<li class="lvc{" top" if l == 7 else ""}"><small>Level {l}</small><b>{p:,} <i>USDT</i></b><span>+ {a:,} activation, once</span>'
+                    f'<span>{n} clicks a day, {c:.2f} each</span><em>Total* {money(t)}</em></li>' for l, p, a, c, n, t in LEVELS)
+    return tbl + f'<ul class="lvcards" aria-hidden="true">{cards}</ul>'
+
+
+
+def p_levels(here):
+    body = (levels_table()
+            + f'<p class="tnote">* The platform\'s own figures, read in the back office on {CHECKED}. "Per click" is the 90% of the advertiser\'s cost that members receive; the campaign total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>'
+            + f'<div class="calc-strip"><div class="eg"><b>Your first campaign at a level</b> = campaign + activation<span class="eqs"><span>Level 1: 13 + 1 = <b>14 USDT</b></span><span>Level 4: 300 + 30 = <b>330 USDT</b></span></span></div>'
+              f'<a class="btn btn-ghost" href="{page_link("calc", here)}">{ic("calc")}<span>Work Out Your Numbers</span></a></div>')
+    return (phead('levels', here, 'The 7 ClickBaitPays levels', 'Every level runs 12 click days. Higher levels pay more per click and give you more clicks a day.')
+            + two(vid('e3', here), side_box('Good to know', ['Start at any level', 'Activate a level once: it never expires', 'Your next campaign there: no activation fee', 'Activation fees support the platform\'s sustainability']))
+            + sec('All 7 levels', body))
+
+
+def timeline():
+    return ('<figure class="tl" aria-labelledby="tl-cap"><div class="tl-bar" aria-hidden="true">'
+            + ''.join(f'<i class="d c" style="--i:{k}">{k + 1}</i>' for k in range(12)) + ''.join(f'<i class="d h" style="--i:{12 + k}"></i>' for k in range(7))
+            + '<i class="d end">✓</i></div><div class="tl-key"><span class="k c">12 click days</span><span class="k h">7-day hold</span><span class="k e">Available Balance</span></div>'
+            '<figcaption id="tl-cap">Click every day and your earnings reach your Available Balance on day 19.</figcaption></figure>')
+
+
+def p_timeline(here):
+    ch = [('wallet', 'Withdraw', 'Once a week, to your own wallet.', 't5'), ('send', 'Pay It Forward', 'Help a team member get started.', 't7'),
+          ('repeat', 'Buy your next campaign', 'Keep it going, no new deposit needed.', 't4')]
+    cards = ''.join(f'<a class="ccard" href="{page_link(k, here)}">{ic(i)}<b>{a}</b><span>{b}</span><small>{NAVD[k][3]}: {NAVD[k][2]}{ic("chr")}</small></a>' for i, a, b, k in ch)
+    return (phead('timeline', here, 'The 12 + 7 timeline: when your earnings are yours', 'Click your ads on 12 days, the earnings rest for 7 days, then they move to your Available Balance.')
+            + two(vid('e4', here), side_box('Good to know', ['A click day counts when all your daily clicks are done', 'New clicks every day from 7:00 AM (South Africa)', 'Miss a day? Your 12 days just take a little longer']))
+            + sec('The timeline', timeline())
+            + sec('Then you choose', f'<div class="ccards">{cards}</div>'))
+
+
+def p_plan(here):
+    pts = [('layers', 'Start where you are comfortable', 'Any level, any time. Activate it once and it stays active.'),
+           ('repeat', 'Grow from your Available Balance', 'When a campaign completes, use its earnings for your next campaign, a level up when you are ready.'),
+           ('users', 'Share your link, if you like', 'Optional: sponsors receive 10% of the campaigns their referrals buy.')]
+    cards = ''.join(f'<article class="pcard"><span class="pn">{i + 1}</span>{ic(a)}<h3>{b}</h3><p>{c}</p></article>' for i, (a, b, c) in enumerate(pts))
+    return (phead('plan', here, 'The ClickBaitPays income strategy', 'How members grow one step at a time, and how the 10% referral commission works.')
+            + two(vid('strategy', here, hero=True), side_box('In this video', ['Real-world examples of the plan', 'Growing level by level', 'The 10% referral commission'], 'film'))
+            + sec('The strategy in 3 steps', f'<div class="pcards">{cards}</div>'
+                  + note(f'<b>Your numbers, your pace.</b> The figures are the platform\'s own and nothing is guaranteed. <a href="{page_link("calc", here)}">Try the calculator</a> to see any level\'s cost, clicks and payout date.', 'calc')))
+
+
+def p_calc(here):
+    chips = ''.join(f'<label class="lv"><input type="radio" name="lvl" value="{l}"{" checked" if l == 4 else ""}><span><b>Level {l}</b><small>{p:,} USDT</small></span></label>' for l, p, a, c, n, t in LEVELS)
+    data = json.dumps([{'l': l, 'p': p, 'a': a, 'c': c, 'n': n, 't': t} for l, p, a, c, n, t in LEVELS])
+    return (phead('calc', here, 'ClickBaitPays calculator', f'Pick a level: what you pay today, your clicks a day, the platform\'s total and your payout date. Platform figures from {CHECKED}.', 'Free tool')
+            + f'''<div class="tool" data-calc='{data}'>
+ <form class="tool-in" onsubmit="return false">
+  <fieldset class="lvs"><legend>1. Choose a level</legend>{chips}</fieldset>
+  <fieldset class="opt"><legend>2. Is this your first campaign at this level?</legend>
+   <label class="tog"><input type="radio" name="first" value="1" checked><span>Yes, add the one-time activation</span></label>
+   <label class="tog"><input type="radio" name="first" value="0"><span>No, this level is already active</span></label>
+  </fieldset>
+  <div class="row2">
+   <div class="fld"><label for="c-n">3. Campaigns at this level</label>
+    <div class="step-in"><button type="button" data-dec aria-label="One campaign less">−</button><input id="c-n" type="number" inputmode="numeric" min="1" max="5" value="1" aria-describedby="c-n-h"><button type="button" data-inc aria-label="One campaign more">+</button></div>
+    <small id="c-n-h">From 1 to 5. Each campaign brings its own daily clicks.</small></div>
+   <div class="fld"><label for="c-d">4. First click day</label><input id="c-d" type="date"><small>Usually the day you buy.</small></div>
+  </div>
+  <button type="button" class="btn btn-ghost sm reset" data-reset>{ic('refresh')}<span>Reset</span></button>
+ </form>
+ <div class="res" aria-live="polite">
+  <div class="rtile big"><span>Pay today</span><b data-o="pay">0</b><small data-o="payx"></small></div>
+  <div class="rtile"><span>Clicks a day</span><b data-o="clicks">0</b><small>about 15 seconds each</small></div>
+  <div class="rtile"><span>Earned per click day</span><b data-o="day">0</b><small data-o="dayx"></small></div>
+  <div class="rtile"><span>Campaign total (platform figure)</span><b data-o="tot">0</b><small data-o="totx"></small></div>
+  <div class="rtile"><span>Reaches your Available Balance</span><b data-o="date">-</b><small>day 19, if you click every day</small></div>
+  <div class="rtile"><span>If you then withdraw it all</span><b data-o="net">0</b><small>after the 10% withdrawal fee</small></div>
+  <p class="formula" data-o="formula"></p>
+ </div>
+</div>
+{note("<b>How to read this.</b> These are the platform's own figures, assuming you complete every click day. You are paid only for the ads you view, nothing is guaranteed, and a missed day moves your date back by a day. At Levels 1 and 2 the site's campaign total is a few cents under 12 click days, because of rounding: we show the site's own total.", 'info')}''')
+
+
+def p_daily(here):
+    st = [('Log in', f'At <a href="{LOGIN}" target="_blank" rel="noopener">clickbaitpays.me/login.php</a>. View the login ad (30 seconds).'),
+          ('Open Click Ads', 'Or tap <b>Start Clicking</b> on your dashboard.'),
+          ('View each ad', '<b>View &amp; Earn</b>, <b>Open Ad</b>, wait for the 15-second countdown, then <b>Confirm &amp; Earn</b>.'),
+          ('Done for today', 'When it says <b>Click day complete</b>. New clicks from 7:00 AM (South Africa).')]
+    s = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(st))
+    return (phead('daily', here, 'Your daily ClickBaitPays routine', 'A few minutes a day: log in, click your ads, done.')
+            + two(vid('t3', here), side_box('Good to know', ['Clicks reset at midnight Panama time: 7:00 AM in South Africa', 'Do all your level\'s clicks to count the day', 'Save the ads you like for later']))
+            + sec('4 steps, every day', f'<ol class="steps">{s}</ol>'))
+
+
+def p_tutorials(here):
+    rows = ''
+    for k in ['t1', 't2', 't3', 't4', 't5', 't6', 't7']:
+        vc = TUT[k].get('video', k)
+        meta = f'{V[k]["label"]} · ' + ('watch now' if playable(vc) else STATUS[V[k]['status']])
+        rows += (f'<a class="vrow{"" if playable(vc) else " soon"}" href="{page_link(k, here)}"><img src="{esc(cover(vc, here)[1])}" width="640" height="360" loading="lazy" decoding="async" alt="">'
+                 f'<span class="vr-t"><small>{esc(meta)}</small><b>{esc(TUT[k]["h1"])}</b><span>{esc(V[k]["line"])}</span></span>'
+                 f'<span class="vr-go">{ic("chr")}<span>Open</span></span></a>')
+    return (phead('tutorials', here, 'ClickBaitPays tutorials, step by step', 'Seven short tutorials, in the order you need them. Each one shows one job in the back office, click by click.')
+            + f'<div class="vrows">{rows}</div>')
+
+
+def p_tut(key):
+    t = TUT[key]
+
+    def build(here):
+        vcode = t.get('video', key)
+        steps = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(t['steps']))
+        extra = ''
+        if key == 't6':
+            cmp_rows = [['Cost', '20 USDT', 'From 13 USDT (Level 1)'], ['Runs for', '30 days', '12 click days'],
+                        ['Who sees it', 'Every member, 30 seconds at login', 'Members clicking ads at that level'],
+                        ['Pays you?', 'No, it buys views', 'Yes, once the level is activated']]
+            extra = sec('Login Ad or Ad Campaign?', table(['', 'Login Ad', 'Ad Campaign'], cmp_rows, 'Login Ads compared with Ad Campaigns', 'cmp'))
+        if key == 't3':
+            extra = note('<b>The activation fee, once per level.</b> It unlocks earning from clicking at that level and never expires. These once-per-level fees also support the platform\'s sustainability.', 'layers')
+        if key == 't7':
+            extra = note('<b>Recorded on a phone:</b> when it is ready, this tutorial plays upright, in a phone frame.', 'phone')
+        soon = note(t['soon'], 'film') if t.get('soon') else ''
+        return (phead(key, here, t['h1'], t['lead'], V[key]['label'])
+                + two(vid(vcode, here, hero=playable(vcode)), side_box('In this tutorial', t['learn'], 'film'))
+                + soon + sec('Step by step', f'<ol class="steps">{steps}</ol>') + extra)
+    return build
+
+
+def p_videos(here):
+    now = ''.join(vrow(k, here) for k in ['welcome', 'strategy', 'backoffice', 'presentation', 'qa'])
+    links = {'tour': 'home', 'e2': 'join', 'e3': 'levels', 'e4': 'timeline', 't1': 't1', 't2': 't2', 't3': 't3', 't4': 't4', 't5': 't5', 't6': 't6', 't7': 't7'}
+    soon = ''.join(vrow(k, here, page_link(p, here)) for k, p in links.items())
+    return (phead('videos', here, 'Every ClickBaitPays video', 'Five to watch today, and MTG\'s own tutorials and explainers as they arrive.')
+            + sec('Watch now', f'<div class="vrows">{now}</div>')
+            + sec('On the way', f'<div class="vrows">{soon}</div>', lead=f'More on the <a href="{CBP_YT}" target="_blank" rel="noopener">ClickBaitPays Us YouTube channel</a>.'))
+
+
+def p_faq(here):
+    items = ''.join(f'<details class="qa"><summary><span>{esc(q)}</span>{ic("chr", "ic chev")}</summary><div class="qa-a"><p>{esc(a)}</p></div></details>' for q, a in FAQ)
+    return (phead('faq', here, 'ClickBaitPays FAQ', 'Straight answers to what people ask most, and a full live Q&amp;A to watch.')
+            + f'<div class="faq">{items}</div><p class="more-t">More answers in the <a href="{OFFICIAL_FAQ}" target="_blank" rel="noopener">official ClickBaitPays FAQ</a>.</p>'
+            + sec('Watch the live Q&amp;A', two(vid('qa', here), side_box('Answered live', ['Ad viewing', 'Affiliates and referrals', 'Pay It Forward', 'Withdrawals and strategy'], 'film'))))
+
+
+def p_copy(here):
     perks = [('globe', 'Your own address', 'mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname'),
              ('link', 'Your link on every Join button', 'Everyone who joins from your page joins under you'),
-             ('film', 'Every video and tool', 'Tutorials, explainers, calculator and FAQ, kept up to date'),
+             ('film', 'Every video and tool', 'Videos, tutorials, calculator and FAQ, kept up to date'),
              ('refresh', '5 free edits', 'Change your details later at no cost')]
     pk = ''.join(f'<li>{ic(i)}<b>{a}</b><span>{b}</span></li>' for i, a, b in perks)
-    out += f'''<main id="main" tabindex="-1"><section class="sec order" aria-labelledby="o-h"><div class="wrap">
-<div class="two">
+    return (phead('copy', here, 'Get your own ClickBaitPays guide website', 'This exact guide, with your referral link on every Join button, your name and your contact links.', 'Your own copy')
+            + f'''<div class="two order">
  <div>
-  <p class="eye">{ic('globe')}Your own copy</p>
-  <h1 id="o-h">Get your own ClickBaitPays guide website</h1>
-  <p class="lead">This exact guide, with your referral link on every Join button, your name and your contact links. Share one link and let the page explain ClickBaitPays for you, day and night.</p>
   <div class="price"><b>R1,000</b><span>or $50, once-off</span><em>Pay after it is built</em></div>
   <ul class="perks">{pk}</ul>
   {note('This is a payment to MTG for your website only. It is separate from any ClickBaitPays campaign or activation fee.', 'info')}
@@ -663,8 +960,8 @@ def p_order():
   <div class="field"><label for="o-name">Your name, as it should appear *</label><input id="o-name" name="name" required autocomplete="name"></div>
   <div class="field"><label for="o-wa">Your WhatsApp number *</label><input id="o-wa" name="wa" required inputmode="tel" autocomplete="tel"></div>
   <fieldset class="field"><legend>Your address *</legend>
-   <label class="tog"><input type="radio" name="domain" value="mtgtribe.com/cbp/" checked required><span><span>mtgtribe.com/cbp/<i>yourname</i></span></span></label>
-   <label class="tog"><input type="radio" name="domain" value="clickbaitpaysus.com/"><span><span>clickbaitpaysus.com/<i>yourname</i></span></span></label>
+   <label class="tog"><input type="radio" name="domain" value="mtgtribe.com/cbp/" checked required><span><span>mtgtribe.com/cbp/<wbr><i>yourname</i></span></span></label>
+   <label class="tog"><input type="radio" name="domain" value="clickbaitpaysus.com/"><span><span>clickbaitpaysus.com/<wbr><i>yourname</i></span></span></label>
   </fieldset>
   <div class="field"><label for="o-slug">The name at the end of your address *</label><input id="o-slug" name="slug" required autocapitalize="none" spellcheck="false" aria-describedby="o-slug-h"><small id="o-slug-h">Letters and numbers only. Your page: <b data-out="addr">mtgtribe.com/cbp/yourname</b></small></div>
   <div class="field"><label for="o-ref">Your ClickBaitPays referral link *</label><input id="o-ref" name="ref" required inputmode="url" placeholder="https://clickbaitpays.me/join.php?ref=yourname" aria-describedby="o-ref-h"><small id="o-ref-h">Every Join button on your page will use this link. Find it on your back office dashboard (Copy).</small></div>
@@ -677,40 +974,79 @@ def p_order():
    <label class="tog"><input type="radio" name="pay" value="USDT TRC20 ($50)"><span>USDT TRC20</span></label>
   </fieldset>
   <div class="field"><label for="o-notes">Anything else? (optional)</label><textarea id="o-notes" name="notes" rows="3"></textarea></div>
-  <button type="submit" class="btn btn-join ring lg">{ic('whatsapp')}<span>Send my order on WhatsApp</span></button>
+  <button type="submit" class="btn btn-join ring lg">{ic('whatsapp')}<span>Send My Order On WhatsApp</span></button>
   <p class="sent" data-sent hidden>{ic('check')}<span>Almost done: press <b>Send</b> in WhatsApp. MTG replies on {OWNER['wa_num']}. Didn't open? <a href="{OWNER['wa']}" target="_blank" rel="noopener">Open WhatsApp</a>.</span></p>
  </form>
-</div>
-</div></section></main>
-'''
-    out += footer() + tail()
-    return out
+</div>''')
+
+
+def p_disc(here):
+    blocks = [
+        ('shield', 'An independent guide', f'This is MTG\'s own guide to ClickBaitPays, made to educate. It is not the official ClickBaitPays website (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>) and it is not run by ClickBaitPays. Rules, prices and features can change: the official site always has the final word.'),
+        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. Invited by someone else? Please use their link instead.'),
+        ('layers', 'About the figures', f'Prices, activation fees, pay per click, clicks a day and campaign totals are the platform\'s own figures, read in the ClickBaitPays back office on {CHECKED}. Campaign totals assume all 12 click days. They describe how the platform pays; they are not a promise of what you will earn.'),
+        ('info', 'Advertising, not an investment', 'ClickBaitPays is an advertising platform: you buy advertising for your link and are paid for viewing other members\' ads. Nothing on this site is financial advice. Results depend on the ads you view and on the platform, and nothing is guaranteed. Start with an amount you are comfortable with and only use money you can afford to lose.'),
+        ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. YouTube videos load from youtube-nocookie.com only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
+        ('msg', 'Questions', f'Message MTG on WhatsApp at <a href="{OWNER["wa"]}" target="_blank" rel="noopener">{OWNER["wa_num"]}</a>, or join the MTG TRIBE at <a href="{GROUP}">mtgtribe.com/group</a>. For account issues, contact ClickBaitPays support through the official site.'),
+    ]
+    body = ''.join(f'<article class="dblock">{ic(i)}<div><h2>{t}</h2><p>{b}</p></div></article>' for i, t, b in blocks)
+    return phead('disc', here, 'Disclaimer and privacy', f'Plain words about this guide, the links on it and your privacy. Last updated {int(TODAY[8:10])} November 2026.', 'The small print') + body
+
+
+# ============================================================== every page
+def page_specs():
+    """key: (builder, extra structured data, page type, join band)"""
+    faq_ld = {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in FAQ]}
+    how_ld = {'@type': 'HowTo', 'name': 'How ClickBaitPays works, step by step', 'inLanguage': 'en-ZA',
+              'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': plain(t)} for i, (ico, n, t, k) in enumerate(STEPS)]}
+    app = {'@type': 'WebApplication', 'name': 'ClickBaitPays Calculator', 'url': SITE + BASE + 'calculator/', 'description': SEO['calc'][1],
+           'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any (runs in a web browser)', 'browserRequirements': 'Requires JavaScript',
+           'isAccessibleForFree': True, 'inLanguage': 'en-ZA', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}, 'author': {'@id': PERSON_ID}}
+    tut_list = {'@type': 'ItemList', 'name': 'ClickBaitPays tutorials by MTG', 'itemListElement': [
+        {'@type': 'ListItem', 'position': i + 1, 'name': TUT[k]['h1'], 'url': SITE + prod_url(NAVD[k][1])} for i, k in enumerate(['t1', 't2', 't3', 't4', 't5', 't6', 't7'])]}
+    prod = {'@type': 'Product', 'name': 'Your own ClickBaitPays guide website', 'description': SEO['copy'][1], 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
+            'image': f'{SITE}{BASE}assets/og/cbp-copy.jpg',
+            'offers': [{'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + '/cbpcopy/', 'availability': 'https://schema.org/InStock'},
+                       {'@type': 'Offer', 'price': str(PRICE_USD), 'priceCurrency': 'USD', 'url': SITE + '/cbpcopy/', 'availability': 'https://schema.org/InStock'}]}
+    specs = {'home': (p_home, [], 'CollectionPage', True), 'what': (p_what, [], 'WebPage', True), 'how': (p_how, [how_ld], 'WebPage', True),
+             'join': (p_join, [], 'WebPage', False), 'levels': (p_levels, [], 'WebPage', True), 'timeline': (p_timeline, [], 'WebPage', True),
+             'plan': (p_plan, [], 'WebPage', True), 'calc': (p_calc, [app], 'WebPage', True), 'daily': (p_daily, [], 'WebPage', True),
+             'tutorials': (p_tutorials, [tut_list], 'CollectionPage', True), 'videos': (p_videos, [], 'CollectionPage', True),
+             'faq': (p_faq, [faq_ld], 'FAQPage', True), 'copy': (p_copy, [prod], 'WebPage', False), 'disc': (p_disc, [], 'WebPage', True)}
+    for k in TUT:
+        how = {'@type': 'HowTo', 'name': TUT[k]['h1'], 'inLanguage': 'en-ZA',
+               'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': a, 'text': plain(b)} for i, (a, b) in enumerate(TUT[k]['steps'])]}
+        specs[k] = (p_tut(k), [how], 'WebPage', True)
+    return specs
 
 
 # ============================================================== extras: sitemap, llms.txt, manifest
-PAGES = [('', 'p_landing', 'cbp-home', 1.0), ('dashboard/', 'p_dashboard', 'cbp-dashboard', 0.9), ('calculator/', 'p_calc', 'cbp-calculator', 0.8),
-         ('disclaimer/', 'p_disc', 'cbp-disclaimer', 0.3)]
-
-
 def sitemap():
-    urls = [SITE + BASE + p for p, *_ in PAGES] + [SITE + ORDER]
-    body = ''.join(f'<url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>' for u in urls)
-    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{body}</urlset>\n'
+    def img(code):
+        return f'<image:image><image:loc>{SITE}{BASE}assets/v/{code}.webp</image:loc></image:image>'
+    vids = {'home': 'tour', 'what': 'welcome', 'how': 'presentation', 'join': 'e2', 'levels': 'e3', 'timeline': 'e4', 'plan': 'strategy',
+            'daily': 't3', 'faq': 'qa', **{k: TUT[k].get('video', k) for k in TUT}}
+    urls = [(SITE + BASE, img('welcome') + img('strategy') + img('backoffice'))]
+    urls += [(SITE + prod_url(p), img(vids[k]) if k in vids else '') for k, p, *_ in NAV]
+    body = ''.join(f'<url><loc>{u}</loc><lastmod>{TODAY}</lastmod>{i}</url>' for u, i in urls)
+    return (f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            f'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">{body}</urlset>\n')
 
 
 def llms():
     lv = '\n'.join(f'- Level {l}: campaign {p:,} USDT, one-time activation {a} USDT, {c:.2f} USDT per click, {n} clicks a day, campaign total {t:,.2f} USDT (platform figures)' for l, p, a, c, n, t in LEVELS)
+    pages = '\n'.join(f'- [{label}]({SITE}{prod_url(p)}): {SEO[k][1]}' for k, p, label, *_ in NAV)
     return f'''# ClickBaitPays Guide by MTG (mtgtribe.com/cbp)
 
 > An independent, plain-English guide to ClickBaitPays (clickbaitpays.me), a paid-to-click advertising platform: members buy ad campaigns to advertise their own link and are paid in USDT for viewing other members' ads. By MTG (MusaTheGiant), "Your Digital Architect", an active member. Education only, not official ClickBaitPays material, not financial advice. Figures checked {CHECKED}.
 
-## Pages
+## Start here
 
-- [ClickBaitPays explained]({SITE}{BASE}): how it works in 5 steps, the 7 levels, Login Ads vs Ad Campaigns, how to join free, videos and FAQ.
-- [Tutorials dashboard]({SITE}{BASE}dashboard/): step-by-step tutorials in order (back office tour, deposit, first campaign and activation, another campaign on an active level, withdrawal, Login Ads, Pay It Forward) and explainers.
-- [ClickBaitPays Calculator]({SITE}{BASE}calculator/): pay today, clicks a day, the platform's campaign total and the approximate date it reaches the Available Balance.
-- [Disclaimer and privacy]({SITE}{BASE}disclaimer/)
-- [Get your own copy of this guide]({SITE}{ORDER}): R1,000 or $50 once-off.
+- [ClickBaitPays in 3 videos]({SITE}{BASE}): Welcome to ClickBaitPays, the income strategy and the back office walkthrough, then the dashboard.
+
+## Dashboard pages (one topic each)
+
+{pages}
 
 ## Key facts
 
@@ -743,12 +1079,11 @@ def copy_assets(dst):
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))
     for f in ('cbp.css', 'cbp.js'):
         shutil.copyfile(os.path.join(SRC, f), os.path.join(dst, f))
-    from PIL import Image                     # YouTube thumbnails, self-hosted: 4:3 letterbox cropped to 16:9
-    os.makedirs(dst + '/yt', exist_ok=True)
-    for vid, *_ in YOUTUBE:
-        im = Image.open(os.path.join(SRC, 'yt', vid + '.jpg')).convert('RGB')
-        w, h = im.size; ch = round(w * 9 / 16); top = (h - ch) // 2
-        im.crop((0, top, w, top + ch)).save(os.path.join(dst, 'yt', vid + '.webp'), 'WEBP', quality=80, method=6)
+    if os.path.isdir(dst + '/yt'):                 # the old YouTube thumbnails gave way to the wide covers
+        shutil.rmtree(dst + '/yt')
+    missing = [c for c in V for f in (c + '.webp', c + '-640.webp') if not os.path.exists(os.path.join(dst, 'v', f))]
+    if missing:                                   # every video needs its wide cover (covers.py draws them)
+        sys.exit('missing video covers: ' + ', '.join(sorted(set(missing))) + '. Run covers.py first.')
     for root, _, files in os.walk(dst):
         for f in files:
             rel = os.path.relpath(os.path.join(root, f), dst).replace(os.sep, '/')
@@ -761,37 +1096,64 @@ def write(path, text):
         f.write(text)
 
 
-def render(fn):
-    USED_ICONS.clear()
-    page = fn()
-    return page.replace('<!--SPRITE-->', '')
+def all_pages():
+    """{page path under /cbp/: html}"""
+    out = {'': p_landing()}
+    for key, (fn, ld, ptype, band) in page_specs().items():
+        out[NAVD[key][1]] = dash_page(key, ld, fn, ptype, band)
+    return out
+
+
+def check_seo():
+    for k, (t, dsc) in SEO.items():
+        if len(t) > 60 or not (120 <= len(dsc) <= 160):
+            print(f'  SEO length: {k}: title {len(t)}, description {len(dsc)}')
 
 
 def main():
+    global MODE
+    if '--preview' in sys.argv:
+        return render_preview(sys.argv[sys.argv.index('--preview') + 1])
     out = os.path.join(ROOT, 'cbp')
     copy_assets(os.path.join(out, 'assets'))
-    built = {}
-    for p, fn, og, pr in PAGES:
-        built[p] = render(globals()[fn])
-        write(os.path.join(out, p, 'index.html'), built[p])
-    write(os.path.join(ROOT, 'cbpcopy', 'index.html'), render(p_order))
+    pages = all_pages()
+    for p, h in pages.items():
+        write(os.path.join(ROOT, prod_url(p).lstrip('/'), 'index.html'), h)
     write(os.path.join(out, 'sitemap.xml'), sitemap())
     write(os.path.join(out, 'llms.txt'), llms())
     write(os.path.join(out, 'manifest.webmanifest'), manifest())
-    # guard: no em or en dashes anywhere in the output
-    bad = []
-    for root, _, files in os.walk(out):
-        if '_build' in root:
-            continue
-        for f in files:
-            if f.endswith(('.html', '.txt', '.xml', '.webmanifest', '.css', '.js')):
-                t = open(os.path.join(root, f), encoding='utf-8').read()
-                if '—' in t or '–' in t:
-                    bad.append(os.path.join(root, f))
-    t = open(os.path.join(ROOT, 'cbpcopy', 'index.html'), encoding='utf-8').read()
-    if '—' in t or '–' in t:
-        bad.append('cbpcopy/index.html')
-    print('built', len(PAGES) + 1, 'pages;', 'DASH CHECK FAILED: ' + ', '.join(bad) if bad else 'no dashes')
+    check_seo()
+    bad = [p for p, h in pages.items() if '\u2014' in h or '\u2013' in h]
+    for f in ('cbp.css', 'cbp.js', 'llms.txt', 'sitemap.xml'):
+        t = open(os.path.join(out, 'assets' if f.startswith('cbp.') else '', f), encoding='utf-8').read()
+        if '\u2014' in t or '\u2013' in t:
+            bad.append(f)
+    print('built', len(pages), 'pages;', 'DASH CHECK FAILED: ' + ', '.join(bad) if bad else 'no dashes')
+
+
+def render_preview(dst):
+    """private review copy for MTG (tools/qa/README.md, "Private preview link"): relative links, every file local"""
+    global MODE
+    copy_assets(os.path.join(ROOT, 'cbp', 'assets'))
+    MODE = 'preview'
+    os.makedirs(dst, exist_ok=True)
+    shutil.copytree(os.path.join(ROOT, 'cbp', 'assets'), os.path.join(dst, 'assets'), dirs_exist_ok=True,
+                    ignore=shutil.ignore_patterns('og'))           # the social previews are not part of the pages
+    for f in ('video-return.js', 'wa-message.js', 'mtg-dash.css', 'mtg-dash.js'):
+        shutil.copy(os.path.join(ROOT, 'assets', f), os.path.join(dst, 'assets', f))
+    pages = all_pages()
+    for p, h in pages.items():
+        h = re.sub(r'<link rel="manifest"[^>]*>\n?', '', h)
+        if p == '':          # the main page: the host adds the document skeleton, so it starts with our head tags (a short title)
+            h = re.sub(r'<title>.*?</title>', '<title>ClickBaitPays Guide</title>', h, count=1)
+            hd = h.split('<head>\n', 1)[1].split('\n</head>', 1)[0]
+            body_cls = re.search(r'<body class="([^"]*)">', h).group(1)
+            body = h.split(f'<body class="{body_cls}">\n', 1)[1].rsplit('\n</body>', 1)[0]
+            h = f'{hd}\n<div class="{body_cls}">{body}</div>\n'
+        write(os.path.join(dst, p, 'index.html'), h)
+    MODE = 'prod'
+    print('preview:', len(pages), 'pages in', dst)
+    return sorted(pages)
 
 
 if __name__ == '__main__':

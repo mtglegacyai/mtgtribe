@@ -86,6 +86,10 @@ The second run is a browser without full screen for page elements (some in-app b
 window itself. Needs the same kind of server as above on port 8765 (`BASE=...` for another address); `VPS=360x640,740x360`
 runs only those sizes; `SHOT=folder` saves pictures. It must print `0 failures` before MTG sees a preview.
 
+The ClickBaitPays guide (/cbp) plays YouTube videos in the same player, so it has its own copy of this check:
+`node tools/qa/cbp-player-check.js` (same options, same rules). YouTube does not play in the test browser, so the
+check treats the YouTube player's box as the picture; it must print `0 failures` too.
+
 # The Bitcoin Wealth guide (/bw): two more checks (16 Nov 2026)
 
 ```bash

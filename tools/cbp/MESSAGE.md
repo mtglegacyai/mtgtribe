@@ -46,7 +46,7 @@ building today.
 ## Three streams of income, one account
 
 1. **Your program grows**: the ad brings real people to BellverCards, Bitcoin Wealth, JetUP or whatever you promote.
-2. **Your clicks pay**: USDT per view, from 0.48 (Level 1) to 13.50 (Level 7), for 3 to 20 ads a day.
+2. **Your clicks pay**: USDT per view, from $0.48 (Level 1) to $13.50 (Level 7), for 3 to 20 ads a day.
 3. **Your referrals pay**: 10% of the campaigns your referrals buy.
 
 ## MTG's own proof (his words, use them)
@@ -69,4 +69,7 @@ only if you like it. Offer it at the end of every page, in the menu and on the m
 - No income promises, no invented results, no "best ever". The figures are the platform's own.
 - Calm, positive copy; the risk lives in one gentle line (CLAUDE.md, 8 and 9 Nov 2026).
 - No em or en dashes. Button labels in Title Case. MTG's signature and slogan as in CLAUDE.md.
+- **A dollar sign on every amount** (MTG, 22 Nov 2026: "as clear and easy to understand as possible, no confusion"):
+  $150 USDT, +$15 activation, $0.48 per click, Total $194.40, a $10 minimum. Where amounts are listed, one calm line says
+  what USDT is: a digital dollar, 1 USDT is worth about $1. In voice-overs say "dollars" ("fifteen dollars").
 - Where it lives in code: `PROGRAMS`, `STORY`, `NICHES`, `STREAMS` and `CLONE` in `cbp/_build/build.py`.

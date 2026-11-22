@@ -248,6 +248,14 @@ programs people really promote (BellverCards, Bitcoin Wealth, JetUP, XFUSION, So
 MLM and affiliate programs, digital products), use MTG's own BellverCards story as proof, and sell the website copy as the
 guide that sells the real reason people join. A traffic source, never an investment; no income promises.
 
+## Standing rule: a dollar sign on every amount (MTG, 22 Nov 2026)
+
+"Put the $ before each number ... to make sure the readers understand it's Dollars ... I want my content to be as clear and
+easy to understand as possible, no confusion." Every money amount carries its $: $150 USDT, +$15 activation, $0.48 per click,
+Total $194.40, a $10 minimum (rand stays R1,000). Where several amounts are listed, one calm line says what USDT is: a digital
+dollar, 1 USDT is worth about $1. Done on mtgtribe.com/cbp (pages, calculator, covers, previews, `llms.txt`); follow it in
+every new page, script, video and caption.
+
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 
 When MTG asks for a message to send a prospect (WhatsApp, DM, comment reply), give it like this, every time:

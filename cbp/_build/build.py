@@ -109,7 +109,7 @@ NICHES = [
 ]
 STREAMS = [
     ('trend', 'Your program grows', 'Your ad sends real people to BellverCards, Bitcoin Wealth, JetUP or whatever you promote. The ones it speaks to join, buy or sign up under you.'),
-    ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from 0.48 to 13.50 per click, by level, every click day.'),
+    ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from $0.48 to $13.50 per click, by level, every click day.'),
     ('users', 'Your referrals pay', 'Share your ClickBaitPays link and receive 10% of the campaigns your referrals buy. Optional, and it stacks.'),
 ]
 # MTG's own income streams (MTG, 22 Nov 2026): name, accent, picture, line, three facts, button, link. The list grows.
@@ -213,9 +213,9 @@ SEO = {
     't4': ('ClickBaitPays: Buy Another Campaign on an Active Level',
            'Buy another ClickBaitPays campaign on a level you already activated: no activation fee the second time, two tabs on Click Ads, and the 12 + 7 timeline.'),
     't5': ('How to Withdraw From ClickBaitPays: Rules and Steps',
-           'How to request a ClickBaitPays withdrawal: once a week, a 10 USDT minimum and a 10% fee, your wallet address and your Security PIN, step by step.'),
-    't6': ('How to Create a ClickBaitPays Login Ad (20 USDT, 30 Days)',
-           'Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for 20 USDT. Title, link, Preview, step by step.'),
+           'How to request a ClickBaitPays withdrawal: once a week, a $10 USDT minimum and a 10% fee, your wallet address and your Security PIN, step by step.'),
+    't6': ('How to Create a ClickBaitPays Login Ad ($20 USDT, 30 Days)',
+           'Create a ClickBaitPays Login Ad: every member sees your link for 30 seconds when they log in, for 30 days, for $20 USDT. Title, link, Preview, step by step.'),
     't7': ('How to Pay It Forward on ClickBaitPays: Send to a Member',
            'Pay It Forward on ClickBaitPays: send funds from your Available Balance to another member. Check the username twice, add a message, confirm with your PIN.'),
     'videos': ('ClickBaitPays Videos: Overview, Strategy, Tutorials and Q&A',
@@ -745,17 +745,17 @@ FAQ = [
     ('Can ClickBaitPays bring sign-ups to my team or program?',
      'It brings real people to your link: members open your page and view it for a 15-second countdown, every click day. The ones it speaks to can join, buy or sign up under you. MTG found BellverCards through an ad on ClickBaitPays, joined, and is ranking up. What you get depends on your offer and your ad, and nothing is guaranteed.'),
     ('Is ClickBaitPays free to join?',
-     'Yes, creating your account is free. To take part, you buy an ad campaign (from 13 USDT at Level 1) and, to earn from clicking ads at that level, pay its one-time activation fee (from 1 USDT).'),
+     'Yes, creating your account is free. To take part, you buy an ad campaign (from $13 USDT at Level 1) and, to earn from clicking ads at that level, pay its one-time activation fee (from $1 USDT).'),
     ('How do members get paid?',
      'Every ad you open and view until its 15-second countdown ends pays your level\'s per-click amount, which is the 90% of the advertiser\'s cost that members receive. Your clicks collect in your campaign\'s Earned Wallet and move to your Available Balance 7 days after your 12th click day.'),
     ('What is the activation fee?',
-     'A one-time fee per level, from 1 USDT (Level 1) to 240 USDT (Level 7), that unlocks earning from clicking ads at that level. It never expires, and you pay it once per level, however many campaigns you buy there. These once-per-level fees also support the platform\'s sustainability.'),
+     'A one-time fee per level, from $1 USDT (Level 1) to $240 USDT (Level 7), that unlocks earning from clicking ads at that level. It never expires, and you pay it once per level, however many campaigns you buy there. These once-per-level fees also support the platform\'s sustainability.'),
     ('When can I withdraw?',
-     'A campaign runs for 12 click days. After your 12th click day its earnings are held for 7 days, then move to your Available Balance. From there you can request a withdrawal (once a week, minimum 10 USDT, 10% fee), Pay It Forward to another member, or buy your next campaign.'),
+     'A campaign runs for 12 click days. After your 12th click day its earnings are held for 7 days, then move to your Available Balance. From there you can request a withdrawal (once a week, minimum $10 USDT, 10% fee), Pay It Forward to another member, or buy your next campaign.'),
     ('When do the daily clicks reset?',
      'At midnight Panama time, which is 7:00 AM in South Africa. Complete all of your level\'s clicks in one day to count a click day. Miss a day and your 12 click days simply take a little longer.'),
     ('What is a Login Ad?',
-     'An ad every member sees for 30 seconds when they log in, for 30 days, for 20 USDT. It pays you nothing: it buys guaranteed views for your link. Ad campaigns are different: they run 12 click days and, once you activate the level, pay you for clicking.'),
+     'An ad every member sees for 30 seconds when they log in, for 30 days, for $20 USDT. It pays you nothing: it buys guaranteed views for your link. Ad campaigns are different: they run 12 click days and, once you activate the level, pay you for clicking.'),
     ('Do I need to refer people?',
      'No. Referrals are optional: you earn from clicking the ads of your own campaign. Members who do share their link receive 10% of the campaigns their referrals buy.'),
     ('Can I use ClickBaitPays on my phone?',
@@ -796,10 +796,10 @@ TUT = {
                lead='MTG buys a Level 4 campaign, activates Level 4 once, and clicks his 5 daily ads.',
                learn=['Log in and the 30-second login ad', 'Buy a campaign: title, link and Preview', 'Activate the level once', 'Click your daily ads and save the ones you like'],
                steps=[('Log in', 'View the login ad for 30 seconds.'),
-                      ('Buy Ad Campaigns', 'Pick your level, for example Level 4 at 300 USDT.'),
+                      ('Buy Ad Campaigns', 'Pick your level, for example Level 4 at $300 USDT.'),
                       ('Your ad', 'Add your ad title (30 characters at most) and your link.'),
                       ('Preview first', 'Tap <b>Preview</b> and check your ad, then tap <b>Confirm Purchase</b>.'),
-                      ('Activate the level', 'Open <b>Activate Earnings</b> and activate the level once (Level 4: 30 USDT). It never expires.'),
+                      ('Activate the level', 'Open <b>Activate Earnings</b> and activate the level once (Level 4: $30 USDT). It never expires.'),
                       ('Click your ads', 'Open <b>Click Ads</b>. For each ad: <b>View &amp; Earn</b>, <b>Open Ad</b>, wait 15 seconds, <b>Confirm &amp; Earn</b>.'),
                       ('Save what you like', 'Save any ad you want to come back to later.')]),
     't4': dict(h1='How to buy another campaign on a level you already activated',
@@ -811,14 +811,14 @@ TUT = {
                       ('12 + 7', 'Each campaign runs 12 click days, then its earnings rest 7 days before they reach your Available Balance.')]),
     't5': dict(h1='How to request a withdrawal from ClickBaitPays',
                lead='Move your Available Balance to your own wallet, once a week.',
-               learn=['Once a week', 'The 10 USDT minimum and the 10% fee', 'Your wallet address and Security PIN', 'After you request'],
+               learn=['Once a week', 'The $10 USDT minimum and the 10% fee', 'Your wallet address and Security PIN', 'After you request'],
                steps=[('Open Withdraw', 'In the menu, tap <b>Withdraw</b>.'),
-                      ('Know the rules', 'Withdrawals are requested once a week. The minimum is 10 USDT and the fee is 10%.'),
+                      ('Know the rules', 'Withdrawals are requested once a week. The minimum is $10 USDT and the fee is 10%.'),
                       ('Your wallet address', 'Paste your wallet address and check it twice: crypto sent to a wrong address cannot be returned.'),
                       ('Your Security PIN', 'Enter your Security PIN and submit the request.')]),
     't6': dict(h1='How to create a ClickBaitPays Login Ad',
-               lead='20 USDT puts your link in front of every member for 30 seconds when they log in, for 30 days.',
-               learn=['20 USDT for 30 days of views', 'Title (30 characters) and link, then Preview', 'The two tick boxes before you buy', 'Login Ad or Ad Campaign: the difference'],
+               lead='$20 USDT puts your link in front of every member for 30 seconds when they log in, for 30 days.',
+               learn=['$20 USDT for 30 days of views', 'Title (30 characters) and link, then Preview', 'The two tick boxes before you buy', 'Login Ad or Ad Campaign: the difference'],
                steps=[('Open Buy Login Ads', 'In the menu, tap <b>Buy Login Ads</b>.'),
                       ('Your ad', 'Add your title (30 characters at most) and your link.'),
                       ('Preview first', 'Tap <b>Preview</b> and check it.'),
@@ -852,7 +852,7 @@ def p_landing():
     tl = ''.join(f'<a class="tile t3d" href="{page_link(k, here)}"><span class="ti">{ic(NAVD[k][4])}</span><b>{t}</b><small>{NAVD[k][3]}</small>{ic("chr", "ic go")}</a>' for k, t in tiles)
     flow = [('eye', 'Your link gets seen', 'Members open your page and stay for a 15-second countdown. Real people, real eyes, every single click day.'),
             ('userplus', 'The right ones act', 'The ones it speaks to join your team, buy your product or sign up under you. That is exactly how MTG found BellverCards.'),
-            ('coins', 'You get paid too', 'While your ad works, you view theirs and earn USDT: from 0.48 to 13.50 per click, by level.')]
+            ('coins', 'You get paid too', 'While your ad works, you view theirs and earn USDT: from $0.48 to $13.50 per click, by level.')]
     fl = ''.join(f'<article class="fcard t3d"><span class="fn">{i + 1}</span><span class="fi">{ic(a)}</span><h3>{b}</h3><p>{c}</p></article>' for i, (a, b, c) in enumerate(flow))
     body = f'''<header class="top"><div class="wrap top-in">{brand(here)}
  <div class="top-act"><a class="btn btn-ghost sm hide-sm" href="{page_link('plan', here)}">{ic('coins')}<span>Compensation Plan</span></a>
@@ -950,7 +950,7 @@ def p_what(here):
     nxt = (f'<div class="ccards two-up"><a class="ccard t3d" href="{page_link("grow", here)}">{ic("mega")}<b>Promote your link</b><span>BellverCards, Bitcoin Wealth, JetUP, any program: get it seen.</span><small>Next{ic("chr")}</small></a>'
            f'<a class="ccard t3d" href="{page_link("plan", here)}">{ic("coins")}<b>The compensation plan</b><span>How members earn, on video, with the numbers.</span><small>Watch{ic("chr")}</small></a></div>')
     return (phead('what', here, 'What is ClickBaitPays?', 'A paid-to-click advertising platform with the twist that matters: you put your own link in front of real people, and you get paid in USDT to view theirs.')
-            + two(vid('welcome', here, hero=True), side_box('In 30 seconds', ['Your link in front of real people for 12 click days', 'Get paid in USDT to view their ads', 'Any program with a link: BellverCards, Bitcoin Wealth, JetUP', 'Free to join, campaigns from 13 USDT'], 'timer'))
+            + two(vid('welcome', here, hero=True), side_box('In 30 seconds', ['Your link in front of real people for 12 click days', 'Get paid in USDT to view their ads', 'Any program with a link: BellverCards, Bitcoin Wealth, JetUP', 'Free to join, campaigns from $13 USDT'], 'timer'))
             + sec('Two sides, one simple trade', roles) + sec('If it has a link, it belongs here', pchips()) + sec('Where to next', nxt))
 
 
@@ -959,7 +959,7 @@ def p_grow(here):
            ('eye', 'They are already looking', 'Opening ads is part of every member\'s day. Your page gets a 15-second view with their full attention, not a thumb flicking past.'),
            ('film', 'Your page can close the deal', 'Send them to a page that explains with video, like this one, and the ones it speaks to can say yes on their own, any time of day.')]
     cards = ''.join(f'<article class="pcard t3d"><span class="pn">{i + 1}</span>{ic(a)}<h3>{b}</h3><p>{c}</p></article>' for i, (a, b, c) in enumerate(why))
-    cmp_rows = [['Cost', 'From 13 USDT (Level 1)', '20 USDT'], ['Runs for', '12 click days', '30 days'],
+    cmp_rows = [['Cost', 'From $13 USDT (Level 1)', '$20 USDT'], ['Runs for', '12 click days', '30 days'],
                 ['Who sees it', 'Members clicking ads at that level', 'Every member, 30 seconds at login'],
                 ['Pays you?', 'Yes, once the level is activated', 'No, it buys views']]
     ways = (table(['', 'Ad Campaign', 'Login Ad'], cmp_rows, 'Ad Campaigns compared with Login Ads', 'cmp')
@@ -971,7 +971,7 @@ def p_grow(here):
     bill = note('<b>Think of a billboard on the busiest street in town,</b> except here every passer-by is paid to stop, open it and look for 15 seconds. That is the traffic your link gets.', 'mega', 'soft')
     return (phead('grow', here, 'Got a link? Put it in front of real people, every day.',
                   'BellverCards, Bitcoin Wealth, JetUP, XFUSION, a stokvel, an MLM, an affiliate offer, a digital product. If it has a link, ClickBaitPays sends real people to it, and pays you in USDT to view their ads while it does.')
-            + two(vid('e1', here), side_box('What you get', ['Real people opening your page, every click day', 'Sign-ups, sales and team members from the ones it speaks to', 'USDT for viewing ads while your ad works', 'From 13 USDT for 12 click days'], 'mega'))
+            + two(vid('e1', here), side_box('What you get', ['Real people opening your page, every click day', 'Sign-ups, sales and team members from the ones it speaks to', 'USDT for viewing ads while your ad works', 'From $13 USDT for 12 click days'], 'mega'))
             + sec('If it has a link, it belongs here', pchips() + bill)
             + sec('Who needs this? Anyone with a link.', niches(), lead='Every business needs eyes. Every team needs sign-ups. Every affiliate needs clicks.')
             + streams_band(here)
@@ -1004,19 +1004,19 @@ def p_join(here):
 
 def levels_table():
     """the table on a computer; on a phone the same figures as two columns of level cards (shorter than a stacked table)"""
-    rows = [[f'Level {l}', f'{money(p)} USDT', f'{money(a)} USDT', f'{money(c)}', f'{n}', f'<b>{money(t)}</b>'] for l, p, a, c, n, t in LEVELS]
+    rows = [[f'Level {l}', f'${money(p)}', f'${money(a)}', f'${money(c)}', f'{n}', f'<b>${money(t)}</b>'] for l, p, a, c, n, t in LEVELS]
     tbl = table(['Level', 'Campaign', 'Activation (once)', 'Per click', 'Clicks a day', 'Campaign total*'], rows,
                 'The 7 ClickBaitPays levels: price, one-time activation fee, pay per click, clicks a day and campaign total', 'levels')
-    cards = ''.join(f'<li class="lvc{" top" if l == 7 else ""}"><small>Level {l}</small><b>{p:,} <i>USDT</i></b><span>+ {a:,} activation, once</span>'
-                    f'<span>{n} clicks a day, {c:.2f} each</span><em>Total* {money(t)}</em></li>' for l, p, a, c, n, t in LEVELS)
+    cards = ''.join(f'<li class="lvc{" top" if l == 7 else ""}"><small>Level {l}</small><b>${p:,} <i>USDT</i></b><span>+${a:,} activation, once</span>'
+                    f'<span>{n} clicks a day, ${c:.2f} each</span><em>Total* ${money(t)}</em></li>' for l, p, a, c, n, t in LEVELS)
     return tbl + f'<ul class="lvcards" aria-hidden="true">{cards}</ul>'
 
 
 
 def p_levels(here):
     body = (levels_table()
-            + f'<p class="tnote">* The platform\'s own figures, read in the back office on {CHECKED}. "Per click" is the 90% of the advertiser\'s cost that members receive; the campaign total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>'
-            + f'<div class="calc-strip"><div class="eg"><b>Your first campaign at a level</b> = campaign + activation<span class="eqs"><span>Level 1: 13 + 1 = <b>14 USDT</b></span><span>Level 4: 300 + 30 = <b>330 USDT</b></span></span></div>'
+            + f'<p class="tnote">* The platform\'s own figures, read in the back office on {CHECKED}. Every amount is in USDT, a digital dollar: 1 USDT is worth about $1. "Per click" is the 90% of the advertiser\'s cost that members receive; the campaign total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>'
+            + f'<div class="calc-strip"><div class="eg"><b>Your first campaign at a level</b> = campaign + activation<span class="eqs"><span>Level 1: $13 + $1 = <b>$14 USDT</b></span><span>Level 4: $300 + $30 = <b>$330 USDT</b></span></span></div>'
               f'<a class="btn btn-ghost" href="{page_link("calc", here)}">{ic("calc")}<span>Work Out Your Numbers</span></a></div>')
     return (phead('levels', here, 'The 7 ClickBaitPays levels', 'Every level runs 12 click days. Higher levels pay more per click and give you more clicks a day.')
             + two(vid('e3', here), side_box('Good to know', ['Start at any level', 'Activate a level once: it never expires', 'Your next campaign there: no activation fee', 'Activation fees support the platform\'s sustainability']))
@@ -1042,18 +1042,20 @@ def p_timeline(here):
 
 def stairs():
     """the 7 levels as a 3D staircase: each step a glowing block with its price and pay per click"""
-    st = ''.join(f'<li class="st3" style="--i:{k}"><span class="blk"><i class="tp"></i><i class="fr"><b>L{l}</b><small>{p:,}</small></i><i class="sd"></i></span>'
-                 f'<span class="cap">{c:.2f}<small>per click</small></span></li>' for k, (l, p, a, c, n, t) in enumerate(LEVELS))
-    return (f'<figure class="stairs rv" aria-label="The 7 levels from 13 to 2,400 USDT; pay per click from 0.48 to 13.50 USDT">'
-            f'<ol class="st-row">{st}</ol><figcaption>Campaign price in USDT on each step, pay per click below it. The platform\'s own figures.</figcaption></figure>')
+    def price(p):                                          # on a phone the two biggest steps read $1.2K and $2.4K, so every label fits its step
+        return f'<span class="pf">{p:,}</span><span class="pk">{p / 1000:g}K</span>' if p >= 1000 else f'{p:,}'
+    st = ''.join(f'<li class="st3" style="--i:{k}"><span class="blk"><i class="tp"></i><i class="fr"><b>L{l}</b><small><span class="cur">$</span>{price(p)}</small></i><i class="sd"></i></span>'
+                 f'<span class="cap"><span class="cv"><span class="cur">$</span>{c:.2f}</span><small>per click</small></span></li>' for k, (l, p, a, c, n, t) in enumerate(LEVELS))
+    return (f'<figure class="stairs rv" aria-label="The 7 levels from $13 to $2,400 USDT; pay per click from $0.48 to $13.50 USDT">'
+            f'<ol class="st-row">{st}</ol><figcaption>Campaign price on each step, pay per click below it, in USDT (1 USDT is about $1). The platform\'s own figures.</figcaption></figure>')
 
 
 def p_plan(here):
-    stats = [(90, '%', 'of each click\'s cost goes to the member who views it'), (7, '', 'levels, from 13 to 2,400 USDT'),
+    stats = [(90, '%', 'of each click\'s cost goes to the member who views it'), (7, '', 'levels, from $13 to $2,400 USDT'),
              (10, '%', 'referral commission, if you share your link'), (19, '', 'days from your first click to your Available Balance')]
     st = ''.join(f'<div class="stat t3d"><b><span data-count="{n}">{n}</span>{u}</b><span>{t}</span></div>' for n, u, t in stats)
     ways = [('mega', 'Traffic for what you promote', 'Your campaign puts your link in front of real people for 12 click days. Every sign-up it brings to BellverCards, Bitcoin Wealth, JetUP or your own program grows your other income streams.'),
-            ('coins', 'Get paid to view', 'Your level\'s pay per click, from 0.48 USDT at Level 1 to 13.50 USDT at Level 7, for 3 to 20 ads a day.'),
+            ('coins', 'Get paid to view', 'Your level\'s pay per click, from $0.48 USDT at Level 1 to $13.50 USDT at Level 7, for 3 to 20 ads a day.'),
             ('users', '10% referral commission', 'When someone joins ClickBaitPays with your link, you receive 10% of the campaigns they buy. Optional, and it stacks.')]
     wc = ''.join(f'<article class="pcard t3d"><span class="pn">{i + 1}</span>{ic(a)}<h3>{b}</h3><p>{c}</p></article>' for i, (a, b, c) in enumerate(ways))
     then = (f'<div class="ccards">' + ''.join(f'<a class="ccard t3d" href="{page_link(k, here)}">{ic(i)}<b>{a}</b><span>{b}</span><small>{NAVD[k][3]}: {NAVD[k][2]}{ic("chr")}</small></a>'
@@ -1065,7 +1067,7 @@ def p_plan(here):
             + f'<div class="stats rv">{st}</div>'
             + sec('3 streams of income, one account', f'<div class="pcards">{wc}</div>', lead='Your program grows, your clicks pay, your referrals pay.')
             + sec('The numbers at every level', stairs() + levels_table()
-                  + f'<p class="tnote">* The platform\'s own figures, read in the back office on {CHECKED}. The total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>'
+                  + f'<p class="tnote">* The platform\'s own figures, read in the back office on {CHECKED}. Every amount is in USDT, a digital dollar: 1 USDT is worth about $1. The total assumes all 12 click days. You are paid only for the ads you view, and nothing is guaranteed.</p>'
                   + f'<div class="cta-row">{btn("Work Out Your Numbers", page_link("calc", here), "ghost", "calc")}{btn("The 7 Levels In Detail", page_link("levels", here), "ghost", "layers")}</div>')
             + sec('When your earnings are yours', timeline() + then)
             + sec('Want the full picture?', more, lead='The complete presentation and a live Q&amp;A with members\' questions.'))
@@ -1078,9 +1080,9 @@ def p_legit(here):
              ('msg', 'Read a bad review?', 'Many reviews judge ClickBaitPays as an investment scheme. Judge it as what it is, a traffic source: does your link get views, and do your views get paid? A small start answers both.')]
     fb = ''.join(f'<article class="dblock t3d">{ic(i)}<div><h3>{t}</h3><p>{b}</p></div></article>' for i, t, b in facts)
     chk = [('Join free', 'Creating your account costs nothing, so you can look around the back office first.'),
-           ('Start small', 'Level 1 costs 14 USDT the first time (13 for the campaign, 1 to activate the level).'),
+           ('Start small', 'Level 1 costs $14 USDT the first time ($13 for the campaign, $1 to activate the level).'),
            ('Click every day', 'Watch your campaign\'s Earned Wallet grow in your back office, click by click.'),
-           ('See it arrive', 'After 12 click days and a 7-day hold it reaches your Available Balance. Withdraw it (10 USDT minimum) or use it.')]
+           ('See it arrive', 'After 12 click days and a 7-day hold it reaches your Available Balance. Withdraw it ($10 USDT minimum) or use it.')]
     st = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(chk))
     return (phead('legit', here, 'Is ClickBaitPays legit?', 'What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.')
             + two(vid('qa', here), side_box('In this live Q&amp;A', ['Members\' questions, answered live', 'Withdrawals and Pay It Forward', 'Strategy and proof'], 'film'))
@@ -1091,7 +1093,7 @@ def p_legit(here):
 
 
 def p_calc(here):
-    chips = ''.join(f'<label class="lv"><input type="radio" name="lvl" value="{l}"{" checked" if l == 4 else ""}><span><b>Level {l}</b><small>{p:,} USDT</small></span></label>' for l, p, a, c, n, t in LEVELS)
+    chips = ''.join(f'<label class="lv"><input type="radio" name="lvl" value="{l}"{" checked" if l == 4 else ""}><span><b>Level {l}</b><small>${p:,} USDT</small></span></label>' for l, p, a, c, n, t in LEVELS)
     data = json.dumps([{'l': l, 'p': p, 'a': a, 'c': c, 'n': n, 't': t} for l, p, a, c, n, t in LEVELS])
     return (phead('calc', here, 'ClickBaitPays calculator', f'Pick a level: what you pay today, your clicks a day, the platform\'s total and your payout date. Platform figures from {CHECKED}.', 'Free tool')
             + f'''<div class="tool" data-calc='{data}'>
@@ -1119,7 +1121,7 @@ def p_calc(here):
   <p class="formula" data-o="formula"></p>
  </div>
 </div>
-{note("<b>How to read this.</b> These are the platform's own figures, assuming you complete every click day. You are paid only for the ads you view, nothing is guaranteed, and a missed day moves your date back by a day. At Levels 1 and 2 the site's campaign total is a few cents under 12 click days, because of rounding: we show the site's own total.", 'info')}''')
+{note("<b>How to read this.</b> These are the platform's own figures, assuming you complete every click day. Every amount is in USDT, a digital dollar: 1 USDT is worth about $1. You are paid only for the ads you view, nothing is guaranteed, and a missed day moves your date back by a day. At Levels 1 and 2 the site's campaign total is a few cents under 12 click days, because of rounding: we show the site's own total.", 'info')}''')
 
 
 def p_daily(here):
@@ -1153,7 +1155,7 @@ def p_tut(key):
         steps = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(t['steps']))
         extra = ''
         if key == 't6':
-            cmp_rows = [['Cost', '20 USDT', 'From 13 USDT (Level 1)'], ['Runs for', '30 days', '12 click days'],
+            cmp_rows = [['Cost', '$20 USDT', 'From $13 USDT (Level 1)'], ['Runs for', '30 days', '12 click days'],
                         ['Who sees it', 'Every member, 30 seconds at login', 'Members clicking ads at that level'],
                         ['Pays you?', 'No, it buys views', 'Yes, once the level is activated']]
             extra = sec('Login Ad or Ad Campaign?', table(['', 'Login Ad', 'Ad Campaign'], cmp_rows, 'Login Ads compared with Ad Campaigns', 'cmp'))
@@ -1314,7 +1316,7 @@ def sitemap():
 
 
 def llms():
-    lv = '\n'.join(f'- Level {l}: campaign {p:,} USDT, one-time activation {a} USDT, {c:.2f} USDT per click, {n} clicks a day, campaign total {t:,.2f} USDT (platform figures)' for l, p, a, c, n, t in LEVELS)
+    lv = '\n'.join(f'- Level {l}: campaign ${p:,} USDT, one-time activation ${a} USDT, ${c:.2f} USDT per click, {n} clicks a day, campaign total ${t:,.2f} USDT (platform figures)' for l, p, a, c, n, t in LEVELS)
     pages = '\n'.join(f'- [{label}]({SITE}{prod_url(p)}): {SEO[k][1]}' for k, p, label, *_ in NAV)
     return f'''# ClickBaitPays Guide by MTG (mtgtribe.com/cbp)
 
@@ -1334,8 +1336,8 @@ def llms():
 - Each campaign runs 12 click days. A click day counts when all of that level's daily clicks are done; clicks reset at midnight Panama time (7:00 AM in South Africa).
 - Each in-dashboard ad has a 15-second countdown, then Confirm & Earn. Members receive 90% of the advertiser's cost per click.
 - To earn at a level, pay its one-time activation fee once; it never expires. These fees also support the platform's sustainability.
-- After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum 10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
-- Login Ads: 20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
+- After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum $10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
+- Login Ads: $20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
 - Referrals are optional; sponsors receive 10% of the campaigns their referrals buy.
 - What members promote: any program with a link, for example BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products and their own businesses. Each view is a real member opening the advertiser's page for a 15-second countdown.
 - MTG's own experience: he found BellverCards through an ad on ClickBaitPays, joined, and is earning and ranking up (his experience, not a promise).

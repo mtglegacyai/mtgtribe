@@ -723,7 +723,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
 .stairs figcaption{margin-top:12px;font-size:.84rem;color:var(--muted);text-align:center}
 .stairs.pre{opacity:1;transform:none}
 .stairs.pre .blk{transform:scaleY(.12);opacity:.3}
-@media (max-width:420px){.cap small{display:none}}
+.stairs .cur{font-size:.78em;margin-right:.03em}
+.blk .fr small .pk{display:none}
+/* phones: short prices on the big steps, and the pay per click staggered on two lines so neighbours never touch (with large text too) */
+@media (max-width:520px){.cap small{display:none}.blk .fr small .pf{display:none}.blk .fr small .pk{display:inline}
+  .st3:nth-child(odd) .cap{padding-bottom:1.3em}.st3:nth-child(even) .cap{padding-top:1.3em}}
 
 /* ---------- facts grid, order page ---------- */
 .dgrid{display:grid;gap:12px;margin-top:14px}

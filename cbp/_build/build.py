@@ -109,6 +109,10 @@ for _k, _v in V.items():
     _v['code'] = _k
 STATUS = {'soon': 'Coming soon', 'record': 'Being recorded'}
 
+# The presentation slides as a free PDF (MTG, 22 Nov 2026: "Place the slide deck where those who would like to download it in PDF").
+# Made by deck.py from the platform's deck (9 slides, the out-of-date referral slide left out, plus a last page with the way forward).
+DECK = dict(file='clickbaitpays-presentation-slides.pdf', pages=10)
+
 # THE MESSAGE (MTG, 22 Nov 2026): if it has a link, ClickBaitPays gets it seen, and pays you while it does. tools/cbp/MESSAGE.md
 PROGRAMS = ['BellverCards', 'Bitcoin Wealth', 'JetUP', 'XFUSION', 'Solar Group', 'Aureus Alliance', 'Stokvel and smart contract platforms',
             'MLM programs', 'Affiliate programs', 'Digital products', 'Your own business']
@@ -269,6 +273,8 @@ ICONS.update({
     'i-chl': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="m15 18-6-6 6-6"/>'},
     'i-chr': {'attrs': _LINE.replace('"2"', '"2.4"'), 'body': '<path d="m9 18 6-6-6-6"/>'},
     'i-login': {'attrs': _LINE, 'body': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/>'},
+    'i-dl': {'attrs': _LINE, 'body': '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>'},
+    'i-slides': {'attrs': _LINE, 'body': '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5"/>'},
     'i-pf': {'attrs': 'viewBox="0 0 24 24" fill="currentColor" stroke="none"', 'body': '<path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/>'},
 })
 for _n in range(1, 8):      # number badges for the tutorials in the menu
@@ -436,6 +442,17 @@ def vrow(code, here, href=None):
                 f'<span class="vr-go play">{ic("pf")}<span>Play</span></span></button>')
     return (f'<a class="vrow soon" href="{href}">{img}<span class="vr-t"><small>{esc(meta)}</small><b>{esc(v["title"])}</b><span>{esc(v["line"])}</span></span>'
             f'<span class="vr-go">{ic("chr")}<span>Open</span></span></a>')
+
+
+def deck_card(here):
+    """the presentation slides, one tap to download as a PDF"""
+    mb = os.path.getsize(os.path.join(HERE_DIR, 'deck', DECK['file'])) / 1e6
+    return (f'<div class="deck t3d rv"><img src="{A("assets/deck-cover.webp", here)}" alt="The first slide: Welcome to ClickBaitPays" width="640" height="360" loading="lazy" decoding="async">'
+            f'<div class="dk-t"><small>{ic("slides")}PDF · {DECK["pages"]} pages · {mb:.1f} MB · free</small>'
+            f'<h3>The ClickBaitPays presentation, in slides</h3>'
+            f'<p>How it works in 4 steps, every level with its numbers, and how to get started. Read it offline, and share it with your team.</p>'
+            f'<a class="btn btn-gold ring" href="{A("assets/" + DECK["file"], here)}" download="ClickBaitPays-Presentation-Slides.pdf" type="application/pdf">'
+            f'{ic("dl")}<span>Download The Slides (PDF)</span></a></div></div>')
 
 
 def social_row(cls='soc'):
@@ -1016,7 +1033,8 @@ def p_how(here):
                     for i, (ico, n, t, k) in enumerate(STEPS))
     return (phead('how', here, 'How ClickBaitPays works, in 5 steps', 'From free sign-up to your Available Balance. Each step has its own page.')
             + two(vid('presentation', here, hero=True), side_box('In this presentation', ['How the ads work', 'Campaigns and levels', 'How withdrawals work', 'The full picture in one go'], 'film'))
-            + sec('The 5 steps', f'<ol class="steps">{steps}</ol>'))
+            + sec('The 5 steps', f'<ol class="steps">{steps}</ol>')
+            + sec('Prefer slides?', deck_card(here), lead='The same presentation as a free PDF: read it offline, or send it to someone you are inviting.'))
 
 
 def p_join(here):
@@ -1090,7 +1108,7 @@ def p_plan(here):
     then = (f'<div class="ccards">' + ''.join(f'<a class="ccard t3d" href="{page_link(k, here)}">{ic(i)}<b>{a}</b><span>{b}</span><small>{NAVD[k][3]}: {NAVD[k][2]}{ic("chr")}</small></a>'
             for i, a, b, k in [('wallet', 'Withdraw', 'Once a week, to your own wallet.', 't5'), ('send', 'Pay It Forward', 'Help a team member get started.', 't7'),
                                ('repeat', 'Buy your next campaign', 'Keep it going, a level up when you are ready.', 't4')]) + '</div>')
-    more = f'<div class="vrows">{vrow("presentation", here)}{vrow("qa", here)}</div>'
+    more = f'<div class="vrows">{vrow("presentation", here)}{vrow("qa", here)}</div>{deck_card(here)}'
     return (phead('plan', here, 'ClickBaitPays compensation plan, explained', 'Three ways ClickBaitPays works for you, the numbers at every level, and when your earnings are yours. Watch first, then check the numbers.', 'The money page')
             + two(vid('strategy', here, hero=True), side_box('In this video', ['The plan, with real-world examples', 'Growing level by level', 'The 10% referral commission'], 'film'))
             + f'<div class="stats rv">{st}</div>'
@@ -1134,8 +1152,8 @@ def p_calc(here):
   </fieldset>
   <div class="row2">
    <div class="fld"><label for="c-n">3. Campaigns at this level</label>
-    <div class="step-in"><button type="button" data-dec aria-label="One campaign less">−</button><input id="c-n" type="number" inputmode="numeric" min="1" max="5" value="1" aria-describedby="c-n-h"><button type="button" data-inc aria-label="One campaign more">+</button></div>
-    <small id="c-n-h">From 1 to 5. Each campaign brings its own daily clicks.</small></div>
+    <div class="step-in"><button type="button" data-dec aria-label="One campaign less">−</button><input id="c-n" type="number" inputmode="numeric" min="1" max="3" value="1" aria-describedby="c-n-h"><button type="button" data-inc aria-label="One campaign more">+</button></div>
+    <small id="c-n-h">From 1 to 3: up to 3 campaigns can be active per account. Each brings its own daily clicks.</small></div>
    <div class="fld"><label for="c-d">4. First click day</label><input id="c-d" type="date"><small>Usually the day you buy.</small></div>
   </div>
   <button type="button" class="btn btn-ghost sm reset" data-reset>{ic('refresh')}<span>Reset</span></button>
@@ -1368,6 +1386,8 @@ def llms():
 - Login Ads: $20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
 - Referrals are optional; sponsors receive 10% of the campaigns their referrals buy.
 - What members promote: any program with a link, for example BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products and their own businesses. Each view is a real member opening the advertiser's page for a 15-second countdown.
+- The presentation slides, free as a PDF: {SITE}{BASE}assets/{DECK['file']} (how it works in 4 steps, every level with its numbers).
+- Up to 3 ad campaigns can be active per account (the platform's own presentation).
 - MTG's own experience: he found BellverCards through an ad on ClickBaitPays, joined, and is earning and ranking up (his experience, not a promise).
 {lv}
 '''
@@ -1396,7 +1416,8 @@ def copy_assets(dst):
     pairs = [('favicon-cursor.ico', 'favicon.ico'), ('favicon-cursor-32.png', 'favicon-32.png'), ('apple-touch-icon.png', 'apple-touch-icon.png'),
              ('icon-192.png', 'icon-192.png'), ('icon-512.png', 'icon-512.png'), ('icon-maskable-512.png', 'icon-maskable-512.png'),
              ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp'),
-             ('mtg-photo-256.webp', 'mtg-photo.webp'), ('streams/bellver-card.webp', 's/bellver-card.webp'),
+             ('mtg-photo-256.webp', 'mtg-photo.webp'), ('../../../cbp/_build/deck/deck-cover.webp', 'deck-cover.webp'),
+             ('../../../cbp/_build/deck/' + DECK['file'], DECK['file']), ('streams/bellver-card.webp', 's/bellver-card.webp'),
              ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
     for a, b in pairs:
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))

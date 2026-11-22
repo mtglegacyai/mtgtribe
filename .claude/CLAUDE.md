@@ -264,6 +264,10 @@ about what is possible, a few smart nuggets, the next video named, always congru
 MTG records silently and talks as he clicks; his words are notes, the voice is V3 reading the approved script. Skill:
 `.claude/skills/mtg-tutorial-video/` section 2a. ClickBaitPays lineup, what is recorded, what is still to record and
 the teaching plan per video: `tools/cbp/VIDEOS.md` (guide MTG through it; he expects Claude to know the sequence).
+Every video also opens with an outline after the greeting, ends with "In this video, you learned ...", closes with a bang
+(a strong call to action like bellveraffiliates.com's, thanks for watching to the end, the way forward) and one closing
+quote per series, never varied. MTG's order of work for ClickBaitPays (22 Nov 2026): the Cloudflare account first, then
+clickbaitpaysus.com updated and kept in sync with mtgtribe.com/cbp, then the videos one at a time (`tools/cbp/VIDEOS.md`).
 
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 

@@ -240,3 +240,19 @@ headings in the official clickbaitpays.me font (Orbitron), and outranking every 
 | Copy | Generic examples of what visitors promote (an affiliate offer, a shop, YouTube, a WhatsApp group), so every personal copy stays right for its owner |
 
 Still waiting: MTG's own explainers and tutorials (placeholders), the Cloudflare account for the videos (see CLAUDE.md).
+
+---
+
+## 11. clickbaitpaysus.com = the same guide (MTG, 22 Nov 2026, live the same day)
+
+MTG: "remove everything that is currently on clickbaitpaysus.com and replace it with the new content ... on mtgtribe.com/cbp
+... so that ... the clickbaitpaysus.com website also gets the same updates at the exact same time."
+
+| Part | Now |
+|---|---|
+| Build | `python3 cbp/_build/build.py` builds /cbp, then `CBP_TARGET=cbpus` builds the guide for the domain root and installs it into `/home/user/clickbaitpays` (MusaTheGiant/clickbaitpays). `--no-cbpus` skips it |
+| Addresses | Same paths without /cbp: /dashboard/..., /calculator/, /disclaimer/, /cbpcopy/. Canonical, sitemap, llms.txt, manifest, robots.txt and structured data use clickbaitpaysus.com; MTG's group and other guides keep their mtgtribe.com addresses |
+| Previews | Their own set with clickbaitpaysus.com in the pill: `CBP_TARGET=cbpus python3 cbp/_build/og.py` (into `cbp/_build/og-cbpus/`) |
+| Order form | On clickbaitpaysus.com the clickbaitpaysus.com/yourname address comes first |
+| Old site | Its 28 pages and the /mtg copy (34 addresses) forward to the matching new pages; the old files are in the repo's history |
+| Kept | CNAME only; the shared files (video-return.js, mtg-dash.css and .js, wa-message.js, zoom-cta.js) travel with the copy |

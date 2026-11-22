@@ -857,3 +857,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
 .streams-land{padding:0 0 26px}
 .streams-land .sband{margin-top:0}
 .eb-more{margin-top:6px;font-size:.88rem}
+
+/* an address in the order form wraps instead of running off a small phone (clickbaitpaysus.com/yourname is one long word) */
+.oform small b{overflow-wrap:anywhere}

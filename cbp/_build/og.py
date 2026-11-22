@@ -1,7 +1,8 @@
 """Social preview images for every page of the ClickBaitPays guide (1200x630 JPEG, under 200 KB), MTG's formula (tools/og/README.md):
 one big headline that says what the page gives you, one clear visual of its subject (the page's own video cover in the slim laptop,
 or the tool itself), the exact address in a pill, the ClickBaitPays emblem. Run after covers.py:
-NODE_PATH=$(npm root -g) python3 cbp/_build/og.py"""
+NODE_PATH=$(npm root -g) python3 cbp/_build/og.py                       (mtgtribe.com/cbp)
+CBP_TARGET=cbpus NODE_PATH=$(npm root -g) python3 cbp/_build/og.py      (clickbaitpaysus.com, into cbp/_build/og-cbpus)"""
 import base64, json, os, subprocess, sys, tempfile
 from PIL import Image
 
@@ -10,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
 import build                                   # one source of truth: the pages, their addresses and their videos
 
-OUT = os.path.join(ROOT, 'cbp', 'assets', 'og')
+OUT = os.path.join(HERE, 'og-cbpus') if build.TARGET == 'cbpus' else os.path.join(ROOT, 'cbp', 'assets', 'og')   # CBP_TARGET=cbpus: clickbaitpaysus.com's set
 LOGO = os.path.join(ROOT, 'tools', 'cbp', 'brand', 'clickbaitpays-logo-disc-video.png')
 
 
@@ -132,7 +133,7 @@ def visual(key):
         return ('<div class="vis"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">'
                 '<path d="M12 2.5l8 3v6c0 5-3.5 8.6-8 10-4.5-1.4-8-5-8-10v-6z" fill="rgba(0,229,255,.12)"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#46f2ad" stroke-width="1.8"/></svg></div>')
     if key == 'copy':
-        return (f'<div class="vis br"><div class="bb"><i></i><i></i><i></i><span class="url">mtgtribe.com/cbp/<u>yourname</u></span></div>'
+        return (f'<div class="vis br"><div class="bb"><i></i><i></i><i></i><span class="url">{build.COPY_AT}<u>yourname</u></span></div>'
                 f'<div class="pg"><img src="{logo64}" alt=""><span class="j">Join ClickBaitPays free</span><div class="price">R1,000 <small>or $50 once-off</small></div></div></div>')
     return laptop(VIDEO_OF[key])
 
@@ -143,7 +144,7 @@ FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800
 
 def address(key):
     path = '' if key == 'landing' else build.NAVD[key][1]
-    return ('mtgtribe.com' + build.prod_url(path)).rstrip('/')
+    return (build.HOST + build.prod_url(path)).rstrip('/')
 
 
 def main():

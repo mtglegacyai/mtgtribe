@@ -1,6 +1,7 @@
 """ClickBaitPays Guide by MTG (mtgtribe.com/cbp): static site builder.
 
-python3 cbp/_build/build.py                 builds /cbp/ and /cbpcopy/ into the repo
+python3 cbp/_build/build.py                 builds /cbp/ and /cbpcopy/ into the repo, then the same guide for clickbaitpaysus.com
+                                            (when MusaTheGiant/clickbaitpays is cloned at /home/user/clickbaitpays; --no-cbpus skips it)
 python3 cbp/_build/build.py --preview DIR   writes a private review copy with relative links (tools/qa/README.md)
 NODE_PATH=$(npm root -g) python3 cbp/_build/covers.py   draws the wide video covers (assets/v/*.webp)
 NODE_PATH=$(npm root -g) python3 cbp/_build/og.py       draws every page's social preview (assets/og/*.jpg)
@@ -14,7 +15,7 @@ dashboard navigation menu is there for a reason ... navigation arrows back and f
   open the pop-up's phone; the player has its own Full Screen and Close bar and closes itself at the end.
 One source of truth for every fact, price and link: CONFIG below.
 """
-import hashlib, html, json, os, posixpath, re, shutil, sys
+import hashlib, html, json, os, posixpath, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # repo root
 HERE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -22,8 +23,18 @@ SRC = os.path.join(HERE_DIR, 'src')
 BRAND = os.path.join(ROOT, 'tools', 'cbp', 'brand')
 
 # ============================================================== CONFIG (facts checked 21 and 22 November 2026)
-SITE = 'https://mtgtribe.com'
-BASE = '/cbp/'
+# Two addresses, one guide (MTG, 22 Nov 2026): mtgtribe.com/cbp, and the root of clickbaitpaysus.com (repo MusaTheGiant/clickbaitpays).
+# Every build makes both; CBP_TARGET=cbpus selects the second. Never edit the clickbaitpaysus.com files by hand.
+TARGET = os.environ.get('CBP_TARGET', 'mtgtribe')
+HUB = 'https://mtgtribe.com'                   # MTG's main site (his group, his other guides): the same from both addresses
+CBPUS_REPO = '/home/user/clickbaitpays'
+if TARGET == 'cbpus':
+    SITE, BASE = 'https://clickbaitpaysus.com', '/'
+else:
+    SITE, BASE = 'https://mtgtribe.com', '/cbp/'
+HOST = SITE.split('//', 1)[1]
+SITE_LABEL = HOST + BASE.rstrip('/')           # mtgtribe.com/cbp or clickbaitpaysus.com
+COPY_AT = HOST + BASE                          # where a personal copy lives: mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname
 NAME = 'ClickBaitPays Guide by MTG'
 TODAY = '2026-11-22'
 CHECKED = '21 November 2026'          # level figures read in the back office (Level 4 recording)
@@ -121,11 +132,11 @@ MY_STREAMS = [
     dict(key='jetup', name='JetUP × TAG Markets', tag='AI copy trading, explained before you commit', img='jetup-logo.webp', w=240, h=189, accent='lime',
          line='Copy trading with Sonic AI, an account opened in your own name at TAG Markets, and the JetUP community and partner plan, every rule in plain English.',
          facts=['Sonic AI copy trading', 'Your account, in your own name', '17 videos, 6-part training'],
-         cta='Open The JetUP Guide', url='/jetup/', ext=False),
+         cta='Open The JetUP Guide', url=HUB + '/jetup/', ext=False),
     dict(key='bw', name='Bitcoin Wealth', tag='A different way to stack Bitcoin', img='bitcoin-wealth-logo.webp', w=192, h=192, accent='orange',
          line='One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public on the blockchain for anyone to check.',
          facts=['Once-off 0.001 BTC entry', 'Paid to your own wallet', 'Every payment public'],
-         cta='Open The Bitcoin Wealth Guide', url='/bw/', ext=False),
+         cta='Open The Bitcoin Wealth Guide', url=HUB + '/bw/', ext=False),
 ]
 CLONE = ['It sells the real reason people join: traffic for what they already promote',
          'Every step on video, in laptop and phone players that close themselves at the end',
@@ -227,7 +238,7 @@ SEO = {
     'streams': ('MTG\'s Income Streams: BellverCards, JetUP and Bitcoin Wealth',
                 'Need something to promote on ClickBaitPays? Add MTG\'s own income streams, each with a full guide: BellverCards, JetUP with TAG Markets, and Bitcoin Wealth.'),
     'copy': ('Get This ClickBaitPays Website: Your Link, R1,000 Once-Off',
-             'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at mtgtribe.com/cbp/yourname. Pay only if you like it.'),
+             f'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at {COPY_AT}yourname. Pay only if you like it.'),
     'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
              'The small print in plain words: an independent ClickBaitPays guide, the referral link disclosure, where the figures come from and what this site stores.'),
 }
@@ -439,7 +450,7 @@ CBP_THING = {'@type': 'Organization', 'name': 'ClickBaitPays', 'url': OFFICIAL, 
 
 def person_ld():
     return {'@type': 'Person', '@id': PERSON_ID, 'name': 'MTG (MusaTheGiant)', 'alternateName': ['MTG', 'Musa The Giant'],
-            'jobTitle': 'Your Digital Architect', 'url': SITE + '/', 'sameAs': [u for k, l, u in SOCIAL if k != 'whatsapp']}
+            'jobTitle': 'Your Digital Architect', 'url': HUB + '/', 'sameAs': [u for k, l, u in SOCIAL if k != 'whatsapp']}
 
 
 def crumbs_ld(items):
@@ -846,7 +857,7 @@ def p_landing():
     USED_ICONS.clear()
     howto = {'@type': 'HowTo', 'name': 'How ClickBaitPays works, step by step', 'inLanguage': 'en-ZA',
              'step': [{'@type': 'HowToStep', 'position': i + 1, 'name': n, 'text': plain(t), 'url': SITE + prod_url(NAVD[k][1])} for i, (ico, n, t, k) in enumerate(STEPS)]}
-    hd = head('landing', '', here, [howto, crumbs_ld([('MTG TRIBE', SITE + '/'), ('ClickBaitPays guide', '')])])
+    hd = head('landing', '', here, [howto, crumbs_ld([('MTG TRIBE', HUB + '/'), ('ClickBaitPays guide', '')])])
     tiles = [('grow', 'Promote Your Link'), ('plan', 'Compensation Plan'), ('streams', 'My Income Streams'),
              ('join', 'How To Join'), ('tutorials', 'Step-By-Step Tutorials'), ('legit', 'Is It Legit?')]
     tl = ''.join(f'<a class="tile t3d" href="{page_link(k, here)}"><span class="ti">{ic(NAVD[k][4])}</span><b>{t}</b><small>{NAVD[k][3]}</small>{ic("chr", "ic go")}</a>' for k, t in tiles)
@@ -908,7 +919,7 @@ def p_landing():
 
 def browser_mock(slug='yourname'):
     """a small 3D browser window showing your own copy of this website"""
-    return (f'<div class="bmock t3d" aria-hidden="true"><div class="bm-bar"><i></i><i></i><i></i><span class="bm-url">mtgtribe.com/cbp/<b>{slug}</b></span></div>'
+    return (f'<div class="bmock t3d" aria-hidden="true"><div class="bm-bar"><i></i><i></i><i></i><span class="bm-url">{COPY_AT}<b>{slug}</b></span></div>'
             f'<div class="bm-body"><span class="bm-logo"></span><span class="bm-h">Got a link? <em>Get it seen.</em></span><span class="bm-v"><i></i></span>'
             f'<span class="bm-btn">Join Free <small>(your link)</small></span></div></div>')
 
@@ -1239,10 +1250,9 @@ def p_copy(here):
   <div class="field"><label for="o-name">Your name, as it should appear *</label><input id="o-name" name="name" required autocomplete="name"></div>
   <div class="field"><label for="o-wa">Your WhatsApp number *</label><input id="o-wa" name="wa" required inputmode="tel" autocomplete="tel"></div>
   <fieldset class="field"><legend>Your address *</legend>
-   <label class="tog"><input type="radio" name="domain" value="mtgtribe.com/cbp/" checked required><span><span>mtgtribe.com/cbp/<wbr><i>yourname</i></span></span></label>
-   <label class="tog"><input type="radio" name="domain" value="clickbaitpaysus.com/"><span><span>clickbaitpaysus.com/<wbr><i>yourname</i></span></span></label>
+   {domain_choices()}
   </fieldset>
-  <div class="field"><label for="o-slug">The name at the end of your address *</label><input id="o-slug" name="slug" required autocapitalize="none" spellcheck="false" aria-describedby="o-slug-h"><small id="o-slug-h">Letters and numbers only. Your page: <b data-out="addr">mtgtribe.com/cbp/yourname</b></small></div>
+  <div class="field"><label for="o-slug">The name at the end of your address *</label><input id="o-slug" name="slug" required autocapitalize="none" spellcheck="false" aria-describedby="o-slug-h"><small id="o-slug-h">Letters and numbers only. Your page: <b data-out="addr">{COPY_AT}yourname</b></small></div>
   <div class="field"><label for="o-ref">Your ClickBaitPays referral link *</label><input id="o-ref" name="ref" required inputmode="url" placeholder="https://clickbaitpays.me/join.php?ref=yourname" aria-describedby="o-ref-h"><small id="o-ref-h">Every Join button on your page will use this link. Find it on your back office dashboard (Copy).</small></div>
   <div class="field"><label for="o-group">Your WhatsApp group link (optional)</label><input id="o-group" name="group" inputmode="url"></div>
   <div class="row2"><div class="field"><label for="o-tt">TikTok (optional)</label><input id="o-tt" name="tiktok"></div><div class="field"><label for="o-fb">Facebook (optional)</label><input id="o-fb" name="fb"></div></div>
@@ -1292,7 +1302,7 @@ def page_specs():
              'plan': (p_plan, [], 'WebPage', True), 'calc': (p_calc, [app], 'WebPage', True), 'daily': (p_daily, [], 'WebPage', True),
              'grow': (p_grow, [], 'WebPage', True), 'legit': (p_legit, [], 'WebPage', True),
              'streams': (p_streams, [{'@type': 'ItemList', 'name': 'MTG\'s income streams', 'itemListElement': [
-                 {'@type': 'ListItem', 'position': i + 1, 'name': st['name'], 'url': st['url'] if st['ext'] else SITE + st['url']} for i, st in enumerate(MY_STREAMS)]}], 'CollectionPage', True),
+                 {'@type': 'ListItem', 'position': i + 1, 'name': st['name'], 'url': st['url']} for i, st in enumerate(MY_STREAMS)]}], 'CollectionPage', True),
              'tutorials': (p_tutorials, [tut_list], 'CollectionPage', True), 'videos': (p_videos, [], 'CollectionPage', True),
              'faq': (p_faq, [faq_ld], 'FAQPage', True), 'copy': (p_copy, [prod], 'WebPage', 'join'), 'disc': (p_disc, [], 'WebPage', True)}
     for k in TUT:
@@ -1318,7 +1328,7 @@ def sitemap():
 def llms():
     lv = '\n'.join(f'- Level {l}: campaign ${p:,} USDT, one-time activation ${a} USDT, ${c:.2f} USDT per click, {n} clicks a day, campaign total ${t:,.2f} USDT (platform figures)' for l, p, a, c, n, t in LEVELS)
     pages = '\n'.join(f'- [{label}]({SITE}{prod_url(p)}): {SEO[k][1]}' for k, p, label, *_ in NAV)
-    return f'''# ClickBaitPays Guide by MTG (mtgtribe.com/cbp)
+    return f'''# ClickBaitPays Guide by MTG ({SITE_LABEL})
 
 > An independent, plain-English guide to ClickBaitPays (clickbaitpays.me), a paid-to-click advertising platform: members buy ad campaigns to advertise their own link and are paid in USDT for viewing other members' ads. By MTG (MusaTheGiant), "Your Digital Architect", an active member. Education only, not official ClickBaitPays material, not financial advice. Figures checked {CHECKED}.
 
@@ -1343,6 +1353,14 @@ def llms():
 - MTG's own experience: he found BellverCards through an ad on ClickBaitPays, joined, and is earning and ranking up (his experience, not a promise).
 {lv}
 '''
+
+
+def domain_choices():
+    """the two addresses a copy can have, this site's own first"""
+    doms = ['mtgtribe.com/cbp/', 'clickbaitpaysus.com/']
+    doms.sort(key=lambda d: d != COPY_AT)
+    return '\n   '.join(f'<label class="tog"><input type="radio" name="domain" value="{d}"{" checked" if i == 0 else ""} required>'
+                          f'<span><span>{d}<wbr><i>yourname</i></span></span></label>' for i, d in enumerate(doms))
 
 
 def manifest():
@@ -1412,10 +1430,84 @@ def check_seo():
             print(f'  SEO length: {k}: title {len(t)}, description {len(dsc)}')
 
 
+# The old clickbaitpaysus.com (before 22 Nov 2026) and its addresses: each one sends the visitor to the page that answers it now.
+CBPUS_OLD = {'dashboard.html': 'home', 'start-here.html': 'home', 'what-is-clickbaitpays.html': 'what', 'how-clickbaitpays-works.html': 'how',
+             'advertiser-viewer-benefits.html': 'grow', 'platform-sustainability.html': 'legit', 'campaign-levels.html': 'levels',
+             'daily-clicks-earnings.html': 'daily', 'referral-rewards.html': 'plan', 'staggered-campaign-strategy.html': 'plan',
+             'crypto-deposits-withdrawals.html': 'tutorials', 'back-office-walkthrough.html': 't1', 'account-rules-safety.html': 'join',
+             'completion.html': 'timeline', 'glossary.html': 'faq', 'faq.html': 'faq', 'action-plan.html': 'how', 'tutorials.html': 'tutorials',
+             'videos.html': 'videos', 'profit-calculator.html': 'calc', 'resources.html': 'videos', 'about.html': 'streams', 'contact.html': 'disc',
+             'earnings-disclaimer.html': 'disc', 'risk-disclaimer.html': 'disc', 'affiliate-disclosure.html': 'disc', 'privacy.html': 'disc',
+             'mtg/': '', 'mtg/faq/': 'faq', 'mtg/glossary/': 'faq', 'mtg/profit-calculator/': 'calc', 'mtg/request-a-copy/': 'copy',
+             'mtg/video-tutorials/': 'tutorials', 'mtg/share/': ''}
+CBPUS_KEEP = {'.git', 'CNAME'}
+SHARED = ('video-return.js', 'wa-message.js', 'zoom-cta.js', 'mtg-dash.css', 'mtg-dash.js')    # mtgtribe.com/assets/: travel with the copy
+
+
+def build_cbpus():
+    """clickbaitpaysus.com: the same guide at the domain's root. Everything old goes (except the domain setting), the old addresses
+    forward, and it gets its own social previews (its address in the pill: og.py with CBP_TARGET=cbpus), robots.txt, 404 page and README"""
+    if not os.path.isdir(CBPUS_REPO + '/.git'):
+        sys.exit('clickbaitpaysus.com repo not found at ' + CBPUS_REPO)
+    og = os.path.join(HERE_DIR, 'og-cbpus')
+    if not os.path.isdir(og):
+        sys.exit('no clickbaitpaysus.com previews: run CBP_TARGET=cbpus python3 cbp/_build/og.py')
+    stage = tempfile.mkdtemp()
+    shutil.copytree(os.path.join(ROOT, 'cbp', 'assets'), stage + '/assets', ignore=shutil.ignore_patterns('og'))
+    shutil.copytree(og, stage + '/assets/og')
+    for f in SHARED:
+        shutil.copy(os.path.join(ROOT, 'assets', f), stage + '/assets/' + f)
+    copy_assets(stage + '/assets')
+    pages = all_pages()
+    for p, h in pages.items():
+        write(os.path.join(stage, prod_url(p).lstrip('/'), 'index.html'), h)
+    for old, key in CBPUS_OLD.items():
+        assert old.rstrip('/') not in {prod_url(p).strip('/') for p in pages}, ('an old address is a new page', old)
+        write(os.path.join(stage, old + ('index.html' if old.endswith('/') else '')), forward(old, key) if key else forward_home(old))
+    write(stage + '/sitemap.xml', sitemap())
+    write(stage + '/llms.txt', llms())
+    write(stage + '/manifest.webmanifest', manifest())
+    write(stage + '/robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: ' + SITE + '/sitemap.xml\n')
+    write(stage + '/.nojekyll', '')
+    nf = pages[''].replace('<meta name="robots" content="index,follow', '<meta name="robots" content="noindex,follow', 1)
+    write(stage + '/404.html', nf)                  # a lost visitor lands on the front page
+    write(stage + '/README.md', '# clickbaitpaysus.com\n\nThe ClickBaitPays Guide by MTG, the same guide as https://mtgtribe.com/cbp, at this domain\'s root.\n\n'
+          '**Do not edit these files by hand.** They are built from mtglegacyai/mtgtribe (`cbp/_build/build.py`), which builds\n'
+          'mtgtribe.com/cbp and then this copy every time, so the two never drift apart (MTG, 22 Nov 2026). Videos: Cloudflare R2,\n'
+          'https://media.clickbaitpaysus.com/videos/. The old site (before 22 Nov 2026) is in this repo\'s history; its addresses forward\n'
+          'to the new pages.\n')
+    bad = [p for p, h in pages.items() if '\u2014' in h or '\u2013' in h]
+    for x in os.listdir(CBPUS_REPO):
+        if x not in CBPUS_KEEP:
+            q = os.path.join(CBPUS_REPO, x)
+            shutil.rmtree(q) if os.path.isdir(q) else os.remove(q)
+    for x in os.listdir(stage):
+        a, b = os.path.join(stage, x), os.path.join(CBPUS_REPO, x)
+        shutil.copytree(a, b) if os.path.isdir(a) else shutil.copy(a, b)
+    shutil.rmtree(stage)
+    check_seo()
+    print('clickbaitpaysus.com:', len(pages), 'pages +', len(CBPUS_OLD), 'old addresses forwarded, installed into', CBPUS_REPO + ';',
+          'DASH CHECK FAILED: ' + ', '.join(bad) if bad else 'no dashes')
+
+
+def forward_home(old):
+    """an old address whose answer is the front page"""
+    to, url = BASE, SITE + BASE
+    og = f'{SITE}{BASE}assets/og/cbp-landing.jpg?v={HASH.get("og/cbp-landing.jpg", "1")}'
+    return (f'<!doctype html>\n<html lang="en-ZA">\n<head>\n<meta charset="utf-8">\n<title>{esc(SEO["landing"][0])}</title>\n<meta name="robots" content="noindex,follow">\n'
+            f'<link rel="canonical" href="{url}">\n<meta http-equiv="refresh" content="0; url={to}">\n<meta property="og:title" content="{esc(SEO["landing"][0])}">\n'
+            f'<meta property="og:url" content="{url}">\n<meta property="og:image" content="{og}">\n'
+            f'<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{esc(SEO["landing"][0])}">\n'
+            f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:image" content="{og}">\n'
+            f'<script>location.replace({json.dumps(to)}+location.hash)</script>\n</head>\n<body><p><a href="{to}">ClickBaitPays Guide by MTG</a></p></body>\n</html>\n')
+
+
 def main():
     global MODE
     if '--preview' in sys.argv:
         return render_preview(sys.argv[sys.argv.index('--preview') + 1])
+    if TARGET == 'cbpus':
+        return build_cbpus()
     out = os.path.join(ROOT, 'cbp')
     copy_assets(os.path.join(out, 'assets'))
     pages = all_pages()
@@ -1431,6 +1523,11 @@ def main():
         if '\u2014' in t or '\u2013' in t:
             bad.append(f)
     print('built', len(pages), 'pages;', 'DASH CHECK FAILED: ' + ', '.join(bad) if bad else 'no dashes')
+    # and always the same guide at clickbaitpaysus.com too, so it never misses an update (MTG, 22 Nov 2026)
+    if os.path.isdir(CBPUS_REPO + '/.git') and '--no-cbpus' not in sys.argv:
+        subprocess.run([sys.executable, os.path.abspath(__file__)] + sys.argv[1:], env=dict(os.environ, CBP_TARGET='cbpus'), check=True)
+    elif '--no-cbpus' not in sys.argv:
+        print('NOTE: clickbaitpaysus.com not built: clone MusaTheGiant/clickbaitpays to', CBPUS_REPO)
 
 
 def render_preview(dst):

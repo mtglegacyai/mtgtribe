@@ -101,7 +101,12 @@ page videos, the presentation and the live Q&A on mtgtribe.com/cbp play from the
   Two files are made (720p for phones, `-1080p` for screens 1200 px and wider). **Since 22 Nov 2026 the /bw videos play from Cloudflare R2**, not
   GitHub Pages (the site had reached Pages' 1 GB limit): `MEDIA_URL` in `config.py` (media.bitcoinwealthpays.com/videos/: Bitcoin Wealth's own
   Cloudflare account, bucket bitcoinwealth-media, separate from Bellver). After `build.py`, run `python3 bw/_build/build/r2.py` (uploads new or changed files, checks size and MD5; the token is on MTG's
-  Default cloud environment and reaches both his Cloudflare accounts). Never put MP4s back into `bw/media`. `hero=True` gives the pulsing play button; the
+  Default cloud environment and reaches both his Cloudflare accounts). Never put MP4s back into `bw/media`.
+  **The same guide is also bitcoinwealthpays.com (MTG, 22 Nov 2026: "when we update the BW website, make sure that you always also
+  automatically update the Bitcoin Wealth Pays website as well").** `build.py` builds /bw, then builds the same guide for the root of
+  bitcoinwealthpays.com (`BW_TARGET=bwp`) and installs it into `/home/user/bitcoinwealthpays` (repo MusaTheGiant/bitcoinwealthpays: add it
+  to the session and clone it there first; the build says so when it is missing). **Every /bw change is published to BOTH repos** (a PR in
+  each), and checked on both domains. Never edit the bitcoinwealthpays.com files by hand. `hero=True` gives the pulsing play button; the
   cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
   button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
 

@@ -16,10 +16,10 @@ find . -name "*.html" -not -path "./tools/*" -not -path "./.git/*" -not -path "*
 ```
 
 ```bash
-node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
+node tools/qa/hscroll.js /tmp/pages.txt /tmp/hscroll.json 320,360,375,384,390,412,430,480,540,600,641,700,768,820,1024 1,1.3
 ```
 
-Add 880, 912 and 960 for the widths between tablets and small laptops. To check another address (for example the live site),
+Add 880, 912 and 960 for the widths between tablets and small laptops. Keep 384 in the list: MTG's own phone shows pages 384 px wide (22 Nov 2026: a glow ring 6 px past the edge showed up only there, with large text). To check another address (for example the live site),
 put `BASE=https://mtgtribe.com/` in front of the command.
 
 The check measures against the real screen width (`documentElement.clientWidth`). Until 11 Nov 2026 it used `innerWidth`,

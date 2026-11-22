@@ -87,7 +87,7 @@ COPY = {
     'what': ('What is <em>ClickBaitPays?</em>', 'Advertise your link, view ads, get paid in USDT.'),
     'how': ('How it works in <em>5 steps</em>', 'From free sign-up to your payout.'),
     'join': ('Join <em>free</em> in 3 steps', 'Through a member\'s link, and the house rules.'),
-    'levels': ('All <em>7 levels</em> in one table', 'From 13 USDT. Activate a level once.'),
+    'levels': ('All <em>7 levels</em> in one table', 'From $13 USDT. Activate a level once.'),
     'timeline': ('<em>12 + 7</em>: when it is yours', '12 click days, a 7-day hold, then your balance.'),
     'plan': ('The compensation <em>plan</em>', 'How you earn at every level, on video.'),
     'grow': ('If it has a link, <em>promote it here</em>', 'BellverCards, Bitcoin Wealth, JetUP, MLM, affiliate, stokvel.'),
@@ -99,8 +99,8 @@ COPY = {
     't2': ('Deposit <em>USDT</em>, safely', 'Amount, NOWPayments, a fresh address every time.'),
     't3': ('Your <em>first</em> campaign', 'Buy it, activate the level, click your ads.'),
     't4': ('<em>Another</em> campaign', 'No activation fee the second time.'),
-    't5': ('How to <em>withdraw</em>', 'Once a week, 10 USDT minimum, 10% fee.'),
-    't6': ('Create a <em>Login Ad</em>', '20 USDT, 30 days, seen by every member.'),
+    't5': ('How to <em>withdraw</em>', 'Once a week, $10 USDT minimum, 10% fee.'),
+    't6': ('Create a <em>Login Ad</em>', '$20 USDT, 30 days, seen by every member.'),
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
@@ -126,8 +126,8 @@ def visual(key):
     if key == 'tutorials':
         return '<div class="vis list">' + ''.join(f'<div class="row"><i>{i + 1}</i>{build.NAVD[k][2]}</div>' for i, k in enumerate(['t1', 't2', 't3', 't4', 't5', 't6', 't7'])) + '</div>'
     if key == 'calc':
-        return ('<div class="vis calc"><div class="eg">Example: first Level 4 campaign</div><div class="t big"><span>Pay today</span><b>330 USDT</b></div>'
-                '<div class="t"><span>Clicks a day</span><b>5</b></div><div class="t"><span>Platform figure</span><b>388.80</b></div><div class="t"><span>Click days</span><b>12 + 7</b></div></div>')
+        return ('<div class="vis calc"><div class="eg">Example: first Level 4 campaign</div><div class="t big"><span>Pay today</span><b>$330 USDT</b></div>'
+                '<div class="t"><span>Clicks a day</span><b>5</b></div><div class="t"><span>Platform figure</span><b>$388.80</b></div><div class="t"><span>Click days</span><b>12 + 7</b></div></div>')
     if key == 'disc':
         return ('<div class="vis"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">'
                 '<path d="M12 2.5l8 3v6c0 5-3.5 8.6-8 10-4.5-1.4-8-5-8-10v-6z" fill="rgba(0,229,255,.12)"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#46f2ad" stroke-width="1.8"/></svg></div>')

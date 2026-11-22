@@ -38,9 +38,10 @@ h1.sm{font-size:76px}
 .chip svg{width:44px;height:44px;flex:none}
 .chip b{font-weight:900;color:#00e5ff}.chip.p b{color:#ff6bff}
 .arrow{font:900 46px Orbitron,sans-serif;color:#ffd866;filter:drop-shadow(0 0 10px rgba(255,216,102,.6));align-self:center}
-.bars{display:flex;align-items:flex-end;gap:14px;height:200px}
-.bars i{display:grid;align-content:end;justify-items:center;width:78px;border-radius:12px 12px 4px 4px;font:900 30px Orbitron;font-style:normal;color:#07001a;padding-bottom:8px;
+.bars{display:flex;align-items:flex-end;gap:12px;height:200px}
+.bars i{display:grid;align-content:end;justify-items:center;width:106px;border-radius:12px 12px 4px 4px;font:900 26px Orbitron;white-space:nowrap;font-style:normal;color:#07001a;padding-bottom:8px;
  background:linear-gradient(180deg,#7ff4ff,#00e5ff 40%,#ff00ff);box-shadow:0 0 22px rgba(0,229,255,.45)}
+.bars i u{text-decoration:none;font-size:.72em;margin-right:1px}
 .dots{display:flex;align-items:center;gap:9px;padding:16px 22px;border-radius:22px;background:rgba(10,2,34,.88);border:2px solid rgba(0,229,255,.4)}
 .dots i{width:34px;height:34px;border-radius:50%;background:#00e5ff;box-shadow:0 0 12px #00e5ff}
 .dots i.h{background:#ff00ff;box-shadow:0 0 12px #ff00ff;width:30px;height:30px}
@@ -133,7 +134,7 @@ def headline(small, big, cls=''):
 
 def bars(labels):
     hs = [70, 90, 110, 130, 150, 175, 200]
-    return '<div class="bars">' + ''.join(f'<i style="height:{hs[k]}px">{t}</i>' for k, t in enumerate(labels)) + '</div>'
+    return '<div class="bars">' + ''.join(f'<i style="height:{hs[k]}px"><span>{t.replace("$", "<u>$</u>")}</span></i>' for k, t in enumerate(labels)) + '</div>'
 
 
 def dots():
@@ -154,7 +155,7 @@ COVERS = {
              '<div class="br"><div class="t"><i></i><i></i><i></i></div><div class="b"><div class="s"><i></i><i></i><i></i><i></i></div><div class="m"><i></i><i></i><i></i><i></i></div></div></div>', 'sm'),
     'e1': ('EXPLAINER · PROMOTE YOUR LINK', 'Got a link?', 'Get it seen', chip('link', 'Any link') + '<span class="arrow">➜</span>' + chip('eye', 'Real eyes', 'p') + '<span class="arrow">➜</span>' + chip('coins', 'Paid too', 'g'), ''),
     'e2': ('EXPLAINER · GET STARTED', 'How to', 'Join free', chip('link', '1 Tap Join') + chip('user', '2 Sign up', 'p') + chip('play', '3 Start', 'g'), ''),
-    'e3': ('EXPLAINER · THE LEVELS', '7 levels', 'One activation', '<div class="stack">' + bars(['13', '77', '150', '300', '600', '1.2K', '2.4K']) + '</div>', 'sm'),
+    'e3': ('EXPLAINER · THE LEVELS', '7 levels', 'One activation', '<div class="stack">' + bars(['$13', '$77', '$150', '$300', '$600', '$1.2K', '$2.4K']) + '</div>', 'sm'),
     'e4': ('EXPLAINER · THE TIMELINE', '12 click days', '+ 7 day hold', '<div class="stack">' + dots() + '<div class="keys"><span>Click</span><span>Hold</span><span>Yours</span></div></div>', 'sm'),
     't1': ('TUTORIAL 1', 'Your back office', 'Quick tour',
            '<div class="dash"><span class="k"><small>Click Ads</small><b>→</b></span><span class="k"><small>Campaigns</small><b>→</b></span>'

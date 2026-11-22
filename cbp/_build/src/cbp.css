@@ -737,3 +737,16 @@ input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 
 .steps.one{grid-template-columns:minmax(0,1fr);margin-top:0}
 .price em{display:inline-flex;align-items:center;gap:6px}
 .perks{margin-top:0}
+
+/* nothing scrolls sideways on a small phone with large text (MTG, 6 Nov 2026): one-column grids never grow past the screen,
+   and long words and addresses break inside their box */
+.dgrid,.fcards,.endband,.ccards,.pcards,.vrows,.own-in,.db-in,.tiles,.steps,.stats{grid-template-columns:minmax(0,1fr)}
+@media (min-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:760px){.ccards,.pcards{grid-template-columns:repeat(3,minmax(0,1fr))}.ccards.two-up{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:860px){.fcards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.dgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.endband{grid-template-columns:repeat(auto-fit,minmax(0,1fr))}.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1000px){.own-in{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}.db-in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.steps.one{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:899px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1300px){.dmain .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.checks li>span,.vr-t b,.vr-t small,.dblock h2,.dblock h3,.dblock p,.eb h2,.eb p,.fcard h3,.pcard h3,.ccard b{min-width:0;overflow-wrap:break-word}
+.own-copy .checks li>span{overflow-wrap:anywhere}

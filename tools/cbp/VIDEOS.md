@@ -21,6 +21,12 @@ What we have today (22 Nov 2026), and where it lives:
 
 None of them is edited yet. A session's own copies are temporary: download again from Drive when editing starts.
 
+**The order of work (MTG, 22 Nov 2026):** 1. ClickBaitPays' own Cloudflare account, and the existing YouTube videos
+moved onto it, one video at a time (MTG downloads each from YouTube, shares it from Google Drive; Claude puts it on
+Cloudflare and back in its place on the site). 2. clickbaitpaysus.com updated with everything on mtgtribe.com/cbp, then
+kept in sync with every later change. 3. The videos in this lineup, one at a time: script, MTG's approval, edit, live,
+next. Not before MTG says "go".
+
 ---
 
 ## 1. How MTG records (what to tell him)
@@ -35,7 +41,7 @@ None of them is edited yet. A session's own copies are temporary: download again
 
 ---
 
-## 2. The lineup in watch order (PROPOSED 22 Nov 2026, awaiting MTG)
+## 2. The lineup in watch order (APPROVED by MTG, 22 Nov 2026, explainers E5 and E6 included)
 
 A member's journey: join and protect the account, look around, fund, first campaign, grow, cash out, help your team,
 advertise more. The new Tutorial 1 moves the website's 7 tutorials up by one (rename the pages when MTG approves).
@@ -94,6 +100,20 @@ MTG's 22 Nov 2026 layer on top of it:
 8. **Next video.** Close with what the next video in the lineup does, and why it comes next.
 9. **Short, never thin.** Cut every wait and detour; never cut a step, a success check or a nugget. Targets: tutorials 3
    to 7 minutes, explainers 60 to 120 seconds.
+
+**The opening and the close (MTG, 22 Nov 2026), every video:**
+
+- **After the greeting, the outline:** what this video covers, in 2 or 3 short lines while the list fills in on screen.
+- **At the end, the recap:** "In this video, you learned ..." with the same list ticking off, "we showed you this and that".
+- **Close with a bang:** a strong call to action in the style of MTG's best closers on bellveraffiliates.com (read that
+  site's closing lines before writing; reuse their energy, not other programs' claims), then thank them and make them feel
+  great for watching to the very end, then the way forward: the next video, and after the last video in the series, the
+  next action (Join, Get This Website, My Income Streams).
+- **One closing quote for the whole ClickBaitPays series**, the same words at the end of every ClickBaitPays video (as
+  Leo's quote closes the Bitcoin Wealth videos). Never vary it. The quote: see `SERIES_QUOTE` below (MTG picks it).
+
+SERIES_QUOTE: not chosen yet (proposed 22 Nov 2026: "One ad. The right person. The right time.", from MTG's own
+BellverCards story). Write MTG's choice here, then use it word for word.
 
 **Look and feel:** zoom in on the action and out for context, arrows and rings on what to look at, emoji pops on key words,
 smooth transitions, captions with the spoken word lit, a step progress bar, the official ClickBaitPays emblem where MTG's

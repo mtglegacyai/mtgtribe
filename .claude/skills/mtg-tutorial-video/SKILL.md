@@ -65,7 +65,12 @@ feel like, oh man, this guy is smart." Every tutorial and explainer, on every si
 - **Teach one word** the step touches, in the website's own words; **one everyday picture** (taxi rank, queue, shop on a
   busy street, billboard, season ticket, harvest) and where it stops; **one eye-opener** about what is possible, tied to
   the step; **2 to 5 smart nuggets** (the tip that saves trouble, the reason behind a rule); name their worry and answer it.
-- **Next video** always named, and why it comes next.
+- **Outline after the greeting, recap at the end** ("In this video, you learned ..."), then **close with a bang**: a strong
+  call to action in the style of MTG's best closers (bellveraffiliates.com), thank them and make them feel great for
+  watching to the end, and the way forward.
+- **One closing quote per series, word for word in every video of that series** (Leo's quote closes Bitcoin Wealth; each
+  site's series has its own, saved in that site's video notes). Never improvise a different one.
+- **Next video** always named, and why it comes next; after the last video of a series, the next action instead.
 - **Congruent with the website:** words, figures and steps come from the site the video plays on; it never contradicts
   its page. Every amount carries its $ sign.
 - MTG records silently and talks as he clicks (or sends his words afterward): his words are notes for the script; the

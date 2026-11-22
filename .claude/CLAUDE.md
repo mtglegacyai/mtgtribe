@@ -25,9 +25,11 @@ his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
-## Reminder for MTG: a Cloudflare account for ClickBaitPays (saved 22 November 2026, at MTG's request)
+## ClickBaitPays' own Cloudflare account (asked for 22 Nov 2026, set up with MTG the same day)
 
-**Remind MTG after the Bitcoin Wealth Cloudflare account is set up.** MTG wants ClickBaitPays to have its own Cloudflare
+**Done 22 Nov 2026:** account, clickbaitpaysus.com on Cloudflare, bucket `clickbaitpays-media`, videos at
+media.clickbaitpaysus.com: `tools/cbp/CLOUDFLARE.md`. Next: MTG shares each YouTube video from Google Drive, one at a time,
+and it moves to Cloudflare. The original note: MTG wants ClickBaitPays to have its own Cloudflare
 account (like Bellver has, and Bitcoin Wealth will have), so every ClickBaitPays video plays from Cloudflare instead of
 YouTube: "if YouTube decides that they're gonna take down my channel, then that will be a problem." Order: Bitcoin Wealth
 first, then ClickBaitPays. Walk MTG through creating and configuring it step by step, as for Bellver. Today the 3 main
@@ -109,6 +111,18 @@ page videos, the presentation and the live Q&A on mtgtribe.com/cbp play from the
   each), and checked on both domains. Never edit the bitcoinwealthpays.com files by hand. `hero=True` gives the pulsing play button; the
   cover's `spot` says where on the picture the button sits, and `poster` is the website cover (no address pill, room for the
   button). First use: the cartoon at the top of /bw/dashboard/ (MTG, 15 Nov 2026).
+
+## Standing rule: clickbaitpaysus.com is the same guide as mtgtribe.com/cbp, always (MTG, 22 Nov 2026)
+
+"Remove everything that is currently on clickbaitpaysus.com and replace it with ... everything that is on mtgtribe.com/cbp ...
+the clickbaitpaysus.com website also gets the same updates at the exact same time." `cbp/_build/build.py` builds /cbp, then
+the same guide for the root of clickbaitpaysus.com (`CBP_TARGET=cbpus`) and installs it into `/home/user/clickbaitpays` (repo
+MusaTheGiant/clickbaitpays, GitHub Pages, CNAME kept: add it to the session with push access and clone it there first; the
+build says so when it is missing). Its social previews carry its own address: after changing a page's preview, run og.py
+twice (`python3 cbp/_build/og.py`, then `CBP_TARGET=cbpus python3 cbp/_build/og.py`, which writes `cbp/_build/og-cbpus/`).
+The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's history) forward to the new pages (`CBPUS_OLD`).
+**Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
+clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`).
 
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 
@@ -269,6 +283,10 @@ about what is possible, a few smart nuggets, the next video named, always congru
 MTG records silently and talks as he clicks; his words are notes, the voice is V3 reading the approved script. Skill:
 `.claude/skills/mtg-tutorial-video/` section 2a. ClickBaitPays lineup, what is recorded, what is still to record and
 the teaching plan per video: `tools/cbp/VIDEOS.md` (guide MTG through it; he expects Claude to know the sequence).
+Every video also opens with an outline after the greeting, ends with "In this video, you learned ...", closes with a bang
+(a strong call to action like bellveraffiliates.com's, thanks for watching to the end, the way forward) and one closing
+quote per series, never varied. MTG's order of work for ClickBaitPays (22 Nov 2026): the Cloudflare account first, then
+clickbaitpaysus.com updated and kept in sync with mtgtribe.com/cbp, then the videos one at a time (`tools/cbp/VIDEOS.md`).
 
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 

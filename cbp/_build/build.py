@@ -560,12 +560,8 @@ def sidebar(key, here):
         b(page_link('copy', here), ic('globe'), 'Get This Website', 'gold', False),
         b(A('', here), '<span class="emo" aria-hidden="true">🏡</span>', 'Go Home', '', False),
         b(GROUP, ic('whatsapp'), 'MTG TRIBE'),
-        b(esc(OWNER['wa']), ic('msg'), 'WhatsApp MTG'),
-        b(soc['telegram'][1], ic('telegram'), 'Telegram'),
         b(soc['tiktok'][1], ic('tiktok'), 'TikTok'),
-        b(soc['youtube'][1], ic('youtube'), 'YouTube'),
-        b(soc['facebook'][1], ic('facebook'), 'Facebook'),
-        b(A('disclaimer/', here), ic('info'), 'Disclaimer', '', False)])
+        b(soc['youtube'][1], ic('youtube'), 'YouTube')])       # MTG, 22 Nov 2026: six buttons, trimmed from ten
     return f'''<aside class="md-side" id="cbp-menu" aria-label="Dashboard menu">
  <a class="side-brand" href="{A('', here)}" aria-label="{esc(NAME)}: home"><img src="{A('assets/logo-disc-256.webp', here)}" alt="" width="44" height="44"><span><b>ClickBaitPays</b><small>Dashboard by MTG 👑</small></span></a>
  <nav aria-label="Dashboard pages">{''.join(out)}</nav>

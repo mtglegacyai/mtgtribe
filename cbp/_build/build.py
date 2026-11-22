@@ -60,11 +60,16 @@ LEVELS = [(1, 13, 1, 0.48, 3, 17.17), (2, 77, 7, 2.83, 3, 101.74), (3, 150, 15, 
           (4, 300, 30, 6.48, 5, 388.80), (5, 600, 60, 10.80, 6, 777.60), (6, 1200, 120, 12.96, 10, 1555.20),
           (7, 2400, 240, 13.50, 20, 3240.00)]
 
-# Videos. yt: a YouTube video on the ClickBaitPays Us channel (plays in place, from youtube-nocookie.com).
-# src: a video file (when MTG's own tutorials are ready). Neither: a placeholder ("Coming soon" or "Being recorded").
+# Videos. src: MTG's own file on ClickBaitPays' Cloudflare (MEDIA_URL; since 22 Nov 2026 the videos move there from YouTube, one at
+# a time: MTG: "if YouTube decides that they're gonna take down my channel, then that will be a problem"). Two files per video, made
+# outside the repo and uploaded by r2.py: <src>.mp4 (720p, phones) and <src>-1080p.mp4 (screens 1200 px and wider).
+# yt: a YouTube video on the ClickBaitPays Us channel (plays in place, from youtube-nocookie.com), until it has moved.
+# Neither: a placeholder ("Coming soon" or "Being recorded").
+MEDIA_URL = 'https://media.clickbaitpaysus.com/videos/'           # the same for both addresses of the guide
+MEDIA_VER = json.load(open(os.path.join(HERE_DIR, 'media.json')))   # each file's version (r2.py), so a new file is never an old cache
 # o: 'h' 16:9 (plays in the laptop) or 'v' 9:16 (opens the pop-up's phone). Cover: assets/v/<code>.webp (covers.py).
 V = {
-    'welcome': dict(label='Video 1', title='Welcome to ClickBaitPays', short='Welcome', yt='gWkLEgBFVEY', secs=351,
+    'welcome': dict(label='Video 1', title='Welcome to ClickBaitPays', short='Welcome', src='welcome', secs=351,   # was YouTube gWkLEgBFVEY
                     line='What ClickBaitPays is, who it is for, and how a click turns into USDT.'),
     'strategy': dict(label='Video 2', title='Compensation plan and income strategy', short='Compensation plan', yt='MiUja2RnWXY', secs=457,
                      line='The plan with real-world examples, and the 10% referral commission.'),
@@ -154,6 +159,16 @@ def mmss(s):
 
 def playable(code):
     return bool(V[code].get('yt') or V[code].get('src'))
+
+
+def media(code, hd=False):
+    """the address of a video file on Cloudflare, with its version: 720p, or the 1080p file for big screens ('' if there is none)"""
+    name = V[code]['src'] + ('-1080p' if hd else '') + '.mp4'
+    if name not in MEDIA_VER:
+        if hd:
+            return ''
+        sys.exit(f'{name} is not on Cloudflare yet: make it in /home/user/cbp-media and run python3 cbp/_build/r2.py')
+    return MEDIA_URL + name + '?v=' + MEDIA_VER[name]
 
 
 # The menu, in reading order: (key, page path under /cbp/ ('cbpcopy/' is the order page at /cbpcopy/), menu label, menu line, icon, group).
@@ -392,7 +407,8 @@ def vid(code, here, hero=False, cap=True, eager=False, num=None):
     img = (f'<img src="{esc(small)}" srcset="{esc(small)} 640w, {esc(big)} 1280w" sizes="(max-width:900px) 94vw, 680px" width="1280" height="720" '
            f'{load} decoding="async" alt="{esc(v["title"])}: video cover">')
     if playable(code):
-        how = (f'data-yt="{v["yt"]}"' if v.get('yt') else f'data-src="{esc(L(v["src"], here))}"') if v['o'] == 'h' else f'data-play="{code}"'
+        how = ((f'data-yt="{v["yt"]}"' if v.get('yt') else f'data-src="{esc(media(code))}"' + (f' data-src-hd="{esc(media(code, True))}"' if media(code, True) else ''))
+               if v['o'] == 'h' else f'data-play="{code}"')
         ctl = (f'<button type="button" class="vplay{" pulse" if hero else ""}" {how} data-code="{code}" '
                f'aria-label="Play {esc(v["title"])} ({mmss(v["secs"])})"><span class="pbtn">{ic("pf")}</span></button>')
         right = mmss(v['secs'])
@@ -438,7 +454,9 @@ def video_data(here):
         if v.get('yt'):
             d[k]['yt'] = v['yt']
         else:
-            d[k]['s'] = L(v['src'], here)
+            d[k]['s'] = media(k)
+            if media(k, True):
+                d[k]['h'] = media(k, True)
     return json.dumps(d, separators=(',', ':'), ensure_ascii=False)
 
 

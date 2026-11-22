@@ -97,7 +97,7 @@ function judge(ctx, m, { inline }) {
         if (cov.w > cov.vw || cov.sb < -0.75) fail(tag, 'cover frame wider than the screen');
         if (pops) {      // the pop-up loop below plays it; here: the press really opens the phone frame, and Close brings the cover back
           await btn.scrollIntoViewIfNeeded(); await btn.click(); await p.waitForFunction(() => !!document.querySelector('#pl-pop iframe, #pl-pop video'), null, { timeout: 15000 }).catch(() => {});
-          await p.waitForTimeout(500);
+          await p.waitForFunction(() => { const v = document.querySelector('.pl.on video, #pl-pop.on video, #pl-pop video'); return !v || v.videoWidth > 0; }, null, { timeout: 15000 }).catch(() => {}); await p.waitForTimeout(500);
           const st = await p.evaluate(() => { const pop = document.querySelector('#pl-pop'), v = pop && pop.querySelector('video'); return { phone: !!pop && pop.classList.contains('pl-v'), on: !!pop && pop.classList.contains('on'), tall: !!v && v.videoHeight > v.videoWidth, inline: !!document.querySelector('.vid .pl.on') }; });
           checks++; if (!st.on || !st.phone || !st.tall || st.inline) fail(tag, 'pressing the cover did not open the vertical video in the phone frame ' + JSON.stringify(st));
           await p.locator('#pl-pop [data-pl-x]').click(); await p.waitForTimeout(500);
@@ -106,7 +106,7 @@ function judge(ctx, m, { inline }) {
           continue;
         }
         await btn.scrollIntoViewIfNeeded(); await btn.click(); await p.waitForFunction(() => !!document.querySelector('.pl.on iframe, .pl.on video'), null, { timeout: 15000 }).catch(() => {});
-        await p.waitForTimeout(900);
+        await p.waitForFunction(() => { const v = document.querySelector('.pl.on video, #pl-pop.on video, #pl-pop video'); return !v || v.videoWidth > 0; }, null, { timeout: 15000 }).catch(() => {}); await p.waitForTimeout(900);
         let m = await p.evaluate(probe);
         if (short) {
           if (!m || !m.max) fail(tag, `frame ${Math.round(cov.h)} cannot fit ${cov.vh - 66} and play did not go to full screen`); else judge(tag + ' AUTO FULL', m, { inline: false });
@@ -148,7 +148,7 @@ function judge(ctx, m, { inline }) {
         const tag = `${w}x${h} ${path} popup ${k}`;
         const t = p.locator(`[data-play="${k}"]:visible`).first(); await t.scrollIntoViewIfNeeded(); await t.click(); 
         await p.waitForFunction(() => !!document.querySelector('#pl-pop iframe, #pl-pop video'), null, { timeout: 15000 }).catch(() => {});
-        await p.waitForTimeout(700);
+        await p.waitForFunction(() => { const v = document.querySelector('.pl.on video, #pl-pop.on video, #pl-pop video'); return !v || v.videoWidth > 0; }, null, { timeout: 15000 }).catch(() => {}); await p.waitForTimeout(700);
         let m = await p.evaluate(probe); judge(tag + (m && m.max ? ' AUTO FULL' : ''), m, { inline: false });
         if (path === '/bw/dashboard/') await shot(`popup-${k}`);
         if (m && !m.max) { await p.locator('#pl-pop [data-pl-max]').click(); await p.waitForTimeout(700);

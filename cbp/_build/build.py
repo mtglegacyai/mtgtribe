@@ -77,7 +77,7 @@ V = {
                        line='Every part of the member back office, so you know your way around before you start.'),
     'presentation': dict(label='Presentation', title='The full presentation (14 Sept 2026)', short='Presentation', src='presentation', secs=947,   # was YouTube 25wXab2hAB8
                          line='How it works from start to finish: ads, campaigns and withdrawals.'),
-    'qa': dict(label='Live Q&A', title='Members\' questions answered (29 Aug 2026)', short='Live Q&A', yt='8rftor87kKQ', secs=1361,
+    'qa': dict(label='Live Q&A', title='Members\' questions answered (29 Aug 2026)', short='Live Q&A', src='qa', secs=1361,   # was YouTube 8rftor87kKQ (1920 x 992, padded to 16:9)
                line='Ad viewing, affiliates, Pay It Forward, withdrawals and strategy, answered live.'),
     'tour': dict(label='Site tour', title='How to use this guide', short='How to use this guide', status='soon',
                  line='Where everything is, and the order to watch the tutorials.'),

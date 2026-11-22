@@ -4,7 +4,8 @@ Why: visitors should never have to search for a name and risk landing on a copyc
 Every page gets the first mention of each name in each section linked to its official site.
 (directory_table() can build an "Official websites" table, but MTG chose not to show one: the inline links are enough.)
 
-Sources used to verify each address (checked 2 November 2026; Nomura, Progmat, CapConnect+ and OpenZeppelin added 15 November 2026 from each company's own site):
+Sources used to verify each address (checked 2 November 2026; Nomura, Progmat, CapConnect+ and OpenZeppelin added 15 November 2026 from each company's own site;
+Talos, Marex, Broadridge, Fairmint and Circle added 22 November 2026 from each company's own site, Circle also listed on cantonecosystem.com):
 - Canton Network's official ecosystem directory (cantonecosystem.com, linked from canton.network)
 - Canton Wiki project pages, and each project's own homepage
 - The company's own site for exchanges, brokers and tax offices
@@ -54,6 +55,11 @@ OFFICIAL = {
     "Progmat": ("https://progmat.co.jp/", "progmat.co.jp", "Japanese digital asset platform (linked from Digital Asset's 10 Nov 2026 press release)", "noopener"),
     "CapConnect+": ("https://www.capconnectplus.com/", "capconnectplus.com", "Commercial paper platform, proposed Super Validator (CIP-0131)", "noopener"),
     "OpenZeppelin": ("https://www.openzeppelin.com/", "openzeppelin.com", "Smart contract security company", "noopener"),
+    "Talos": ("https://www.talos.com/", "talos.com", "Institutional trading technology company", "noopener"),
+    "Marex": ("https://www.marex.com/", "marex.com", "Financial services and prime brokerage group", "noopener"),
+    "Broadridge": ("https://www.broadridge.com/", "broadridge.com", "Financial technology company (DLR and DLX platforms)", "noopener"),
+    "Fairmint": ("https://www.fairmint.com/", "fairmint.com", "SEC-registered transfer agent, keeps the record of tokenized CNTN shares", "noopener"),
+    "Circle": ("https://www.circle.com/", "circle.com", "Company behind the USDC stablecoin", "noopener"),
     "CoinMarketCap": ("https://coinmarketcap.com/currencies/canton-network/", "coinmarketcap.com", "Canton Coin price data", "noopener"),
     # Brokers and markets
     "Interactive Brokers": ("https://www.interactivebrokers.com/", "interactivebrokers.com", "Broker for US shares (most countries)", "noopener"),
@@ -82,10 +88,11 @@ PATTERNS = [
     ("Nasdaq", r"\bNasdaq\b(?!\.com)"),
     ("Gate", r"\bGate\b"),
     ("CapConnect+", r"\bCapConnect\+"),
+    ("Circle", r"\bCircle(?= Internet)"),
 ] + [(k, r"\b" + re.escape(k) + r"\b") for k in (
     "Nightly", "Bron", "Ledger", "Cypherock", "VALR", "Kraken", "Bybit", "KuCoin", "MEXC", "OneSwap", "Cantex",
     "CaviarNine", "CBTC", "Rocky", "Ligero", "DTCC", "CoinGecko", "CoinMarketCap", "Robinhood", "SoFi",
-    "EasyEquities", "SEC", "SARS", "HMRC", "IRS", "Nomura", "Progmat", "OpenZeppelin")]
+    "EasyEquities", "SEC", "SARS", "HMRC", "IRS", "Nomura", "Progmat", "OpenZeppelin", "Talos", "Marex", "Broadridge", "Fairmint")]
 _RX = [(k, re.compile(p)) for k, p in PATTERNS]
 
 # Never link inside these elements (links, headings, FAQ questions, buttons, code, scripts).

@@ -26,7 +26,19 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
    (writes canton-weekly/DATE/, rebuilds the hub canton-weekly/index.html, updates sitemap-home.xml (adds the new report and gives today's date,
    South African time, as `<lastmod>` to every page the run changed, so Google knows to crawl them again) and, for the
    newest report only, refreshes the `data-snap` numbers on /cc/ and /cntn/ from the `guides` block).
-5. Commit to a `claude/canton-weekly-DATE` branch. Push to `main` only after MTG says "publish".
+5. Commit to a `claude/canton-weekly-DATE` branch, push it, then publish on your own (MTG, 8 Nov 2026, confirmed 22 Nov 2026:
+   "I do want you to publish these weekly reports automatically"). Do not wait for "publish". Run these as four separate
+   commands, exactly as written, so they match the allow rules in `.claude/settings.json`:
+   `git fetch origin main`, `git checkout -B main origin/main`, `git merge --no-edit claude/canton-weekly-DATE`,
+   `git push origin main`. Then confirm the four URLs load and send MTG the "it is live" notification.
+   If the push is still refused, do not work around it: notify MTG that the report is ready on its branch.
+
+## Posting pack (MTG, 22 Nov 2026)
+
+With every report, give MTG the YouTube thumbnail (canton-weekly/DATE/poster.jpg), the WhatsApp image (og.jpg), a YouTube
+title (under 70 characters), description and tags, a WhatsApp message and a WhatsApp Status caption. Lay every description
+out with pointing fingers and spaces as the "post descriptions" rule in `.claude/CLAUDE.md` shows: label, blank line,
+👉 link on its own line, blank line.
 
 ## Prices on the guides
 

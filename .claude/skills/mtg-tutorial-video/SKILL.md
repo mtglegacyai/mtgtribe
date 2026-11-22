@@ -52,6 +52,28 @@ join their team." The videos must be shareable by people outside MTG's team. Use
 
 Full template and wording: `references/script-template.md`.
 
+## 2a. Teach, connect, convert (MTG, 22 Nov 2026)
+
+"I want even this step-by-step tutorial videos to be educational as well ... make them understand a certain word, a
+certain topic, a certain phrase, better ... visualize me sitting next to them ... those nuggets ... that just make someone
+feel like, oh man, this guy is smart." Every tutorial and explainer, on every site:
+
+- **Greet like family**, then one line that welcomes and congratulates them for the step they are on (South Africans greet
+  before they teach).
+- **Sit next to them:** one person at the table, "Let's do this together", "See this button? Tap it", the exact label,
+  the success check.
+- **Teach one word** the step touches, in the website's own words; **one everyday picture** (taxi rank, queue, shop on a
+  busy street, billboard, season ticket, harvest) and where it stops; **one eye-opener** about what is possible, tied to
+  the step; **2 to 5 smart nuggets** (the tip that saves trouble, the reason behind a rule); name their worry and answer it.
+- **Next video** always named, and why it comes next.
+- **Congruent with the website:** words, figures and steps come from the site the video plays on; it never contradicts
+  its page. Every amount carries its $ sign.
+- MTG records silently and talks as he clicks (or sends his words afterward): his words are notes for the script; the
+  soundtrack is always MTG Master Voice V3 reading the approved script.
+- Short, never thin: cut waits and detours, never a step, a success check or a nugget.
+
+ClickBaitPays lineup, recording guide and teaching plan per video: `tools/cbp/VIDEOS.md`.
+
 ## 3. Look and motion (vertical 1080 x 1920)
 
 - Top bar: the small JetUP logo disc with a gold ring, "MTG" over "YOUR DIGITAL ARCHITECT", the part chip.

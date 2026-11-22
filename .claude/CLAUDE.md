@@ -256,6 +256,15 @@ Total $194.40, a $10 minimum (rand stays R1,000). Where several amounts are list
 dollar, 1 USDT is worth about $1. Done on mtgtribe.com/cbp (pages, calculator, covers, previews, `llms.txt`); follow it in
 every new page, script, video and caption.
 
+## Standing rule: videos that teach, connect and convert (MTG, 22 Nov 2026)
+
+Every tutorial and explainer (ClickBaitPays first, every site after) is educational as well as step by step: greet like
+family and congratulate, talk as if sitting next to the viewer, make one word clear, one everyday picture, one eye-opener
+about what is possible, a few smart nuggets, the next video named, always congruent with the website's current content.
+MTG records silently and talks as he clicks; his words are notes, the voice is V3 reading the approved script. Skill:
+`.claude/skills/mtg-tutorial-video/` section 2a. ClickBaitPays lineup, what is recorded, what is still to record and
+the teaching plan per video: `tools/cbp/VIDEOS.md` (guide MTG through it; he expects Claude to know the sequence).
+
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 
 When MTG asks for a message to send a prospect (WhatsApp, DM, comment reply), give it like this, every time:

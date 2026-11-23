@@ -65,6 +65,29 @@ He is recording that part next. Wait for recording 2 before editing. Raw recordi
   the video rules), and a check that the page's written steps match the video (BNB route via VALR, BNB to USDT, buy CC).
   Live only after MTG approves a private preview.
 
+## Recording 2 notes (MTG, 23 Nov 2026, narrated while recording; still in progress)
+
+Picks up with 774 CC on Kraken. Say "Kraken" correctly in the voice-over.
+
+17. **Two options:** keep CC on Kraken (sell later when you choose) or withdraw it to a self-custody wallet like 5N Loop.
+18. **mtgtribe.com/cc > Quick answer > "5N Loop"** opens wallet.looptech.io. New users: Sign up with email. **Research the
+    official Loop sign-up steps and show them in MTG's voice as if he is showing them** (he logs in with his existing account).
+19. **Loop dashboard:** "Top up your fee balance: add enough CC to enable transfers". Loop is Canton-native, so sending or
+    swapping needs a little CC in the fee balance. Tap **Receive** > **Copy Party ID** (the Party ID is your receiving address).
+20. **Kraken > Balances > CC > Withdraw:** paste the Party ID as the Canton network address. **Memo: leave it empty.** Loop gives
+    a Party ID, not a memo; a memo is only needed when the receiving platform asks for one. Say it as MTG's own knowledge
+    (never mention ChatGPT). Explain the withdraw screen in a sentence, do not read it word for word.
+21. **Nickname: "My Loop Wallet"** ("add a unique nickname ... we'll use it to make withdrawals easier next time") > Add
+    withdrawal (address).
+22. **Test first:** 59 CC > Review: **the fee is 15 CC** (taken on top) > Confirm > "Withdrawal initiated" (view transaction
+    is optional). Kraken balance now about 700 CC. Teach: always test with a small amount before sending a bigger one.
+23. **Loop:** balance 0 > refresh > **59 CC arrived** within seconds.
+24. **Send the rest:** Kraken > CC > Withdraw > "My Loop Wallet" already selected > 685 CC (+15 CC fee) > Review > Confirm >
+    Processing > Loop refresh: arrived in seconds. Line: faster the second time because the wallet is saved. Fee note, kept
+    calm: 15 CC is about $1.15 at 7 to 8 cents (no predictions).
+25. **Loop > Top up** the fee balance: he tries 25 CC (first time). **Research Loop's real minimum and how the fee balance
+    works**, and give the correct number in the voice-over. (Recording continues.)
+
 ## Map of recording 1 (source times, 6 second contact sheets)
 
 | Time | Shows | Keep / cut |

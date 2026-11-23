@@ -12,7 +12,7 @@ BOILER = 'Ready, or still have a question?'
 
 FACTS = [
     'Bitcoin Wealth is a smart contract on BNB Smart Chain (contract 0x1ad09b043E0Fe59243C9a18ee1c855bd7792Cd29). Members activate slots with BTCB, Bitcoin\'s value on BNB Smart Chain.',
-    'Slot 1 costs 0.001 BTC, a once-off. Slots 2 to 12 double each time up to 2.048 BTC (a 4.095 BTC ladder) and are bought by auto entry from the cycle below, once it fills.',
+    'Slot 1 costs 0.001 BTC, a once-off. Slots 2 to 12 double each time up to 2.048 BTC (a 4.095 BTC ladder) and are bought by auto entry from the cycle below, as soon as its seat 5 is filled (seats 4 and 5 pay for the next slot).',
     'Each cycle has 14 positions (2, then 4, then 8). First cycle: 2 to the upline, 6 to your wallet, 2 to your next slot, 3 to members below, 1 recycle. Later cycles: 7 to your wallet and 1 to the Royal Pool instead of the next slot.',
     'Payouts go straight to members\' own wallets in the same transaction. They come only from other members\' slot payments, so nothing is guaranteed.',
     'On 14 November 2026 the contract showed 41,013 member IDs; it was created on 15 April 2026. It has an owner wallet (not renounced) with an emergency withdrawal for tokens the contract holds.',

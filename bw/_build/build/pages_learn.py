@@ -204,10 +204,10 @@ def p_slots(here):
     cells = ''.join(f'<div class="slotc glass{" one" if i == 0 else ""}" style="--i:{i}"><small>Slot {i + 1}</small><b>{s:g} BTC</b><em>{"You pay this once" if i == 0 else "Auto entry"}</em></div>'
                     for i, s in enumerate(SLOTS))
     return f'''{phero("layers", "The 12 Bitcoin Wealth slots, and the once-off",
-        "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.",
+        "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, as soon as its seat 5 is filled.",
         [("badge-check", "You pay 0.001 BTC once"), ("layers", f"Full ladder {LADDER} BTC"), ("refresh-cw", "Slots never expire")])}
 {sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Thandi asks who pays for slots 2 to 12</a></h3>
-<p class="vdesc">Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. {mmss(V['e3']['secs'])}.</p>
+<p class="vdesc">Leo shows her with two coins: why every slot is double, why slot 1 is the only one you pay for, and why seat 5 moves you up. {mmss(V['e3']['secs'])}.</p>
 {checks(["Who pays for slot 2, and every slot after it", "What you actually pay: 0.001 BTC, once", "The one thing that has to happen to move up"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.</p></div>
@@ -216,7 +216,7 @@ def p_slots(here):
      "Every slot, side by side")}
 {sec(f"""<div class="grid2">
  {box("Your own outlay", "<p><b>0.001 BTC plus network fees.</b> That's it. You never pay again to move up the slots. MTG's point: it's a once-off, not a subscription.</p>", "badge-check")}
- {box("What moves you up", "<p>Auto entry buys slot 2 when your slot 1 cycle fills with 14 members. Your first two business partners and spillover from above fill it.</p>", "arrow-up")}
+ {box("What moves you up", "<p>Auto entry buys slot 2 as soon as seat 5 of your slot 1 cycle is filled: seats 4 and 5 pay for it, while seats 6 to 14 keep filling. Your business partners and spillover from above fill the seats.</p>", "arrow-up")}
 </div>
 <div class="btn-row center-row"><a class="btn btn-gold ring" href="{A('dashboard/tools/slot-calculator/', here)}">{ic('calculator')}<span class="lbl">See every slot in rand</span></a></div>""",
     "What it costs you")}

@@ -246,7 +246,7 @@ EXPLAIN_LEAD = {
     'e2': ("Explainer 2 of the Thandi and Leo series. Thandi asks who pays who, and Leo fills 14 seats with her, row by row, so she sees "
            "where every single payment goes. Watch it, then read every word below."),
     'e3': ("Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, "
-           "and Leo shows it with two coins and one full cycle. Watch it, then read every word below."),
+           "and Leo shows it with two coins and seat 5. Watch it, then read every word below."),
     'e4': ("Explainer 4 of the Thandi and Leo series. Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers "
            "six honest questions side by side, and shows where the stokvel picture stops. Watch it, then read every word below."),
 }
@@ -256,7 +256,7 @@ EXPLAIN_COVERS = {
     'e2': ["The 14 seats under you: 2, then 4, then 8", "Where each of the 14 payments goes, row by row", "What changes from your second cycle: the Royal Pool",
            "Who fills the seats, and what spillover means", "Why there is no withdraw button"],
     'e3': ["The 12 slots, each double the one before", "Who pays for slot 2: two payments from your first cycle", "What you actually pay: 0.001 BTC, once, plus small BNB fees",
-           "The one thing that has to happen to move up", "Why the programme says slots never expire"],
+           "Why seat 5 moves you up to the next slot", "Why the programme says slots never expire"],
     'e4': ["How a stokvel works: the tin, the treasurer, the book, the pot", "Who holds the money, and what peer to peer means",
            "Can you see every payment: the open book on BscScan", "Fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"],
 }

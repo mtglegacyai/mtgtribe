@@ -57,7 +57,7 @@ SEO_DESC = {
  'w-i1': 'Watch how Bitcoin Wealth works in 5 minutes: the presentation with Leo, in 10 chapters, from the smart contract and the 14 positions to the 12 slots.',
  'w-e1': 'Is Bitcoin Wealth a coin? No. Thandi asks, Leo answers in 3 minutes: the smart contract, BTCB and BNB, where the money comes from, and every word in writing.',
  'w-e2': 'Where do the 14 payments of a Bitcoin Wealth cycle go? Thandi asks, Leo shows it seat by seat: Royal Pool, spillover, no withdraw button. Every word written.',
- 'w-e3': '12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows it with two coins and one full cycle. Every word written.',
+ 'w-e3': '12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows why seat 5 moves you up. Every word written.',
  'w-e4': 'Is Bitcoin Wealth just a stokvel online? Thandi asks 6 honest questions, Leo answers side by side and shows where the picture stops. Every word written.',
  'zoom': 'Bitcoin Wealth live on Zoom, 10 sessions a week: weekdays at 14:00 and five evenings in English, isiXhosa, isiZulu and Sesotho, in SA time and yours.',
  'page': 'Get your own copy of this Bitcoin Wealth website with your referral link built in: R1,000 once-off, paid only after it is built, five free edits.',

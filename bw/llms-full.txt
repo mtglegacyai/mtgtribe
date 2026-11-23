@@ -283,17 +283,17 @@ URL: https://mtgtribe.com/bw/dashboard/12-slots/
 The 12 Bitcoin Wealth slots from 0.001 BTC to 2.048 BTC, why the 0.001 BTC entry is a once-off, and what has to happen for auto entry.
 
 ### The 12 Bitcoin Wealth slots, and the once-off
-Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.
+Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, as soon as its seat 5 is filled.
 
 #### Watch it in 3 minutes
 
 ##### Thandi asks who pays for slots 2 to 12
-Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. 3:14.
+Leo shows her with two coins: why every slot is double, why slot 1 is the only one you pay for, and why seat 5 moves you up. 3:17.
 - Who pays for slot 2, and every slot after it
 - What you actually pay: 0.001 BTC, once
 - The one thing that has to happen to move up
 Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### Every slot, side by side
 From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 are marked Auto Entry: each is bought with two of the fourteen payments from your first cycle at the slot below. The full ladder totals 4.095 BTC.
@@ -304,7 +304,7 @@ From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 ar
 0.001 BTC plus network fees. That's it. You never pay again to move up the slots. MTG's point: it's a once-off, not a subscription.
 
 ##### What moves you up
-Auto entry buys slot 2 when your slot 1 cycle fills with 14 members. Your first two business partners and spillover from above fill it.
+Auto entry buys slot 2 as soon as seat 5 of your slot 1 cycle is filled: seats 4 and 5 pay for it, while seats 6 to 14 keep filling. Your business partners and spillover from above fill the seats.
 
 #### In the presentation
 
@@ -391,7 +391,7 @@ Members who tried the newer, shinier platforms keep coming back, MTG included. T
 No dashboard balance, no withdraw button, nobody to ask. Payouts land in the wallet only you control.
 
 ##### One entry, once
-0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.
+0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, as soon as its seat 5 is filled.
 
 ##### Every payment public
 The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.
@@ -811,12 +811,12 @@ Thandi and Leo, and their voices, are made with AI.
 #### Then: the 12 slots, and what you actually pay
 
 #### Explainer 3: The 12 slots and the once-off
-Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in 3:14. Watch this when you want to know what you actually pay.
+Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5, in 3:17. Watch this when you want to know what you actually pay.
 - The 12 slots, each double the one before
 - Who pays for slot 2, and every slot after it
 - What you pay: 0.001 BTC, once, plus small BNB fees
 Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### Then: Bitcoin Wealth and the stokvel, side by side
 
@@ -1029,19 +1029,19 @@ Thandi and Leo, and their voices, are made with AI. Education only, not financia
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
-12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows it with two coins and one full cycle. Every word written.
+12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows why seat 5 moves you up. Every word written.
 
 ### The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes
-Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle. Watch it, then read every word below.
+Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5. Watch it, then read every word below.
 
 #### Watch the video
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### In this video
 - The 12 slots, each double the one before
 - Who pays for slot 2: two payments from your first cycle
 - What you actually pay: 0.001 BTC, once, plus small BNB fees
-- The one thing that has to happen to move up
+- Why seat 5 moves you up to the next slot
 - Why the programme says slots never expire
 It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
 Invited by someone else? Join with their link, so they stay your sponsor.
@@ -1067,17 +1067,17 @@ Leo: 0.001 Bitcoin, once, plus small network fees in BNB. No monthly fee, and no
 
 ##### Chapter 4 · 1:16 What has to happen to move up
 Thandi: Okay, Leo, be straight with me. What has to happen for me to move up?
-Leo: One thing. Your first cycle at the slot below has to fill: 14 seats, 14 real members.
-Leo: Your business partners fill seats, and sometimes spillover from above. Until that cycle fills, the next slot waits. Nothing moves by itself, and nothing is guaranteed.
+Leo: One thing: seat 5. When real members fill seats 4 and 5 of your first cycle, your next slot opens.
+Leo: Your business partners fill the seats, and sometimes spillover from above. The moment seat 5 is filled, slot 2 opens, while seats 6 to 14 keep filling. Nothing moves by itself, and nothing is guaranteed.
 
-##### Chapter 5 · 1:41 Can you lose a slot?
+##### Chapter 5 · 1:45 Can you lose a slot?
 Thandi: And once I'm in a slot, can I lose it?
 Leo: The programme says slots never expire. Each time a cycle completes, seat 14 starts you again in the same slot.
 
-##### Chapter 6 · 1:55 Thandi says it back
-Thandi: Let me say it back. 12 slots, each one double. I pay for slot 1 only, once. Two payments from each first cycle buy the next slot. And every cycle needs 14 real members.
+##### Chapter 6 · 1:59 Thandi says it back
+Thandi: Let me say it back. 12 slots, each one double. I pay for slot 1 only, once. Seats 4 and 5 buy my next slot. So I move up when seat 5 fills.
 
-##### Chapter 7 · 2:09 Your next step
+##### Chapter 7 · 2:12 Your next step
 Leo: That's it! You've got it. And that's how we learn best: by teaching others.
 Leo: This is education, not financial advice. So take your time, and do your own research.
 Thandi: What's next, Leo?
@@ -1434,7 +1434,7 @@ The questions people ask most, answered plainly. Can't find yours? Ask in the MT
 
 #### Before you join
 A smart contract on BNB Smart Chain where members activate slots with BTCB, and each payment goes straight to other members' wallets by fixed rules.
-Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It's a once-off: slots 2 to 12 are bought automatically from the cycle below, once it fills.
+Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It's a once-off: slots 2 to 12 are bought automatically from the cycle below, as soon as its seat 5 is filled.
 No. Every payout comes from another member's slot payment. If new activations slow down, payouts slow down. Only use money you can afford to lose.
 In three stages, all on your phone: set up a SafePal wallet, buy BNB with rand on VALR or Binance and send it to SafePal, then swap it to BTCB and activate slot 1 with the link of the person who invited you. Three tutorial videos show every tap, and each has its steps in writing.
 By the plan's rules, when the 14 positions below you fill, six of those payments land in your own wallet as BTCB (Bitcoin's value on BNB Smart Chain), two buy your next slot and one recycles you. Every payment comes from another member activating a slot, so it depends on those positions filling: nothing is guaranteed.

@@ -30,6 +30,7 @@ SPECS = {
     'w-e1': ('Thandi asks, Leo answers', ["It's not", 'a coin.', 'So what is it?'], 'duo'),
     'w-e2': ('Thandi asks, Leo answers', ['14 seats.', '14 payments.', 'Where do they go?'], 'tree'),
     'w-e3': ('Thandi asks, Leo answers', ['12 slots.', 'Why you pay', 'for one only'], 'ladder'),
+    'w-e4': ('Thandi asks, Leo answers', ['Better than', 'a stokvel?', '6 questions'], 'duo'),
     'zoom': ('Meet the community', ['Live on Zoom.', '5 evenings,', '4 languages'], 'zoom'),
     'page': ('R1,000 once-off', ['Your own', 'Bitcoin Wealth', 'website'], 'mascot'),
     'order': ('Pay after it is built', ['Order your', 'BW Tribe Page'], 'mascot'),

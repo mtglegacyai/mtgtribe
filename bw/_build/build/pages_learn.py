@@ -249,12 +249,18 @@ def p_stokvel(here):
     ]
     return f'''{phero("users", "Is Bitcoin Wealth better than a stokvel?",
         "Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin Wealth shares the spirit: ordinary people pooling, no bank in the middle. Here's where it does better, and how each one is funded.")}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e4'], here)}">Thandi asks if it's just a stokvel on the internet</a></h3>
+<p class="vdesc">Leo answers the six questions on this page side by side, and shows where the stokvel picture stops. {mmss(V['e4']['secs'])}.</p>
+{checks(["Who holds the money, and who can see every payment", "The fees, what it pays in, and how much you put in", "Is your turn guaranteed?"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e4'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e4', here, eager=True, hero=True)}</div></div>""", "Watch it in 4 minutes", id="video")}
 {sec(scorecard(), "Side by side")}
 {sec(f"""<div class="grid2">
  {box("Where Bitcoin Wealth wins", checks(["Transparency: every payment public, nobody has to be trusted to report it", "Peer to peer: payouts go straight to members' wallets", "No middleman holding the pot, no bank charges", "One small entry instead of monthly contributions", "Priced in Bitcoin's value, not rand"]), "trophy")}
  {box("How each one is funded", checks(["A stokvel is a closed circle: the same members take turns with the same pot", "Bitcoin Wealth is open: each cycle is completed by members activating the positions below you", "So it grows as the community grows, which is why teaching others matters"]), "info")}
 </div>""", "The verdict")}
-{sec(f'<div class="stack">{jump_card("e1", 31.0, "Leo explains it with a stokvel", "The tin, the book, and what changes when the book is a smart contract that anyone can read. Half a minute.", here)}{soon("e4")}</div>', "Watch it explained")}'''
+{sec(f'<div class="stack">{jump_card("e1", 31.0, "Leo explains it with a stokvel", "The tin, the book, and what changes when the book is a smart contract that anyone can read. Half a minute.", here)}</div>', "Where it started")}'''
 
 
 # ======================================================================= WHAT MAKES IT DIFFERENT

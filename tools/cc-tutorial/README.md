@@ -2,9 +2,10 @@
 
 MTG's first tutorial video for the /cc guide. He records a silent phone screen recording and narrates his notes here;
 the video goes in the placeholder already on mtgtribe.com/cc. Formula: `.claude/skills/mtg-tutorial-video/`.
-Status (23 Nov 2026): recording 1 received (Google Drive id 1JBp0Kjvygml99HBTNIMSSc_nFHxUyV57, 20:28, vertical 590x1280,
-silent). MTG changed the plan: **one video covering everything, including the withdrawal from Kraken to a 5N Loop wallet**.
-He is recording that part next. Wait for recording 2 before editing. Raw recordings never go in the repository.
+Status (23 Nov 2026): **built, waiting for MTG's approval.** One 7:51 vertical video from both recordings (part 2: Drive id
+1VXS0vbIlRH7H15fNw3-cNeWKX4qBE8rJ). Build: mtg-studio `projects/canton/tutorials/01-buy-cc-kraken/` (README there). On this
+branch: the video in `cc/media/` (720p), its covers in `cc/img/`, the player (`assets/tribe/mtg-player.*`, copied from /cbp)
+and the steps on /cc brought in line with the video. Not live until MTG approves the private preview. Raw recordings never go in the repository.
 
 ## Part 1 notes (MTG, 23 Nov 2026), in the order he recorded
 

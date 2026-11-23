@@ -143,8 +143,8 @@ VIDEOS = [
     # page: 12 slots doubling from 0.001 to 2.048 BTC, slot 1 paid once, slots 2 to 12 auto entry). From this episode on the close
     # has the hug. 16:9: it plays in the laptop, in place
     ('e3', 'bitcoin-wealth-12-slots-why-you-only-pay-once', 'The 12 slots and the once-off',
-     "Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up.",
-     193.8, _E3 + 'final/Bitcoin-Wealth-12-slots-explainer-3-1080p.mp4',
+     "Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up.",
+     197.4, _E3 + 'final/Bitcoin-Wealth-12-slots-explainer-3-1080p.mp4',
      dict(o='h', poster=_E3 + 'thumbs/out/Bitcoin-Wealth-12-slots-website-cover-16x9.jpg', short='The 12 slots', date='2026-11-22',
           name='The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes, with Thandi and Leo')),
     # Explainer 4 (MTG, 23 Nov 2026: "Put it live"). Our own script; the six questions are the stokvel page's own scorecard, word for

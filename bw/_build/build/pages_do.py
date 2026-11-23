@@ -101,7 +101,7 @@ def p_exp(here):
     e = V['e3']
     # Explainer 3 (MTG, 22 Nov 2026: "Perfect! Put it live!"): the 12 slots and the once-off, right after where the payments go
     e3 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Explainer 3: The 12 slots and the once-off</a></h2>
-<p class="vdesc">Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in {mmss(e['secs'])}. Watch this when you want to know what you actually pay.</p>
+<p class="vdesc">Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5, in {mmss(e['secs'])}. Watch this when you want to know what you actually pay.</p>
 {checks(["The 12 slots, each double the one before", "Who pays for slot 2, and every slot after it", "What you pay: 0.001 BTC, once, plus small BNB fees"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
@@ -512,7 +512,7 @@ def p_c_halv(here):
 FAQ = [
     ('Before you join', [
         ('What is Bitcoin Wealth in one sentence?', 'A smart contract on BNB Smart Chain where members activate slots with BTCB, and each payment goes straight to other members\' wallets by fixed rules.'),
-        ('How much does it cost to start?', 'Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It\'s a once-off: slots 2 to 12 are bought automatically from the cycle below, once it fills.'),
+        ('How much does it cost to start?', 'Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It\'s a once-off: slots 2 to 12 are bought automatically from the cycle below, as soon as its seat 5 is filled.'),
         ('Is it guaranteed to pay?', 'No. Every payout comes from another member\'s slot payment. If new activations slow down, payouts slow down. Only use money you can afford to lose.'),
         ('How do I join Bitcoin Wealth?', 'In three stages, all on your phone: set up a SafePal wallet, buy BNB with rand on VALR or Binance and send it to SafePal, then swap it to BTCB and activate slot 1 with the link of the person who invited you. Three tutorial videos show every tap, and each has its steps in writing.'),
         ('How do you earn Bitcoin with Bitcoin Wealth?', 'By the plan\'s rules, when the 14 positions below you fill, six of those payments land in your own wallet as BTCB (Bitcoin\'s value on BNB Smart Chain), two buy your next slot and one recycles you. Every payment comes from another member activating a slot, so it depends on those positions filling: nothing is guaranteed.'),

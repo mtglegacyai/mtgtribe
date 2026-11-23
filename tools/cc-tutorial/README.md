@@ -2,7 +2,9 @@
 
 MTG's first tutorial video for the /cc guide. He records a silent phone screen recording and narrates his notes here;
 the video goes in the placeholder already on mtgtribe.com/cc. Formula: `.claude/skills/mtg-tutorial-video/`.
-Status: recording finished (23 Nov 2026). Waiting for MTG's silent video and his "go". Raw recordings never go in the repository.
+Status (23 Nov 2026): recording 1 received (Google Drive id 1JBp0Kjvygml99HBTNIMSSc_nFHxUyV57, 20:28, vertical 590x1280,
+silent). MTG changed the plan: **one video covering everything, including the withdrawal from Kraken to a 5N Loop wallet**.
+He is recording that part next. Wait for recording 2 before editing. Raw recordings never go in the repository.
 
 ## Part 1 notes (MTG, 23 Nov 2026), in the order he recorded
 
@@ -63,9 +65,37 @@ Status: recording finished (23 Nov 2026). Waiting for MTG's silent video and his
   the video rules), and a check that the page's written steps match the video (BNB route via VALR, BNB to USDT, buy CC).
   Live only after MTG approves a private preview.
 
+## Map of recording 1 (source times, 6 second contact sheets)
+
+| Time | Shows | Keep / cut |
+|---|---|---|
+| 0:00 to 0:12 | Home screen, open mtgtribe.com/cc | Cut (start on the page) |
+| 0:12 to 0:48 | /cc: hero, "Video tutorial coming soon", scroll to "CC right now" (price $0.0760, 7d/30d, mcap #25, ATH) | Keep short |
+| 0:48 to 1:12 | CoinGecko list: CC at #25, $0.0785, +3.6% | Keep short |
+| 1:18 to 2:24 | VALR: rand balance R1,140, ZAR > Buy & Sell > Buy BNB, pay ZAR, Max, Review and confirm (0.1145 BNB for R1,139) | Keep |
+| 2:30 to 2:48 | VALR BNB wallet 0.1148 BNB > Withdraw | Keep |
+| 2:48 to 3:30 | Kraken app (opens in GBP), Fund with crypto > BNB Chain > instructions > I understand > deposit address + QR | Keep (mask address) |
+| 3:30 to 4:06 | VALR withdraw: paste address, Use all, BNB Smart Chain, recipient details (name typed), self-hosted, Confirm withdrawal, email sent | Keep (mask name, address) |
+| 4:06 to 4:42 | Black (Gmail and authenticator are secure screens), authenticator code entry, done | Keep only the code screen, masked; or a title card "approve by email and authenticator" |
+| 4:48 to 5:30 | Kraken Done, waiting (balance £0.00) | Cut most |
+| 5:36 to 7:30 | /cc quick answer, "Where are you?", CoinGecko > CC > Markets > CEX list (Bybit, Kraken, Gate, OKX, Bitget, KuCoin, XT), DEX (Temple, Bron Intents) | Keep short (why Kraken) |
+| 7:36 to 9:45 | 5N Loop sign-up (email shown), Review Risks, Confirm Ownership | Cut (redone in recording 2), mask email if any frame stays |
+| 9:48 to 10:06 | Kraken: BNB arrived (£48.55), Start trading now | Keep |
+| 10:06 to 11:00 | Fiddling: Buy BNB Chain, Transfer | Cut |
+| 11:00 to 11:36 | Account > Preferences > Currency GBP > US Dollar; balance $63.61 | Keep |
+| 11:42 to 12:42 | + > Buy > search Cc > Canton Network > $63 > "Buy $63.00 of Canton Network" pays with Google Pay | Cut, or one line: "BNB can't buy CC directly here" |
+| 12:48 to 13:48 | BNB Chain > Convert to USDT: 0.11431 BNB to 61.7774 USDT (rate 545.84, fee 0.6178 USDT) > Converted | Keep |
+| 13:54 to 14:30 | Buy another asset > Cc > Canton Network > 61 USDT > "Buy 61.00 USDT of Canton Network": 774.552 CC at $0.07798, fee 0.604 USDT, pay with USDT balance > Purchased | Keep (the win) |
+| 14:30 to 15:48 | Rating pop-up, Portfolio: Canton Network $59, balance 774.552 CC, CoinGecko markets again | Keep balance, cut pop-up |
+| 16:00 to 17:20 | Loop sign-in (email shown), dashboard $0.00, Receive, party ID copied, Kraken CC withdraw screen (address, memo) | Replace with recording 2 |
+| 17:24 to 20:28 | Kraken CC page, black screens, passkey prompt, back to /cc placeholder | Cut |
+
+Facts from the screens: CC bought **774.552 CC** (MTG said 777) for 61 USDT at $0.07798; BNB to USDT 0.11431 BNB to
+61.7774 USDT. Kraken opened in GBP (pound): show the currency switch so viewers outside the UK are not confused.
+
 ## Privacy masking (before anything else)
 
-Mask every frame that shows: email addresses and the Gmail inbox, the Kraken deposit address and VALR withdrawal
+Mask every frame that shows: his name typed in VALR's recipient details, email addresses (Loop sign-up 8:12, sign-in 16:12, Kraken account page), and the Gmail inbox, the Kraken deposit address and VALR withdrawal
 address, recipient details, balances he does not want shown, the authenticator screen, and **any Loop recovery phrase**.
 If a recovery phrase was on screen in the raw recording, MTG should not keep funds in that Loop wallet (make a fresh one).
 

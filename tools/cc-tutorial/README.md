@@ -86,7 +86,25 @@ Picks up with 774 CC on Kraken. Say "Kraken" correctly in the voice-over.
     Processing > Loop refresh: arrived in seconds. Line: faster the second time because the wallet is saved. Fee note, kept
     calm: 15 CC is about $1.15 at 7 to 8 cents (no predictions).
 25. **Loop > Top up** the fee balance: he tries 25 CC (first time). **Research Loop's real minimum and how the fee balance
-    works**, and give the correct number in the voice-over. (Recording continues.)
+    works**, and give the correct number in the voice-over.
+26. **Top up 25 CC:** enter password. **Cut the wrong-password attempt**; mask every password field. "25 CC top up
+    successful". Research and explain in his voice what the fee balance is for and why it helps (first time, plain words).
+27. **Purpose fulfilled:** "how to buy Canton Coin and keep it in a wallet only you control" (he holds the keys to his Loop
+    wallet). Recording 2 ends here; MTG uploads it next, then says "go".
+
+### Final brief from MTG (23 Nov 2026)
+
+- **One solid, crystal clear, easy to follow video** from recordings 1 and 2. Sequence it properly; say things out loud in
+  his voice; read or explain the /cc page where it helps (charts, steps, disclaimers): "not financial advice, I'm showing
+  what I do to build my diversified crypto portfolio".
+- **Update mtgtribe.com/cc to match the video:** if the steps are more than six, change "Six simple steps" and the copy so
+  it all makes sense (route: VALR rand > BNB > Kraken > USDT > CC > withdraw to 5N Loop, memo empty, test small, Kraken fee
+  15 CC, Loop fee balance top-up).
+- **Next video:** "In the next video, I'll show you how to buy CNTN stock" (mtgtribe.com/cntn, from the dashboard).
+- **Close nicely:** thanks, the usual signature ending, and calls to action from the bottom of the page: join the MTG TRIBE
+  WhatsApp group (mtgtribe.com/group), follow on TikTok and YouTube, and **especially the Bellver crypto debit card**
+  (bellveraffiliates.com): MTG wants to drive traffic there.
+- Show MTG a private preview before anything goes live.
 
 ## Map of recording 1 (source times, 6 second contact sheets)
 

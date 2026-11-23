@@ -247,6 +247,8 @@ EXPLAIN_LEAD = {
            "where every single payment goes. Watch it, then read every word below."),
     'e3': ("Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, "
            "and Leo shows it with two coins and one full cycle. Watch it, then read every word below."),
+    'e4': ("Explainer 4 of the Thandi and Leo series. Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers "
+           "six honest questions side by side, and shows where the stokvel picture stops. Watch it, then read every word below."),
 }
 EXPLAIN_COVERS = {
     'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
@@ -255,6 +257,8 @@ EXPLAIN_COVERS = {
            "Who fills the seats, and what spillover means", "Why there is no withdraw button"],
     'e3': ["The 12 slots, each double the one before", "Who pays for slot 2: two payments from your first cycle", "What you actually pay: 0.001 BTC, once, plus small BNB fees",
            "The one thing that has to happen to move up", "Why the programme says slots never expire"],
+    'e4': ["How a stokvel works: the tin, the treasurer, the book, the pot", "Who holds the money, and what peer to peer means",
+           "Can you see every payment: the open book on BscScan", "Fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"],
 }
 # the first "next step" card and the series line under them, per episode
 EXPLAIN_NEXT = {
@@ -263,7 +267,9 @@ EXPLAIN_NEXT = {
     'e2': (("Watch the positions fill", "<p>The 14 Positions page: the seats fill one by one, then switch to later cycles. All fourteen in one table.</p>", 'dashboard/how-it-works/', 'Open the 14 Positions', 'network'),
            "The 12 slots, and why you only pay once.", 'e3', 'Watch Explainer 3'),
     'e3': (("See every slot", "<p>The 12 Slots page: every slot and its price side by side, and the calculator that shows each one in rand.</p>", 'dashboard/12-slots/', 'Open the 12 Slots', 'layers'),
-           "Bitcoin Wealth and the stokvel, side by side.", None, ('dashboard/stokvel/', 'see the scorecard', 'Better Than A Stokvel? page')),
+           "Bitcoin Wealth and the stokvel, side by side.", 'e4', 'Watch Explainer 4'),
+    'e4': (("See the scorecard", "<p>The Better Than A Stokvel? page: the six questions side by side, where Bitcoin Wealth wins, and how each one is funded.</p>", 'dashboard/stokvel/', 'Open the scorecard', 'users'),
+           "Check it yourself on BscScan.", None, ('dashboard/check-it-yourself/', 'check it yourself', 'Check It Yourself page')),
 }
 
 

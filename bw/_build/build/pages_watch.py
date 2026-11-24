@@ -252,8 +252,8 @@ EXPLAIN_LEAD = {
     'e5': ("Explainer 5 of the Thandi and Leo series. Thandi asks how to read the open book, and Leo shows her on her phone: four steps on "
            "BscScan, with a real payment from 24 November 2026. Then, your own Bitcoin Wealth website. Watch it, then read every word below."),
     'e6': ("Explainer 6 of the Thandi and Leo series. Thandi asks if she can have her own copy of this guide, and Leo shows her: your own "
-           "Bitcoin Wealth marketing website, the price in rand or USDT, what traffic really means, three ways to get it, and how to order. "
-           "Watch it, then read every word below."),
+           "Bitcoin Wealth marketing website, the price in rand or USDT, everything MTG pays for so you never pay monthly fees, why he recommends "
+           "your own wallet, what traffic really means, three ways to get it, and how to order. Watch it, then read every word below."),
 }
 EXPLAIN_COVERS = {
     'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
@@ -266,8 +266,9 @@ EXPLAIN_COVERS = {
            "Can you see every payment: the open book on BscScan", "Fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"],
     'e5': ["What BscScan is: a public window into BNB Smart Chain", "Step 1: type bscscan.com yourself and open the contract",
            "Step 2: one real payment, in and straight out", "Step 3: the Token Holdings, where the Royal Pool waits", "Step 4: your own wallet, and next, your own website"],
-    'e6': ["What you get: this whole guide, with your link on every Join button", "The price: R1,000, or $50 in USDT, and why crypto costs less",
-           "What traffic means: visitors, eyeballs, clicks and conversions", "3 ways to get traffic, ClickBaitPays the third", "How to order yours, field by field"],
+    'e6': ["What you get: this whole guide, with your link on every Join button", "The price: R1,000, or $50 in USDT, once-off",
+           "No monthly fees: MTG pays the domain, hosting, video storage, security and updates", "Your own wallet (SafePal, MetaMask, TokenPocket) or an exchange, and why MTG recommends your own",
+           "What traffic means, and 3 ways to get it, ClickBaitPays the third", "How to order yours, field by field"],
 }
 # the first "next step" card and the series line under them, per episode
 EXPLAIN_NEXT = {

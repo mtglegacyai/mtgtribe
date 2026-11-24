@@ -125,8 +125,8 @@ def p_exp(here):
     e = V.get('e6')
     # Explainer 6 (MTG, 24 Nov 2026): your own Bitcoin Wealth marketing website, traffic, and how to order (his two sites only)
     e6 = '' if not e else f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Explainer 6: Your own Bitcoin Wealth marketing website</a></h2>
-<p class="vdesc">Thandi asks if she can have her own copy of this guide, and Leo shows her what she gets, the price, what traffic really means and how to order, in {mmss(e['secs'])}. Watch this when you are ready to share Bitcoin Wealth with your own website.</p>
-{checks(["This whole guide, with your link on every Join button", "R1,000, or $50 in USDT, and why crypto costs less", "What traffic means, and 3 ways to get it"])}
+<p class="vdesc">Thandi asks if she can have her own copy of this guide, and Leo shows her what she gets, the price, what MTG pays for, your own wallet or an exchange, what traffic really means and how to order, in {mmss(e['secs'])}. Watch this when you are ready to share Bitcoin Wealth with your own website.</p>
+{checks(["This whole guide, with your link on every Join button", "R1,000, or $50 in USDT, once-off: no monthly fees, MTG pays the running costs", "Your own wallet or an exchange, and why MTG recommends your own", "What traffic means, and 3 ways to get it"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a>{order_btn(size='sm', ring=False)}</div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e6', here)}</div></div>"""
@@ -445,7 +445,7 @@ def p_page(here):
  {box("Duplication, made easy", "<p>Your business partners can order theirs too. Same tools, same message, a team that grows the same way.</p>", "copy")}
 </div>""", "Why every member needs one")}
 {sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like") if 'e6' not in V else sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Thandi asks: can I get my own?</a></h3>
-<p class="vdesc">Leo shows her everything in {mmss(V['e6']['secs'])}: what you get, the price in rand or USDT, what traffic really means, three ways to get it, and the order form, field by field.</p>
+<p class="vdesc">Leo shows her everything in {mmss(V['e6']['secs'])}: what you get, the price in rand or USDT, everything MTG pays for so you never pay monthly fees, your own wallet or an exchange, what traffic really means, three ways to get it, and the order form, field by field.</p>
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e6', here, eager=True, hero=True)}</div></div>""", "See what yours could look like", id="video")}
@@ -666,7 +666,7 @@ def order_page(here=''):
  <h1 class="h1">Congratulations. Let's build your own Bitcoin Wealth marketing website.</h1>
  <p class="lead">You're two minutes away from your own Bitcoin Wealth marketing website at bitcoinwealthpays.com/<wbr>yourname, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
  {chips(('badge-check', 'R1,000 or $50 in USDT'), ('hand-coins', 'Pay after it is built'), ('zap', 'Ready the same day'), ('pencil', '5 free edits'))}
- {f'<p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH["e6"], here)}?t=237">Watch Leo walk through it, from 3:57</a> (Explainer 6).</p>' if 'e6' in V else ''}
+ {f'<p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH["e6"], here)}?t=395">Watch Leo walk through it, from 6:35</a> (Explainer 6).</p>' if 'e6' in V else ''}
 </div></div></div></section>
 <section class="sec"><div class="wrap">
 <form class="oform glass" data-order novalidate>

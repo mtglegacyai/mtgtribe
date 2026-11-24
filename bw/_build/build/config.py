@@ -169,10 +169,10 @@ VIDEOS = [
     # website, the price two ways (R1,000 or $50 in USDT), what traffic is, three ways to get it (ClickBaitPays the third), and the order
     # form field by field. Sells MTG's own service, so it plays on his two sites only, never on client websites (MTG, 23 Nov 2026).
     ('e6', 'your-own-bitcoin-wealth-marketing-website', 'Your own Bitcoin Wealth marketing website',
-     "Thandi asks if she can have her own copy of this guide, and Leo shows her: your own Bitcoin Wealth marketing website with your link on every Join button, the price in rand or USDT, what traffic really means, three ways to get it, and how to order yours.",
-     369.1, _E6 + 'final/Your-Own-Bitcoin-Wealth-Marketing-Website-explainer-6-1080p.mp4',
+     "Thandi asks if she can have her own copy of this guide, and Leo shows her: your own Bitcoin Wealth marketing website with your link on every Join button, the price in rand or USDT, everything MTG pays for so you never pay monthly fees, your own wallet or an exchange, what traffic really means, three ways to get it, and how to order yours.",
+     546.7, _E6 + 'final/Your-Own-Bitcoin-Wealth-Marketing-Website-explainer-6-1080p.mp4',
      dict(o='h', poster=_E6 + 'thumbs/out/Your-Own-Bitcoin-Wealth-Marketing-Website-website-cover-16x9.jpg', short='Your own website', date='2026-11-24',
-          name='Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes, with Thandi and Leo')),
+          name='Your own Bitcoin Wealth marketing website: your link on every Join button, no monthly fees, explained in 9 minutes, with Thandi and Leo')),
 ]
 # Explainer 6 is held back from the live sites while it is made stronger (MTG, 24 Nov 2026: "Put the other edits live on the websites,
 # except for the video, I still want us to make the video more powerful ... irresistible to buy the bwcopy"). The plain build (the live
@@ -274,7 +274,7 @@ EXPLAIN = {
     'e3': ('dashboard/explainers/the-12-slots-video/', 'The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes', _E3 + 'final/chapters.json'),
     'e4': ('dashboard/explainers/better-than-a-stokvel-video/', 'Bitcoin Wealth vs a stokvel: 6 questions, side by side, explained in 4 minutes', _E4 + 'final/chapters.json'),
     'e5': ('dashboard/explainers/check-it-yourself-on-bscscan-video/', 'How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes', _E5 + 'final/chapters.json'),
-    'e6': ('dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', 'Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes', _E6 + 'final/chapters.json'),
+    'e6': ('dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', 'Your own Bitcoin Wealth marketing website: your link on every Join button, no monthly fees, explained in 9 minutes', _E6 + 'final/chapters.json'),
 }
 for _k in HELD:
     EXPLAIN.pop(_k, None)

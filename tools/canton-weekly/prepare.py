@@ -88,6 +88,11 @@ TRIBE = {
                 "Join us at mtgtribe.com/group."),
 }
 
+# Streams MTG does not want named in the weekly video, even while they are still in the dashboard menu
+# (MTG, 24 Nov 2026: "please remove ALTRUVA, I no longer want it there as one of my income streams").
+# video.py hides them in the menu screenshots too.
+EXCLUDE_STREAMS = {"ALTRUVA"}
+
 NUM = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
 
 
@@ -99,6 +104,7 @@ def income_streams():
     j = h.index('Income streams</p>', i)
     k = h.index('<p class="md-label">', j)
     names = [re.sub(r"<[^>]+>", "", n).replace("&amp;", "&").strip() for n in re.findall(r'class="md-nav[^"]*"[^>]*>.*?<b>(.*?)</b>', h[j:k])]
+    names = [n for n in names if n not in EXCLUDE_STREAMS]
     if not 3 <= len(names) <= 10:
         raise SystemExit(f"Found {len(names)} income streams in the dashboard menu: check dashboard/index.html")
     return names

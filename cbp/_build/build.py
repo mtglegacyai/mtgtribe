@@ -34,7 +34,7 @@ else:
     SITE, BASE = 'https://mtgtribe.com', '/cbp/'
 HOST = SITE.split('//', 1)[1]
 SITE_LABEL = HOST + BASE.rstrip('/')           # mtgtribe.com/cbp or clickbaitpaysus.com
-COPY_AT = HOST + BASE                          # where a personal copy lives: mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname
+COPY_AT = 'clickbaitpaysus.com/'               # where every personal copy lives (MTG, 24 Nov 2026: "I want all my clients to be under clickbaitpaysus.com/their name")
 NAME = 'ClickBaitPays Guide by MTG'
 TODAY = '2026-11-22'
 CHECKED = '21 November 2026'          # level figures read in the back office (Level 4 recording)
@@ -132,20 +132,28 @@ STREAMS = [
     ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from $0.48 to $13.50 per click, by level, every click day.'),
     ('users', 'Your referrals pay', 'Share your ClickBaitPays link and receive 10% of the campaigns your referrals buy. Optional, and it stacks.'),
 ]
-# MTG's own income streams (MTG, 22 Nov 2026): name, accent, picture, line, three facts, button, link. The list grows.
+# MTG's own income streams, in his order (MTG, 24 Nov 2026: "my number one income stream is Bellver ... number two ... Aureus ... then
+# just essentially how you listed my income streams on Bitcoin Wealth"), never ALTRUVA. Name, accent, picture, line, three facts,
+# button, link, and its menu line and icon: the My Income Streams page, the band on other pages and the menu all read this list.
+# They are what a member can promote here: ClickBaitPays itself cannot be (everyone watching the ads is already in).
+AUREUS = 'https://www.aureus.africa/mtglegacy'     # Aureus Alliance Holdings (Aureus Africa): gold mining shares; MTG's link
 MY_STREAMS = [
     dict(key='bellver', name='BellverCards', tag='The crypto card that can pay your bills', img='bellver-card.webp', w=640, h=385, accent='gold',
          line='Spend your crypto like cash with your own card, and earn monthly rewards when the people you refer use theirs. MTG found it through an ad on ClickBaitPays.',
          facts=['Spend crypto like cash', 'Monthly rewards from your referrals', 'Order from $99'],
-         cta='Open The BellverCards Guide', url='https://bellveraffiliates.com/', ext=True),
+         cta='Open The BellverCards Guide', url='https://bellveraffiliates.com/', ext=True, menu='Bellver Card', sub='Spend your crypto', icon='card'),
+    dict(key='aureus', name='Aureus Alliance', tag='Shares in a gold mining company', img='aureus-logo.webp', w=320, h=191, accent='gold',
+         line='Aureus Alliance Holdings runs Aureus Africa, a South African platform for owning shares in gold mining, with your own client account. Read every detail on its official site before you decide.',
+         facts=['A South African company', 'Shares in gold mining', 'Your own client account'],
+         cta='Visit Aureus Alliance', url=AUREUS, ext=True, menu='Aureus Alliance', sub='Gold mining shares', icon='pick'),
     dict(key='jetup', name='JetUP × TAG Markets', tag='AI copy trading, explained before you commit', img='jetup-logo.webp', w=240, h=189, accent='lime',
          line='Copy trading with Sonic AI, an account opened in your own name at TAG Markets, and the JetUP community and partner plan, every rule in plain English.',
          facts=['Sonic AI copy trading', 'Your account, in your own name', '17 videos, 6-part training'],
-         cta='Open The JetUP Guide', url=HUB + '/jetup/', ext=False),
+         cta='Open The JetUP Guide', url=HUB + '/jetup/', ext=False, menu='JetUP', sub='Sonic AI copy trading', icon='plane'),
     dict(key='bw', name='Bitcoin Wealth', tag='A different way to stack Bitcoin', img='bitcoin-wealth-logo.webp', w=192, h=192, accent='orange',
          line='One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public on the blockchain for anyone to check.',
          facts=['Once-off 0.001 BTC entry', 'Paid to your own wallet', 'Every payment public'],
-         cta='Open The Bitcoin Wealth Guide', url=HUB + '/bw/', ext=False),
+         cta='Open The Bitcoin Wealth Guide', url='https://bitcoinwealthpays.com/', ext=False, menu='Bitcoin Wealth', sub='Once-off 0.001 BTC entry', icon='btc'),
 ]
 CLONE = ['It sells the real reason people join: traffic for what they already promote',
          'Every step on video, in laptop and phone players that close themselves at the end',
@@ -177,6 +185,7 @@ def media(code, hd=False):
 
 # The menu, in reading order: (key, page path under /cbp/ ('cbpcopy/' is the order page at /cbpcopy/), menu label, menu line, icon, group).
 # The Previous and Next arrows follow this order.
+MORE = 'More From MTG 👑'                   # the menu group of MTG's other work, named as on Bitcoin Wealth
 NAV = [
     ('home', 'dashboard/', 'Welcome', 'Start here, in order', 'compass', 'Start Here'),
     ('what', 'dashboard/what-is-clickbaitpays/', 'What Is ClickBaitPays?', 'Advertise, view, get paid', 'cursor', 'Start Here'),
@@ -200,10 +209,12 @@ NAV = [
     ('legit', 'dashboard/is-clickbaitpays-legit/', 'Is It Legit?', 'Check it for yourself', 'shield', 'Help'),
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers, and the live Q&A', 'help', 'Help'),
     ('disc', 'disclaimer/', 'Disclaimer', 'The small print, in plain words', 'info', 'Help'),
-    ('streams', 'dashboard/my-income-streams/', 'My Income Streams', 'BellverCards, JetUP, Bitcoin Wealth', 'trend', 'More From MTG'),
-    ('copy', 'cbpcopy/', 'Get This Website', 'Your own copy, your link', 'globe', 'More From MTG'),
+    ('streams', 'dashboard/my-income-streams/', 'My Income Streams', 'Something to promote here', 'trend', MORE),
+    ('copy', 'cbpcopy/', 'Get This Website', 'Your own copy, your link', 'globe', MORE),
 ]
-MENU_EXT = [('tribe', GROUP, 'Join The MTG TRIBE', 'WhatsApp community', 'whatsapp', 'More From MTG')]   # in the menu, not in the page order
+MENU_EXT = [('tribe', GROUP, 'Join The MTG TRIBE', 'WhatsApp community', 'whatsapp', MORE)]   # in the menu, not in the page order
+# MTG's income streams at the top of More From MTG 👑, in his order, each opening its own site (as on Bitcoin Wealth)
+MENU_STREAMS = [('m-' + st['key'], st['url'], st['menu'], st['sub'], st['icon'], MORE) for st in MY_STREAMS]
 OLD_PATHS = {'dashboard/income-strategy/': 'plan', 'dashboard/grow-what-you-promote/': 'grow'}      # addresses that moved: a short forwarding page stays behind
 NAVD = {n[0]: n for n in NAV}
 KEYS = [n[0] for n in NAV]
@@ -254,8 +265,8 @@ SEO = {
               'Is ClickBaitPays legit or a scam? What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.'),
     'faq': ('ClickBaitPays FAQ: Straight Answers to the Top Questions',
             'ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, logging in, Login Ads and referrals. Plus a live Q&A.'),
-    'streams': ('MTG\'s Income Streams: BellverCards, JetUP and Bitcoin Wealth',
-                'Need something to promote on ClickBaitPays? Add MTG\'s own income streams, each with a full guide: BellverCards, JetUP with TAG Markets, and Bitcoin Wealth.'),
+    'streams': ('MTG\'s Income Streams: Bellver, Aureus, JetUP, Bitcoin Wealth',
+                'Need something to promote on ClickBaitPays? Pick one of MTG\'s income streams: BellverCards, Aureus Alliance gold mining shares, JetUP or Bitcoin Wealth.'),
     'copy': ('Get This ClickBaitPays Website: Your Link, R1,000 Once-Off',
              f'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at {COPY_AT}yourname. Pay only if you like it.'),
     'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
@@ -275,6 +286,8 @@ ICONS.update({
     'i-login': {'attrs': _LINE, 'body': '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/>'},
     'i-dl': {'attrs': _LINE, 'body': '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>'},
     'i-slides': {'attrs': _LINE, 'body': '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5"/>'},
+    'i-pick': {'attrs': _LINE, 'body': '<path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912"/><path d="M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958 1 1 0 0 0 5.58 4.71a22 22 0 0 1 6.318 3.393"/><path d="M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="M19.686 8.314a12.501 12.501 0 0 1 1.356 10.225 1 1 0 0 1-1.751-.119 22 22 0 0 0-3.393-6.319"/>'},
+    'i-plane': {'attrs': _LINE, 'body': '<path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/>'},
     'i-pf': {'attrs': 'viewBox="0 0 24 24" fill="currentColor" stroke="none"', 'body': '<path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/>'},
 })
 for _n in range(1, 8):      # number badges for the tutorials in the menu
@@ -606,11 +619,13 @@ def doc(head_html, body_cls, body):
 # ---------------------------------------------------------------- dashboard shell
 def sidebar(key, here):
     out, group = [], None
-    for k, p, label, sub, icon, g in NAV + MENU_EXT:
+    ext = {m[0] for m in MENU_STREAMS + MENU_EXT}
+    menu = [n for n in NAV if n[5] != MORE] + MENU_STREAMS + [n for n in NAV if n[5] == MORE] + MENU_EXT
+    for k, p, label, sub, icon, g in menu:
         if g != group:
             out.append(f'<p class="md-label">{g}</p>')
             group = g
-        if k in dict((m[0], m) for m in MENU_EXT):
+        if k in ext:
             out.append(f'<a class="md-nav ext" href="{esc(p)}" target="_blank" rel="noopener"><span class="ic">{ic(icon)}</span><span class="tx"><b>{label}</b><small>{sub}</small></span>'
                        f'{ic("ext", "ic xl")}<span class="sr">(opens in a new tab)</span></a>')
             continue
@@ -708,7 +723,7 @@ def streams_band(here):
     pics = ''.join(f'<img src="{A("assets/s/" + st["img"], here)}" alt="" width="{st["w"]}" height="{st["h"]}" loading="lazy" decoding="async">' for st in MY_STREAMS)
     names = ', '.join(st['name'] for st in MY_STREAMS[:-1]) + ' and ' + MY_STREAMS[-1]['name']
     return (f'<section class="sband rv" aria-label="MTG\'s income streams"><div class="sb-pics">{pics}</div>'
-            f'<div class="sb-t"><h2>Nothing to promote yet? Start with mine.</h2><p>{names}: the income streams MTG builds himself, each with a full guide.</p></div>'
+            f'<div class="sb-t"><h2>Nothing to promote yet? Start with mine.</h2><p>{names}: MTG\'s other income streams. Pick one, then promote it here.</p></div>'
             f'<a class="btn btn-dash ring" href="{page_link("streams", here)}">{ic("trend")}<span>See My Income Streams</span></a></section>')
 
 
@@ -1237,7 +1252,7 @@ def p_streams(here):
     soc = {k: (l, u) for k, l, u in SOCIAL}
     intro = (f'<div class="me t3d"><img class="mtg" src="{A("assets/mtg-photo.webp", here)}" alt="MTG" width="96" height="96" loading="lazy">'
              f'<div class="me-t"><p class="me-hi">Hi, I am MTG 👑</p><p>Like many of you, I do not rely on one income. ClickBaitPays is one of my streams, and the traffic source behind the rest. '
-             f'These are the others I build myself, every day, each with a full guide I made so you can start the right way.</p>'
+             f'These are the others I am part of, every day, most with a full guide I made so you can start the right way. Pick one, and promote it right here.</p>'
              f'<p class="me-grow">{ic("refresh")}<span><b>This list grows.</b> I add every new stream I build, so come back often.</span></p></div></div>')
     here_card = (f'<a class="youhere t3d" href="{page_link("grow", here)}"><span class="yh-b">You are here</span><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="56" height="56" loading="lazy">'
                  f'<span class="yh-t"><b>ClickBaitPays</b><span>The traffic source behind all of them: promote any stream above here, and get paid in USDT while you do.</span></span>{ic("chr", "ic go")}</a>')
@@ -1257,9 +1272,9 @@ def p_streams(here):
 def p_copy(here):
     how = [('Send the form', 'Two minutes. It goes straight to MTG on WhatsApp.'),
            ('MTG builds your copy', 'Your name, your referral link on every Join button, your contact links. You get your link to check.'),
-           ('Like it? Pay once', 'R1,000 or $50, by bank transfer, USDT BEP20 or USDT TRC20. Not for you? It is deleted and you owe nothing.')]
+           ('Like it? Pay once', 'R1,000 in rand by bank transfer, or $50 in USDT (BEP20 or TRC20). Not for you? It is deleted and you owe nothing.')]
     hw = ''.join(f'<li class="step"><span class="num">{i + 1}</span><div><h3>{a}</h3><p>{b}</p></div></li>' for i, (a, b) in enumerate(how))
-    perks = [('globe', 'Your own address', 'mtgtribe.com/cbp/yourname or clickbaitpaysus.com/yourname'),
+    perks = [('globe', 'Your own address', 'clickbaitpaysus.com/yourname'),
              ('link', 'Your link on every Join button', 'Everyone who joins from your page joins your team'),
              ('film', 'Every video, tutorial and tool', 'Kept up to date as MTG adds new videos'),
              ('users', 'Your community, front and centre', 'Your WhatsApp group, TikTok, Facebook and YouTube'),
@@ -1281,22 +1296,22 @@ def p_copy(here):
   {note('This is a payment to MTG for your website only. It is separate from any ClickBaitPays campaign or activation fee.', 'info')}
  </div>
  <form class="oform" id="order" data-order data-wa="{esc(OWNER['wa'])}" novalidate aria-labelledby="of-h">
-  <h2 id="of-h">Order in 2 minutes</h2>
-  <p class="small">It goes straight to MTG on WhatsApp. Nothing is stored on this website.</p>
+  <h2 id="of-h">Congratulations. Let's build your own ClickBaitPays website.</h2>
+  <p class="small">You're two minutes away from your own ClickBaitPays guide at <b>clickbaitpaysus.com/<wbr>yourname</b>, with your link on every Join button. Fill this in and it goes straight to MTG on WhatsApp. Nothing is stored on this website.</p>
+  <ul class="ochips">{''.join(f'<li>{ic(i)}<span>{t}</span></li>' for i, t in [('check', 'R1,000 or $50 in USDT'), ('wallet', 'Pay after it is built'), ('timer', 'Ready the same day'), ('refresh', '5 free edits')])}</ul>
   <div class="field"><label for="o-name">Your name, as it should appear *</label><input id="o-name" name="name" required autocomplete="name"></div>
   <div class="field"><label for="o-wa">Your WhatsApp number *</label><input id="o-wa" name="wa" required inputmode="tel" autocomplete="tel"></div>
-  <fieldset class="field"><legend>Your address *</legend>
-   {domain_choices()}
-  </fieldset>
-  <div class="field"><label for="o-slug">The name at the end of your address *</label><input id="o-slug" name="slug" required autocapitalize="none" spellcheck="false" aria-describedby="o-slug-h"><small id="o-slug-h">Letters and numbers only. Your page: <b data-out="addr">{COPY_AT}yourname</b></small></div>
+  <div class="field"><label for="o-slug">The name at the end of your address *</label><input id="o-slug" name="slug" required autocapitalize="none" spellcheck="false" placeholder="zizi" aria-describedby="o-slug-h"><small id="o-slug-h">Letters and numbers only. Every copy lives at clickbaitpaysus.com.</small></div>
+  <p class="addrprev">{ic('link')}<span>Your website: <b data-out="addr">{COPY_AT}yourname</b></span></p>
   <div class="field"><label for="o-ref">Your ClickBaitPays referral link *</label><input id="o-ref" name="ref" required inputmode="url" placeholder="https://clickbaitpays.me/join.php?ref=yourname" aria-describedby="o-ref-h"><small id="o-ref-h">Every Join button on your page will use this link. Find it on your back office dashboard (Copy).</small></div>
   <div class="field"><label for="o-group">Your WhatsApp group link (optional)</label><input id="o-group" name="group" inputmode="url"></div>
   <div class="row2"><div class="field"><label for="o-tt">TikTok (optional)</label><input id="o-tt" name="tiktok"></div><div class="field"><label for="o-fb">Facebook (optional)</label><input id="o-fb" name="fb"></div></div>
   <div class="field"><label for="o-yt">YouTube (optional)</label><input id="o-yt" name="yt"></div>
-  <fieldset class="field"><legend>How you would like to pay</legend>
-   <label class="tog"><input type="radio" name="pay" value="Rand (R1,000, bank details on WhatsApp)" checked><span>Rand (bank details on WhatsApp)</span></label>
-   <label class="tog"><input type="radio" name="pay" value="USDT BEP20 ($50)"><span>USDT BEP20</span></label>
-   <label class="tog"><input type="radio" name="pay" value="USDT TRC20 ($50)"><span>USDT TRC20</span></label>
+  <fieldset class="field"><legend>How you'd like to pay</legend>
+   <label class="tog"><input type="radio" name="pay" value="R1,000 by rand bank transfer" checked><span>R1,000 in rand (bank details on WhatsApp)</span></label>
+   <label class="tog"><input type="radio" name="pay" value="$50 in USDT BEP20"><span>$50 in USDT BEP20</span></label>
+   <label class="tog"><input type="radio" name="pay" value="$50 in USDT TRC20"><span>$50 in USDT TRC20</span></label>
+   <small>USDT is a digital dollar: 1 USDT is worth about $1. You only pay once your website is built and you've seen it.</small>
   </fieldset>
   <div class="field"><label for="o-notes">Anything else? (optional)</label><textarea id="o-notes" name="notes" rows="3"></textarea></div>
   <button type="submit" class="btn btn-join ring lg">{ic('whatsapp')}<span>Send My Order On WhatsApp</span></button>
@@ -1308,10 +1323,10 @@ def p_copy(here):
 def p_disc(here):
     blocks = [
         ('shield', 'An independent guide', f'This is MTG\'s own guide to ClickBaitPays, made to educate. It is not the official ClickBaitPays website (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>) and it is not run by ClickBaitPays. Rules, prices and features can change: the official site always has the final word.'),
-        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. Invited by someone else? Please use their link instead.'),
+        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. The links to MTG\'s other income streams (BellverCards, Aureus Alliance, JetUP and Bitcoin Wealth) lead to his own guides or carry his referral links too. Invited by someone else? Please use their link instead.'),
         ('layers', 'About the figures', f'Prices, activation fees, pay per click, clicks a day and campaign totals are the platform\'s own figures, read in the ClickBaitPays back office on {CHECKED}. Campaign totals assume all 12 click days. They describe how the platform pays; they are not a promise of what you will earn.'),
         ('info', 'Advertising, not an investment', 'ClickBaitPays is an advertising platform: you buy advertising for your link and are paid for viewing other members\' ads. Nothing on this site is financial advice. Results depend on the ads you view and on the platform, and nothing is guaranteed. Start with an amount you are comfortable with and only use money you can afford to lose.'),
-        ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. YouTube videos load from youtube-nocookie.com only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
+        ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. The videos play from ClickBaitPays\' own storage (media.clickbaitpaysus.com), only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
         ('msg', 'Questions', f'Message MTG on WhatsApp at <a href="{OWNER["wa"]}" target="_blank" rel="noopener">{OWNER["wa_num"]}</a>, or join the MTG TRIBE at <a href="{GROUP}">mtgtribe.com/group</a>. For account issues, contact ClickBaitPays support through the official site.'),
     ]
     body = '<div class="dgrid">' + ''.join(f'<article class="dblock t3d">{ic(i)}<div><h2>{t}</h2><p>{b}</p></div></article>' for i, t, b in blocks) + '</div>'
@@ -1396,14 +1411,6 @@ def llms():
 '''
 
 
-def domain_choices():
-    """the two addresses a copy can have, this site's own first"""
-    doms = ['mtgtribe.com/cbp/', 'clickbaitpaysus.com/']
-    doms.sort(key=lambda d: d != COPY_AT)
-    return '\n   '.join(f'<label class="tog"><input type="radio" name="domain" value="{d}"{" checked" if i == 0 else ""} required>'
-                          f'<span><span>{d}<wbr><i>yourname</i></span></span></label>' for i, d in enumerate(doms))
-
-
 def manifest():
     return json.dumps({'name': NAME, 'short_name': 'ClickBaitPays', 'start_url': BASE, 'scope': BASE, 'display': 'standalone',
                        'background_color': '#080015', 'theme_color': '#080015',
@@ -1421,7 +1428,7 @@ def copy_assets(dst):
              ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp'),
              ('mtg-photo-256.webp', 'mtg-photo.webp'), ('../../../cbp/_build/deck/deck-cover.webp', 'deck-cover.webp'),
              ('../../../cbp/_build/deck/' + DECK['file'], DECK['file']), ('streams/bellver-card.webp', 's/bellver-card.webp'),
-             ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
+             ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/aureus-logo.webp', 's/aureus-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
     for a, b in pairs:
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))
     for f in ('cbp.css', 'cbp.js'):

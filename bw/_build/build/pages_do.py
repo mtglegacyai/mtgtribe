@@ -122,9 +122,9 @@ def p_exp(here):
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e5', here)}</div></div>"""
-    e = V['e6']
+    e = V.get('e6')
     # Explainer 6 (MTG, 24 Nov 2026): your own Bitcoin Wealth marketing website, traffic, and how to order (his two sites only)
-    e6 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Explainer 6: Your own Bitcoin Wealth marketing website</a></h2>
+    e6 = '' if not e else f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Explainer 6: Your own Bitcoin Wealth marketing website</a></h2>
 <p class="vdesc">Thandi asks if she can have her own copy of this guide, and Leo shows her what she gets, the price, what traffic really means and how to order, in {mmss(e['secs'])}. Watch this when you are ready to share Bitcoin Wealth with your own website.</p>
 {checks(["This whole guide, with your link on every Join button", "R1,000, or $50 in USDT, and why crypto costs less", "What traffic means, and 3 ways to get it"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a>{order_btn(size='sm', ring=False)}</div>
@@ -133,14 +133,14 @@ def p_exp(here):
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     n_ready = sum(1 for k in V if k[0] in 'ei')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, Explainer 5 how to check it yourself on BscScan, and Explainer 6 how to get your own Bitcoin Wealth marketing website. Then watch the whole plan in Leo's 5-minute presentation.",
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, " + ("Explainer 5 how to check it yourself on BscScan, and Explainer 6 how to get your own Bitcoin Wealth marketing website" if e else "and Explainer 5 how to check it yourself on BscScan") + ". Then watch the whole plan in Leo's 5-minute presentation.",
         [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainer{'s' if n_soon != 1 else ''} on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
 {sec(e2, "Then: where all 14 payments go", id="explainer-2")}
 {sec(e3, "Then: the 12 slots, and what you actually pay", id="explainer-3")}
 {sec(e4, "Then: Bitcoin Wealth and the stokvel, side by side", id="explainer-4")}
 {sec(e5, "Then: check it yourself, on your phone", id="explainer-5")}
-{sec(e6, "Then: your own Bitcoin Wealth marketing website", id="explainer-6")}
+{sec(e6, "Then: your own Bitcoin Wealth marketing website", id="explainer-6") if e6 else ''}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="{"grid2" if cards.count("class=") > 1 and n_soon > 1 else "stack"}">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
@@ -444,7 +444,7 @@ def p_page(here):
  {box("Your link, everywhere", "<p>Every sign-up button copies <b>your</b> Bitcoin Wealth referral link. When someone pastes it into SafePal, they join under you.</p>", "link")}
  {box("Duplication, made easy", "<p>Your business partners can order theirs too. Same tools, same message, a team that grows the same way.</p>", "copy")}
 </div>""", "Why every member needs one")}
-{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Thandi asks: can I get my own?</a></h3>
+{sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like") if 'e6' not in V else sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Thandi asks: can I get my own?</a></h3>
 <p class="vdesc">Leo shows her everything in {mmss(V['e6']['secs'])}: what you get, the price in rand or USDT, what traffic really means, three ways to get it, and the order form, field by field.</p>
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
@@ -666,7 +666,7 @@ def order_page(here=''):
  <h1 class="h1">Congratulations. Let's build your own Bitcoin Wealth marketing website.</h1>
  <p class="lead">You're two minutes away from your own Bitcoin Wealth marketing website at bitcoinwealthpays.com/<wbr>yourname, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
  {chips(('badge-check', 'R1,000 or $50 in USDT'), ('hand-coins', 'Pay after it is built'), ('zap', 'Ready the same day'), ('pencil', '5 free edits'))}
- <p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH['e6'], here)}?t=237">Watch Leo walk through it, from 3:57</a> (Explainer 6).</p>
+ {f'<p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH["e6"], here)}?t=237">Watch Leo walk through it, from 3:57</a> (Explainer 6).</p>' if 'e6' in V else ''}
 </div></div></div></section>
 <section class="sec"><div class="wrap">
 <form class="oform glass" data-order novalidate>

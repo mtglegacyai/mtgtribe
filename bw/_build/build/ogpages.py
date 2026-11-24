@@ -229,6 +229,8 @@ def make(key, path, url_path):
 def build_all(dst):
     sizes = {}
     for key in SPECS:
+        if key not in ('land', 'order') and key not in NAVD:      # a page held back from this build (config HELD)
+            continue
         if key == 'land':
             up = BASE
         elif key == 'order':

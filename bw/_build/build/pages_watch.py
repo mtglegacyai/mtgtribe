@@ -280,7 +280,9 @@ EXPLAIN_NEXT = {
     'e4': (("See the scorecard", "<p>The Better Than A Stokvel? page: the six questions side by side, where Bitcoin Wealth wins, and how each one is funded.</p>", 'dashboard/stokvel/', 'Open the scorecard', 'users'),
            "Check it yourself on BscScan.", 'e5', 'Watch Explainer 5'),
     'e5': (("Your own website", "<p>This whole guide at bitcoinwealthpays.com/<wbr>yourname, with your name, your WhatsApp and your link on every Join button.</p>", 'dashboard/bw-tribe-page/', 'See what you get', 'globe'),
-           "Your own Bitcoin Wealth marketing website.", 'e6', 'Watch Explainer 6'),
+           "Your own Bitcoin Wealth marketing website.", 'e6', 'Watch Explainer 6') if 'e6' in V else
+          (("Your own website", "<p>This whole guide at bitcoinwealthpays.com/<wbr>yourname, with your name, your WhatsApp and your link on every Join button.</p>", 'dashboard/bw-tribe-page/', 'See what you get', 'globe'),
+           "Your own Bitcoin Wealth marketing website.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'Your own marketing website')),
     'e6': (("Order yours", "<p>Two minutes: the form goes straight to MTG on WhatsApp. R1,000, or $50 in USDT, paid only once it's built and you've seen it.</p>", ORDER, 'Open the order form', 'globe'),
            "More on traffic, and more on crypto.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'Your own marketing website')),
 }

@@ -174,9 +174,16 @@ VIDEOS = [
      dict(o='h', poster=_E6 + 'thumbs/out/Your-Own-Bitcoin-Wealth-Marketing-Website-website-cover-16x9.jpg', short='Your own website', date='2026-11-24',
           name='Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes, with Thandi and Leo')),
 ]
+# Explainer 6 is held back from the live sites while it is made stronger (MTG, 24 Nov 2026: "Put the other edits live on the websites,
+# except for the video, I still want us to make the video more powerful ... irresistible to buy the bwcopy"). The plain build (the live
+# sites) leaves it out; BW_WITH_E6=1 builds it in, for the private preview.
+HELD = set() if os.environ.get('BW_WITH_E6') == '1' else {'e6'}
+VIDEOS = [_v for _v in VIDEOS if _v[0] not in HELD]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
     ('e7', 'Explainer', 'More on traffic, and more on crypto', 'Leo shows Thandi more about traffic, and more about crypto, together.'),
+] if 'e6' not in HELD else [
+    ('e6', 'Explainer', 'Your own Bitcoin Wealth marketing website', 'Thandi asks if she can have her own copy of this guide, with her own link on every Join button, and Leo shows her everything.'),
 ]
 KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo', 'i': 'Presentation'}
 V = {}
@@ -269,6 +276,8 @@ EXPLAIN = {
     'e5': ('dashboard/explainers/check-it-yourself-on-bscscan-video/', 'How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes', _E5 + 'final/chapters.json'),
     'e6': ('dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', 'Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes', _E6 + 'final/chapters.json'),
 }
+for _k in HELD:
+    EXPLAIN.pop(_k, None)
 WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video and every word of it', 'film', 'How It Works') for k, v in EXPLAIN.items()]

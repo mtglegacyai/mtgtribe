@@ -46,7 +46,7 @@ TELEGRAM = 'https://t.me/mtgtribe'
 MTG_SITE = 'https://www.musathegiant.com'
 CRYPTO101 = 'https://www.musathegiant.com/101'
 CARD_GUIDE = 'https://bellveraffiliates.com/'
-ORDER = '/bwcopy/'                          # BW Tribe Page order form (prod path)
+ORDER = '/bwcopy/'                          # order form for your own Bitcoin Wealth marketing website (prod path)
 JETUP_GUIDE = 'https://mtgtribe.com/jetup/'   # MTG's JetUP and TAG Markets guide (lower case: the address is case-sensitive)
 CBP_SITE = 'https://clickbaitpaysus.com'
 # menu items that lead to MTG's other sites (MTG, 22 Nov 2026: "After Crypto Card, add: JetUp ... then ClickBaitPays")
@@ -61,7 +61,7 @@ MEMBERS = '41,013'
 CHECKED = '14 November 2026'
 ON_CHAIN_SINCE = 'April 2026'
 CREATED = '15 April 2026'
-PRICE_ZAR = 1000          # BW Tribe Page, once-off (MTG: "R1000 is the fixed one")
+PRICE_ZAR = 1000          # your own Bitcoin Wealth marketing website, once-off (MTG: "R1000 is the fixed one"); or $50 in USDT (MTG, 23 Nov 2026)
 
 SHARE_MSG = ("I've been learning how Bitcoin Wealth works with this free guide by MTG. Short videos and plain pages "
              "show how it works, how to join safely and how to check every payment yourself: " + SITE + BASE.rstrip("/"))
@@ -84,6 +84,7 @@ _E2 = 'projects/bitcoin-wealth/videos/explainer-02-how-the-14-positions-pay/'
 _E3 = 'projects/bitcoin-wealth/videos/explainer-03-the-12-slots-and-the-once-off/'
 _E4 = 'projects/bitcoin-wealth/videos/explainer-04-better-than-a-stokvel/'
 _E5 = 'projects/bitcoin-wealth/videos/explainer-05-check-it-yourself-on-bscscan/'
+_E6 = 'projects/bitcoin-wealth/videos/explainer-06-your-own-bitcoin-wealth-website/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -163,10 +164,18 @@ VIDEOS = [
      262.9, _E5 + 'final/Check-Bitcoin-Wealth-on-BscScan-explainer-5-1080p.mp4',
      dict(o='h', poster=_E5 + 'thumbs/out/Check-Bitcoin-Wealth-on-BscScan-website-cover-16x9.jpg', short='Check it yourself', date='2026-11-24',
           name='How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes, with Thandi and Leo')),
+    # Explainer 6 (MTG, 24 Nov 2026: "Let's cook the next video", after his plan of 23 Nov 2026): your own Bitcoin Wealth marketing
+    # website, the price two ways (R1,000 or $50 in USDT), what traffic is, three ways to get it (ClickBaitPays the third), and the order
+    # form field by field. Sells MTG's own service, so it plays on his two sites only, never on client websites (MTG, 23 Nov 2026).
+    ('e6', 'your-own-bitcoin-wealth-marketing-website', 'Your own Bitcoin Wealth marketing website',
+     "Thandi asks if she can have her own copy of this guide, and Leo shows her: your own Bitcoin Wealth marketing website with your link on every Join button, the price in rand or USDT, what traffic really means, three ways to get it, and how to order yours.",
+     367.0, _E6 + 'final/Your-Own-Bitcoin-Wealth-Marketing-Website-explainer-6-1080p.mp4',
+     dict(o='h', poster=_E6 + 'thumbs/out/Your-Own-Bitcoin-Wealth-Marketing-Website-website-cover-16x9.jpg', short='Your own website', date='2026-11-24',
+          name='Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes, with Thandi and Leo')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('e6', 'Explainer', 'Your own Bitcoin Wealth website', 'Thandi gets her own copy of this guide, with her own link on every Join button, and Leo shows how people find it.'),
+    ('e7', 'Explainer', 'More on traffic, and more on crypto', 'Leo shows Thandi more about traffic, and more about crypto, together.'),
 ]
 KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo', 'i': 'Presentation'}
 V = {}
@@ -216,7 +225,7 @@ NAV = [
     ('stokvel', 'dashboard/stokvel/', 'Better Than A Stokvel?', 'Where it wins, how it is funded', 'users', 'How It Works'),
     ('diff', 'dashboard/what-makes-it-different/', 'What Makes It Different', 'The original, 5 checks', 'sparkles', 'How It Works'),
     ('proof', 'dashboard/check-it-yourself/', 'Check It Yourself', 'Every payment is public', 'scan-search', 'How It Works'),
-    ('page', 'dashboard/bw-tribe-page/', 'Your BW Tribe Page', 'Your own copy, R1,000 once-off', 'globe', 'Your Own Page'),
+    ('page', 'dashboard/bw-tribe-page/', 'Your own marketing website', 'R1,000 or $50 in USDT, once-off', 'globe', 'Your Own Website'),
     ('c-btc', 'dashboard/tools/bitcoin-to-rand/', 'Bitcoin To Rand Converter', 'Live price: BTC, USD, ZAR', 'bitcoin', 'Tools'),
     ('c-slot', 'dashboard/tools/slot-calculator/', 'Slot Calculator', 'Each slot in BTC and rand', 'calculator', 'Tools'),
     ('c-halv', 'dashboard/tools/halving-countdown/', 'Halving Countdown', 'Live block height', 'hourglass', 'Tools'),
@@ -255,6 +264,7 @@ EXPLAIN = {
     'e3': ('dashboard/explainers/the-12-slots-video/', 'The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes', _E3 + 'final/chapters.json'),
     'e4': ('dashboard/explainers/better-than-a-stokvel-video/', 'Bitcoin Wealth vs a stokvel: 6 questions, side by side, explained in 4 minutes', _E4 + 'final/chapters.json'),
     'e5': ('dashboard/explainers/check-it-yourself-on-bscscan-video/', 'How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes', _E5 + 'final/chapters.json'),
+    'e6': ('dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', 'Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes', _E6 + 'final/chapters.json'),
 }
 WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]

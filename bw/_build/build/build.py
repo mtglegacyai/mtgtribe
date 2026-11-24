@@ -29,9 +29,9 @@ PAGES = {
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, ['e5']),
     'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2', 't3']),
     'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2', 't3']),
-    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['e1', 'e2', 'e3', 'e4', 'e5', 'i1']),
+    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'i1']),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
-    'page': ('Your own BW Tribe Page', p_page, None),
+    'page': ('Your own Bitcoin Wealth marketing website', p_page, ['e6']),
     'c-btc': ('Bitcoin to Rand Converter', p_c_btc, None),
     'c-slot': ('Bitcoin Wealth Slot Calculator', p_c_slot, None),
     'c-halv': ('Bitcoin Halving Countdown', p_c_halv, None),
@@ -64,7 +64,7 @@ def page_ld(key, title, desc):
     if key == 'zoom':
         return zoom_ld(url, core.og_image(key))
     if key == 'page':
-        return [{'@type': 'Product', 'name': 'BW Tribe Page', 'description': desc, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
+        return [{'@type': 'Product', 'name': 'Your own Bitcoin Wealth marketing website', 'description': desc, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
                  'offers': {'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + ORDER, 'availability': 'https://schema.org/InStock'}}]
     return []
 

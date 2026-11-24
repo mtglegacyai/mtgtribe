@@ -55,7 +55,8 @@ const CASES = [
   ['BW Explainer 5 page, the explainer (inline, laptop frame)', '/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/', '.vplay[data-code="e5"]'],
   ['BW Explainer 5 page, a chapter\'s time button (sheet, laptop frame)', '/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/', '#chapter-8 .tjump'],
   ['BW Check It Yourself, Explainer 5 at the top (inline, laptop frame)', '/bw/dashboard/check-it-yourself/', '.vplay[data-code="e5"]'],
-  ['BW Tribe Page, Explainer 5 from its watch-this-part card (sheet, laptop frame)', '/bw/dashboard/bw-tribe-page/', '.vjump[data-play="e5"]'],
+  ['Your own marketing website page, Explainer 6 at the top (inline, laptop frame)', '/bw/dashboard/bw-tribe-page/', '.vplay[data-code="e6"]'],
+  ['BW Explainer 6 page, the explainer (inline, laptop frame)', '/bw/dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', '.vplay[data-code="e6"]'],
   ['CC guide, the Kraken tutorial from its laptop cover (sheet, phone frame)', '/cc/', '#tutorial [data-play="cc-kraken"]'],
 ].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
 (async () => {

@@ -98,7 +98,7 @@ def binance_btn(size='sm', kind='ghost', label='Open a Binance account'):
     return btn(label, BINANCE, kind, 'binance', size, ext=True)
 
 
-def order_btn(label='Get your BW Tribe Page', size='', kind='gold', ring=True):
+def order_btn(label='Get your own marketing website', size='', kind='gold', ring=True):
     return btn(label, ORDER, kind, 'globe', size, ring)
 
 
@@ -488,7 +488,7 @@ def topbar(key, here, parent=None):
  <nav class="dcrumb" aria-label="Breadcrumb">{crumb}</nav>
  <div class="dtop-act">
   {copy_btn('signup', 'Sign Up', size='sm', icon='user-plus')}
-  <a class="btn btn-ghost btn-sm tribepg" href="{A('dashboard/bw-tribe-page/', here)}">{ic('globe')}<span class="lbl">BW Tribe Page</span></a>
+  <a class="btn btn-ghost btn-sm tribepg" href="{A('dashboard/bw-tribe-page/', here)}">{ic('globe')}<span class="lbl">Your own website</span></a>
   <a class="btn btn-ghost btn-sm ring gohome" href="{A('', here)}"><span class="emo" aria-hidden="true">🏡</span><span class="lbl">GO HOME</span></a>
  </div>
 </header>"""

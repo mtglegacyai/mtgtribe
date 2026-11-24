@@ -133,13 +133,13 @@ def landing():
     tl = ''.join(f'<a class="tile" href="{A(p, here)}">{ped(i)}<span class="tt"><b>{t}</b><small>{d}</small></span>{ic("arrow-up-right", "ic go")}</a>'
                  for i, t, d, p in tiles)
     tape_items = [('0.001 BTC', 'once-off'), ('Paid', 'wallet to wallet'), (MEMBERS, 'member IDs'), ('Since April 2026', 'on BNB Smart Chain'),
-                  ('100%', 'of payments public'), ('5 evenings', 'live on Zoom'), ('R1,000', 'your own BW Tribe Page')]
+                  ('100%', 'of payments public'), ('5 evenings', 'live on Zoom'), ('R1,000', 'your own marketing website')]
     tape_one = ''.join(f'<span><i>▲</i><b>{a}</b> {b}</span>' for a, b in tape_items)
     v = V['t1']
     big, small = poster('t1', here)
     body = f"""<header class="ltop"><div class="wrap">
  <a class="brand" href="{A('', here)}" aria-label="Bitcoin Wealth guide home">{logo(here)}</a>
- <nav class="ltop-act" aria-label="Quick links"><a class="btn btn-ghost btn-sm hide-s" href="{A('dashboard/bw-tribe-page/', here)}">{ic('globe')}<span class="lbl">BW Tribe Page</span></a>
+ <nav class="ltop-act" aria-label="Quick links"><a class="btn btn-ghost btn-sm hide-s" href="{A('dashboard/bw-tribe-page/', here)}">{ic('globe')}<span class="lbl">Your own website</span></a>
  <a class="btn btn-gold btn-sm ring" href="{A('dashboard/', here)}">{ic('layout-dashboard')}<span class="lbl">Dashboard</span></a></nav>
 </div></header>
 <main id="main" tabindex="-1">
@@ -183,8 +183,8 @@ def landing():
  <a class="tribeband glass" href="{A('dashboard/bw-tribe-page/', here)}" data-tilt>
   <img src="{A('img/bitcoin-wealth-mascot-lion-bw.webp', here)}" width="540" height="945" loading="lazy" alt="MTG's lion mascot in the mtgTribe.com/bw shirt">
   <span class="tb-copy"><span class="eyebrow">For members who share</span><b>Your own Bitcoin Wealth website, with your link inside.</b>
-  <small>BW Tribe Page: R1,000 once-off. Pay only after it's built.</small></span>
-  <span class="btn btn-gold ring">{ic('globe')}<span class="lbl">See your BW Tribe Page</span></span>
+  <small>Your own Bitcoin Wealth marketing website: R1,000 or $50 in USDT, once-off. Pay only after it's built.</small></span>
+  <span class="btn btn-gold ring">{ic('globe')}<span class="lbl">See your own website</span></span>
  </a>
 </div></section>
 </main>

@@ -451,7 +451,7 @@ def p_page(here):
 <div class="phone-wrap">{vid('e6', here, eager=True, hero=True)}</div></div>""", "See what yours could look like", id="video")}
 {sec(f"""<div class="offer glass"><div class="offer-copy">
  <h2 class="h2">What you get</h2>
- {checks(["A full copy of this guide, every tutorial and every explainer, kept up to date with new videos", "MTG's branding taken off: your name and photo on it", "Your Bitcoin Wealth referral link on every Join button, so everyone who joins there joins your team", "Your WhatsApp number as a button, your WhatsApp group, and your TikTok, Facebook, YouTube, Telegram and Instagram", "Your choice of address: mtgtribe.com/bw/yourname or bitcoinwealthpays.com/yourname", "Ready the same day", "Five free edits to make it yours, like adding your other income streams (from the sixth, a small fee depending on the size)"])}
+ {checks(["A full copy of this guide, every tutorial and every explainer, kept up to date with new videos", "MTG's branding taken off: your name and photo on it", "Your Bitcoin Wealth referral link on every Join button, so everyone who joins there joins your team", "Your WhatsApp number as a button, your WhatsApp group, and your TikTok, Facebook, YouTube, Telegram and Instagram", "Your own address: bitcoinwealthpays.com/yourname", "Ready the same day", "Five free edits to make it yours, like adding your other income streams (from the sixth, a small fee depending on the size)"])}
  <div class="price"><b>R1,000</b><span>once-off in rand<br><small>or <b>$50 in USDT</b> (BEP20 or TRC20). USDT is a digital dollar: 1 USDT is worth about $1. You pay only once it's built and you've seen it.</small></span></div>
  <div class="btn-row">{order_btn(size='lg')}</div>
 </div><div class="offer-copy">
@@ -657,8 +657,6 @@ def order_page(here=''):
         + (f'<small>{hint}</small>' if hint else '') + '</div>')
     pay = ''.join(f'<label class="opt"><input type="radio" name="pay" value="{v}"{" checked" if i == 0 else ""}><span>{t}</span></label>'
                   for i, (v, t) in enumerate([('R1,000 by rand bank transfer', 'R1,000 in rand (bank details on WhatsApp)'), ('$50 in USDT BEP20', '$50 in USDT BEP20'), ('$50 in USDT TRC20', '$50 in USDT TRC20')]))
-    dom = ''.join(f'<label class="opt"><input type="radio" name="domain" value="{v}"{" checked" if i == 0 else ""} required><span>{v}<b>yourname</b></span></label>'
-                  for i, v in enumerate(['mtgtribe.com/bw/', 'bitcoinwealthpays.com/']))
     body = f'''<header class="ltop"><div class="wrap">
  <a class="brand" href="{A('', here)}" aria-label="Bitcoin Wealth guide home">{logo(here)}</a>
  <a class="btn btn-ghost btn-sm" href="{A('dashboard/bw-tribe-page/', here)}">{ic('arrow-left')}<span class="lbl">Back to the guide</span></a>
@@ -666,9 +664,9 @@ def order_page(here=''):
 <main id="main" tabindex="-1">
 <section class="phero"><div class="wrap"><div class="phero-in">{ped('globe', 'lg')}<div>
  <h1 class="h1">Congratulations. Let's build your own Bitcoin Wealth marketing website.</h1>
- <p class="lead">You're two minutes away from your own Bitcoin Wealth website, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
+ <p class="lead">You're two minutes away from your own Bitcoin Wealth marketing website at bitcoinwealthpays.com/<wbr>yourname, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
  {chips(('badge-check', 'R1,000 or $50 in USDT'), ('hand-coins', 'Pay after it is built'), ('zap', 'Ready the same day'), ('pencil', '5 free edits'))}
- <p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH['e6'], here)}?t=238">Watch Leo walk through it, from 3:58</a> (Explainer 6).</p>
+ <p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH['e6'], here)}?t=237">Watch Leo walk through it, from 3:57</a> (Explainer 6).</p>
 </div></div></div></section>
 <section class="sec"><div class="wrap">
 <form class="oform glass" data-order novalidate>
@@ -677,9 +675,8 @@ def order_page(here=''):
   {f('wa', 'Your WhatsApp number', '072 123 4567', True, typ='tel')}
  </fieldset>
  <fieldset><legend>{ic('globe')}Your address</legend>
-  <div class="field-w field"><span class="lab">Choose the address <i>*</i></span><div class="opts">{dom}</div></div>
-  {f('slug', 'The name at the end of your address', 'zizi', True, 'Letters and numbers only.')}
-  <p class="addrprev">{ic('link')}<span>Your page: <b data-out="addr">mtgtribe.com/bw/yourname</b></span></p>
+  {f('slug', 'The name at the end of your address', 'zizi', True, 'Letters and numbers only. Every copy lives at bitcoinwealthpays.com.')}
+  <p class="addrprev">{ic('link')}<span>Your website: <b data-out="addr">bitcoinwealthpays.com/yourname</b></span></p>
  </fieldset>
  <fieldset><legend>{ic('link')}Your links</legend>
   {f('ref', 'Your Bitcoin Wealth referral link', 'https://vowu.io/register?ref=...', True, 'Every sign-up button on your page will copy this link.')}

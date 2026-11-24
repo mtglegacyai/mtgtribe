@@ -169,7 +169,7 @@ VIDEOS = [
     # form field by field. Sells MTG's own service, so it plays on his two sites only, never on client websites (MTG, 23 Nov 2026).
     ('e6', 'your-own-bitcoin-wealth-marketing-website', 'Your own Bitcoin Wealth marketing website',
      "Thandi asks if she can have her own copy of this guide, and Leo shows her: your own Bitcoin Wealth marketing website with your link on every Join button, the price in rand or USDT, what traffic really means, three ways to get it, and how to order yours.",
-     367.0, _E6 + 'final/Your-Own-Bitcoin-Wealth-Marketing-Website-explainer-6-1080p.mp4',
+     369.1, _E6 + 'final/Your-Own-Bitcoin-Wealth-Marketing-Website-explainer-6-1080p.mp4',
      dict(o='h', poster=_E6 + 'thumbs/out/Your-Own-Bitcoin-Wealth-Marketing-Website-website-cover-16x9.jpg', short='Your own website', date='2026-11-24',
           name='Your own Bitcoin Wealth marketing website: your link on every Join button, explained in 6 minutes, with Thandi and Leo')),
 ]

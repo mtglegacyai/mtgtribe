@@ -602,9 +602,9 @@
   if (OF) {
     var slugIn = $('[name="slug"]', OF), prev = $('[data-out="addr"]', OF);
     function slugify(v) { return String(v || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24); }
-    function dom() { var r = $('[name="domain"]:checked', OF); return r ? r.value : 'mtgtribe.com/bw/'; }
+    function dom() { return 'bitcoinwealthpays.com/'; }      /* every copy lives at bitcoinwealthpays.com (MTG, 24 Nov 2026) */
     function paintAddr() { var s = slugify(slugIn.value) || 'yourname'; prev.textContent = dom() + s; }
-    on(slugIn, 'input', paintAddr); $$('[name="domain"]', OF).forEach(function (r) { on(r, 'change', paintAddr); }); paintAddr();
+    on(slugIn, 'input', paintAddr); paintAddr();
     on(OF, 'submit', function (e) {
       e.preventDefault();
       var bad = $$('[required]', OF).filter(function (x) { return x.type === 'radio' ? !$('[name="' + x.name + '"]:checked', OF) : !x.value.trim(); });

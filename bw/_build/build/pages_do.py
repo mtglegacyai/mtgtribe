@@ -114,15 +114,24 @@ def p_exp(here):
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e4'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e4', here)}</div></div>"""
+    e = V['e5']
+    # Explainer 5 (MTG, 24 Nov 2026: "Put this video live ... across all the pages and sections where it will make sense")
+    e5 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e5'], here)}">Explainer 5: Check it yourself on BscScan</a></h2>
+<p class="vdesc">Thandi asks how to read the open book, and Leo shows her on her phone, in four steps, with a real payment from 24 November 2026. {mmss(e['secs'])}. Watch this when you want to see it with your own eyes.</p>
+{checks(["Type bscscan.com yourself and open the contract", "One real payment: in, and straight out", "Token Holdings, your own wallet, and your own website"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e5', here)}</div></div>"""
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     n_ready = sum(1 for k in V if k[0] in 'ei')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, and Explainer 4 how it compares with a stokvel. Then watch the whole plan in Leo's 5-minute presentation.",
-        [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, and Explainer 5 how to check it yourself on BscScan. Then watch the whole plan in Leo's 5-minute presentation.",
+        [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainer{'s' if n_soon != 1 else ''} on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
 {sec(e2, "Then: where all 14 payments go", id="explainer-2")}
 {sec(e3, "Then: the 12 slots, and what you actually pay", id="explainer-3")}
 {sec(e4, "Then: Bitcoin Wealth and the stokvel, side by side", id="explainer-4")}
+{sec(e5, "Then: check it yourself, on your phone", id="explainer-5")}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="{"grid2" if cards.count("class=") > 1 and n_soon > 1 else "stack"}">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
@@ -426,6 +435,7 @@ def p_page(here):
  {box("Your link, everywhere", "<p>Every sign-up button copies <b>your</b> Bitcoin Wealth referral link. When someone pastes it into SafePal, they join under you.</p>", "link")}
  {box("Duplication, made easy", "<p>Your business partners can order theirs too. Same tools, same message, a team that grows the same way.</p>", "copy")}
 </div>""", "Why every member needs one")}
+{sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like")}
 {sec(f"""<div class="offer glass"><div class="offer-copy">
  <h2 class="h2">What you get</h2>
  {checks(["A full copy of this guide, kept up to date with new videos", "Your name and photo on it", "Your Bitcoin Wealth referral link on every sign-up button", "Your WhatsApp, WhatsApp group and social links", "Your choice of address: mtgtribe.com/bw/yourname or bitcoinwealthpays.com/yourname", "Five free edits to make it yours (from the sixth, a small fee depending on the size)"])}

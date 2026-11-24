@@ -418,7 +418,7 @@ Live Zoom five evenings a week, in four languages, plus a WhatsApp community tha
 MTG calls Bitcoin Wealth the original: priced in Bitcoin, paid wallet to wallet, open on BscScan, and still running. 41,013 member IDs say people keep choosing it.
 
 ##### Don't trust. Verify.
-You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. Here's how.
+You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. Here's how, or watch it in 4 minutes.
 
 ---
 
@@ -426,10 +426,20 @@ You don't have to believe MTG or anyone else. Every claim on this page can be ch
 
 URL: https://mtgtribe.com/bw/dashboard/check-it-yourself/
 
-The Bitcoin Wealth contract address, what BscScan shows today, how to read a real payment, and the admin controls in the code, checked on chain.
+The Bitcoin Wealth contract address, what BscScan shows today, and how to read a real payment and your own wallet, in 4 steps. Video and written guide.
 
 ### Check Bitcoin Wealth yourself
 Don't take anyone's word for it, including MTG's. Bitcoin Wealth runs on a public blockchain, so you can look at the contract and every payment yourself. Here's what we found, and how to find it.
+
+#### Watch it in 4 minutes
+
+##### Thandi asks how to read the open book
+Leo shows her on her phone, the four steps on this page, with a real payment from 24 November 2026. 4:23.
+- Type bscscan.com yourself and open the contract
+- One real payment: in, and straight out
+- The Token Holdings, and your own wallet
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
 
 #### The address
 Tip: type it into bscscan.com yourself rather than trusting a link someone sends you.
@@ -441,7 +451,7 @@ Read directly from BNB Smart Chain on 14 November 2026 (13 Nov 22:55 to 14 Nov 1
 - Open the contract on BscScan Paste the address into bscscan.com. The Transactions tab lists every activation.
 - Open one recent transaction Look at "ERC-20 Tokens Transferred". One activation of 0.001 BTCB shows the payment going on to a member's wallet in the same transaction.
 - Check the Token Holdings The contract holds some BTCB: that's the Royal Pool waiting for its monthly payout.
-- Read the Contract tab Look for functions only the owner can use. Knowing them is part of doing your own research.
+- Look up your own wallet Once you're a member, paste your own wallet address into bscscan.com: your activation and every payment in and out, each with its time.
 
 #### The full picture
 
@@ -783,10 +793,10 @@ Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/
 
-Bitcoin Wealth explainer videos with Thandi and Leo: what it is, how the 14 positions pay, why you pay once, and how it compares with a stokvel.
+Bitcoin Wealth explainer videos with Thandi and Leo: what it is, how the 14 positions pay, why you pay once, the stokvel, and checking it on BscScan.
 
 ### Bitcoin Wealth explainer videos
-Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, and Explainer 4 how it compares with a stokvel. Then watch the whole plan in Leo's 5-minute presentation.
+Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, and Explainer 5 how to check it yourself on BscScan. Then watch the whole plan in Leo's 5-minute presentation.
 
 #### Start here: Explainer 1
 
@@ -827,6 +837,16 @@ Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers
 - Is your turn guaranteed: where the stokvel picture stops
 Thandi and Leo, and their voices, are made with AI.
 - Video: Explainer 4, "Better than a stokvel?" (3:56): Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side: who holds the money, who can see the payments, the fees, what it pays in, how much you put in, and whether your turn is guaranteed. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-vs-stokvel-6-questions-side-by-side.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/better-than-a-stokvel-video/
+
+#### Then: check it yourself, on your phone
+
+#### Explainer 5: Check it yourself on BscScan
+Thandi asks how to read the open book, and Leo shows her on her phone, in four steps, with a real payment from 24 November 2026. 4:23. Watch this when you want to see it with your own eyes.
+- Type bscscan.com yourself and open the contract
+- One real payment: in, and straight out
+- Token Holdings, your own wallet, and your own website
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
 
 #### The whole plan, in 5 minutes
 
@@ -930,8 +950,8 @@ Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he sa
 Watch the presentation
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1015,8 +1035,8 @@ The 14 Positions page: the seats fill one by one, then switch to later cycles. A
 Open the 14 Positions
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1094,8 +1114,8 @@ The 12 Slots page: every slot and its price side by side, and the calculator tha
 Open the 12 Slots
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1177,8 +1197,92 @@ The Better Than A Stokvel? page: the six questions side by side, where Bitcoin W
 Open the scorecard
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
+
+---
+
+## How to check Bitcoin Wealth on BscScan: 4 steps on your phone
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
+
+Check Bitcoin Wealth yourself on BscScan in 4 steps on your phone: a real payment in and straight out, Token Holdings, your own wallet. Every word written.
+
+### How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes
+Explainer 5 of the Thandi and Leo series. Thandi asks how to read the open book, and Leo shows her on her phone: four steps on BscScan, with a real payment from 24 November 2026. Then, your own Bitcoin Wealth website. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
+
+#### In this video
+- What BscScan is: a public window into BNB Smart Chain
+- Step 1: type bscscan.com yourself and open the contract
+- Step 2: one real payment, in and straight out
+- Step 3: the Token Holdings, where the Royal Pool waits
+- Step 4: your own wallet, and next, your own website
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 The book is open, but how do I read it?
+Thandi: Leo, you said the book is open. But how do I actually read it? I'm not a computer person!
+Leo: You don't need to be. If you can track a parcel, you can do this. Welcome back, family. Today: 4 steps on BscScan, on your phone.
+
+##### Chapter 2 · 0:19 What BscScan is: a block explorer
+Leo: BscScan is a block explorer: a public window into BNB Smart Chain. You know a parcel's tracking number? You type it in, and you see every stop the parcel made. Here, you type in the contract's address, and you see every payment it ever made. Where the picture stops: it shows wallet addresses, never people's names.
+
+##### Chapter 3 · 0:40 Step 1: open the contract on BscScan
+Thandi: Okay, step one. Where do I find the contract's address?
+Leo: On the guide's Check It Yourself page. Copy it from there. Then type bscscan.com yourself. Never tap a BscScan link someone sends you: fake sites copy it to steal wallets. Paste the address, and check the first and the last characters match.
+Thandi: I'm in! What am I looking at?
+Leo: This is the contract's own page. The Transactions tab lists every activation since April 2026, newest on top: over 41,000 member IDs by mid November. Each row is one transaction, with the time it happened.
+
+##### Chapter 4 · 1:21 Step 2: open one transaction
+Thandi: Can I open one?
+Leo: Step 2. Tap any transaction. Here's a real one, from the 24th of November. Scroll to ERC-20 Tokens Transferred. 0.001 BTCB goes into the contract, and in the same transaction, 0.001 BTCB goes straight out to another member's own wallet. Nobody pressed a button. The program did it.
+Thandi: So the money doesn't sit there. It goes straight on! I can see it!
+
+##### Chapter 5 · 1:54 Step 3: Token Holdings
+Leo: Step 3: Token Holdings. The contract does hold some BTCB: on the 24th of November, about 0.54. That's where the Royal Pool waits for its monthly payout.
+
+##### Chapter 6 · 2:07 Step 4: your own wallet
+Leo: Step 4: your own wallet. Once you're a member, paste your own wallet address into BscScan, the same way. You'll see your own activation, and every payment in and out of your wallet, each with the time it happened. Nobody has to tell you. You see it for yourself.
+
+##### Chapter 7 · 2:24 Thandi says it back
+Thandi: Let me say it back. I type BscScan myself. Transactions: every activation.
+Thandi: One transaction: the payment goes straight on.
+Thandi: Token Holdings: the Royal Pool. And my own wallet: every payment, in and out.
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+Leo: This is education, not financial advice. So take your time, and do your own research.
+
+##### Chapter 8 · 2:56 Next: your own Bitcoin Wealth website
+Thandi: What's next, Leo?
+Leo: Next: your very own Bitcoin Wealth marketing website, with your own link.
+Leo: Already sharing Bitcoin Wealth with people? Picture your own website: bitcoinwealthpays.com/yourname. Like bitcoinwealthpays.com/zizi. This whole guide, every tutorial and every explainer, with MTG's branding taken off, and your name, your WhatsApp and your socials on it. Every Join button carries your own referral link, so everyone who signs up there joins your team. Your website shares the guide for you, day and night.
+Thandi: My own website, with my own link? I want that!
+
+##### Chapter 9 · 3:39 Every step, and goodbye
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+Leo: If you want to go fast, go alone. If you want to go far, go together.
+Leo: Thank you for watching. Take good care of yourself, and of the people you love. We can't wait to welcome you. Goodbye for now.
+
+#### Your next step
+
+##### Your own website
+This whole guide at bitcoinwealthpays.com/ yourname, with your name, your WhatsApp and your link on every Join button.
+See what you get
+
+##### The address and the 4 steps
+Copy the contract address, and read the four steps in writing, with what the blockchain showed.
+Open Check It Yourself
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1261,8 +1365,8 @@ Live on Zoom five evenings a week, in four languages.
 See the Zoom schedule
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ---
 
@@ -1352,6 +1456,8 @@ Every sign-up button copies your Bitcoin Wealth referral link. When someone past
 
 ##### Duplication, made easy
 Your business partners can order theirs too. Same tools, same message, a team that grows the same way.
+
+#### See what yours could look like
 
 #### Everything, up front
 

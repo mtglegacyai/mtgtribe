@@ -642,6 +642,8 @@ var v=$('#bgv'),ctl=$('#bgctl'),hero=$('#hero');
 (function(){
   var c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
   var slow=!!(c&&(c.saveData||/(^|-)2g|3g/.test(c.effectiveType||'')));
+  /* the background film's cover is the still already on screen, so Google has a thumbnail and nothing extra downloads */
+  var still=$('#bg img');if(v&&still&&!v.getAttribute('poster'))v.setAttribute('poster',still.currentSrc||still.src);
   if(reduce||slow||!v||!v.canPlayType('video/mp4'))return;
   var tall=matchMedia('(max-aspect-ratio: 3/4)').matches;
   v.src=v.getAttribute(tall?'data-tall':'data-wide');

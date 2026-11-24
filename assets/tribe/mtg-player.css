@@ -1,0 +1,134 @@
+/* MTG video player for the MTG TRIBE guides (mtgtribe.com/cc and the next guides), copied from the /cbp player, which is the
+   /bw player (MTG, 16 Nov 2026). A wide cover in the slim laptop on the page; a vertical video plays in the slim gold phone in
+   the pop-up, closes itself at the end and puts the page back where the visitor pressed play. Colours follow the page's gold. */
+.mtgp,.sheet.player{--gold:#f2ad3c;--cyan:#f2ad3c;--pink:#ffd36e;--font:'DM Sans',system-ui,sans-serif;--display:Outfit,'DM Sans',system-ui,sans-serif;--muted:#8a919b;--soft:#c3c7cd;--text:#f7f8fa;--ease:cubic-bezier(.16,1,.3,1);--hdr:64px}
+/* =====================================================================================================
+   VIDEO PLAYER (MTG, 16 Nov 2026), the same as on /bw: "Displayed in full, nothing hidden, but not too big ... even when
+   maximized ... and the close button is still there." The screen has the video's own shape, the video is never cropped,
+   nothing lies on the picture (camera, Full Screen and Close live in the bar), and the frame takes its size from the visible
+   screen. Wide videos sit in the slim laptop (.pl-h), vertical ones in the slim gold phone (.pl-v).
+   ===================================================================================================== */
+:root{--svh:100vh;--dvh:100vh}
+@supports (height:100svh){:root{--svh:100svh;--dvh:100dvh}}
+.vid{position:relative;display:grid;gap:10px;min-width:0;margin:0}
+.vcap{display:flex;align-items:center;gap:12px;padding:0 clamp(8px,1.4vw,20px);min-width:0}
+.vnum{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--pink));color:#05000e;font:900 .95rem var(--display)}
+.vct{display:grid;min-width:0}
+.vct b{font:700 1rem/1.3 var(--font)}
+.vct small{font-size:.84rem;color:var(--muted)}
+.pl{position:relative;display:block;min-width:0;margin-left:auto;margin-right:auto;
+  --rim:2px;--bez:5px;--bar:44px;--chin:14px;--rad:28px;--wide:100%;--room:calc(var(--svh) - var(--hdr) - var(--foot,0px) - 20px)}
+.pl-v{--ar:.5625;width:280px;max-width:100%;width:max(var(--pl-min,200px),min(var(--pl-w,320px),var(--wide),calc((var(--room) - var(--bar) - var(--chin) - 2 * var(--rim)) * var(--ar) + 2 * (var(--bez) + var(--rim)))))}
+.pl-h{--ar:1.77778;--rim:1.5px;--bez:clamp(4px,.9vw,8px);--bar:40px;--rad:14px;--deck:clamp(9px,1.3vw,14px);--lip:clamp(8px,1.4vw,20px);padding:0 var(--lip);width:100%;
+  width:max(var(--pl-min,240px),min(var(--pl-w,100%),var(--wide),calc((var(--room) - var(--bar) - var(--bez) - 2 * var(--rim) - var(--deck)) * var(--ar) + 2 * (var(--bez) + var(--rim) + var(--lip)))))}
+@media (max-width:330px){.pl-h{--pl-min:0px}}
+/* the device: gold-titanium rim, thin black bezel */
+.pl-dev{position:relative;display:grid;grid-template-rows:var(--bar) auto;min-width:0;padding:0 var(--bez) var(--chin);border:var(--rim) solid transparent;border-radius:var(--rad);
+  background:linear-gradient(#040404,#040404) padding-box,linear-gradient(140deg,#7a531c,#f6d88c 22%,#9a6a26 45%,#f2c66d 70%,#6b4615) border-box;
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 40px 80px -30px rgba(0,0,0,.9),0 0 60px -10px rgba(242,173,60,.22)}
+.pl-h .pl-dev{padding-bottom:var(--bez);border-radius:var(--rad) var(--rad) 6px 6px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 44px 80px -36px rgba(0,0,0,.95),0 0 80px -26px rgba(242,173,60,.4)}
+.pl-v:before,.pl-v:after{content:"";position:absolute;width:3px;border-radius:2px;background:linear-gradient(90deg,#5c3d12,#f2c66d 55%,#7a531c)}
+.pl-v:before{left:-3px;top:17%;height:8%;box-shadow:0 56px 0 #c79a48}
+.pl-v:after{right:-3px;top:25%;height:12%}
+.pl-deck{display:none}
+.pl-h .pl-deck{position:relative;display:block;height:var(--deck);margin:0 calc(var(--lip) * -1);border-radius:0 0 22px 22px/0 0 14px 14px;
+  background:linear-gradient(180deg,#e2c078,#8a6124 26%,#3a2a12 70%,#17110a);box-shadow:0 20px 30px -14px rgba(0,0,0,.9)}
+.pl-h .pl-deck i{position:absolute;left:50%;top:0;width:min(22%,140px);height:5px;transform:translateX(-50%);border-radius:0 0 10px 10px;background:linear-gradient(180deg,#17110a,#4a3518)}
+/* the screen: the video's own shape, the whole picture, nothing on top of it */
+.pl-scr{position:relative;min-width:0;min-height:0;aspect-ratio:9/16;overflow:hidden;background:#000}
+.pl-h .pl-scr{aspect-ratio:16/9}
+@supports not (aspect-ratio:1){.pl-scr:before{content:"";display:block;padding-top:177.78%}.pl-h .pl-scr:before{padding-top:56.25%}}
+.pl-scr>img,.pl-scr>video,.pl-scr>iframe,.pl-scr>.ytp{position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.pl-scr>video,.pl-scr>iframe,.pl-scr>.ytp{z-index:1}
+.ytp-note{display:grid;place-items:center;padding:8px;text-align:center}
+.ytp-note>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(6px) brightness(.35)}
+.yn{position:relative;display:grid;justify-items:center;gap:6px;max-width:44ch;font-size:clamp(.7rem,1.6vw,.95rem);line-height:1.35;color:var(--soft)}
+.yn b{font:800 clamp(.72rem,1.6vw,.95rem)/1.2 var(--display);color:var(--gold)}
+.yn .btn{min-height:36px;padding:7px 14px;font-size:.85rem}
+/* the bar: what is playing and how long; while it plays, Full Screen and Close (the words always show) */
+.pl-bar{position:relative;display:grid;grid-template-columns:minmax(max-content,1fr) minmax(0,52px) minmax(max-content,1fr);align-items:center;gap:6px;min-width:0;padding:0 7px;
+  color:#d9d3ee;font:700 12px/1 var(--font);letter-spacing:.01em;container:plbar/inline-size}
+.pl-h .pl-bar{grid-template-columns:minmax(0,1fr) auto;padding:0 4px}
+.pl-h .pl-b{height:30px}.pl-h .pl-b:after{top:-5px;bottom:-5px}
+.pl-l,.pl-r{display:flex;align-items:center;min-width:0}
+.pl-r{justify-content:flex-end}
+.pl-tx{display:block;min-width:0;padding:0 4px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pl-r .pl-tx{font-variant-numeric:tabular-nums;color:var(--gold)}
+.pl-cam{display:block;width:100%;height:13px;border-radius:9px;background:#000;box-shadow:inset 0 0 0 1px #1d1d1d,inset -9px 0 0 -5px #191919}
+.pl-h .pl-cam{position:absolute;left:50%;top:3px;width:4px;height:4px;margin-left:-2px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,217,142,.3)}
+.pl-b{position:relative;display:none;align-items:center;gap:6px;height:32px;padding:0 10px;border:0;border-radius:9px;background:rgba(255,255,255,.1);
+  color:#fff;font:inherit;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s}
+.pl-b:after{content:"";position:absolute;top:-6px;bottom:-6px;left:-3px;right:-3px}
+.pl-b .ic{flex:none;width:15px;height:15px}
+.pl-b:hover{background:rgba(242,173,60,.22)}
+.pl-x:hover{background:rgba(255,80,120,.45)}
+.pl-b:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.pl.on .pl-b{display:inline-flex}
+.pl.on .pl-tx{display:none}
+.pl .i-min,.pl .t-min,.pl.max .i-max,.pl.max .t-max{display:none}
+.pl.max .i-min{display:block}.pl.max .t-min{display:inline}
+@container plbar (max-width:206px){.pl-v:not(.max) .pl-x .t{display:none}.pl-v:not(.max) .pl-x{padding:0 9px}}
+/* the cover's play button cannot be missed (MTG, 16 Nov 2026): in the middle of the cover, which every cover keeps clear */
+.vplay,.vsoon{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border:0;padding:0;background:none;cursor:pointer}
+.pl.on .vplay,.pl.on .vsoon{display:none}
+.vplay .pbtn{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:clamp(56px,27%,88px);aspect-ratio:1;border-radius:50%;
+  color:#1f1300;background:var(--gold);box-shadow:0 0 0 8px rgba(255,190,60,.16),0 10px 24px rgba(0,0,0,.45);transform:translate(-50%,-50%);transition:transform .3s var(--ease)}
+.pl-h .vplay .pbtn{width:clamp(54px,12%,118px)}
+.vplay .pbtn:before{content:"";position:absolute;inset:-18%;border-radius:50%;border:2px solid rgba(255,190,60,.55);animation:plring 2.6s var(--ease) infinite}
+.vplay .pbtn .ic{width:40%;height:40%;margin-left:6%}
+.vplay:hover .pbtn{transform:translate(-50%,-50%) scale(1.06)}
+.vplay:focus-visible{outline:none}
+.vplay:focus-visible .pbtn{outline:3px solid #fff;outline-offset:4px}
+@keyframes plring{0%{transform:scale(.85);opacity:.9}80%,100%{transform:scale(1.25);opacity:0}}
+.vplay.pulse .pbtn{background:radial-gradient(circle at 34% 28%,#fff3c4 0,#ffd257 34%,#ffa101 72%,#e07f00 100%);
+  box-shadow:0 0 0 clamp(4px,.9vw,9px) rgba(255,190,60,.22),0 0 46px 6px rgba(255,170,20,.55),0 12px 26px rgba(0,0,0,.5);animation:pbreathe 2.4s ease-in-out infinite}
+.vplay.pulse .pbtn:before{inset:-12%;border-width:2px;border-color:rgba(255,214,110,.85);animation:pring 2.4s cubic-bezier(.2,.6,.3,1) infinite}
+.vplay.pulse .pbtn:after{content:"";position:absolute;inset:-12%;border-radius:50%;border:2px solid rgba(255,214,110,.7);animation:pring 2.4s cubic-bezier(.2,.6,.3,1) 1.2s infinite;opacity:0}
+.vplay.pulse:hover .pbtn,.vplay.pulse:focus-visible .pbtn{animation-play-state:paused}
+@keyframes pbreathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.085)}}
+@keyframes pring{0%{transform:scale(.9);opacity:.95}70%,100%{transform:scale(1.75);opacity:0}}
+/* a video that is still being made: a calm badge where the play button will be */
+.vsoon{cursor:default}
+.vs-in{position:absolute;left:50%;top:50%;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;transform:translate(-50%,-50%);white-space:nowrap;
+  background:rgba(7,0,26,.86);box-shadow:inset 0 0 0 1.5px rgba(255,216,102,.65),0 0 30px rgba(255,216,102,.18);color:var(--gold);font:700 clamp(.78rem,1.6vw,.95rem)/1 var(--font)}
+.vs-in .ic{width:18px;height:18px}
+.vs-in b{color:var(--gold)}
+/* the pop-up: the same player in the middle of the screen, sized to the screen that is visible right now */
+.sheet{position:fixed;inset:0;z-index:200;display:grid;opacity:0;transition:opacity .25s}
+.sheet[hidden]{display:none}
+.sheet.on{opacity:1}
+.sheet.player{place-items:center;background:rgba(2,3,5,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sheet.player .pl{--pl-w:400px;--pl-min:172px;--wide:calc(100vw - 32px);--room:calc(var(--dvh) - 28px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+.sheet.player .pl-h{--pl-w:1040px;--wide:calc(100vw - 24px)}
+/* full screen: black, the bar on top, and the whole video in everything that is left */
+.pl.max{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2000;width:100%;max-width:none;height:100%;margin:0;padding:0;background:#000}
+.pl:fullscreen{background:#000}.pl:-webkit-full-screen{background:#000}
+.pl::backdrop{background:#000}
+.pl.max .pl-dev{position:absolute;top:0;right:0;bottom:0;left:0;grid-template-rows:auto minmax(0,1fr);border:0;
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);border-radius:0;background:#000;box-shadow:none}
+.pl.max .pl-bar{grid-template-columns:minmax(0,1fr) auto;gap:10px;min-height:56px;padding:8px 12px;font-size:13px;container-type:normal}
+.pl.max .pl-l{justify-content:flex-end}
+.pl.max .pl-scr{width:100%;height:100%;aspect-ratio:auto}
+.pl.max .pl-scr:before,.pl.max.on .pl-scr>img{display:none}
+@supports (width:1cqw){
+  .pl.max .pl-scr{display:grid;place-items:center;container-type:size}
+  .pl.max .pl-scr>video,.pl.max .pl-scr>iframe,.pl.max .pl-scr>.ytp{position:relative;top:auto;right:auto;bottom:auto;left:auto;width:min(100cqw,calc(100cqh * var(--ar)));height:auto;aspect-ratio:var(--ar)}}
+.pl.max .pl-cam,.pl.max .pl-deck,.pl.max:before,.pl.max:after{display:none}
+.pl.max .pl-b{height:40px;padding:0 14px;border-radius:12px}
+.pl.max .pl-b:after{top:-4px;bottom:-4px}
+.pl.max .pl-b .ic{width:17px;height:17px}
+@media (orientation:landscape) and (max-height:560px){
+  .pl.max .pl-dev{grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr) auto}
+  .pl.max .pl-scr{grid-row:1;grid-column:1}
+  .pl.max .pl-bar{grid-row:1;grid-column:2;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:10px;min-height:0;padding:10px 8px;font-size:10px;line-height:1.2}
+  .pl.max .pl-b{flex-direction:column;justify-content:center;gap:4px;width:62px;height:auto;min-height:52px;padding:7px 3px;white-space:normal;text-align:center}
+  .pl.max .pl-x{flex-direction:column-reverse}
+}
+.pl-hold{visibility:hidden}
+.pl-lock,.pl-lock body{overflow:hidden}
+/* while an open player is on screen, the floating buttons step aside so nothing can lie on the picture */
+.pl-playing .ud,.pl-playing .md-toggle{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+.toast{position:fixed;left:50%;bottom:calc(var(--foot,0px) + 24px + env(safe-area-inset-bottom,0px));z-index:250;max-width:calc(100vw - 32px);padding:12px 18px;border-radius:14px;transform:translate(-50%,20px);
+  background:rgba(16,5,37,.97);border:1px solid rgba(255,216,102,.5);color:var(--text);font-size:.92rem;box-shadow:0 18px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility 0s .25s}
+.toast.on{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .25s,transform .25s,visibility 0s}

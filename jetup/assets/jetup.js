@@ -60,7 +60,10 @@ function fmt(n,dec){return Number(n).toLocaleString('en-US',{minimumFractionDigi
    purple network arcs and a gold beam. The still image shows straight away; the video loads after the page, HD on
    big screens and 720p on phones, never with reduced motion or data saver, and it pauses when off screen. */
 (function(){
-  var box=$('.hero-bg'),v=box&&$('video',box);if(!v||!v.canPlayType||!v.canPlayType('video/mp4'))return;
+  var box=$('.hero-bg'),v=box&&$('video',box);if(!v)return;
+  /* its cover is the still image already on screen, so Google has a thumbnail and nothing extra downloads */
+  var still=$('img',box);if(still&&!v.getAttribute('poster'))v.setAttribute('poster',still.currentSrc||still.src);
+  if(!v.canPlayType||!v.canPlayType('video/mp4'))return;
   var save=navigator.connection&&navigator.connection.saveData;
   if(reduce||save)return;
   var started=false,vis=true,cur='';
@@ -121,8 +124,11 @@ function fallback(t){var ta=d.createElement('textarea');ta.value=t;ta.setAttribu
 /* ---- the video player: laptop for 16:9, slim phone for 9:16, and it closes itself at the end ---- */
 (function(){
   var dlg=$('#vm');if(!dlg)return;
-  var vid=$('#vm-video'),dev=$('#vm-dev'),x=$('#vm-x'),ttl=$('#vm-title'),opener=null,native=typeof dlg.showModal==='function';
-  function open(e){var b=e.currentTarget;e.preventDefault();if(dlg.open)return;opener=b;
+  var tpl=$('#vm-tpl'),vid=$('#vm-video'),dev=$('#vm-dev'),x=$('#vm-x'),ttl=$('#vm-title'),opener=null,native=typeof dlg.showModal==='function';
+  /* The player is made on the first tap, so the page never holds an empty video without a cover
+     (Google Search Console: "No thumbnail URL provided", MTG 24 Nov 2026). */
+  function player(){if(!vid&&tpl){vid=tpl.content.firstElementChild.cloneNode(true);tpl.parentNode.replaceChild(vid,tpl);vid.addEventListener('ended',ended)}return vid}
+  function open(e){var b=e.currentTarget;e.preventDefault();if(dlg.open||!player())return;opener=b;
     var src=b.getAttribute('data-video'),h=b.getAttribute('data-orient')!=='v';
     if(vid.getAttribute('src')!==src){vid.setAttribute('src',src);vid.setAttribute('poster',b.getAttribute('data-poster')||'');vid.load()}
     vid.setAttribute('aria-label',b.getAttribute('data-title')||'Video');ttl.textContent=b.getAttribute('data-title')||'';
@@ -130,12 +136,13 @@ function fallback(t){var ta=d.createElement('textarea');ta.value=t;ta.setAttribu
     if(native)dlg.showModal();else dlg.setAttribute('open','');
     html.classList.add('vm-lock');requestAnimationFrame(function(){requestAnimationFrame(function(){dlg.classList.add('show')})});
     x.focus({preventScroll:true});var p=vid.play();if(p&&p.catch)p.catch(function(){})}
-  function close(){if(!dlg.open)return;vid.pause();dlg.classList.remove('show');html.classList.remove('vm-lock');
+  function close(){if(!dlg.open)return;if(vid)vid.pause();dlg.classList.remove('show');html.classList.remove('vm-lock');
     setTimeout(function(){if(native)dlg.close();else dlg.removeAttribute('open');if(opener&&opener.focus)opener.focus({preventScroll:true})},reduce?0:330)}
   $$('[data-video]').forEach(function(b){b.addEventListener('click',open)});
-  vid.addEventListener('ended',function(){
+  function ended(){
     try{if(d.fullscreenElement&&d.exitFullscreen)d.exitFullscreen().catch(function(){});else if(vid.webkitDisplayingFullscreen&&vid.webkitExitFullscreen)vid.webkitExitFullscreen()}catch(_){}
-    close();setTimeout(function(){try{vid.currentTime=0;vid.load()}catch(_){}},reduce?50:420)});
+    close();setTimeout(function(){try{vid.currentTime=0;vid.load()}catch(_){}},reduce?50:420)}
+  if(vid)vid.addEventListener('ended',ended);
   x.addEventListener('click',close);$('.vm-bg',dlg).addEventListener('click',close);
   dlg.addEventListener('click',function(e){if(e.target===dlg)close()});
   dlg.addEventListener('cancel',function(e){e.preventDefault();close()});

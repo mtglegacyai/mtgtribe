@@ -212,7 +212,7 @@ PLAYER = '''<dialog class="vm" id="vm" aria-label="Video player">
  <div class="vm-box">
   <div class="vm-vid laptop" id="vm-dev">
    <span class="dev-btn l1" aria-hidden="true"></span><span class="dev-btn l2" aria-hidden="true"></span><span class="dev-btn l3" aria-hidden="true"></span><span class="dev-btn r1" aria-hidden="true"></span>
-   <div class="scr"><video id="vm-video" controls playsinline preload="none"></video><span class="isl" aria-hidden="true"></span></div>
+   <div class="scr"><template id="vm-tpl"><video id="vm-video" controls playsinline preload="none"></video></template><span class="isl" aria-hidden="true"></span></div>
    <span class="base" aria-hidden="true"><i></i></span>
    <button class="vm-x" type="button" id="vm-x" aria-label="Close the video">%s</button>
   </div>

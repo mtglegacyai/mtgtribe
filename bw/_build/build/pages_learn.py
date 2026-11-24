@@ -45,7 +45,7 @@ def p_home(here):
         ('Compare it honestly', f'<p>Against <a class="inl" href="{A("dashboard/stokvel/", here)}">a stokvel</a> and against the newer copycats, then <a class="inl" href="{A("dashboard/check-it-yourself/", here)}">check it yourself</a> on BscScan.</p>'),
         ('Join step by step', f'<p>Three tutorials show every tap: SafePal first, then BNB, then BTCB and slot 1. <a class="inl" href="{A("dashboard/join/", here)}">Open the join guide</a>.</p>'),
         ('Meet the community', f'<p>Live on <a class="inl" href="{A("dashboard/live-on-zoom/", here)}">Zoom</a> five evenings a week, and every day in the MTG TRIBE.</p>'),
-        ('Teach someone else', f'<p>We learn best when we teach others. Share this guide, or get your own <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">BW Tribe Page</a> with your link inside.</p>'),
+        ('Teach someone else', f'<p>We learn best when we teach others. Share this guide, or get <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">your own Bitcoin Wealth marketing website</a> with your link inside.</p>'),
     ])
     story = V['s1']
     feat = f"""<section class="feat" id="story" aria-label="Watch this first"><div class="wrap"><div class="feat-in">

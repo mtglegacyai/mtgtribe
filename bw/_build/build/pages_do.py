@@ -122,16 +122,25 @@ def p_exp(here):
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e5', here)}</div></div>"""
+    e = V.get('e6')
+    # Explainer 6 (MTG, 24 Nov 2026): your own Bitcoin Wealth marketing website, traffic, and how to order (his two sites only)
+    e6 = '' if not e else f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Explainer 6: Your own Bitcoin Wealth marketing website</a></h2>
+<p class="vdesc">Thandi asks if she can have her own copy of this guide, and Leo shows her what she gets, the price, what MTG pays for, your own wallet or an exchange, what traffic really means and how to order, in {mmss(e['secs'])}. Watch this when you are ready to share Bitcoin Wealth with your own website.</p>
+{checks(["This whole guide, with your link on every Join button", "R1,000, or $50 in USDT, once-off: no monthly fees, MTG pays the running costs", "Your own wallet or an exchange, and why MTG recommends your own", "What traffic means, and 3 ways to get it"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a>{order_btn(size='sm', ring=False)}</div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e6', here)}</div></div>"""
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     n_ready = sum(1 for k in V if k[0] in 'ei')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, and Explainer 5 how to check it yourself on BscScan. Then watch the whole plan in Leo's 5-minute presentation.",
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, " + ("Explainer 5 how to check it yourself on BscScan, and Explainer 6 how to get your own Bitcoin Wealth marketing website" if e else "and Explainer 5 how to check it yourself on BscScan") + ". Then watch the whole plan in Leo's 5-minute presentation.",
         [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainer{'s' if n_soon != 1 else ''} on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
 {sec(e2, "Then: where all 14 payments go", id="explainer-2")}
 {sec(e3, "Then: the 12 slots, and what you actually pay", id="explainer-3")}
 {sec(e4, "Then: Bitcoin Wealth and the stokvel, side by side", id="explainer-4")}
 {sec(e5, "Then: check it yourself, on your phone", id="explainer-5")}
+{sec(e6, "Then: your own Bitcoin Wealth marketing website", id="explainer-6") if e6 else ''}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
 {sec(f'<div class="{"grid2" if cards.count("class=") > 1 and n_soon > 1 else "stack"}">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
@@ -427,25 +436,29 @@ def p_zoom(here):
 
 # ======================================================================= BW TRIBE PAGE
 def p_page(here):
-    return f'''{phero("globe", "Your own BW Tribe Page",
-        "This whole website, with your name, your photo and your own Bitcoin Wealth link built in. One link to send to every potential business partner.",
-        [("badge-check", "R1,000 once-off"), ("hand-coins", "Pay after it's built"), ("pencil", "5 free edits")])}
+    return f'''{phero("globe", "Your own Bitcoin Wealth marketing website",
+        "This whole website, every tutorial and every explainer, with MTG's branding taken off, your name on it and your own Bitcoin Wealth link built in. One link to send to every potential business partner.",
+        [("badge-check", "R1,000 or $50 in USDT"), ("hand-coins", "Pay after it's built"), ("zap", "Ready the same day"), ("pencil", "5 free edits")])}
 {sec(f"""<div class="grid3">
  {box("It does the explaining", "<p>Every tutorial, every diagram, every honest answer, ready day and night. Your potential business partners learn at their own pace.</p>", "presentation")}
  {box("Your link, everywhere", "<p>Every sign-up button copies <b>your</b> Bitcoin Wealth referral link. When someone pastes it into SafePal, they join under you.</p>", "link")}
  {box("Duplication, made easy", "<p>Your business partners can order theirs too. Same tools, same message, a team that grows the same way.</p>", "copy")}
 </div>""", "Why every member needs one")}
-{sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like")}
+{sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like") if 'e6' not in V else sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e6'], here)}">Thandi asks: can I get my own?</a></h3>
+<p class="vdesc">Leo shows her everything in {mmss(V['e6']['secs'])}: what you get, the price in rand or USDT, everything MTG pays for so you never pay monthly fees, your own wallet or an exchange, what traffic really means, three ways to get it, and the order form, field by field.</p>
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e6'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e6', here, eager=True, hero=True)}</div></div>""", "See what yours could look like", id="video")}
 {sec(f"""<div class="offer glass"><div class="offer-copy">
  <h2 class="h2">What you get</h2>
- {checks(["A full copy of this guide, kept up to date with new videos", "Your name and photo on it", "Your Bitcoin Wealth referral link on every sign-up button", "Your WhatsApp, WhatsApp group and social links", "Your choice of address: mtgtribe.com/bw/yourname or bitcoinwealthpays.com/yourname", "Five free edits to make it yours (from the sixth, a small fee depending on the size)"])}
- <div class="price"><b>R1,000</b><span>once-off<br><small>Pay in rand, USDT BEP20 or USDT TRC20. You agree the method with MTG on WhatsApp.</small></span></div>
+ {checks(["A full copy of this guide, every tutorial and every explainer, kept up to date with new videos", "MTG's branding taken off: your name and photo on it", "Your Bitcoin Wealth referral link on every Join button, so everyone who joins there joins your team", "Your WhatsApp number as a button, your WhatsApp group, and your TikTok, Facebook, YouTube, Telegram and Instagram", "Your own address: bitcoinwealthpays.com/yourname", "Ready the same day", "Five free edits to make it yours, like adding your other income streams (from the sixth, a small fee depending on the size)"])}
+ <div class="price"><b>R1,000</b><span>once-off in rand<br><small>or <b>$50 in USDT</b> (BEP20 or TRC20). USDT is a digital dollar: 1 USDT is worth about $1. You pay only once it's built and you've seen it.</small></span></div>
  <div class="btn-row">{order_btn(size='lg')}</div>
 </div><div class="offer-copy">
  <h2 class="h2">How it works</h2>
  {steps([("Fill in the order form", "<p>Two minutes. Your details go straight to MTG on WhatsApp.</p>"), ("MTG builds your page", "<p>You agree the payment method together on WhatsApp.</p>"), ("You check it", "<p>Love it? Then you pay. Changed your mind? MTG deletes it. Nothing to lose.</p>"), ("Share your one link", "<p>Send it to potential business partners, post it in your groups and on your socials.</p>")])}
 </div></div>""", "Everything, up front")}
-{sec(f"""<div class="secret glass big">{ic('lock-keyhole')}<div><b>The part we only tell owners</b><p>MTG uses a traffic source that makes it much easier to put a page like yours in front of people who already watch crypto ads all day. It has its own income stream too. No guarantee those visitors join. Once your BW Tribe Page is built, paid and yours, MTG shows you how it works, with its own tutorials and explainers.</p></div></div>""")}'''
+{sec(f"""<div class="secret glass big">{ic('lock-keyhole')}<div><b>The traffic source: ClickBaitPays</b><p>Got a link? Get it seen. MTG advertises his own Bitcoin Wealth website on ClickBaitPays, where members are paid in USDT to view ads, so they really look. It is an income stream of its own too. No guarantee those visitors join. Learn all about it, step by step, at <a class="inl" href="{CBP_SITE}" target="_blank" rel="noopener">clickbaitpaysus.com</a>.</p></div></div>""")}'''
 
 
 # ======================================================================= TOOLS
@@ -611,7 +624,7 @@ def p_safe(here):
 # ======================================================================= MORE
 def p_card(here):
     return f'''{phero("credit-card", "Spend your crypto with a card", "A shorter road from crypto to everyday spending: a crypto debit card, with an income opportunity of its own.")}
-{sec(f'<div class="joinband glass"><div><h2 class="h3">MTG\'s crypto card guide</h2><p>Everything about the card, step by step, on its own website.</p></div><div class="btn-row">{btn("Open the card guide", CARD_GUIDE, "gold", "external-link", ring=True, ext=True)}</div></div>')}'''
+{sec(f'<div class="joinband glass"><div><h2 class="h3">MTG\'s Bellver Card guide</h2><p>Everything about the card, step by step, on its own website.</p></div><div class="btn-row">{btn("Open the card guide", CARD_GUIDE, "gold", "external-link", ring=True, ext=True)}</div></div>')}'''
 
 
 def p_tribe(here):
@@ -627,8 +640,8 @@ def p_disc(here):
     return f'''{phero("info", "Disclaimer", "Independent, educational, and honest about the risks.")}
 {sec(f"""<div class="prose panel pad glass">
 <p>{DISCLAIMER}</p>
-<p><b>Referral links.</b> The Bitcoin Wealth sign-up button, the VALR and Binance buttons and the crypto card guide are MTG's referral or partner links. If you use them, MTG may earn, at no extra cost to you. If someone else introduced you, use their links.</p>
-<p><b>Your copy, your rules.</b> A BW Tribe Page is a copy of this guide with the owner's own links. The owner is responsible for how they share it.</p>
+<p><b>Referral links.</b> The Bitcoin Wealth sign-up button, the VALR and Binance buttons, the Bellver Card guide and the Aureus Alliance link are MTG's referral or partner links. If you use them, MTG may earn, at no extra cost to you. If someone else introduced you, use their links.</p>
+<p><b>Your copy, your rules.</b> Your own Bitcoin Wealth marketing website is a copy of this guide with the owner's own links. The owner is responsible for how they share it.</p>
 <p><b>Privacy.</b> This site uses no tracking and no cookies. It saves only your watched videos and menu setting on your own device. The live tools ask CoinGecko and mempool.space for public prices and block heights.</p>
 <p><b>Not financial advice.</b> Nothing here is financial, tax or legal advice. Always do your own research.</p>
 </div>""")}'''
@@ -643,18 +656,17 @@ def order_page(here=''):
         f'<input id="o-{n}" name="{n}" type="{typ}" placeholder="{ph}" autocomplete="off"{" required" if req else ""}>'
         + (f'<small>{hint}</small>' if hint else '') + '</div>')
     pay = ''.join(f'<label class="opt"><input type="radio" name="pay" value="{v}"{" checked" if i == 0 else ""}><span>{t}</span></label>'
-                  for i, (v, t) in enumerate([('Rand bank transfer', 'Rand (bank details on WhatsApp)'), ('USDT BEP20', 'USDT BEP20'), ('USDT TRC20', 'USDT TRC20')]))
-    dom = ''.join(f'<label class="opt"><input type="radio" name="domain" value="{v}"{" checked" if i == 0 else ""} required><span>{v}<b>yourname</b></span></label>'
-                  for i, v in enumerate(['mtgtribe.com/bw/', 'bitcoinwealthpays.com/']))
+                  for i, (v, t) in enumerate([('R1,000 by rand bank transfer', 'R1,000 in rand (bank details on WhatsApp)'), ('$50 in USDT BEP20', '$50 in USDT BEP20'), ('$50 in USDT TRC20', '$50 in USDT TRC20')]))
     body = f'''<header class="ltop"><div class="wrap">
  <a class="brand" href="{A('', here)}" aria-label="Bitcoin Wealth guide home">{logo(here)}</a>
  <a class="btn btn-ghost btn-sm" href="{A('dashboard/bw-tribe-page/', here)}">{ic('arrow-left')}<span class="lbl">Back to the guide</span></a>
 </div></header>
 <main id="main" tabindex="-1">
 <section class="phero"><div class="wrap"><div class="phero-in">{ped('globe', 'lg')}<div>
- <h1 class="h1">Congratulations. Let's build your BW Tribe Page.</h1>
- <p class="lead">You're two minutes away from your own Bitcoin Wealth website, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
- {chips(('badge-check', 'R1,000 once-off'), ('hand-coins', 'Pay after it is built'), ('pencil', '5 free edits'))}
+ <h1 class="h1">Congratulations. Let's build your own Bitcoin Wealth marketing website.</h1>
+ <p class="lead">You're two minutes away from your own Bitcoin Wealth marketing website at bitcoinwealthpays.com/<wbr>yourname, with your link inside. Fill this in and it goes straight to MTG on WhatsApp.</p>
+ {chips(('badge-check', 'R1,000 or $50 in USDT'), ('hand-coins', 'Pay after it is built'), ('zap', 'Ready the same day'), ('pencil', '5 free edits'))}
+ {f'<p class="fine">Not sure how to fill it in? <a class="inl" href="{A(WATCH["e6"], here)}?t=395">Watch Leo walk through it, from 6:35</a> (Explainer 6).</p>' if 'e6' in V else ''}
 </div></div></div></section>
 <section class="sec"><div class="wrap">
 <form class="oform glass" data-order novalidate>
@@ -663,9 +675,8 @@ def order_page(here=''):
   {f('wa', 'Your WhatsApp number', '072 123 4567', True, typ='tel')}
  </fieldset>
  <fieldset><legend>{ic('globe')}Your address</legend>
-  <div class="field-w field"><span class="lab">Choose the address <i>*</i></span><div class="opts">{dom}</div></div>
-  {f('slug', 'The name at the end of your address', 'zizi', True, 'Letters and numbers only.')}
-  <p class="addrprev">{ic('link')}<span>Your page: <b data-out="addr">mtgtribe.com/bw/yourname</b></span></p>
+  {f('slug', 'The name at the end of your address', 'zizi', True, 'Letters and numbers only. Every copy lives at bitcoinwealthpays.com.')}
+  <p class="addrprev">{ic('link')}<span>Your website: <b data-out="addr">bitcoinwealthpays.com/yourname</b></span></p>
  </fieldset>
  <fieldset><legend>{ic('link')}Your links</legend>
   {f('ref', 'Your Bitcoin Wealth referral link', 'https://vowu.io/register?ref=...', True, 'Every sign-up button on your page will copy this link.')}
@@ -675,9 +686,11 @@ def order_page(here=''):
   {f('tiktok', 'TikTok (optional)', 'https://www.tiktok.com/@...')}
   {f('fb', 'Facebook (optional)', 'https://www.facebook.com/...')}
   {f('yt', 'YouTube (optional)', 'https://www.youtube.com/@...')}
+  {f('tg', 'Telegram (optional)', 'https://t.me/...')}
+  {f('ig', 'Instagram (optional)', 'https://www.instagram.com/...')}
  </fieldset>
  <fieldset><legend>{ic('wallet')}How you'd like to pay</legend>
-  <div class="opts">{pay}</div><small class="fine">You only pay once your page is built and you've seen it. You'll agree the details with MTG on WhatsApp.</small>
+  <div class="opts">{pay}</div><small class="fine">USDT is a digital dollar: 1 USDT is worth about $1. You only pay once your website is built and you've seen it. You'll agree the details with MTG on WhatsApp.</small>
  </fieldset>
  <fieldset><legend>{ic('pencil')}Anything else?</legend>
   <div class="field-w field"><label for="o-notes">Notes for MTG (optional)</label><textarea id="o-notes" name="notes" rows="3" placeholder="Colours, wording, anything you'd like"></textarea></div>
@@ -686,7 +699,7 @@ def order_page(here=''):
  <p class="fine">This opens WhatsApp with your details filled in. Nothing is stored on this website. After sending, share your profile photo in the same chat.</p></div>
  <div class="sent glass" data-sent hidden>{ic('circle-check')}<div><b>Almost done.</b><p>Press send in WhatsApp. MTG will reply on {WA_NUM}. Didn't open? <a class="inl" href="{esc(WA_MTG)}" target="_blank" rel="noopener">Open WhatsApp</a>.</p></div></div>
 </form>
-<div class="secret glass">{ic('lock-keyhole')}<div><b>For owners: the traffic source</b><p>Once your page is built, paid and yours, MTG shows you the traffic source he uses, with its own tutorials and explainers. It has an income stream of its own. No guarantee its visitors join.</p></div></div>
+<div class="secret glass">{ic('lock-keyhole')}<div><b>The traffic source: ClickBaitPays</b><p>Got a link? Get it seen. MTG advertises his own Bitcoin Wealth website on ClickBaitPays, and it is an income stream of its own too. No guarantee its visitors join. Learn all about it at <a class="inl" href="{CBP_SITE}" target="_blank" rel="noopener">clickbaitpaysus.com</a>.</p></div></div>
 </div></section>
 </main>
 <footer class="lfoot"><div class="wrap"><p class="disc">{DISCLAIMER}</p>
@@ -696,8 +709,8 @@ def order_page(here=''):
 <script src="{A('assets/bw.js', here)}" defer></script>
 <script src="{HUB}/assets/zoom-cta.js?v=5" defer></script>
 <script src="{HUB}/assets/wa-message.js?v=2" defer></script>'''
-    desc = 'Order your BW Tribe Page: your own copy of the Bitcoin Wealth guide with your referral link built in. R1,000 once-off, paid only after it is built.'
-    hd = head('Order your BW Tribe Page', desc, '', here, og_key='order')
+    desc = 'Order your own Bitcoin Wealth marketing website: this whole guide with your referral link built in. R1,000 or $50 in USDT once-off, paid only after it is built.'
+    hd = head('Order your own Bitcoin Wealth marketing website', desc, '', here, og_key='order')
     hd = hd.replace(f'<link rel="canonical" href="{SITE}{BASE}">', f'<link rel="canonical" href="{SITE}{ORDER}">').replace(
         f'<meta property="og:url" content="{SITE}{BASE}">', f'<meta property="og:url" content="{SITE}{ORDER}">')
     return hd, body

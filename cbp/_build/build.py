@@ -1329,7 +1329,10 @@ def page_specs():
            'isAccessibleForFree': True, 'inLanguage': 'en-ZA', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}, 'author': {'@id': PERSON_ID}}
     tut_list = {'@type': 'ItemList', 'name': 'ClickBaitPays tutorials by MTG', 'itemListElement': [
         {'@type': 'ListItem', 'position': i + 1, 'name': TUT[k]['h1'], 'url': SITE + prod_url(NAVD[k][1])} for i, k in enumerate(['t1', 't2', 't3', 't4', 't5', 't6', 't7'])]}
-    prod = {'@type': 'Product', 'name': 'Your own ClickBaitPays guide website', 'description': SEO['copy'][1], 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
+    # a Service, not a Product (Search Console, 24 Nov 2026: a Product wants 'review' or 'aggregateRating'). MTG builds, hosts and keeps
+    # a personal copy up to date: that is a service, and reviews are never invented (only real, published ones may ever go here).
+    prod = {'@type': 'Service', 'name': 'Your own ClickBaitPays guide website', 'serviceType': 'Personal guide website: built, hosted and kept up to date',
+            'description': SEO['copy'][1], 'provider': {'@id': PERSON_ID}, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'}, 'areaServed': 'Worldwide',
             'image': f'{SITE}{BASE}assets/og/cbp-copy.jpg',
             'offers': [{'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + '/cbpcopy/', 'availability': 'https://schema.org/InStock'},
                        {'@type': 'Offer', 'price': str(PRICE_USD), 'priceCurrency': 'USD', 'url': SITE + '/cbpcopy/', 'availability': 'https://schema.org/InStock'}]}

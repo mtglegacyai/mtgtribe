@@ -300,7 +300,9 @@ VIDEOS = {
 
 def ld_video(k):
     v = VIDEOS[k]
-    return {"@type": "VideoObject", "name": v['title'], "description": v['desc'], "thumbnailUrl": SITE + v['jpg'], "uploadDate": TODAY,
+    # a full date and time with South Africa's time zone, as on /bw and /altruva: Google flagged the bare date ("uploadDate is
+    # missing a time zone", "Invalid datetime value", Search Console, 24 Nov 2026)
+    return {"@type": "VideoObject", "name": v['title'], "description": v['desc'], "thumbnailUrl": SITE + v['jpg'], "uploadDate": TODAY + 'T00:00:00+02:00',
             "duration": v['iso'], "contentUrl": SITE + v['src'], "inLanguage": "en-ZA"}
 
 def video_btn(k, cls='vcard', inner=None, label=None):

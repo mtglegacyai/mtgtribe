@@ -21,7 +21,7 @@ What we have today (22 Nov 2026), and where it lives:
 
 None of them is edited yet. A session's own copies are temporary: download again from Drive when editing starts.
 
-**The order of work (MTG, 22 Nov 2026):** 1. ClickBaitPays' own Cloudflare account, and the existing YouTube videos
+**The order of work (MTG, 22 Nov 2026):** (1 and 2 done the same day) 1. ClickBaitPays' own Cloudflare account, and the existing YouTube videos
 moved onto it, one video at a time (MTG downloads each from YouTube, shares it from Google Drive; Claude puts it on
 Cloudflare and back in its place on the site). 2. clickbaitpaysus.com updated with everything on mtgtribe.com/cbp, then
 kept in sync with every later change. 3. The videos in this lineup, one at a time: script, MTG's approval, edit, live,

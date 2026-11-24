@@ -204,10 +204,10 @@ def p_slots(here):
     cells = ''.join(f'<div class="slotc glass{" one" if i == 0 else ""}" style="--i:{i}"><small>Slot {i + 1}</small><b>{s:g} BTC</b><em>{"You pay this once" if i == 0 else "Auto entry"}</em></div>'
                     for i, s in enumerate(SLOTS))
     return f'''{phero("layers", "The 12 Bitcoin Wealth slots, and the once-off",
-        "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.",
+        "Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, as soon as its seat 5 is filled.",
         [("badge-check", "You pay 0.001 BTC once"), ("layers", f"Full ladder {LADDER} BTC"), ("refresh-cw", "Slots never expire")])}
 {sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Thandi asks who pays for slots 2 to 12</a></h3>
-<p class="vdesc">Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. {mmss(V['e3']['secs'])}.</p>
+<p class="vdesc">Leo shows her with two coins: why every slot is double, why slot 1 is the only one you pay for, and why seat 5 moves you up. {mmss(V['e3']['secs'])}.</p>
 {checks(["Who pays for slot 2, and every slot after it", "What you actually pay: 0.001 BTC, once", "The one thing that has to happen to move up"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.</p></div>
@@ -216,7 +216,7 @@ def p_slots(here):
      "Every slot, side by side")}
 {sec(f"""<div class="grid2">
  {box("Your own outlay", "<p><b>0.001 BTC plus network fees.</b> That's it. You never pay again to move up the slots. MTG's point: it's a once-off, not a subscription.</p>", "badge-check")}
- {box("What moves you up", "<p>Auto entry buys slot 2 when your slot 1 cycle fills with 14 members. Your first two business partners and spillover from above fill it.</p>", "arrow-up")}
+ {box("What moves you up", "<p>Auto entry buys slot 2 as soon as seat 5 of your slot 1 cycle is filled: seats 4 and 5 pay for it, while seats 6 to 14 keep filling. Your business partners and spillover from above fill the seats.</p>", "arrow-up")}
 </div>
 <div class="btn-row center-row"><a class="btn btn-gold ring" href="{A('dashboard/tools/slot-calculator/', here)}">{ic('calculator')}<span class="lbl">See every slot in rand</span></a></div>""",
     "What it costs you")}
@@ -249,12 +249,18 @@ def p_stokvel(here):
     ]
     return f'''{phero("users", "Is Bitcoin Wealth better than a stokvel?",
         "Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin Wealth shares the spirit: ordinary people pooling, no bank in the middle. Here's where it does better, and how each one is funded.")}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e4'], here)}">Thandi asks if it's just a stokvel on the internet</a></h3>
+<p class="vdesc">Leo answers the six questions on this page side by side, and shows where the stokvel picture stops. {mmss(V['e4']['secs'])}.</p>
+{checks(["Who holds the money, and who can see every payment", "The fees, what it pays in, and how much you put in", "Is your turn guaranteed?"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e4'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e4', here, eager=True, hero=True)}</div></div>""", "Watch it in 4 minutes", id="video")}
 {sec(scorecard(), "Side by side")}
 {sec(f"""<div class="grid2">
  {box("Where Bitcoin Wealth wins", checks(["Transparency: every payment public, nobody has to be trusted to report it", "Peer to peer: payouts go straight to members' wallets", "No middleman holding the pot, no bank charges", "One small entry instead of monthly contributions", "Priced in Bitcoin's value, not rand"]), "trophy")}
  {box("How each one is funded", checks(["A stokvel is a closed circle: the same members take turns with the same pot", "Bitcoin Wealth is open: each cycle is completed by members activating the positions below you", "So it grows as the community grows, which is why teaching others matters"]), "info")}
 </div>""", "The verdict")}
-{sec(f'<div class="stack">{jump_card("e1", 31.0, "Leo explains it with a stokvel", "The tin, the book, and what changes when the book is a smart contract that anyone can read. Half a minute.", here)}{soon("e4")}</div>', "Watch it explained")}'''
+{sec(f'<div class="stack">{jump_card("e1", 31.0, "Leo explains it with a stokvel", "The tin, the book, and what changes when the book is a smart contract that anyone can read. Half a minute.", here)}</div>', "Where it started")}'''
 
 
 # ======================================================================= WHAT MAKES IT DIFFERENT
@@ -273,7 +279,7 @@ def p_diff(here):
 {sec(f'<ol class="five">{items}</ol>', "The 5-point check")}
 {sec(f"""<div class="grid2">
  {box("The original", f"<p>MTG calls Bitcoin Wealth the original: priced in Bitcoin, paid wallet to wallet, open on BscScan, and still running. {MEMBERS} member IDs say people keep choosing it.</p>", "award")}
- {box("Don't trust. Verify.", f"<p>You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>Here's how</a>.</p>", "scan-search")}
+ {box("Don't trust. Verify.", f"<p>You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>Here's how</a>, or <a class='inl' href='{A(WATCH['e5'], here)}'>watch it in 4 minutes</a>.</p>", "scan-search")}
 </div>""", "Why that matters")}'''
 
 
@@ -282,6 +288,12 @@ def p_proof(here):
     return f'''{phero("scan-search", "Check Bitcoin Wealth yourself",
         "Don't take anyone's word for it, including MTG's. Bitcoin Wealth runs on a public blockchain, so you can look at the contract and every payment yourself. Here's what we found, and how to find it.",
         [("calendar", f"Checked {CHECKED}"), ("blocks", "BNB Smart Chain")])}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e5'], here)}">Thandi asks how to read the open book</a></h3>
+<p class="vdesc">Leo shows her on her phone, the four steps on this page, with a real payment from 24 November 2026. {mmss(V['e5']['secs'])}.</p>
+{checks(["Type bscscan.com yourself and open the contract", "One real payment: in, and straight out", "The Token Holdings, and your own wallet"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e5', here, eager=True, hero=True)}</div></div>""", "Watch it in 4 minutes", id="video")}
 {sec(f"""<div class="addr glass"><small>The Bitcoin Wealth contract (from the programme's own deck)</small><code>{CONTRACT}</code>
 <div class="btn-row"><button type="button" class="btn btn-ghost btn-sm" data-copy="contract">{ic('copy')}<span class="lbl">Copy address</span><span class="copied" aria-live="polite">Copied ✓</span></button>
 <a class="btn btn-gold btn-sm" href="{esc(BSCSCAN)}" target="_blank" rel="noopener">{ic('external-link')}<span class="lbl">Open on BscScan</span></a></div>
@@ -298,8 +310,8 @@ def p_proof(here):
     ('Open the contract on BscScan', '<p>Paste the address into bscscan.com. The Transactions tab lists every activation.</p>'),
     ('Open one recent transaction', '<p>Look at "ERC-20 Tokens Transferred". One activation of 0.001 BTCB shows the payment going on to a member\'s wallet in the same transaction.</p>'),
     ('Check the Token Holdings', '<p>The contract holds some BTCB: that\'s the Royal Pool waiting for its monthly payout.</p>'),
-    ('Read the Contract tab', '<p>Look for functions only the owner can use. Knowing them is part of doing your own research.</p>'),
+    ('Look up your own wallet', '<p>Once you\'re a member, paste your own wallet address into bscscan.com: your activation and every payment in and out, each with its time.</p>'),
 ]), "Four steps, five minutes")}
 {sec(honest("What the code allows.", "The contract has an owner wallet (the wallet that created it). It is not renounced. That wallet can switch on an emergency mode and withdraw tokens the contract holds, change the token address and pool addresses, and update a member's slots. BTCB in your own wallet stays under your keys, so approve only the exact amount when you activate a slot. We show you all this because you deserve the full picture.") +
-     f'<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{esc(BSCSCAN_BTCB)}" target="_blank" rel="noopener">{ic("external-link")}<span class="lbl">BTCB held by the contract</span></a></div>' + soon('e5'),
+     f'<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{esc(BSCSCAN_BTCB)}" target="_blank" rel="noopener">{ic("external-link")}<span class="lbl">BTCB held by the contract</span></a></div>',
     "The full picture")}'''

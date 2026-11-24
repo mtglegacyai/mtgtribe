@@ -82,6 +82,8 @@ _INTRO = 'projects/bitcoin-wealth/videos/intro-remake-leo/'
 _E1 = 'projects/bitcoin-wealth/videos/explainer-01-what-is-bitcoin-wealth/'
 _E2 = 'projects/bitcoin-wealth/videos/explainer-02-how-the-14-positions-pay/'
 _E3 = 'projects/bitcoin-wealth/videos/explainer-03-the-12-slots-and-the-once-off/'
+_E4 = 'projects/bitcoin-wealth/videos/explainer-04-better-than-a-stokvel/'
+_E5 = 'projects/bitcoin-wealth/videos/explainer-05-check-it-yourself-on-bscscan/'
 VIDEOS = [
     ('s1', 'bitcoin-wealth-the-missing-piece-cartoon', 'The Missing Piece',
      'A short cartoon. Thandi did everything right and still ends up starting over. Leo shows her the one piece she is missing: people who build together.',
@@ -142,15 +144,29 @@ VIDEOS = [
     # page: 12 slots doubling from 0.001 to 2.048 BTC, slot 1 paid once, slots 2 to 12 auto entry). From this episode on the close
     # has the hug. 16:9: it plays in the laptop, in place
     ('e3', 'bitcoin-wealth-12-slots-why-you-only-pay-once', 'The 12 slots and the once-off',
-     "Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up.",
-     193.8, _E3 + 'final/Bitcoin-Wealth-12-slots-explainer-3-1080p.mp4',
+     "Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up.",
+     197.4, _E3 + 'final/Bitcoin-Wealth-12-slots-explainer-3-1080p.mp4',
      dict(o='h', poster=_E3 + 'thumbs/out/Bitcoin-Wealth-12-slots-website-cover-16x9.jpg', short='The 12 slots', date='2026-11-22',
           name='The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes, with Thandi and Leo')),
+    # Explainer 4 (MTG, 23 Nov 2026: "Put it live"). Our own script; the six questions are the stokvel page's own scorecard, word for
+    # word, and the honest difference (a closed circle against one that fills only when real members join). 16:9: it plays in the laptop
+    ('e4', 'bitcoin-wealth-vs-stokvel-6-questions-side-by-side', 'Better than a stokvel?',
+     "Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side: who holds the money, who can see the payments, the fees, what it pays in, how much you put in, and whether your turn is guaranteed.",
+     236.3, _E4 + 'final/Bitcoin-Wealth-vs-stokvel-explainer-4-1080p.mp4',
+     dict(o='h', poster=_E4 + 'thumbs/out/Bitcoin-Wealth-vs-stokvel-website-cover-16x9.jpg', short='Better than a stokvel?', date='2026-11-23',
+          name='Bitcoin Wealth vs a stokvel: 6 questions, side by side, explained in 4 minutes, with Thandi and Leo')),
+    # Explainer 5 (MTG, 24 Nov 2026: "Perfect ... Put this video live on my website, across all the pages and sections where it will
+    # make sense"). The four steps of the Check It Yourself page on a phone, a real activation of 24 Nov 2026 (member wallets masked),
+    # step 4 your own wallet, then your own website (bitcoinwealthpays.com/zizi). Positive only: no owner talk in the video (MTG).
+    ('e5', 'how-to-check-bitcoin-wealth-on-bscscan-4-steps', 'Check it yourself on BscScan',
+     "Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website.",
+     262.9, _E5 + 'final/Check-Bitcoin-Wealth-on-BscScan-explainer-5-1080p.mp4',
+     dict(o='h', poster=_E5 + 'thumbs/out/Check-Bitcoin-Wealth-on-BscScan-website-cover-16x9.jpg', short='Check it yourself', date='2026-11-24',
+          name='How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes, with Thandi and Leo')),
 ]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [
-    ('e4', 'Explainer', 'Better than a stokvel?', 'Where Bitcoin Wealth beats the stokvel, and how each one is funded.'),
-    ('e5', 'Explainer', 'Check it yourself on BscScan', 'Open the contract, read a real payment, and see the numbers with your own eyes.'),
+    ('e6', 'Explainer', 'Your own Bitcoin Wealth website', 'Thandi gets her own copy of this guide, with her own link on every Join button, and Leo shows how people find it.'),
 ]
 KIND = {'t': 'Tutorial', 'e': 'Explainer', 'k': 'Tool training', 's': 'Cartoon', 'p': 'Promo', 'i': 'Presentation'}
 V = {}
@@ -237,6 +253,8 @@ EXPLAIN = {
     'e1': ('dashboard/explainers/what-is-bitcoin-wealth-video/', "What is Bitcoin Wealth? It's not a coin, explained in 3 minutes", _E1 + 'final/chapters.json'),
     'e2': ('dashboard/explainers/how-the-14-positions-pay-video/', 'How Bitcoin Wealth pays: the 14 positions, explained in 3 minutes', _E2 + 'final/chapters.json'),
     'e3': ('dashboard/explainers/the-12-slots-video/', 'The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes', _E3 + 'final/chapters.json'),
+    'e4': ('dashboard/explainers/better-than-a-stokvel-video/', 'Bitcoin Wealth vs a stokvel: 6 questions, side by side, explained in 4 minutes', _E4 + 'final/chapters.json'),
+    'e5': ('dashboard/explainers/check-it-yourself-on-bscscan-video/', 'How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes', _E5 + 'final/chapters.json'),
 }
 WATCH.update({k: v[0] for k, v in EXPLAIN.items()})
 EXTRA += [('w-' + k, v[0], f'{V[k]["label"]}: {V[k]["short"]}', 'The video, chapter by chapter', 'film', 'How It Works') for k, v in PRESENT.items()]

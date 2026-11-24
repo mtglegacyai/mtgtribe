@@ -224,7 +224,7 @@ def p_present(code):
         nxt = f"""<div class="grid3">
  {box("Ready to join?", f"<p>Three tutorials show every tap: your wallet, your BNB, then slot 1.</p><p><a class='inl' href='{A('dashboard/join/', here)}'>Join step by step</a></p>", "rocket")}
  {box("Meet the community first", f"<p>Live on Zoom five evenings a week, in four languages.</p><p><a class='inl' href='{A('dashboard/live-on-zoom/', here)}'>See the Zoom schedule</a></p>", "video")}
- {box("Check it yourself", f"<p>Open the contract on BscScan and read a real payment with your own eyes.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>How to check it</a></p>", "scan-search")}
+ {box("Check it yourself", f"<p>Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.</p><p><a class='inl' href='{A(WATCH['e5'], here)}'>Watch how, in 4 minutes</a></p>", "scan-search")}
 </div>"""
         return f'''{phero("film", h1, PRESENT_LEAD,
         [("clock", f"{mmss(v['secs'])} video"), ("list-checks", f"{len(chs)} chapters"), ("sparkles", "Presented by Leo")])}
@@ -246,7 +246,11 @@ EXPLAIN_LEAD = {
     'e2': ("Explainer 2 of the Thandi and Leo series. Thandi asks who pays who, and Leo fills 14 seats with her, row by row, so she sees "
            "where every single payment goes. Watch it, then read every word below."),
     'e3': ("Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, "
-           "and Leo shows it with two coins and one full cycle. Watch it, then read every word below."),
+           "and Leo shows it with two coins and seat 5. Watch it, then read every word below."),
+    'e4': ("Explainer 4 of the Thandi and Leo series. Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers "
+           "six honest questions side by side, and shows where the stokvel picture stops. Watch it, then read every word below."),
+    'e5': ("Explainer 5 of the Thandi and Leo series. Thandi asks how to read the open book, and Leo shows her on her phone: four steps on "
+           "BscScan, with a real payment from 24 November 2026. Then, your own Bitcoin Wealth website. Watch it, then read every word below."),
 }
 EXPLAIN_COVERS = {
     'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
@@ -254,7 +258,11 @@ EXPLAIN_COVERS = {
     'e2': ["The 14 seats under you: 2, then 4, then 8", "Where each of the 14 payments goes, row by row", "What changes from your second cycle: the Royal Pool",
            "Who fills the seats, and what spillover means", "Why there is no withdraw button"],
     'e3': ["The 12 slots, each double the one before", "Who pays for slot 2: two payments from your first cycle", "What you actually pay: 0.001 BTC, once, plus small BNB fees",
-           "The one thing that has to happen to move up", "Why the programme says slots never expire"],
+           "Why seat 5 moves you up to the next slot", "Why the programme says slots never expire"],
+    'e4': ["How a stokvel works: the tin, the treasurer, the book, the pot", "Who holds the money, and what peer to peer means",
+           "Can you see every payment: the open book on BscScan", "Fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"],
+    'e5': ["What BscScan is: a public window into BNB Smart Chain", "Step 1: type bscscan.com yourself and open the contract",
+           "Step 2: one real payment, in and straight out", "Step 3: the Token Holdings, where the Royal Pool waits", "Step 4: your own wallet, and next, your own website"],
 }
 # the first "next step" card and the series line under them, per episode
 EXPLAIN_NEXT = {
@@ -263,7 +271,11 @@ EXPLAIN_NEXT = {
     'e2': (("Watch the positions fill", "<p>The 14 Positions page: the seats fill one by one, then switch to later cycles. All fourteen in one table.</p>", 'dashboard/how-it-works/', 'Open the 14 Positions', 'network'),
            "The 12 slots, and why you only pay once.", 'e3', 'Watch Explainer 3'),
     'e3': (("See every slot", "<p>The 12 Slots page: every slot and its price side by side, and the calculator that shows each one in rand.</p>", 'dashboard/12-slots/', 'Open the 12 Slots', 'layers'),
-           "Bitcoin Wealth and the stokvel, side by side.", None, ('dashboard/stokvel/', 'see the scorecard', 'Better Than A Stokvel? page')),
+           "Bitcoin Wealth and the stokvel, side by side.", 'e4', 'Watch Explainer 4'),
+    'e4': (("See the scorecard", "<p>The Better Than A Stokvel? page: the six questions side by side, where Bitcoin Wealth wins, and how each one is funded.</p>", 'dashboard/stokvel/', 'Open the scorecard', 'users'),
+           "Check it yourself on BscScan.", 'e5', 'Watch Explainer 5'),
+    'e5': (("Your own website", "<p>This whole guide at bitcoinwealthpays.com/<wbr>yourname, with your name, your WhatsApp and your link on every Join button.</p>", 'dashboard/bw-tribe-page/', 'See what you get', 'globe'),
+           "Your own Bitcoin Wealth website.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'BW Tribe Page')),
 }
 
 
@@ -304,7 +316,7 @@ def p_explain(code):
             series = f"{nline} Until it is ready, <a class='inl' href='{A(nhref, here)}'>{ntxt}</a> on the {npage}."
         nxt = f"""<div class="grid3">
  {box(bt, f"{btxt}<p><a class='inl' href='{bhref}'>{blab}</a></p>", bic)}
- {box("Check it yourself", f"<p>Open the contract on BscScan and read a real payment with your own eyes.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>How to check it</a></p>", "scan-search")}
+ {box("The address and the 4 steps", f"<p>Copy the contract address, and read the four steps in writing, with what the blockchain showed.</p><p><a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>Open Check It Yourself</a></p>", "scan-search") if code == 'e5' else box("Check it yourself", f"<p>Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.</p><p><a class='inl' href='{A(WATCH['e5'], here)}'>Watch how, in 4 minutes</a></p>", "scan-search")}
  {box("Ready to join?", f"<p>Three tutorials show every tap: your wallet, your BNB, then slot 1.</p><p><a class='inl' href='{A('dashboard/join/', here)}'>Join step by step</a></p>", "rocket")}
 </div>
 {honest("Next in the series.", series)}

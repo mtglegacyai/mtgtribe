@@ -101,21 +101,39 @@ def p_exp(here):
     e = V['e3']
     # Explainer 3 (MTG, 22 Nov 2026: "Perfect! Put it live!"): the 12 slots and the once-off, right after where the payments go
     e3 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e3'], here)}">Explainer 3: The 12 slots and the once-off</a></h2>
-<p class="vdesc">Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in {mmss(e['secs'])}. Watch this when you want to know what you actually pay.</p>
+<p class="vdesc">Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5, in {mmss(e['secs'])}. Watch this when you want to know what you actually pay.</p>
 {checks(["The 12 slots, each double the one before", "Who pays for slot 2, and every slot after it", "What you pay: 0.001 BTC, once, plus small BNB fees"])}
 <div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e3'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
 <p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
 <div class="phone-wrap">{vid('e3', here)}</div></div>"""
+    e = V['e4']
+    # Explainer 4 (MTG, 23 Nov 2026: "Put it live"): the stokvel side by side, after what you actually pay
+    e4 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e4'], here)}">Explainer 4: Better than a stokvel?</a></h2>
+<p class="vdesc">Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side, in {mmss(e['secs'])}. Watch this if you know stokvels and want the real difference.</p>
+{checks(["Who holds the money, and who can see every payment", "The fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e4'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e4', here)}</div></div>"""
+    e = V['e5']
+    # Explainer 5 (MTG, 24 Nov 2026: "Put this video live ... across all the pages and sections where it will make sense")
+    e5 = f"""<div class="two vstart vfirst"><div class="stack"><h2 class="h3 vhead"><a class="hlink" href="{A(WATCH['e5'], here)}">Explainer 5: Check it yourself on BscScan</a></h2>
+<p class="vdesc">Thandi asks how to read the open book, and Leo shows her on her phone, in four steps, with a real payment from 24 November 2026. {mmss(e['secs'])}. Watch this when you want to see it with your own eyes.</p>
+{checks(["Type bscscan.com yourself and open the contract", "One real payment: in, and straight out", "Token Holdings, your own wallet, and your own website"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e5', here)}</div></div>"""
     n_soon = sum(1 for p in PLANNED if p[0][0] == 'e')
     n_ready = sum(1 for k in V if k[0] in 'ei')
     return f'''{phero("film", "Bitcoin Wealth explainer videos",
-        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, and Explainer 3 why you only pay for slot 1. Then watch the whole plan in Leo's 5-minute presentation.",
-        [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainers on the way")])}
+        "Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, and Explainer 5 how to check it yourself on BscScan. Then watch the whole plan in Leo's 5-minute presentation.",
+        [("circle-play", f"{n_ready} ready to watch"), ("film", f"{n_soon} more explainer{'s' if n_soon != 1 else ''} on the way")])}
 {sec(e1, id="explainer-1", sr="Start here: Explainer 1")}
 {sec(e2, "Then: where all 14 payments go", id="explainer-2")}
 {sec(e3, "Then: the 12 slots, and what you actually pay", id="explainer-3")}
+{sec(e4, "Then: Bitcoin Wealth and the stokvel, side by side", id="explainer-4")}
+{sec(e5, "Then: check it yourself, on your phone", id="explainer-5")}
 {sec(first, "The whole plan, in 5 minutes", id="presentation")}
-{sec(f'<div class="grid2">{cards}</div>', "On the way")}
+{sec(f'<div class="{"grid2" if cards.count("class=") > 1 and n_soon > 1 else "stack"}">{cards}</div>', "On the way")}
 {sec(f"""<div class="grid3">
  {box("The 14 positions", f"<p>Watch the positions fill, live. <a class='inl' href='{A('dashboard/how-it-works/', here)}'>Open</a></p>", "network")}
  {box("The 12 slots", f"<p>Every slot and the once-off. <a class='inl' href='{A('dashboard/12-slots/', here)}'>Open</a></p>", "layers")}
@@ -417,6 +435,7 @@ def p_page(here):
  {box("Your link, everywhere", "<p>Every sign-up button copies <b>your</b> Bitcoin Wealth referral link. When someone pastes it into SafePal, they join under you.</p>", "link")}
  {box("Duplication, made easy", "<p>Your business partners can order theirs too. Same tools, same message, a team that grows the same way.</p>", "copy")}
 </div>""", "Why every member needs one")}
+{sec(f'<div class="stack">{jump_card("e5", 178.0, "See your own website, in a minute", "Leo shows what it looks like: this whole guide at bitcoinwealthpays.com/zizi, with Zizi&#39;s name, WhatsApp and referral link on every Join button.", here)}</div>', "See what yours could look like")}
 {sec(f"""<div class="offer glass"><div class="offer-copy">
  <h2 class="h2">What you get</h2>
  {checks(["A full copy of this guide, kept up to date with new videos", "Your name and photo on it", "Your Bitcoin Wealth referral link on every sign-up button", "Your WhatsApp, WhatsApp group and social links", "Your choice of address: mtgtribe.com/bw/yourname or bitcoinwealthpays.com/yourname", "Five free edits to make it yours (from the sixth, a small fee depending on the size)"])}
@@ -503,7 +522,7 @@ def p_c_halv(here):
 FAQ = [
     ('Before you join', [
         ('What is Bitcoin Wealth in one sentence?', 'A smart contract on BNB Smart Chain where members activate slots with BTCB, and each payment goes straight to other members\' wallets by fixed rules.'),
-        ('How much does it cost to start?', 'Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It\'s a once-off: slots 2 to 12 are bought automatically from the cycle below, once it fills.'),
+        ('How much does it cost to start?', 'Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It\'s a once-off: slots 2 to 12 are bought automatically from the cycle below, as soon as its seat 5 is filled.'),
         ('Is it guaranteed to pay?', 'No. Every payout comes from another member\'s slot payment. If new activations slow down, payouts slow down. Only use money you can afford to lose.'),
         ('How do I join Bitcoin Wealth?', 'In three stages, all on your phone: set up a SafePal wallet, buy BNB with rand on VALR or Binance and send it to SafePal, then swap it to BTCB and activate slot 1 with the link of the person who invited you. Three tutorial videos show every tap, and each has its steps in writing.'),
         ('How do you earn Bitcoin with Bitcoin Wealth?', 'By the plan\'s rules, when the 14 positions below you fill, six of those payments land in your own wallet as BTCB (Bitcoin\'s value on BNB Smart Chain), two buy your next slot and one recycles you. Every payment comes from another member activating a slot, so it depends on those positions filling: nothing is guaranteed.'),

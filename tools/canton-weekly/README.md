@@ -4,6 +4,38 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 1. Researches the week and writes `tools/canton-weekly/data/YYYY-MM-DD.json` (copy the previous week's file as the shape).
    Fill in its `guides` block too: it refreshes the snapshot numbers on /cc/ and /cntn/ in step 4.
    Do step 4 even if HeyGen is out of credits: skip steps 2 and 3, leave out `"video"` and the page shows "Video coming soon".
+1b. **Prepare the video data (MTG, 24 Nov 2026), BEFORE the narration:**
+   `python3 tools/canton-weekly/prepare.py tools/canton-weekly/data/DATE.json`. It adds `"candles"` (Kraken CC/USD daily
+   candles with MA20, MA50, RSI 14 and volume, for the video's 3D candlestick chart) and puts MTG's **fixed scenes** into
+   `video_script`, word for word (the wording lives in prepare.py; never rewrite it per week):
+   - after the fundamentals: `"burn"` (the universal burn, CIP-0129: what it is, when it starts, why it is positive for
+     CC) and `"halving"` (the Canton Coin minting curve: the next halving in late summer 2029, the one after around 2034,
+     what each does, why it is positive for the price);
+   - before the outro: `"tribe"` (thank everyone in the MTG TRIBE WhatsApp group, invite everyone else to
+     mtgtribe.com/group, where updates are posted first), `"streams"` (MTG buys CC and CNTN with the cash flow from his
+     income streams: mtgtribe.com, Dashboard, Menu, Income streams, each stream named and highlighted one by one, then
+     "test drive one") and the **Bellver Card ad** (`"bellver"`).
+   The streams are read from the Income streams list of the dashboard menu (dashboard/index.html), and video.py takes
+   fresh phone screenshots of this checkout's mtgtribe.com for that scene (menu_capture.js), so a new stream appears on
+   its own. Streams MTG no longer wants named are listed in `EXCLUDE_STREAMS` in prepare.py (ALTRUVA since
+   24 Nov 2026): they are left out of the script and hidden in the menu screenshots. Because the narration is made from `video_script`, all of this is in MTG's voice. The fixed scenes add about
+   1 minute 45 seconds, so **keep the week's own scenes (intro to fundamentals, guides, outro) short and to the point**:
+   about 1 minute 30 seconds together, the whole video about 3 minutes 15 seconds at most. This replaces the older "under about
+   2 minutes" in the task prompt (MTG, 24 Nov 2026): never shorten or leave out a fixed scene to save time. Do not mention the universal
+   burn or the halving again in the fundamentals scene unless there is real news on them that week.
+   **Facts check:** if prepare.py prints `"warnings"` about the burn or halving facts being dated (from 1 January 2027 for
+   the burn, 1 June 2029 for the halving), check the sources named in prepare.py (CIP-0129 and the Canton CIPs list,
+   docs.canton.network), update the BURN or HALVING wording (spoken text and caption, same number of sentences) and
+   video.py `HALVING_BARS` if needed, and tell MTG what changed in the notification. Also do this any week the news says
+   universal burn went live or its dates moved.
+   Needs api.kraken.com (public, no key). If Kraken cannot be reached it stops: say so in the report and carry on; the
+   video then falls back to the old line chart, still with the ad if you add the scene by running it again later.
+   video.py prints `"warnings"` when candles, the ad or any fixed scene is missing, or when the menu screenshots could not
+   be taken (it then uses the stored copies in `tools/canton-weekly/assets/menu/`): fix that before publishing, and refresh
+   the stored copies with `node tools/canton-weekly/menu_capture.js http://127.0.0.1:PORT tools/canton-weekly/assets/menu`
+   (serve the repo with `python3 -m http.server PORT`) whenever the menu changes.
+   Chart rules (MTG): candlesticks, MA20 (gold), MA50 (blue), volume and RSI 14, in a 3D tilted panel, clean: **no
+   Bollinger Bands** (too busy). The trend and levels scenes use it; support and resistance are drawn on the levels scene.
 2. Narration: HeyGen voice "MTG Master Voice V3" (65f1b9ff3f1e418496de5715a801e7dd, MTG's voice since 10 Nov 2026; V2 is
    retired), one create_speech call with the `video_script` texts joined by a blank line (no break tags: V3 does not
    support them). HeyGen returns WAV: save it as `/tmp/narration.wav` and pass that path to video.py (do not commit it).

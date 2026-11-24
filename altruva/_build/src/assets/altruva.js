@@ -208,7 +208,10 @@
     var open = $('.sheet.on'); if (open && open !== pl) { open.classList.remove('on'); open.hidden = true; d.body.style.overflow = ''; }
     $('[data-k="title"]', pl).textContent = info.t + ' (' + info.d + ')';
     $('[data-mark]', pl).setAttribute('data-mark', k);
+    // the player is made on the first tap, so the page never holds an empty video without a cover
+    // (Google Search Console: "No thumbnail URL provided", MTG 24 Nov 2026)
     var v = $('video', pl);
+    if (!v) { var tp = $('template', pl); if (!tp) return; v = tp.content.firstElementChild.cloneNode(true); tp.parentNode.replaceChild(v, tp); }
     v.poster = info.p.replace('-360.webp', '.webp'); v.src = info.s;
     if (!v._tracked) { v._tracked = 1; on(v, 'timeupdate', function () { if (v.duration && v.currentTime / v.duration > 0.9) markWatched($('[data-mark]', pl).getAttribute('data-mark')); }); on(v, 'ended', function () { exitFs(v); markWatched($('[data-mark]', pl).getAttribute('data-mark')); setTimeout(function () { closeSheet(pl); }, 800); }); on(v, 'play', function () { $$('video').forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); }); }
     paintWatched(); openSheet(pl);

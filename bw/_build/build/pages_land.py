@@ -71,7 +71,7 @@ def matrix(here, cycle_toggle=True):
 
 WHY = [
     ('wallet', 'Paid to your own wallet', 'No dashboard balance, no withdraw button, nobody to ask. Payouts land in the wallet only you control.'),
-    ('badge-check', 'One entry, once', '0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.'),
+    ('badge-check', 'One entry, once', '0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, as soon as its seat 5 is filled.'),
     ('scan-search', 'Every payment public', 'The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.'),
     ('bitcoin', 'Priced in Bitcoin', 'Slots and payouts are in BTCB, Bitcoin\'s value on BNB Smart Chain. Not points, not a made-up coin.'),
     ('landmark', 'No bank, no treasurer', 'No bank in the middle and no treasurer holding the pot in a personal account. Code follows the same rules for everyone.'),

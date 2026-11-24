@@ -283,17 +283,17 @@ URL: https://mtgtribe.com/bw/dashboard/12-slots/
 The 12 Bitcoin Wealth slots from 0.001 BTC to 2.048 BTC, why the 0.001 BTC entry is a once-off, and what has to happen for auto entry.
 
 ### The 12 Bitcoin Wealth slots, and the once-off
-Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, once that cycle fills.
+Twelve slots, each double the one before, from 0.001 BTC to 2.048 BTC. You pay for slot 1 only. Every slot above it is bought for you from the cycle below, as soon as its seat 5 is filled.
 
 #### Watch it in 3 minutes
 
 ##### Thandi asks who pays for slots 2 to 12
-Leo shows her with two coins and one full cycle: why every slot is double, and why slot 1 is the only one you pay for. 3:14.
+Leo shows her with two coins: why every slot is double, why slot 1 is the only one you pay for, and why seat 5 moves you up. 3:17.
 - Who pays for slot 2, and every slot after it
 - What you actually pay: 0.001 BTC, once
 - The one thing that has to happen to move up
 Explainer 3 of the Thandi and Leo series. Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### Every slot, side by side
 From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 are marked Auto Entry: each is bought with two of the fourteen payments from your first cycle at the slot below. The full ladder totals 4.095 BTC.
@@ -304,7 +304,7 @@ From the programme's own presentation. Slot 1 is a plain entry. Slots 2 to 12 ar
 0.001 BTC plus network fees. That's it. You never pay again to move up the slots. MTG's point: it's a once-off, not a subscription.
 
 ##### What moves you up
-Auto entry buys slot 2 when your slot 1 cycle fills with 14 members. Your first two business partners and spillover from above fill it.
+Auto entry buys slot 2 as soon as seat 5 of your slot 1 cycle is filled: seats 4 and 5 pay for it, while seats 6 to 14 keep filling. Your business partners and spillover from above fill the seats.
 
 #### In the presentation
 
@@ -345,6 +345,16 @@ Bitcoin Wealth compared with a stokvel: where it wins (transparency, own wallet,
 ### Is Bitcoin Wealth better than a stokvel?
 Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin Wealth shares the spirit: ordinary people pooling, no bank in the middle. Here's where it does better, and how each one is funded.
 
+#### Watch it in 4 minutes
+
+##### Thandi asks if it's just a stokvel on the internet
+Leo answers the six questions on this page side by side, and shows where the stokvel picture stops. 3:56.
+- Who holds the money, and who can see every payment
+- The fees, what it pays in, and how much you put in
+- Is your turn guaranteed?
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 4, "Better than a stokvel?" (3:56): Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side: who holds the money, who can see the payments, the fees, what it pays in, how much you put in, and whether your turn is guaranteed. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-vs-stokvel-6-questions-side-by-side.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/better-than-a-stokvel-video/
+
 #### Side by side
 
 #### The verdict
@@ -361,7 +371,7 @@ Stokvels are trusted by millions of South Africans, and for good reason. Bitcoin
 - Bitcoin Wealth is open: each cycle is completed by members activating the positions below you
 - So it grows as the community grows, which is why teaching others matters
 
-#### Watch it explained
+#### Where it started
 
 ---
 
@@ -381,7 +391,7 @@ Members who tried the newer, shinier platforms keep coming back, MTG included. T
 No dashboard balance, no withdraw button, nobody to ask. Payouts land in the wallet only you control.
 
 ##### One entry, once
-0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, once it fills.
+0.001 BTC activates slot 1. You never pay again to move up: slots 2 to 12 are bought from the cycle below, as soon as its seat 5 is filled.
 
 ##### Every payment public
 The contract and every transaction sit on BNB Smart Chain. Open BscScan and look for yourself.
@@ -408,7 +418,7 @@ Live Zoom five evenings a week, in four languages, plus a WhatsApp community tha
 MTG calls Bitcoin Wealth the original: priced in Bitcoin, paid wallet to wallet, open on BscScan, and still running. 41,013 member IDs say people keep choosing it.
 
 ##### Don't trust. Verify.
-You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. Here's how.
+You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. Here's how, or watch it in 4 minutes.
 
 ---
 
@@ -416,10 +426,20 @@ You don't have to believe MTG or anyone else. Every claim on this page can be ch
 
 URL: https://mtgtribe.com/bw/dashboard/check-it-yourself/
 
-The Bitcoin Wealth contract address, what BscScan shows today, how to read a real payment, and the admin controls in the code, checked on chain.
+The Bitcoin Wealth contract address, what BscScan shows today, and how to read a real payment and your own wallet, in 4 steps. Video and written guide.
 
 ### Check Bitcoin Wealth yourself
 Don't take anyone's word for it, including MTG's. Bitcoin Wealth runs on a public blockchain, so you can look at the contract and every payment yourself. Here's what we found, and how to find it.
+
+#### Watch it in 4 minutes
+
+##### Thandi asks how to read the open book
+Leo shows her on her phone, the four steps on this page, with a real payment from 24 November 2026. 4:23.
+- Type bscscan.com yourself and open the contract
+- One real payment: in, and straight out
+- The Token Holdings, and your own wallet
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
 
 #### The address
 Tip: type it into bscscan.com yourself rather than trusting a link someone sends you.
@@ -431,7 +451,7 @@ Read directly from BNB Smart Chain on 14 November 2026 (13 Nov 22:55 to 14 Nov 1
 - Open the contract on BscScan Paste the address into bscscan.com. The Transactions tab lists every activation.
 - Open one recent transaction Look at "ERC-20 Tokens Transferred". One activation of 0.001 BTCB shows the payment going on to a member's wallet in the same transaction.
 - Check the Token Holdings The contract holds some BTCB: that's the Royal Pool waiting for its monthly payout.
-- Read the Contract tab Look for functions only the owner can use. Knowing them is part of doing your own research.
+- Look up your own wallet Once you're a member, paste your own wallet address into bscscan.com: your activation and every payment in and out, each with its time.
 
 #### The full picture
 
@@ -773,10 +793,10 @@ Everything I showed you, plus my links, is at mtgtribe.com/bw. This video is for
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/
 
-Bitcoin Wealth explainer videos with Thandi and Leo: what it is, how the 14 positions pay and why you pay once for 12 slots, plus the 5-minute presentation.
+Bitcoin Wealth explainer videos with Thandi and Leo: what it is, how the 14 positions pay, why you pay once, the stokvel, and checking it on BscScan.
 
 ### Bitcoin Wealth explainer videos
-Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, and Explainer 3 why you only pay for slot 1. Then watch the whole plan in Leo's 5-minute presentation.
+Start with Explainer 1: Thandi and Leo show what Bitcoin Wealth is in 3 minutes. Explainer 2 shows where all 14 payments go, Explainer 3 why you only pay for slot 1, Explainer 4 how it compares with a stokvel, and Explainer 5 how to check it yourself on BscScan. Then watch the whole plan in Leo's 5-minute presentation.
 
 #### Start here: Explainer 1
 
@@ -801,12 +821,32 @@ Thandi and Leo, and their voices, are made with AI.
 #### Then: the 12 slots, and what you actually pay
 
 #### Explainer 3: The 12 slots and the once-off
-Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle, in 3:14. Watch this when you want to know what you actually pay.
+Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5, in 3:17. Watch this when you want to know what you actually pay.
 - The 12 slots, each double the one before
 - Who pays for slot 2, and every slot after it
 - What you pay: 0.001 BTC, once, plus small BNB fees
 Thandi and Leo, and their voices, are made with AI.
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+
+#### Then: Bitcoin Wealth and the stokvel, side by side
+
+#### Explainer 4: Better than a stokvel?
+Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side, in 3:56. Watch this if you know stokvels and want the real difference.
+- Who holds the money, and who can see every payment
+- The fees, what it pays in, and how much you put in
+- Is your turn guaranteed: where the stokvel picture stops
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 4, "Better than a stokvel?" (3:56): Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side: who holds the money, who can see the payments, the fees, what it pays in, how much you put in, and whether your turn is guaranteed. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-vs-stokvel-6-questions-side-by-side.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/better-than-a-stokvel-video/
+
+#### Then: check it yourself, on your phone
+
+#### Explainer 5: Check it yourself on BscScan
+Thandi asks how to read the open book, and Leo shows her on her phone, in four steps, with a real payment from 24 November 2026. 4:23. Watch this when you want to see it with your own eyes.
+- Type bscscan.com yourself and open the contract
+- One real payment: in, and straight out
+- Token Holdings, your own wallet, and your own website
+Thandi and Leo, and their voices, are made with AI.
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
 
 #### The whole plan, in 5 minutes
 
@@ -910,8 +950,8 @@ Leo's presentation: the 14 positions of a cycle and the 12 slots, drawn as he sa
 Watch the presentation
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -995,8 +1035,8 @@ The 14 Positions page: the seats fill one by one, then switch to later cycles. A
 Open the 14 Positions
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1009,19 +1049,19 @@ Thandi and Leo, and their voices, are made with AI. Education only, not financia
 
 URL: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
-12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows it with two coins and one full cycle. Every word written.
+12 slots, each double the one before. Thandi asks who pays for slots 2 to 12, Leo shows why seat 5 moves you up. Every word written.
 
 ### The 12 Bitcoin Wealth slots: why you only pay once, explained in 3 minutes
-Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle. Watch it, then read every word below.
+Explainer 3 of the Thandi and Leo series. Twelve slots, each double the one before: Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and seat 5. Watch it, then read every word below.
 
 #### Watch the video
-- Video: Explainer 3, "The 12 slots and the once-off" (3:14): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins and one full cycle: 12 slots, each double the one before, slot 1 the only one you pay for, and what has to happen to move up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
+- Video: Explainer 3, "The 12 slots and the once-off" (3:17): Thandi asks who pays for slots 2 to 12, and Leo shows it with two coins: 12 slots, each double the one before, slot 1 the only one you pay for, and why seat 5 of your first cycle moves you up. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-12-slots-why-you-only-pay-once.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/the-12-slots-video/
 
 #### In this video
 - The 12 slots, each double the one before
 - Who pays for slot 2: two payments from your first cycle
 - What you actually pay: 0.001 BTC, once, plus small BNB fees
-- The one thing that has to happen to move up
+- Why seat 5 moves you up to the next slot
 - Why the programme says slots never expire
 It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
 Invited by someone else? Join with their link, so they stay your sponsor.
@@ -1047,17 +1087,17 @@ Leo: 0.001 Bitcoin, once, plus small network fees in BNB. No monthly fee, and no
 
 ##### Chapter 4 · 1:16 What has to happen to move up
 Thandi: Okay, Leo, be straight with me. What has to happen for me to move up?
-Leo: One thing. Your first cycle at the slot below has to fill: 14 seats, 14 real members.
-Leo: Your business partners fill seats, and sometimes spillover from above. Until that cycle fills, the next slot waits. Nothing moves by itself, and nothing is guaranteed.
+Leo: One thing: seat 5. When real members fill seats 4 and 5 of your first cycle, your next slot opens.
+Leo: Your business partners fill the seats, and sometimes spillover from above. The moment seat 5 is filled, slot 2 opens, while seats 6 to 14 keep filling. Nothing moves by itself, and nothing is guaranteed.
 
-##### Chapter 5 · 1:41 Can you lose a slot?
+##### Chapter 5 · 1:45 Can you lose a slot?
 Thandi: And once I'm in a slot, can I lose it?
 Leo: The programme says slots never expire. Each time a cycle completes, seat 14 starts you again in the same slot.
 
-##### Chapter 6 · 1:55 Thandi says it back
-Thandi: Let me say it back. 12 slots, each one double. I pay for slot 1 only, once. Two payments from each first cycle buy the next slot. And every cycle needs 14 real members.
+##### Chapter 6 · 1:59 Thandi says it back
+Thandi: Let me say it back. 12 slots, each one double. I pay for slot 1 only, once. Seats 4 and 5 buy my next slot. So I move up when seat 5 fills.
 
-##### Chapter 7 · 2:09 Your next step
+##### Chapter 7 · 2:12 Your next step
 Leo: That's it! You've got it. And that's how we learn best: by teaching others.
 Leo: This is education, not financial advice. So take your time, and do your own research.
 Thandi: What's next, Leo?
@@ -1074,8 +1114,175 @@ The 12 Slots page: every slot and its price side by side, and the calculator tha
 Open the 12 Slots
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
+
+---
+
+## Bitcoin Wealth vs a stokvel: 6 questions, side by side, in 4 minutes
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/better-than-a-stokvel-video/
+
+Is Bitcoin Wealth just a stokvel online? Thandi asks 6 honest questions, Leo answers side by side and shows where the picture stops. Every word written.
+
+### Bitcoin Wealth vs a stokvel: 6 questions, side by side, explained in 4 minutes
+Explainer 4 of the Thandi and Leo series. Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side, and shows where the stokvel picture stops. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 4, "Better than a stokvel?" (3:56): Thandi asks if Bitcoin Wealth is just a stokvel on the internet, and Leo answers six honest questions side by side: who holds the money, who can see the payments, the fees, what it pays in, how much you put in, and whether your turn is guaranteed. https://media.bitcoinwealthpays.com/videos/bitcoin-wealth-vs-stokvel-6-questions-side-by-side.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/better-than-a-stokvel-video/
+
+#### In this video
+- How a stokvel works: the tin, the treasurer, the book, the pot
+- Who holds the money, and what peer to peer means
+- Can you see every payment: the open book on BscScan
+- Fees, what it pays in, and how much you put in
+- Is your turn guaranteed: where the stokvel picture stops
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 Is it just a stokvel on the internet?
+Thandi: Leo, my mom's stokvel has paid out for 20 years. Is Bitcoin Wealth just a stokvel on the internet?
+Leo: In some ways, it's better. In one big way, it's different. Welcome back, family, and well done for coming back to learn. Today: 6 questions, side by side.
+
+##### Chapter 2 · 0:20 How a stokvel works
+Leo: First, the stokvel. Every month, the members put in the same amount. The treasurer keeps the money in the tin, and writes it all in the book. And each month, one member takes the pot home, until everyone has had a turn.
+
+##### Chapter 3 · 0:35 Question 1: who holds the money?
+Thandi: And in Bitcoin Wealth? Who holds the money?
+Leo: No treasurer, and no tin. That's the first big difference.
+Leo: When a member pays for a slot, the smart contract passes the payment straight on, to other members' own wallets. Only the Royal Pool waits in the contract. That's called peer to peer: from one member, straight to another.
+
+##### Chapter 4 · 0:58 Question 2: can you see every payment?
+Thandi: And in my mom's stokvel, I only see the book when the treasurer shows it.
+Leo: Here, the book is open to everyone, forever. You read it on BscScan.
+Leo: Every activation and every payout since April 2026 is a public record. Picture a stokvel with over 41,000 member IDs, where anyone can check every single payment, from a phone.
+Thandi: So no more praying the treasurer is honest!
+
+##### Chapter 5 · 1:29 Questions 3 to 5: fees, what it pays in, how much
+Leo: Three more, quickly. There's no bank in the middle, so no bank charges: only small network fees in BNB. A stokvel pays in rand. Bitcoin Wealth pays in BTCB, Bitcoin's value, and Bitcoin's price moves up and down. And a stokvel asks you to pay in every month, for the whole cycle.
+Thandi: And Bitcoin Wealth? Every month too?
+Leo: One entry. 0.001 Bitcoin, once.
+
+##### Chapter 6 · 1:59 Question 6: is your turn guaranteed?
+Thandi: Okay, Leo, be straight with me. In my mom's stokvel, everyone gets a turn. Is my turn guaranteed here?
+Leo: No. And this is where the stokvel picture stops. A stokvel is a closed circle: the same members keep paying, so every turn comes around.
+Leo: Bitcoin Wealth is an open circle. Your cycle fills only when real members activate the positions below you. So it grows as the community grows, and nothing is guaranteed.
+
+##### Chapter 7 · 2:30 Thandi says it back
+Thandi: So that's why teaching others matters!
+Thandi: Let me say it back. No treasurer: payments go wallet to wallet. The book is open on BscScan. No bank charges, and one entry, once. But it's open: my cycle fills only when real members join below me.
+
+##### Chapter 8 · 2:49 Your next step
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+Leo: This is education, not financial advice. So take your time, and do your own research.
+Thandi: What's next, Leo?
+Leo: Next: the open book. I'll show you how to check it yourself, on BscScan.
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+Leo: If you want to go fast, go alone. If you want to go far, go together.
+Leo: Thank you for watching. Take good care of yourself, and of the people you love. We can't wait to welcome you. Goodbye for now.
+
+#### Your next step
+
+##### See the scorecard
+The Better Than A Stokvel? page: the six questions side by side, where Bitcoin Wealth wins, and how each one is funded.
+Open the scorecard
+
+##### Check it yourself
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
+
+##### Ready to join?
+Three tutorials show every tap: your wallet, your BNB, then slot 1.
+Join step by step
+Thandi and Leo, and their voices, are made with AI. Education only, not financial advice: take your time and do your own research.
+
+---
+
+## How to check Bitcoin Wealth on BscScan: 4 steps on your phone
+
+URL: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
+
+Check Bitcoin Wealth yourself on BscScan in 4 steps on your phone: a real payment in and straight out, Token Holdings, your own wallet. Every word written.
+
+### How to check Bitcoin Wealth on BscScan: 4 steps on your phone, explained in 4 minutes
+Explainer 5 of the Thandi and Leo series. Thandi asks how to read the open book, and Leo shows her on her phone: four steps on BscScan, with a real payment from 24 November 2026. Then, your own Bitcoin Wealth website. Watch it, then read every word below.
+
+#### Watch the video
+- Video: Explainer 5, "Check it yourself on BscScan" (4:23): Thandi asks how to read the open book, and Leo shows her on her phone, in four steps on BscScan: the contract, one real payment going in and straight out, the Token Holdings, and your own wallet. Then: your own Bitcoin Wealth website. https://media.bitcoinwealthpays.com/videos/how-to-check-bitcoin-wealth-on-bscscan-4-steps.mp4 Its own page, with every word in writing: https://mtgtribe.com/bw/dashboard/explainers/check-it-yourself-on-bscscan-video/
+
+#### In this video
+- What BscScan is: a public window into BNB Smart Chain
+- Step 1: type bscscan.com yourself and open the contract
+- Step 2: one real payment, in and straight out
+- Step 3: the Token Holdings, where the Royal Pool waits
+- Step 4: your own wallet, and next, your own website
+It plays right here, in the laptop frame, and closes itself at the end. Tap a chapter below to watch just that part.
+Invited by someone else? Join with their link, so they stay your sponsor.
+
+#### Every word, chapter by chapter
+Tap a time to start the video at that part.
+
+##### Chapter 1 · 0:00 The book is open, but how do I read it?
+Thandi: Leo, you said the book is open. But how do I actually read it? I'm not a computer person!
+Leo: You don't need to be. If you can track a parcel, you can do this. Welcome back, family. Today: 4 steps on BscScan, on your phone.
+
+##### Chapter 2 · 0:19 What BscScan is: a block explorer
+Leo: BscScan is a block explorer: a public window into BNB Smart Chain. You know a parcel's tracking number? You type it in, and you see every stop the parcel made. Here, you type in the contract's address, and you see every payment it ever made. Where the picture stops: it shows wallet addresses, never people's names.
+
+##### Chapter 3 · 0:40 Step 1: open the contract on BscScan
+Thandi: Okay, step one. Where do I find the contract's address?
+Leo: On the guide's Check It Yourself page. Copy it from there. Then type bscscan.com yourself. Never tap a BscScan link someone sends you: fake sites copy it to steal wallets. Paste the address, and check the first and the last characters match.
+Thandi: I'm in! What am I looking at?
+Leo: This is the contract's own page. The Transactions tab lists every activation since April 2026, newest on top: over 41,000 member IDs by mid November. Each row is one transaction, with the time it happened.
+
+##### Chapter 4 · 1:21 Step 2: open one transaction
+Thandi: Can I open one?
+Leo: Step 2. Tap any transaction. Here's a real one, from the 24th of November. Scroll to ERC-20 Tokens Transferred. 0.001 BTCB goes into the contract, and in the same transaction, 0.001 BTCB goes straight out to another member's own wallet. Nobody pressed a button. The program did it.
+Thandi: So the money doesn't sit there. It goes straight on! I can see it!
+
+##### Chapter 5 · 1:54 Step 3: Token Holdings
+Leo: Step 3: Token Holdings. The contract does hold some BTCB: on the 24th of November, about 0.54. That's where the Royal Pool waits for its monthly payout.
+
+##### Chapter 6 · 2:07 Step 4: your own wallet
+Leo: Step 4: your own wallet. Once you're a member, paste your own wallet address into BscScan, the same way. You'll see your own activation, and every payment in and out of your wallet, each with the time it happened. Nobody has to tell you. You see it for yourself.
+
+##### Chapter 7 · 2:24 Thandi says it back
+Thandi: Let me say it back. I type BscScan myself. Transactions: every activation.
+Thandi: One transaction: the payment goes straight on.
+Thandi: Token Holdings: the Royal Pool. And my own wallet: every payment, in and out.
+Leo: That's it! You've got it. And that's how we learn best: by teaching others.
+Leo: This is education, not financial advice. So take your time, and do your own research.
+
+##### Chapter 8 · 2:56 Next: your own Bitcoin Wealth website
+Thandi: What's next, Leo?
+Leo: Next: your very own Bitcoin Wealth marketing website, with your own link.
+Leo: Already sharing Bitcoin Wealth with people? Picture your own website: bitcoinwealthpays.com/yourname. Like bitcoinwealthpays.com/zizi. This whole guide, every tutorial and every explainer, with MTG's branding taken off, and your name, your WhatsApp and your socials on it. Every Join button carries your own referral link, so everyone who signs up there joins your team. Your website shares the guide for you, day and night.
+Thandi: My own website, with my own link? I want that!
+
+##### Chapter 9 · 3:39 Every step, and goodbye
+Leo: And when you're ready to start, every step is at mtgtribe.com/bw.
+Thandi: See you there!
+Leo: If you want to go fast, go alone. If you want to go far, go together.
+Leo: Thank you for watching. Take good care of yourself, and of the people you love. We can't wait to welcome you. Goodbye for now.
+
+#### Your next step
+
+##### Your own website
+This whole guide at bitcoinwealthpays.com/ yourname, with your name, your WhatsApp and your link on every Join button.
+See what you get
+
+##### The address and the 4 steps
+Copy the contract address, and read the four steps in writing, with what the blockchain showed.
+Open Check It Yourself
 
 ##### Ready to join?
 Three tutorials show every tap: your wallet, your BNB, then slot 1.
@@ -1158,8 +1365,8 @@ Live on Zoom five evenings a week, in four languages.
 See the Zoom schedule
 
 ##### Check it yourself
-Open the contract on BscScan and read a real payment with your own eyes.
-How to check it
+Four steps on BscScan, on your phone: Explainer 5 shows you how, with a real payment.
+Watch how, in 4 minutes
 
 ---
 
@@ -1250,6 +1457,8 @@ Every sign-up button copies your Bitcoin Wealth referral link. When someone past
 ##### Duplication, made easy
 Your business partners can order theirs too. Same tools, same message, a team that grows the same way.
 
+#### See what yours could look like
+
 #### Everything, up front
 
 #### What you get
@@ -1331,7 +1540,7 @@ The questions people ask most, answered plainly. Can't find yours? Ask in the MT
 
 #### Before you join
 A smart contract on BNB Smart Chain where members activate slots with BTCB, and each payment goes straight to other members' wallets by fixed rules.
-Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It's a once-off: slots 2 to 12 are bought automatically from the cycle below, once it fills.
+Slot 1 costs 0.001 BTC (paid as BTCB), plus small network fees in BNB. It's a once-off: slots 2 to 12 are bought automatically from the cycle below, as soon as its seat 5 is filled.
 No. Every payout comes from another member's slot payment. If new activations slow down, payouts slow down. Only use money you can afford to lose.
 In three stages, all on your phone: set up a SafePal wallet, buy BNB with rand on VALR or Binance and send it to SafePal, then swap it to BTCB and activate slot 1 with the link of the person who invited you. Three tutorial videos show every tap, and each has its steps in writing.
 By the plan's rules, when the 14 positions below you fill, six of those payments land in your own wallet as BTCB (Bitcoin's value on BNB Smart Chain), two buy your next slot and one recycles you. Every payment comes from another member activating a slot, so it depends on those positions filling: nothing is guaranteed.

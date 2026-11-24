@@ -82,7 +82,10 @@ line, `<script src="/assets/video-return.js?v=1" defer></script>`, no setup) on 
 pop-up, inline and playlist players; a YouTube pop-up needs the same idea in its own close code (save the card's place
 on screen when it opens, put it back when it closes, as ClickBaitPays does in `assets/app.js`). Place each explainer beside the section it explains, add it to the site's
 videos page and downloads list, give it a poster and structured data (VideoObject), and link each FAQ answer to its
-explainer. Then run the site's checks, including the sideways-scroll check (`tools/qa/hscroll.js` in mtgtribe.com):
+explainer. **Google must never find a video without a cover** (MTG, 24 Nov 2026, after Search Console reported "No
+thumbnail URL provided"): a pop-up player is made when the visitor taps play (keep its `<video>` inside a `<template>`,
+or create it in the script, as JetUP, ALTRUVA, Bitcoin Wealth and ClickBaitPays do), never left empty in the page, and a
+silent background video takes the still already on screen as its `poster`. Then run the site's checks, including the sideways-scroll check (`tools/qa/hscroll.js` in mtgtribe.com):
 nothing on the site may scroll sideways on a phone.
 
 ### 4b. Every page gets its own social preview (MTG, 9 Nov 2026)

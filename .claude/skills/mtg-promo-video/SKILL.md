@@ -1,6 +1,6 @@
 ---
 name: mtg-promo-video
-description: "MTG's standard for short promo and invitation videos: Zoom calls, webinars, launches, live events and offers, vertical first, built like an advert. It covers the invitation script (talk to them, give reasons to come, three things they will learn, when and how to join), his approved voice and pronunciation, advert pace, real 3D motion, a short memorable CTA link, the first frame as the preview, the closing track, captions and the checks before preview. Use this whenever MTG (mtgtribe.com, MusaTheGiant) asks for a promo, invite, teaser, advert, announcement or reel video, a video to go with a flyer, or anything that promotes an event or call, even if he does not say promo."
+description: "MTG's standard for short promo and invitation videos: Zoom calls, webinars, launches, live events and offers, vertical first, built like an advert. It covers the invitation script (talk to them, give reasons to come, three things they will learn, when and how to join), his approved voice and pronunciation, advert pace, real 3D motion, a short memorable CTA link, the first frame as the preview, the closing track, captions and the checks before preview. Also the floor for every sales video that sells an offer (a website copy, a service, a product): the shape of Explainer 6's sales edition, never below it. Use this whenever MTG (mtgtribe.com, MusaTheGiant) asks for a promo, invite, teaser, advert, announcement, sales or reel video, a video to go with a flyer, or anything that promotes an event or call, even if he does not say promo."
 ---
 
 # MTG's promo and invitation videos
@@ -9,6 +9,30 @@ Lessons from the JetUP Zoom invitation (7 November 2026), in MTG's words: "This 
 them, give them reason why they want to come", "think of an advert", "put some oomph in it", "use 3D". Apply with
 **mtg-creative-standard** (voice, music, brand, preview, approval) and **mtg-hooks-standard** (hooks and CTAs). MTG's
 latest instruction in the chat wins.
+
+## 0. Sales videos: the floor is Explainer 6's sales edition (MTG, 24 Nov 2026)
+
+MTG on it: "You nailed it. You killed it. You over delivered ... when I ask you to create a similar video, a sales video, I want you
+to just make it like this or even better, but never go below this." A sales video (one that sells an offer: a website copy, a
+service, a product) follows its shape, then goes further:
+
+1. A cold-open hook in the first seconds ("What if this whole guide worked for you, day and night?"), before any greeting.
+2. The offer shown, then the price, paid only once it is built and seen (risk reversal said plainly).
+3. The buyer's objection in the buyer's own words ("And then? Do I pay for the domain? Something every month?"), answered with a
+   value stack the eye can follow: a receipt of everything MTG pays for, each line ticked on its word, "Your monthly fees: R0".
+4. "You don't need to be a tech person": what is done for them; then counters of what they get (videos, minutes, tools, pages).
+5. The maths in everyday terms (R1,000 is less than R3 a day for a year, then nothing more), and an honest opinion line
+   ("you're getting the better side of this deal"), never an invented price comparison.
+6. The buyer's reaction on camera ("That's a no-brainer!").
+7. Real teaching inside the sale (Explainer 6: centralised and decentralised wallets, four reasons, the one rule), so the video is
+   worth watching even for someone who does not buy.
+8. The say-back, then a direct close with the address big ("So, why wait? Order yours today"), the character taking the action
+   ("I'm ordering mine right now!"), and the end card pointing to the order page.
+9. Honest throughout: exact claims (Explainer 6 said "no exchange can freeze your account", not "nobody can freeze your wallet"),
+   no income promises, no fake urgency, calm notes instead of fear.
+
+Reference files (mtg-studio): `projects/bitcoin-wealth/videos/explainer-06-your-own-bitcoin-wealth-website/` (SCRIPT-TAKE3.md,
+PRODUCTION.md, gfx/scenes.js).
 
 ## 1. The script is an invitation, not an explainer
 

@@ -177,7 +177,7 @@ VIDEOS = [
 # Explainer 6 is held back from the live sites while it is made stronger (MTG, 24 Nov 2026: "Put the other edits live on the websites,
 # except for the video, I still want us to make the video more powerful ... irresistible to buy the bwcopy"). The plain build (the live
 # sites) leaves it out; BW_WITH_E6=1 builds it in, for the private preview.
-HELD = set() if os.environ.get('BW_WITH_E6') == '1' else {'e6'}
+HELD = set()      # Explainer 6, the sales edition, approved and live (MTG, 24 Nov 2026: "I'm so happy ... take it live right now"); to hold a video back again, put its code here
 VIDEOS = [_v for _v in VIDEOS if _v[0] not in HELD]
 # planned videos (shown as "coming soon", never as playable)
 PLANNED = [

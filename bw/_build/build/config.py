@@ -49,7 +49,7 @@ CARD_GUIDE = 'https://bellveraffiliates.com/'
 ORDER = '/bwcopy/'                          # order form for your own Bitcoin Wealth marketing website (prod path)
 JETUP_GUIDE = 'https://mtgtribe.com/jetup/'   # MTG's JetUP and TAG Markets guide (lower case: the address is case-sensitive)
 CBP_SITE = 'https://clickbaitpaysus.com'
-AUREUS = 'https://www.aureus.africa/mtglegacy'   # Aureus Alliance (Aureus Africa share platform), MTG's link (MTG, 24 Nov 2026)
+AUREUS = 'https://www.aureus.africa/mtglegacy'   # Aureus Alliance: a gold mining company that sells gold mining shares (MTG, 24 Nov 2026); MTG's link
 # menu items that lead to MTG's other sites (MTG, 22 Nov 2026: "After Crypto Card, add: JetUp ... then ClickBaitPays")
 MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'cbp': CBP_SITE}
 
@@ -237,7 +237,7 @@ NAV = [
     ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
     ('card', 'dashboard/crypto-card/', 'Bellver Card', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
     ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
-    ('aureus', AUREUS, 'Aureus Alliance', 'Share participation platform', 'chart-pie', 'More From MTG 👑'),
+    ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG 👑')]

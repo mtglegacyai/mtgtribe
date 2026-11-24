@@ -279,7 +279,7 @@ def p_diff(here):
 {sec(f'<ol class="five">{items}</ol>', "The 5-point check")}
 {sec(f"""<div class="grid2">
  {box("The original", f"<p>MTG calls Bitcoin Wealth the original: priced in Bitcoin, paid wallet to wallet, open on BscScan, and still running. {MEMBERS} member IDs say people keep choosing it.</p>", "award")}
- {box("Don't trust. Verify.", f"<p>You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>Here's how</a>.</p>", "scan-search")}
+ {box("Don't trust. Verify.", f"<p>You don't have to believe MTG or anyone else. Every claim on this page can be checked in a few minutes. <a class='inl' href='{A('dashboard/check-it-yourself/', here)}'>Here's how</a>, or <a class='inl' href='{A(WATCH['e5'], here)}'>watch it in 4 minutes</a>.</p>", "scan-search")}
 </div>""", "Why that matters")}'''
 
 
@@ -288,6 +288,12 @@ def p_proof(here):
     return f'''{phero("scan-search", "Check Bitcoin Wealth yourself",
         "Don't take anyone's word for it, including MTG's. Bitcoin Wealth runs on a public blockchain, so you can look at the contract and every payment yourself. Here's what we found, and how to find it.",
         [("calendar", f"Checked {CHECKED}"), ("blocks", "BNB Smart Chain")])}
+{sec(f"""<div class="two vstart vfirst"><div class="stack"><h3 class="h3 vhead"><a class="hlink" href="{A(WATCH['e5'], here)}">Thandi asks how to read the open book</a></h3>
+<p class="vdesc">Leo shows her on her phone, the four steps on this page, with a real payment from 24 November 2026. {mmss(V['e5']['secs'])}.</p>
+{checks(["Type bscscan.com yourself and open the contract", "One real payment: in, and straight out", "The Token Holdings, and your own wallet"])}
+<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{A(WATCH['e5'], here)}">{ic("list-checks")}<span class="lbl">Every Word, In Writing</span></a></div>
+<p class="fine">Thandi and Leo, and their voices, are made with AI.</p></div>
+<div class="phone-wrap">{vid('e5', here, eager=True, hero=True)}</div></div>""", "Watch it in 4 minutes", id="video")}
 {sec(f"""<div class="addr glass"><small>The Bitcoin Wealth contract (from the programme's own deck)</small><code>{CONTRACT}</code>
 <div class="btn-row"><button type="button" class="btn btn-ghost btn-sm" data-copy="contract">{ic('copy')}<span class="lbl">Copy address</span><span class="copied" aria-live="polite">Copied ✓</span></button>
 <a class="btn btn-gold btn-sm" href="{esc(BSCSCAN)}" target="_blank" rel="noopener">{ic('external-link')}<span class="lbl">Open on BscScan</span></a></div>
@@ -304,8 +310,8 @@ def p_proof(here):
     ('Open the contract on BscScan', '<p>Paste the address into bscscan.com. The Transactions tab lists every activation.</p>'),
     ('Open one recent transaction', '<p>Look at "ERC-20 Tokens Transferred". One activation of 0.001 BTCB shows the payment going on to a member\'s wallet in the same transaction.</p>'),
     ('Check the Token Holdings', '<p>The contract holds some BTCB: that\'s the Royal Pool waiting for its monthly payout.</p>'),
-    ('Read the Contract tab', '<p>Look for functions only the owner can use. Knowing them is part of doing your own research.</p>'),
+    ('Look up your own wallet', '<p>Once you\'re a member, paste your own wallet address into bscscan.com: your activation and every payment in and out, each with its time.</p>'),
 ]), "Four steps, five minutes")}
 {sec(honest("What the code allows.", "The contract has an owner wallet (the wallet that created it). It is not renounced. That wallet can switch on an emergency mode and withdraw tokens the contract holds, change the token address and pool addresses, and update a member's slots. BTCB in your own wallet stays under your keys, so approve only the exact amount when you activate a slot. We show you all this because you deserve the full picture.") +
-     f'<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{esc(BSCSCAN_BTCB)}" target="_blank" rel="noopener">{ic("external-link")}<span class="lbl">BTCB held by the contract</span></a></div>' + soon('e5'),
+     f'<div class="btn-row"><a class="btn btn-ghost btn-sm" href="{esc(BSCSCAN_BTCB)}" target="_blank" rel="noopener">{ic("external-link")}<span class="lbl">BTCB held by the contract</span></a></div>',
     "The full picture")}'''

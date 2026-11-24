@@ -640,7 +640,7 @@ def p_disc(here):
     return f'''{phero("info", "Disclaimer", "Independent, educational, and honest about the risks.")}
 {sec(f"""<div class="prose panel pad glass">
 <p>{DISCLAIMER}</p>
-<p><b>Referral links.</b> The Bitcoin Wealth sign-up button, the VALR and Binance buttons and the crypto card guide are MTG's referral or partner links. If you use them, MTG may earn, at no extra cost to you. If someone else introduced you, use their links.</p>
+<p><b>Referral links.</b> The Bitcoin Wealth sign-up button, the VALR and Binance buttons, the Bellver Card guide and the Aureus Alliance link are MTG's referral or partner links. If you use them, MTG may earn, at no extra cost to you. If someone else introduced you, use their links.</p>
 <p><b>Your copy, your rules.</b> Your own Bitcoin Wealth marketing website is a copy of this guide with the owner's own links. The owner is responsible for how they share it.</p>
 <p><b>Privacy.</b> This site uses no tracking and no cookies. It saves only your watched videos and menu setting on your own device. The live tools ask CoinGecko and mempool.space for public prices and block heights.</p>
 <p><b>Not financial advice.</b> Nothing here is financial, tax or legal advice. Always do your own research.</p>

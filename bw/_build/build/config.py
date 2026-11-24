@@ -49,8 +49,9 @@ CARD_GUIDE = 'https://bellveraffiliates.com/'
 ORDER = '/bwcopy/'                          # order form for your own Bitcoin Wealth marketing website (prod path)
 JETUP_GUIDE = 'https://mtgtribe.com/jetup/'   # MTG's JetUP and TAG Markets guide (lower case: the address is case-sensitive)
 CBP_SITE = 'https://clickbaitpaysus.com'
+AUREUS = 'https://www.aureus.africa/mtglegacy'   # Aureus Alliance (Aureus Africa share platform), MTG's link (MTG, 24 Nov 2026)
 # menu items that lead to MTG's other sites (MTG, 22 Nov 2026: "After Crypto Card, add: JetUp ... then ClickBaitPays")
-MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'cbp': CBP_SITE}
+MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'cbp': CBP_SITE}
 
 # on-chain facts (read from BNB Smart Chain on 14 Nov 2026; see mtg-studio ONCHAIN-CHECK-2026-11-14.md)
 CONTRACT = '0x1ad09b043E0Fe59243C9a18ee1c855bd7792Cd29'
@@ -232,10 +233,11 @@ NAV = [
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers', 'circle-help', 'Help'),
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
     ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
-    # More From MTG 👑, in MTG's order (24 Nov 2026): ClickBaitPays, Bellver Card, JetUP, Join The MTG TRIBE
+    # More From MTG 👑, in MTG's order (24 Nov 2026): ClickBaitPays, Bellver Card, JetUP, Aureus Alliance, Join The MTG TRIBE
     ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
     ('card', 'dashboard/crypto-card/', 'Bellver Card', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
     ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
+    ('aureus', AUREUS, 'Aureus Alliance', 'Share participation platform', 'chart-pie', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG 👑')]

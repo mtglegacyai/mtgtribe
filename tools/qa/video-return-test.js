@@ -2,6 +2,7 @@
 // pressed play. Usage: node tools/qa/video-return-test.js [base url]. Needs a server that answers range requests,
 // for example npx http-server . -p 8766 (python's http.server cannot seek videos). Add new pages and players to CASES.
 // ONLY=<part of a case name> runs just the matching cases.
+// SKIP=<part of a case name> leaves the matching cases out (a video held back from the live build).
 // When a video ends, does the page come back to the video's spot? Each case runs with the new script blocked (old
 // behaviour) and with it, at phone and laptop size. The page is knocked to the top mid-video (what full screen does on
 // phones), then the video plays to its end.
@@ -58,7 +59,8 @@ const CASES = [
   ['Your own marketing website page, Explainer 6 at the top (inline, laptop frame)', '/bw/dashboard/bw-tribe-page/', '.vplay[data-code="e6"]'],
   ['BW Explainer 6 page, the explainer (inline, laptop frame)', '/bw/dashboard/explainers/your-own-bitcoin-wealth-marketing-website-video/', '.vplay[data-code="e6"]'],
   ['CC guide, the Kraken tutorial from its laptop cover (sheet, phone frame)', '/cc/', '#tutorial [data-play="cc-kraken"]'],
-].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY));      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
+].filter(c => !process.env.ONLY || c[0].includes(process.env.ONLY))      // ONLY=BW node tools/qa/video-return-test.js runs just those cases
+ .filter(c => !process.env.SKIP || !c[0].includes(process.env.SKIP));      // SKIP="Explainer 6" leaves out a video held back from a build
 (async () => {
   const b = await chromium.launch(); const rows = []; let bad = 0;
   for (const [devName, ctxOpt] of [['phone', { ...devices['Pixel 7'] }], ['laptop', { viewport: { width: 1280, height: 800 } }]]) {

@@ -4,6 +4,17 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
 1. Researches the week and writes `tools/canton-weekly/data/YYYY-MM-DD.json` (copy the previous week's file as the shape).
    Fill in its `guides` block too: it refreshes the snapshot numbers on /cc/ and /cntn/ in step 4.
    Do step 4 even if HeyGen is out of credits: skip steps 2 and 3, leave out `"video"` and the page shows "Video coming soon".
+1b. **Prepare the video data (MTG, 24 Nov 2026), BEFORE the narration:**
+   `python3 tools/canton-weekly/prepare.py tools/canton-weekly/data/DATE.json`. It adds `"candles"` (Kraken CC/USD daily
+   candles with MA20, MA50, RSI 14 and volume, for the video's 3D candlestick chart) and puts the approved **Bellver Card
+   ad** scene (`"bellver"`) into `video_script` just before the outro, word for word (the wording lives in prepare.py;
+   never rewrite it per week). Because the narration is made from `video_script`, the ad is then in MTG's voice. The ad
+   adds about 20 seconds, so keep the rest of the script tight: the whole video about 2 minutes 10 seconds at most.
+   Needs api.kraken.com (public, no key). If Kraken cannot be reached it stops: say so in the report and carry on; the
+   video then falls back to the old line chart, still with the ad if you add the scene by running it again later.
+   video.py prints `"warnings"` when candles or the ad are missing: if it does, fix that before publishing.
+   Chart rules (MTG): candlesticks, MA20 (gold), MA50 (blue), volume and RSI 14, in a 3D tilted panel, clean: **no
+   Bollinger Bands** (too busy). The trend and levels scenes use it; support and resistance are drawn on the levels scene.
 2. Narration: HeyGen voice "MTG Master Voice V3" (65f1b9ff3f1e418496de5715a801e7dd, MTG's voice since 10 Nov 2026; V2 is
    retired), one create_speech call with the `video_script` texts joined by a blank line (no break tags: V3 does not
    support them). HeyGen returns WAV: save it as `/tmp/narration.wav` and pass that path to video.py (do not commit it).

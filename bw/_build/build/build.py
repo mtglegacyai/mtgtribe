@@ -29,9 +29,9 @@ PAGES = {
     'proof': ('Check Bitcoin Wealth yourself on BscScan', p_proof, ['e5']),
     'join': ('How to join Bitcoin Wealth step by step', p_join, ['t1', 't2', 't3']),
     'tut': ('Bitcoin Wealth tutorial videos', p_tut, ['t1', 't2', 't3']),
-    'exp': ('Bitcoin Wealth explainer videos', p_exp, ['e1', 'e2', 'e3', 'e4', 'e5', 'i1']),
+    'exp': ('Bitcoin Wealth explainer videos', p_exp, [c for c in ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'i1'] if c in V]),
     'zoom': ('Bitcoin Wealth live on Zoom', p_zoom, None),
-    'page': ('Your own BW Tribe Page', p_page, None),
+    'page': ('Your own Bitcoin Wealth marketing website', p_page, ['e6'] if 'e6' in V else None),
     'c-btc': ('Bitcoin to Rand Converter', p_c_btc, None),
     'c-slot': ('Bitcoin Wealth Slot Calculator', p_c_slot, None),
     'c-halv': ('Bitcoin Halving Countdown', p_c_halv, None),
@@ -66,7 +66,7 @@ def page_ld(key, title, desc):
     if key == 'page':
         # a Service, not a Product: a Product wants 'review' or 'aggregateRating' (Search Console flagged it on clickbaitpaysus.com,
         # 24 Nov 2026), and reviews are never invented. MTG builds and hosts the page: a service.
-        return [{'@type': 'Service', 'name': 'BW Tribe Page', 'serviceType': 'Personal guide website: built, hosted and kept up to date',
+        return [{'@type': 'Service', 'name': 'Your own Bitcoin Wealth marketing website', 'serviceType': 'Personal guide website: built, hosted and kept up to date',
                  'description': desc, 'brand': {'@type': 'Brand', 'name': 'MTG TRIBE'},
                  'offers': {'@type': 'Offer', 'price': str(PRICE_ZAR), 'priceCurrency': 'ZAR', 'url': SITE + ORDER, 'availability': 'https://schema.org/InStock'}}]
     return []

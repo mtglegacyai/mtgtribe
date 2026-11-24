@@ -155,7 +155,7 @@ def p_watch(code):
                     f'<b>{esc(V[c]["short"])}</b><span>{"You are here" if cur else "Open it"}</span></{tag}></li>')
         after = {'t1': ("Wallet ready?", f'Next, fund it: <a class="inl" href="{A(WATCH["t2"], here)}">Tutorial 2, buy BNB and send it to SafePal</a>.'),
                  't2': ("BNB in your SafePal?", f'Next, the final step: <a class="inl" href="{A(WATCH["t3"], here)}">Tutorial 3, swap to BTCB and activate slot 1</a>.'),
-                 't3': ("Slot 1 active?", f'Share this guide with the people you invite, or get <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">your own BW Tribe Page</a> with your link inside. We learn best when we teach others.')}[code]
+                 't3': ("Slot 1 active?", f'Share this guide with the people you invite, or get <a class="inl" href="{A("dashboard/bw-tribe-page/", here)}">your own Bitcoin Wealth marketing website</a> with your link inside. We learn best when we teach others.')}[code]
         return f'''{phero("circle-play", h1, LEAD[code],
         [("clock", f"{mmss(v['secs'])} video"), ("smartphone", "Recorded on MTG's phone"), ("eye-off", "Private details hidden")])}
 {sec(top, sr="Watch the video")}
@@ -251,6 +251,9 @@ EXPLAIN_LEAD = {
            "six honest questions side by side, and shows where the stokvel picture stops. Watch it, then read every word below."),
     'e5': ("Explainer 5 of the Thandi and Leo series. Thandi asks how to read the open book, and Leo shows her on her phone: four steps on "
            "BscScan, with a real payment from 24 November 2026. Then, your own Bitcoin Wealth website. Watch it, then read every word below."),
+    'e6': ("Explainer 6 of the Thandi and Leo series. Thandi asks if she can have her own copy of this guide, and Leo shows her: your own "
+           "Bitcoin Wealth marketing website, the price in rand or USDT, what traffic really means, three ways to get it, and how to order. "
+           "Watch it, then read every word below."),
 }
 EXPLAIN_COVERS = {
     'e1': ["What Bitcoin is, in one picture", "Why Bitcoin Wealth is not a coin, but a smart contract", "What BTCB and BNB are, in plain words",
@@ -263,6 +266,8 @@ EXPLAIN_COVERS = {
            "Can you see every payment: the open book on BscScan", "Fees, what it pays in, and how much you put in", "Is your turn guaranteed: where the stokvel picture stops"],
     'e5': ["What BscScan is: a public window into BNB Smart Chain", "Step 1: type bscscan.com yourself and open the contract",
            "Step 2: one real payment, in and straight out", "Step 3: the Token Holdings, where the Royal Pool waits", "Step 4: your own wallet, and next, your own website"],
+    'e6': ["What you get: this whole guide, with your link on every Join button", "The price: R1,000, or $50 in USDT, and why crypto costs less",
+           "What traffic means: visitors, eyeballs, clicks and conversions", "3 ways to get traffic, ClickBaitPays the third", "How to order yours, field by field"],
 }
 # the first "next step" card and the series line under them, per episode
 EXPLAIN_NEXT = {
@@ -275,7 +280,11 @@ EXPLAIN_NEXT = {
     'e4': (("See the scorecard", "<p>The Better Than A Stokvel? page: the six questions side by side, where Bitcoin Wealth wins, and how each one is funded.</p>", 'dashboard/stokvel/', 'Open the scorecard', 'users'),
            "Check it yourself on BscScan.", 'e5', 'Watch Explainer 5'),
     'e5': (("Your own website", "<p>This whole guide at bitcoinwealthpays.com/<wbr>yourname, with your name, your WhatsApp and your link on every Join button.</p>", 'dashboard/bw-tribe-page/', 'See what you get', 'globe'),
-           "Your own Bitcoin Wealth website.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'BW Tribe Page')),
+           "Your own Bitcoin Wealth marketing website.", 'e6', 'Watch Explainer 6') if 'e6' in V else
+          (("Your own website", "<p>This whole guide at bitcoinwealthpays.com/<wbr>yourname, with your name, your WhatsApp and your link on every Join button.</p>", 'dashboard/bw-tribe-page/', 'See what you get', 'globe'),
+           "Your own Bitcoin Wealth marketing website.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'Your own marketing website')),
+    'e6': (("Order yours", "<p>Two minutes: the form goes straight to MTG on WhatsApp. R1,000, or $50 in USDT, paid only once it's built and you've seen it.</p>", ORDER, 'Open the order form', 'globe'),
+           "More on traffic, and more on crypto.", None, ('dashboard/bw-tribe-page/', 'see what you get', 'Your own marketing website')),
 }
 
 
@@ -309,7 +318,7 @@ def p_explain(code):
                       f'<button type="button" class="tjump" data-play="{code}" data-at="{c["start"]:.1f}" aria-label="Play from {clock(c["start"])}: {esc(c["title"])}">'
                       f'{ic("play")}<span>{clock(c["start"])}</span></button></div><div class="wsaid">{said_}</div></div>')
         (bt, btxt, bto, blab, bic), nline, ncode, nalt = EXPLAIN_NEXT[code]
-        bhref = A(WATCH[bto] if bto in WATCH else bto, here)
+        bhref = esc(bto) if bto.startswith('/') else A(WATCH[bto] if bto in WATCH else bto, here)      # the order form lives at the site's root (/bwcopy/)
         if ncode in V: series = f"{nline} <a class='inl' href='{A(WATCH[ncode], here)}'>{nalt}</a>, Thandi and Leo again."
         else:
             nhref, ntxt, npage = nalt if isinstance(nalt, tuple) else (nalt, 'see every slot', '12 Slots page')

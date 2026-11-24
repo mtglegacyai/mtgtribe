@@ -597,14 +597,14 @@
     load(); setInterval(paint, 30000);
   });
 
-  /* ------------------------------------------------------------ BW Tribe Page order form: builds a WhatsApp message */
+  /* ------------------------------------------------------------ order form (your own Bitcoin Wealth marketing website): builds a WhatsApp message */
   var OF = $('[data-order]');
   if (OF) {
     var slugIn = $('[name="slug"]', OF), prev = $('[data-out="addr"]', OF);
     function slugify(v) { return String(v || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24); }
-    function dom() { var r = $('[name="domain"]:checked', OF); return r ? r.value : 'mtgtribe.com/bw/'; }
+    function dom() { return 'bitcoinwealthpays.com/'; }      /* every copy lives at bitcoinwealthpays.com (MTG, 24 Nov 2026) */
     function paintAddr() { var s = slugify(slugIn.value) || 'yourname'; prev.textContent = dom() + s; }
-    on(slugIn, 'input', paintAddr); $$('[name="domain"]', OF).forEach(function (r) { on(r, 'change', paintAddr); }); paintAddr();
+    on(slugIn, 'input', paintAddr); paintAddr();
     on(OF, 'submit', function (e) {
       e.preventDefault();
       var bad = $$('[required]', OF).filter(function (x) { return x.type === 'radio' ? !$('[name="' + x.name + '"]:checked', OF) : !x.value.trim(); });
@@ -614,10 +614,10 @@
       if (bad.length) { bad.forEach(function (x) { var f = x.closest('.field'); if (f) f.classList.add('err'); }); bad[0].focus(); toast('Please complete the highlighted fields'); return; }
       function v(n) { var x = $('[name="' + n + '"]', OF); return x ? x.value.trim() : ''; }
       var pay = $('[name="pay"]:checked', OF);
-      var lines = ['Hi MTG, I would like to order my BW Tribe Page (R1,000 once-off, paid after it is built).', '',
+      var lines = ['Hi MTG, I would like to order my own Bitcoin Wealth marketing website (R1,000 or $50 in USDT once-off, paid after it is built).', '',
         'Name: ' + v('name'), 'Page address: ' + dom() + (slugify(v('slug')) || '(to agree)'), 'My Bitcoin Wealth referral link: ' + v('ref'),
         'My WhatsApp number: ' + v('wa'), 'My WhatsApp group link: ' + (v('group') || 'none yet'),
-        'TikTok: ' + (v('tiktok') || '-'), 'Facebook: ' + (v('fb') || '-'), 'YouTube: ' + (v('yt') || '-'),
+        'TikTok: ' + (v('tiktok') || '-'), 'Facebook: ' + (v('fb') || '-'), 'YouTube: ' + (v('yt') || '-'), 'Telegram: ' + (v('tg') || '-'), 'Instagram: ' + (v('ig') || '-'),
         'VALR referral link: ' + (v('valr') || '-'), 'Binance referral link: ' + (v('bnb') || '-'),
         'How I would like to pay: ' + (pay ? pay.value : 'to agree on WhatsApp'), 'Notes: ' + (v('notes') || '-'), '',
         'I will send my profile photo here on WhatsApp.'];

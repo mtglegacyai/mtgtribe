@@ -268,7 +268,9 @@ def capture_menu(tmp):
     warn = None
     try:
         time.sleep(1)
-        subprocess.run(["node", os.path.join(ROOT, "tools", "canton-weekly", "menu_capture.js"), f"http://127.0.0.1:{port}", out], check=True, timeout=180)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from prepare import EXCLUDE_STREAMS
+        subprocess.run(["node", os.path.join(ROOT, "tools", "canton-weekly", "menu_capture.js"), f"http://127.0.0.1:{port}", out, "|".join(sorted(EXCLUDE_STREAMS))], check=True, timeout=180)
     except Exception as e:
         warn = f"menu capture failed ({e}): the streams scene used the stored screenshots in {MENU_FALLBACK}"
         out = MENU_FALLBACK

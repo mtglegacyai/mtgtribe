@@ -17,7 +17,8 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
      "test drive one") and the **Bellver Card ad** (`"bellver"`).
    The streams are read from the Income streams list of the dashboard menu (dashboard/index.html), and video.py takes
    fresh phone screenshots of this checkout's mtgtribe.com for that scene (menu_capture.js), so a new stream appears on
-   its own. Because the narration is made from `video_script`, all of this is in MTG's voice. The fixed scenes add about
+   its own. Streams MTG no longer wants named are listed in `EXCLUDE_STREAMS` in prepare.py (ALTRUVA since
+   24 Nov 2026): they are left out of the script and hidden in the menu screenshots. Because the narration is made from `video_script`, all of this is in MTG's voice. The fixed scenes add about
    1 minute 45 seconds, so **keep the week's own scenes (intro to fundamentals, guides, outro) short and to the point**:
    about 1 minute 30 seconds together, the whole video about 3 minutes 15 seconds at most. This replaces the older "under about
    2 minutes" in the task prompt (MTG, 24 Nov 2026): never shorten or leave out a fixed scene to save time. Do not mention the universal

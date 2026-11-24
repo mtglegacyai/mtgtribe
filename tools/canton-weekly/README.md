@@ -19,7 +19,8 @@ Every Sunday the "Canton CC Weekly Report" scheduled task:
    fresh phone screenshots of this checkout's mtgtribe.com for that scene (menu_capture.js), so a new stream appears on
    its own. Because the narration is made from `video_script`, all of this is in MTG's voice. The fixed scenes add about
    1 minute 45 seconds, so **keep the week's own scenes (intro to fundamentals, guides, outro) short and to the point**:
-   about 1 minute 30 seconds together, the whole video about 3 minutes 15 seconds at most. Do not mention the universal
+   about 1 minute 30 seconds together, the whole video about 3 minutes 15 seconds at most. This replaces the older "under about
+   2 minutes" in the task prompt (MTG, 24 Nov 2026): never shorten or leave out a fixed scene to save time. Do not mention the universal
    burn or the halving again in the fundamentals scene unless there is real news on them that week.
    **Facts check:** if prepare.py prints `"warnings"` about the burn or halving facts being dated (from 1 January 2027 for
    the burn, 1 June 2029 for the halving), check the sources named in prepare.py (CIP-0129 and the Canton CIPs list,

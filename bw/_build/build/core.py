@@ -543,7 +543,7 @@ def dash_page(key, title, desc, body, here_extra_ld=None, show_band=True, parent
 </main>
 <footer class="dfoot"><div class="wrap">
  {disc_block(here)}
- <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{esc(MTG_SITE)}" target="_blank" rel="noopener">MusaTheGiant.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>
+ <div class="fbot"><span>© 2026 MTG 👑 | Your Digital Architect. <a class="inl" href="{esc(HUB)}" target="_blank" rel="noopener">mtgtribe.com</a></span><span class="sig">Let's Get This Crypto! 💪</span></div>
 </div></footer>
 </div>
 </div>

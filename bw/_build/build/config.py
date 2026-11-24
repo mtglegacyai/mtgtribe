@@ -225,19 +225,20 @@ NAV = [
     ('stokvel', 'dashboard/stokvel/', 'Better Than A Stokvel?', 'Where it wins, how it is funded', 'users', 'How It Works'),
     ('diff', 'dashboard/what-makes-it-different/', 'What Makes It Different', 'The original, 5 checks', 'sparkles', 'How It Works'),
     ('proof', 'dashboard/check-it-yourself/', 'Check It Yourself', 'Every payment is public', 'scan-search', 'How It Works'),
-    ('page', 'dashboard/bw-tribe-page/', 'Your own marketing website', 'R1,000 or $50 in USDT, once-off', 'globe', 'Your Own Website'),
+    ('page', 'dashboard/bw-tribe-page/', 'Your Own Marketing Website', 'R1,000 or $50 in USDT, once-off', 'globe', 'Your Own Website'),
     ('c-btc', 'dashboard/tools/bitcoin-to-rand/', 'Bitcoin To Rand Converter', 'Live price: BTC, USD, ZAR', 'bitcoin', 'Tools'),
     ('c-slot', 'dashboard/tools/slot-calculator/', 'Slot Calculator', 'Each slot in BTC and rand', 'calculator', 'Tools'),
     ('c-halv', 'dashboard/tools/halving-countdown/', 'Halving Countdown', 'Live block height', 'hourglass', 'Tools'),
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers', 'circle-help', 'Help'),
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
     ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
-    ('card', 'dashboard/crypto-card/', 'Crypto Card', 'Spend your crypto', 'credit-card', 'More From MTG'),
-    ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG'),
-    ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG'),
-    ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG'),
+    # More From MTG 👑, in MTG's order (24 Nov 2026): ClickBaitPays, Bellver Card, JetUP, Join The MTG TRIBE
+    ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
+    ('card', 'dashboard/crypto-card/', 'Bellver Card', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
+    ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
+    ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),
 ]
-EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG')]
+EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG 👑')]
 # A page of its own for each tutorial video: the video, and every step in writing with its time (MTG, 17 Nov 2026: "all the videos
 # must be named such that when people ... search for anything related to Bitcoin Wealth ... these videos can actually rank all by
 # themselves"). A search engine lists a video on its own only from a page where that video is the main thing. Not in the side

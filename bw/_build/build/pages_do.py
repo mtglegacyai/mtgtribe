@@ -624,7 +624,7 @@ def p_safe(here):
 # ======================================================================= MORE
 def p_card(here):
     return f'''{phero("credit-card", "Spend your crypto with a card", "A shorter road from crypto to everyday spending: a crypto debit card, with an income opportunity of its own.")}
-{sec(f'<div class="joinband glass"><div><h2 class="h3">MTG\'s crypto card guide</h2><p>Everything about the card, step by step, on its own website.</p></div><div class="btn-row">{btn("Open the card guide", CARD_GUIDE, "gold", "external-link", ring=True, ext=True)}</div></div>')}'''
+{sec(f'<div class="joinband glass"><div><h2 class="h3">MTG\'s Bellver Card guide</h2><p>Everything about the card, step by step, on its own website.</p></div><div class="btn-row">{btn("Open the card guide", CARD_GUIDE, "gold", "external-link", ring=True, ext=True)}</div></div>')}'''
 
 
 def p_tribe(here):

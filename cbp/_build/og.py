@@ -105,7 +105,7 @@ COPY = {
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
-    'streams': ('My income <em>streams</em>', 'BellverCards, JetUP and Bitcoin Wealth, with a full guide each.'),
+    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, Aureus Alliance, JetUP and Bitcoin Wealth.'),
     'copy': ('Get <em>this website</em>', 'The guide that sells the real reason people join. Your link on every button.'),
     'disc': ('The small print, in <em>plain words</em>', 'Independent guide, the referral link and your privacy.'),
 }
@@ -117,11 +117,13 @@ def visual(key):
                 '<span class="n" style="left:-18px;top:-14px">1</span><span class="n" style="left:92px;top:78px">2</span><span class="n" style="left:202px;top:170px">3</span></div>')
     if key == 'streams':
         b = os.path.join(ROOT, 'tools', 'cbp', 'brand', 'streams')
+        sh = 'filter:drop-shadow(0 14px 24px rgba(0,0,0,.6))'
         return (f'<div class="vis" style="width:560px;height:380px">'
-                f'<img src="{b64(os.path.join(b, "bellver-card.webp"), "image/webp")}" style="position:absolute;left:10px;top:30px;width:330px;transform:rotate(-8deg);filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))" alt="">'
-                f'<img src="{b64(os.path.join(b, "jetup-logo.webp"), "image/webp")}" style="position:absolute;right:20px;top:20px;width:180px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.6))" alt="">'
-                f'<img src="{b64(os.path.join(b, "bitcoin-wealth-logo.webp"), "image/webp")}" style="position:absolute;right:60px;bottom:10px;width:150px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.6))" alt="">'
-                f'<img src="{b64(os.path.join(ROOT, "tools", "cbp", "brand", "mtg-photo-256.webp"), "image/webp")}" style="position:absolute;left:150px;bottom:0;width:120px;height:120px;border-radius:50%;box-shadow:0 0 0 4px #ffd866,0 0 30px rgba(255,216,102,.5)" alt=""></div>')
+                f'<img src="{b64(os.path.join(b, "bellver-card.webp"), "image/webp")}" style="position:absolute;left:0;top:34px;width:290px;transform:rotate(-8deg);filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))" alt="">'
+                f'<img src="{b64(os.path.join(b, "aureus-logo.webp"), "image/webp")}" style="position:absolute;right:0;top:12px;width:200px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "jetup-logo.webp"), "image/webp")}" style="position:absolute;right:18px;top:168px;width:150px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "bitcoin-wealth-logo.webp"), "image/webp")}" style="position:absolute;left:232px;bottom:0;width:118px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(ROOT, "tools", "cbp", "brand", "mtg-photo-256.webp"), "image/webp")}" style="position:absolute;left:52px;bottom:4px;width:112px;height:112px;border-radius:50%;box-shadow:0 0 0 4px #ffd866,0 0 30px rgba(255,216,102,.5)" alt=""></div>')
     if key == 'videos':
         return '<div class="vis grid4">' + ''.join(f'<img src="{cov(c, 480)}" alt="">' for c in ['welcome', 'strategy', 'backoffice', 'qa']) + '</div>'
     if key == 'tutorials':

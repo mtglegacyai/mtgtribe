@@ -59,10 +59,20 @@ Always next to it, calmly: his own experience, not a promise; what you get depen
 
 ## Selling the website copy
 
+**One address for every copy (MTG, 24 Nov 2026):** "I want all my clients to be under clickbaitpaysus.com/their name." The order
+form has no address choice; it says clickbaitpaysus.com/yourname everywhere, like the Bitcoin Wealth form.
+
 "Most ClickBaitPays pages repeat the official brochure. This one sells the real reason people join." What a buyer gets:
 the traffic angle, every step on video, the compensation plan page with the numbers, Is It Legit?, built for phones, their
 link on every Join button, their socials on every page, built to be found, kept up to date. R1,000 or $50 once-off, pay
 only if you like it. Offer it at the end of every page, in the menu and on the main page.
+
+## Something to promote (MTG, 24 Nov 2026)
+
+"You cannot promote ClickBaitPays in ClickBaitPays ... everyone who's watching adverts on ClickBaitPays is already a member." So
+the menu, the My Income Streams page and the bands offer MTG's other income streams to promote there, in his order: 1 Bellver,
+2 Aureus Alliance (gold mining shares, aureus.africa/mtglegacy), 3 JetUP, 4 Bitcoin Wealth. Never ALTRUVA. One list:
+`MY_STREAMS` in `cbp/_build/build.py`.
 
 ## Rules that still apply
 

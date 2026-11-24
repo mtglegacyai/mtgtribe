@@ -122,7 +122,9 @@ build says so when it is missing). Its social previews carry its own address: af
 twice (`python3 cbp/_build/og.py`, then `CBP_TARGET=cbpus python3 cbp/_build/og.py`, which writes `cbp/_build/og-cbpus/`).
 The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's history) forward to the new pages (`CBPUS_OLD`).
 **Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
-clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`).
+clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`). Every personal copy lives at clickbaitpaysus.com/theirname,
+the only address on the order form (MTG, 24 Nov 2026). The menu's More From MTG 👑 lists his income streams to promote there, in his
+order (Bellver, Aureus Alliance, JetUP, Bitcoin Wealth; never ALTRUVA): `MY_STREAMS`.
 
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 

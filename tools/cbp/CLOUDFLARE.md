@@ -23,4 +23,13 @@ Open items:
   redirected fine). MTG said "yes, fix www" (22 Nov 2026): www CNAME now points to musathegiant.github.io, DNS only (as
   bitcoinwealthpays.com). GitHub issues the www certificate on its own; if it still fails after a day, remove and re-add
   the custom domain in the repo's Settings > Pages to trigger it.
-- `videos/_test.mp4` (2 seconds, 30 KB) is the setup test; remove it once the first real video is up.
+- The setup test clip and the temporary preview folder were removed on 22 Nov 2026.
+
+## What is on it (22 Nov 2026)
+
+All five ClickBaitPays videos moved off YouTube the same day (MTG shared each from Google Drive): welcome, strategy,
+backoffice (one 720p file, padded to 16:9), presentation, qa (padded to 16:9); 9 files, 427 MB of the 10 GB free
+allowance. `cbp/_build/media.json` holds each file's version; the originals MTG sent are in his Google Drive.
+
+A private preview of a change can be published as an unlisted folder in this bucket (relative links, `noindex`), tested from
+the session, and deleted once live: the artifact host cannot play videos from another site, this can.

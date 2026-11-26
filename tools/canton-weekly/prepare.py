@@ -112,7 +112,7 @@ def income_streams():
 
 def streams_scene():
     names = income_streams()
-    say = lambda n: n.replace(" · ", " and ").replace("·", " and ")
+    say = lambda n: n.replace(" · ", " and ").replace("·", " and ").replace("PRENET", "Prenet")   # a word, not P R E N E T
     show = lambda n: n.replace(" · ", " and ")
     lst_t = " ".join(f"{NUM[i]}, {say(n)}." for i, n in enumerate(names))
     lst_c = " ".join(f"{NUM[i]}, {show(n)}." for i, n in enumerate(names))

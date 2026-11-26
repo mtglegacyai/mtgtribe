@@ -15,8 +15,8 @@ then a notification that it is live (see `tools/canton-weekly/README.md`). Sloga
 
 ...come back and **remake the MTG TRIBE invite video** (both the 16:9 and the 9:16 version, see
 `tools/invite-horizontal/`) so it mentions **every income stream MTG has at that point**, not only the ALTRUVA
-guide it mentions today. Follow the dashboard order: 1 Bellver Affiliates, 2 JetUp · TAG Markets,
-3 ClickBaitPays, 4 Bitcoin Wealth, 5 ALTRUVA.
+guide it mentions today. Follow the dashboard order (MTG, 26 Nov 2026): 1 Bellver Affiliates, 2 PRENET, 3 Aureus Alliance,
+4 ClickBaitPays, 5 Bitcoin Wealth, 6 JetUp · TAG Markets. ALTRUVA is no longer one of his streams: leave it out.
 
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
@@ -24,6 +24,32 @@ Planning note: today the only stream MTG names out loud is ALTRUVA. Naming the o
 his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
+
+## MTG's income streams, in his order (MTG, 26 Nov 2026)
+
+"Please remove ALTRUVA from my mtgtribe.com income stream list, and put PRENET ... Position PRENET as the second after
+Bellver Affiliates across all the pages where we a list of my income streams", then "List Aureus Alliance above ClickBaitPays".
+Every list of his streams (mtgtribe.com dashboard menu, cards, rankings, footers and llms.txt; the /cbp and /bw menus, so also
+clickbaitpaysus.com and bitcoinwealthpays.com; musathegiant.com/dashboard.html) uses this order:
+
+1. Bellver Affiliates (Bellver Card), 2. **PRENET** (his link https://prenet.world/ref/mtg), 3. Aureus Alliance
+(https://www.aureus.africa/mtglegacy), 4. ClickBaitPays, 5. Bitcoin Wealth, 6. JetUp · TAG Markets.
+
+- ALTRUVA is no longer one of his streams: the /altruva/ guide stays online, unpromoted, out of every list.
+- **PRENET's guide is coming at mtgtribe.com/prenet** ("in the next few days"). Until it exists every PRENET button goes
+  straight to his link (`rel="sponsored noopener"`) with calm, minimal copy (newest stream, guide coming soon). MTG will upload
+  PRENET videos, files and content: save them, then build /prenet and update the PRENET copy everywhere it appears.
+  prenet.world refuses automated reading, so its facts come from MTG's material only. The weekly Canton video says it "Prenet".
+- Referral links carry `rel="sponsored noopener"` (PRENET, Aureus, the join links).
+
+## Standing rule: the bottom bar on the mtgtribe.com hub pages (MTG, 26 Nov 2026)
+
+"Add a similar bottom navigation buttons to the mtgtribe.com website like we have them on ClickBaitPaysUs.com,
+bitcoinwealthpays.com, and mtgtribe.com/jetup." `/assets/tribe/bottom-nav.js` (one line, phones and tablets up to 820 px):
+Home, Streams, Join Free (raised gold, the WhatsApp group), Invite (opens the invite video), Dashboard (Menu on /dashboard/,
+the Canton dashboard on the Canton pages). Loaded by the landing page, /dashboard/, /cc/, /cntn/ (the weekly reports and their hub
+get it from the cntn master through `tools/canton-weekly/build.py`) and 404. Any new hub page loads it too; /jetup, /cbp and /bw
+keep their own bars. `tools/qa/overlap.js` treats `.tbar` as a designed overlay.
 
 ## ClickBaitPays' own Cloudflare account (asked for 22 Nov 2026, set up with MTG the same day)
 
@@ -124,7 +150,7 @@ The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's histor
 **Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
 clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`). Every personal copy lives at clickbaitpaysus.com/theirname,
 the only address on the order form (MTG, 24 Nov 2026). The menu's More From MTG 👑 lists his income streams to promote there, in his
-order (Bellver, Aureus Alliance, JetUP, Bitcoin Wealth; never ALTRUVA): `MY_STREAMS`.
+order (Bellver, PRENET, Aureus Alliance, Bitcoin Wealth, JetUP; never ALTRUVA): `MY_STREAMS`.
 
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 

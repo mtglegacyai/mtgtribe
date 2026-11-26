@@ -50,8 +50,10 @@ ORDER = '/bwcopy/'                          # order form for your own Bitcoin We
 JETUP_GUIDE = 'https://mtgtribe.com/jetup/'   # MTG's JetUP and TAG Markets guide (lower case: the address is case-sensitive)
 CBP_SITE = 'https://clickbaitpaysus.com'
 AUREUS = 'https://www.aureus.africa/mtglegacy'   # Aureus Alliance: a gold mining company that sells gold mining shares (MTG, 24 Nov 2026); MTG's link
+PRENET = 'https://prenet.world/ref/mtg'          # PRENET: MTG's newest income stream (MTG, 26 Nov 2026); his referral link, guide coming at mtgtribe.com/prenet
 # menu items that lead to MTG's other sites (MTG, 22 Nov 2026: "After Crypto Card, add: JetUp ... then ClickBaitPays")
-MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'cbp': CBP_SITE}
+MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'prenet': PRENET, 'cbp': CBP_SITE}
+MENU_REF = {'aureus', 'prenet'}   # menu items that are MTG's referral links straight to the program: rel="sponsored"
 
 # on-chain facts (read from BNB Smart Chain on 14 Nov 2026; see mtg-studio ONCHAIN-CHECK-2026-11-14.md)
 CONTRACT = '0x1ad09b043E0Fe59243C9a18ee1c855bd7792Cd29'
@@ -240,11 +242,13 @@ NAV = [
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers', 'circle-help', 'Help'),
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
     ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
-    # More From MTG 👑, in MTG's order (24 Nov 2026): ClickBaitPays, Bellver Card, JetUP, Aureus Alliance, Join The MTG TRIBE
-    ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
+    # More From MTG 👑, in MTG's order of his income streams (26 Nov 2026: Bellver, PRENET, Aureus Alliance, ClickBaitPays,
+    # Bitcoin Wealth, JetUP; Bitcoin Wealth is this guide itself), then Join The MTG TRIBE
     ('card', 'dashboard/crypto-card/', 'Bellver Card', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
-    ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
+    ('prenet', PRENET, 'PRENET', 'New: guide coming soon', 'sparkles', 'More From MTG 👑'),
     ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
+    ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
+    ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG 👑')]

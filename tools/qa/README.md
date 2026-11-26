@@ -50,7 +50,7 @@ node tools/qa/overlap.js /tmp/pages.txt 320,360,375,384,390,412,430,768,1100 1,1
 ```
 
 Designed overlays are not overlaps: a play button on its cover, a badge inside its card, a list that scrolls under a sticky
-panel (`.md-bot` or `[data-scroll-under]`), the quick bar, anything marked `data-overlay`. It must print `0 with an overlap`.
+panel (`.md-bot` or `[data-scroll-under]`), the quick bar (`.qbar` on ClickBaitPays, `.tbar` on the mtgtribe.com hub pages), anything marked `data-overlay`. It must print `0 with an overlap`.
 
 # Back to the video when it ends (MTG, 10 Nov 2026)
 

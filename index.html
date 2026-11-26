@@ -102,7 +102,7 @@
 .tick .sym{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:linear-gradient(180deg,#ffd98e,#f2ad3c);color:#1a1002;font:700 14px/1 var(--f-b)}
 .tick b{color:var(--text);font-weight:700}
 .tick .up{color:var(--good)}.tick .dn{color:var(--bad)}
-.tick small{display:block;color:var(--faint);font-size:10px;letter-spacing:.12em;margin-top:3px}
+.tick small{display:block;color:var(--muted);font-size:11px;letter-spacing:.02em;margin-top:3px}
 .cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font:700 10px/1 var(--f-m);letter-spacing:.3em;text-transform:uppercase}
 .cue i{position:relative;width:1px;height:46px;background:rgba(255,255,255,.15);overflow:hidden}
 .cue i:after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:linear-gradient(transparent,var(--gold-hi))}
@@ -156,7 +156,7 @@
 .node{position:absolute;left:50%;top:60%;z-index:10;display:grid;justify-items:center;gap:10px;width:clamp(128px,15vw,176px);padding:16px 12px 14px;border-radius:20px;text-align:center;cursor:pointer;
   background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),inset 0 1px 0 rgba(255,255,255,.25),0 24px 50px rgba(0,0,0,.5);
   -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);transition:box-shadow .3s,background-color .3s;will-change:transform,opacity}
-.node .n{position:absolute;top:10px;left:12px;color:var(--faint);font:700 10px/1 var(--f-m);letter-spacing:.1em}
+.node .n{position:absolute;top:10px;left:12px;color:var(--muted);font:700 11px/1 var(--f-m);letter-spacing:.1em}
 .node .ib{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;color:var(--gold-hi);background:rgba(var(--gold-rgb),.12);box-shadow:inset 0 0 0 1px rgba(var(--gold-rgb),.35)}
 .node .ib .ic{width:22px;height:22px}
 .node b{font:400 1.25rem/1 var(--f-d);letter-spacing:.12em;text-transform:uppercase}

@@ -104,7 +104,7 @@ up; ask MTG before adding it to the repo.
 - False alarms after a look: "WE" on mtgtribe.com (caught mid-animation) and the faint step numbers on /cbp's cards
   (deliberate background numerals).
 
-**Fixed on 26 Nov 2026 with MTG's yes, shown on a private preview, live only after his approval:** JetUP's white-text
+**Fixed and approved by MTG on 26 Nov 2026 (private preview first, then live on mtgtribe.com and bitcoinwealthpays.com):** JetUP's white-text
 surfaces use a new `--grad-btn` (each stop darkened just enough for 4.5:1), JetUP's `--faint` lifted to #8b85a1, the
 home ticker line and engine labels at 11 px in `--muted`, the /bw bottom menu at .75rem and the current side menu line
 in `--muted`. Lessons for the next fix:

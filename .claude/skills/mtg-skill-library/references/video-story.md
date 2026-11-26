@@ -41,6 +41,16 @@ spoken list item gets its own shot.
 videos of 60 s or less take only the last line of the closing track. A "comment a word to get the guide" call to action
 passes mtg-scriptforge's compliance gate first, and the reward must be real (his PDF guide, a page).
 
+## Every vertical video, whatever tool builds it (from HyperFrames' checker, 26 Nov 2026)
+
+- **Words inside the apps' safe area.** On 1080 x 1920, TikTok, Reels and Shorts all leave clear from 288 to 1248 px
+  down and 120 to 888 px across, narrowing to 780 px on the right below 840 px down (TikTok's button rail). Outside it
+  only background and decoration. Burned-in captions sit at the bottom of that band.
+- **Nothing a viewer must read under 28 px**, and about 5 words per line for a claim: cut words, never shrink them.
+- **Closing lines stay long enough to read:** at least 0.5 s plus 0.3 s per word, and at least 2 s before the video
+  ends. This applies to the address, the call to action and MTG's signature line.
+- Frame 0 is the thumbnail and the hook: never black, never a logo alone.
+
 ## Explainers: one world the camera moves through
 
 - **One persistent world.** The video lives in one space that never resets. What has been drawn stays where it was; new
@@ -69,8 +79,16 @@ Craft rules that each cost a rebuild to learn:
   (HTML scenes, every frame a function of time, Playwright, ffmpeg), so it is an add-on, not a rebuild. Its
   `reverse-any-video` skill can rebuild a video's structure as an editable project: use it to **study** the structure and
   timing of a winning video in MTG's niche, never to copy someone's content or look. Its media skill can make HeyGen
-  voiceovers: for MTG only MTG Master Voice V3, and only after he approves the credits. Status: not installed; test on
-  one new short with MTG's OK.
+  voiceovers: for MTG only MTG Master Voice V3, and only after he approves the credits.
+  **Tested with MTG's OK on 26 Nov 2026:** a 13.5 s silent ClickBaitPays hook (`tools/hyperframes/cbp-hook-test/`,
+  README there) rendered at 1080 x 1920 in 41 s. Run every command with `HYPERFRAMES_NO_TELEMETRY=1 DO_NOT_TRACK=1
+  HYPERFRAMES_BROWSER_PATH=/opt/pw-browsers/chromium HYPERFRAMES_CHROME_SANDBOX=0`, pinned `npx -y hyperframes@0.9.92`.
+  Never run its `publish` command (uploads to HeyGen) or its usage beacon (`events`) without MTG's OK. Its best part is
+  `check`: it caught words under the TikTok and Reels buttons, closing lines on screen too briefly, a 26 px line and
+  two contrast failures before render. Gotcha: a block variable named `accent` also becomes the CSS variable `--accent`,
+  overriding the brand colour (the text came out pure blue); pick the block option that reads `--brand` instead and set
+  `--brand` to the site's colour. Registry blocks are sized for 16:9; after `add`, edit them for vertical (they are
+  ordinary source in the project).
 - **Herk Edit Kit:** made for videos where the creator films himself (cuts stutters, retakes and pauses, with review
   before each cut). MTG records his screen silently and the voice is V3, and we already cut from transcripts
   (`tools/invite-horizontal/`), so it is not needed now. Revisit if MTG starts filming himself talking to camera.

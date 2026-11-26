@@ -82,8 +82,10 @@ Do all of it, in this order, and do not make him repeat any of it.
 |---|---|---|
 | 001 | "5 Claude skills to get ahead of 99%" reel, 59 s (25 Nov 2026) | Impeccable: `design-review.md`. Stop Slop: `voice-pass.md`. Marketing Skills: `conversion-copy.md`, `ai-search.md`. Herk Edit Kit and HyperFrames: `video-story.md`. Details and verdicts: `sources.md` #001 |
 
-## Waiting for MTG's OK
+## Tools tested with MTG's OK (26 Nov 2026)
 
-- Run Impeccable's design checker (`npx impeccable detect`, no AI, no key) on a few pages as a test. The first attempt
-  was blocked on 25 Nov 2026 until MTG approves running outside code.
-- Test HyperFrames on one new short (for example the next ClickBaitPays reel) beside our own engine.
+- **Impeccable's design checker** on mtgtribe.com, /cbp, /bw and /jetup: how to run it, how to sort its findings, and
+  the first results are in `references/design-review.md`. Fixes not made yet: they need MTG's go-ahead and a preview.
+- **HyperFrames** on a 13.5 s ClickBaitPays test hook (`tools/hyperframes/cbp-hook-test/`): settings, gotchas and the
+  vertical-video rules its checker taught us are in `references/video-story.md`. Not yet used for a real video.
+- Neither tool is installed into the sites or the repo's agent settings; both run from the scratchpad with npx.

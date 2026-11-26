@@ -72,3 +72,12 @@ screen.
 - A scan of 111 site pages (25 Nov 2026) for Stop Slop's main patterns found about 29 matches in all, so the site copy
   is already fairly clean; the voice pass matters most for scripts, captions, posts and prospect messages.
 - The video's "ahead of 99% of people" is hype, not evidence.
+
+**Tests run with MTG's OK (26 Nov 2026):**
+
+- Impeccable 4.10.0 checker on four main pages, file scan then rendered at 360 px and 1280 px: about 195 findings per
+  width, mostly style flags; the real readability issues are listed in `design-review.md`. Needed a Chromium wrapper
+  with `--no-sandbox` (the container runs as root).
+- HyperFrames 0.9.92: a silent 13.5 s vertical ClickBaitPays hook with two registry blocks (`headline-slam`,
+  `cta-lockup`) edited for vertical; its checker passed after fixes; rendered in 41 s. Project kept in
+  `tools/hyperframes/cbp-hook-test/`. Telemetry off, nothing published.

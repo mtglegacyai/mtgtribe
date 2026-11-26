@@ -64,13 +64,45 @@ He can say any of these about a page or one part of it, and we act on that part 
 | **adapt** | Make it work at every screen size. |
 | **harden** | Edge cases: long names, empty states, errors, slow connections. |
 
-## The tool itself (not installed yet)
+## Running the checker (MTG approved it on 26 Nov 2026)
 
-Impeccable also ships a checker with 62 rules that runs with no AI and no API key (`npx impeccable detect <folder or
-URL>`), a design hook that checks each edit, and a "live" mode. Status on 26 Nov 2026: not installed, waiting for MTG's
-OK to run outside code. If he approves: run the checker on the built pages; keep live mode switched off
-(`IMPECCABLE_LIVE_COPY_AGENT=off`), because when no chat is connected it can start an agent with permission checks
-turned off; never inject it into a live site.
+Impeccable's checker has 62 rules and runs with no AI and no API key. Nothing is installed into the sites: run it from
+the scratchpad with npx, against the built pages served locally, **rendered in a real browser** (a file scan gave false
+alarms: text "on" the phone frame's rim, "flat" headings, "cramped" padding, all gone once rendered).
+
+```bash
+cd <scratchpad>/imp
+printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --no-sandbox "$@"\n' > chrome-nosandbox.sh && chmod +x chrome-nosandbox.sh
+(cd /home/user/mtgtribe && python3 -m http.server 8765 >/dev/null 2>&1 &)
+IMPECCABLE_BROWSER=$PWD/chrome-nosandbox.sh npx -y impeccable@4.10.0 detect --json --viewport 360x780 http://localhost:8765/cbp/ > phone.json
+IMPECCABLE_BROWSER=$PWD/chrome-nosandbox.sh npx -y impeccable@4.10.0 detect --json --viewport 1280x800 http://localhost:8765/cbp/ > desk.json
+```
+
+Then **look at every flagged element before acting**: each finding names a `selector`; screenshot it with Playwright
+after animations settle (a reveal caught mid-fade looks like low contrast). Sort the findings:
+
+- **category "quality"** (contrast, text under 11 px, tight line height, long lines, text overflow): real readability
+  problems. Fix them.
+- **category "slop"** (glows, gradient text, eyebrow labels, marquees, palettes): the checker's taste. Judge each one
+  against MTG's brand. Approved by MTG, keep: the play button's pulse and rings, the gold glow and silver and gold
+  headings, the ClickBaitPays neon palette, the "Independent guide by MTG 👑" chip (it carries trust information).
+  Worth proposing: glow on every element (keep it for the one focal point), same-size icon cards (show the flow instead).
+
+Keep its "live" mode off (`IMPECCABLE_LIVE_COPY_AGENT=off`): when no chat is connected it can start an agent with
+permission checks turned off. Never inject it into a live site. The design hook (`npx impeccable install`) is not set
+up; ask MTG before adding it to the repo.
+
+**First scan, 26 Nov 2026** (mtgtribe.com, /cbp, /bw, /jetup, at 360 px and 1280 px; nothing changed yet):
+
+- /jetup: the main buttons ("WATCH THE 5 CHECKS FIRST", "JOIN JETUP") put white text on a purple to pink gradient,
+  2.7 to 2.8:1 at the pink end (4.5:1 needed). Readable, but weakest where it matters most. Darken the gradient a touch.
+- /jetup footer disclaimer: grey #6e678a on near-black, 3.6:1. The risk line must be easy to read.
+- mtgtribe.com: the ticker's second line (rand price and CoinGecko time) and the engine's "01 to 05" labels: 10 px grey,
+  3.3 to 3.5:1.
+- /bw: the bottom menu labels (Home, Dashboard, Start, Sign Up) at 10.9 px; aim for 12 px. One long line (about 177
+  characters) on desktop; /jetup has three (92 to 146).
+- False alarms after a look: "WE" on mtgtribe.com (caught mid-animation) and the faint step numbers on /cbp's cards
+  (deliberate background numerals).
 
 ## Not taken, and why
 

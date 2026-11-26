@@ -141,3 +141,21 @@ pages, to tap through on his phone. How:
    inside a viewer, so Full Screen can behave differently. The link cannot be opened from the session: say the same files
    were tested locally, not that the link was tested.
 
+
+## Private preview of pages outside /bw (26 Nov 2026)
+
+For a change to mtgtribe.com, /jetup, /cbp or a few /bw pages (a stylesheet fix, a section), bundle just the changed pages:
+
+```bash
+python3 -I tools/qa/preview_bundle.py /home/user/mtgtribe <scratchpad>/preview "index.html,jetup/index.html,bw/dashboard/index.html"
+```
+
+It copies each page with the stylesheets, scripts, images and fonts it uses, rewrites the site's addresses to relative
+links, sends links to pages outside the preview to the live site, and leaves videos out (it lists them). Then:
+
+1. In the copy of `assets/zoom-cta.js`, drop the `^` from the `BW` and `JU` address checks (the private link has another
+   address), as in step 4 above.
+2. Write a short guide page as `<preview>/index.html`: what changed, before and after pictures (live site against the
+   local build, at the same width), and a button into each page with what to look at.
+3. Serve the folder locally and load every page at 360 px: no missing file except the videos, no script error, no
+   sideways scroll. Then publish `index.html` with every other file as a supporting file, and tell MTG what differs.

@@ -104,6 +104,23 @@ up; ask MTG before adding it to the repo.
 - False alarms after a look: "WE" on mtgtribe.com (caught mid-animation) and the faint step numbers on /cbp's cards
   (deliberate background numerals).
 
+**Fixed on 26 Nov 2026 with MTG's yes, shown on a private preview, live only after his approval:** JetUP's white-text
+surfaces use a new `--grad-btn` (each stop darkened just enough for 4.5:1), JetUP's `--faint` lifted to #8b85a1, the
+home ticker line and engine labels at 11 px in `--muted`, the /bw bottom menu at .75rem and the current side menu line
+in `--muted`. Lessons for the next fix:
+
+- **Before changing a shared colour, find every place it is used.** JetUP's `--grad` also colours gradient headings on
+  the dark ground, where darker colours would hurt; a separate token for the surfaces that carry white text fixed the
+  buttons without touching the headings.
+- **Bigger text can wrap.** Measure the line against the live site at 320, 360, 384 and 412 px; tighten letter spacing
+  before accepting a new line break (the ticker kept today's behaviour at 11 px with .02em).
+- **Rescan pages you have not scanned yet** after a fix: the same issue often sits next door (the side-menu Join button,
+  the /bw current menu item).
+- **A stylesheet-only change on /bw** does not need the full builder (which needs mtg-studio's masters): the builder
+  copies `bw/_build/src/assets/bw.css` to `/bw/assets/bw.css` and stamps every page with its md5 (first 8 characters).
+  Do exactly that, check every page carries the new stamp, and do the same on bitcoinwealthpays.com at go-live.
+- **Preview for pages outside /bw:** `tools/qa/preview_bundle.py` (see `tools/qa/README.md`).
+
 ## Not taken, and why
 
 - Its ban on emoji: MTG's brand emoji stay (👑 💪 👉 in his signature, captions and descriptions). For interface icons

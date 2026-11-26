@@ -91,7 +91,7 @@ COPY = {
     'levels': ('All <em>7 levels</em> in one table', 'From $13 USDT. Activate a level once.'),
     'timeline': ('<em>12 + 7</em>: when it is yours', '12 click days, a 7-day hold, then your balance.'),
     'plan': ('The compensation <em>plan</em>', 'How you earn at every level, on video.'),
-    'grow': ('If it has a link, <em>promote it here</em>', 'BellverCards, Bitcoin Wealth, JetUP, MLM, affiliate, stokvel.'),
+    'grow': ('If it has a link, <em>promote it here</em>', 'BellverCards, PRENET, Bitcoin Wealth, JetUP, MLM, stokvel.'),
     'legit': ('Is it <em>legit?</em>', 'The facts, and how to check it yourself.'),
     'calc': ('ClickBaitPays <em>calculator</em>', 'What you pay today, your clicks and your payout date.'),
     'daily': ('Your <em>daily</em> routine', 'Log in, click, done. New clicks at 7:00 AM.'),

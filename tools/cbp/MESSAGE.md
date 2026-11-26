@@ -15,7 +15,7 @@ It is a **traffic source**, not an investment. Say it that way, every time.
 
 ## Who it is for (name them; this is what people really promote)
 
-BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM
+BellverCards, PRENET, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM
 programs, affiliate programs, digital products, their own business. "If it has a link, it belongs on ClickBaitPays."
 
 Not "your shop, a YouTube video, your WhatsApp group": MTG called that weak (22 Nov 2026). Lead with the programs people are
@@ -45,7 +45,7 @@ building today.
 
 ## Three streams of income, one account
 
-1. **Your program grows**: the ad brings real people to BellverCards, Bitcoin Wealth, JetUP or whatever you promote.
+1. **Your program grows**: the ad brings real people to BellverCards, PRENET, Bitcoin Wealth, JetUP or whatever you promote.
 2. **Your clicks pay**: USDT per view, from $0.48 (Level 1) to $13.50 (Level 7), for 3 to 20 ads a day.
 3. **Your referrals pay**: 10% of the campaigns your referrals buy.
 

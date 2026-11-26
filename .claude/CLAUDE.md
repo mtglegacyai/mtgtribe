@@ -234,6 +234,17 @@ When something takes MTG's work to the next level, update the relevant skill in 
 package to install in his account), or create a new skill and tell him. Use the skills whenever they fit, without waiting
 to be asked.
 
+## Standing rule: the skill library, fed by the videos MTG sends (MTG, 25 and 26 Nov 2026)
+
+"I'll add more similar videos ... for you to extract more skills from, save them, and use them across everything we are
+working on here ... videos, websites, marketing, advertising, traffic generation, rankings, content optimisation, SEO
+optimisations, video ads, sales letters, video sales letters, adverts, and much more." The skill
+`.claude/skills/mtg-skill-library/` does both jobs. **Intake:** every skills or tips video he sends is transcribed,
+traced to its real source, read (never run without his OK), judged against his rules, adapted in our words, logged in
+`references/sources.md` and committed. **Apply:** its Apply table says which file to read for each kind of job; read it
+before every job and check the work against it before a preview, without being asked. His rules always win over the
+library, and the library over the upstream text.
+
 ## MTG's voice: MTG Master Voice V3 (MTG, 10 Nov 2026)
 
 "V3 sounds better, sounds exactly like me": from 10 Nov 2026 every new line is HeyGen **MTG Master Voice V3**, voice ID

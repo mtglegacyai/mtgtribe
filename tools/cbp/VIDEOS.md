@@ -90,7 +90,7 @@ MTG's 22 Nov 2026 layer on top of it:
 4. **One everyday picture.** An analogy people live with (a taxi rank, a queue, a shop on a busy street, a billboard, a
    community noticeboard, a season ticket, a harvest), and where it stops when that matters.
 5. **Open their eyes.** One moment that shows what is possible, tied to the step: Got a link? Get it seen; BellverCards,
-   Bitcoin Wealth, JetUP and XFUSION are links too; the three streams in one account; MTG's own BellverCards story; your own
+   PRENET, Bitcoin Wealth, JetUP and XFUSION are links too; the three streams in one account; MTG's own BellverCards story; your own
    copy of this website. Never an income promise.
 6. **The smart nuggets.** 2 or 3 in a short video, up to 5 in a long one: the tip that saves trouble ("Preview first: test
    the door before you invite guests"), the reason behind a rule, the thing most people miss. The viewer should think "this

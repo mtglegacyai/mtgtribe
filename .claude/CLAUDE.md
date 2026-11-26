@@ -291,7 +291,7 @@ How to buy Canton Coin, step by step:
 "If you have a link for it, you can promote it on ClickBaitPays, get traffic, while you make money with ClickBaitPays at the
 same time, increasing your streams of income ... this is my biggest selling point." Every ClickBaitPays page, script and
 video (tutorials, explainers, reels, shorts, ads, promos) follows `tools/cbp/MESSAGE.md`: Got a link? Get it seen. Name the
-programs people really promote (BellverCards, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvels,
+programs people really promote (BellverCards, PRENET (always second, MTG 26 Nov 2026), Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvels,
 MLM and affiliate programs, digital products), use MTG's own BellverCards story as proof, and sell the website copy as the
 guide that sells the real reason people join. A traffic source, never an investment; no income promises.
 

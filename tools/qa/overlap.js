@@ -25,7 +25,7 @@ const SCALES = (process.argv[4] || '1,1.15,1.3').split(',').map(Number);
       await p.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; document.querySelectorAll('.rv,.pre').forEach(e => e.classList.remove('pre')); });
       await p.waitForTimeout(250);
       const found = await p.evaluate(() => {
-        const skip = el => (el.closest('details:not([open])') && !el.closest('summary')) || el.closest('defs,symbol,.pl-scr,.sheet,.toast,.ud,.md-toggle,.md-scrim,.sr,[hidden],[aria-hidden="true"]:not(svg),.skip,[data-overlay],.qbar');
+        const skip = el => (el.closest('details:not([open])') && !el.closest('summary')) || el.closest('defs,symbol,.pl-scr,.sheet,.toast,.ud,.md-toggle,.md-scrim,.sr,[hidden],[aria-hidden="true"]:not(svg),.skip,[data-overlay],.qbar,.tbar');
         const shown = el => { for (let e = el; e && e.nodeType === 1; e = e.parentElement) { const s = getComputedStyle(e); if (s.display === 'none' || s.visibility === 'hidden' || +s.opacity === 0) return false; } return true; };
         const off = r => r.width < 1 || r.height < 1 || r.right < 0 || r.left > innerWidth;
         const boxes = [];

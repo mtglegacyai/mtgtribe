@@ -105,7 +105,7 @@ COPY = {
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
-    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, Aureus Alliance, JetUP and Bitcoin Wealth.'),
+    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, PRENET, Aureus Alliance, Bitcoin Wealth and JetUP.'),
     'copy': ('Get <em>this website</em>', 'The guide that sells the real reason people join. Your link on every button.'),
     'disc': ('The small print, in <em>plain words</em>', 'Independent guide, the referral link and your privacy.'),
 }
@@ -120,8 +120,9 @@ def visual(key):
         sh = 'filter:drop-shadow(0 14px 24px rgba(0,0,0,.6))'
         return (f'<div class="vis" style="width:560px;height:380px">'
                 f'<img src="{b64(os.path.join(b, "bellver-card.webp"), "image/webp")}" style="position:absolute;left:0;top:34px;width:290px;transform:rotate(-8deg);filter:drop-shadow(0 20px 30px rgba(0,0,0,.6))" alt="">'
-                f'<img src="{b64(os.path.join(b, "aureus-logo.webp"), "image/webp")}" style="position:absolute;right:0;top:12px;width:200px;{sh}" alt="">'
-                f'<img src="{b64(os.path.join(b, "jetup-logo.webp"), "image/webp")}" style="position:absolute;right:18px;top:168px;width:150px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "prenet-tile.webp"), "image/webp")}" style="position:absolute;right:0;top:0;width:220px;transform:rotate(5deg);{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "aureus-logo.webp"), "image/webp")}" style="position:absolute;right:6px;bottom:0;width:150px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "jetup-logo.webp"), "image/webp")}" style="position:absolute;right:18px;top:158px;width:150px;{sh}" alt="">'
                 f'<img src="{b64(os.path.join(b, "bitcoin-wealth-logo.webp"), "image/webp")}" style="position:absolute;left:232px;bottom:0;width:118px;{sh}" alt="">'
                 f'<img src="{b64(os.path.join(ROOT, "tools", "cbp", "brand", "mtg-photo-256.webp"), "image/webp")}" style="position:absolute;left:52px;bottom:4px;width:112px;height:112px;border-radius:50%;box-shadow:0 0 0 4px #ffd866,0 0 30px rgba(255,216,102,.5)" alt=""></div>')
     if key == 'videos':

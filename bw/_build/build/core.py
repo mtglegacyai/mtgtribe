@@ -453,7 +453,7 @@ def sidebar(key, here):
             group = g
         cur = ' aria-current="page"' if k == key else ''
         if k in MENU_EXT:
-            out.append(f'<a class="snav ext" href="{esc(MENU_EXT[k])}" target="_blank" rel="noopener"{cur}><span class="si">{ic(icon)}</span>'
+            out.append(f'<a class="snav ext" href="{esc(MENU_EXT[k])}" target="_blank" rel="{"sponsored noopener" if k in MENU_REF else "noopener"}"{cur}><span class="si">{ic(icon)}</span>'
                        f'<span class="stx"><b>{label}</b><small>{sub}</small></span>{ic("external-link", "ic xl")}'
                        f'<span class="sr">(opens in a new tab)</span></a>')
             continue

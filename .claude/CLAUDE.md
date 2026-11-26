@@ -169,6 +169,14 @@ at a time. JetUP's plan and status: `tools/learning-system/PLAN.md`. JetUP voice
 Every opportunity is landing page, then its Dashboard button, then the dashboard: the top of every dashboard gets the
 click-by-click site tour video, replacing MTG's photo card where there is one (mtgtribe.com/dashboard/ today).
 
+## Standing rule: tools/ is not on the website (MTG, 26 Nov 2026)
+
+"Hide the tools folder from the website." `_config.yml` tells GitHub Pages (Jekyll) to leave `tools/` out, like `_build`
+and `.claude`: MTG's notes, scripts and drafts stay in the repository only (mtgtribe.com/tools/... answers 404). A public
+page must never use a file from `tools/`: anything a page needs goes in the site's own folders (`assets/`, a guide's `img/`
+or `media/`). A new private folder at the root goes into `exclude` in `_config.yml` too. The guides' calculator pages
+(/jetup/tools/, /bw/dashboard/tools/) are not affected.
+
 ## Standing rule: nothing scrolls sideways on phones (MTG, 6 November 2026)
 
 - No page, section, table, card or button may make a visitor scroll sideways on a smartphone, at normal or larger

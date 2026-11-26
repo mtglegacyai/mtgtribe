@@ -1,0 +1,16 @@
+# GitHub Pages (Jekyll) settings for mtgtribe.com.
+#
+# tools/ holds MTG's working notes, build scripts, drafts and QA tools. It is part of the repository, never part of
+# the website (MTG, 26 Nov 2026: "hide the tools folder from the website"). No public page uses a file from it.
+# Folders starting with _ or . (the page builders in _build, .claude) are already left out by Jekyll itself.
+#
+# Setting "exclude" replaces Jekyll's own default list, so its defaults are kept here too.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - tools

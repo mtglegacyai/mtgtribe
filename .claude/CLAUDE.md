@@ -183,6 +183,12 @@ mtgtribe.com, make sure that musathegiant.com syncs automatically while being it
   addresses, video-return.js, wa-message.js, zoom-cta.js) and rewrites the Income Streams column in every page footer and llms.txt.
   It checks that musathegiant.com/dashboard.html shows the streams in the same order and fails (GitHub emails MTG) if not:
   that dashboard's cards are designed by hand, so update them in the same job as streams.json.
+- **Its Bellver guide (musathegiant.com/cards/bellvercards/, 16 pages) copies bellveraffiliates.com in the same hourly job**
+  (MTG, 27 Nov 2026: "Make sure all income stream pages on musathegiant.com are up to date"): `.github/sync/bellver.py` keeps the
+  page links on musathegiant.com and loads styles, scripts, images, PDFs and videos from bellveraffiliates.com. So publish Bellver
+  changes to bellveraffiliates.com only; musathegiant.com follows within the hour. The Bellver build source in
+  `musathegiant/cards/bellvercards/_build` stops at 4 Nov 2026 (later work went straight to bellveraffiliates.com), so `publish.py`
+  refuses to run until that source is brought up to date with the live site (then `BV_SOURCE_OK=1`).
 - Never edit musathegiant.com/index.html by hand. A new mtgtribe.com home page section appears there on the next run; if the
   mtgtribe.com home page changes so much that a step cannot run safely, the script stops and writes nothing.
 - After a change here, run it at once instead of waiting: `python3 .github/sync/sync.py /home/user/mtgtribe` in the

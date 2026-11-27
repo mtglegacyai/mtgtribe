@@ -74,7 +74,9 @@ Do all of it, in this order, and do not make him repeat any of it.
    and anything that needs his OK (running outside code, HeyGen credits, a change to a live site).
 10. **Commit on the working branch** and push it (never live without his approval), so the next session has it.
     After a few new entries, give him a fresh package of this skill to install in his account
-    (`scripts/package.sh`), so it works in his other projects too.
+    (`scripts/package.sh`), so it works in his other projects too. It makes two zips: the skill on its own (for
+    Customize > Skills > + > Create skill > Upload a skill) and the skill wrapped as a plugin (for the newer Plugins page:
+    Add > Upload plugin, the route MTG's account shows since 27 Nov 2026). Send both; he uses the one his screen offers.
 
 ## Library index
 

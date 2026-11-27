@@ -321,6 +321,7 @@ def install_bwp(dst):
         s, t = dst + '/' + x, BWP_REPO + '/' + x
         shutil.copytree(s, t) if os.path.isdir(s) else shutil.copy(s, t)
     shutil.copy(REPO + '/assets/video-return.js', BWP_REPO + '/assets/video-return.js')
+    shutil.copy(REPO + '/assets/updown.js', BWP_REPO + '/assets/updown.js')
     for old, to in BWP_OLD.items():
         assert to == '' or os.path.exists(dst + '/' + to + 'index.html'), ('no page for', old, to)
         if not os.path.exists(BWP_REPO + '/' + old):          # never over a page of the new guide

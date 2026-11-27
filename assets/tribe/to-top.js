@@ -37,3 +37,6 @@ b.addEventListener('click',function(e){
   var t=d.querySelector('.skip')||d.querySelector('a[href],button');if(t)setTimeout(function(){try{t.focus({preventScroll:true})}catch(e){}},reduce?0:500);
 });
 })();
+
+/* Up and Down buttons on long pages (MTG, 27 Nov 2026): loads /assets/updown.js once. */
+;(function(){if(window.__mtgUD||document.querySelector('script[src*="updown.js"]'))return;var s=document.createElement("script");s.src="/assets/updown.js?v=1";s.defer=true;document.head.appendChild(s)})();

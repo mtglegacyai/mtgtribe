@@ -169,6 +169,35 @@ at a time. JetUP's plan and status: `tools/learning-system/PLAN.md`. JetUP voice
 Every opportunity is landing page, then its Dashboard button, then the dashboard: the top of every dashboard gets the
 click-by-click site tour video, replacing MTG's photo card where there is one (mtgtribe.com/dashboard/ today).
 
+## Standing rule: musathegiant.com follows mtgtribe.com automatically (MTG, 27 Nov 2026)
+
+"Update my musathegiant.com such that it's at the same level ... as mtgtribe.com ... any new updates that I am pushing onto
+mtgtribe.com, make sure that musathegiant.com syncs automatically while being its own website." How:
+
+- **`/assets/tribe/streams.json` is the one list of MTG's income streams** (name, one-liner, facts, link, button words, in his
+  order). Whenever a stream is added, removed, renamed or moved, change it there in the same pull request as the mtgtribe.com pages.
+- **musathegiant.com rebuilds itself from mtgtribe.com every hour** (repo mtglegacyai/musathegiant, `.github/sync/sync.py`, run by
+  `.github/workflows/sync-from-mtgtribe.yml`): its home page is the mtgtribe.com home page (same design, motion and sections) with
+  its own name, address, title, description, canonical and structured data, its own Income Streams and Free Tools sections and its
+  own footer; it copies the shared design files (tribe.css, tribe-scene.js, cntn-live.js, to-top.js, bottom-nav.js with its own
+  addresses, video-return.js, wa-message.js, zoom-cta.js) and rewrites the Income Streams column in every page footer and llms.txt.
+  It checks that musathegiant.com/dashboard.html shows the streams in the same order and fails (GitHub emails MTG) if not:
+  that dashboard's cards are designed by hand, so update them in the same job as streams.json.
+- Never edit musathegiant.com/index.html by hand. A new mtgtribe.com home page section appears there on the next run; if the
+  mtgtribe.com home page changes so much that a step cannot run safely, the script stops and writes nothing.
+- After a change here, run it at once instead of waiting: `python3 .github/sync/sync.py /home/user/mtgtribe` in the
+  musathegiant repo, check, and publish (or run the workflow from the Actions tab).
+
+## Standing rule: Up and Down buttons on every long page, every site (MTG, 27 Nov 2026)
+
+"All the long pages ... have those two buttons", like clickbaitpaysus.com. `/assets/updown.js` (the same file in every repo:
+mtgtribe, musathegiant, bellveraffiliates, bitcoinwealthpays, clickbaitpays) adds Down next to the page's own Up button (same look,
+arrow turned round; Up shown: Down sits above it, Up hidden: Down takes its place) or draws a gold pair where there is none. Down goes
+to the next section, then the footer. Only on pages longer than about two screens, never on a video picture. It is loaded by each
+site's shared script (video-return.js, bottom-nav.js, to-top.js, bellver.js, pages.js, mtg-dash.js), so a new page that loads one of
+those has it; otherwise add `<script src="/assets/updown.js?v=1" defer></script>`. The /cbp guide keeps its own pair. The bw build
+copies the file to bitcoinwealthpays.com (`install_bwp`).
+
 ## Standing rule: tools/ is not on the website (MTG, 26 Nov 2026)
 
 "Hide the tools folder from the website." `_config.yml` tells GitHub Pages (Jekyll) to leave `tools/` out, like `_build`

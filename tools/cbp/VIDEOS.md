@@ -115,6 +115,37 @@ MTG's 22 Nov 2026 layer on top of it:
 SERIES_QUOTE: not chosen yet (proposed 22 Nov 2026: "One ad. The right person. The right time.", from MTG's own
 BellverCards story). Write MTG's choice here, then use it word for word.
 
+**In every ClickBaitPays video, tutorial or explainer (MTG, 27 Nov 2026), each one quick:**
+
+> "I just want to have the videos that speak to someone in a way that makes them take action ... make me say all the punchiest
+> and powerful ClickBaitPays punchlines or slogans where appropriate ... do not make ... each video too long. So it must be a
+> quick thing." (MTG)
+
+1. **ClickBaitPays in one sentence**, so nobody is lost: "ClickBaitPays is a traffic source that lets anyone, anywhere in the
+   world, put whatever they already promote in front of real people, and get paid in USDT to view other members' ads while
+   they do." Then the punchline where it fits: **Got a link? Get it seen.**
+2. **It is for everyone:** people who do not want to recruit and top builders, TikTok LIVE hosts, people who post every day
+   and people who never post. Anyone promoting something, or looking for an extra income stream. And ClickBaitPays has
+   several income streams inside it: your program grows, your clicks pay, your referrals pay.
+3. **Something to promote: MTG's income streams, tap by tap, in a few seconds.** Open the menu, More From MTG 👑, and show
+   each stream in the site's own order (today: Bellver Card, PRENET, Aureus Alliance, Bitcoin Wealth, JetUP): "If you don't
+   have something to promote yet, or you want to add an income stream, check these out, add them, and promote them right
+   here." Use one standard clip filmed from the live menu (refilmed whenever the list changes) unless MTG records it himself.
+4. **The website copy, as a no-brainer:** "Want this exact website, with your name and your link on every Join button?"
+   Price both ways: **R1,000 or $50 in USDT, once-off, pay only after it is built and you have seen it.** What you get:
+   your own address (clickbaitpaysus.com/yourname), your referral link on every Join button, your own pages and social
+   buttons, every video, tutorial and tool; **unlimited free edits, forever** (ask for a change any time, never a fee);
+   **updated automatically** whenever ClickBaitPays updates, launches or announces something, at no extra cost; the link for
+   your TikTok, Facebook and Instagram bio, so "link in my bio" sends people to your own website. 10 to 15 seconds, then
+   point to the dedicated video (E5, Get this website) and the order page.
+5. **The most compelling CTA, punchlines and a motivational line** in every video, never hype, never an income promise.
+6. **The close:** the recap, the strong call to action, thanks for watching to the end, and **the next video named**.
+7. **MTG never says "Let's Get This Crypto!" in his own voice** (MTG, 27 Nov 2026: "when I say it myself with my voice ... it
+   just doesn't sound right ... just let my theme music do that"). The slogan comes from the theme song "They Call Me MTG"
+   under the ending, and appears on the end card in writing.
+
+The dedicated video for the copy (clickbaitpaysus.com/yourname) is E5 in the lineup: these mentions stay short.
+
 **Look and feel:** zoom in on the action and out for context, arrows and rings on what to look at, emoji pops on key words,
 smooth transitions, captions with the spoken word lit, a step progress bar, the official ClickBaitPays emblem where MTG's
 photo would be, Orbitron headings, every amount with its $ sign ($300 USDT, +$30 activation). Sounds: only the signature

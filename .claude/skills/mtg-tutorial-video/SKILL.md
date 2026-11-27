@@ -39,7 +39,7 @@ thumbnail; the official JetUP logo takes its place** (MTG, 8 Nov 2026), and the 
    his slogan, banked in the sign-up training's own take: `signup-training/t3.mp3`, 0 credits).
 8. **Signature outro** (banked): financial advice reminder, do your own research, thank you for every like, share and
    comment, your support means everything, thank yourself for taking massive action, YOU are the best, I'm MTG, Your
-   Digital Architect, see you on the next one, Let's Get This Crypto! Then the end card, held about 3.4 s after his last
+   Digital Architect, see you on the next one (never "Let's Get This Crypto!" in his voice: the theme song sings it). Then the end card, held about 3.4 s after his last
    word, with the site address (mtgtribe.com/jetup) as a large pill visible to the last frame (MTG, 8 Nov 2026).
 
 **Steps 6 to 8 always play as the signature ending of the 9:09 sign-up training** (MTG, 8 Nov 2026: "the best transitions,
@@ -116,7 +116,7 @@ sign-up training. Do not invent a new ending, sound set or transition style per 
   the training engine's own helpers; `retime_part.py` inserts the banked lines and re-times a part; `compose_kit.py`
   composites the ending onto the stage frames; `mix_consistent.py` is the one mix for every video.
 
-**The slogan (MTG, 16 Nov 2026):** keep his original recorded "Let's Get This Crypto!". He rejected vocoder re-shaped versions; never re-shape his voice.
+**The slogan (MTG, 27 Nov 2026):** MTG never says "Let's Get This Crypto!" in his own voice in a video, not even his original take: "when I say it myself with my voice ... it just doesn't sound right ... just let my theme music do that." The theme song "They Call Me MTG" carries it under the ending, and the end card shows it in writing. (16 Nov 2026: never re-shape his voice with a vocoder.)
 
 **Leo, the mascot (MTG, 16 Nov 2026), in videos that use him:** wherever Leo appears he speaks, and when he points at something he
 says what it is; never a silent, pointing or lip-moving Leo. Give him only the lines that make sure people get it, understand it

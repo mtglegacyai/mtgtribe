@@ -246,7 +246,7 @@ NAV = [
     # different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"; Bitcoin Wealth is this guide itself).
     ('card', 'dashboard/crypto-card/', 'Bellver Cards', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
     ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
-    ('prenet', PRENET, 'PRENET', 'New: guide coming soon', 'sparkles', 'More From MTG 👑'),
+    ('prenet', PRENET, 'PRENET', 'Join free, get in early', 'sparkles', 'More From MTG 👑'),
     ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
     ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),

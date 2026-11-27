@@ -334,6 +334,11 @@ Every video also opens with an outline after the greeting, ends with "In this vi
 (a strong call to action like bellveraffiliates.com's, thanks for watching to the end, the way forward) and one closing
 quote per series, never varied. MTG's order of work for ClickBaitPays (22 Nov 2026): the Cloudflare account first, then
 clickbaitpaysus.com updated and kept in sync with mtgtribe.com/cbp, then the videos one at a time (`tools/cbp/VIDEOS.md`).
+**Every ClickBaitPays video also carries, each part quick (MTG, 27 Nov 2026):** ClickBaitPays in one sentence and its punchline,
+who it is for (everyone, recruiter or not, posting or not), MTG's income streams shown tap by tap from the menu, the website copy
+as a no-brainer (R1,000 or $50 in USDT once-off, unlimited free edits forever, updated automatically at no extra cost, the
+link-in-bio address clickbaitpaysus.com/yourname), the strongest CTA and punchlines, and the next video named. **MTG never says
+"Let's Get This Crypto!" in his own voice: the theme song carries it** (all his videos). Details: `tools/cbp/VIDEOS.md`, section 3.
 
 ## Standing rule: replies to prospects (MTG, 18 Nov 2026)
 

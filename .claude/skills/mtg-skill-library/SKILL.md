@@ -87,7 +87,7 @@ Do all of it, in this order, and do not make him repeat any of it.
 ## Tools tested with MTG's OK (26 Nov 2026)
 
 - **Impeccable's design checker** on mtgtribe.com, /cbp, /bw and /jetup: how to run it, how to sort its findings, and
-  the first results are in `references/design-review.md`. Fixes not made yet: they need MTG's go-ahead and a preview.
+  the first results are in `references/design-review.md`. The fixes went live on 26 Nov 2026 after MTG approved the preview.
 - **HyperFrames** on a 13.5 s ClickBaitPays test hook (`tools/hyperframes/cbp-hook-test/`): settings, gotchas and the
   vertical-video rules its checker taught us are in `references/video-story.md`. Not yet used for a real video.
 - Neither tool is installed into the sites or the repo's agent settings; both run from the scratchpad with npx.

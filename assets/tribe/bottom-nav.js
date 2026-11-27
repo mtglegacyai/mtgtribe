@@ -44,7 +44,7 @@ css.textContent =
  '.tbar .tb-join{color:#fff3d6;font-weight:800}' +
  '.tbar .tb-join .tbi{box-sizing:content-box;width:24px;height:24px;margin-top:-22px;padding:12px;border-radius:50%;color:#1a1002;background:linear-gradient(180deg,#ffe3a3,#f2ad3c 60%,#d9901f);' +
   'box-shadow:0 0 0 4px rgba(12,9,5,.95),0 8px 22px rgba(242,173,60,.45),inset 0 1px 0 rgba(255,255,255,.5)}' +
- '#totop{bottom:calc(84px + env(safe-area-inset-bottom,0px))!important}' +
+ '#totop,.mtg-up{bottom:calc(84px + env(safe-area-inset-bottom,0px))!important}' +
  '#toast.toast{bottom:calc(152px + env(safe-area-inset-bottom,0px))!important}' +   /* the home page tour note: above the bar and the back-to-top button */
 '}' +
 '@media (max-width:820px) and (prefers-reduced-motion:no-preference){.tbar .tb-join .tbi{animation:tbpulse 3s ease-in-out infinite}}' +
@@ -86,3 +86,6 @@ if (menuBtn) {
   sync();
 }
 })();
+
+/* Up and Down buttons on long pages (MTG, 27 Nov 2026): loads /assets/updown.js once. */
+;(function(){if(window.__mtgUD||document.querySelector('script[src*="updown.js"]'))return;var s=document.createElement("script");s.src="/assets/updown.js?v=1";s.defer=true;document.head.appendChild(s)})();

@@ -1,0 +1,79 @@
+{
+  "_about": "MTG's income streams, in his order (MTG, 26 Nov 2026). The single source of truth for every stream list on mtgtribe.com and musathegiant.com. musathegiant.com reads this file automatically (its sync job, .github/sync/sync.py in mtglegacyai/musathegiant, runs every hour). When a stream is added, removed, renamed or moved, change it here in the same pull request as the mtgtribe.com pages.",
+  "updated": "2026-11-27",
+  "streams": [
+    {
+      "id": "bellver",
+      "name": "Bellver Card",
+      "short": "Primary stream: the crypto card",
+      "tag": "The crypto card that can pay your bills.",
+      "blurb": "Spend your crypto like cash with your own card, and earn monthly rewards when the people you refer use theirs. Full guide, videos and calculators.",
+      "facts": ["Order from $99", "Visa physical, Mastercard virtual", "Your own private-key wallet"],
+      "url": "https://bellveraffiliates.com/",
+      "mtg_url": "/cards/bellvercards/",
+      "cta": "Read the Bellver guide",
+      "badge": "Primary stream",
+      "sponsored": false
+    },
+    {
+      "id": "prenet",
+      "name": "PRENET",
+      "short": "Newest stream, guide coming soon",
+      "tag": "Our newest income stream. Join it today.",
+      "blurb": "The full plain-English PRENET guide is being built on mtgtribe.com. Until it is ready, join with MTG's link and read every detail on PRENET's own site before you decide.",
+      "facts": ["Stream #2, right after Bellver", "Full guide coming soon", "Launch news in the WhatsApp group"],
+      "url": "https://prenet.world/ref/mtg",
+      "cta": "Join PRENET with MTG",
+      "badge": "New",
+      "sponsored": true
+    },
+    {
+      "id": "aureus",
+      "name": "Aureus Alliance",
+      "short": "Gold mining shares",
+      "tag": "Own shares in gold mining.",
+      "blurb": "Aureus Alliance Holdings runs Aureus Africa, a South African platform for owning shares in gold mining, with your own client account. Read every detail on its official site before you decide.",
+      "facts": ["A South African company", "Shares in gold mining", "Your own client account"],
+      "url": "https://www.aureus.africa/mtglegacy",
+      "cta": "Visit Aureus Alliance",
+      "badge": "Active",
+      "sponsored": true
+    },
+    {
+      "id": "clickbaitpays",
+      "name": "ClickBaitPays",
+      "short": "Advertise, view, earn",
+      "tag": "Got a link? Get it seen.",
+      "blurb": "Advertise, view ads and earn on one platform. It is also a traffic source: put any link you promote in front of real viewers while you earn.",
+      "facts": ["Free registration", "Campaigns from $14 USDT", "Daily ad views"],
+      "url": "https://clickbaitpaysus.com/",
+      "cta": "Read the guide",
+      "badge": "Active",
+      "sponsored": false
+    },
+    {
+      "id": "bitcoinwealth",
+      "name": "Bitcoin Wealth",
+      "short": "Accumulate Bitcoin",
+      "tag": "A different way to accumulate Bitcoin.",
+      "blurb": "A community-driven system that has people rethinking how they stack Bitcoin. The free guide walks through how it works, where the money moves and how to check every payment yourself.",
+      "facts": ["Entry point 0.001 BTC", "Free course, learn first", "Step-by-step videos"],
+      "url": "https://bitcoinwealthpays.com/",
+      "cta": "Read the guide",
+      "badge": "Active",
+      "sponsored": false
+    },
+    {
+      "id": "jetup",
+      "name": "JetUp · TAG Markets",
+      "short": "Copy trading guide by MTG",
+      "tag": "Copy trading, explained before you commit.",
+      "blurb": "Copy trading with Sonic AI, an account opened in your own name at TAG Markets, and the JetUP community and partner plan, every rule in plain English.",
+      "facts": ["Sonic AI copy trading", "Your account, in your own name", "6-part sign-up training"],
+      "url": "https://mtgtribe.com/jetup/",
+      "cta": "Read the JetUP guide",
+      "badge": "Active",
+      "sponsored": false
+    }
+  ]
+}

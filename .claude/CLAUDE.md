@@ -47,9 +47,16 @@ the names from the dashboard menu. bellveraffiliates.com has no stream list.
 - **PRENET's guide is coming at mtgtribe.com/prenet** ("in the next few days"). Until it exists every PRENET button goes
   straight to his link (`rel="sponsored noopener"`) with calm, minimal copy (newest stream, guide coming soon). MTG will upload
   PRENET videos, files and content: save them, then build /prenet and update the PRENET copy everywhere it appears.
-  **As soon as he uploads more about PRENET, update its card everywhere at once** (MTG, 27 Nov 2026), replacing today's
-  "Our newest income stream. Join it today. The full plain-English PRENET guide is being built on mtgtribe.com. Until it is
-  ready, join with MTG's link and read every detail on PRENET's own site before you decide." The places: `streams.json`
+  **As soon as he uploads more about PRENET, update its card everywhere at once** (MTG, 27 Nov 2026). **Done 27 Nov 2026**
+  from his presentation and videos ("compelling ... gives the reader an idea of what PRENET is, and why now"): headline
+  "Join free today. Be in position before the next big trend."; blurb "One free sign-up places you in four team structures
+  at once: Matrix, Unilevel, Binary and the Global Line. Build your network now, and new projects, like AI tools from NEX
+  Generation Systems, plug in later when you opt in. Timing counts: the sooner you join, the more people join after you.";
+  chips "Free sign-up, 4 structures", "Full guide coming soon", "Launch news in the WhatsApp group" (MTG keeps the last two:
+  he adds people to the group); menu line "Join free, get in early"; button "Join PRENET free with MTG". Name the line
+  structure "Global Line" (PRENET's own site and slides; one video says "Monoline"). Raw material (PDF, videos, notes) is in
+  the private R2 bucket `prenet-media` on the Mtglegacyai Cloudflare account, list in `intake/INVENTORY.md`. When /prenet
+  is built, MTG wants it to outrank every page about PRENET (official and unofficial). The places: `streams.json`
   (tag, blurb, facts, cta), the mtgtribe.com dashboard card, musathegiant.com/dashboard.html, the /cbp PRENET entry in
   `MY_STREAMS` (My Income Streams page and menu line) and its tile `tools/cbp/brand/streams/prenet-tile.webp`, the /bw menu line,
   and the PRENET lines in every llms.txt.

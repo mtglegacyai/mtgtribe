@@ -213,8 +213,8 @@ def hero_split():
 <div class="chip" style="left:70px;top:470px"><span class="e">🙌</span>No fee on a losing trade</div>'''
 
 def hero_dashboard():
-    # MTG's order (26 Nov 2026): Bellver, PRENET, Aureus Alliance, ClickBaitPays, Bitcoin Wealth, JetUP; ALTRUVA is no longer listed
-    rows = [('Bellver Card', 'Spend your crypto like cash'), ('PRENET', 'Our newest income stream'), ('Aureus Alliance', 'Shares in gold mining'), ('ClickBaitPays', 'Advertise and view ads'), ('Bitcoin Wealth', 'A way to stack Bitcoin'), ('JetUP + TAG Markets', 'Copy trading, explained')]
+    # MTG's order (27 Nov 2026): Bellver Cards, ClickBaitPays, PRENET, Bitcoin Wealth, JetUP, Aureus Alliance; ALTRUVA is no longer listed
+    rows = [('Bellver Cards', 'Spend your crypto like cash'), ('ClickBaitPays', 'Get any link seen'), ('PRENET', 'Our newest income stream'), ('Bitcoin Wealth', 'A way to stack Bitcoin'), ('JetUP + TAG Markets', 'Copy trading, explained'), ('Aureus Alliance', 'Shares in gold mining')]
     r = ''.join(f'<div class="row" style="height:59px"><span style="flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#ffe9a8,#e8b84a);color:#1a1205;font:400 28px/1 \'Anton\'">{i + 1}</span><div>{t}<small>{s}</small></div></div>' for i, (t, s) in enumerate(rows))
     return f'''<div class="card" style="left:10px;top:22px;width:480px;padding:22px;display:flex;flex-direction:column;gap:11px">
  <p style="font:800 15px/1 'Manrope';letter-spacing:.16em;color:#f3d27a;margin:0 0 2px 6px">OUR INCOME STREAMS, RANKED</p>{r}</div>

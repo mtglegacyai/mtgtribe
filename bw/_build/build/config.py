@@ -242,13 +242,13 @@ NAV = [
     ('faq', 'dashboard/faq/', 'FAQ', 'Straight answers', 'circle-help', 'Help'),
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
     ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
-    # More From MTG 👑, in MTG's order of his income streams (26 Nov 2026: Bellver, PRENET, Aureus Alliance, ClickBaitPays,
-    # Bitcoin Wealth, JetUP; Bitcoin Wealth is this guide itself), then Join The MTG TRIBE
-    ('card', 'dashboard/crypto-card/', 'Bellver Card', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
-    ('prenet', PRENET, 'PRENET', 'New: guide coming soon', 'sparkles', 'More From MTG 👑'),
-    ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
+    # More From MTG 👑, in MTG's order of his income streams (27 Nov 2026: "BELLVER CARDS (cards is plural because they offer
+    # different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"; Bitcoin Wealth is this guide itself).
+    ('card', 'dashboard/crypto-card/', 'Bellver Cards', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
     ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
+    ('prenet', PRENET, 'PRENET', 'New: guide coming soon', 'sparkles', 'More From MTG 👑'),
     ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
+    ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),
 ]
 EXTRA = [('disc', 'dashboard/disclaimer/', 'Disclaimer', 'Independent, educational', 'info', 'More From MTG 👑')]

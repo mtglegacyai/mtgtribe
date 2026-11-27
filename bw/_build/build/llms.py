@@ -96,7 +96,8 @@ def build_llms(dst, pages_in_order):
         if g != 'Start here':
             lines += ['', f'## {g}', '']
         for k, p, label, sub, icon, _ in items:
-            lines.append(f'- [{short(SEO_TITLE.get(k, label))}]({SITE}{BASE}{p}): {SEO_DESC.get(k, sub)}')
+            url = p if p.startswith('http') else SITE + BASE + p      # menu items that open another site keep their own address
+            lines.append(f'- [{short(SEO_TITLE.get(k, label))}]({url}): {SEO_DESC.get(k, sub)}')
     lines += ['', '## Videos', '']
     for k, v in V.items():
         if k in WATCH:      # a tutorial has a page of its own: the video, its key moments and every step in writing

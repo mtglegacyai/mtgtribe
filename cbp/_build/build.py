@@ -36,7 +36,7 @@ HOST = SITE.split('//', 1)[1]
 SITE_LABEL = HOST + BASE.rstrip('/')           # mtgtribe.com/cbp or clickbaitpaysus.com
 COPY_AT = 'clickbaitpaysus.com/'               # where every personal copy lives (MTG, 24 Nov 2026: "I want all my clients to be under clickbaitpaysus.com/their name")
 NAME = 'ClickBaitPays Guide by MTG'
-TODAY = '2026-11-26'
+TODAY = '2026-11-27'
 CHECKED = '21 November 2026'          # level figures read in the back office (Level 4 recording)
 
 OWNER = {                              # a personal copy changes only this block
@@ -132,26 +132,22 @@ STREAMS = [
     ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from $0.48 to $13.50 per click, by level, every click day.'),
     ('users', 'Your referrals pay', 'Share your ClickBaitPays link and receive 10% of the campaigns your referrals buy. Optional, and it stacks.'),
 ]
-# MTG's own income streams, in his order (MTG, 26 Nov 2026: "1. Bellver Affiliates or Bellver Cards 2. PRENET 3. ClickBaitPays
-# 4. Bitcoin Wealth 5. JetUp", then "List Aureus Alliance above ClickBaitPays"), never ALTRUVA. Name, accent, picture, line, three
+# MTG's own income streams, in his order (MTG, 27 Nov 2026: "BELLVER CARDS (cards is plural because they offer different cards),
+# CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"), never ALTRUVA. Name, accent, picture, line, three
 # facts, button, link, and its menu line and icon: the My Income Streams page, the band on other pages and the menu all read this list.
 # They are what a member can promote here: ClickBaitPays itself cannot be (everyone watching the ads is already in).
 # ref=True: the button carries MTG's referral link straight to the program (rel="sponsored").
 AUREUS = 'https://www.aureus.africa/mtglegacy'     # Aureus Alliance Holdings (Aureus Africa): gold mining shares; MTG's link
 PRENET = 'https://prenet.world/ref/mtg'            # PRENET: MTG's newest income stream (26 Nov 2026), his referral link; guide coming at mtgtribe.com/prenet
 MY_STREAMS = [
-    dict(key='bellver', name='BellverCards', tag='The crypto card that can pay your bills', img='bellver-card.webp', w=640, h=385, accent='gold',
+    dict(key='bellver', name='BellverCards', tag='The crypto cards that can pay your bills', img='bellver-card.webp', w=640, h=385, accent='gold',
          line='Spend your crypto like cash with your own card, and earn monthly rewards when the people you refer use theirs. MTG found it through an ad on ClickBaitPays.',
          facts=['Spend crypto like cash', 'Monthly rewards from your referrals', 'Order from $99'],
-         cta='Open The BellverCards Guide', url='https://bellveraffiliates.com/', ext=True, menu='Bellver Card', sub='Spend your crypto', icon='card'),
+         cta='Open The BellverCards Guide', url='https://bellveraffiliates.com/', ext=True, menu='Bellver Cards', sub='Spend your crypto', icon='card'),
     dict(key='prenet', name='PRENET', tag='MTG\'s newest income stream', img='prenet-tile.webp', w=640, h=382, accent='gold',
          line='PRENET is MTG\'s newest income stream. His full plain-English guide, with videos and every step, is coming soon at mtgtribe.com/prenet. Until then, join with his link and read every detail on PRENET\'s own site before you decide.',
          facts=['MTG\'s newest income stream', 'Full guide coming soon', 'Join with MTG\'s link'],
          cta='Join PRENET With MTG', url=PRENET, ext=True, ref=True, menu='PRENET', sub='New: guide coming soon', icon='sparkles'),
-    dict(key='aureus', name='Aureus Alliance', tag='Shares in a gold mining company', img='aureus-logo.webp', w=320, h=191, accent='gold',
-         line='Aureus Alliance Holdings runs Aureus Africa, a South African platform for owning shares in gold mining, with your own client account. Read every detail on its official site before you decide.',
-         facts=['A South African company', 'Shares in gold mining', 'Your own client account'],
-         cta='Visit Aureus Alliance', url=AUREUS, ext=True, ref=True, menu='Aureus Alliance', sub='Gold mining shares', icon='pick'),
     dict(key='bw', name='Bitcoin Wealth', tag='A different way to stack Bitcoin', img='bitcoin-wealth-logo.webp', w=192, h=192, accent='orange',
          line='One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public on the blockchain for anyone to check.',
          facts=['Once-off 0.001 BTC entry', 'Paid to your own wallet', 'Every payment public'],
@@ -160,6 +156,10 @@ MY_STREAMS = [
          line='Copy trading with Sonic AI, an account opened in your own name at TAG Markets, and the JetUP community and partner plan, every rule in plain English.',
          facts=['Sonic AI copy trading', 'Your account, in your own name', '17 videos, 6-part training'],
          cta='Open The JetUP Guide', url=HUB + '/jetup/', ext=False, menu='JetUP', sub='Sonic AI copy trading', icon='plane'),
+    dict(key='aureus', name='Aureus Alliance', tag='Shares in a gold mining company', img='aureus-logo.webp', w=320, h=191, accent='gold',
+         line='Aureus Alliance Holdings runs Aureus Africa, a South African platform for owning shares in gold mining, with your own client account. Read every detail on its official site before you decide.',
+         facts=['A South African company', 'Shares in gold mining', 'Your own client account'],
+         cta='Visit Aureus Alliance', url=AUREUS, ext=True, ref=True, menu='Aureus Alliance', sub='Gold mining shares', icon='pick'),
 ]
 CLONE = ['It sells the real reason people join: traffic for what they already promote',
          'Every step on video, in laptop and phone players that close themselves at the end',
@@ -271,8 +271,8 @@ SEO = {
               'Is ClickBaitPays legit or a scam? What it is, where the pay comes from, what MTG sees in his own account, and how to check it yourself with a small start.'),
     'faq': ('ClickBaitPays FAQ: Straight Answers to the Top Questions',
             'ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, logging in, Login Ads and referrals. Plus a live Q&A.'),
-    'streams': ('MTG\'s Income Streams: Bellver, PRENET, Aureus and More',
-                'Need something to promote on ClickBaitPays? Pick one of MTG\'s income streams: BellverCards, PRENET, Aureus Alliance gold mining shares, Bitcoin Wealth or JetUP.'),
+    'streams': ('MTG\'s Income Streams: Bellver Cards, PRENET and More',
+                'Need something to promote on ClickBaitPays? Pick one of MTG\'s income streams: BellverCards, PRENET, Bitcoin Wealth, JetUP or Aureus Alliance gold mining shares.'),
     'copy': ('Get This ClickBaitPays Website: Your Link, R1,000 Once-Off',
              f'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at {COPY_AT}yourname. Pay only if you like it.'),
     'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
@@ -1361,7 +1361,7 @@ def p_copy(here):
 def p_disc(here):
     blocks = [
         ('shield', 'An independent guide', f'This is MTG\'s own guide to ClickBaitPays, made to educate. It is not the official ClickBaitPays website (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>) and it is not run by ClickBaitPays. Rules, prices and features can change: the official site always has the final word.'),
-        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. The links to MTG\'s other income streams (BellverCards, PRENET, Aureus Alliance, Bitcoin Wealth and JetUP) lead to his own guides or carry his referral links too. Invited by someone else? Please use their link instead.'),
+        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. The links to MTG\'s other income streams (BellverCards, PRENET, Bitcoin Wealth, JetUP and Aureus Alliance) lead to his own guides or carry his referral links too. Invited by someone else? Please use their link instead.'),
         ('layers', 'About the figures', f'Prices, activation fees, pay per click, clicks a day and campaign totals are the platform\'s own figures, read in the ClickBaitPays back office on {CHECKED}. Campaign totals assume all 12 click days. They describe how the platform pays; they are not a promise of what you will earn.'),
         ('info', 'Advertising, not an investment', 'ClickBaitPays is an advertising platform: you buy advertising for your link and are paid for viewing other members\' ads. Nothing on this site is financial advice. Results depend on the ads you view and on the platform, and nothing is guaranteed. Start with an amount you are comfortable with and only use money you can afford to lose.'),
         ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. The videos play from ClickBaitPays\' own storage (media.clickbaitpaysus.com), only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
@@ -1542,7 +1542,8 @@ CBPUS_OLD = {'dashboard.html': 'home', 'start-here.html': 'home', 'what-is-click
              'mtg/': '', 'mtg/faq/': 'faq', 'mtg/glossary/': 'faq', 'mtg/profit-calculator/': 'calc', 'mtg/request-a-copy/': 'copy',
              'mtg/video-tutorials/': 'tutorials', 'mtg/share/': ''}
 CBPUS_KEEP = {'.git', 'CNAME'}
-SHARED = ('video-return.js', 'wa-message.js', 'zoom-cta.js', 'mtg-dash.css', 'mtg-dash.js')    # mtgtribe.com/assets/: travel with the copy
+SHARED = ('video-return.js', 'wa-message.js', 'zoom-cta.js', 'mtg-dash.css', 'mtg-dash.js', 'updown.js')    # mtgtribe.com/assets/: travel with the copy
+# (updown.js, MTG 27 Nov 2026: the Up and Down buttons; video-return.js loads it, so the copy must carry it)
 
 
 def build_cbpus():
@@ -1639,7 +1640,7 @@ def render_preview(dst):
     os.makedirs(dst, exist_ok=True)
     shutil.copytree(os.path.join(ROOT, 'cbp', 'assets'), os.path.join(dst, 'assets'), dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('og'))           # the social previews are not part of the pages
-    for f in ('video-return.js', 'wa-message.js', 'mtg-dash.css', 'mtg-dash.js'):
+    for f in ('video-return.js', 'wa-message.js', 'mtg-dash.css', 'mtg-dash.js', 'updown.js'):
         shutil.copy(os.path.join(ROOT, 'assets', f), os.path.join(dst, 'assets', f))
     pages = all_pages()
     for p, h in pages.items():

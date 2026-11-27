@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Orbitron"; font-weight: 900; src: url("assets/fonts/f1.ttf"); }
+      @font-face { font-family: "Poppins"; font-weight: 600; src: url("assets/fonts/f2.ttf"); }
+      @font-face { font-family: "Poppins"; font-weight: 800; src: url("assets/fonts/f3.ttf"); }
+      :root {
+        --ground: #080015; --surf: #100525; --ink: #ffffff; --muted: #b6b2c5;
+        --cyan: #00e5ff; --pink: #ff4dd8; --gold: #ffd866;
+        --fg: #ffffff; --accent: #00e5ff; --brand: #00e5ff;
+        --font-display: "Orbitron", sans-serif; --font-body: "Poppins", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: var(--font-body); color: var(--ink); }
+      #bg { position: absolute; inset: 0; z-index: 0; }
+      #bg-in { position: absolute; inset: -20%;
+        background: radial-gradient(40% 30% at 30% 30%, rgba(0,229,255,.16), transparent 70%),
+                    radial-gradient(45% 32% at 72% 72%, rgba(255,0,255,.13), transparent 70%), var(--ground); }
+      .scene { position: absolute; inset: 0; z-index: 2; }
+      .cy { color: var(--cyan); }
+      #s1-h { position: absolute; left: 0; right: 0; top: 400px; text-align: center; font-family: var(--font-display);
+        font-weight: 900; font-size: 158px; line-height: 1.04; }
+      #s1-h .w { display: block; }
+      #chips { position: absolute; left: 0; right: 0; top: 820px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+      .chip { display: inline-flex; align-items: center; gap: 16px; padding: 14px 30px 14px 22px; border-radius: 999px;
+        border: 2px solid rgba(0,229,255,.55); background: rgba(16,5,37,.9); font-weight: 600; font-size: 36px; }
+      .chip b { display: inline-flex; color: var(--cyan); font-size: 34px; }
+      #s2 { position: absolute; left: 0; top: -270px; width: 1080px; height: 1920px; z-index: 3; }
+      #s3-h { position: absolute; left: 0; right: 0; top: 560px; text-align: center; font-family: var(--font-display);
+        font-weight: 900; font-size: 76px; line-height: 1.12; }
+      #card { position: absolute; left: 300px; width: 480px; top: 900px; height: 150px; border-radius: 28px;
+        background: var(--surf); border: 3px solid var(--cyan); display: flex; align-items: center; justify-content: center;
+        gap: 18px; font-weight: 800; font-size: 40px; box-shadow: 0 18px 50px rgba(0,229,255,.22); }
+      #card b { display: inline-flex; color: var(--cyan); font-size: 46px; }
+      .dot { position: absolute; width: 76px; height: 76px; border-radius: 50%; border: 3px solid; display: grid; place-items: center;
+        background: rgba(8,0,21,.85); }
+      #s3-sub { position: absolute; left: 0; right: 0; top: 1100px; text-align: center; font-weight: 600; font-size: 40px; color: var(--muted); }
+      #logo { position: absolute; left: 440px; top: 300px; width: 200px; height: 200px; border-radius: 50%; }
+      #s4cta { position: absolute; left: 0; top: 470px; width: 1080px; height: 620px; z-index: 3; }
+      #sig-in { position: absolute; left: 0; right: 0; top: 1160px; text-align: center; font-weight: 600; font-size: 30px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="13.5" data-width="1080" data-height="1920">
+      <div id="bg" class="clip" data-start="0" data-duration="13.5" data-track-index="0" data-track-kind="graphics"><div id="bg-in"></div></div>
+
+      <div id="s1" class="clip scene" data-start="0" data-duration="3.3" data-track-index="1" data-track-kind="graphics">
+        <div id="s1-in">
+          <h1 id="s1-h"><span class="w">GOT A</span><span class="w cy">LINK?</span></h1>
+          <div id="chips">
+          <span class="chip" id="chip0"><b><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></b>BellverCards</span>
+          <span class="chip" id="chip1"><b><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></b>Bitcoin Wealth</span>
+          <span class="chip" id="chip2"><b><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></b>JetUP</span>
+          <span class="chip" id="chip3"><b><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></b>Aureus Alliance</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="s2" data-composition-id="headline-slam" data-composition-src="compositions/components/headline-slam.html"
+        data-start="3.2" data-duration="3.2" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"
+        data-variable-values='{"text":"GET IT SEEN.","accent_word_index":2,"accent":"green"}'></div>
+
+      <div id="s3" class="clip scene" data-start="6.3" data-duration="3.2" data-track-index="3" data-track-kind="graphics">
+        <div id="s3-in">
+          <h2 id="s3-h">REAL PEOPLE<br /><span class="cy">OPEN IT.</span></h2>
+          <i class="dot" id="d0" style="left:586px;top:383px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d1" style="left:784px;top:374px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d2" style="left:993px;top:439px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d3" style="left:1186px;top:583px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d4" style="left:1054px;top:845px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d5" style="left:1125px;top:1031px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d6" style="left:1128px;top:1250px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d7" style="left:1050px;top:1478px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d8" style="left:760px;top:1434px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d9" style="left:605px;top:1559px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d10" style="left:397px;top:1629px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d11" style="left:157px;top:1626px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d12" style="left:109px;top:1336px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d13" style="left:-57px;top:1227px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d14" style="left:-189px;top:1051px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d15" style="left:-259px;top:822px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d16" style="left:1px;top:686px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d17" style="left:53px;top:495px;color:#ffd866;border-color:#ffd866"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d18" style="left:180px;top:316px;color:#00e5ff;border-color:#00e5ff"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <i class="dot" id="d19" style="left:376px;top:177px;color:#ff4dd8;border-color:#ff4dd8"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.8-4.4 4.2-7 8.5-7s7.7 2.6 8.5 7z"/></svg></i>
+          <div id="card"><b><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></b>your-link.com</div>
+          <p id="s3-sub">Every click day.</p>
+        </div>
+      </div>
+
+      <div id="s4" class="clip scene" data-start="9.4" data-duration="4.1" data-track-index="4" data-track-kind="graphics">
+        <div id="s4-in"><img id="logo" src="assets/cbp-disc.png" alt="ClickBaitPays" /></div>
+      </div>
+      <div id="s4cta" data-composition-id="cta-lockup" data-composition-src="compositions/components/cta-lockup.html"
+        data-start="9.6" data-duration="3.9" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="620"
+        data-variable-values='{"action_line":"Got a link? Get it seen.","button_label":"mtgtribe.com/cbp","microcopy":"A traffic source, not an investment.","accent":"green"}'></div>
+      <div id="sig" class="clip scene" data-start="10.4" data-duration="3.1" data-track-index="6" data-track-kind="graphics">
+        <p id="sig-in">MTG 👑 | Your Digital Architect</p>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // background drift, one slow move for the whole clip
+      tl.fromTo("#bg-in", { x: -30, y: -20 }, { x: 30, y: 20, duration: 13.5, ease: "none" }, 0);
+      // 1. GOT A LINK? (on screen at frame 0), then the programs people promote
+      tl.fromTo("#s1-h", { scale: 1.06 }, { scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+      tl.fromTo(".chip", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "expo.out", stagger: 0.22 }, 0.35);
+      tl.to(".chip", { y: -140, scale: 0.3, opacity: 0, duration: 0.35, ease: "power3.in", stagger: 0.04 }, 2.8);
+      tl.to("#s1-h", { y: -90, opacity: 0, duration: 0.35, ease: "power3.in" }, 2.95);
+      // 3. REAL PEOPLE OPEN IT: people arrive at the link
+      tl.fromTo("#s3-h", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 6.35);
+      tl.fromTo("#card", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, 6.45);
+      for (let i = 0; i < 20; i++) {
+        const el = document.getElementById("d" + i);
+        const dx = 540 - 38 - parseFloat(el.style.left), dy = 975 - 38 - parseFloat(el.style.top);
+        const t = 6.7 + i * 0.085;
+        tl.fromTo(el, { x: 0, y: 0, opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, t);
+        tl.to(el, { x: dx, y: dy, duration: 0.55, ease: "power2.in" }, t);
+        tl.to(el, { opacity: 0, scale: 0.4, duration: 0.08, ease: "none" }, t + 0.55);
+      }
+      tl.to("#card", { scale: 1.05, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 9 }, 7.25);
+      tl.fromTo("#s3-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 7.6);
+      tl.to("#s3-in", { opacity: 0, duration: 0.3, ease: "power2.in" }, 9.15);
+      // 4. the logo, the address (cta-lockup block), MTG's signature
+      tl.fromTo("#logo", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, 9.45);
+      tl.fromTo("#sig-in", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "none" }, 10.5);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

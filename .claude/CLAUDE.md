@@ -15,8 +15,8 @@ then a notification that it is live (see `tools/canton-weekly/README.md`). Sloga
 
 ...come back and **remake the MTG TRIBE invite video** (both the 16:9 and the 9:16 version, see
 `tools/invite-horizontal/`) so it mentions **every income stream MTG has at that point**, not only the ALTRUVA
-guide it mentions today. Follow the dashboard order (MTG, 26 Nov 2026): 1 Bellver Affiliates, 2 PRENET, 3 Aureus Alliance,
-4 ClickBaitPays, 5 Bitcoin Wealth, 6 JetUp · TAG Markets. ALTRUVA is no longer one of his streams: leave it out.
+guide it mentions today. Follow the dashboard order (MTG, 27 Nov 2026): 1 Bellver Cards, 2 ClickBaitPays, 3 PRENET,
+4 Bitcoin Wealth, 5 JetUp · TAG Markets, 6 Aureus Alliance. ALTRUVA is no longer one of his streams: leave it out.
 
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
@@ -25,20 +25,34 @@ his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
-## MTG's income streams, in his order (MTG, 26 Nov 2026)
+## MTG's income streams, in his order (MTG, 27 Nov 2026)
 
-"Please remove ALTRUVA from my mtgtribe.com income stream list, and put PRENET ... Position PRENET as the second after
-Bellver Affiliates across all the pages where we a list of my income streams", then "List Aureus Alliance above ClickBaitPays".
+"On musathegiant.com and mtgtribe.com websites, order my income streams as follows: BELLVER CARDS (cards is plural because
+they offer different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE. Update these websites,
+and the rest of the websites where my income streams are listed." (It replaced his order of 26 Nov 2026; ALTRUVA left on 26 Nov.)
 Every list of his streams (mtgtribe.com dashboard menu, cards, rankings, footers and llms.txt; the /cbp and /bw menus, so also
 clickbaitpaysus.com and bitcoinwealthpays.com; musathegiant.com/dashboard.html) uses this order:
 
-1. Bellver Affiliates (Bellver Card), 2. **PRENET** (his link https://prenet.world/ref/mtg), 3. Aureus Alliance
-(https://www.aureus.africa/mtglegacy), 4. ClickBaitPays, 5. Bitcoin Wealth, 6. JetUp · TAG Markets.
+1. **Bellver Cards** (always plural in a stream list: Bellver offers different cards), 2. ClickBaitPays, 3. **PRENET** (his link
+https://prenet.world/ref/mtg), 4. Bitcoin Wealth, 5. JetUp · TAG Markets (a middle dot, never a dash), 6. Aureus Alliance
+(https://www.aureus.africa/mtglegacy). On a guide that is itself one of the streams, that stream is left out of its own menu.
+Where the order lives: `assets/tribe/streams.json`; `dashboard/index.html` (menu, ranking stack, cards: #1 the Bellver panel,
+#2 the wide card, then a 2x2, structured data, description); the footers of the home page, /cc/, /cntn/ (the Canton master)
+and the weekly reports; `llms.txt`; `tools/og/make_og.py` (tribe-dashboard preview); `MY_STREAMS` in `cbp/_build/build.py`
+(and its streams preview in `og.py`); `NAV` "More From MTG" in `bw/_build/build/config.py`; musathegiant.com/dashboard.html
+(hand-designed cards, #1 and #2 full width) and its llms.txt dashboard line, then run its sync. The Canton weekly video reads
+the names from the dashboard menu. bellveraffiliates.com has no stream list.
 
 - ALTRUVA is no longer one of his streams: the /altruva/ guide stays online, unpromoted, out of every list.
 - **PRENET's guide is coming at mtgtribe.com/prenet** ("in the next few days"). Until it exists every PRENET button goes
   straight to his link (`rel="sponsored noopener"`) with calm, minimal copy (newest stream, guide coming soon). MTG will upload
   PRENET videos, files and content: save them, then build /prenet and update the PRENET copy everywhere it appears.
+  **As soon as he uploads more about PRENET, update its card everywhere at once** (MTG, 27 Nov 2026), replacing today's
+  "Our newest income stream. Join it today. The full plain-English PRENET guide is being built on mtgtribe.com. Until it is
+  ready, join with MTG's link and read every detail on PRENET's own site before you decide." The places: `streams.json`
+  (tag, blurb, facts, cta), the mtgtribe.com dashboard card, musathegiant.com/dashboard.html, the /cbp PRENET entry in
+  `MY_STREAMS` (My Income Streams page and menu line) and its tile `tools/cbp/brand/streams/prenet-tile.webp`, the /bw menu line,
+  and the PRENET lines in every llms.txt.
   prenet.world refuses automated reading, so its facts come from MTG's material only. The weekly Canton video says it "Prenet".
 - Referral links carry `rel="sponsored noopener"` (PRENET, Aureus, the join links).
 
@@ -150,7 +164,7 @@ The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's histor
 **Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
 clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`). Every personal copy lives at clickbaitpaysus.com/theirname,
 the only address on the order form (MTG, 24 Nov 2026). The menu's More From MTG 👑 lists his income streams to promote there, in his
-order (Bellver, PRENET, Aureus Alliance, Bitcoin Wealth, JetUP; never ALTRUVA): `MY_STREAMS`.
+order (Bellver Cards, PRENET, Bitcoin Wealth, JetUP, Aureus Alliance; never ALTRUVA): `MY_STREAMS`.
 
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 

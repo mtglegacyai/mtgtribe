@@ -105,7 +105,7 @@ COPY = {
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
-    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, PRENET, Aureus Alliance, Bitcoin Wealth and JetUP.'),
+    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, PRENET, Bitcoin Wealth, JetUP and Aureus Alliance.'),
     'copy': ('Get <em>this website</em>', 'The guide that sells the real reason people join. Your link on every button.'),
     'disc': ('The small print, in <em>plain words</em>', 'Independent guide, the referral link and your privacy.'),
 }

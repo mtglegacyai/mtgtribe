@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Package this skill for MTG's Claude account, so the library works in all his projects, not only this repository.
 # Makes two files, because claude.ai offers two upload routes (27 Nov 2026):
-#   mtg-skill-library-skill-<date>.zip   for Customize > Skills > + > Create skill > Upload a skill (the skill folder)
-#   mtg-skill-library-plugin-<date>.zip  for the newer Plugins page: Add > Upload plugin (the skill inside a plugin:
+#   mtg-skill-library-skill-v<version>.zip   for Customize > Skills > + > Create skill > Upload a skill (the skill folder)
+#   mtg-skill-library-plugin-v<version>.zip  for the newer Plugins page: Add > Upload plugin (the skill inside a plugin:
 #                                        .claude-plugin/plugin.json + skills/mtg-skill-library/, per claude.com/docs/plugins/build)
 # Usage: bash .claude/skills/mtg-skill-library/scripts/package.sh [out dir]   (default: current directory)
 set -euo pipefail
@@ -10,9 +10,9 @@ here="$(cd "$(dirname "$0")/.." && pwd)"
 name="$(basename "$here")"
 out="$(cd "${1:-.}" && pwd)"
 stamp="$(date +%Y-%m-%d)"
-version="${VERSION:-1.0.$(date +%Y%m%d)}"
-skill_zip="$out/$name-skill-$stamp.zip"
-plugin_zip="$out/$name-plugin-$stamp.zip"
+version="${VERSION:-1.0.$(date +%Y%m%d)}"   # set VERSION for a second build on the same day, e.g. VERSION=1.1.20261127
+skill_zip="$out/$name-skill-v$version.zip"
+plugin_zip="$out/$name-plugin-v$version.zip"
 rm -f "$skill_zip" "$plugin_zip"
 
 # 1. The skill on its own: the skill folder at the top of the zip.

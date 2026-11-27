@@ -29,6 +29,7 @@ When a library file is not enough, clone the upstream repo read-only (SKILL.md, 
 | Long explainer visuals | `nateherkai/herk-edit-kit` .claude/skills/video-storytelling |
 | Reels and shorts editing | herk-edit-kit .claude/skills/short-form-edit, docs/EDITING-PLAYBOOK.md |
 | HTML-to-video, motion blocks | `heygen-com/hyperframes` skills/hyperframes, registry/ |
+| Product-shot and image-style ideas | `bhaiyasingh45/chatgpt-slash-image-commands` README (ideas only, no licence file); our recipes: `shot-library.md` |
 
 ## #001: "5 Claude skills to get ahead of 99%" (sent 25 Nov 2026)
 
@@ -81,3 +82,38 @@ screen.
 - HyperFrames 0.9.92: a silent 13.5 s vertical ClickBaitPays hook with two registry blocks (`headline-slam`,
   `cta-lockup`) edited for vertical; its checker passed after fixes; rendered in 41 s. Project kept in
   `tools/hyperframes/cbp-hook-test/`. Telemetry off, nothing published.
+
+## #002: "Type this, get this" AI product-shot reel (sent 27 Nov 2026)
+
+**The video:** vertical reel, 33.5 s, 720 x 1280. A presenter at a desk raises a finger as a "slash command" appears on
+screen, then an AI product shot plays. Seven commands: `/bullettime` (earbuds), `/gravitydefy` (a gold watch with
+ribbons), `/explodedview` (a phone coming apart), `/orbit_sweep` (headphones), `/softsunbeam` (a hair-oil bottle in a
+forest), `/splashfreeze` (earbuds, then perfume), `/3dblueprint` (a sneaker drawn as a wireframe). It ends with "Comment
+Anything" and "DM" on screen. Google's visible sparkle watermark sits in the corner of the product shots and of some
+presenter shots, so the shots were made with Google's Gemini, Veo or Flow (the presenter may be AI-made too). No tool or
+source is named. Transcribed with faster-whisper medium.en; the ending re-transcribed with filtering.
+
+**Transcript:**
+
+> Type this, get this. Type this, get this. [repeated over the seven commands] Type this, and get this. If you want to
+> see more of our next level products [partly unclear] ... 100 plus slash commands. Comment anything ... [on screen:
+> "Comment Anything", "DM"]
+
+**What it really is:** none of these is a feature of ChatGPT, Gemini or Flow. They are shorthand words from "100+
+commands" lists sold or given away as lead magnets; a model reads them as plain text, so results vary.
+
+| Source (read 27 Nov 2026) | What it says | Use |
+|---|---|---|
+| `bhaiyasingh45/chatgpt-slash-image-commands` at bd2c8e6 (15 Nov 2026), no licence file ("educational and creative use") | "These are not official ChatGPT slash commands. They are shorthand prompt patterns"; for reliable results "describe exactly what you want" | Ideas only, nothing copied |
+| Slash Image Commander (slashimagecommander.com, Hampton Network LLC, $47, 30 commands), sales page only | "These are prompt shortcuts, not features baked into ChatGPT"; motion prompts are run "through a video generator such as Sora, Veo, Kling or Runway" | Not bought |
+| weboptech, "99 Google Flow prompts and commands" | The slash notation is "creative shorthand", not an official Flow command language; Flow's guidance: describe subject, action, environment, lighting and style in detail | Confirms the method |
+| GitHub issue `candidmarketingltd-art/ai-news-reels#1`, "FAKE SLASH COMMANDS" | "They're just plain text"; save your own shortcut in Custom Instructions or a Project | The idea we kept |
+| Google's visible watermark (BGR, TechRepublic) | A sparkle at the bottom right of Gemini, Veo and Flow media; optional since Nov 2026 (Settings > Media Watermark); the invisible SynthID mark stays | Identified the tool |
+
+**Verdict:** the claim is hype; the idea underneath is useful. **Medium** overall, **high** for two looks that fit MTG
+exactly: `/blueprint` (his brand, "Your Digital Architect") and `/explodedview` (his "show the idea" rule). Kept as his
+own named looks with full recipes, free to render in our three.js engine: `shot-library.md`.
+
+**Caveats:** the reel shows other companies' products; realistic AI presenters need the platforms' AI labels; the
+comment-to-DM ending again needs a real reward and the compliance gate; never remove a watermark.
+

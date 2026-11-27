@@ -1,6 +1,6 @@
 ---
 name: mtg-skill-library
-description: "MTG's growing library of the best techniques taken from the AI skills, tools and tips videos he sends (Claude skills, marketing playbooks, design systems, video editing kits), checked against their real source, adapted to his rules and applied to every job. Use it in two ways. (1) Intake: whenever MTG sends or links a video, reel, post or repo about Claude skills, AI tools, prompts, marketing, design, SEO or video techniques and asks to extract, transcribe, save or learn from it. (2) Apply: before and during every content job for MTG (mtgtribe.com, MusaTheGiant, bitcoinwealthpays.com, clickbaitpaysus.com, bellveraffiliates.com, any new site): videos, tutorials, explainers, reels, shorts, video ads, VSLs, sales letters, landing pages, websites, flyers, covers, thumbnails, adverts, captions, post descriptions, prospect messages, SEO, AI search, rankings, traffic generation and content optimisation, even if he does not mention the library."
+description: "MTG's growing library of the best techniques from the AI skills, tools and tips videos he sends, checked against their real source, adapted to his rules and applied to every job. Use it (1) for intake: whenever MTG sends or links a video, reel, post or repo about Claude skills, AI tools, prompts, marketing, design, SEO or video techniques; (2) to apply: before and during every content job for MTG (mtgtribe.com, MusaTheGiant, bitcoinwealthpays.com, clickbaitpaysus.com, bellveraffiliates.com, new sites): videos, reels, video ads, VSLs, sales letters, landing pages, websites, flyers, covers, thumbnails, adverts, captions, posts, prospect messages, SEO, AI search, traffic and content optimisation, even if he does not mention it; and (3) whenever MTG types one of his shot commands: /blueprint, /explodedview, /orbit, /bullettime, /gravitydefy, /softsunbeam, /splashfreeze."
 ---
 
 # MTG skill library
@@ -38,6 +38,7 @@ Read the files for the job before starting, and check the work against them befo
 | Tutorials, explainers, promos, reels, shorts | `references/video-story.md` + `voice-pass.md` for the script |
 | SEO, AI search (ChatGPT, Google AI Overviews, Perplexity), rankings, new pages, content optimisation, YouTube titles and descriptions | `references/ai-search.md` |
 | Traffic generation: social posts, WhatsApp, Telegram, email, referrals | `references/conversion-copy.md` (Traffic) + `ai-search.md` (Presence) |
+| Covers, thumbnails, social previews, ad and reel inserts, hero pictures with one object; any of MTG's shot commands (`/blueprint`, `/explodedview`, `/orbit` ...) | `references/shot-library.md` + `design-review.md` |
 
 Need more depth than a library file gives? `references/sources.md` lists each upstream playbook worth reading for that
 job, at the exact version we checked. Clone it read-only (step 4 below) and read only the part the job needs.
@@ -83,6 +84,7 @@ Do all of it, in this order, and do not make him repeat any of it.
 | # | Source video (date sent) | What we kept, and where |
 |---|---|---|
 | 001 | "5 Claude skills to get ahead of 99%" reel, 59 s (25 Nov 2026) | Impeccable: `design-review.md`. Stop Slop: `voice-pass.md`. Marketing Skills: `conversion-copy.md`, `ai-search.md`. Herk Edit Kit and HyperFrames: `video-story.md`. Details and verdicts: `sources.md` #001 |
+| 002 | "Type this, get this" AI product-shot reel, 33 s (27 Nov 2026) | The "slash commands" are prompt shorthand, not features; kept as MTG's own named looks with full recipes: `shot-library.md`. Details: `sources.md` #002 |
 
 ## Tools tested with MTG's OK (26 Nov 2026)
 

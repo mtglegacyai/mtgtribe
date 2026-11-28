@@ -15,6 +15,12 @@
 - [Video: Join the MTG TRIBE, an invite from MTG](https://mtgtribe.com/assets/mtg-tribe-invite.mp4) (2:48): what the MTG TRIBE is and how to join at mtgtribe.com/group.
 - [Join the MTG TRIBE on WhatsApp](https://mtgtribe.com/group/)
 
+## MoveMint (MINT) guide by MTG
+
+- [MoveMint (MINT): what it is and how to buy it, step by step](https://mtgtribe.com/mint/): MTG's one-page guide to MoveMint, a Solana coin (MINT) and app. A share of the fees from MINT trades buys tokenized stocks (20+ companies), cash coins, gold, silver, copper and tokenized US Treasuries, dropped into holders' wallets with nothing to claim; the more MINT you hold, the bigger your share, and amounts depend on trading. Start in 4 steps: join with an invite and make the self-custody wallet (passkey, 12 recovery words), send SOL from an exchange such as Binance on the Solana network, swap SOL for MINT inside the app (+20% MINT invite bonus once approved; the app keeps a 10% fee on buys), then hold, walk (Mint Points) and share. Videos: MoveMint's How it works (1:25) and trailer (0:49), MTG's Part 1 and Part 2 tutorials, and the full founder call with jump-to moments.
+- MINT contract address (Solana): 1PPQkxYy2wUvKkUXMnDkiDrqx5Hfp2nbDju11cvHeFW (MoveMint, MINT; total supply about 1 billion). MTG's invite link: https://app.movemint.vip/buy/mtg. Official website: https://movemint.vip. A tokenized stock follows the price of the real shares; it is not the same as shares at a broker and carries no voting rights.
+- Independent guide by a MoveMint member, not official MoveMint material. Education only, not financial advice.
+
 ## Bitcoin Wealth Guide by MTG
 
 - [Bitcoin Wealth explained by MTG](https://mtgtribe.com/bw/): an independent, plain-English guide to Bitcoin Wealth: one 0.001 BTC once-off entry (slot 1), 14 positions per cycle (2, 4, 8), 12 slots from 0.001 to 2.048 BTC, payouts in BTCB straight to members' own wallets, and how to check every payment on BscScan. Join in 3 stages with SafePal, VALR or Binance. Live tools: Bitcoin to Rand Converter, Slot Calculator, Halving Countdown. Educational only, not official Bitcoin Wealth material and not financial advice.

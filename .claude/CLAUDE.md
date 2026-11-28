@@ -66,7 +66,11 @@ the names from the dashboard menu. bellveraffiliates.com has no stream list.
 ## MoveMint (MTG, 28 Nov 2026)
 
 MTG's newest stream, MINT on Solana (app.movemint.vip, his buy link https://app.movemint.vip/buy/mtg, `rel="sponsored noopener"`).
-- **Its home: mtgtribe.com/mint**, one short page (to build): the explainer videos and a section of his step-by-step tutorials.
+- **Its home: mtgtribe.com/mint**, one short page: built 28 Nov 2026 by `mint/_build/build.py` (writes `mint/index.html` and its
+  sitemap-home.xml entry; `MINT_PREVIEW=1 ... <dir>` writes the private preview copy). Covers: `tools/mint-covers/`. Every buy, sign-up and
+  copy button uses https://app.movemint.vip/buy/mtg, never the official site. MINT contract (checked on chain): 1PPQkxYy2wUvKkUXMnDkiDrqx5Hfp2nbDju11cvHeFW.
+  The MP4s are not in the repository: `MEDIA` in build.py says where they play from (Cloudflare R2, like /bw, is the plan; MTG decides at go-live).
+  Status 28 Nov 2026: private preview shown to MTG, waiting for his approval before it goes live.
   Every MoveMint video says where they all are: "Want to learn more, or watch every step-by-step video? It's all at MTG tribe dot com
   slash mint." (the ending's url pill and end card show mtgtribe.com/mint).
 - **The message in every MoveMint video (MTG):** holding MINT drops tokenized stocks from 20+ companies (Apple, Nvidia, Google,

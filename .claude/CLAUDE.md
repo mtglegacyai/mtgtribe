@@ -69,8 +69,11 @@ MTG's newest stream, MINT on Solana (app.movemint.vip, his buy link https://app.
 - **Its home: mtgtribe.com/mint**, one short page: built 28 Nov 2026 by `mint/_build/build.py` (writes `mint/index.html` and its
   sitemap-home.xml entry; `MINT_PREVIEW=1 ... <dir>` writes the private preview copy). Covers: `tools/mint-covers/`. Every buy, sign-up and
   copy button uses https://app.movemint.vip/buy/mtg, never the official site. MINT contract (checked on chain): 1PPQkxYy2wUvKkUXMnDkiDrqx5Hfp2nbDju11cvHeFW.
-  The MP4s are not in the repository: `MEDIA` in build.py says where they play from (Cloudflare R2, like /bw, is the plan; MTG decides at go-live).
-  Status 28 Nov 2026: private preview shown to MTG, waiting for his approval before it goes live.
+  Videos play from the site itself (`mint/media/`, `MEDIA` in build.py): mtgtribe.com is not on any of MTG's Cloudflare accounts, so R2 under
+  his domain was not possible (28 Nov 2026). If the site nears GitHub Pages' 1 GB, move them to R2 and change `MEDIA`.
+  **Live since 28 Nov 2026** (MTG: "put it live already"). His style for this page (MTG, 28 Nov 2026): his MTG TRIBE logo top left
+  (`mint/img/mtg-tribe-logo-*.webp`), Every Word Capitalised on the menu, every button and every card or box title (`tc()` in build.py
+  for FAQ questions and moments), and every check mark inside a small circle (`.tick`). He loved the pizza animation.
   Every MoveMint video says where they all are: "Want to learn more, or watch every step-by-step video? It's all at MTG tribe dot com
   slash mint." (the ending's url pill and end card show mtgtribe.com/mint).
 - **The message in every MoveMint video (MTG):** holding MINT drops tokenized stocks from 20+ companies (Apple, Nvidia, Google,

@@ -38,16 +38,19 @@
     for (var i = 0; i < list.length; i++) if (list[i] > now) return go(list[i] - hdr() - 6);
     go(html.scrollHeight);
   });
+  /* bigger screens: the bottom dock waits until the visitor scrolls, so the hero and its buttons stay clear */
+  html.classList.add('js-dock');
+  function dock() { html.classList.toggle('dock-on', (w.scrollY || 0) > 260); }
   function ud() {
     var y = w.scrollY || 0, max = html.scrollHeight - w.innerHeight, long = html.scrollHeight > w.innerHeight * 2.2;
     if (up) up.classList.toggle('on', long && y > w.innerHeight * 0.6);
     if (dn) dn.classList.toggle('on', long && y < max - 40);
   }
   var tick = false;
-  function onScroll() { if (tick) return; tick = true; requestAnimationFrame(function () { tick = false; spy(); ud(); }); }
+  function onScroll() { if (tick) return; tick = true; requestAnimationFrame(function () { tick = false; spy(); ud(); dock(); }); }
   w.addEventListener('scroll', onScroll, { passive: true });
   w.addEventListener('resize', onScroll);
-  spy(); ud();
+  spy(); ud(); dock();
 
   /* copy buttons (the contract address, MTG's invite link) */
   var toast = $('#toast'), tt;

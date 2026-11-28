@@ -67,19 +67,19 @@ SPRITE = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true
 # o: 'v' plays in the pop-up's phone, 'h' plays in place in the laptop. Every one shows as a 16:9 cover in the laptop.
 VIDEOS = {
  'hiw': dict(o='v', file='movemint-how-it-works.mp4', cover='movemint-how-it-works', poster='movemint-how-it-works-poster.jpg', d='1:25', iso='PT1M26S',
-   t='How MoveMint works: hold, share and move', bar='MoveMint · Official video', tag='Official', tagc='o',
+   t='How MoveMint Works: Hold, Share And Move', bar='MoveMint · Official Video', tag='Official', tagc='o',
    cap='The 3 ways MoveMint pays, from MoveMint itself', name='How MoveMint (MINT) works: the 3 ways it pays',
    desc='MoveMint\'s own 85 second explainer: holders get a share of trading fees as tokenized stocks, cash, gold, silver and copper; your buy link earns 30% of the app fee on friends\' buys; walking earns Mint Points.', up='2026-11-26'),
  'trailer': dict(o='h', file='movemint-trailer.mp4', hd='movemint-trailer-1080p.mp4', cover='movemint-trailer', d='0:49', iso='PT49S',
-   t='MoveMint in 49 seconds: the official trailer', bar='MoveMint · Trailer', tag='Official', tagc='o',
+   t='MoveMint In 49 Seconds: The Official Trailer', bar='MoveMint · Trailer', tag='Official', tagc='o',
    cap='Meet Bolt, Lord Rug and the treasury bill', name='MoveMint (MINT) official trailer: 49 seconds',
    desc='MoveMint\'s animated trailer: rewards sent to holders in stocks, gold, treasuries and cash, with Bolt the robot. Its targets are a goal, not a promise.', up='2026-11-27'),
  'part1': dict(o='v', file='movemint-part1.mp4', cover='movemint-part1', poster='movemint-part1-poster.jpg', d='5:12', iso='PT5M13S',
-   t='MoveMint Part 1: join and make your wallet', bar='MoveMint · Part 1', tag='Step by step', tagc='',
+   t='MoveMint Part 1: Join And Make Your Wallet', bar='MoveMint · Part 1', tag='Step By Step', tagc='',
    cap='Part 1: join with an invite and make your wallet', name='How to join MoveMint and make your MINT wallet (Part 1)',
    desc='MTG shows every tap: open an invite link, join MoveMint, make your self-custody wallet with a passkey and keep your 12 recovery words safe.', up='2026-11-28'),
  'part2': dict(o='v', file='movemint-part2.mp4', cover='movemint-part2', poster='movemint-part2-poster.jpg', d='5:39', iso='PT5M40S',
-   t='MoveMint Part 2: fund your wallet and buy MINT', bar='MoveMint · Part 2', tag='Step by step', tagc='',
+   t='MoveMint Part 2: Fund Your Wallet And Buy MINT', bar='MoveMint · Part 2', tag='Step By Step', tagc='',
    cap='Part 2: SOL from Binance, swap to MINT, the app tour', name='How to buy MINT: fund your MoveMint wallet with SOL and swap (Part 2)',
    desc='MTG converts USDT to SOL on Binance, withdraws it on the Solana network to his MoveMint wallet, swaps SOL for MINT with the +20% invite bonus and tours the World, the robot icon and the Me page.', up='2026-11-28'),
 }
@@ -94,6 +94,11 @@ MOMENTS = [  # founder call: where each topic starts (seconds), 8 seconds before
  (2835, 'Find the iPhone app, or use the web app'),
  (3253, 'Every drop is posted, and you can check your wallet'),
 ]
+
+def tc(t):
+    """Every word capitalised (MTG, 28 Nov 2026), names such as MoveMint, MINT and iPhone kept as they are."""
+    return ' '.join(w if (w[:1].isupper() or w[:1].isdigit() or (w[:1] == 'i' and w[1:2].isupper())) else w[:1].upper() + w[1:] for w in t.split(' '))
+MOMENTS = [(sec, tc(t)) for sec, t in MOMENTS]
 def mmss(s): h, r = divmod(s, 3600); m, s = divmod(r, 60); return (f'{h}:{m:02d}:{s:02d}' if h else f'{m}:{s:02d}')
 
 def media(f, prev_ok=True):
@@ -125,12 +130,12 @@ def vid(code):
     fig = laptop('v-' + code, btn, cover_img(v['cover'], alt), v['t'], v['cap'] + ' · ' + v['d'], v['tag'], v['tagc'])
     return fig.replace(bar(v['t'], ''), bar(v['bar'], v['d']))
 def founder_vid():
-    lab = 'Play: MoveMint explained by the founder, the full call (1:15:00)'
+    lab = 'Play: MoveMint Explained By The Founder, the full call (1:15:00)'
     btn = (f'<button type="button" class="vplay pulse" data-code="founder" data-yt="{YT}" aria-label="{esc(lab)}"><span class="pbtn">'
            '<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pf"/></svg></span></button>')
     fig = laptop('founder-video', btn, cover_img('movemint-founder-presentation', 'MoveMint explained by the founder: video cover'),
-                 'MoveMint explained by the founder', 'The full founder call on Zoom · 1:15:00', 'Full call', 'o')
-    return fig.replace(bar('MoveMint explained by the founder', ''), bar('MoveMint · Founder call', '1:15:00'))
+                 'MoveMint Explained By The Founder', 'The full founder call on Zoom · 1:15:00', 'Full Call', 'o')
+    return fig.replace(bar('MoveMint Explained By The Founder', ''), bar('MoveMint · Founder Call', '1:15:00'))
 
 # ------------------------------------------------------------------ words
 TITLE = 'MoveMint (MINT): What It Is and How to Buy It, Step by Step'
@@ -168,6 +173,8 @@ FAQ = [
 
 # The hero headline carries data-overlay for tools/qa/overlap.js: Anton's glyph boxes are taller than its tight line height,
 # so the boxes of two coloured words on stacked lines touch while the letters themselves never do.
+FAQ = [(tc(q), ps) for q, ps in FAQ]
+
 def page():
     vjs = {}
     for k, v in VIDEOS.items():
@@ -179,7 +186,7 @@ def page():
     ld = jsonld()
     faq_html = ''.join(f'<details><summary>{esc(q)}</summary><div class="a">' + ''.join(f'<p>{esc(p)}</p>' for p in ps) + '</div></details>' for q, ps in FAQ).replace(CA + '.', f'<code class="ca-in">{CA}</code>.')
     li = lambda s, t: f'<li><a href="https://www.youtube.com/watch?v={YT}&amp;t={s}s" data-at="{s}" target="_blank" rel="noopener"><time datetime="PT{s // 60}M{s % 60}S">{mmss(s)}</time><span>{esc(t)}</span></a></li>'
-    moments = '<ol>' + ''.join(li(s, t) for s, t in MOMENTS[:5]) + '</ol><details><summary>Show ' + str(len(MOMENTS) - 5) + ' more moments</summary><ol start="6">' + ''.join(li(s, t) for s, t in MOMENTS[5:]) + '</ol></details>'
+    moments = '<ol>' + ''.join(li(s, t) for s, t in MOMENTS[:5]) + '</ol><details><summary>Show ' + str(len(MOMENTS) - 5) + ' More Moments</summary><ol start="6">' + ''.join(li(s, t) for s, t in MOMENTS[5:]) + '</ol></details>'
     tape_items = [('AAPL', 'Apple'), ('NVDA', 'Nvidia'), ('TSLA', 'Tesla'), ('MSFT', 'Microsoft'), ('AMZN', 'Amazon'), ('GOOGL', 'Google'), ('KO', 'Coca-Cola'),
                   ('MCD', "McDonald's"), ('GME', 'GameStop'), ('GOLD', 'Gold'), ('SILVER', 'Silver'), ('COPPER', 'Copper'), ('USDC', 'Cash coin'), ('T-BILL', 'US Treasury')]
     tape = ''.join(f'<li><b>{esc(t)}</b>{esc(n)}</li>' for t, n in tape_items)
@@ -189,52 +196,53 @@ def page():
 <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
 {SPRITE}
 <header class="top"><div class="wrap">
- <a class="brand" href="#top" aria-label="MoveMint guide by MTG: back to the top"><span class="crown" aria-hidden="true">👑</span><span class="bt"><b>MTG</b><small>MINT guide</small></span></a>
- <nav class="nav" aria-label="Sections"><a href="#what">How it pays</a><a href="#videos">Videos</a><a href="#start">4 steps</a><a href="#faq">FAQ</a></nav>
+ <a class="brand" href="#top" aria-label="MoveMint guide by MTG: back to the top"><img class="logo" src="{a('/mint/img/mtg-tribe-logo-96.webp')}" srcset="{a('/mint/img/mtg-tribe-logo-96.webp')} 1x, {a('/mint/img/mtg-tribe-logo-192.webp')} 2x" width="44" height="44" alt="MTG TRIBE logo"><span class="bt"><b>MTG</b><small>MINT guide</small></span></a>
+ <nav class="nav" aria-label="Sections"><a href="#what">How It Pays</a><a href="#videos">Videos</a><a href="#start">4 Steps</a><a href="#faq">FAQ</a></nav>
  <a class="btn btn-gold cta-sm" {R}>Get MINT {ic('arrow', 'go')}</a>
  <button class="menu-b" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drop">{ic('menu', 'i-open')}<svg class="ic i-close" aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button>
 </div></header>
-<nav class="drop" id="drop" aria-label="Sections"><a href="#top">{ic('home')}Top</a><a href="#what">{ic('coins')}How MoveMint pays</a><a href="#videos">{ic('play')}Videos</a><a href="#start">{ic('steps')}Start in 4 steps</a><a href="#faq">{ic('help')}Questions</a><a {R}>{ic('zap')}Get MINT with MTG's invite</a></nav>
+<nav class="drop" id="drop" aria-label="Sections"><a href="#top">{ic('home')}Top</a><a href="#what">{ic('coins')}How MoveMint Pays</a><a href="#videos">{ic('play')}Videos</a><a href="#start">{ic('steps')}Start In 4 Steps</a><a href="#faq">{ic('help')}Questions</a><a {R}>{ic('zap')}Get MINT With MTG's Invite</a></nav>
 
 <main id="main">
 <section class="hero" id="top"><div class="wrap hero-in">
  <div>
   <p class="eye"><i aria-hidden="true"></i>MoveMint (MINT) on Solana</p>
-  <h1 data-overlay><span class="sr">MoveMint (MINT) guide: </span>Hold <span class="k">MINT</span>. Get <span class="g">stocks</span> dropped in your wallet.</h1>
+  <h1 data-overlay><span class="sr">MoveMint (MINT) Guide: </span>Hold <span class="k">MINT</span>. Get <span class="g">Stocks</span> Dropped In Your Wallet.</h1>
   <p class="lead">MoveMint shares its trading fees with <b>MINT holders</b> as tokenized stocks from <b>20+ companies</b>, plus gold, silver and cash, straight into your own wallet. <b>Nothing to claim.</b> Here is everything you need, in the right order, so you start in minutes without mistakes.</p>
   <div class="hero-cta">
-   <a class="btn btn-gold" {R}><span class="two">Get MINT with MTG's invite<small>+20% bonus MINT on your buy</small></span>{ic('arrow', 'go')}</a>
-   <button class="btn btn-ghost" type="button" data-play="hiw">{ic('play')}<span class="two">Watch how it works<small>1 minute 25 seconds</small></span></button>
+   <a class="btn btn-gold" {R}><span class="two">Get MINT With MTG's Invite<small>+20% Bonus MINT On Your Buy</small></span>{ic('arrow', 'go')}</a>
+   <button class="btn btn-ghost" type="button" data-play="hiw">{ic('play')}<span class="two">Watch How It Works<small>1 Minute 25 Seconds</small></span></button>
   </div>
-  <ul class="trust"><li>{ic('zap')}On Solana</li><li>{ic('wallet')}Your own wallet</li><li>{ic('badge')}Nothing to claim</li><li>{ic('phone')}iPhone app and web app</li></ul>
+  <p class="micro">{ic('zap')}About 15 minutes to start. MTG tested every step first with just $10.</p>
+  <ul class="trust"><li>{ic('zap')}On Solana</li><li>{ic('wallet')}Your Own Wallet</li><li>{ic('badge')}Nothing To Claim</li><li>{ic('phone')}iPhone App And Web App</li></ul>
  </div>
  <div class="stage" data-tilt="8" aria-hidden="true"><div class="tilt">
   <div class="glow"></div><div class="ring"></div><div class="ring r2"></div><div class="floor"></div>
   <div class="orbit"><span class="coin o1">AAPL</span><span class="coin s o2">SILVER</span><span class="coin m o3">NVDA</span><span class="coin o4">GOLD</span><span class="coin c o5">COPPER</span><span class="coin m o6">TSLA</span></div>
   <img class="bolt" src="{a('/mint/img/bolt-720.webp')}" srcset="{a('/mint/img/bolt-420.webp')} 420w, {a('/mint/img/bolt-720.webp')} 720w" sizes="(max-width:940px) 60vw, 330px" width="720" height="764" alt="" fetchpriority="high" decoding="async">
-  <div class="wcard">{ic('wallet')}Holder drops, straight to your wallet <span>📈🥇🥈💵</span></div>
+  <div class="wcard">{ic('wallet')}Holder Drops, Straight To Your Wallet <span>📈🥇🥈💵</span></div>
  </div></div>
 </div>
 <div class="wrap"><div class="ca rv" id="ca">
- <p class="ca-h">MINT contract address (Solana) <span class="ok">{ic('shield')}Checked on chain: MoveMint (MINT)</span></p>
+ <p class="ca-h">MINT Contract Address (Solana) <span class="ok">{ic('shield')}Checked On Chain: MoveMint (MINT)</span></p>
  <div class="ca-row"><code class="addr" id="ca-addr">{CA}</code>
-  <div class="ca-btns"><button class="btn btn-gold cta-sm" type="button" data-copy="{CA}" data-copied="Contract address copied">{ic('copy')}<span class="lbl">Copy address</span></button>
+  <div class="ca-btns"><button class="btn btn-gold cta-sm" type="button" data-copy="{CA}" data-copied="Contract Address Copied">{ic('copy')}<span class="lbl">Copy Address</span></button>
    <a class="btn btn-ghost cta-sm" href="https://solscan.io/token/{CA}" target="_blank" rel="noopener">Solscan {ic('ext')}</a>
-   <a class="btn btn-ghost cta-sm" href="https://dexscreener.com/solana/{CA}" target="_blank" rel="noopener">Live price {ic('ext')}</a></div></div>
+   <a class="btn btn-ghost cta-sm" href="https://dexscreener.com/solana/{CA}" target="_blank" rel="noopener">Live Price {ic('ext')}</a></div></div>
  <p class="ca-note"><b>Only this address is the real MINT.</b> Coins with the same name can exist, so check the address before you buy anywhere. Total supply: about 1 billion MINT.</p>
 </div></div></section>
 
 <section class="sec" id="what"><div class="wrap">
- <p class="kick rv">{ic('coins')}How it pays</p>
- <h2 class="rv">Three ways MoveMint <span class="k">pays you</span></h2>
+ <p class="kick rv">{ic('coins')}How It Pays</p>
+ <h2 class="rv">Three Ways MoveMint <span class="k">Pays You</span></h2>
  <p class="sub rv">Hold, share and move. That is the whole idea, in MoveMint's own words.</p>
  <div class="cards">
   <article class="card rv" data-tilt="5"><span class="num" aria-hidden="true">1</span><div class="ico">{ic('wallet')}</div><h3>Hold MINT</h3>
    <p>Every trade of MINT pays a fee. A share of those fees buys tokenized stocks, cash, gold, silver and copper, dropped straight into holders' wallets. Nothing to claim. The more you hold, the bigger your share.</p></article>
-  <article class="card rv" data-tilt="5"><span class="num" aria-hidden="true">2</span><div class="ico">{ic('link')}</div><h3>Share your buy link</h3>
+  <article class="card rv" data-tilt="5"><span class="num" aria-hidden="true">2</span><div class="ico">{ic('link')}</div><h3>Share Your Buy Link</h3>
    <p>When a friend buys MINT in the app with your link, the app keeps a 10% fee and 30% of that fee is yours, in SOL or MINT, on every buy they make. Your friend gets 20% more MINT as a bonus.</p>
-   <span class="ex"><b>Example from MoveMint's video:</b> a friend buys with 10 SOL, the fee is 1 SOL, and 0.3 SOL is yours.</span></article>
-  <article class="card rv" data-tilt="5"><span class="num" aria-hidden="true">3</span><div class="ico">{ic('feet')}</div><h3>Walk and play</h3>
+   <span class="ex"><b>Example From MoveMint's Video:</b> a friend buys with 10 SOL, the fee is 1 SOL, and 0.3 SOL is yours.</span></article>
+  <article class="card rv" data-tilt="5"><span class="num" aria-hidden="true">3</span><div class="ico">{ic('feet')}</div><h3>Walk And Play</h3>
    <p>Walk the MoveMint World, catch treasures and collect Mint Points. Points can turn into MINT when approved, and you get 10% of the points your friends earn.</p></article>
  </div>
  <div class="pic rv">
@@ -243,78 +251,81 @@ def page():
    <g fill="#d6402f"><circle cx="45" cy="50" r="7"/><circle cx="80" cy="42" r="6"/><circle cx="52" cy="85" r="6"/><circle cx="88" cy="78" r="7"/></g>
    <g stroke="#9a5420" stroke-width="2"><line x1="65" y1="65" x2="65" y2="7"/><line x1="65" y1="65" x2="115" y2="94"/><line x1="65" y1="65" x2="15" y2="94"/></g>
    <g class="sl"><path d="M65 65 L65 7 A58 58 0 0 1 115 94 Z" fill="#b8692a"/><path d="M65 65 L65 15 A50 50 0 0 1 108 90 Z" fill="url(#pz)"/><circle cx="84" cy="52" r="6" fill="#d6402f"/><circle cx="96" cy="76" r="5" fill="#40e4a8"/></g></svg>
-  <div><h3>Picture a pizza shop 🍕</h3>
+  <div><h3>Picture A Pizza Shop 🍕</h3>
    <p>Every MINT trade is like a pizza sold. A slice of every sale goes into a shared pot, and the pot buys treats (stocks, gold, silver, cash) that are shared out to everyone holding MINT: a bigger hold gets a bigger slice. How full the pot gets depends on how much MINT is traded, so the slices change from round to round.</p></div>
  </div>
- <h3 class="vhead rv">{ic('trend')}What can land in your wallet</h3>
+ <h3 class="vhead rv">{ic('trend')}What Can Land In Your Wallet</h3>
  <div class="tape rv" aria-label="Examples of rewards"><ul>{tape}{tape_dup}</ul></div>
  <div class="kinds">
-  <div class="kind rv"><span class="e" aria-hidden="true">📈</span>Stocks<small>20+ companies</small></div>
-  <div class="kind rv"><span class="e" aria-hidden="true">🥇</span>Gold<small>tokenized</small></div>
-  <div class="kind rv"><span class="e" aria-hidden="true">🥈</span>Silver<small>tokenized</small></div>
-  <div class="kind rv"><span class="e" aria-hidden="true">🟠</span>Copper<small>miners fund</small></div>
-  <div class="kind rv"><span class="e" aria-hidden="true">💵</span>Cash coins<small>digital dollars</small></div>
-  <div class="kind rv"><span class="e" aria-hidden="true">🏦</span>US Treasuries<small>tokenized bonds</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">📈</span>Stocks<small>20+ Companies</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">🥇</span>Gold<small>Tokenized</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">🥈</span>Silver<small>Tokenized</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">🟠</span>Copper<small>Miners Fund</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">💵</span>Cash Coins<small>Digital Dollars</small></div>
+  <div class="kind rv"><span class="e" aria-hidden="true">🏦</span>US Treasuries<small>Tokenized Bonds</small></div>
  </div>
  <div class="calm rv">{ic('spark')}<p>Each round pays in one kind. A tokenized stock follows the price of the real company's shares; it is not the same as shares at a broker and carries no voting rights. You hold it in your own wallet and can sell it whenever you like.</p></div>
 </div></section>
 
 <section class="sec" id="videos"><div class="wrap">
  <p class="kick rv">{ic('play')}Videos</p>
- <h2 class="rv">Watch first, <span class="k">then start</span></h2>
+ <h2 class="rv">Watch First, <span class="k">Then Start</span></h2>
  <p class="sub rv">Two short official videos, MTG's two step-by-step tutorials, and the full founder call. Every MoveMint video MTG makes lives right here.</p>
  <div class="vgrid two">{vid('hiw')}{vid('trailer')}</div>
- <h3 class="vhead rv" id="tutorials">{ic('steps')}Step by step with MTG</h3>
+ <h3 class="vhead rv" id="tutorials">{ic('steps')}Step By Step With MTG</h3>
  <div class="vgrid two">{vid('part1')}{vid('part2')}</div>
- <h3 class="vhead rv">{ic('chat')}The full founder call</h3>
+ <h3 class="vhead rv">{ic('chat')}The Full Founder Call</h3>
  <div class="founder">{founder_vid()}
-  <div class="moments rv"><h3>{ic('play')}Jump to a topic</h3><p>Tap a moment and the call starts right there.</p>{moments}
+  <div class="moments rv"><h3>{ic('play')}Jump To A Topic</h3><p>Tap a moment and the call starts right there.</p>{moments}
    <p class="fine">A live Zoom call with the MoveMint founder. Plans and opinions in it are the speakers' own, not promises.</p></div>
  </div>
+ <div class="cta-band rv"><img src="{a('/mint/img/bolt-420.webp')}" width="420" height="446" alt="" loading="lazy" decoding="async">
+  <div class="cb-t"><b>Seen Enough? Start Now.</b><span>Join with MTG's invite and get +20% bonus MINT on your buy. Part 1 and Part 2 above show every tap.</span></div>
+  <a class="btn btn-gold" {R}><span class="two">Get MINT With MTG's Invite<small>+20% Bonus MINT On Your Buy</small></span>{ic('arrow', 'go')}</a></div>
 </div></section>
 
 <section class="sec" id="start"><div class="wrap">
- <p class="kick rv">{ic('steps')}Start here</p>
- <h2 class="rv">Start in <span class="k">4 steps</span></h2>
+ <p class="kick rv">{ic('steps')}Start Here</p>
+ <h2 class="rv">Start In <span class="k">4 Steps</span></h2>
  <p class="sub rv">About 15 minutes, one step at a time. Each step ends with a check, so you always know it worked.</p>
  <ol class="steps">
-  <li class="step rv"><h3>Join with an invite and make your wallet</h3>
+  <li class="step rv"><h3>Join With An Invite And Make Your Wallet</h3>
    <ol><li>Open MTG's invite link and sign up.</li><li>Tap <b>Make my wallet</b>. It is made on your phone and locked with your Face ID or fingerprint.</li><li>Write your 12 recovery words on paper and keep them offline.</li></ol>
-   <p class="check">✅ <span><b>Success check:</b> you see "You're in" and your MoveMint wallet opens.</span></p>
-   <div class="acts"><a class="btn btn-gold" {R}>Open MTG's invite {ic('arrow', 'go')}</a><button class="btn btn-ghost" type="button" data-play="part1">{ic('play')}Watch Part 1 (5:12)</button></div></li>
-  <li class="step rv"><h3>Send SOL to your MoveMint wallet</h3>
+   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> you see "You're in" and your MoveMint wallet opens.</span></p>
+   <div class="acts"><a class="btn btn-gold" {R}>Open MTG's Invite {ic('arrow', 'go')}</a><button class="btn btn-ghost" type="button" data-play="part1">{ic('play')}Watch Part 1 (5:12)</button></div></li>
+  <li class="step rv"><h3>Send SOL To Your MoveMint Wallet</h3>
    <ol><li>Buy SOL on an exchange such as Binance. MTG converts USDT to SOL there.</li><li>In MoveMint, copy your Solana wallet address.</li><li>On the exchange, withdraw SOL on the <b>Solana</b> network to that address. Check the first and last 4 characters.</li></ol>
-   <p class="check">✅ <span><b>Success check:</b> your SOL shows in your MoveMint wallet.</span></p>
+   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> your SOL shows in your MoveMint wallet.</span></p>
    <div class="acts"><button class="btn btn-ghost" type="button" data-play="part2">{ic('play')}Watch Part 2 (5:39)</button></div></li>
-  <li class="step rv"><h3>Swap SOL for MINT, inside MoveMint</h3>
+  <li class="step rv"><h3>Swap SOL For MINT, Inside MoveMint</h3>
    <ol><li>Tap <b>Buy</b>, enter how much SOL to swap and confirm.</li><li>Keep a little SOL for network fees.</li><li>Your +20% invite bonus is sent to your wallet once approved.</li></ol>
-   <p class="check">✅ <span><b>Success check:</b> you see "Swapped" and your MINT balance. The bonus follows after approval.</span></p></li>
-  <li class="step rv"><h3>Hold, walk and share</h3>
+   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> you see "Swapped" and your MINT balance. The bonus follows after approval.</span></p></li>
+  <li class="step rv"><h3>Hold, Walk And Share</h3>
    <ol><li>Hold your MINT: drops land in your wallet by themselves.</li><li>Take the World tour with Bolt. Tap the robot icon to replay it any time.</li><li>Walk to collect Mint Points, and share your own buy link from the Me page.</li></ol>
-   <p class="check">✅ <span><b>Success check:</b> your first holder drop shows in your wallet.</span></p></li>
+   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> your first holder drop shows in your wallet.</span></p></li>
  </ol>
- <div class="tips rv"><h3>{ic('shield')}Good to know before you start</h3><ul>
-  <li>{ic('check')}<span><b>Use the contract address above.</b> Coins with the same name can exist.</span></li>
-  <li>{ic('check')}<span><b>Withdraw SOL on the Solana network</b>, and send a small amount first if it is your first time.</span></li>
-  <li>{ic('check')}<span><b>Keep a little SOL</b> in your wallet for network fees.</span></li>
-  <li>{ic('check')}<span><b>Your 12 words stay on paper.</b> Never in a screenshot, never shared. Nobody from MoveMint will ever ask for them.</span></li>
-  <li>{ic('check')}<span><b>Buy inside MoveMint with an invite</b> to get the +20% bonus.</span></li>
-  <li>{ic('check')}<span><b>Start small.</b> MTG tested every step first with just $10.</span></li>
+ <div class="tips rv"><h3>{ic('shield')}Good To Know Before You Start</h3><ul>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Use the contract address above.</b> Coins with the same name can exist.</span></li>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Withdraw SOL on the Solana network</b>, and send a small amount first if it is your first time.</span></li>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Keep a little SOL</b> in your wallet for network fees.</span></li>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Your 12 words stay on paper.</b> Never in a screenshot, never shared. Nobody from MoveMint will ever ask for them.</span></li>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Buy inside MoveMint with an invite</b> to get the +20% bonus.</span></li>
+  <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Start small.</b> MTG tested every step first with just $10.</span></li>
  </ul></div>
 </div></section>
 
 <section class="sec" id="faq"><div class="wrap">
  <p class="kick rv">{ic('help')}Questions</p>
- <h2 class="rv">Short <span class="k">answers</span></h2>
+ <h2 class="rv">Short <span class="k">Answers</span></h2>
  <div class="faq rv">{faq_html}</div>
 
  <div class="join rv" id="join">
   <img src="{a('/mint/img/bolt-420.webp')}" width="420" height="446" alt="" loading="lazy" decoding="async">
-  <h2>Your first MINT is <span class="k">a few taps away</span></h2>
+  <h2>Your First MINT Is <span class="k">A Few Taps Away</span></h2>
   <p class="sub">Join with MTG's invite, make your wallet, send SOL and swap. The videos above show every tap.</p>
-  <div class="acts"><a class="btn btn-gold" {R}><span class="two">Get MINT with MTG's invite<small>+20% bonus MINT on your buy</small></span>{ic('arrow', 'go')}</a>
-   <button class="btn btn-ghost" type="button" data-copy="{REF}" data-copied="MTG's invite link copied">{ic('copy')}<span class="lbl">Copy invite link</span></button>
-   <a class="btn btn-ghost" href="{('https://mtgtribe.com' if PREVIEW else '')}/group/">{ic('chat')}Questions? Ask the tribe</a></div>
+  <div class="acts"><a class="btn btn-gold" {R}><span class="two">Get MINT With MTG's Invite<small>+20% Bonus MINT On Your Buy</small></span>{ic('arrow', 'go')}</a>
+   <button class="btn btn-ghost" type="button" data-copy="{REF}" data-copied="MTG's Invite Link Copied">{ic('copy')}<span class="lbl">Copy Invite Link</span></button>
+   <a class="btn btn-ghost" href="{('https://mtgtribe.com' if PREVIEW else '')}/group/">{ic('chat')}Questions? Ask The Tribe</a></div>
   <p class="disc"><b>Fair play:</b> MTG receives part of the app fee when you buy with his link. It costs you nothing extra, and you get the bonus. Invited by someone else? Use their link.</p>
   <p class="disc">MINT and the tokens it drops go up and down in price, and rewards depend on trading. Start with an amount you are comfortable with.</p>
  </div>
@@ -322,8 +333,9 @@ def page():
 </main>
 
 <footer class="foot"><div class="wrap">
+ <img class="flogo" src="{a('/mint/img/mtg-tribe-logo-192.webp')}" width="96" height="96" alt="MTG TRIBE logo" loading="lazy" decoding="async">
  <ul class="socs" aria-label="Follow MTG">
-  <li><a href="{('https://mtgtribe.com' if PREVIEW else '')}/group/">{ic('users')}WhatsApp group</a></li>
+  <li><a href="{('https://mtgtribe.com' if PREVIEW else '')}/group/">{ic('users')}WhatsApp Group</a></li>
   <li><a href="https://t.me/mtgtribe" target="_blank" rel="noopener me">{ic('telegram')}Telegram</a></li>
   <li><a href="https://www.facebook.com/mtgtribe" target="_blank" rel="noopener me">{ic('facebook')}Facebook</a></li>
   <li><a href="https://www.tiktok.com/@joinmtgtribe" target="_blank" rel="noopener me">{ic('tiktok')}TikTok</a></li>
@@ -405,10 +417,10 @@ def jsonld():
     howto = {'@type': 'HowTo', '@id': URL + '#howto', 'name': 'How to buy MoveMint (MINT)', 'description': 'Join MoveMint with an invite, make your wallet, send SOL and swap it for MINT inside the app.',
              'totalTime': 'PT15M', 'supply': [{'@type': 'HowToSupply', 'name': 'A phone with Face ID or a fingerprint reader'}, {'@type': 'HowToSupply', 'name': 'SOL, for example bought on Binance'}],
              'step': [
-              {'@type': 'HowToStep', 'position': 1, 'name': 'Join with an invite and make your wallet', 'url': URL + '#start', 'text': 'Open an invite link, sign up, tap Make my wallet (locked with your Face ID or fingerprint) and write your 12 recovery words on paper.'},
-              {'@type': 'HowToStep', 'position': 2, 'name': 'Send SOL to your MoveMint wallet', 'url': URL + '#start', 'text': 'Buy SOL on an exchange such as Binance, copy your MoveMint Solana address and withdraw SOL on the Solana network. Check the first and last 4 characters.'},
-              {'@type': 'HowToStep', 'position': 3, 'name': 'Swap SOL for MINT inside MoveMint', 'url': URL + '#start', 'text': 'Tap Buy, enter how much SOL to swap and confirm. Keep a little SOL for fees. The +20% invite bonus is sent once approved.'},
-              {'@type': 'HowToStep', 'position': 4, 'name': 'Hold, walk and share', 'url': URL + '#start', 'text': 'Hold MINT and holder drops land in your wallet. Take the World tour, walk to collect Mint Points and share your buy link.'}],
+              {'@type': 'HowToStep', 'position': 1, 'name': 'Join With An Invite And Make Your Wallet', 'url': URL + '#start', 'text': 'Open an invite link, sign up, tap Make my wallet (locked with your Face ID or fingerprint) and write your 12 recovery words on paper.'},
+              {'@type': 'HowToStep', 'position': 2, 'name': 'Send SOL To Your MoveMint Wallet', 'url': URL + '#start', 'text': 'Buy SOL on an exchange such as Binance, copy your MoveMint Solana address and withdraw SOL on the Solana network. Check the first and last 4 characters.'},
+              {'@type': 'HowToStep', 'position': 3, 'name': 'Swap SOL For MINT Inside MoveMint', 'url': URL + '#start', 'text': 'Tap Buy, enter how much SOL to swap and confirm. Keep a little SOL for fees. The +20% invite bonus is sent once approved.'},
+              {'@type': 'HowToStep', 'position': 4, 'name': 'Hold, Walk And Share', 'url': URL + '#start', 'text': 'Hold MINT and holder drops land in your wallet. Take the World tour, walk to collect Mint Points and share your buy link.'}],
              'video': {'@id': URL + '#video-part1'}}
     faq = {'@type': 'FAQPage', '@id': URL + '#faq', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': ' '.join(ps)}} for q, ps in FAQ]}
     g = [

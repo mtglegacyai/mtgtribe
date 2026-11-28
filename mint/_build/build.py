@@ -83,16 +83,16 @@ VIDEOS = {
    cap='Part 2: SOL from Binance, swap to MINT, the app tour', name='How to buy MINT: fund your MoveMint wallet with SOL and swap (Part 2)',
    desc='MTG converts USDT to SOL on Binance, withdraws it on the Solana network to his MoveMint wallet, swaps SOL for MINT with the +20% invite bonus and tours the World, the robot icon and the Me page.', up='2026-11-28'),
 }
-MOMENTS = [  # founder call: where each topic starts (seconds), checked against the call's transcript
- (405, 'What MoveMint is: stocks, cash, metals and bonds for holders'),
- (436, 'How drops reach your wallet, with nothing to claim'),
- (719, 'Sell your rewards or your MINT whenever you like'),
- (944, 'The more MINT you hold, the bigger your share'),
- (1209, 'The World game: walk, catch treasures, earn points'),
- (1793, 'Try the app free, even before you own MINT'),
- (2043, 'Your wallet: only you can open it'),
- (2843, 'Find the iPhone app, or use the web app'),
- (3261, 'Every drop is posted, and you can check your wallet'),
+MOMENTS = [  # founder call: where each topic starts (seconds), 8 seconds before each topic in the call's transcript, for a lead-in
+ (397, 'What MoveMint is: stocks, cash, metals and bonds for holders'),
+ (428, 'How drops reach your wallet, with nothing to claim'),
+ (711, 'Sell your rewards or your MINT whenever you like'),
+ (936, 'The more MINT you hold, the bigger your share'),
+ (1201, 'The World game: walk, catch treasures, earn points'),
+ (1785, 'Try the app free, even before you own MINT'),
+ (2035, 'Your wallet: only you can open it'),
+ (2835, 'Find the iPhone app, or use the web app'),
+ (3253, 'Every drop is posted, and you can check your wallet'),
 ]
 def mmss(s): h, r = divmod(s, 3600); m, s = divmod(r, 60); return (f'{h}:{m:02d}:{s:02d}' if h else f'{m}:{s:02d}')
 

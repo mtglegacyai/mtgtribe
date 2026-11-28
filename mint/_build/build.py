@@ -380,8 +380,8 @@ def page():
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(OG_T)}">
 <meta name="twitter:description" content="{esc(OG_D)}">
 <meta name="twitter:image" content="{SITE}{a('/mint/img/og-movemint.jpg')}">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="preload" as="image" href="{a('/mint/img/bolt-720.webp')}" imagesrcset="{a('/mint/img/bolt-420.webp')} 420w, {a('/mint/img/bolt-720.webp')} 720w" imagesizes="(max-width:940px) 60vw, 330px">
@@ -463,7 +463,7 @@ if __name__ == '__main__':
     if bad: sys.exit('em or en dash found in the page: ' + repr(bad))
     if PREVIEW:
         dst = sys.argv[1]
-        out = out.replace('href="/assets/favicon-32.png"', 'href="assets/favicon-32.png"').replace('href="/assets/apple-touch-icon.png"', 'href="assets/apple-touch-icon.png"')
+        out = out.replace('href="/assets/favicon-32.png?v=2"', 'href="assets/favicon-32.png?v=2"').replace('href="/assets/apple-touch-icon.png?v=2"', 'href="assets/apple-touch-icon.png?v=2"')
         out = re.sub(r'(src|href|srcset|imagesrcset|data-src|data-src-hd)="/(mint|assets)/', r'\1="\2/', out)
         out = re.sub(r'(, )/(mint|assets)/', r'\1\2/', out)
         out = out.replace('"s":"/mint/', '"s":"mint/').replace('"p":"/mint/', '"p":"mint/')

@@ -62,8 +62,10 @@ feel like, oh man, this guy is smart." Every tutorial and explainer, on every si
   before they teach).
 - **Sit next to them:** one person at the table, "Let's do this together", "See this button? Tap it", the exact label,
   the success check.
-- **Teach one word** the step touches, in the website's own words; **one everyday picture** (taxi rank, queue, shop on a
-  busy street, billboard, season ticket, harvest) and where it stops; **one eye-opener** about what is possible, tied to
+- **Teach one word** the step touches, in the website's own words; **one everyday picture** that anyone, in any country, gets at
+  once (a pizza cut into slices, a queue, a shop on a busy street, a billboard, a season ticket, a harvest) and where it stops.
+  **Never taxis** (MTG, 28 Nov 2026: "I don't know why you always decide to use taxis for my analogies. I think they're boring ...
+  use something compelling ... regardless of where they're watching the video from"). Pick a fresh picture per topic; **one eye-opener** about what is possible, tied to
   the step; **2 to 5 smart nuggets** (the tip that saves trouble, the reason behind a rule); name their worry and answer it.
 - **Outline after the greeting, recap at the end** ("In this video, you learned ..."), then **close with a bang**: a strong
   call to action in the style of MTG's best closers (bellveraffiliates.com), thank them and make them feel great for

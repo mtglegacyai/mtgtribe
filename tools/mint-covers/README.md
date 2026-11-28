@@ -11,3 +11,6 @@
 - `og`: the page's social preview, `mint/img/og-movemint.jpg` (1200x630, under 200 KB).
 - No photo of MTG: the gold "MTG 👑" disc takes its place, as in his MoveMint videos. `rug.jpg` is a still from MoveMint's
   own trailer; `screen1.jpg` and `screen2.jpg` are frames from MTG's redacted tutorials.
+
+- `ytt.html` (with `bolt34.jpg`, a still from the trailer at 0:34): the YouTube thumbnail for the 49 second trailer,
+  `MoveMint-Trailer-YouTube-thumbnail-1280x720.jpg` (no duration badge: YouTube adds its own). `node shoot.js ytt`.

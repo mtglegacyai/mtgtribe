@@ -208,6 +208,7 @@ def page():
  <div>
   <p class="eye"><i aria-hidden="true"></i>MoveMint (MINT) on Solana</p>
   <h1 data-overlay><span class="sr">MoveMint (MINT) Guide: </span>Hold <span class="k">MINT</span>. Get <span class="g">Stocks</span> Dropped In Your Wallet.</h1>
+  <div class="hero-vid">{vid('trailer')}</div>
   <p class="lead">MoveMint shares its trading fees with <b>MINT holders</b> as tokenized stocks from <b>20+ companies</b>, plus gold, silver and cash, straight into your own wallet. <b>Nothing to claim.</b> Here is everything you need, in the right order, so you start in minutes without mistakes.</p>
   <div class="hero-cta">
    <a class="btn btn-gold" {R}><span class="two">Get MINT With MTG's Invite<small>+20% Bonus MINT On Your Buy</small></span>{ic('arrow', 'go')}</a>
@@ -270,10 +271,8 @@ def page():
 <section class="sec" id="videos"><div class="wrap">
  <p class="kick rv">{ic('play')}Videos</p>
  <h2 class="rv">Watch First, <span class="k">Then Start</span></h2>
- <p class="sub rv">Two short official videos, MTG's two step-by-step tutorials, and the full founder call. Every MoveMint video MTG makes lives right here.</p>
- <div class="vgrid two">{vid('hiw')}{vid('trailer')}</div>
- <h3 class="vhead rv" id="tutorials">{ic('steps')}Step By Step With MTG</h3>
- <div class="vgrid two">{vid('part1')}{vid('part2')}</div>
+ <p class="sub rv">MoveMint's own 85 second explainer, MTG's two step-by-step tutorials, and the full founder call. The 49 second trailer is at the top of the page. Every MoveMint video MTG makes lives right here.</p>
+ <div class="vgrid three" id="tutorials">{vid('hiw')}{vid('part1')}{vid('part2')}</div>
  <h3 class="vhead rv">{ic('chat')}The Full Founder Call</h3>
  <div class="founder">{founder_vid()}
   <div class="moments rv"><h3>{ic('play')}Jump To A Topic</h3><p>Tap a moment and the call starts right there.</p>{moments}

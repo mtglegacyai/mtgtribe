@@ -91,7 +91,7 @@ COPY = {
     'levels': ('All <em>7 levels</em> in one table', 'From $13 USDT. Activate a level once.'),
     'timeline': ('<em>12 + 7</em>: when it is yours', '12 click days, a 7-day hold, then your balance.'),
     'plan': ('The compensation <em>plan</em>', 'How you earn at every level, on video.'),
-    'grow': ('If it has a link, <em>promote it here</em>', 'BellverCards, PRENET, Bitcoin Wealth, JetUP, MLM, stokvel.'),
+    'grow': ('If it has a link, <em>promote it here</em>', 'BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, MLM, stokvel.'),
     'legit': ('Is it <em>legit?</em>', 'The facts, and how to check it yourself.'),
     'calc': ('ClickBaitPays <em>calculator</em>', 'What you pay today, your clicks and your payout date.'),
     'daily': ('Your <em>daily</em> routine', 'Log in, click, done. New clicks at 7:00 AM.'),
@@ -105,7 +105,7 @@ COPY = {
     't7': ('<em>Pay It Forward</em>', 'Send funds to a team member, safely.'),
     'videos': ('Every ClickBaitPays <em>video</em>', 'Watch today, and what is on the way.'),
     'faq': ('ClickBaitPays <em>FAQ</em>', '12 straight answers, and a live Q&amp;A.'),
-    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, PRENET, Bitcoin Wealth, JetUP and Aureus Alliance.'),
+    'streams': ('My income <em>streams</em>', 'Something to promote: BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP and Aureus Alliance.'),
     'copy': ('Get <em>this website</em>', 'The guide that sells the real reason people join. Your link on every button.'),
     'disc': ('The small print, in <em>plain words</em>', 'Independent guide, the referral link and your privacy.'),
 }
@@ -124,6 +124,7 @@ def visual(key):
                 f'<img src="{b64(os.path.join(b, "aureus-logo.webp"), "image/webp")}" style="position:absolute;right:6px;bottom:0;width:150px;{sh}" alt="">'
                 f'<img src="{b64(os.path.join(b, "jetup-logo.webp"), "image/webp")}" style="position:absolute;right:18px;top:158px;width:150px;{sh}" alt="">'
                 f'<img src="{b64(os.path.join(b, "bitcoin-wealth-logo.webp"), "image/webp")}" style="position:absolute;left:232px;bottom:0;width:118px;{sh}" alt="">'
+                f'<img src="{b64(os.path.join(b, "movemint-tile.webp"), "image/webp")}" style="position:absolute;left:236px;top:140px;width:178px;transform:rotate(-4deg);{sh}" alt="">'
                 f'<img src="{b64(os.path.join(ROOT, "tools", "cbp", "brand", "mtg-photo-256.webp"), "image/webp")}" style="position:absolute;left:52px;bottom:4px;width:112px;height:112px;border-radius:50%;box-shadow:0 0 0 4px #ffd866,0 0 30px rgba(255,216,102,.5)" alt=""></div>')
     if key == 'videos':
         return '<div class="vis grid4">' + ''.join(f'<img src="{cov(c, 480)}" alt="">' for c in ['welcome', 'strategy', 'backoffice', 'qa']) + '</div>'

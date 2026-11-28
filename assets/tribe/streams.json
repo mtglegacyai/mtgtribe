@@ -1,6 +1,6 @@
 {
-  "_about": "MTG's income streams, in his order (MTG, 27 Nov 2026: Bellver Cards, ClickBaitPays, PRENET, Bitcoin Wealth, JetUp · TAG Markets, Aureus Alliance). The single source of truth for every stream list on mtgtribe.com and musathegiant.com. musathegiant.com reads this file automatically (its sync job, .github/sync/sync.py in mtglegacyai/musathegiant, runs every hour). When a stream is added, removed, renamed or moved, change it here in the same pull request as the mtgtribe.com pages.",
-  "updated": "2026-11-27",
+  "_about": "MTG's income streams, in his order (MTG, 28 Nov 2026: Bellver Cards, ClickBaitPays, PRENET, MoveMint, Bitcoin Wealth, JetUp · TAG Markets, Aureus Alliance). The single source of truth for every stream list on mtgtribe.com and musathegiant.com. musathegiant.com reads this file automatically (its sync job, .github/sync/sync.py in mtglegacyai/musathegiant, runs every hour). When a stream is added, removed, renamed or moved, change it here in the same pull request as the mtgtribe.com pages.",
+  "updated": "2026-11-28",
   "streams": [
     {
       "id": "bellver",
@@ -50,6 +50,22 @@
       "cta": "Join PRENET free with MTG",
       "badge": "New",
       "sponsored": true
+    },
+    {
+      "id": "movemint",
+      "name": "MoveMint",
+      "short": "Stocks dropped in your wallet",
+      "tag": "Hold MINT. Get stocks dropped in your wallet.",
+      "blurb": "Hold MINT on Solana and a share of every trade's fee lands in your own wallet as tokenized stocks from 20+ companies, plus gold, silver and cash. Nothing to claim, sell any time. MTG's guide has the videos, the real contract address and 4 simple steps.",
+      "facts": [
+        "Tokenized stocks, gold and silver",
+        "+20% MINT with an invite",
+        "Videos and 4 simple steps"
+      ],
+      "url": "https://mtgtribe.com/mint/",
+      "cta": "Read the MoveMint guide",
+      "badge": "New",
+      "sponsored": false
     },
     {
       "id": "bitcoinwealth",

@@ -51,8 +51,9 @@ JETUP_GUIDE = 'https://mtgtribe.com/jetup/'   # MTG's JetUP and TAG Markets guid
 CBP_SITE = 'https://clickbaitpaysus.com'
 AUREUS = 'https://www.aureus.africa/mtglegacy'   # Aureus Alliance: a gold mining company that sells gold mining shares (MTG, 24 Nov 2026); MTG's link
 PRENET = 'https://prenet.world/ref/mtg'          # PRENET: MTG's newest income stream (MTG, 26 Nov 2026); his referral link, guide coming at mtgtribe.com/prenet
+MOVEMINT = 'https://mtgtribe.com/mint/'           # MoveMint (MINT on Solana): MTG's guide, right below PRENET in his order (MTG, 28 Nov 2026)
 # menu items that lead to MTG's other sites (MTG, 22 Nov 2026: "After Crypto Card, add: JetUp ... then ClickBaitPays")
-MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'prenet': PRENET, 'cbp': CBP_SITE}
+MENU_EXT = {'card': CARD_GUIDE, 'jetup': JETUP_GUIDE, 'aureus': AUREUS, 'prenet': PRENET, 'movemint': MOVEMINT, 'cbp': CBP_SITE}
 MENU_REF = {'aureus', 'prenet'}   # menu items that are MTG's referral links straight to the program: rel="sponsored"
 
 # on-chain facts (read from BNB Smart Chain on 14 Nov 2026; see mtg-studio ONCHAIN-CHECK-2026-11-14.md)
@@ -243,10 +244,12 @@ NAV = [
     ('gloss', 'dashboard/glossary/', 'Glossary', 'Crypto words, plain English', 'book-open-text', 'Help'),
     ('safe', 'dashboard/safety/', 'Safety Centre', 'Protect your wallet', 'shield-check', 'Help'),
     # More From MTG 👑, in MTG's order of his income streams (27 Nov 2026: "BELLVER CARDS (cards is plural because they offer
-    # different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"; Bitcoin Wealth is this guide itself).
+    # different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"; 28 Nov 2026: MoveMint right below
+    # PRENET; Bitcoin Wealth is this guide itself).
     ('card', 'dashboard/crypto-card/', 'Bellver Cards', 'Spend your crypto', 'credit-card', 'More From MTG 👑'),
     ('cbp', CBP_SITE, 'ClickBaitPays', 'Got a link? Get it seen', 'mouse-pointer-click', 'More From MTG 👑'),
     ('prenet', PRENET, 'PRENET', 'Join free, get in early', 'sparkles', 'More From MTG 👑'),
+    ('movemint', MOVEMINT, 'MoveMint', 'Stocks dropped in your wallet', 'trending-up', 'More From MTG 👑'),
     ('jetup', JETUP_GUIDE, 'JetUP', 'Sonic AI copy trading', 'plane-takeoff', 'More From MTG 👑'),
     ('aureus', AUREUS, 'Aureus Alliance', 'Gold mining shares', 'pickaxe', 'More From MTG 👑'),
     ('tribe', 'dashboard/tribe/', 'Join The MTG TRIBE', 'WhatsApp community', 'message-circle', 'More From MTG 👑'),

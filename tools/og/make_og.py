@@ -213,10 +213,10 @@ def hero_split():
 <div class="chip" style="left:70px;top:470px"><span class="e">🙌</span>No fee on a losing trade</div>'''
 
 def hero_dashboard():
-    # MTG's order (27 Nov 2026): Bellver Cards, ClickBaitPays, PRENET, Bitcoin Wealth, JetUP, Aureus Alliance; ALTRUVA is no longer listed
-    rows = [('Bellver Cards', 'Spend your crypto like cash'), ('ClickBaitPays', 'Get any link seen'), ('PRENET', 'Our newest income stream'), ('Bitcoin Wealth', 'A way to stack Bitcoin'), ('JetUP + TAG Markets', 'Copy trading, explained'), ('Aureus Alliance', 'Shares in gold mining')]
-    r = ''.join(f'<div class="row" style="height:59px"><span style="flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#ffe9a8,#e8b84a);color:#1a1205;font:400 28px/1 \'Anton\'">{i + 1}</span><div>{t}<small>{s}</small></div></div>' for i, (t, s) in enumerate(rows))
-    return f'''<div class="card" style="left:10px;top:22px;width:480px;padding:22px;display:flex;flex-direction:column;gap:11px">
+    # MTG's order (28 Nov 2026): Bellver Cards, ClickBaitPays, PRENET, MoveMint, Bitcoin Wealth, JetUP, Aureus Alliance; ALTRUVA is no longer listed
+    rows = [('Bellver Cards', 'Spend your crypto like cash'), ('ClickBaitPays', 'Get any link seen'), ('PRENET', 'Join free, get in early'), ('MoveMint', 'Stocks dropped in your wallet'), ('Bitcoin Wealth', 'A way to stack Bitcoin'), ('JetUP + TAG Markets', 'Copy trading, explained'), ('Aureus Alliance', 'Shares in gold mining')]
+    r = ''.join(f'<div class="row" style="height:51px"><span style="flex:none;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(180deg,#ffe9a8,#e8b84a);color:#1a1205;font:400 26px/1 \'Anton\'">{i + 1}</span><div>{t}<small>{s}</small></div></div>' for i, (t, s) in enumerate(rows))
+    return f'''<div class="card" style="left:10px;top:14px;width:480px;padding:20px 22px;display:flex;flex-direction:column;gap:9px">
  <p style="font:800 15px/1 'Manrope';letter-spacing:.16em;color:#f3d27a;margin:0 0 2px 6px">OUR INCOME STREAMS, RANKED</p>{r}</div>
 <div class="chip" style="left:20px;top:516px"><span class="e">📈</span>Live prices</div><div class="chip" style="left:200px;top:516px"><span class="e">🧮</span>Tools + tutorials</div>'''
 
@@ -304,7 +304,7 @@ SPECS = [
  dict(slug='jetup-profit-split-calculator', fam='jetup', page='/jetup/tools/profit-split-calculator/', eb='FREE CALCULATOR', h='Profit split<br><em>calculator</em>', hs=104,
       sub='Your 70% of a Sonic AI profit, and the 30% fee.', url='mtgtribe.com/jetup/tools/profit-split-calculator', hero=hero_split,
       alt='Profit Split Calculator: the 70/30 on TAG Markets CopyX'),
- dict(slug='tribe-dashboard', fam='tribe', page='/dashboard/', eb='THE TRIBE DASHBOARD', h='6 income<br>streams.<br><span class="g">Ranked.</span>', hs=108,
+ dict(slug='tribe-dashboard', fam='tribe', page='/dashboard/', eb='THE TRIBE DASHBOARD', h='7 income<br>streams.<br><span class="g">Ranked.</span>', hs=108,
       sub='Plus prices, tutorials and tools.', url='mtgtribe.com/dashboard', hero=hero_dashboard,
       alt='The MTG TRIBE dashboard: income streams ranked, prices, tutorials and tools'),
  dict(slug='tribe-whatsapp', fam='tribe', page='/group/', eb='MTG TRIBE ON WHATSAPP', h='Don\'t learn<br>this <span class="g">alone.</span>', hs=110,

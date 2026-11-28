@@ -114,7 +114,7 @@ STATUS = {'soon': 'Coming soon', 'record': 'Being recorded'}
 DECK = dict(file='clickbaitpays-presentation-slides.pdf', pages=10)
 
 # THE MESSAGE (MTG, 22 Nov 2026): if it has a link, ClickBaitPays gets it seen, and pays you while it does. tools/cbp/MESSAGE.md
-PROGRAMS = ['BellverCards', 'PRENET', 'Bitcoin Wealth', 'JetUP', 'XFUSION', 'Solar Group', 'Aureus Alliance', 'Stokvel and smart contract platforms',
+PROGRAMS = ['BellverCards', 'PRENET', 'MoveMint', 'Bitcoin Wealth', 'JetUP', 'XFUSION', 'Solar Group', 'Aureus Alliance', 'Stokvel and smart contract platforms',
             'MLM programs', 'Affiliate programs', 'Digital products', 'Your own business']
 STORY = ('I was clicking my daily ads when a BellverCards ad caught my eye. I opened it, I liked what I saw, and I joined. '
          'Today I am earning with BellverCards and ranking up. One ad, in front of the right person, at the right time. '
@@ -128,12 +128,12 @@ NICHES = [
     ('globe', 'Any business with a website', 'A shop on a street nobody walks down sells nothing. ClickBaitPays is the busy street, and people are paid to stop and look.'),
 ]
 STREAMS = [
-    ('trend', 'Your program grows', 'Your ad sends real people to BellverCards, PRENET, Bitcoin Wealth, JetUP or whatever you promote. The ones it speaks to join, buy or sign up under you.'),
+    ('trend', 'Your program grows', 'Your ad sends real people to BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP or whatever you promote. The ones it speaks to join, buy or sign up under you.'),
     ('coins', 'Your clicks pay', 'While your ad works, you view theirs and get paid in USDT: from $0.48 to $13.50 per click, by level, every click day.'),
     ('users', 'Your referrals pay', 'Share your ClickBaitPays link and receive 10% of the campaigns your referrals buy. Optional, and it stacks.'),
 ]
 # MTG's own income streams, in his order (MTG, 27 Nov 2026: "BELLVER CARDS (cards is plural because they offer different cards),
-# CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"), never ALTRUVA. Name, accent, picture, line, three
+# CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE"; 28 Nov 2026: MoveMint goes right below PRENET), never ALTRUVA. Name, accent, picture, line, three
 # facts, button, link, and its menu line and icon: the My Income Streams page, the band on other pages and the menu all read this list.
 # They are what a member can promote here: ClickBaitPays itself cannot be (everyone watching the ads is already in).
 # ref=True: the button carries MTG's referral link straight to the program (rel="sponsored").
@@ -148,6 +148,10 @@ MY_STREAMS = [
          line='One free sign-up places you in four team structures at once: Matrix, Unilevel, Binary and the Global Line. Build your network now, and new projects, like AI tools from NEX Generation Systems, plug in later when you opt in. Timing counts: the sooner you join, the more people join after you. MTG\'s full guide is coming soon at mtgtribe.com/prenet.',
          facts=['Free sign-up, 4 structures', 'Full guide coming soon', 'Join with MTG\'s link'],
          cta='Join PRENET Free With MTG', url=PRENET, ext=True, ref=True, menu='PRENET', sub='Join free, get in early', icon='sparkles'),
+    dict(key='movemint', name='MoveMint', tag='Hold MINT, get stocks dropped in your wallet', img='movemint-tile.webp', w=640, h=382, accent='lime',
+         line='Hold MINT on Solana and a share of every trade\'s fee lands in your own wallet as tokenized stocks from 20+ companies, plus gold, silver and cash. Nothing to claim, sell any time.',
+         facts=['Tokenized stocks, gold, silver', '+20% MINT with an invite', 'Videos and 4 simple steps'],
+         cta='Open The MoveMint Guide', url=HUB + '/mint/', ext=False, menu='MoveMint', sub='Stocks dropped in your wallet', icon='trend'),
     dict(key='bw', name='Bitcoin Wealth', tag='A different way to stack Bitcoin', img='bitcoin-wealth-logo.webp', w=192, h=192, accent='orange',
          line='One once-off entry of 0.001 BTC, payouts straight to your own wallet, and every payment public on the blockchain for anyone to check.',
          facts=['Once-off 0.001 BTC entry', 'Paid to your own wallet', 'Every payment public'],
@@ -228,13 +232,13 @@ KEYS = [n[0] for n in NAV]
 # search titles (60 characters at most) and descriptions (about 155 characters) for every page
 SEO = {
     'landing': ('ClickBaitPays: Promote Any Link and Get Paid to View Ads',
-                'Got a link? ClickBaitPays puts BellverCards, PRENET, Bitcoin Wealth, JetUP and any MLM or affiliate link in front of real people, and pays you USDT to view ads.'),
+                'Got a link? ClickBaitPays puts BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP and any MLM or affiliate link in front of real people, and pays you USDT to view ads.'),
     'home': ('ClickBaitPays Dashboard: Every Topic and Tutorial, in Order',
              'The ClickBaitPays dashboard by MTG: one short page per topic, from the compensation plan and how to join to the 7 levels, the 12 + 7 timeline and tutorials.'),
     'what': ('What Is ClickBaitPays? The Paid-to-Click Platform Explained',
              'ClickBaitPays explained simply: put any link in front of real people, get paid in USDT to view their ads, and grow every income stream you already have.'),
     'grow': ('Promote Your Link on ClickBaitPays: Traffic for Any Program',
-             'Promote BellverCards, PRENET, Bitcoin Wealth, JetUP, XFUSION, MLM, affiliate or stokvel links to real people on ClickBaitPays, and get paid in USDT too.'),
+             'Promote BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, XFUSION, MLM, affiliate or stokvel links to real people on ClickBaitPays, and get paid in USDT too.'),
     'plan': ('ClickBaitPays Compensation Plan Explained, With Video',
              'The ClickBaitPays compensation plan in plain English: pay per click at all 7 levels, the one-time activation, the 10% referral commission and the 12 + 7 payout.'),
     'how': ('How ClickBaitPays Works: 5 Steps From Sign-Up to Payout',
@@ -272,7 +276,7 @@ SEO = {
     'faq': ('ClickBaitPays FAQ: Straight Answers to the Top Questions',
             'ClickBaitPays questions answered: is it free, how members get paid, the activation fee, withdrawals, logging in, Login Ads and referrals. Plus a live Q&A.'),
     'streams': ('MTG\'s Income Streams: Bellver Cards, PRENET and More',
-                'Need something to promote on ClickBaitPays? Pick one of MTG\'s income streams: BellverCards, PRENET, Bitcoin Wealth, JetUP or Aureus Alliance gold mining shares.'),
+                'Need something to promote on ClickBaitPays? Pick one of MTG\'s income streams: BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP or Aureus Alliance gold mining shares.'),
     'copy': ('Get This ClickBaitPays Website: Your Link, R1,000 Once-Off',
              f'Own this ClickBaitPays guide with your referral link on every Join button, every video and tutorial, at {COPY_AT}yourname. Pay only if you like it.'),
     'disc': ('Disclaimer and Privacy | ClickBaitPays Guide by MTG',
@@ -766,7 +770,7 @@ def streams_band(here):
 def endband(here, show_copy=True):
     """the end of every page: two clear next steps, join, or own this exact website (MTG, 22 Nov 2026: "I want to sell it like hotcakes")"""
     join = (f'<div class="eb t3d"><img src="{A("assets/logo-disc-256.webp", here)}" alt="" width="56" height="56" loading="lazy">'
-            f'<h2>Got a link? Get it seen.</h2><p>Promote BellverCards, PRENET, Bitcoin Wealth, JetUP or any program with a link, and get paid in USDT to view ads while you do.</p>{join_btn()}{fair()}'
+            f'<h2>Got a link? Get it seen.</h2><p>Promote BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP or any program with a link, and get paid in USDT to view ads while you do.</p>{join_btn()}{fair()}'
             + ('' if here == NAVD['streams'][1] else f'<a class="more-l eb-more" href="{page_link("streams", here)}">Nothing to promote yet? See MTG\'s income streams{ic("chr")}</a>') + '</div>')
     own = (f'<div class="eb eb-own t3d"><span class="eb-ic">{ic("globe")}</span><h2>Want this exact website, with your link?</h2>'
            f'<p>The ClickBaitPays guide that sells the real reason people join: traffic for what they already promote. Your link on every button. R1,000 or $50 once-off, and you pay only if you like it.</p>{copy_btn(here)}</div>')
@@ -838,7 +842,7 @@ STEPS = [
 
 FAQ = [
     ('What can I promote on ClickBaitPays?',
-     'If it has a link, you can promote it: BellverCards, PRENET, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products or your own business. Illegal or harmful content and big sites such as Google or Facebook are not allowed. Ad titles are 30 characters at most.'),
+     'If it has a link, you can promote it: BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products or your own business. Illegal or harmful content and big sites such as Google or Facebook are not allowed. Ad titles are 30 characters at most.'),
     ('Can ClickBaitPays bring sign-ups to my team or program?',
      'It brings real people to your link: members open your page and view it for a 15-second countdown, every click day. The ones it speaks to can join, buy or sign up under you. MTG found BellverCards through an ad on ClickBaitPays, joined, and is ranking up. What you get depends on your offer and your ad, and nothing is guaranteed.'),
     ('Is ClickBaitPays free to join?',
@@ -963,7 +967,7 @@ def p_landing():
  </div>
  <div class="hero-vid">{vid('welcome', here, hero=True, eager=True, num='1')}</div>
  <div class="hero-copy">
-  <p class="lead"><b>BellverCards. PRENET. Bitcoin Wealth. JetUP. XFUSION. A stokvel, an MLM, an affiliate offer, a digital product.</b> If it has a link, ClickBaitPays puts it in front of real people who open it, every single day. And you get paid in USDT to view their ads while it happens.</p>
+  <p class="lead"><b>BellverCards. PRENET. MoveMint. Bitcoin Wealth. JetUP. XFUSION. A stokvel, an MLM, an affiliate offer, a digital product.</b> If it has a link, ClickBaitPays puts it in front of real people who open it, every single day. And you get paid in USDT to view their ads while it happens.</p>
   <div class="cta-row">{join_btn()}{plan_btn(here, 'Compensation Plan')}</div>
   {fair()}
   <ul class="facts" aria-label="Key facts"><li>{ic('mega')}<b>Any link</b> gets seen</li><li>{ic('coins')}Paid in <b>USDT</b></li><li>{ic('gift')}<b>Free</b> to join</li></ul>
@@ -1046,10 +1050,10 @@ def p_what(here):
     roles = (f'<div class="roles"><article class="role t3d">{ic("mega")}<h3>Advertisers get traffic</h3><p>Buy an ad campaign and members view your link every day for 12 click days.</p></article>'
              f'<article class="role pink t3d">{ic("cursor")}<h3>Viewers get paid</h3><p>Open each ad, wait for the 15-second countdown, tap <b>Confirm &amp; Earn</b>. Paid in USDT.</p></article></div>'
              + note('<b>Every member does both.</b> Think of a community noticeboard: you pin your poster where members pass by, and members are paid for the time they spend reading each other\'s posters.', 'msg', 'soft'))
-    nxt = (f'<div class="ccards two-up"><a class="ccard t3d" href="{page_link("grow", here)}">{ic("mega")}<b>Promote your link</b><span>BellverCards, PRENET, Bitcoin Wealth, JetUP, any program: get it seen.</span><small>Next{ic("chr")}</small></a>'
+    nxt = (f'<div class="ccards two-up"><a class="ccard t3d" href="{page_link("grow", here)}">{ic("mega")}<b>Promote your link</b><span>BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, any program: get it seen.</span><small>Next{ic("chr")}</small></a>'
            f'<a class="ccard t3d" href="{page_link("plan", here)}">{ic("coins")}<b>The compensation plan</b><span>How members earn, on video, with the numbers.</span><small>Watch{ic("chr")}</small></a></div>')
     return (phead('what', here, 'What is ClickBaitPays?', 'A paid-to-click advertising platform with the twist that matters: you put your own link in front of real people, and you get paid in USDT to view theirs.')
-            + two(vid('welcome', here, hero=True), side_box('In 30 seconds', ['Your link in front of real people for 12 click days', 'Get paid in USDT to view their ads', 'Any program with a link: BellverCards, PRENET, Bitcoin Wealth, JetUP', 'Free to join, campaigns from $13 USDT'], 'timer'))
+            + two(vid('welcome', here, hero=True), side_box('In 30 seconds', ['Your link in front of real people for 12 click days', 'Get paid in USDT to view their ads', 'Any program with a link: BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP', 'Free to join, campaigns from $13 USDT'], 'timer'))
             + sec('Two sides, one simple trade', roles) + sec('If it has a link, it belongs here', pchips()) + sec('Where to next', nxt))
 
 
@@ -1069,7 +1073,7 @@ def p_grow(here):
                    'Keep it legal and honest: big sites such as Google or Facebook are not allowed'])
     bill = note('<b>Think of a billboard on the busiest street in town,</b> except here every passer-by is paid to stop, open it and look for 15 seconds. That is the traffic your link gets.', 'mega', 'soft')
     return (phead('grow', here, 'Got a link? Put it in front of real people, every day.',
-                  'BellverCards, PRENET, Bitcoin Wealth, JetUP, XFUSION, a stokvel, an MLM, an affiliate offer, a digital product. If it has a link, ClickBaitPays sends real people to it, and pays you in USDT to view their ads while it does.')
+                  'BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, XFUSION, a stokvel, an MLM, an affiliate offer, a digital product. If it has a link, ClickBaitPays sends real people to it, and pays you in USDT to view their ads while it does.')
             + two(vid('e1', here), side_box('What you get', ['Real people opening your page, every click day', 'Sign-ups, sales and team members from the ones it speaks to', 'USDT for viewing ads while your ad works', 'From $13 USDT for 12 click days'], 'mega'))
             + sec('If it has a link, it belongs here', pchips() + bill)
             + sec('Who needs this? Anyone with a link.', niches(), lead='Every business needs eyes. Every team needs sign-ups. Every affiliate needs clicks.')
@@ -1154,7 +1158,7 @@ def p_plan(here):
     stats = [(90, '%', 'of each click\'s cost goes to the member who views it'), (7, '', 'levels, from $13 to $2,400 USDT'),
              (10, '%', 'referral commission, if you share your link'), (19, '', 'days from your first click to your Available Balance')]
     st = ''.join(f'<div class="stat t3d"><b><span data-count="{n}">{n}</span>{u}</b><span>{t}</span></div>' for n, u, t in stats)
-    ways = [('mega', 'Traffic for what you promote', 'Your campaign puts your link in front of real people for 12 click days. Every sign-up it brings to BellverCards, PRENET, Bitcoin Wealth, JetUP or your own program grows your other income streams.'),
+    ways = [('mega', 'Traffic for what you promote', 'Your campaign puts your link in front of real people for 12 click days. Every sign-up it brings to BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP or your own program grows your other income streams.'),
             ('coins', 'Get paid to view', 'Your level\'s pay per click, from $0.48 USDT at Level 1 to $13.50 USDT at Level 7, for 3 to 20 ads a day.'),
             ('users', '10% referral commission', 'When someone joins ClickBaitPays with your link, you receive 10% of the campaigns they buy. Optional, and it stacks.')]
     wc = ''.join(f'<article class="pcard t3d"><span class="pn">{i + 1}</span>{ic(a)}<h3>{b}</h3><p>{c}</p></article>' for i, (a, b, c) in enumerate(ways))
@@ -1361,7 +1365,7 @@ def p_copy(here):
 def p_disc(here):
     blocks = [
         ('shield', 'An independent guide', f'This is MTG\'s own guide to ClickBaitPays, made to educate. It is not the official ClickBaitPays website (that is <a href="{OFFICIAL}" target="_blank" rel="noopener">clickbaitpays.me</a>) and it is not run by ClickBaitPays. Rules, prices and features can change: the official site always has the final word.'),
-        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. The links to MTG\'s other income streams (BellverCards, PRENET, Bitcoin Wealth, JetUP and Aureus Alliance) lead to his own guides or carry his referral links too. Invited by someone else? Please use their link instead.'),
+        ('link', 'The Join buttons carry MTG\'s referral link', f'Every Join button opens the official sign-up page with MTG as your sponsor (code <b>{OWNER["code"]}</b>). If you join through it, MTG receives 10% of the ad campaigns you buy, as the platform\'s referral rules describe. Your prices do not change. The links to MTG\'s other income streams (BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP and Aureus Alliance) lead to his own guides or carry his referral links too. Invited by someone else? Please use their link instead.'),
         ('layers', 'About the figures', f'Prices, activation fees, pay per click, clicks a day and campaign totals are the platform\'s own figures, read in the ClickBaitPays back office on {CHECKED}. Campaign totals assume all 12 click days. They describe how the platform pays; they are not a promise of what you will earn.'),
         ('info', 'Advertising, not an investment', 'ClickBaitPays is an advertising platform: you buy advertising for your link and are paid for viewing other members\' ads. Nothing on this site is financial advice. Results depend on the ads you view and on the platform, and nothing is guaranteed. Start with an amount you are comfortable with and only use money you can afford to lose.'),
         ('lock', 'Privacy: what this site stores', 'Nothing personal. There are no accounts, forms that store data, or tracking cookies. The calculator runs in your own browser. Your browser remembers only whether you collapsed the dashboard menu. The videos play from ClickBaitPays\' own storage (media.clickbaitpaysus.com), only when you press play. The copy order form opens WhatsApp with your message; nothing is saved on this site.'),
@@ -1455,7 +1459,7 @@ def llms():
 - After the 12th click day, earnings are held 7 days, then move to the Available Balance: withdraw (once a week, minimum $10 USDT, 10% fee), Pay It Forward to another member, or buy a new campaign.
 - Login Ads: $20 USDT for 30 days, shown to every member for 30 seconds at login; they pay nothing, they buy views.
 - Referrals are optional; sponsors receive 10% of the campaigns their referrals buy.
-- What members promote: any program with a link, for example BellverCards, PRENET, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products and their own businesses. Each view is a real member opening the advertiser's page for a 15-second countdown.
+- What members promote: any program with a link, for example BellverCards, PRENET, MoveMint, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvel and smart contract platforms, MLM and affiliate programs, digital products and their own businesses. Each view is a real member opening the advertiser's page for a 15-second countdown.
 - The presentation slides, free as a PDF: {SITE}{BASE}assets/{DECK['file']} (how it works in 4 steps, every level with its numbers).
 - Up to 3 ad campaigns can be active per account (the platform's own presentation).
 - MTG's own experience: he found BellverCards through an ad on ClickBaitPays, joined, and is earning and ranking up (his experience, not a promise).
@@ -1480,7 +1484,7 @@ def copy_assets(dst):
              ('clickbaitpays-logo-disc-256.webp', 'logo-disc-256.webp'), ('clickbaitpays-logo-256.webp', 'logo-256.webp'),
              ('mtg-photo-256.webp', 'mtg-photo.webp'), ('../../../cbp/_build/deck/deck-cover.webp', 'deck-cover.webp'),
              ('../../../cbp/_build/deck/' + DECK['file'], DECK['file']), ('streams/bellver-card.webp', 's/bellver-card.webp'),
-             ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/prenet-tile.webp', 's/prenet-tile.webp'), ('streams/aureus-logo.webp', 's/aureus-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
+             ('streams/jetup-logo.webp', 's/jetup-logo.webp'), ('streams/prenet-tile.webp', 's/prenet-tile.webp'), ('streams/movemint-tile.webp', 's/movemint-tile.webp'), ('streams/aureus-logo.webp', 's/aureus-logo.webp'), ('streams/bitcoin-wealth-logo.webp', 's/bitcoin-wealth-logo.webp')]          # MTG's photo on his story card (MTG, 22 Nov 2026)
     for a, b in pairs:
         shutil.copyfile(os.path.join(BRAND, a), os.path.join(dst, b))
     for f in ('cbp.css', 'cbp.js'):

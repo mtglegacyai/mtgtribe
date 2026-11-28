@@ -92,6 +92,15 @@ MTG's newest stream, MINT on Solana (app.movemint.vip, his buy link https://app.
   MINT, the app tour (World walkthrough, robot icon, Me page). His notes are kept with the build; raw recordings never in the repo.
 - **Analogies: never taxis** (MTG, 28 Nov 2026). Use a fresh, universal picture per topic.
 
+## The favicon is the MTG TRIBE logo (MTG, 28 Nov 2026)
+
+"Change the favicon of mtgtribe.com and musathegiant.com from the king emoji to my MTG tribe logo." mtgtribe.com:
+`/assets/favicon-32.png`, `/assets/apple-touch-icon.png`, `/assets/icon-512.png` and `/favicon.ico` (pages without an icon link use it),
+linked with `?v=2`. musathegiant.com: `/favicon.svg` (the logo inside an SVG), `/images/favicon.png`, `/apple-touch-icon.png`,
+`/favicon.ico`; its sync keeps those addresses local (`OWN` in `.github/sync/sync.py`). The logo source is `mint/img/mtg-tribe-logo-*`
+(800 px original in the session that made it). The guides keep their own icons (/bw, /cbp, /jetup, /altruva). A new icon: change the
+files and bump `?v=` on every page that links them.
+
 ## Standing rule: the bottom bar on the mtgtribe.com hub pages (MTG, 26 Nov 2026)
 
 "Add a similar bottom navigation buttons to the mtgtribe.com website like we have them on ClickBaitPaysUs.com,

@@ -16,6 +16,8 @@ URL = SITE + '/mint/'
 REF = 'https://app.movemint.vip/buy/mtg'
 CA = '1PPQkxYy2wUvKkUXMnDkiDrqx5Hfp2nbDju11cvHeFW'
 YT = 'bPdUpYZ1H8k'
+# MoveMint's official channels (MTG, 28 Nov 2026: "make sure my tribe follows the official, correct, safe, and real MoveMint socials")
+OFFICIAL = [('MoveMint Telegram chat', 'https://t.me/TheMoveMint'), ('MoveMint Telegram bot', 'https://t.me/TheMoveMintBot'), ('MoveMint Live', 'https://movemint.vip/live')]
 MEDIA = '/mint/media/'
 PREVIEW = os.environ.get('MINT_PREVIEW') == '1'
 TODAY = '2026-11-28'
@@ -52,6 +54,8 @@ ICONS = {
  'zap': '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
  'badge': '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>',
  'chat': '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+ 'bot': '<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+ 'live': '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>',
 }
 SOCIAL = open(os.path.join(HERE, 'social-symbols.svg')).read()
 def ic(name, cls=''): return f'<svg class="ic{(" " + cls) if cls else ""}" aria-hidden="true" focusable="false"><use href="#i-{name}"/></svg>'
@@ -167,6 +171,8 @@ FAQ = [
   [f'{CA}. That is MoveMint (MINT) on Solana. Tokens with the same name can exist, so always check the address before you buy anywhere.']),
  ('Can I start small?',
   ['Yes. MTG tested MoveMint first with just $10 to see every step for himself. Start with an amount that lets you sleep well, and add more when you are comfortable.']),
+ ('What are the official MoveMint channels?',
+  ['The official MoveMint Telegram chat is t.me/TheMoveMint, and the official bot is t.me/TheMoveMintBot, where you can paste your wallet address to see your rewards. MoveMint Live, at movemint.vip/live, shows every round and every receipt on Solana. Follow only these, and never share your 12 words in any chat.']),
  ('Is this the official MoveMint website?',
   ['No. This is MTG\'s independent guide. The official website is movemint.vip. MTG is a MoveMint member: when you buy with his invite link, he receives part of the app fee. It costs you nothing extra, and you get the +20% bonus. Invited by someone else? Use their link.']),
 ]
@@ -201,7 +207,7 @@ def page():
  <a class="btn btn-gold cta-sm" {R}>Get MINT {ic('arrow', 'go')}</a>
  <button class="menu-b" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drop">{ic('menu', 'i-open')}<svg class="ic i-close" aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button>
 </div></header>
-<nav class="drop" id="drop" aria-label="Sections"><a href="#top">{ic('home')}Top</a><a href="#what">{ic('coins')}How MoveMint Pays</a><a href="#videos">{ic('play')}Videos</a><a href="#start">{ic('steps')}Start In 4 Steps</a><a href="#faq">{ic('help')}Questions</a><a {R}>{ic('zap')}Get MINT With MTG's Invite</a></nav>
+<nav class="drop" id="drop" aria-label="Sections"><a href="#top">{ic('home')}Top</a><a href="#what">{ic('coins')}How MoveMint Pays</a><a href="#videos">{ic('play')}Videos</a><a href="#start">{ic('steps')}Start In 4 Steps</a><a href="#faq">{ic('help')}Questions</a><a href="#official">{ic('shield')}Official MoveMint Channels</a><a {R}>{ic('zap')}Get MINT With MTG's Invite</a></nav>
 
 <main id="main">
 <section class="hero" id="top"><div class="wrap hero-in">
@@ -301,7 +307,7 @@ def page():
    <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> you see "Swapped" and your MINT balance. The bonus follows after approval.</span></p></li>
   <li class="step rv"><h3>Hold, Walk And Share</h3>
    <ol><li>Hold your MINT: drops land in your wallet by themselves.</li><li>Take the World tour with Bolt. Tap the robot icon to replay it any time.</li><li>Walk to collect Mint Points, and share your own buy link from the Me page.</li></ol>
-   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> your first holder drop shows in your wallet.</span></p></li>
+   <p class="check"><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Success Check:</b> your first holder drop shows in your wallet. You can also see it in the <a class="lk" href="#official">official bot or on MoveMint Live</a>.</span></p></li>
  </ol>
  <div class="tips rv"><h3>{ic('shield')}Good To Know Before You Start</h3><ul>
   <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Use the contract address above.</b> Coins with the same name can exist.</span></li>
@@ -311,6 +317,16 @@ def page():
   <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Buy inside MoveMint with an invite</b> to get the +20% bonus.</span></li>
   <li><span class="tick" aria-hidden="true">{ic('check')}</span><span><b>Start small.</b> MTG tested every step first with just $10.</span></li>
  </ul></div>
+ <div class="official rv" id="official">
+  <div class="off-head"><span class="off-badge">{ic('shield')}Verified Official</span><h3>Official MoveMint Channels</h3>
+   <p>Follow MoveMint only through these links: the real MoveMint chat, bot and live page.</p></div>
+  <div class="off-grid">
+   <a class="off-tile" href="{OFFICIAL[0][1]}" target="_blank" rel="noopener"><span class="oi">{ic('telegram')}</span><span class="ot"><b>MoveMint Telegram Chat</b><small>News, every drop and the community</small><em>t.me/TheMoveMint</em></span><span class="og">Join The Chat {ic('ext')}</span></a>
+   <a class="off-tile" href="{OFFICIAL[1][1]}" target="_blank" rel="noopener"><span class="oi">{ic('bot')}</span><span class="ot"><b>MoveMint Telegram Bot</b><small>Paste your wallet address, see your rewards</small><em>t.me/TheMoveMintBot</em></span><span class="og">Open The Bot {ic('ext')}</span></a>
+   <a class="off-tile" href="{OFFICIAL[2][1]}" target="_blank" rel="noopener"><span class="oi">{ic('live')}</span><span class="ot"><b>MoveMint Live</b><small>Every round and every receipt, on Solana</small><em>movemint.vip/live</em></span><span class="og">See Every Round {ic('ext')}</span></a>
+  </div>
+  <p class="off-note"><span class="tick" aria-hidden="true">{ic('check')}</span><span>Check the address before you tap: copycat chats can use the same name and picture. Nobody from MoveMint or MTG will ever ask for your 12 words.</span></p>
+ </div>
 </div></section>
 
 <section class="sec" id="faq"><div class="wrap">
@@ -425,7 +441,7 @@ def jsonld():
     g = [
      {'@type': 'WebPage', '@id': URL + '#webpage', 'url': URL, 'name': TITLE, 'description': DESC, 'inLanguage': 'en', 'isPartOf': {'@id': SITE + '/#website'},
       'breadcrumb': {'@id': URL + '#breadcrumb'}, 'primaryImageOfPage': img, 'datePublished': TODAY, 'dateModified': TODAY, 'author': mtg,
-      'about': {'@type': 'Thing', 'name': 'MoveMint', 'alternateName': 'MINT', 'url': 'https://movemint.vip', 'description': 'MoveMint (MINT), a Solana token whose holders receive tokenized stocks, cash, gold, silver and copper from trading fees. Contract address ' + CA + '.'},
+      'about': {'@type': 'Thing', 'name': 'MoveMint', 'alternateName': 'MINT', 'url': 'https://movemint.vip', 'sameAs': ['https://t.me/TheMoveMint', 'https://movemint.vip/live'], 'description': 'MoveMint (MINT), a Solana token whose holders receive tokenized stocks, cash, gold, silver and copper from trading fees. Contract address ' + CA + '.'},
       'video': [{'@id': URL + '#video-' + k} for k in list(VIDEOS) + ['founder']]},
      {'@type': 'WebSite', '@id': SITE + '/#website', 'url': SITE + '/', 'name': 'MTG TRIBE', 'publisher': tribe},
      {'@type': 'BreadcrumbList', '@id': URL + '#breadcrumb', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'MTG TRIBE', 'item': SITE + '/'}, {'@type': 'ListItem', 'position': 2, 'name': 'MoveMint (MINT) guide', 'item': URL}]},

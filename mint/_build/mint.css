@@ -189,6 +189,9 @@ h2{font:400 clamp(2.1rem,7.4vw,3.6rem)/1.06 var(--display);text-transform:upperc
 /* videos */
 .vgrid{display:grid;gap:clamp(28px,4vw,40px);margin:30px 0 0}
 @media (min-width:900px){.vgrid.two{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.vgrid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.hero-vid{margin:22px 0 2px;max-width:600px}
+.hero-vid .vid{margin:0}
 .vhead{display:flex;align-items:center;gap:10px;margin:clamp(34px,5vw,52px) 0 0;font:400 clamp(1.5rem,4.6vw,2rem)/1.12 var(--display);text-transform:uppercase;letter-spacing:.02em;color:#fff}
 .vhead .ic{width:26px;height:26px;color:var(--lime)}
 .mtgp,.sheet.player{--gold:#ffc34d;--cyan:#40e4a8;--pink:#cbfb61;--font:Manrope,system-ui,sans-serif;--display:Manrope,system-ui,sans-serif;--muted:#a3c7be;--soft:#cfe9e2;--text:#effaf6;--hdr:64px;--foot:70px}

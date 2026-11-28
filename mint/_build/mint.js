@@ -38,6 +38,18 @@
     for (var i = 0; i < list.length; i++) if (list[i] > now) return go(list[i] - hdr() - 6);
     go(html.scrollHeight);
   });
+  /* computers and landscape tablets: the orbit of stock coins sits behind the trailer, centred on it (a flat oval, see mint.css) */
+  var stage = $('.stage'), hv = $('.hero-vid'), hin = $('.hero-in');
+  function orbit() {
+    if (!stage || !hv || !hin) return;
+    if ((w.innerWidth || 0) < 940) { stage.style.removeProperty('--sy'); stage.style.removeProperty('--sw'); return; }
+    var a = hin.getBoundingClientRect(), v = hv.getBoundingClientRect(), cy = v.top - a.top + v.height / 2;
+    var size = Math.min(w.innerWidth * 0.97, v.width * 1.72);
+    stage.style.setProperty('--sy', Math.round(cy) + 'px'); stage.style.setProperty('--sw', Math.round(size) + 'px');
+  }
+  orbit(); w.addEventListener('resize', orbit); w.addEventListener('load', orbit);
+  if (d.fonts && d.fonts.ready) d.fonts.ready.then(orbit);
+
   /* bigger screens: the bottom dock waits until the visitor scrolls, so the hero and its buttons stay clear */
   html.classList.add('js-dock');
   function dock() { html.classList.toggle('dock-on', (w.scrollY || 0) > 260); }

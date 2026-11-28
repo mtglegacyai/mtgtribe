@@ -14,3 +14,5 @@
 
 - `ytt.html` (with `bolt34.jpg`, a still from the trailer at 0:34): the YouTube thumbnail for the 49 second trailer,
   `MoveMint-Trailer-YouTube-thumbnail-1280x720.jpg` (no duration badge: YouTube adds its own). `node shoot.js ytt`.
+- `tiktok.html` (with `bolt-sq.jpg`): the vertical TikTok cover for the trailer, `MoveMint-Trailer-TikTok-cover-1080x1920.jpg`; every word sits inside the
+  middle 3:4 part (y 240 to 1680) that TikTok shows in the profile grid. `node shoot-tall.js tiktok`.

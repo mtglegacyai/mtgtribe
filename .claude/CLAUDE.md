@@ -15,8 +15,8 @@ then a notification that it is live (see `tools/canton-weekly/README.md`). Sloga
 
 ...come back and **remake the MTG TRIBE invite video** (both the 16:9 and the 9:16 version, see
 `tools/invite-horizontal/`) so it mentions **every income stream MTG has at that point**, not only the ALTRUVA
-guide it mentions today. Follow the dashboard order (MTG, 27 Nov 2026): 1 Bellver Cards, 2 ClickBaitPays, 3 PRENET,
-4 Bitcoin Wealth, 5 JetUp · TAG Markets, 6 Aureus Alliance. ALTRUVA is no longer one of his streams: leave it out.
+guide it mentions today. Follow the dashboard order (MTG, 28 Nov 2026): 1 Bellver Cards, 2 ClickBaitPays, 3 PRENET,
+4 MoveMint, 5 Bitcoin Wealth, 6 JetUp · TAG Markets, 7 Aureus Alliance. ALTRUVA is no longer one of his streams: leave it out.
 
 MTG wants this video upgraded every time his income streams change, so it always reflects all of them.
 
@@ -25,7 +25,14 @@ his approved HeyGen voice "MTG Master Voice V3", which costs HeyGen credits:
 ask MTG first. Without new voice lines they can be shown on screen only. Storyboard first, show a preview, never
 publish without approval.
 
-## MTG's income streams, in his order (MTG, 27 Nov 2026)
+## MTG's income streams, in his order (MTG, 27 Nov 2026; MoveMint added 28 Nov 2026)
+
+**28 Nov 2026:** "List it as one of my income streams across all the websites, menus, sections, etc where other income streams
+are listed, position it below PRENET." So MoveMint is #4 everywhere (guide https://mtgtribe.com/mint/, his buy link
+https://app.movemint.vip/buy/mtg), and the list below runs 1 Bellver Cards, 2 ClickBaitPays, 3 PRENET, 4 MoveMint, 5 Bitcoin Wealth,
+6 JetUp · TAG Markets, 7 Aureus Alliance. The mtgtribe.com dashboard: #1 the Bellver panel, #2 the wide card, a 2x2 (#3 to #6), #7
+Aureus as the closing wide card; musathegiant.com/dashboard.html: #1, #2 and #7 full width. The Bitcoin Wealth menu item was added
+to `NAV` in `bw/_build/build/config.py` and the built pages patched to match (the build needs mtg-studio, not in that session).
 
 "On musathegiant.com and mtgtribe.com websites, order my income streams as follows: BELLVER CARDS (cards is plural because
 they offer different cards), CLICKBAITPAYS, PRENET, BITCOIN WEALTH, JETUP - TAG MARKETS, AUREUS ALLIANCE. Update these websites,
@@ -34,8 +41,8 @@ Every list of his streams (mtgtribe.com dashboard menu, cards, rankings, footers
 clickbaitpaysus.com and bitcoinwealthpays.com; musathegiant.com/dashboard.html) uses this order:
 
 1. **Bellver Cards** (always plural in a stream list: Bellver offers different cards), 2. ClickBaitPays, 3. **PRENET** (his link
-https://prenet.world/ref/mtg), 4. Bitcoin Wealth, 5. JetUp · TAG Markets (a middle dot, never a dash), 6. Aureus Alliance
-(https://www.aureus.africa/mtglegacy). On a guide that is itself one of the streams, that stream is left out of its own menu.
+https://prenet.world/ref/mtg), 4. **MoveMint** (guide mtgtribe.com/mint), 5. Bitcoin Wealth, 6. JetUp · TAG Markets (a middle dot,
+never a dash), 7. Aureus Alliance (https://www.aureus.africa/mtglegacy). On a guide that is itself one of the streams, that stream is left out of its own menu.
 Where the order lives: `assets/tribe/streams.json`; `dashboard/index.html` (menu, ranking stack, cards: #1 the Bellver panel,
 #2 the wide card, then a 2x2, structured data, description); the footers of the home page, /cc/, /cntn/ (the Canton master)
 and the weekly reports; `llms.txt`; `tools/og/make_og.py` (tribe-dashboard preview); `MY_STREAMS` in `cbp/_build/build.py`
@@ -193,7 +200,7 @@ The 34 addresses of the old site (before 22 Nov 2026, kept in that repo's histor
 **Every /cbp change is published to BOTH repos** (a PR in each) and checked on both domains. Never edit the
 clickbaitpaysus.com files by hand. Links to MTG's other guides and his group use full mtgtribe.com addresses (`HUB`). Every personal copy lives at clickbaitpaysus.com/theirname,
 the only address on the order form (MTG, 24 Nov 2026). The menu's More From MTG 👑 lists his income streams to promote there, in his
-order (Bellver Cards, PRENET, Bitcoin Wealth, JetUP, Aureus Alliance; never ALTRUVA): `MY_STREAMS`.
+order (Bellver Cards, PRENET, MoveMint, Bitcoin Wealth, JetUP, Aureus Alliance; never ALTRUVA): `MY_STREAMS`.
 
 ## Standing rule: a real preview is a live page on a temporary private link (MTG, 16 Nov 2026)
 
@@ -388,7 +395,7 @@ How to buy Canton Coin, step by step:
 "If you have a link for it, you can promote it on ClickBaitPays, get traffic, while you make money with ClickBaitPays at the
 same time, increasing your streams of income ... this is my biggest selling point." Every ClickBaitPays page, script and
 video (tutorials, explainers, reels, shorts, ads, promos) follows `tools/cbp/MESSAGE.md`: Got a link? Get it seen. Name the
-programs people really promote (BellverCards, PRENET (always second, MTG 26 Nov 2026), Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvels,
+programs people really promote (BellverCards, PRENET (always second, MTG 26 Nov 2026), MoveMint, Bitcoin Wealth, JetUP, XFUSION, Solar Group, Aureus Alliance, stokvels,
 MLM and affiliate programs, digital products), use MTG's own BellverCards story as proof, and sell the website copy as the
 guide that sells the real reason people join. A traffic source, never an investment; no income promises.
 

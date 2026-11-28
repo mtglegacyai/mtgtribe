@@ -448,7 +448,7 @@ def update_sitemap():
 
 if __name__ == '__main__':
     out = page()
-    bad = [c for c in ('—', '–') if c in out]
+    bad = [c for c in ('\u2014', '\u2013') if c in out]
     if bad: sys.exit('em or en dash found in the page: ' + repr(bad))
     if PREVIEW:
         dst = sys.argv[1]

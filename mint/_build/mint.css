@@ -83,7 +83,7 @@ section{position:relative;scroll-margin-top:calc(var(--hdr) + 8px)}
 /* hero */
 .hero{padding:clamp(28px,6vw,72px) 0 28px;overflow-x:clip}
 .hero-in{display:grid;gap:clamp(18px,4vw,48px);align-items:center}
-@media (min-width:940px){.hero-in{grid-template-columns:1.08fr .92fr}}
+
 .eye{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:7px 14px;border-radius:999px;background:rgba(203,251,97,.1);box-shadow:inset 0 0 0 1px rgba(203,251,97,.45);color:var(--lime);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
 .eye i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(203,251,97,.7);animation:ping 2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(203,251,97,.7)}80%,100%{box-shadow:0 0 0 10px rgba(203,251,97,0)}}
@@ -111,6 +111,7 @@ h1 .g,h2 .g{background:linear-gradient(180deg,#fffbe6,#ffe08f 45%,#e9ad2f);-webk
 .bolt{position:absolute;left:50%;bottom:9%;width:62%;height:auto;transform:translateX(-50%) translateZ(60px);animation:hover 5s ease-in-out infinite;filter:drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 40px rgba(64,228,168,.25))}
 @keyframes hover{0%,100%{transform:translateX(-50%) translateZ(60px) translateY(0)}50%{transform:translateX(-50%) translateZ(60px) translateY(-12px)}}
 @keyframes spin{to{transform:rotate(360deg)}}
+@keyframes cspin{from{rotate:0deg}to{rotate:-360deg}}
 .orbit{position:absolute;inset:4%;border-radius:50%;animation:spin 26s linear infinite;transform-style:preserve-3d}
 .orbit .coin{position:absolute;animation:spin 26s linear infinite reverse}
 .coin{display:grid;place-items:center;width:clamp(48px,13%,70px);aspect-ratio:1;border-radius:50%;font:800 clamp(.62rem,1.9vw,.82rem)/1 var(--body);letter-spacing:.02em;color:#3b2604;
@@ -335,3 +336,33 @@ h2{font:400 clamp(2.1rem,7.4vw,3.6rem)/1.06 var(--display);text-transform:upperc
 .js .rv{opacity:.5;transform:translateY(18px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}}
+
+/* computers and landscape tablets (MTG, 28 Nov 2026: "put it behind ... part of the background of the hero section on bigger screens"):
+   the heading and the trailer in the middle, the rings and the stock coins orbit behind the trailer as a calm background.
+   Phones and portrait tablets keep the stack they had (Bolt and the coins further down the hero). Kept at the end of the file so it
+   wins over the base rules above. */
+@media (min-width:940px){
+  .hero-in{position:relative;grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+  .hero-in>div:first-child{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;width:100%;max-width:58rem}
+  .hero h1{max-width:15em;text-wrap:balance}
+  .hero .lead{margin-left:auto;margin-right:auto;max-width:40em}
+  .hero-cta,.trust,.micro{justify-content:center}
+  .hero-cta{width:100%;max-width:44rem}
+  .hero .hero-vid{width:min(100%,clamp(480px,calc((100svh - 400px) * 1.6),52rem));max-width:none;margin:28px auto 6px}
+  .hero .hero-vid .vcap{justify-content:center}
+  .stage{position:absolute;left:50%;top:var(--sy,46%);width:var(--sw,min(1240px,96vw));margin:0;transform:translate(-50%,-50%);z-index:0;pointer-events:none;perspective:none}
+  .stage .tilt{transform:none!important}
+  .stage .bolt,.stage .wcard,.stage .floor{display:none}
+  /* a wide, flat orbit around the trailer: the coins pass beside it, never behind the buttons below it */
+  .hero .stage .ring{opacity:.42;scale:1 .4}
+  .hero .stage .ring.r2{opacity:.22}
+  .hero .stage .glow{inset:24%;opacity:.6;scale:1 .4}
+  .hero .stage .orbit{animation-duration:40s;scale:1 .4}
+  .hero .stage .orbit .coin{width:clamp(56px,6.4%,86px);opacity:.75;scale:1 2.5;animation:cspin 40s linear infinite}
+
+  .ca{position:relative;z-index:1}
+  .faq,.steps{max-width:60rem}
+}
+/* big screens: everything a little larger so the page never looks small in the middle of a wide monitor */
+@media (min-width:1700px){html{font-size:18px}.wrap{max-width:1340px}}
+@media (min-width:2300px){html{font-size:21px}.wrap{max-width:1600px}}

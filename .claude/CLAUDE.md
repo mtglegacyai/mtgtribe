@@ -63,6 +63,28 @@ the names from the dashboard menu. bellveraffiliates.com has no stream list.
   prenet.world refuses automated reading, so its facts come from MTG's material only. The weekly Canton video says it "Prenet".
 - Referral links carry `rel="sponsored noopener"` (PRENET, Aureus, the join links).
 
+## MoveMint (MTG, 28 Nov 2026)
+
+MTG's newest stream, MINT on Solana (app.movemint.vip, his buy link https://app.movemint.vip/buy/mtg, `rel="sponsored noopener"`).
+- **Its home: mtgtribe.com/mint**, one short page: built 28 Nov 2026 by `mint/_build/build.py` (writes `mint/index.html` and its
+  sitemap-home.xml entry; `MINT_PREVIEW=1 ... <dir>` writes the private preview copy). Covers: `tools/mint-covers/`. Every buy, sign-up and
+  copy button uses https://app.movemint.vip/buy/mtg, never the official site. MINT contract (checked on chain): 1PPQkxYy2wUvKkUXMnDkiDrqx5Hfp2nbDju11cvHeFW.
+  Videos play from the site itself (`mint/media/`, `MEDIA` in build.py): mtgtribe.com is not on any of MTG's Cloudflare accounts, so R2 under
+  his domain was not possible (28 Nov 2026). If the site nears GitHub Pages' 1 GB, move them to R2 and change `MEDIA`.
+  **Live since 28 Nov 2026** (MTG: "put it live already"). His style for this page (MTG, 28 Nov 2026): his MTG TRIBE logo top left
+  (`mint/img/mtg-tribe-logo-*.webp`), Every Word Capitalised on the menu, every button and every card or box title (`tc()` in build.py
+  for FAQ questions and moments), and every check mark inside a small circle (`.tick`). He loved the pizza animation.
+  Every MoveMint video says where they all are: "Want to learn more, or watch every step-by-step video? It's all at MTG tribe dot com
+  slash mint." (the ending's url pill and end card show mtgtribe.com/mint).
+- **The message in every MoveMint video (MTG):** holding MINT drops tokenized stocks from 20+ companies (Apple, Nvidia, Google,
+  Coca-Cola, McDonald's) plus gold and silver into your own wallet, nothing to claim, sell any time; for most of his tribe it is
+  their first time holding stocks. Say it accurately: a tokenized stock follows the price of the real shares, it is not the same as
+  shares at a broker, and how much you receive depends on trading, never guaranteed. Buy inside MoveMint with an invite: +20% MINT
+  bonus once approved. No price predictions or "get in fast" lines (he asked for 5 to 10 cents; declined, honest price line instead).
+- **Tutorials:** Part 1 join and make your wallet (V3, pizza picture for the fee share); Part 2 fund with SOL from Binance, swap to
+  MINT, the app tour (World walkthrough, robot icon, Me page). His notes are kept with the build; raw recordings never in the repo.
+- **Analogies: never taxis** (MTG, 28 Nov 2026). Use a fresh, universal picture per topic.
+
 ## Standing rule: the bottom bar on the mtgtribe.com hub pages (MTG, 26 Nov 2026)
 
 "Add a similar bottom navigation buttons to the mtgtribe.com website like we have them on ClickBaitPaysUs.com,
